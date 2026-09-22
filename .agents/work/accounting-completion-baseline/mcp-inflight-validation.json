@@ -1,0 +1,7 @@
+{
+  "command": "bun run test:e2e apps/api/tests/mcp.e2e.test.ts",
+  "exitCode": 1,
+  "outcome": "Worker startup failed before scenario execution",
+  "cause": "Concurrent closing contract used Schema.isLengthEqualTo, absent from installed Effect. Routed to domain owner.",
+  "next": "After integration-ready contracts, rerun native types and focused MCP E2E; previous 17/20 baseline is independent."
+}

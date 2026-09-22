@@ -1,0 +1,18 @@
+{
+  "typecheck": {
+    "command": "bun run check-types",
+    "exitCode": 0
+  },
+  "e2e": {
+    "command": "bun run test:e2e",
+    "exitCode": 1,
+    "passed": 17,
+    "failed": 3,
+    "limitations": [
+      "Expired approval fixture attempts forbidden mutation of immutable approval.",
+      "Cookie test uses removed token-login endpoint instead of Better Auth.",
+      "Playwright Chromium executable is not installed; browser flow unobserved."
+    ]
+  },
+  "testChangesAuthorized": false
+}

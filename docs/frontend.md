@@ -4,6 +4,24 @@ Status: working design, 2026-09-22. This specifies the customer application; it 
 
 Build one application around the work people need to finish. Founders start with decisions and business position. In-house finance starts with the work queue. Accountants working across clients start with a portfolio and enter the same company workspace. Every view opens the same evidence, revisions, approvals and receipts.
 
+## Implementation status — 22 September 2026
+
+The journal path has a functional implementation in the application frame: source retention, exact decimal entry, immutable review links, approval/posting, a durable receipt, and filtered queue return. It has been exercised in an isolated synthetic runtime. The user has explicitly rejected its current customer experience. No journey is accepted as customer-ready; successful accounting execution and improved styling do not establish that milestone. The UI defaults to light; theme preference remains unfinished. The founder home is still basic, and remaining accounting tools still use the transitional composition. Detailed functional proof and unresolved checks are recorded in [the working evidence](../.agents/work/customer-frontend-proof/journal-flow.md).
+
+### Customer experience gap
+
+The current journal path still exposes the implementation's sequence: manually describe and save source text, enter a journal, prepare a proposal, acknowledge review, approve, acknowledge again, then post. It remains an early technical interface. The earlier rough 20–25% estimate described implementation coverage and must not be used as a customer-readiness estimate.
+
+The next design must address the workflow before expanding its visual pattern across other pages:
+
+- Start ordinary customer work from an actual receipt, invoice, bank transaction or actionable request. Manual journals belong in the accountant's tools, with clear scope.
+- Keep the original document or source visible during review. Reuse existing retained-source capabilities rather than asking customers to reconstruct documents as title/origin/plain-text fields.
+- Lead each review with the recognizable record, amount, current issue and next decision. Keep request identities and recovery mechanics in contextual details; surface them when an uncertain outcome actually needs recovery.
+- Show one clear next action for the current person's authority. Preserve backend approval/posting boundaries while removing needless repeated acknowledgements and exposing their purpose when separate people or decisions require them.
+- Make document details, accounting lines and the action fit a deliberate working layout at the user's actual window size. A generic form in a sidebar does not satisfy this requirement.
+
+Customer quality, implemented behavior and verified accounting behavior are separate status dimensions. FE-01/02 remain in progress on all three until their stated requirements are met.
+
 ## Design basis
 
 Apply **better-layout**, **make-interfaces-feel-better** and **better-ui**, together with the repository's software-engineering guidance. Better-layout replaces taste at the user's request. Preserve StyleX, existing tokens, Inter/system fonts, Lucide, Base UI, TanStack Start/Router/Query and the owned table components. Do not introduce a second design system or animation dependency.

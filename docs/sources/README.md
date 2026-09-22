@@ -8,6 +8,10 @@ The [external-input contract](../plans/10-external-inputs.md) defines D-01–D-1
 
 The [Swedish VAT manifest](sweden-vat-sources.json) preserves the original dated source URLs, retrieval results, response/excerpt hashes, bounded excerpts, failed accesses and unresolved enablement fields. Its [decision record](../adr/0002-swedish-vat-profile-boundary.md) states the narrow research scope and remaining blockers. Full source response bodies are not archived; a live re-fetch may differ. No approved profile or legal effective interval is supplied by this manifest.
 
+## Retained SIE research
+
+The [SIE 4C review](sie-4c-review.md) pins the official 2025-08-06 edition by response hash and records the 4I/4E distinction, byte encoding, required records and implementation failure cases. It does not establish implemented support, validator acceptance or SIE Group approval.
+
 ## Source use
 
 Select the applicable version for the actual fiscal year, company and operation. Treat older edition links and dated protocol specifications as candidates to check, not defaults. MCP protocol support is selected through D-05; legal/framework/schema versions through D-04/D-08; actual provider acceptance through D-10. Bolagsverket research includes access limitations recorded in external inputs. No unavailable page is treated as successfully inspected.

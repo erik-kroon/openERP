@@ -1,0 +1,152 @@
+{
+  "startedAt": "2026-09-22T19:59:31.321Z",
+  "revision": "c242855a31bc9e0adb067f7592f781b23496b322",
+  "worktreeDiffSha256": "4c5a8b0858f3bf0d511638464a884abc72ac3390081a5af2df7597ff62ce822e",
+  "lockSha256": "6b0d38a42d5a491a8f1719ec77d06d70ca76b575387ecd4c8c086c422d5392a8",
+  "node": "v26.4.0",
+  "postgres": "postgres (PostgreSQL) 17.11 (Homebrew)",
+  "runner": "Vitest 4.1.10",
+  "runtime": "local workerd; real PostgreSQL; restricted runtime role",
+  "migrations": [
+    {
+      "name": "0001-accounting.sql",
+      "sha256": "0d8f9853c9f5d69804221602f13739c42268726361d7040727bf07deaad5fa9d"
+    },
+    {
+      "name": "0002-posting-action-binding.sql",
+      "sha256": "e343c433850bf8476c473aaa70e2a071f12fe769ef0b8e8a1cc7f3b95d91e9ee"
+    },
+    {
+      "name": "0003-deferred-balance-and-ledger.sql",
+      "sha256": "8ddd0d717d983c68936fa3b4fbd84d26baa221bdf76288d5773f20ca54712aac"
+    },
+    {
+      "name": "0004-reversal-source-binding.sql",
+      "sha256": "d4423f760b70c0b1440b8275a68a9f64f408c2e1e03d3bd233b8681ab32eabde"
+    },
+    {
+      "name": "0005-evidence-review.sql",
+      "sha256": "54c4ce9a3fba433d190936ee608bad0898ac53d4d5e72177552febdf973b1908"
+    },
+    {
+      "name": "0006-private-function-default.sql",
+      "sha256": "2ce116c5508d7bd93dd757c989787bbaf31d301171a07d65503034e8a8aa8f66"
+    },
+    {
+      "name": "0100-bank-reconciliation.sql",
+      "sha256": "80196396399ce8ac028c7e79478f4a96abe6df2e4c3de3f96fa94a8262c9dcbf"
+    },
+    {
+      "name": "0101-bounded-bank-reports.sql",
+      "sha256": "fa14e08315f267caa8600844df531018b58d99456acafccee5ce638478e7209c"
+    },
+    {
+      "name": "0110-case-context.sql",
+      "sha256": "8cf134ee9195208bdcd42b9ab2ba24d628e4750221d2e648a21068cc2185786f"
+    },
+    {
+      "name": "0111-case-snapshot-binding.sql",
+      "sha256": "6089ceab5e95355eb2830c7d47a4f252ffb62bf0523039ee51f79ec090897dbd"
+    },
+    {
+      "name": "0120-trial-balance-reports.sql",
+      "sha256": "5455dc64b47b5aa82f3baec6fa7f4ab10be554e69e865afed8f1bbe2c4e510c3"
+    },
+    {
+      "name": "0130-book-readiness.sql",
+      "sha256": "f1490368d838170517fea05ebcd072aabb935444f48e53ac8c3a9486cf4dcd3b"
+    },
+    {
+      "name": "0200-recurring-preparation.sql",
+      "sha256": "67179796c1f99bdeaf7f9d81addbddc62a52c1a0778d24355290b85592d4d1fd"
+    },
+    {
+      "name": "0201-recurring-command-guards.sql",
+      "sha256": "94e54410886c19bd37f23f7431f5ffe7057ab19b2914812be9ae00d6e797d26a"
+    },
+    {
+      "name": "0210-admission-authority-locks.sql",
+      "sha256": "14a773d6036c7ec655dc8c8e9304c972219ae27f83f4496b65fbb641f069b0c2"
+    },
+    {
+      "name": "0211-recurring-readiness.sql",
+      "sha256": "f94449c3dba78725454d1e46c23a3bdfa59d5f2e8c0e294bff49a6ee2e24f9f4"
+    },
+    {
+      "name": "0300-posting-recovery.sql",
+      "sha256": "9161e9c4461ba8fed982b5800be96b872bd08408d68a947949a614e14af7f582"
+    },
+    {
+      "name": "0310-saved-posting-requests.sql",
+      "sha256": "d8e0b4b5fefe3752db81402d27bcc000fe48a834dcbeda8ed39fa4f92208daec"
+    },
+    {
+      "name": "0400-correction-bundles.sql",
+      "sha256": "8048dd42105483945d7c9f72e7053ce617958929a19c6407c0d79c1606e73881"
+    },
+    {
+      "name": "0401-correction-input-precedence.sql",
+      "sha256": "6eae5e35b64dcc3c7d154e8531547039e879e28bc1ced5f9198ddc9d0dddbae5"
+    },
+    {
+      "name": "0410-correction-impact-workbench.sql",
+      "sha256": "17d09cbd78cf8230b1ed5ebbe1b4b403d0248c9c397033ef9a08d1a5095d5981"
+    },
+    {
+      "name": "0500-reviewed-bank-allocations.sql",
+      "sha256": "caa7f435e115e91e4b68a77f9ecec4f912e31356015ff3a83bae8f6a4b25d4a9"
+    },
+    {
+      "name": "0501-recurring-allocation-guards.sql",
+      "sha256": "7433df5f8493a46d41a38e88d3e7b8a1d671e2e355ff3cea62c645ad4104bd51"
+    },
+    {
+      "name": "0502-recurring-posting-capacity-guard.sql",
+      "sha256": "2058797f9bf4d9b62ecb2af5703bd6310fd03fdb7f53fe364023ffc59a5e1f50"
+    },
+    {
+      "name": "0510-source-intake.sql",
+      "sha256": "af448df45946719d89e4e23f7a53d5b4ab0b81de43a50c4d953abb3cb873f43d"
+    },
+    {
+      "name": "0600-commerce.sql",
+      "sha256": "f64a79a52d1363db46d0fc7ee8d0dc686f36cc3382618a625faf852666e3beb2"
+    },
+    {
+      "name": "0610-owner-register.sql",
+      "sha256": "64128afc85cc1a50132b78f5c05227eb351ae565f3fd49baa2c6ba69552c00b4"
+    },
+    {
+      "name": "0700-subledger-schedules.sql",
+      "sha256": "0d893a6b1f9b72bebc1a70ccc5f9d444ff534870b425845beec7b0f5000d8f6a"
+    },
+    {
+      "name": "0710-expense-tax-facts.sql",
+      "sha256": "dc858c17d18ae48b29ede41c6b67a5e854a4ad2f9b63decf6abca8b9e89d2351"
+    },
+    {
+      "name": "0800-technical-period-closing.sql",
+      "sha256": "38ea720dd52c85433abff0163bc7715a16dc5193eb1d7cf43a07d534b8825372"
+    },
+    {
+      "name": "0810-accountant-review-packs.sql",
+      "sha256": "c89bee6f30f36ca400586aa45e5bab6174963f50de6515076a821efebbd6b08d"
+    },
+    {
+      "name": "0820-closing-owner-tax-dependencies.sql",
+      "sha256": "e5970a5b509add70ed22a4118e7d81707647bf5b5bd316536b64dcbb75dff814"
+    },
+    {
+      "name": "0890-owner-correction-impact.sql",
+      "sha256": "537ec54ceb827645777d1788953c1aa6661138ac232f0ce2be1f969408913859"
+    },
+    {
+      "name": "0900-better-auth.sql",
+      "sha256": "5244483c2bdaebf99244914b134d0a52e405939e98794980acd0f2986bb1075b"
+    },
+    {
+      "name": "0910-retained-source-objects.sql",
+      "sha256": "5c812bfc78d9cca53cee18334ffe6866e8a212b82cdf68865ba288474da118dd"
+    }
+  ]
+}

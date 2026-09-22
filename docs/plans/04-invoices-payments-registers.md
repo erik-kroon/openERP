@@ -73,3 +73,15 @@ Payment review shows payee changes, all allocation legs, unapplied remainder, fe
 | COM-06 | Historical open-item admission, ageing and register↔GL control snapshots/workbench.                 | COM-03, IMP-02 | E-12/E-15: source balances, retained matches and recognition links reconcile; unknown chronology blocks derived postings. |
 
 COM-03 first supports same-currency conservation. Cross-currency acceptance additionally requires FX-02; the invoice/payment APIs expose unsupported-currency blockers until then. COM-06 can reconcile historical controls before connected delivery is available. Company release requires whichever branches its inventory actually contains.
+
+## Bounded register-control snapshot slice
+
+The [register-report handoff](../../apps/api/REGISTER-REPORTS.md) describes an implemented-source COM-06 subset over existing synthetic registered recognition and applied payment legs. It freezes current-known invoice revisions, due-date ageing, economic-date allocation identities and all journal contributions for declared commerce control accounts. Nonzero unexplained contributions remain differences even if they offset. Capture is bounded and fails rather than truncates; saved reports can be rediscovered and downloaded.
+
+This is not historical invoice admission, reconstruction of facts known on a past date, company source completeness, native invoice issue, delivery or payment initiation. `coverage: not_established` remains explicit. Shared integration and real runtime/browser/independent-arithmetic evidence remain gates; the source alone does not complete COM-06 acceptance.
+
+## Bounded native customer commercial drafts
+
+The [invoice-draft handoff](../../apps/api/INVOICE-DRAFTS.md) implements a COM-01 subset: operator-scoped unissued drafts, retained asserted seller/customer identities and counterpart revisions, exact explicit line amounts with discounts/charges, unknown tax propagation, source/calculated comparisons, and immutable revisions guarded by expected revision/digest. Complete bounded read/history/list paths and a local edit/reopen/recovery UI are included in source.
+
+This does not establish legally active VAT/rounding profiles, verified legal identity, supplier-document duplicate handling or source-occurrence admission. Saving a draft neither issues a number nor writes the ledger/open-item register. Sealing, issue/recognition approval and atomic effects, rendering and authorized delivery remain COM-02/COM-05 dependencies. The user stopped tests and validation runs during this packet; no runtime, browser or financial verification claim is made here.

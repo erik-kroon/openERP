@@ -75,3 +75,15 @@ The END-03 source slice in [ACCOUNTANT-REVIEW.md](../../apps/api/ACCOUNTANT-REVI
 This is synthetic review tooling, not company activation or full END-03 acceptance. Opening explanations remain unverified, owner-funding and expense-tax source/review controls are captured while legal treatment and complete openings remain unverified, and first year never implies zero opening or zero VAT. No Visma compatibility, result transfer, annual-report/SIE/iXBRL generation or filing is claimed. Root integration, native/runtime observations and the concurrency/browser/independent-correctness gates remain separate from source delivery.
 
 Forward0820 binds the released owner-register and expense-review provider digests into technical closing. Unresolved/unlinked owner sources, missing/stale expense reviews and unsupported/unreconciled known expense sources block new technical close proposals; unpaid linked claims do not. Historical0800 approvals/certificates keep their original meanings and bytes and cannot silently acquire the new dependency coverage.
+
+
+The0930 END-01 source slice adds evidence-backed family applicability declarations to the
+existing technical-lock workflow. New proposals require every family to be declared;
+unknown/unsupported obligations, required unavailable controls and represented-state
+contradictions block. Existing provider failures cannot be waived by a declaration.
+Historical bank-only plans/receipts keep their interpretation and remain readable; new
+reopen proposals still permit repair. Current non-bank providers lack complete source/control
+coverage, so declaring those families required conservatively blocks this technical scope.
+This is not a financial close or legal applicability review. See the pre-change acceptance
+cases and integration contract in [CLOSING.md](../../apps/api/CLOSING.md#end-01-family-inventory-scope-and-acceptance-before0930).
+Owned-file static checks do not complete END-01's runtime/concurrency/browser gates.

@@ -39,6 +39,10 @@ Continue from FND-02/FND-03/FND-04 in the [shared plan](plans/00-shared-contract
 
 The first UI must display evidence, exact lines, approval scope and receipt state. A local fixed identity is not proof of human authorization; any development-only identity mode must be explicitly bounded and cannot satisfy the authenticated-approval gate.
 
+## Current accounting completion wave
+
+The [active implementation record](plans/accounting-completion-wave.md) covers the requested bank, commerce, schedules, MCP, reporting, tax, payroll and interchange gaps. Current parallel work targets immutable invoice control reports and explicit close-family inventory, with separate primary-source VAT and SIE research. Its baseline passed type checks and 17 of 20 existing E2E cases; stale test assumptions and a missing browser remain open. This is not a phase exit or a company-readiness claim.
+
 ## Evidence and checkpoints
 
 A [local SEB statement preview](plans/seb-statement-preview.md) is available at `/intake` before authentication or book selection. It reads an owner-selected file in browser memory and exposes exact movements, running-balance checks and a review export. The observed owner-supplied export agrees with its independent controls. This is source inspection only: no retained bank-statement import, document archive, journal posting or P2 company-readiness claim is established. See the packet for verification and current limitations.
