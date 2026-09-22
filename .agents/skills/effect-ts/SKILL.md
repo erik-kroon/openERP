@@ -31,8 +31,11 @@ Consult `project-setup` and `tsconfig` only when setup changes are part of the t
 
 | Responsibility | Owner |
 | --- | --- |
-| HTTP contracts, shared schemas, safe wire errors | `packages/contracts` |
-| Backend operations, adapters, authentication, runtime composition | `apps/api` |
+| Accounting models, exact money and domain errors | `packages/domain` |
+| HTTP contracts, command schemas and error status mapping | `packages/contracts` |
+| Pure Swedish calculations and SIE rendering | `jurisdictions/se` |
+| Shared Effect operations | `apps/api/src/application` |
+| HTTP/MCP handlers, adapters, database and runtime composition | `apps/api/src/transport`, `adapters`, `db`, `runtime` |
 | Product routes, UI state, TanStack Query integration | `apps/web` |
 | Reusable controls and StyleX tokens | `packages/ui` |
 | Deployment bindings | `infra/alchemy` |
