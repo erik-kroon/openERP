@@ -10,15 +10,15 @@ Supported source families are explicit profiles: normalized bank statements, sel
 
 ## Data model
 
-| Record | Key fields and invariants |
-| --- | --- |
-| Content object | SHA-256, byte size, media type, immutable storage version and availability. Retain exact original bytes before accepting a reference. |
-| Source occurrence | Source system/account, external ID/revision or immutable file+ordinal, effective/observed times, content locator, source payload hash. Same bytes can have multiple occurrences. |
-| Parser result | Source hash, parser/profile version, encoding decision, all record locators, normalized facts, unsupported records and diagnostics. Reparse creates a new result. |
-| Import plan | Source inventory, account/dimension mappings, proposed event/recognition identities, opening policy, preserved relationships, expected counts/control totals, excluded records with reasons and plan digest. |
-| Import run/chunk | Admitted plan hash, deterministic chunk membership and hash, lease/fence, state, immutable chunk receipt, counters and failure/continuation position. |
-| Relationship decision | Source↔event/line/invoice relationship, exact amount/currency, basis `source_asserted`, `reviewed_exact` or `reviewed_heuristic`, reviewer and supersession history. |
-| Reconciliation snapshot | Declared inventory, source revision, GL/register cutoff, coverage/check results, unmatched/ambiguous items, independent controls, approved waivers and digest. |
+| Record                  | Key fields and invariants                                                                                                                                                                                    |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Content object          | SHA-256, byte size, media type, immutable storage version and availability. Retain exact original bytes before accepting a reference.                                                                        |
+| Source occurrence       | Source system/account, external ID/revision or immutable file+ordinal, effective/observed times, content locator, source payload hash. Same bytes can have multiple occurrences.                             |
+| Parser result           | Source hash, parser/profile version, encoding decision, all record locators, normalized facts, unsupported records and diagnostics. Reparse creates a new result.                                            |
+| Import plan             | Source inventory, account/dimension mappings, proposed event/recognition identities, opening policy, preserved relationships, expected counts/control totals, excluded records with reasons and plan digest. |
+| Import run/chunk        | Admitted plan hash, deterministic chunk membership and hash, lease/fence, state, immutable chunk receipt, counters and failure/continuation position.                                                        |
+| Relationship decision   | Source↔event/line/invoice relationship, exact amount/currency, basis `source_asserted`, `reviewed_exact` or `reviewed_heuristic`, reviewer and supersession history.                                         |
+| Reconciliation snapshot | Declared inventory, source revision, GL/register cutoff, coverage/check results, unmatched/ambiguous items, independent controls, approved waivers and digest.                                               |
 
 Unique source identity is `(book,sourceSystem,sourceAccount,externalId,revision)` where the provider defines stable IDs. Otherwise use admitted content occurrence plus record ordinal; overlapping exports require an explicit overlap map. Do not collapse identical rows in one file. A source revision can supersede an observation but cannot create a second recognition of the same causal event.
 
@@ -85,13 +85,17 @@ The workbench shows upload/source coverage, parser diagnostics with original loc
 
 ## Delivery packets
 
-| ID | Deliverable | Depends on | Acceptance |
-| --- | --- | --- | --- |
-| IMP-01 | Content/occurrence split, source inventory and immutable parsing/diagnostics. | FND-03, PST-01 | E-05/E-12: duplicate bytes preserve distinct occurrences; malformed/unsupported records remain visible. |
-| IMP-02 | Actual-source profile, loss-preserving SIE/provider mapping and reviewed import plan. | IMP-01 | E-12/E-18: supplied history, original references, corrections/dimensions and match basis preserved. |
-| IMP-03 | Bounded durable chunk admission, lease fencing, receipts, pause/resume and compensation. | IMP-02, PST-05, COR-02 | E-04/E-08/E-17: worker death/reclaim produces one effect; partial period cannot claim complete. |
-| IMP-04 | Reviewed many-to-many bank capacity, unmatch reversal and ambiguity UI over current draft. | IMP-01, PST-02 | E-11/E-13: concurrent allocations cannot overconsume; relationship reversal restores capacity once. |
-| IMP-05 | Inventory-bound reconciliation, independent controls and stale signoff behavior. | IMP-03, IMP-04 | E-07/E-15: missing account and offsetting missing rows block a zero-difference signoff. |
-| IMP-06 | Actual-company historical/opening comparison and retained match/filing handoff. | IMP-05, COM-06 | E-12/E-14/E-16: agreed history scope and all supplied relationships/control totals accounted for. |
+| ID     | Deliverable                                                                                | Depends on             | Acceptance                                                                                              |
+| ------ | ------------------------------------------------------------------------------------------ | ---------------------- | ------------------------------------------------------------------------------------------------------- |
+| IMP-01 | Content/occurrence split, source inventory and immutable parsing/diagnostics.              | FND-03, PST-01         | E-05/E-12: duplicate bytes preserve distinct occurrences; malformed/unsupported records remain visible. |
+| IMP-02 | Actual-source profile, loss-preserving SIE/provider mapping and reviewed import plan.      | IMP-01                 | E-12/E-18: supplied history, original references, corrections/dimensions and match basis preserved.     |
+| IMP-03 | Bounded durable chunk admission, lease fencing, receipts, pause/resume and compensation.   | IMP-02, PST-05, COR-02 | E-04/E-08/E-17: worker death/reclaim produces one effect; partial period cannot claim complete.         |
+| IMP-04 | Reviewed many-to-many bank capacity, unmatch reversal and ambiguity UI over current draft. | IMP-01, PST-02         | E-11/E-13: concurrent allocations cannot overconsume; relationship reversal restores capacity once.     |
+| IMP-05 | Inventory-bound reconciliation, independent controls and stale signoff behavior.           | IMP-03, IMP-04         | E-07/E-15: missing account and offsetting missing rows block a zero-difference signoff.                 |
+| IMP-06 | Actual-company historical/opening comparison and retained match/filing handoff.            | IMP-05, COM-06         | E-12/E-14/E-16: agreed history scope and all supplied relationships/control totals accounted for.       |
 
 IMP-06 and later cutover consume actual D-04/D-06 material. Synthetic acceptance of the machinery is independently useful but cannot close the actual-data gate.
+
+## Current bounded source-intake packet
+
+The [source-intake handoff](../../apps/api/SOURCE-INTAKE.md) implements a first IMP-01/IMP-02 path in source: immutable bytes/occurrences, explicit bounded UTF-8 CSV mapping, retained diagnostics, operator review and atomic observation admission through the existing bank authority. The first slice is limited to 64 KiB/200 data records and the current synthetic admission profile; it is not a SIE/provider migration, bulk-import engine or actual-company activation. Integration and real runtime/browser/failure observations remain root gates. The handoff contains exact operations, limits, ownership maps and the manual evidence recipe. It does not establish completed IMP-03–IMP-06 acceptance.

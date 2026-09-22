@@ -76,3 +76,7 @@ The runbook covers unavailable database, uncertain commit, corrupted/missing obj
 | OPS-07 | Recurring restore/retention/recovery drills and operational acceptance review. | OPS-06 | Measured accepted recovery objectives and coverage remain current; failures open incidents rather than silent green status. |
 
 OPS-06's END-07 gate applies when connected statutory fulfillment is required for the selected company release. A company using a reviewed external filing workflow still needs retained exact artifact and acknowledgment evidence; the actual provider connector is then explicitly not applicable to cutover. Do not delay early synthetic backup/restore work on later statutory development.
+
+## Current local recovery implementation boundary
+
+The [v2 recovery package](../operations/recovery-package-handoff.md) adds snapshot schema/role/migration inventory, inline evidence and declared supplementary/configuration closure, source-release capture, retained diagnostics and fenced reconstruction controls. It is implemented but not runtime-verified. Current normal application admission uses row locks and Better Auth mutable state; [restricted application recovery](../operations/application-recovery.md) remains a root-owned security decision. OPS-01/02/04 acceptance remains open; this package does not activate remote archive, production retention or cutover.

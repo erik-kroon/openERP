@@ -1,0 +1,176 @@
+{
+  "stage": "owner-tax-follow-up-source-handoff",
+  "scope": "Owned source and static checks only. No native type checking, SQL execution, migration, runtime/browser/concurrency or financial validation.",
+  "sourceSha256": {
+    "packages/contracts/src/closing-providers.ts": "b5792887fab18180b785d28bcbcbd6acedb1e0060e4808eaed6b23347a39870a",
+    "packages/contracts/src/closing.ts": "f3297aa787f064747ad7241a7c49d905bbb2f77c5871310c898f289d5ddd95cd",
+    "packages/contracts/src/accountant-review.ts": "e8f2c6707804e5cb73537d050ff8d21a9b931bc28c1dae09766733d1854e37f9",
+    "apps/api/migrations/0810-accountant-review-packs.sql": "c89bee6f30f36ca400586aa45e5bab6174963f50de6515076a821efebbd6b08d",
+    "apps/api/migrations/0820-closing-owner-tax-dependencies.sql": "e5970a5b509add70ed22a4118e7d81707647bf5b5bd316536b64dcbb75dff814",
+    "apps/api/CLOSING.md": "ff9e7f4e15819c741070a675f27126beb018ea47cfc9ffb60656b3a3a9cd69a3",
+    "apps/api/ACCOUNTANT-REVIEW.md": "4ed5e23db6e3e812ed776a8661e8149fe02b58f826d370c33b0547cc7544a104",
+    "apps/web/src/components/closing/copy.ts": "49bf3c311ca1f6422424fd3d62c818adac778301b28d3c7422bf1674b65185f3",
+    "apps/web/src/components/closing/review.tsx": "2d066bb5041683ef1d44d0fa6c02c5c183b64e9f686a80f67ff50ffd01e577f9",
+    "apps/web/src/components/accountant-review/copy.ts": "4212df33ddd8b03e39d775820cd413fc1ae346723ee22f38e3570b612e0db86e",
+    "apps/web/src/components/accountant-review/inspector.tsx": "71f416fce1cd2b528d72507c3c1c2ecc0e2b09815bcea88a58241b3a69335e0b",
+    "apps/web/src/components/accountant-review/provider-rows.tsx": "218e640e0e066ec7d5ba4a49907f8c432cea9d23a2acdf1511dc1de4fd0eb0fa",
+    "docs/plans/06-year-end-reports-filing.md": "828cab785a6b967163fe07c0a4189ea8238e2c3771a9ea4ec8870b6a9a9138b7",
+    ".agents/work/accountant-review-handoff.md": "48c4906851e0cc060caf5c243d98d97bb8efc46701a9f7da85cad299d0603f57"
+  },
+  "immutable0800": {
+    "path": "apps/api/migrations/0800-technical-period-closing.sql",
+    "sha256": "38ea720dd52c85433abff0163bc7715a16dc5193eb1d7cf43a07d534b8825372",
+    "matchesReceivedSource": true
+  },
+  "providerSourceSha256": {
+    "apps/api/migrations/0610-owner-register.sql": "5e54e781e33993df5a39a6613b3950b07e72063c136113c7c6e164eba6daee64",
+    "apps/api/migrations/0710-expense-tax-facts.sql": "dc858c17d18ae48b29ede41c6b67a5e854a4ad2f9b63decf6abca8b9e89d2351"
+  },
+  "checks": [
+    {
+      "command": "bun x oxfmt --check packages/contracts/src/closing-providers.ts packages/contracts/src/closing.ts packages/contracts/src/accountant-review.ts apps/api/src/accountant-review.ts apps/web/src/components/closing/copy.ts apps/web/src/components/closing/review.tsx apps/web/src/components/accountant-review/panel.tsx apps/web/src/components/accountant-review/inspector.tsx apps/web/src/components/accountant-review/provider-rows.tsx apps/web/src/components/accountant-review/copy.ts",
+      "exitCode": 0,
+      "output": "Checking formatting...\n\nAll matched files use the correct format.\nFinished in 2ms on 10 files using 8 threads.\n"
+    },
+    {
+      "command": "bun x oxlint packages/contracts/src/closing-providers.ts packages/contracts/src/closing.ts packages/contracts/src/accountant-review.ts apps/api/src/accountant-review.ts apps/web/src/components/closing/copy.ts apps/web/src/components/closing/review.tsx apps/web/src/components/accountant-review/panel.tsx apps/web/src/components/accountant-review/inspector.tsx apps/web/src/components/accountant-review/provider-rows.tsx apps/web/src/components/accountant-review/copy.ts",
+      "exitCode": 0,
+      "output": "Found 0 warnings and 0 errors.\nFinished in 308ms on 10 files with 131 rules using 8 threads.\n"
+    }
+  ],
+  "sourceNotes": {
+    "closingForwardOnly": "0820 replaces closing_basis;0800 bytes unchanged from received source.",
+    "providerDigests": [
+      "owner_period_status.sourceDigest",
+      "expense_tax_dependencies.basisDigest"
+    ],
+    "closingChecks": [
+      "OwnerSourceReview",
+      "ExpenseReviewCurrentness",
+      "ExpenseControlCoverage"
+    ],
+    "historical": "Provider fields optional only for old closing bodies; live basis always includes them. Existing full-basis equality rejects old unexecuted approval bases.",
+    "reviewSections": [
+      "balances",
+      "journal",
+      "evidence",
+      "coverage",
+      "owner_sources",
+      "owner_controls",
+      "expense_tax"
+    ],
+    "providerMaterialization": "Owner identity/current sources/reviews, exact owner_control_body; expense current sources/reviews with expense_tax_assess actual_review. No calculation or contribution.",
+    "remainingGates": [
+      "Root native type checks",
+      "Root SQL review/application of still-unapplied0810 and new0820",
+      "Synthetic command/runtime observations",
+      "Byte/financial lineage checks",
+      "Concurrency/failure/browser gates",
+      "Real-company opening/completeness/tax authority unavailable"
+    ],
+    "followUp": "Known expense sources stay blocked independently of review currentness. Limits precede owner/tax aggregates. Oversized live accountant basis returns noncurrent retained pack; closing basis refuses oversized calls including reopen."
+  },
+  "previousSourceReceipt": {
+    "stage": "owner-tax-provider-source-handoff",
+    "scope": "Owned source and static checks only. No native type checking, SQL execution, migration, runtime/browser/concurrency or financial validation.",
+    "sourceSha256": {
+      "packages/contracts/src/closing-providers.ts": "b5792887fab18180b785d28bcbcbd6acedb1e0060e4808eaed6b23347a39870a",
+      "packages/contracts/src/closing.ts": "f3297aa787f064747ad7241a7c49d905bbb2f77c5871310c898f289d5ddd95cd",
+      "packages/contracts/src/accountant-review.ts": "e8f2c6707804e5cb73537d050ff8d21a9b931bc28c1dae09766733d1854e37f9",
+      "apps/api/migrations/0810-accountant-review-packs.sql": "9e67240ab1f4d2e85b4cb58fa7581fb8cba5495347bcc43931eca5eaf5134bb5",
+      "apps/api/migrations/0820-closing-owner-tax-dependencies.sql": "7ca1a3d1b9579fa9443f5d84dba7a12966365dffb9ae83b08149c91b9c01b11e",
+      "apps/api/CLOSING.md": "b574825e21c78458c2d2d4fec9727834f7b9f6699b7cc98feeabc2680a33b49b",
+      "apps/api/ACCOUNTANT-REVIEW.md": "3bc696b74318eccb76d3d9ba67faad102250262c8c8a8ebaec9e3a6cf54bc4a2",
+      "apps/web/src/components/closing/copy.ts": "701c0435f01c4f7a3f6cda66999c097fdbdfd596f5d0c344c211cbe733071a32",
+      "apps/web/src/components/closing/review.tsx": "835e08dc46b32ea5eec4a192d323984421d72051d0f2f89a399eb97bcc2e2060",
+      "apps/web/src/components/accountant-review/copy.ts": "4212df33ddd8b03e39d775820cd413fc1ae346723ee22f38e3570b612e0db86e",
+      "apps/web/src/components/accountant-review/inspector.tsx": "71f416fce1cd2b528d72507c3c1c2ecc0e2b09815bcea88a58241b3a69335e0b",
+      "apps/web/src/components/accountant-review/provider-rows.tsx": "218e640e0e066ec7d5ba4a49907f8c432cea9d23a2acdf1511dc1de4fd0eb0fa",
+      "docs/plans/06-year-end-reports-filing.md": "53044e06c37e257b57413d0b8d97f44261267330f6ef582398dd6e9545e56394",
+      ".agents/work/accountant-review-handoff.md": "fd6cbac452c5a0811b969a6b5cf07ced119b62857fd71af72a65120672cc1723"
+    },
+    "immutable0800": {
+      "path": "apps/api/migrations/0800-technical-period-closing.sql",
+      "sha256": "38ea720dd52c85433abff0163bc7715a16dc5193eb1d7cf43a07d534b8825372",
+      "matchesReceivedSource": true
+    },
+    "providerSourceSha256": {
+      "apps/api/migrations/0610-owner-register.sql": "5e54e781e33993df5a39a6613b3950b07e72063c136113c7c6e164eba6daee64",
+      "apps/api/migrations/0710-expense-tax-facts.sql": "dc858c17d18ae48b29ede41c6b67a5e854a4ad2f9b63decf6abca8b9e89d2351"
+    },
+    "checks": [
+      {
+        "command": "bun x oxfmt --check packages/contracts/src/closing-providers.ts packages/contracts/src/closing.ts packages/contracts/src/accountant-review.ts apps/api/src/accountant-review.ts apps/web/src/components/closing/copy.ts apps/web/src/components/closing/review.tsx apps/web/src/components/accountant-review/panel.tsx apps/web/src/components/accountant-review/inspector.tsx apps/web/src/components/accountant-review/provider-rows.tsx apps/web/src/components/accountant-review/copy.ts",
+        "exitCode": 0,
+        "output": "Checking formatting...\n\nAll matched files use the correct format.\nFinished in 2ms on 10 files using 8 threads.\n"
+      },
+      {
+        "command": "bun x oxlint packages/contracts/src/closing-providers.ts packages/contracts/src/closing.ts packages/contracts/src/accountant-review.ts apps/api/src/accountant-review.ts apps/web/src/components/closing/copy.ts apps/web/src/components/closing/review.tsx apps/web/src/components/accountant-review/panel.tsx apps/web/src/components/accountant-review/inspector.tsx apps/web/src/components/accountant-review/provider-rows.tsx apps/web/src/components/accountant-review/copy.ts",
+        "exitCode": 0,
+        "output": "Found 0 warnings and 0 errors.\nFinished in 193ms on 10 files with 131 rules using 8 threads.\n"
+      }
+    ],
+    "sourceNotes": {
+      "closingForwardOnly": "0820 replaces closing_basis;0800 bytes unchanged from received source.",
+      "providerDigests": [
+        "owner_period_status.sourceDigest",
+        "expense_tax_dependencies.basisDigest"
+      ],
+      "closingChecks": [
+        "OwnerSourceReview",
+        "ExpenseSourceReview"
+      ],
+      "historical": "Provider fields optional only for old closing bodies; live basis always includes them. Existing full-basis equality rejects old unexecuted approval bases.",
+      "reviewSections": [
+        "balances",
+        "journal",
+        "evidence",
+        "coverage",
+        "owner_sources",
+        "owner_controls",
+        "expense_tax"
+      ],
+      "providerMaterialization": "Owner identity/current sources/reviews, exact owner_control_body; expense current sources/reviews with expense_tax_assess actual_review. No calculation or contribution.",
+      "remainingGates": [
+        "Root native type checks",
+        "Root SQL review/application of still-unapplied0810 and new0820",
+        "Synthetic command/runtime observations",
+        "Byte/financial lineage checks",
+        "Concurrency/failure/browser gates",
+        "Real-company opening/completeness/tax authority unavailable"
+      ]
+    },
+    "previousSourceReceipt": {
+      "scope": "Owned accountant-review source only",
+      "lint": {
+        "command": "bun x oxlint packages/contracts/src/accountant-review.ts apps/api/src/accountant-review.ts apps/web/src/components/accountant-review",
+        "exitCode": 0,
+        "output": "Found 0 warnings and 0 errors."
+      },
+      "format": {
+        "command": "bun x oxfmt --check packages/contracts/src/accountant-review.ts apps/api/src/accountant-review.ts apps/web/src/components/accountant-review apps/api/ACCOUNTANT-REVIEW.md",
+        "exitCode": 0,
+        "output": "Checking formatting...\n\nAll matched files use the correct format.\nFinished in 134ms on 6 files using 8 threads.\n"
+      },
+      "notPerformed": [
+        "Type checking / shared integration",
+        "SQL migration or database/runtime execution",
+        "Browser/download interaction",
+        "Tests/fixtures",
+        "Concurrency or crash/recovery validation",
+        "Statutory/accountant/provider verification"
+      ],
+      "files": {
+        "packages/contracts/src/accountant-review.ts": "8608ded8839b29635497f95e1e5ad6bd70d41f22e56a3dd8013f586d18bb13fe",
+        "apps/api/src/accountant-review.ts": "585f6d61fe1290f6ffdcf98fa0a794a0d724463ed42478affcb61badb7e35a96",
+        "apps/api/migrations/0810-accountant-review-packs.sql": "a568e71bd79ef37aee7097329c09efc5a258a82a3ee4b9f122f9b79d3845742f",
+        "apps/api/ACCOUNTANT-REVIEW.md": "703cc7f1b9e894adb5ac68eedcc1e60e594853fc4ca0a5292bec375978f31eb2",
+        "apps/web/src/components/accountant-review/copy.ts": "3f9bf7c3d1e9cbae4246a30f4b2c79d53b327adee267730e8de88a5f9dada770",
+        "apps/web/src/components/accountant-review/inspector.tsx": "d25fe8cd19e5cb10a5f4de634471766d3994a1fea83205051f97e7d1f77795ab",
+        "apps/web/src/components/accountant-review/panel.tsx": "416fa6b0a9aa6140cb135b0d7475a9755758c029f76ffb5af76bc9a7e58c7d7b",
+        "docs/plans/06-year-end-reports-filing.md": "0e75e662d2b27aed5119d52bf3be8499048f2b72ad0b8d5697583c5b6114528d",
+        ".agents/work/accountant-review-handoff.md": "f48b6912df36681b0bd5b66e651a9f15c6304ab10a438b8b5b7c25be26a49245"
+      }
+    }
+  }
+}

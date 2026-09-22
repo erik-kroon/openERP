@@ -41,6 +41,8 @@ The first UI must display evidence, exact lines, approval scope and receipt stat
 
 ## Evidence and checkpoints
 
+A [local SEB statement preview](plans/seb-statement-preview.md) is available at `/intake` before authentication or book selection. It reads an owner-selected file in browser memory and exposes exact movements, running-balance checks and a review export. The observed owner-supplied export agrees with its independent controls. This is source inspection only: no retained bank-statement import, document archive, journal posting or P2 company-readiness claim is established. See the packet for verification and current limitations.
+
 Follow the repository's existing formatter, lint, type and build commands without weakening rules. Write approved E2E scenarios before their implementation; do not add unit tests afterward. Retain repeatable verification artifacts as described in [verification](verification.md).
 
 At each exit, update this document with requirement/scenario IDs, code commit, environment, results and unresolved limitations. Keep receipts/logs/screenshots at stable linked locations when they prove a material claim. Apply the actual implementation task's authorization to commits, publication and external actions; a planning document does not grant additional authority.

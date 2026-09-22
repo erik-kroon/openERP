@@ -1,0 +1,85 @@
+{
+  "surface": "Owned local Worker /api/mcp; authenticated ping only",
+  "scope": "Manual non-mutating observations, not a test suite or full acceptance",
+  "observations": [
+    {
+      "stage": "before",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":701,\"method\":\"no_such_method\",\"method\":\"ping\"}",
+      "status": 200,
+      "result": {
+        "jsonrpc": "2.0",
+        "id": 701,
+        "result": {}
+      }
+    },
+    {
+      "stage": "after",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":701,\"method\":\"no_such_method\",\"method\":\"ping\"}",
+      "status": 400,
+      "result": {
+        "message": "JSON object keys must be unique."
+      }
+    },
+    {
+      "stage": "after",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":702,\"method\":\"ping\",\"m\\u0065thod\":\"ping\"}",
+      "status": 400,
+      "result": {
+        "message": "JSON object keys must be unique."
+      }
+    },
+    {
+      "stage": "after",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":703,\"method\":\"ping\",\"params\":{\"records\":[{\"value\":1,\"value\":2}]}}",
+      "status": 400,
+      "result": {
+        "message": "JSON object keys must be unique."
+      }
+    },
+    {
+      "stage": "after",
+      "body": "{\"jsonrpc\": \"2.0\", \"id\": 704, \"method\": \"ping\", \"params\": {\"records\": [{\"value\": \"{\\\"value\\\":1,\\\"value\\\":2}\"}, {\"value\": \"quotes \\\" and backslashes \\\\ and braces {}\"}]}}",
+      "status": 200,
+      "result": {
+        "jsonrpc": "2.0",
+        "id": 704,
+        "result": {}
+      }
+    },
+    {
+      "stage": "after",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":705,\"method\":\"ping\",\"params\":{\"value\":[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[0]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]}}",
+      "status": 400,
+      "result": {
+        "message": "JSON nesting exceeds the 128-container limit."
+      }
+    },
+    {
+      "stage": "after",
+      "bodyHex": "7b226a736f6e727063223a22322e30222c226964223a3730362c226d6574686f64223a2270696e67222c22706172616d73223a7b2276616c7565223a22ff227d7d",
+      "status": 400,
+      "result": {
+        "message": "Request body must use valid UTF-8 JSON."
+      }
+    },
+    {
+      "stage": "after",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":707,\"method\":\"ping\",\"params\":{\"value\":[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[0]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]}}",
+      "status": 200,
+      "result": {
+        "jsonrpc": "2.0",
+        "id": 707,
+        "result": {}
+      }
+    }
+  ],
+  "limits": [
+    "No mutation dispatched",
+    "No new tests or fixtures",
+    "Earlier /mcp call was an incorrect path, not a proof result"
+  ],
+  "apiTypecheck": {
+    "command": "bun run --cwd apps/api check-types",
+    "exitCode": 0
+  }
+}

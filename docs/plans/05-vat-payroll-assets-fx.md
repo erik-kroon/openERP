@@ -26,6 +26,12 @@ Required controls compare independently expected box values, tax-control account
 
 If a mapping changes after filing, identify affected snapshots by mapping/fact lineage, produce a new artifact and an amendment case, preserve the old submitted bytes and external receipt, and require the appropriate approval. A current return cannot claim completeness while a mandatory source/check is unavailable. The UI shows each box, its rules, contributing/excluded items, unresolved treatments and filing state separately.
 
+### Expense review foundation (implemented source; runtime not verified)
+
+The VAT-01 expense foundation is implemented in forward migration0710, the `expense-tax` contract/API module and a domain-local review UI. It retains separate immutable source observations and operator review facts, exact source/review discrepancies, and immutable contribution/exclusion snapshots. Every actual-company contribution remains excluded: no production legal profile, effective interval or rounding policy is activated. Only the explicit `synthetic-expense-tax` version1 profile may demonstrate caller-supplied rational rates and deduction fractions with exact-division refusal.
+
+Snapshots include all bounded retained components, including unknown, stale, foreign, unsupported and outside-interval exclusions. They are accountant review artifacts, not VAT returns, ledger-control reconciliations or source-completeness certificates. See [implementation and integration boundaries](../../apps/api/EXPENSE-TAX.md) and the [pre-implementation risk/acceptance record](../../apps/api/EXPENSE-TAX-RISKS.md). Shared composition and native/runtime validation remain root-owned; source presence does not complete VAT-01's legal or proof gates. Existing asset schedules are unchanged.
+
 ## Payroll and declarations
 
 ### Model
@@ -68,21 +74,21 @@ The FX review UI shows source amount/currency, carrying amount, selected rate/so
 
 ## Delivery packets
 
-| ID | Deliverable | Depends on | Acceptance |
-| --- | --- | --- | --- |
-| VAT-01 | Dated treatment/profile matrix and source-backed TaxFacts with explicit unsupported cases. | FND-03, COM-02 | E-02/E-13: classification/date/deduction facts required; no guessed net/tax split. |
-| VAT-02 | Return snapshots, contribution/exclusion lineage and independent box controls. | VAT-01, IMP-05 | E-15/E-16: reverse-charge basis retained, settlement excluded deliberately, unavailable check blocks. |
-| VAT-03 | Tax-account source events, matching, settlement and control rollforward. | VAT-02, IMP-04 | E-05/E-13: feed/import overlap cannot recognize twice; tax-account movement not taxable by default. |
-| VAT-04 | Return amendment/version impact and approved artifact handoff. | VAT-03, END-03 | E-16/E-19: original filing retained; exact new snapshot/artifact and honest external state. |
-| PAY-01 | Employment/work/obligation revisions, privacy scope and dated rule inputs. | FND-02, FND-03, IMP-01 | E-01/E-06: sensitive access and historical input stability; required facts cannot default. |
-| PAY-02 | Exact calculation profiles for the declared payroll case matrix. | PAY-01, PST-01 | E-02/E-13: independent gross/net/liability outcomes including irregular schedules and boundary dates. |
-| PAY-03 | Frozen run approval/posting, payment instructions and register-aware correction. | PAY-02, PST-03, COR-02 | E-08/E-09: no partial payroll posting; old run unaffected by current employee changes. |
-| PAY-04 | AGI/KU artifact profiles, individual/control checks, amendment and delivery state. | PAY-03, OPS-03 | E-16/E-18/E-19: exact schema and semantic identity; exported, paid and accepted remain distinct. |
-| AST-01 | Evidence-backed asset/deferral register and imported opening carrying basis. | IMP-02, FND-03 | E-12/E-14: prior depreciation/recognition retained and control basis explained. |
-| AST-02 | Complete current schedule/occurrence slice and atomic posting/linkage with future amendments. | AST-01, PST-03 | E-08/E-13: installments conserve basis; no orphan posting or lost posted occurrence. |
-| AST-03 | Disposal, impairment/estimate profiles, reversals and register controls. | AST-02, COR-02 | E-09/E-13: exact gain/loss/basis and immutable historical schedule. |
-| FX-01 | Versioned rate sources, exact conversion and missing-rate policy. | FND-03, IMP-01 | E-02/E-06: exact directional conversion; missing/stale rate blocks affected treatment. |
-| FX-02 | Cross-currency recognition/partial settlement and fee/realized-FX conservation. | FX-01, COM-03 | E-13: original/payment/book currencies and final residual reconcile independently. |
-| FX-03 | Period remeasurement/reversal and valuation report controls. | FX-02, END-03 | E-07/E-14: stable selected item set, no duplicate valuation and correct later settlement. |
+| ID     | Deliverable                                                                                   | Depends on             | Acceptance                                                                                            |
+| ------ | --------------------------------------------------------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------- |
+| VAT-01 | Dated treatment/profile matrix and source-backed TaxFacts with explicit unsupported cases.    | FND-03, COM-02         | E-02/E-13: classification/date/deduction facts required; no guessed net/tax split.                    |
+| VAT-02 | Return snapshots, contribution/exclusion lineage and independent box controls.                | VAT-01, IMP-05         | E-15/E-16: reverse-charge basis retained, settlement excluded deliberately, unavailable check blocks. |
+| VAT-03 | Tax-account source events, matching, settlement and control rollforward.                      | VAT-02, IMP-04         | E-05/E-13: feed/import overlap cannot recognize twice; tax-account movement not taxable by default.   |
+| VAT-04 | Return amendment/version impact and approved artifact handoff.                                | VAT-03, END-03         | E-16/E-19: original filing retained; exact new snapshot/artifact and honest external state.           |
+| PAY-01 | Employment/work/obligation revisions, privacy scope and dated rule inputs.                    | FND-02, FND-03, IMP-01 | E-01/E-06: sensitive access and historical input stability; required facts cannot default.            |
+| PAY-02 | Exact calculation profiles for the declared payroll case matrix.                              | PAY-01, PST-01         | E-02/E-13: independent gross/net/liability outcomes including irregular schedules and boundary dates. |
+| PAY-03 | Frozen run approval/posting, payment instructions and register-aware correction.              | PAY-02, PST-03, COR-02 | E-08/E-09: no partial payroll posting; old run unaffected by current employee changes.                |
+| PAY-04 | AGI/KU artifact profiles, individual/control checks, amendment and delivery state.            | PAY-03, OPS-03         | E-16/E-18/E-19: exact schema and semantic identity; exported, paid and accepted remain distinct.      |
+| AST-01 | Evidence-backed asset/deferral register and imported opening carrying basis.                  | IMP-02, FND-03         | E-12/E-14: prior depreciation/recognition retained and control basis explained.                       |
+| AST-02 | Complete current schedule/occurrence slice and atomic posting/linkage with future amendments. | AST-01, PST-03         | E-08/E-13: installments conserve basis; no orphan posting or lost posted occurrence.                  |
+| AST-03 | Disposal, impairment/estimate profiles, reversals and register controls.                      | AST-02, COR-02         | E-09/E-13: exact gain/loss/basis and immutable historical schedule.                                   |
+| FX-01  | Versioned rate sources, exact conversion and missing-rate policy.                             | FND-03, IMP-01         | E-02/E-06: exact directional conversion; missing/stale rate blocks affected treatment.                |
+| FX-02  | Cross-currency recognition/partial settlement and fee/realized-FX conservation.               | FX-01, COM-03          | E-13: original/payment/book currencies and final residual reconcile independently.                    |
+| FX-03  | Period remeasurement/reversal and valuation report controls.                                  | FX-02, END-03          | E-07/E-14: stable selected item set, no duplicate valuation and correct later settlement.             |
 
 Payroll, assets and VAT can progress independently after their foundations; none is falsely dependent on a finished module merely because they share P5. Full-company close depends on whichever rows its reviewed inventory requires. Every activated profile needs both functional proof and current domain/source review; a synthetic schedule or example tax calculation cannot serve as blanket parity.

@@ -67,3 +67,13 @@ If the provider accepts and the response is lost, first recover by correlation/a
 | END-07 | Obligation, signature, submission and provider outcome/amendment workflow. | END-06, OPS-03, FND-02 | E-19: lost response and pending signature remain honest; exact bytes and actual acknowledgment bound. |
 
 END-03 can proceed early and serves VAT/FX without waiting for year-end. END-01 is a technical gate; END-02 adds every applicable VAT/payroll/asset/FX/control completion before company close. Export families progress independently once their own semantic model exists. No cycle is created by requiring every statutory family before a simple trial balance.
+
+
+## Bounded first-year review package
+
+The END-03 source slice in [ACCOUNTANT-REVIEW.md](../../apps/api/ACCOUNTANT-REVIEW.md) adds retained accountant-review packs over current internal trial-balance snapshots. It materializes exact balances, voucher/receipt/evidence lineage, original retained evidence and separate missing/excluded coverage. JSON and CSV bytes are retained with hashes; old packs survive later changes and reopen.
+
+This is synthetic review tooling, not company activation or full END-03 acceptance. Opening explanations remain unverified, owner-funding and expense-tax source/review controls are captured while legal treatment and complete openings remain unverified, and first year never implies zero opening or zero VAT. No Visma compatibility, result transfer, annual-report/SIE/iXBRL generation or filing is claimed. Root integration, native/runtime observations and the concurrency/browser/independent-correctness gates remain separate from source delivery.
+
+
+Forward0820 binds the released owner-register and expense-review provider digests into technical closing. Unresolved/unlinked owner sources, missing/stale expense reviews and unsupported/unreconciled known expense sources block new technical close proposals; unpaid linked claims do not. Historical0800 approvals/certificates keep their original meanings and bytes and cannot silently acquire the new dependency coverage.

@@ -1,0 +1,50 @@
+{
+  "kind": "bounded source-check evidence; not runtime or financial acceptance",
+  "recordedAt": "2026-09-22T18:47:30.510303+00:00",
+  "files": {
+    "packages/contracts/src/owner-register.ts": "0138cd9f967c3256b267e7eac5c2aafc583a6d61f74577ebada55f9f87600485",
+    "apps/api/src/owner-register.ts": "f52b207ce047ddcfb867bca6681f2be60d4309026abeb0d25b2a5a27b8d81beb",
+    "apps/api/migrations/0610-owner-register.sql": "d8a1d7498b6f09eaeb92776be8d19ecb9829481be35faaec5c97713dcf4a9fc9",
+    "apps/api/OWNER-REGISTER.md": "a465a11672b2f284c88a91a6d700f4238ace28b2a7e3acc57e68a478384745aa",
+    "apps/web/src/components/owner-register/owner-register-panel.tsx": "f7b517aea4a488876a89d14a3f374d7c1af0aa92217840c4b38e47a140bfd5e4",
+    ".agents/work/owner-register-handoff.md": "58a00ce43bcf027e3aeeba2fef1bc522f19c9faf578fd5f06b3906909fcb5849"
+  },
+  "sourceReview": {
+    "publicFunctionCount": 18,
+    "capabilityCount": 16,
+    "dispatchNamesMatch": true,
+    "privateFunctionCount": 15,
+    "protectedSearchPathCount": 33,
+    "functionCount": 33,
+    "originalCommerceMigrationUnchanged": true,
+    "unitArithmetic": "SQL numeric / decimal strings; JS Number used only for currency scale",
+    "nativeSqlValidation": "not run",
+    "paginationCollation": "owners_list_owners and owners_list_records use COLLATE \"C\" for predicate, inner order and outer aggregate order; root source-review correction, not runtime verified"
+  },
+  "checks": [
+    {
+      "command": "bun x --no-install oxfmt --write packages/contracts/src/owner-register.ts apps/api/src/owner-register.ts apps/web/src/components/owner-register/owner-register-panel.tsx apps/api/OWNER-REGISTER.md",
+      "exitCode": 0,
+      "output": "Finished in 169ms on 4 files using 8 threads.\n"
+    },
+    {
+      "command": "bun x --no-install oxlint packages/contracts/src/owner-register.ts apps/api/src/owner-register.ts apps/web/src/components/owner-register/owner-register-panel.tsx",
+      "exitCode": 0,
+      "output": "Found 0 warnings and 0 errors.\nFinished in 185ms on 3 files with 131 rules using 8 threads.\n"
+    },
+    {
+      "command": "bun x --no-install oxfmt --write apps/api/OWNER-REGISTER.md",
+      "exitCode": 0,
+      "output": "Finished in 241ms on 1 files using 8 threads.\n"
+    }
+  ],
+  "notRun": [
+    "migration or SQL parser/database validation",
+    "full typecheck",
+    "build",
+    "browser/E2E",
+    "concurrency and recovery proof",
+    "deployment"
+  ],
+  "rootReportedDraftContractError": "Effect4 Schema.isBetween now uses { minimum: 0, maximum: 6 }; no rerun claimed"
+}
