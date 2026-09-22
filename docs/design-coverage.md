@@ -18,7 +18,8 @@ Each requirement has one owner below. This map records documentation coverage, n
 | Rules, model interpretation, mandates and MCP           | [Operations](operations.md#governed-rules-and-agent-context)                                                                         | E-06/E-11/E-17           |
 | Provider credentials, webhooks and delivery             | [Provider boundaries](operations.md#provider-and-delivery-boundaries)                                                                | E-17/E-19/E-20           |
 | Archive, restore and single-writer cutover              | [Operations plan](plans/07-restore-operations-cutover.md), [migration ADR](adr/0003-native-accounting-and-migration.md)              | D-06/D-07; E-21          |
-| Review UI, scoped caches and accessibility              | [Operations](operations.md), [verification](verification-strategy.md#human-journeys)                                                 | E-03/E-06/E-11           |
+| Customer layout, routes, audience views and migration    | [Frontend plan](frontend.md), [workspace decision](adr/0006-customer-workspaces.md)                                                    | FE-01–FE-06; R-11        |
+| Review UI, scoped caches and accessibility              | [Operations](operations.md), [frontend acceptance](frontend.md#acceptance-and-verification), [verification](verification-strategy.md#human-journeys) | E-03/E-06/E-11           |
 | Independent expectations, races, upgrades and artifacts | [Scenarios](verification.md), [strategy](verification-strategy.md), [failure cases](plans/09-acceptance.md#additional-failure-cases) | E-01–E-21                |
 | Official rules, formats and unresolved facts            | [Sources](sources/README.md), [external inputs](plans/10-external-inputs.md)                                                         | D-01–D-10                |
 

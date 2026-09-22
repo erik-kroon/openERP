@@ -21,14 +21,9 @@
       "source": "docs/plans/00-shared-contracts.md",
       "sourceLine": 81,
       "deliverable": "Trusted human/agent admission, permission catalogue and effective restricted-role grants.",
-      "dependsOn": [
-        "FND-01"
-      ],
+      "dependsOn": ["FND-01"],
       "acceptance": "E-01/E-11: real identity boundaries, revocation races and database bypass attempts.",
-      "scenarioIds": [
-        "E-01",
-        "E-11"
-      ],
+      "scenarioIds": ["E-01", "E-11"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -37,9 +32,7 @@
       "source": "docs/plans/00-shared-contracts.md",
       "sourceLine": 82,
       "deliverable": "Versioned company/rule/source inventory and mandatory-check coverage contract.",
-      "dependsOn": [
-        "FND-01"
-      ],
+      "dependsOn": ["FND-01"],
       "acceptance": "Missing fact/check remains explicit; every activation cites evidence and scope.",
       "scenarioIds": [],
       "status": "planned_scope_not_implementation_status"
@@ -50,13 +43,9 @@
       "source": "docs/plans/00-shared-contracts.md",
       "sourceLine": 83,
       "deliverable": "Fixed-revision runtime/E2E evidence harness and release manifest using existing suite.",
-      "dependsOn": [
-        "FND-01"
-      ],
+      "dependsOn": ["FND-01"],
       "acceptance": "E-20: real Worker/PostgreSQL/Bun paths, cleanup and populated upgrade evidence; test changes within authorization.",
-      "scenarioIds": [
-        "E-20"
-      ],
+      "scenarioIds": ["E-20"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -65,15 +54,9 @@
       "source": "docs/plans/01-posting-approval-receipts.md",
       "sourceLine": 75,
       "deliverable": "Complete sealed plan/admission and immutable evidence inspection over current journal APIs.",
-      "dependsOn": [
-        "FND-01",
-        "FND-03"
-      ],
+      "dependsOn": ["FND-01", "FND-03"],
       "acceptance": "E-02/E-03: exact large values; duplicate-key/Unicode admission; no ledger mutation during review.",
-      "scenarioIds": [
-        "E-02",
-        "E-03"
-      ],
+      "scenarioIds": ["E-02", "E-03"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -82,15 +65,9 @@
       "source": "docs/plans/01-posting-approval-receipts.md",
       "sourceLine": 76,
       "deliverable": "Trusted approval/revocation and permission-expiry lifecycle with review UI.",
-      "dependsOn": [
-        "PST-01",
-        "FND-02"
-      ],
+      "dependsOn": ["PST-01", "FND-02"],
       "acceptance": "E-01/E-06: agent refusal, revoked/expired approval and permission races leave no effect.",
-      "scenarioIds": [
-        "E-01",
-        "E-06"
-      ],
+      "scenarioIds": ["E-01", "E-06"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -99,16 +76,9 @@
       "source": "docs/plans/01-posting-approval-receipts.md",
       "sourceLine": 77,
       "deliverable": "Atomic posting, durable receipt, uncertainty recovery and reload discovery.",
-      "dependsOn": [
-        "PST-02",
-        "FND-04"
-      ],
+      "dependsOn": ["PST-02", "FND-04"],
       "acceptance": "E-04/E-08/E-10: competing first calls, lost response, injected rollback and complete-prefix reads.",
-      "scenarioIds": [
-        "E-04",
-        "E-08",
-        "E-10"
-      ],
+      "scenarioIds": ["E-04", "E-08", "E-10"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -117,13 +87,9 @@
       "source": "docs/plans/01-posting-approval-receipts.md",
       "sourceLine": 78,
       "deliverable": "Shared REST/MCP/browser behavior and precise errors/capability metadata.",
-      "dependsOn": [
-        "PST-03"
-      ],
+      "dependsOn": ["PST-03"],
       "acceptance": "E-11: equivalent effects and receipt identity; browser recovery and accessibility evidence.",
-      "scenarioIds": [
-        "E-11"
-      ],
+      "scenarioIds": ["E-11"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -132,14 +98,9 @@
       "source": "docs/plans/01-posting-approval-receipts.md",
       "sourceLine": 79,
       "deliverable": "Transactional outbox and bounded durable runs; recurring preparation and explicitly scoped mandate consumption where enabled.",
-      "dependsOn": [
-        "PST-03"
-      ],
+      "dependsOn": ["PST-03"],
       "acceptance": "E-08/E-17: committed posting survives delivery failure; applied/remaining groups distinct; changed facts/revocation block future consumption and concurrent limits cannot be exceeded.",
-      "scenarioIds": [
-        "E-08",
-        "E-17"
-      ],
+      "scenarioIds": ["E-08", "E-17"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -148,13 +109,9 @@
       "source": "docs/plans/02-corrections.md",
       "sourceLine": 50,
       "deliverable": "Complete and integrate existing bundle prepare/review/approve/execute path and constituent isolation.",
-      "dependsOn": [
-        "PST-03"
-      ],
+      "dependsOn": ["PST-03"],
       "acceptance": "E-09: invalid replacement and midpoint failure leave neither posting; exact original retained.",
-      "scenarioIds": [
-        "E-09"
-      ],
+      "scenarioIds": ["E-09"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -163,15 +120,9 @@
       "source": "docs/plans/02-corrections.md",
       "sourceLine": 51,
       "deliverable": "Stable correction-chain identity, reversal-only conflict handling and receipt discovery.",
-      "dependsOn": [
-        "COR-01"
-      ],
+      "dependsOn": ["COR-01"],
       "acceptance": "E-04/E-05/E-09: concurrent alternatives produce one permitted correction; reload recovers aggregate.",
-      "scenarioIds": [
-        "E-04",
-        "E-05",
-        "E-09"
-      ],
+      "scenarioIds": ["E-04", "E-05", "E-09"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -180,16 +131,9 @@
       "source": "docs/plans/02-corrections.md",
       "sourceLine": 52,
       "deliverable": "Register-specific correction contributions and capacity reconciliation.",
-      "dependsOn": [
-        "COR-02",
-        "COM-03",
-        "AST-02"
-      ],
+      "dependsOn": ["COR-02", "COM-03", "AST-02"],
       "acceptance": "E-09/E-13: invoice, payment and schedule assertions agree with corrected GL.",
-      "scenarioIds": [
-        "E-09",
-        "E-13"
-      ],
+      "scenarioIds": ["E-09", "E-13"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -198,16 +142,9 @@
       "source": "docs/plans/02-corrections.md",
       "sourceLine": 53,
       "deliverable": "Closed-period policy, downstream impact cases and all-channel correction workbench.",
-      "dependsOn": [
-        "COR-02",
-        "END-01"
-      ],
+      "dependsOn": ["COR-02", "END-01"],
       "acceptance": "E-06/E-11/E-16: no silent reopening/backdating; old report preserved and affected readiness stale.",
-      "scenarioIds": [
-        "E-06",
-        "E-11",
-        "E-16"
-      ],
+      "scenarioIds": ["E-06", "E-11", "E-16"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -216,15 +153,9 @@
       "source": "docs/plans/03-imports-matching-reconciliation.md",
       "sourceLine": 88,
       "deliverable": "Content/occurrence split, source inventory and immutable parsing/diagnostics.",
-      "dependsOn": [
-        "FND-03",
-        "PST-01"
-      ],
+      "dependsOn": ["FND-03", "PST-01"],
       "acceptance": "E-05/E-12: duplicate bytes preserve distinct occurrences; malformed/unsupported records remain visible.",
-      "scenarioIds": [
-        "E-05",
-        "E-12"
-      ],
+      "scenarioIds": ["E-05", "E-12"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -233,14 +164,9 @@
       "source": "docs/plans/03-imports-matching-reconciliation.md",
       "sourceLine": 89,
       "deliverable": "Actual-source profile, loss-preserving SIE/provider mapping and reviewed import plan.",
-      "dependsOn": [
-        "IMP-01"
-      ],
+      "dependsOn": ["IMP-01"],
       "acceptance": "E-12/E-18: supplied history, original references, corrections/dimensions and match basis preserved.",
-      "scenarioIds": [
-        "E-12",
-        "E-18"
-      ],
+      "scenarioIds": ["E-12", "E-18"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -249,17 +175,9 @@
       "source": "docs/plans/03-imports-matching-reconciliation.md",
       "sourceLine": 90,
       "deliverable": "Bounded durable chunk admission, lease fencing, receipts, pause/resume and compensation.",
-      "dependsOn": [
-        "IMP-02",
-        "PST-05",
-        "COR-02"
-      ],
+      "dependsOn": ["IMP-02", "PST-05", "COR-02"],
       "acceptance": "E-04/E-08/E-17: worker death/reclaim produces one effect; partial period cannot claim complete.",
-      "scenarioIds": [
-        "E-04",
-        "E-08",
-        "E-17"
-      ],
+      "scenarioIds": ["E-04", "E-08", "E-17"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -268,15 +186,9 @@
       "source": "docs/plans/03-imports-matching-reconciliation.md",
       "sourceLine": 91,
       "deliverable": "Reviewed many-to-many bank capacity, unmatch reversal and ambiguity UI over current draft.",
-      "dependsOn": [
-        "IMP-01",
-        "PST-02"
-      ],
+      "dependsOn": ["IMP-01", "PST-02"],
       "acceptance": "E-11/E-13: concurrent allocations cannot overconsume; relationship reversal restores capacity once.",
-      "scenarioIds": [
-        "E-11",
-        "E-13"
-      ],
+      "scenarioIds": ["E-11", "E-13"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -285,15 +197,9 @@
       "source": "docs/plans/03-imports-matching-reconciliation.md",
       "sourceLine": 92,
       "deliverable": "Inventory-bound reconciliation, independent controls and stale signoff behavior.",
-      "dependsOn": [
-        "IMP-03",
-        "IMP-04"
-      ],
+      "dependsOn": ["IMP-03", "IMP-04"],
       "acceptance": "E-07/E-15: missing account and offsetting missing rows block a zero-difference signoff.",
-      "scenarioIds": [
-        "E-07",
-        "E-15"
-      ],
+      "scenarioIds": ["E-07", "E-15"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -302,16 +208,9 @@
       "source": "docs/plans/03-imports-matching-reconciliation.md",
       "sourceLine": 93,
       "deliverable": "Actual-company historical/opening comparison and retained match/filing handoff.",
-      "dependsOn": [
-        "IMP-05",
-        "COM-06"
-      ],
+      "dependsOn": ["IMP-05", "COM-06"],
       "acceptance": "E-12/E-14/E-16: agreed history scope and all supplied relationships/control totals accounted for.",
-      "scenarioIds": [
-        "E-12",
-        "E-14",
-        "E-16"
-      ],
+      "scenarioIds": ["E-12", "E-14", "E-16"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -320,15 +219,9 @@
       "source": "docs/plans/04-invoices-payments-registers.md",
       "sourceLine": 68,
       "deliverable": "Party and invoice revisions, evidence, exact line/totals model and duplicate diagnostics.",
-      "dependsOn": [
-        "IMP-01",
-        "FND-03"
-      ],
+      "dependsOn": ["IMP-01", "FND-03"],
       "acceptance": "E-02/E-12: per-line discount/charge survives; source amount mismatch blocks; supplier identities remain distinct.",
-      "scenarioIds": [
-        "E-02",
-        "E-12"
-      ],
+      "scenarioIds": ["E-02", "E-12"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -337,16 +230,9 @@
       "source": "docs/plans/04-invoices-payments-registers.md",
       "sourceLine": 69,
       "deliverable": "Issue/acceptance and accrual/cash-method recognition profiles with transactional numbers and links.",
-      "dependsOn": [
-        "COM-01",
-        "PST-03"
-      ],
+      "dependsOn": ["COM-01", "PST-03"],
       "acceptance": "E-03/E-05/E-14: issue replay once; imported/year-end recognition not repeated on payment.",
-      "scenarioIds": [
-        "E-03",
-        "E-05",
-        "E-14"
-      ],
+      "scenarioIds": ["E-03", "E-05", "E-14"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -355,14 +241,9 @@
       "source": "docs/plans/04-invoices-payments-registers.md",
       "sourceLine": 70,
       "deliverable": "Payment events, partial/many-to-many allocations, residual capacity and refunds.",
-      "dependsOn": [
-        "COM-02"
-      ],
+      "dependsOn": ["COM-02"],
       "acceptance": "E-08/E-13: concurrent allocation cannot overconsume; payment/register/voucher effects roll back together.",
-      "scenarioIds": [
-        "E-08",
-        "E-13"
-      ],
+      "scenarioIds": ["E-08", "E-13"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -371,15 +252,9 @@
       "source": "docs/plans/04-invoices-payments-registers.md",
       "sourceLine": 71,
       "deliverable": "Credits, owner-paid expenses/reimbursements and domain-specific corrections.",
-      "dependsOn": [
-        "COM-03",
-        "COR-02"
-      ],
+      "dependsOn": ["COM-03", "COR-02"],
       "acceptance": "E-09/E-13: immutable issued facts, exact net effects and no phantom paid/owed register state.",
-      "scenarioIds": [
-        "E-09",
-        "E-13"
-      ],
+      "scenarioIds": ["E-09", "E-13"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -388,15 +263,9 @@
       "source": "docs/plans/04-invoices-payments-registers.md",
       "sourceLine": 72,
       "deliverable": "Invoice/payment artifacts and separately authorized external delivery.",
-      "dependsOn": [
-        "COM-02",
-        "OPS-03"
-      ],
+      "dependsOn": ["COM-02", "OPS-03"],
       "acceptance": "E-08/E-19: delivery retry does not duplicate issue; exported versus provider-paid state remains distinct.",
-      "scenarioIds": [
-        "E-08",
-        "E-19"
-      ],
+      "scenarioIds": ["E-08", "E-19"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -405,15 +274,9 @@
       "source": "docs/plans/04-invoices-payments-registers.md",
       "sourceLine": 73,
       "deliverable": "Historical open-item admission, ageing and register↔GL control snapshots/workbench.",
-      "dependsOn": [
-        "COM-03",
-        "IMP-02"
-      ],
+      "dependsOn": ["COM-03", "IMP-02"],
       "acceptance": "E-12/E-15: source balances, retained matches and recognition links reconcile; unknown chronology blocks derived postings.",
-      "scenarioIds": [
-        "E-12",
-        "E-15"
-      ],
+      "scenarioIds": ["E-12", "E-15"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -422,15 +285,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 73,
       "deliverable": "Dated treatment/profile matrix and source-backed TaxFacts with explicit unsupported cases.",
-      "dependsOn": [
-        "FND-03",
-        "COM-02"
-      ],
+      "dependsOn": ["FND-03", "COM-02"],
       "acceptance": "E-02/E-13: classification/date/deduction facts required; no guessed net/tax split.",
-      "scenarioIds": [
-        "E-02",
-        "E-13"
-      ],
+      "scenarioIds": ["E-02", "E-13"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -439,15 +296,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 74,
       "deliverable": "Return snapshots, contribution/exclusion lineage and independent box controls.",
-      "dependsOn": [
-        "VAT-01",
-        "IMP-05"
-      ],
+      "dependsOn": ["VAT-01", "IMP-05"],
       "acceptance": "E-15/E-16: reverse-charge basis retained, settlement excluded deliberately, unavailable check blocks.",
-      "scenarioIds": [
-        "E-15",
-        "E-16"
-      ],
+      "scenarioIds": ["E-15", "E-16"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -456,15 +307,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 75,
       "deliverable": "Tax-account source events, matching, settlement and control rollforward.",
-      "dependsOn": [
-        "VAT-02",
-        "IMP-04"
-      ],
+      "dependsOn": ["VAT-02", "IMP-04"],
       "acceptance": "E-05/E-13: feed/import overlap cannot recognize twice; tax-account movement not taxable by default.",
-      "scenarioIds": [
-        "E-05",
-        "E-13"
-      ],
+      "scenarioIds": ["E-05", "E-13"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -473,15 +318,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 76,
       "deliverable": "Return amendment/version impact and approved artifact handoff.",
-      "dependsOn": [
-        "VAT-03",
-        "END-03"
-      ],
+      "dependsOn": ["VAT-03", "END-03"],
       "acceptance": "E-16/E-19: original filing retained; exact new snapshot/artifact and honest external state.",
-      "scenarioIds": [
-        "E-16",
-        "E-19"
-      ],
+      "scenarioIds": ["E-16", "E-19"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -490,16 +329,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 77,
       "deliverable": "Employment/work/obligation revisions, privacy scope and dated rule inputs.",
-      "dependsOn": [
-        "FND-02",
-        "FND-03",
-        "IMP-01"
-      ],
+      "dependsOn": ["FND-02", "FND-03", "IMP-01"],
       "acceptance": "E-01/E-06: sensitive access and historical input stability; required facts cannot default.",
-      "scenarioIds": [
-        "E-01",
-        "E-06"
-      ],
+      "scenarioIds": ["E-01", "E-06"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -508,15 +340,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 78,
       "deliverable": "Exact calculation profiles for the declared payroll case matrix.",
-      "dependsOn": [
-        "PAY-01",
-        "PST-01"
-      ],
+      "dependsOn": ["PAY-01", "PST-01"],
       "acceptance": "E-02/E-13: independent gross/net/liability outcomes including irregular schedules and boundary dates.",
-      "scenarioIds": [
-        "E-02",
-        "E-13"
-      ],
+      "scenarioIds": ["E-02", "E-13"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -525,16 +351,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 79,
       "deliverable": "Frozen run approval/posting, payment instructions and register-aware correction.",
-      "dependsOn": [
-        "PAY-02",
-        "PST-03",
-        "COR-02"
-      ],
+      "dependsOn": ["PAY-02", "PST-03", "COR-02"],
       "acceptance": "E-08/E-09: no partial payroll posting; old run unaffected by current employee changes.",
-      "scenarioIds": [
-        "E-08",
-        "E-09"
-      ],
+      "scenarioIds": ["E-08", "E-09"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -543,16 +362,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 80,
       "deliverable": "AGI/KU artifact profiles, individual/control checks, amendment and delivery state.",
-      "dependsOn": [
-        "PAY-03",
-        "OPS-03"
-      ],
+      "dependsOn": ["PAY-03", "OPS-03"],
       "acceptance": "E-16/E-18/E-19: exact schema and semantic identity; exported, paid and accepted remain distinct.",
-      "scenarioIds": [
-        "E-16",
-        "E-18",
-        "E-19"
-      ],
+      "scenarioIds": ["E-16", "E-18", "E-19"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -561,15 +373,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 81,
       "deliverable": "Evidence-backed asset/deferral register and imported opening carrying basis.",
-      "dependsOn": [
-        "IMP-02",
-        "FND-03"
-      ],
+      "dependsOn": ["IMP-02", "FND-03"],
       "acceptance": "E-12/E-14: prior depreciation/recognition retained and control basis explained.",
-      "scenarioIds": [
-        "E-12",
-        "E-14"
-      ],
+      "scenarioIds": ["E-12", "E-14"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -578,15 +384,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 82,
       "deliverable": "Complete current schedule/occurrence slice and atomic posting/linkage with future amendments.",
-      "dependsOn": [
-        "AST-01",
-        "PST-03"
-      ],
+      "dependsOn": ["AST-01", "PST-03"],
       "acceptance": "E-08/E-13: installments conserve basis; no orphan posting or lost posted occurrence.",
-      "scenarioIds": [
-        "E-08",
-        "E-13"
-      ],
+      "scenarioIds": ["E-08", "E-13"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -595,15 +395,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 83,
       "deliverable": "Disposal, impairment/estimate profiles, reversals and register controls.",
-      "dependsOn": [
-        "AST-02",
-        "COR-02"
-      ],
+      "dependsOn": ["AST-02", "COR-02"],
       "acceptance": "E-09/E-13: exact gain/loss/basis and immutable historical schedule.",
-      "scenarioIds": [
-        "E-09",
-        "E-13"
-      ],
+      "scenarioIds": ["E-09", "E-13"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -612,15 +406,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 84,
       "deliverable": "Versioned rate sources, exact conversion and missing-rate policy.",
-      "dependsOn": [
-        "FND-03",
-        "IMP-01"
-      ],
+      "dependsOn": ["FND-03", "IMP-01"],
       "acceptance": "E-02/E-06: exact directional conversion; missing/stale rate blocks affected treatment.",
-      "scenarioIds": [
-        "E-02",
-        "E-06"
-      ],
+      "scenarioIds": ["E-02", "E-06"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -629,14 +417,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 85,
       "deliverable": "Cross-currency recognition/partial settlement and fee/realized-FX conservation.",
-      "dependsOn": [
-        "FX-01",
-        "COM-03"
-      ],
+      "dependsOn": ["FX-01", "COM-03"],
       "acceptance": "E-13: original/payment/book currencies and final residual reconcile independently.",
-      "scenarioIds": [
-        "E-13"
-      ],
+      "scenarioIds": ["E-13"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -645,15 +428,9 @@
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
       "sourceLine": 86,
       "deliverable": "Period remeasurement/reversal and valuation report controls.",
-      "dependsOn": [
-        "FX-02",
-        "END-03"
-      ],
+      "dependsOn": ["FX-02", "END-03"],
       "acceptance": "E-07/E-14: stable selected item set, no duplicate valuation and correct later settlement.",
-      "scenarioIds": [
-        "E-07",
-        "E-14"
-      ],
+      "scenarioIds": ["E-07", "E-14"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -662,16 +439,9 @@
       "source": "docs/plans/06-year-end-reports-filing.md",
       "sourceLine": 61,
       "deliverable": "Complete technical close/reopen with explicit inventory and domain dependency contracts.",
-      "dependsOn": [
-        "PST-03",
-        "IMP-05",
-        "FND-03"
-      ],
+      "dependsOn": ["PST-03", "IMP-05", "FND-03"],
       "acceptance": "E-07/E-10: close/post race ordered; missing family inventory blocks; certificate states exact technical scope.",
-      "scenarioIds": [
-        "E-07",
-        "E-10"
-      ],
+      "scenarioIds": ["E-07", "E-10"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -680,16 +450,9 @@
       "source": "docs/plans/06-year-end-reports-filing.md",
       "sourceLine": 62,
       "deliverable": "Financial close, result-transfer semantics, opening sets and prior-period impact.",
-      "dependsOn": [
-        "END-01",
-        "COR-02",
-        "COM-06"
-      ],
+      "dependsOn": ["END-01", "COR-02", "COM-06"],
       "acceptance": "E-14/E-16: openings counted once, activity preserved and old snapshots unchanged; applicable domain gates also required.",
-      "scenarioIds": [
-        "E-14",
-        "E-16"
-      ],
+      "scenarioIds": ["E-14", "E-16"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -698,15 +461,9 @@
       "source": "docs/plans/06-year-end-reports-filing.md",
       "sourceLine": 63,
       "deliverable": "Extend current snapshot/explanation engine to explicit opening and source/register coverage.",
-      "dependsOn": [
-        "PST-03",
-        "IMP-01"
-      ],
+      "dependsOn": ["PST-03", "IMP-01"],
       "acceptance": "E-10/E-15: concurrent pagination reconstructs one prefix; excluded/missing contributions remain visible.",
-      "scenarioIds": [
-        "E-10",
-        "E-15"
-      ],
+      "scenarioIds": ["E-10", "E-15"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -715,15 +472,9 @@
       "source": "docs/plans/06-year-end-reports-filing.md",
       "sourceLine": 64,
       "deliverable": "Reviewed tax bridge and exact field lineage with historical mapping impact.",
-      "dependsOn": [
-        "END-02",
-        "VAT-04"
-      ],
+      "dependsOn": ["END-02", "VAT-04"],
       "acceptance": "E-16/E-18: independently expected adjustments/fields and retained prior artifacts.",
-      "scenarioIds": [
-        "E-16",
-        "E-18"
-      ],
+      "scenarioIds": ["E-16", "E-18"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -732,14 +483,9 @@
       "source": "docs/plans/06-year-end-reports-filing.md",
       "sourceLine": 65,
       "deliverable": "Complete selected K2/K3 statement/disclosure/compare/signature model.",
-      "dependsOn": [
-        "END-02",
-        "END-03"
-      ],
+      "dependsOn": ["END-02", "END-03"],
       "acceptance": "E-16: missing disclosure cannot finalize; financial/non-ledger facts and signer scope versioned.",
-      "scenarioIds": [
-        "E-16"
-      ],
+      "scenarioIds": ["E-16"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -748,14 +494,9 @@
       "source": "docs/plans/06-year-end-reports-filing.md",
       "sourceLine": 66,
       "deliverable": "Format-specific generation, pinned validation and portable artifact manifests.",
-      "dependsOn": [
-        "END-03",
-        "IMP-02"
-      ],
+      "dependsOn": ["END-03", "IMP-02"],
       "acceptance": "E-18: roundtrip/semantic negatives for each released format. Tax formats also require END-04; annual formats END-05.",
-      "scenarioIds": [
-        "E-18"
-      ],
+      "scenarioIds": ["E-18"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -764,15 +505,9 @@
       "source": "docs/plans/06-year-end-reports-filing.md",
       "sourceLine": 67,
       "deliverable": "Obligation, signature, submission and provider outcome/amendment workflow.",
-      "dependsOn": [
-        "END-06",
-        "OPS-03",
-        "FND-02"
-      ],
+      "dependsOn": ["END-06", "OPS-03", "FND-02"],
       "acceptance": "E-19: lost response and pending signature remain honest; exact bytes and actual acknowledgment bound.",
-      "scenarioIds": [
-        "E-19"
-      ],
+      "scenarioIds": ["E-19"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -781,14 +516,9 @@
       "source": "docs/plans/07-restore-operations-cutover.md",
       "sourceLine": 70,
       "deliverable": "Complete storage/archive inventory and consistent DB/object/key backup contract over current tooling.",
-      "dependsOn": [
-        "FND-03",
-        "IMP-01"
-      ],
+      "dependsOn": ["FND-03", "IMP-01"],
       "acceptance": "E-21: missing referenced object/required relation fails completeness; original bytes recoverable.",
-      "scenarioIds": [
-        "E-21"
-      ],
+      "scenarioIds": ["E-21"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -797,15 +527,9 @@
       "source": "docs/plans/07-restore-operations-cutover.md",
       "sourceLine": 71,
       "deliverable": "Quarantined full application restore, privilege/configuration reconstruction and measured recovery.",
-      "dependsOn": [
-        "OPS-01",
-        "FND-04"
-      ],
+      "dependsOn": ["OPS-01", "FND-04"],
       "acceptance": "E-20/E-21: read-only app and evidence/report reconstruction; no automatic writer/provider activation.",
-      "scenarioIds": [
-        "E-20",
-        "E-21"
-      ],
+      "scenarioIds": ["E-20", "E-21"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -814,15 +538,9 @@
       "source": "docs/plans/07-restore-operations-cutover.md",
       "sourceLine": 72,
       "deliverable": "Durable delivery/attempt state, bounded leases, fencing and provider-uncertainty recovery.",
-      "dependsOn": [
-        "PST-05"
-      ],
+      "dependsOn": ["PST-05"],
       "acceptance": "E-08/E-17/E-19: active worker not reclaimed; retry converges; unknown outcome does not resubmit blindly.",
-      "scenarioIds": [
-        "E-08",
-        "E-17",
-        "E-19"
-      ],
+      "scenarioIds": ["E-08", "E-17", "E-19"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -831,15 +549,9 @@
       "source": "docs/plans/07-restore-operations-cutover.md",
       "sourceLine": 73,
       "deliverable": "Release manifest, populated upgrades, observability, credential/permission and incident runbooks.",
-      "dependsOn": [
-        "FND-04",
-        "OPS-01"
-      ],
+      "dependsOn": ["FND-04", "OPS-01"],
       "acceptance": "E-01/E-20: exact release proof, safe upgrade/forward recovery and redacted useful diagnostics.",
-      "scenarioIds": [
-        "E-01",
-        "E-20"
-      ],
+      "scenarioIds": ["E-01", "E-20"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -848,15 +560,9 @@
       "source": "docs/plans/07-restore-operations-cutover.md",
       "sourceLine": 74,
       "deliverable": "Read-only actual-source cutover preflight and enforceable freeze rehearsal.",
-      "dependsOn": [
-        "IMP-06",
-        "OPS-02",
-        "OPS-03"
-      ],
+      "dependsOn": ["IMP-06", "OPS-02", "OPS-03"],
       "acceptance": "E-21: actual old-client write/egress refusal; final delta and pending external work accounted for.",
-      "scenarioIds": [
-        "E-21"
-      ],
+      "scenarioIds": ["E-21"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -865,14 +571,9 @@
       "source": "docs/plans/07-restore-operations-cutover.md",
       "sourceLine": 75,
       "deliverable": "Reviewed promotion/rollback-boundary protocol and actual company cutover.",
-      "dependsOn": [
-        "OPS-05",
-        "OPS-04"
-      ],
+      "dependsOn": ["OPS-05", "OPS-04"],
       "acceptance": "E-21: one writer, fresh epoch, preserved receipts and independently reconciled post-switch controls; applicable company gates and explicit authority required.",
-      "scenarioIds": [
-        "E-21"
-      ],
+      "scenarioIds": ["E-21"],
       "status": "planned_scope_not_implementation_status"
     },
     {
@@ -881,9 +582,7 @@
       "source": "docs/plans/07-restore-operations-cutover.md",
       "sourceLine": 76,
       "deliverable": "Recurring restore/retention/recovery drills and operational acceptance review.",
-      "dependsOn": [
-        "OPS-06"
-      ],
+      "dependsOn": ["OPS-06"],
       "acceptance": "Measured accepted recovery objectives and coverage remain current; failures open incidents rather than silent green status.",
       "scenarioIds": [],
       "status": "planned_scope_not_implementation_status"
@@ -948,58 +647,37 @@
     {
       "consumer": "COM-03 cross-currency allocation",
       "gate": "FX-02; same-currency payment machinery can be completed first.",
-      "referencedPackets": [
-        "COM-03",
-        "FX-02"
-      ]
+      "referencedPackets": ["COM-03", "FX-02"]
     },
     {
       "consumer": "COR-03 register-aware correction",
       "gate": "Each supported register's own posting/capacity contract; plain-journal correction does not wait for them.",
-      "referencedPackets": [
-        "COR-03"
-      ]
+      "referencedPackets": ["COR-03"]
     },
     {
       "consumer": "END-02 company financial close",
       "gate": "IMP-06, relevant COM controls, and every applicable VAT/PAY/AST/FX/control profile.",
-      "referencedPackets": [
-        "END-02",
-        "IMP-06"
-      ]
+      "referencedPackets": ["END-02", "IMP-06"]
     },
     {
       "consumer": "END-06 tax-file branch",
       "gate": "END-04; the SIE branch can proceed from its own IMP-02/END-03 inputs.",
-      "referencedPackets": [
-        "END-06",
-        "END-04",
-        "IMP-02",
-        "END-03"
-      ]
+      "referencedPackets": ["END-06", "END-04", "IMP-02", "END-03"]
     },
     {
       "consumer": "END-06 annual-report branch",
       "gate": "END-05; a complete selected framework and disclosures are required.",
-      "referencedPackets": [
-        "END-06",
-        "END-05"
-      ]
+      "referencedPackets": ["END-06", "END-05"]
     },
     {
       "consumer": "END-07 provider family",
       "gate": "Its exact validated artifact profile, D-10 provider contract and required signature/authority; provider families are independent.",
-      "referencedPackets": [
-        "END-07"
-      ]
+      "referencedPackets": ["END-07"]
     },
     {
       "consumer": "OPS-06 production cutover",
       "gate": "All applicable company gates and required fulfillment evidence. END-07 connected delivery is required only if that connector is part of the selected operating arrangement.",
-      "referencedPackets": [
-        "OPS-06",
-        "END-07"
-      ]
+      "referencedPackets": ["OPS-06", "END-07"]
     }
   ],
   "conditionalGateMeaning": "Applicability gates are not added to the engineering DAG. Runtime sequencing and branch applicability remain as specified in 08-delivery.md."

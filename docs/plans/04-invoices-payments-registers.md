@@ -10,16 +10,16 @@ The scope includes customers/suppliers, evidence-backed sales/supplier invoices,
 
 ## Owned model
 
-| Record | Required fields / invariants |
-| --- | --- |
-| Party revision | Stable party ID; legal identity, addresses, tax identifiers, contact/payment details, evidence and effective dates. Invoice snapshots retain the revision used. Changed bank details invalidate dependent payment approval. |
-| Invoice revision | Direction, party revision, original/our legal document number, source occurrence/evidence, document/supply/due dates, original currency/scale, line quantities/prices/discounts/charges/treatments, exact totals and rule versions. |
-| Issue/acceptance event | Immutable invoice revision and identifier, actor, time and validation/authority basis. Native sales number allocated transactionally; supplier number remains its original source fact. |
-| Open item | Invoice/credit/prepayment identity, commercial currency amount and due basis; recognition state and links separate from settlement state. |
-| Recognition link | Event/purpose/occurrence and voucher lines carrying initial/year-end/subsequent recognition, with accounting method revision. Never infer recognition solely from invoice status. |
-| Payment event | Independent provider/bank/source identity, gross cash/principal/fee/FX facts, currency/date evidence, voucher reference and uncertainty state. |
-| Allocation | Payment/credit/open-item leg, exact amount in relevant currencies, conversion basis, ordinal, source/destination capacities and reversal link. |
-| Register control | Immutable snapshot of open items, recognition/allocation effects, GL cutoff and reconciliation differences. |
+| Record                 | Required fields / invariants                                                                                                                                                                                                        |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Party revision         | Stable party ID; legal identity, addresses, tax identifiers, contact/payment details, evidence and effective dates. Invoice snapshots retain the revision used. Changed bank details invalidate dependent payment approval.         |
+| Invoice revision       | Direction, party revision, original/our legal document number, source occurrence/evidence, document/supply/due dates, original currency/scale, line quantities/prices/discounts/charges/treatments, exact totals and rule versions. |
+| Issue/acceptance event | Immutable invoice revision and identifier, actor, time and validation/authority basis. Native sales number allocated transactionally; supplier number remains its original source fact.                                             |
+| Open item              | Invoice/credit/prepayment identity, commercial currency amount and due basis; recognition state and links separate from settlement state.                                                                                           |
+| Recognition link       | Event/purpose/occurrence and voucher lines carrying initial/year-end/subsequent recognition, with accounting method revision. Never infer recognition solely from invoice status.                                                   |
+| Payment event          | Independent provider/bank/source identity, gross cash/principal/fee/FX facts, currency/date evidence, voucher reference and uncertainty state.                                                                                      |
+| Allocation             | Payment/credit/open-item leg, exact amount in relevant currencies, conversion basis, ordinal, source/destination capacities and reversal link.                                                                                      |
+| Register control       | Immutable snapshot of open items, recognition/allocation effects, GL cutoff and reconciliation differences.                                                                                                                         |
 
 Supplier invoice-number duplicate detection is scoped to the identified supplier and entity with source context. It can flag ambiguity; it must not destroy distinct legitimate documents or merge different suppliers. Once issued/accepted, economic document content is immutable; revisions of a draft are editable until sealed, then supersede rather than mutate a reviewed revision.
 
@@ -27,13 +27,13 @@ Supplier invoice-number duplicate detection is scoped to the identified supplier
 
 Calculate quantity × unit price, discounts, charges, taxable basis and tax using exact decimals and a named rounding policy. Store source amounts and calculated amounts separately with a reconciliation result. A discrepancy is reviewed, not hidden in a balancing plug. Shipping/fees and per-line discounts participate in the same amount model used by the document, ledger proposal, tax facts and report.
 
-| Profile / event | Planned accounting behavior |
-| --- | --- |
-| Accrual invoice | On the reviewed recognition event, recognize receivable/payable and revenue/expense/asset/tax under the activated treatment. Payment settles the open item without re-recognizing the same supply. |
-| Cash-method invoice | Retain the commercial open item; recognize only at the profile's supported trigger. At year-end, explicitly recognize eligible unpaid items. Later payment links to and settles that existing recognition. |
-| Historical imported invoice | Retain source asserted state and known recognition/payment links. Missing chronology remains unknown; do not synthesize dates or double recognize. |
-| Advance / deposit | Separate liability/asset/open item and applicable tax timing under a reviewed treatment; not ordinary invoice recognition by default. |
-| Owner-paid expense | Recognize cost/asset/tax and liability to owner; company reimbursement settles the liability. Evidence ties the two events without counting expense twice. |
+| Profile / event             | Planned accounting behavior                                                                                                                                                                                |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Accrual invoice             | On the reviewed recognition event, recognize receivable/payable and revenue/expense/asset/tax under the activated treatment. Payment settles the open item without re-recognizing the same supply.         |
+| Cash-method invoice         | Retain the commercial open item; recognize only at the profile's supported trigger. At year-end, explicitly recognize eligible unpaid items. Later payment links to and settles that existing recognition. |
+| Historical imported invoice | Retain source asserted state and known recognition/payment links. Missing chronology remains unknown; do not synthesize dates or double recognize.                                                         |
+| Advance / deposit           | Separate liability/asset/open item and applicable tax timing under a reviewed treatment; not ordinary invoice recognition by default.                                                                      |
+| Owner-paid expense          | Recognize cost/asset/tax and liability to owner; company reimbursement settles the liability. Evidence ties the two events without counting expense twice.                                                 |
 
 No profile is selected from a bank amount, turnover guess or convenience. Cash-method timing, credit allocation, tax deductibility and other legal rules are activated through the rule/profile gate. Unsupported mixed/industry treatments block that invoice's recognition while allowing evidence retention and review.
 
@@ -63,13 +63,13 @@ Payment review shows payee changes, all allocation legs, unapplied remainder, fe
 
 ## Delivery packets
 
-| ID | Deliverable | Depends on | Acceptance |
-| --- | --- | --- | --- |
-| COM-01 | Party and invoice revisions, evidence, exact line/totals model and duplicate diagnostics. | IMP-01, FND-03 | E-02/E-12: per-line discount/charge survives; source amount mismatch blocks; supplier identities remain distinct. |
-| COM-02 | Issue/acceptance and accrual/cash-method recognition profiles with transactional numbers and links. | COM-01, PST-03 | E-03/E-05/E-14: issue replay once; imported/year-end recognition not repeated on payment. |
-| COM-03 | Payment events, partial/many-to-many allocations, residual capacity and refunds. | COM-02 | E-08/E-13: concurrent allocation cannot overconsume; payment/register/voucher effects roll back together. |
-| COM-04 | Credits, owner-paid expenses/reimbursements and domain-specific corrections. | COM-03, COR-02 | E-09/E-13: immutable issued facts, exact net effects and no phantom paid/owed register state. |
-| COM-05 | Invoice/payment artifacts and separately authorized external delivery. | COM-02, OPS-03 | E-08/E-19: delivery retry does not duplicate issue; exported versus provider-paid state remains distinct. |
-| COM-06 | Historical open-item admission, ageing and register↔GL control snapshots/workbench. | COM-03, IMP-02 | E-12/E-15: source balances, retained matches and recognition links reconcile; unknown chronology blocks derived postings. |
+| ID     | Deliverable                                                                                         | Depends on     | Acceptance                                                                                                                |
+| ------ | --------------------------------------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| COM-01 | Party and invoice revisions, evidence, exact line/totals model and duplicate diagnostics.           | IMP-01, FND-03 | E-02/E-12: per-line discount/charge survives; source amount mismatch blocks; supplier identities remain distinct.         |
+| COM-02 | Issue/acceptance and accrual/cash-method recognition profiles with transactional numbers and links. | COM-01, PST-03 | E-03/E-05/E-14: issue replay once; imported/year-end recognition not repeated on payment.                                 |
+| COM-03 | Payment events, partial/many-to-many allocations, residual capacity and refunds.                    | COM-02         | E-08/E-13: concurrent allocation cannot overconsume; payment/register/voucher effects roll back together.                 |
+| COM-04 | Credits, owner-paid expenses/reimbursements and domain-specific corrections.                        | COM-03, COR-02 | E-09/E-13: immutable issued facts, exact net effects and no phantom paid/owed register state.                             |
+| COM-05 | Invoice/payment artifacts and separately authorized external delivery.                              | COM-02, OPS-03 | E-08/E-19: delivery retry does not duplicate issue; exported versus provider-paid state remains distinct.                 |
+| COM-06 | Historical open-item admission, ageing and register↔GL control snapshots/workbench.                 | COM-03, IMP-02 | E-12/E-15: source balances, retained matches and recognition links reconcile; unknown chronology blocks derived postings. |
 
 COM-03 first supports same-currency conservation. Cross-currency acceptance additionally requires FX-02; the invoice/payment APIs expose unsupported-currency blockers until then. COM-06 can reconcile historical controls before connected delivery is available. Company release requires whichever branches its inventory actually contains.

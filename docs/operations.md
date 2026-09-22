@@ -24,6 +24,8 @@ Errors name affected resources, missing/changed facts, retryability and a suppor
 
 ## Human workbench
 
+The [customer frontend plan](frontend.md) owns the workspace layouts, scoped routes, audience starting views and migration from the current all-sections page. Its [acceptance scenarios](frontend.md#acceptance-and-verification) apply the review and recovery requirements below to customer journeys.
+
 Show the selected scope, missing evidence, exceptions, eligible approvals and completed work. Review joins original evidence, accepted/conflicting facts and exact financial/tax effects. Show assumptions, dependency changes and approval scope. Group equivalent cases while exposing exceptions.
 
 Human and agent views use the same sealed plan. Query keys include entity/book and revision/snapshot/filter scope. Preserve drafts on failure, recover durable work after reload, and display financial success only after a receipt. Keep posted, reconciled, prepared, signed and accepted distinct.

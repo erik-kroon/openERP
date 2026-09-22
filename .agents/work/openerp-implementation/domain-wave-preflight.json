@@ -1,5 +1,5 @@
 {
-  "status": "source-review-in-progress",
+  "status": "locally-applied-with-bounded-observations",
   "contractTypes": {
     "exitCode": 0,
     "command": "bun run --cwd packages/contracts check-types"
@@ -113,9 +113,9 @@
       "sha256": "38ea720dd52c85433abff0163bc7715a16dc5193eb1d7cf43a07d534b8825372"
     }
   ],
-  "betterAuth0900Applied": false,
+  "betterAuth0900Applied": true,
   "posting0310Sha256": "d8e0b4b5fefe3752db81402d27bcc000fe48a834dcbeda8ed39fa4f92208daec",
-  "newWaveMigrationsApplied": false,
+  "newWaveMigrationsApplied": true,
   "sourceIntakeReview": {
     "review": "source-only",
     "checks": [
@@ -157,10 +157,57 @@
     "apiTypesExitCode": 0,
     "boundedLintExitCode": 0
   },
-  "pendingClosingHook": "0820 with year-end owner",
+  "pendingClosingHook": "0820 released/reviewed; unsupported known expense sources block close",
   "ownerCorrectionIntegration": {
     "file": "0890-owner-correction-impact.sql",
     "sha256": "537ec54ceb827645777d1788953c1aa6661138ac232f0ce2be1f969408913859",
     "status": "source reviewed; not applied"
+  },
+  "finalStaticChecks": {
+    "types": 0,
+    "lint": 0,
+    "format": 0,
+    "webAndApiDryRunBuild": 0,
+    "testsRun": false,
+    "deployed": false
+  },
+  "reviewedPendingMigrationHashes": {
+    "0310-saved-posting-requests.sql": "d8e0b4b5fefe3752db81402d27bcc000fe48a834dcbeda8ed39fa4f92208daec",
+    "0410-correction-impact-workbench.sql": "17d09cbd78cf8230b1ed5ebbe1b4b403d0248c9c397033ef9a08d1a5095d5981",
+    "0510-source-intake.sql": "af448df45946719d89e4e23f7a53d5b4ab0b81de43a50c4d953abb3cb873f43d",
+    "0610-owner-register.sql": "64128afc85cc1a50132b78f5c05227eb351ae565f3fd49baa2c6ba69552c00b4",
+    "0710-expense-tax-facts.sql": "dc858c17d18ae48b29ede41c6b67a5e854a4ad2f9b63decf6abca8b9e89d2351",
+    "0810-accountant-review-packs.sql": "c89bee6f30f36ca400586aa45e5bab6174963f50de6515076a821efebbd6b08d",
+    "0820-closing-owner-tax-dependencies.sql": "e5970a5b509add70ed22a4118e7d81707647bf5b5bd316536b64dcbb75dff814",
+    "0890-owner-correction-impact.sql": "537ec54ceb827645777d1788953c1aa6661138ac232f0ce2be1f969408913859",
+    "0900-better-auth.sql": "5244483c2bdaebf99244914b134d0a52e405939e98794980acd0f2986bb1075b"
+  },
+  "migrationApplication": {
+    "target": "openerp_development@127.0.0.1:55472",
+    "initialExitCode": 1,
+    "initialApplied": [
+      "0310-saved-posting-requests.sql",
+      "0410-correction-impact-workbench.sql",
+      "0510-source-intake.sql"
+    ],
+    "initialFailure": "0610: PL/pgSQL IF required parenthesized CASE expressions; transaction rolled back",
+    "unappliedFileCorrection": "Parenthesized two CASE expressions in0610; applied files unchanged",
+    "resumeExitCode": 0,
+    "postApplyInventory": {
+      "appliedFileCount": 34,
+      "allChecksumsMatch": true,
+      "ledgerSequencesUnchanged": true
+    },
+    "reviewedHashes": {
+      "0310-saved-posting-requests.sql": "d8e0b4b5fefe3752db81402d27bcc000fe48a834dcbeda8ed39fa4f92208daec",
+      "0410-correction-impact-workbench.sql": "17d09cbd78cf8230b1ed5ebbe1b4b403d0248c9c397033ef9a08d1a5095d5981",
+      "0510-source-intake.sql": "af448df45946719d89e4e23f7a53d5b4ab0b81de43a50c4d953abb3cb873f43d",
+      "0610-owner-register.sql": "64128afc85cc1a50132b78f5c05227eb351ae565f3fd49baa2c6ba69552c00b4",
+      "0710-expense-tax-facts.sql": "dc858c17d18ae48b29ede41c6b67a5e854a4ad2f9b63decf6abca8b9e89d2351",
+      "0810-accountant-review-packs.sql": "c89bee6f30f36ca400586aa45e5bab6174963f50de6515076a821efebbd6b08d",
+      "0820-closing-owner-tax-dependencies.sql": "e5970a5b509add70ed22a4118e7d81707647bf5b5bd316536b64dcbb75dff814",
+      "0890-owner-correction-impact.sql": "537ec54ceb827645777d1788953c1aa6661138ac232f0ce2be1f969408913859",
+      "0900-better-auth.sql": "5244483c2bdaebf99244914b134d0a52e405939e98794980acd0f2986bb1075b"
+    }
   }
 }

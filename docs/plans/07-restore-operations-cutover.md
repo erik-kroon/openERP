@@ -65,15 +65,15 @@ The runbook covers unavailable database, uncertain commit, corrupted/missing obj
 
 ## Delivery packets
 
-| ID | Deliverable | Depends on | Acceptance |
-| --- | --- | --- | --- |
-| OPS-01 | Complete storage/archive inventory and consistent DB/object/key backup contract over current tooling. | FND-03, IMP-01 | E-21: missing referenced object/required relation fails completeness; original bytes recoverable. |
-| OPS-02 | Quarantined full application restore, privilege/configuration reconstruction and measured recovery. | OPS-01, FND-04 | E-20/E-21: read-only app and evidence/report reconstruction; no automatic writer/provider activation. |
-| OPS-03 | Durable delivery/attempt state, bounded leases, fencing and provider-uncertainty recovery. | PST-05 | E-08/E-17/E-19: active worker not reclaimed; retry converges; unknown outcome does not resubmit blindly. |
-| OPS-04 | Release manifest, populated upgrades, observability, credential/permission and incident runbooks. | FND-04, OPS-01 | E-01/E-20: exact release proof, safe upgrade/forward recovery and redacted useful diagnostics. |
-| OPS-05 | Read-only actual-source cutover preflight and enforceable freeze rehearsal. | IMP-06, OPS-02, OPS-03 | E-21: actual old-client write/egress refusal; final delta and pending external work accounted for. |
-| OPS-06 | Reviewed promotion/rollback-boundary protocol and actual company cutover. | OPS-05, OPS-04 | E-21: one writer, fresh epoch, preserved receipts and independently reconciled post-switch controls; applicable company gates and explicit authority required. |
-| OPS-07 | Recurring restore/retention/recovery drills and operational acceptance review. | OPS-06 | Measured accepted recovery objectives and coverage remain current; failures open incidents rather than silent green status. |
+| ID     | Deliverable                                                                                           | Depends on             | Acceptance                                                                                                                                                     |
+| ------ | ----------------------------------------------------------------------------------------------------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| OPS-01 | Complete storage/archive inventory and consistent DB/object/key backup contract over current tooling. | FND-03, IMP-01         | E-21: missing referenced object/required relation fails completeness; original bytes recoverable.                                                              |
+| OPS-02 | Quarantined full application restore, privilege/configuration reconstruction and measured recovery.   | OPS-01, FND-04         | E-20/E-21: read-only app and evidence/report reconstruction; no automatic writer/provider activation.                                                          |
+| OPS-03 | Durable delivery/attempt state, bounded leases, fencing and provider-uncertainty recovery.            | PST-05                 | E-08/E-17/E-19: active worker not reclaimed; retry converges; unknown outcome does not resubmit blindly.                                                       |
+| OPS-04 | Release manifest, populated upgrades, observability, credential/permission and incident runbooks.     | FND-04, OPS-01         | E-01/E-20: exact release proof, safe upgrade/forward recovery and redacted useful diagnostics.                                                                 |
+| OPS-05 | Read-only actual-source cutover preflight and enforceable freeze rehearsal.                           | IMP-06, OPS-02, OPS-03 | E-21: actual old-client write/egress refusal; final delta and pending external work accounted for.                                                             |
+| OPS-06 | Reviewed promotion/rollback-boundary protocol and actual company cutover.                             | OPS-05, OPS-04         | E-21: one writer, fresh epoch, preserved receipts and independently reconciled post-switch controls; applicable company gates and explicit authority required. |
+| OPS-07 | Recurring restore/retention/recovery drills and operational acceptance review.                        | OPS-06                 | Measured accepted recovery objectives and coverage remain current; failures open incidents rather than silent green status.                                    |
 
 OPS-06's END-07 gate applies when connected statutory fulfillment is required for the selected company release. A company using a reviewed external filing workflow still needs retained exact artifact and acknowledgment evidence; the actual provider connector is then explicitly not applicable to cutover. Do not delay early synthetic backup/restore work on later statutory development.
 

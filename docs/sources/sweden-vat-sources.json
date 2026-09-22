@@ -80,63 +80,43 @@
   "researchFindings": [
     {
       "id": "standard-rate",
-      "sources": [
-        "sfs_vat"
-      ],
+      "sources": ["sfs_vat"],
       "finding": "9 kap. 2 § displays a standard rate of 25 percent, subject to statutory exceptions. Domestic location alone does not establish that rate.",
       "readiness": "Supports candidate scope, not automatic classification."
     },
     {
       "id": "accrual-period",
-      "sources": [
-        "skv_when",
-        "sfs_vat"
-      ],
+      "sources": ["skv_when", "sfs_vat"],
       "finding": "Faktureringsmetoden follows the period in which sale or purchase was or should have been booked. Invoice issue/receipt are usual evidence; advances have separate rules.",
       "readiness": "Requires verified method, period and transaction date basis; exclude advances and special timing."
     },
     {
       "id": "return-boxes",
-      "sources": [
-        "skv_boxes"
-      ],
+      "sources": ["skv_boxes"],
       "finding": "Ordinary domestic taxable sales excluding VAT contribute to 05; 25 percent output VAT to 10; deductible input VAT to 48. General 49 formula sums 10,11,12,30,31,32,60,61,62 minus 48. Only with complete candidate-scope coverage does it reduce to 10 minus 48.",
       "readiness": "Partial contributions are not a complete return. No automatic zero declaration."
     },
     {
       "id": "input-deduction",
-      "sources": [
-        "sfs_vat",
-        "skv_input",
-        "skv_invoice"
-      ],
+      "sources": ["sfs_vat", "skv_input", "skv_invoice"],
       "finding": "Deduction depends on use in taxable activity, applicable restrictions and supporting invoice evidence; VAT printed on an invoice is not by itself entitlement. Foreign VAT is not deductible on the Swedish return.",
       "readiness": "Explicit eligibility evidence required."
     },
     {
       "id": "rounding-gap",
-      "sources": [
-        "skv_returnfile"
-      ],
+      "sources": ["skv_returnfile"],
       "finding": "The file interface requires integer amounts without decimals. The retrieved evidence does not establish the rounding/truncation algorithm, order of aggregation, negative-value behaviour or ledger adjustment.",
       "readiness": "Block final box values/export until resolved; preserve exact underlying amounts."
     },
     {
       "id": "transfer-not-assessment",
-      "sources": [
-        "skv_taxaccount",
-        "skv_taxdeposit",
-        "sfs_taxprocedure"
-      ],
+      "sources": ["skv_taxaccount", "skv_taxdeposit", "sfs_taxprocedure"],
       "finding": "A general tax-account deposit cannot be earmarked for one tax. Tax charges and payments are separately recorded. A bank debit alone does not prove VAT assessment, filing, tax-account credit or settlement of that VAT.",
       "readiness": "Keep transfer and tax-account charge evidence separate; no automatic tax posting."
     },
     {
       "id": "assessment-evidence",
-      "sources": [
-        "sfs_taxprocedure",
-        "skv_corrections"
-      ],
+      "sources": ["sfs_taxprocedure", "skv_corrections"],
       "finding": "Under SFL 53 kap. 2 § a timely, properly submitted return may itself give rise to a deemed decision. A separate paper decision is not always required. Corrections increasing VAT may generate a decision with amount and due date.",
       "readiness": "No inference of submission or decision from a draft or bank transfer."
     }

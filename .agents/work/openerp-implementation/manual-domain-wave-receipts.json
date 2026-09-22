@@ -1,0 +1,1938 @@
+{
+  "database": [
+    {
+      "database": "openerp_development",
+      "port": 55472
+    }
+  ],
+  "allAppliedChecksumMatches": true,
+  "migrationApplication": {
+    "target": "openerp_development@127.0.0.1:55472",
+    "initialExitCode": 1,
+    "initialApplied": [
+      "0310-saved-posting-requests.sql",
+      "0410-correction-impact-workbench.sql",
+      "0510-source-intake.sql"
+    ],
+    "initialFailure": "0610: PL/pgSQL IF required parenthesized CASE expressions; transaction rolled back",
+    "unappliedFileCorrection": "Parenthesized two CASE expressions in0610; applied files unchanged",
+    "resumeExitCode": 0,
+    "postApplyInventory": {
+      "appliedFileCount": 34,
+      "allChecksumsMatch": true,
+      "ledgerSequencesUnchanged": true
+    },
+    "reviewedHashes": {
+      "0310-saved-posting-requests.sql": "d8e0b4b5fefe3752db81402d27bcc000fe48a834dcbeda8ed39fa4f92208daec",
+      "0410-correction-impact-workbench.sql": "17d09cbd78cf8230b1ed5ebbe1b4b403d0248c9c397033ef9a08d1a5095d5981",
+      "0510-source-intake.sql": "af448df45946719d89e4e23f7a53d5b4ab0b81de43a50c4d953abb3cb873f43d",
+      "0610-owner-register.sql": "64128afc85cc1a50132b78f5c05227eb351ae565f3fd49baa2c6ba69552c00b4",
+      "0710-expense-tax-facts.sql": "dc858c17d18ae48b29ede41c6b67a5e854a4ad2f9b63decf6abca8b9e89d2351",
+      "0810-accountant-review-packs.sql": "c89bee6f30f36ca400586aa45e5bab6174963f50de6515076a821efebbd6b08d",
+      "0820-closing-owner-tax-dependencies.sql": "e5970a5b509add70ed22a4118e7d81707647bf5b5bd316536b64dcbb75dff814",
+      "0890-owner-correction-impact.sql": "537ec54ceb827645777d1788953c1aa6661138ac232f0ce2be1f969408913859",
+      "0900-better-auth.sql": "5244483c2bdaebf99244914b134d0a52e405939e98794980acd0f2986bb1075b"
+    }
+  },
+  "readSurfaces": {
+    "/saved-posting-requests": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/saved-posting-requests",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "scope": {
+          "entityId": "entity_synthetic",
+          "bookId": "book_synthetic"
+        },
+        "actorId": "actor_operator",
+        "checkedAt": "2026-09-22T19:24:59.039950Z",
+        "items": [],
+        "next": null
+      }
+    },
+    "/correction-bundles": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/correction-bundles",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "items": [
+          {
+            "id": "correction_77d1478c12be40f5afe7570e1e592835",
+            "originalVoucherId": "voucher_9e27982035254504b81f0af2650b3b96",
+            "createdAt": "2026-09-22T16:19:17.252984Z",
+            "bundleDigest": "sha256:aafc5aeb58636344ab3191960afcd55b7c523bbcd88b8175ce064fa323910b46",
+            "receipt": {
+              "id": "bundlereceipt_a496e04125be407cbf27305c47803db5",
+              "bundleId": "correction_77d1478c12be40f5afe7570e1e592835",
+              "bundleDigest": "sha256:aafc5aeb58636344ab3191960afcd55b7c523bbcd88b8175ce064fa323910b46",
+              "approvalId": "bundleapproval_a67e65dbc3af4f17b59f0284800fd9d0",
+              "originalVoucherId": "voucher_9e27982035254504b81f0af2650b3b96",
+              "reversal": {
+                "id": "receipt_04b8590bc3714b84b5620f232137f666",
+                "changeSetId": "change_e806d571076d4a5fa53228db91cf890d",
+                "voucherId": "voucher_e288832f1f3c40b6be4218c35c564954",
+                "planDigest": "sha256:74fb57cfdd3ff4554815e4c9572767c41c97e0cc0f23c06c5573600be521af6a",
+                "sequence": "4",
+                "voucherNumber": "4",
+                "committedAt": "2026-09-22T16:19:45.231958Z"
+              },
+              "replacement": {
+                "id": "receipt_0f37989b53434220902afff09874ac5d",
+                "changeSetId": "change_4bdc2c70246244b491427e871c935ff9",
+                "voucherId": "voucher_094df4fc29ec427ca0821ff67c980315",
+                "planDigest": "sha256:a0383cf43ebb7c0de3ea1b406086f68a30c7793a01c24817d11af91a64700a20",
+                "sequence": "5",
+                "voucherNumber": "5",
+                "committedAt": "2026-09-22T16:19:45.235164Z"
+              },
+              "committedAt": "2026-09-22T16:19:45.235970Z"
+            }
+          }
+        ],
+        "next": null
+      }
+    },
+    "/source-occurrences": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/source-occurrences",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "items": [],
+        "nextCursor": null
+      }
+    },
+    "/owner-register/owners": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/owner-register/owners",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "items": [],
+        "next": null
+      }
+    },
+    "/owner-register/records": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/owner-register/records",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "items": [],
+        "next": null
+      }
+    },
+    "/expense-tax/sources": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/expense-tax/sources",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "basisDigest": "sha256:1d5900140b4f9553f2dbc1bb33837a0b2b419897a3bde4a4e3eb50820db41319",
+        "observedAt": "2026-09-22T19:24:59.125249Z",
+        "coverageEstablished": false,
+        "sources": []
+      }
+    },
+    "/accountant-review-packs": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "items": [],
+        "next": null
+      }
+    },
+    "/periods/period_synthetic_2026/closing-readiness": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/periods/period_synthetic_2026/closing-readiness",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "scope": {
+          "entityId": "entity_synthetic",
+          "bookId": "book_synthetic"
+        },
+        "periodId": "period_synthetic_2026",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31",
+        "locked": false,
+        "inventory": null,
+        "ownerTaxStatus": {
+          "owners": {
+            "schemaVersion": 1,
+            "coverage": "not_established",
+            "startsOn": "2026-01-01",
+            "endsOn": "2026-12-31",
+            "registeredRecordCount": 0,
+            "unresolvedReviewCount": 0,
+            "unlinkedRecordCount": 0,
+            "sourceDigest": "sha256:2291b726dff9e0f2e0bd020132bbeccf7ef7634e636d3d714650a2bd913d12ef",
+            "blockers": []
+          },
+          "expenseTax": {
+            "basisDigest": "sha256:1d5900140b4f9553f2dbc1bb33837a0b2b419897a3bde4a4e3eb50820db41319",
+            "sourceCount": 0,
+            "missingOrStaleReviewCount": 0,
+            "coverageEstablished": false,
+            "productionProfileApproved": false,
+            "vatReturnReady": false,
+            "postingEnabled": false
+          }
+        },
+        "dependencies": {
+          "periodVersion": "1",
+          "ledgerSequence": "5",
+          "profileVersion": "1",
+          "writerEpoch": "1",
+          "periodDigest": "sha256:300ceec056bd043a2293f3ab9657592dcc477b4f7d4c4b0706b307e9e8090313",
+          "accountsDigest": "sha256:832451157bc5c4b1a6d0563ec45e9ad9442e66624a3379d1c85de8aa62969286",
+          "bankDigest": "sha256:cc73f62335c9c40f197e781b70745ddb14f3f21b0c5751aadeb06ad605e3fcee",
+          "scheduleDigest": "sha256:de3284317810d44e3b7f62ec156fb44e4c4b5b8eeac3a7d9b09ed5523477fe89",
+          "inventoryDigest": "sha256:8d0eb4ce6d122ae824c7d9da60a05fe23047d81e4b172cb1fa5ead38742f9ef0",
+          "ownerSourceDigest": "sha256:2291b726dff9e0f2e0bd020132bbeccf7ef7634e636d3d714650a2bd913d12ef",
+          "expenseTaxBasisDigest": "sha256:1d5900140b4f9553f2dbc1bb33837a0b2b419897a3bde4a4e3eb50820db41319",
+          "reportId": null
+        },
+        "checks": [
+          {
+            "code": "DeclaredBankInventory",
+            "passed": false,
+            "detail": "An operator must explicitly declare expected synthetic bank accounts with evidence. Every expected account needs a retained source, and every observed source must be declared."
+          },
+          {
+            "code": "SyntheticNativeProfile",
+            "passed": true,
+            "detail": "Only the native synthetic profile supports this technical lock."
+          },
+          {
+            "code": "PeriodBoundaries",
+            "passed": true,
+            "detail": "The period must fit its fiscal year and must not overlap another posting period."
+          },
+          {
+            "code": "CurrentTrialBalance",
+            "passed": false,
+            "detail": "A current balanced internal trial balance must cover this exact period. It is not an annual report."
+          },
+          {
+            "code": "RepresentedBankSources",
+            "passed": false,
+            "detail": "Every represented bank source needs a fresh complete reconciliation for this exact period; missing sources are not inferred absent."
+          },
+          {
+            "code": "RegisteredCommerce",
+            "passed": true,
+            "detail": "Registered invoices and allocations must remain valid and conserve exact amounts. Unpaid invoices are allowed; company invoice completeness is not established."
+          },
+          {
+            "code": "OwnerSourceReview",
+            "passed": true,
+            "detail": "Owner sources through period end need resolved reviews and posted-reference coverage. Unpaid linked claims are allowed; this does not certify opening balances or completeness."
+          },
+          {
+            "code": "ExpenseReviewCurrentness",
+            "passed": true,
+            "detail": "Every represented expense source needs a review of its current source digest. Current review is not supported tax treatment, deduction eligibility, ledger reconciliation or company completeness."
+          },
+          {
+            "code": "ExpenseControlCoverage",
+            "passed": true,
+            "detail": "Known expense sources lack supported posting and ledger-reconciliation coverage in this provider version, even with a digest-current review. They block technical close. No represented sources is not proof of company completeness or no tax obligations."
+          },
+          {
+            "code": "RepresentedSchedules",
+            "passed": true,
+            "detail": "Represented due schedule occurrences must be posted and unreversed; schedule inventory and control-account completeness remain unestablished."
+          }
+        ],
+        "technicalCloseAllowed": false,
+        "statutoryReady": false,
+        "statutoryBlockers": [
+          "Actual company profile, accounting method, obligations and complete expected source inventory are not established.",
+          "Tax, receivables/payables, owner balances, assets, payroll, valuation and control-account completeness are not certified.",
+          "Technical locking does not perform year-end transfers, tax calculation, annual reporting, SIE or iXBRL validation.",
+          "Retention, restore, reviewed statutory schemas, signing authority and filing acceptance remain unverified."
+        ]
+      }
+    },
+    "/ledger": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/ledger",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "sequence": "5",
+        "accounts": [
+          {
+            "accountId": "account_bank",
+            "code": "1930",
+            "name": "Synthetic bank account",
+            "debitMinor": "13000",
+            "creditMinor": "13700",
+            "balanceMinor": "-700"
+          },
+          {
+            "accountId": "account_clearing",
+            "code": "2999",
+            "name": "Synthetic clearing account",
+            "debitMinor": "13700",
+            "creditMinor": "13000",
+            "balanceMinor": "700"
+          }
+        ]
+      }
+    }
+  },
+  "savedRequest": {
+    "save": {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/saved-posting-requests",
+      "idempotencyKey": "wave_saved_recovery_20260922",
+      "input": {
+        "operation": "execute_change",
+        "id": "change_4e944cccdf9d4e6480094e56ae22976f",
+        "input": {
+          "planDigest": "sha256:777e7d1b8d34f562086d06fba40bb388c1aeff25aa8c58659f057289132535c9",
+          "version": 1,
+          "approvalId": "approval_9ade40c5dc48466f9db63e479ea6650e"
+        }
+      },
+      "status": 200,
+      "result": {
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "checkedAt": "2026-09-22T19:26:14.498517Z",
+        "request": {
+          "key": "wave_saved_recovery_20260922",
+          "actorId": "actor_automation",
+          "operation": "execute_change",
+          "requestDigest": "sha256:ff25fb69b812ebfa36f01f9a9157c477e00ad9918c397be349c8462e02c1a6d4",
+          "commandKey": "posting_command_7c2531e2f31a41c29cdae3e425a4b0ac",
+          "savedAt": "2026-09-22T19:26:14.496081Z",
+          "state": "unknown"
+        },
+        "command": {
+          "operation": "execute_change",
+          "id": "change_4e944cccdf9d4e6480094e56ae22976f",
+          "input": {
+            "planDigest": "sha256:777e7d1b8d34f562086d06fba40bb388c1aeff25aa8c58659f057289132535c9",
+            "version": 1,
+            "approvalId": "approval_9ade40c5dc48466f9db63e479ea6650e"
+          }
+        },
+        "sameActor": true,
+        "outcome": null
+      }
+    },
+    "run": {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/saved-posting-requests/wave_saved_recovery_20260922/run",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "checkedAt": "2026-09-22T19:26:55.758056Z",
+        "request": {
+          "key": "wave_saved_recovery_20260922",
+          "actorId": "actor_automation",
+          "operation": "execute_change",
+          "requestDigest": "sha256:ff25fb69b812ebfa36f01f9a9157c477e00ad9918c397be349c8462e02c1a6d4",
+          "commandKey": "posting_command_7c2531e2f31a41c29cdae3e425a4b0ac",
+          "savedAt": "2026-09-22T19:26:14.496081Z",
+          "state": "refused"
+        },
+        "command": {
+          "operation": "execute_change",
+          "id": "change_4e944cccdf9d4e6480094e56ae22976f",
+          "input": {
+            "planDigest": "sha256:777e7d1b8d34f562086d06fba40bb388c1aeff25aa8c58659f057289132535c9",
+            "version": 1,
+            "approvalId": "approval_9ade40c5dc48466f9db63e479ea6650e"
+          }
+        },
+        "sameActor": true,
+        "outcome": {
+          "state": "refused",
+          "result": null,
+          "refusal": {
+            "code": "StaleDependency",
+            "message": "The period dependency period_synthetic_2026 changed. Prepare and approve a new plan."
+          },
+          "recordedAt": "2026-09-22T19:26:55.753887Z"
+        }
+      }
+    },
+    "recover": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/saved-posting-requests/wave_saved_recovery_20260922",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "checkedAt": "2026-09-22T19:27:43.180648Z",
+        "request": {
+          "key": "wave_saved_recovery_20260922",
+          "actorId": "actor_automation",
+          "operation": "execute_change",
+          "requestDigest": "sha256:ff25fb69b812ebfa36f01f9a9157c477e00ad9918c397be349c8462e02c1a6d4",
+          "commandKey": "posting_command_7c2531e2f31a41c29cdae3e425a4b0ac",
+          "savedAt": "2026-09-22T19:26:14.496081Z",
+          "state": "refused"
+        },
+        "command": {
+          "operation": "execute_change",
+          "id": "change_4e944cccdf9d4e6480094e56ae22976f",
+          "input": {
+            "planDigest": "sha256:777e7d1b8d34f562086d06fba40bb388c1aeff25aa8c58659f057289132535c9",
+            "version": 1,
+            "approvalId": "approval_9ade40c5dc48466f9db63e479ea6650e"
+          }
+        },
+        "sameActor": true,
+        "outcome": {
+          "state": "refused",
+          "result": null,
+          "refusal": {
+            "code": "StaleDependency",
+            "message": "The period dependency period_synthetic_2026 changed. Prepare and approve a new plan."
+          },
+          "recordedAt": "2026-09-22T19:26:55.753887Z"
+        }
+      }
+    },
+    "replay": {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/saved-posting-requests/wave_saved_recovery_20260922/run",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "checkedAt": "2026-09-22T19:27:43.198035Z",
+        "request": {
+          "key": "wave_saved_recovery_20260922",
+          "actorId": "actor_automation",
+          "operation": "execute_change",
+          "requestDigest": "sha256:ff25fb69b812ebfa36f01f9a9157c477e00ad9918c397be349c8462e02c1a6d4",
+          "commandKey": "posting_command_7c2531e2f31a41c29cdae3e425a4b0ac",
+          "savedAt": "2026-09-22T19:26:14.496081Z",
+          "state": "refused"
+        },
+        "command": {
+          "operation": "execute_change",
+          "id": "change_4e944cccdf9d4e6480094e56ae22976f",
+          "input": {
+            "planDigest": "sha256:777e7d1b8d34f562086d06fba40bb388c1aeff25aa8c58659f057289132535c9",
+            "version": 1,
+            "approvalId": "approval_9ade40c5dc48466f9db63e479ea6650e"
+          }
+        },
+        "sameActor": true,
+        "outcome": {
+          "state": "refused",
+          "result": null,
+          "refusal": {
+            "code": "StaleDependency",
+            "message": "The period dependency period_synthetic_2026 changed. Prepare and approve a new plan."
+          },
+          "recordedAt": "2026-09-22T19:26:55.753887Z"
+        }
+      }
+    },
+    "changedPayload": {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/saved-posting-requests",
+      "idempotencyKey": "wave_saved_recovery_20260922",
+      "input": {
+        "operation": "execute_change",
+        "id": "change_4e944cccdf9d4e6480094e56ae22976f",
+        "input": {
+          "planDigest": "sha256:777e7d1b8d34f562086d06fba40bb388c1aeff25aa8c58659f057289132535c9",
+          "version": 1,
+          "approvalId": "approval_other"
+        }
+      },
+      "status": 409,
+      "result": {
+        "_tag": "AccountingError",
+        "code": "IdempotencyConflict",
+        "message": "This saved request key belongs to another exact command or actor."
+      }
+    },
+    "terminalOutcomeUnchanged": true,
+    "ledger": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/ledger",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "sequence": "1",
+        "accounts": [
+          {
+            "accountId": "account_bank",
+            "code": "1930",
+            "name": "Synthetic bank account",
+            "debitMinor": "2000",
+            "creditMinor": "0",
+            "balanceMinor": "2000"
+          },
+          {
+            "accountId": "account_clearing",
+            "code": "2999",
+            "name": "Synthetic clearing account",
+            "debitMinor": "0",
+            "creditMinor": "2000",
+            "balanceMinor": "-2000"
+          }
+        ]
+      }
+    }
+  },
+  "accountantReview": {
+    "report": {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/report-snapshots",
+      "idempotencyKey": "wave_review_report_20260922",
+      "input": {
+        "kind": "trial_balance_v1",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31"
+      },
+      "status": 200,
+      "result": {
+        "kind": "trial_balance_v1",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31",
+        "id": "report_e615bcb1242c40df96d9adbaa169fffd",
+        "scope": {
+          "entityId": "entity_synthetic",
+          "bookId": "book_synthetic"
+        },
+        "sequence": "5",
+        "currency": "SEK",
+        "createdAt": "2026-09-22T19:26:14.524090Z",
+        "accountCount": 2,
+        "voucherCount": 5,
+        "debitMinor": "26700",
+        "creditMinor": "26700",
+        "balanced": true,
+        "coverage": "not_established",
+        "warnings": [
+          "Internal synthetic trial balance only; not a statutory financial statement.",
+          "A balanced ledger does not establish complete source records, tax correctness or period readiness.",
+          "Opening balances include all earlier postings; no fiscal-year profit transfer is inferred."
+        ]
+      }
+    },
+    "prepare": {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs",
+      "idempotencyKey": "wave_accountant_pack_20260922",
+      "input": {
+        "reportId": "report_e615bcb1242c40df96d9adbaa169fffd",
+        "openingExplanation": "Synthetic development observation only. Actual company opening balances have not been supplied or verified.",
+        "openingEvidenceIds": [],
+        "accountantNotes": "No accountant has accepted this pack. It describes only the retained local synthetic ledger and evidence.",
+        "excludedSources": [
+          {
+            "name": "Actual company source inventory",
+            "reason": "Not supplied. This development book must not stand in for company records."
+          }
+        ]
+      },
+      "status": 200,
+      "result": {
+        "pack": {
+          "id": "review_pack_0e38180b595141b09bcbc1762d395e17",
+          "kind": "accountant_review_pack_v1",
+          "scope": {
+            "entityId": "entity_synthetic",
+            "bookId": "book_synthetic"
+          },
+          "report": {
+            "kind": "trial_balance_v1",
+            "startsOn": "2026-01-01",
+            "endsOn": "2026-12-31",
+            "id": "report_e615bcb1242c40df96d9adbaa169fffd",
+            "scope": {
+              "entityId": "entity_synthetic",
+              "bookId": "book_synthetic"
+            },
+            "sequence": "5",
+            "currency": "SEK",
+            "createdAt": "2026-09-22T19:26:14.524090Z",
+            "accountCount": 2,
+            "voucherCount": 5,
+            "debitMinor": "26700",
+            "creditMinor": "26700",
+            "balanced": true,
+            "coverage": "not_established",
+            "warnings": [
+              "Internal synthetic trial balance only; not a statutory financial statement.",
+              "A balanced ledger does not establish complete source records, tax correctness or period readiness.",
+              "Opening balances include all earlier postings; no fiscal-year profit transfer is inferred."
+            ]
+          },
+          "openingBasis": {
+            "status": "not_verified",
+            "method": "recorded_pre_interval_postings_only",
+            "explanation": "Synthetic development observation only. Actual company opening balances have not been supplied or verified.",
+            "evidenceIds": [],
+            "earlierVoucherCount": 0
+          },
+          "accountantNotes": "No accountant has accepted this pack. It describes only the retained local synthetic ledger and evidence.",
+          "basis": {
+            "sequence": "5",
+            "profile": "synthetic-core-v1",
+            "profileVersion": "1",
+            "writerAuthority": "native",
+            "writerEpoch": "1",
+            "currency": "SEK",
+            "currencyScale": 2,
+            "configurationDigest": "sha256:770fae5169797ddd29fecce89a8fa55f58f36de4e4b1592b911d21a0d3863828",
+            "evidenceInventoryDigest": "sha256:094fe8c691f47a84bd0d303883565022556f432237a89fe5dcab3a5c4bbe8e8a",
+            "closingStateDigest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "owners": {
+              "schemaVersion": 1,
+              "coverage": "not_established",
+              "startsOn": "2026-01-01",
+              "endsOn": "2026-12-31",
+              "registeredRecordCount": 0,
+              "unresolvedReviewCount": 0,
+              "unlinkedRecordCount": 0,
+              "sourceDigest": "sha256:2291b726dff9e0f2e0bd020132bbeccf7ef7634e636d3d714650a2bd913d12ef",
+              "blockers": []
+            },
+            "expenseTax": {
+              "basisDigest": "sha256:1d5900140b4f9553f2dbc1bb33837a0b2b419897a3bde4a4e3eb50820db41319",
+              "sourceCount": 0,
+              "missingOrStaleReviewCount": 0,
+              "coverageEstablished": false,
+              "productionProfileApproved": false,
+              "vatReturnReady": false,
+              "postingEnabled": false
+            },
+            "ownerInventoryDigest": "sha256:33fdb5402a9967a20265da5c0775c934c3bf53fc87e89dfd5f7345fdec1dc78b",
+            "bank": {
+              "sources": [
+                {
+                  "accountId": "account_bank",
+                  "sourceId": "synthetic-bank-account-001",
+                  "revision": "3",
+                  "reconciliationId": null,
+                  "reconciliationKind": null,
+                  "reconciliationCreatedAt": null
+                }
+              ],
+              "allRepresentedReady": false
+            },
+            "commerce": {
+              "schemaVersion": 1,
+              "coverage": "not_established",
+              "startsOn": "2026-01-01",
+              "endsOn": "2026-12-31",
+              "registeredInvoiceCount": 0,
+              "invalidRecognitionCount": 0,
+              "invalidAllocationCount": 0,
+              "conservationFailureCount": 0,
+              "sourceDigest": "sha256:a2bc2c23e431cad19f10284758466fa51fa4ef6486a5b9c88eab07f043f9e2d2",
+              "blockers": []
+            },
+            "schedules": {
+              "coverageEstablished": false,
+              "scheduleRevisionDigest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "scheduleCount": 0,
+              "dueUnpreparedCount": 0,
+              "dueUnpostedCount": 0,
+              "reversedOccurrenceCount": 0,
+              "conflictedOccurrenceCount": 0,
+              "limitation": "Schedule inventory completeness and control-account reconciliation are not established."
+            },
+            "declaredBankInventories": [
+              {
+                "periodId": "period_synthetic_2026",
+                "inventoryId": null,
+                "evidenceId": null,
+                "expectedAccountIds": null
+              }
+            ]
+          },
+          "basisDigest": "sha256:99ed94ba8e399e3622f8094ddb3a6d8bb4a4e67c4f8f68211edd4e8f0b4a8d04",
+          "rowsDigest": "sha256:0e90dc17a71b6d44289fc3cdb628de6daba2418ae5d43b59624f788a3fdf9bab",
+          "digest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+          "counts": {
+            "balances": 2,
+            "journal": 10,
+            "evidence": 3,
+            "coverage": 14,
+            "owner_sources": 0,
+            "owner_controls": 0,
+            "expense_tax": 0
+          },
+          "companyCompleteness": "not_established",
+          "statutoryReady": false,
+          "generatorVersion": "accountant-review-v1",
+          "createdBy": "actor_operator",
+          "createdAt": "2026-09-22T19:26:55.808346Z"
+        },
+        "artifacts": [
+          {
+            "format": "balances_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__balances_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 5787,
+            "sha256": "738ed100503e239ff7aec4bc1c7cba3424411b2cba2719f0aca53ae762b4bacd",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          },
+          {
+            "format": "coverage_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__coverage_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 10752,
+            "sha256": "2408c191250a5b73c3ce95bfc70bf917958d6b7eda445a437c08d6f7521ae279",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          },
+          {
+            "format": "evidence_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__evidence_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 7967,
+            "sha256": "23ce85bcbacee2ece875a3a595e0f8d768b37e404facac441fa0de2dfc086be3",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          },
+          {
+            "format": "expense_tax_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__expense_tax_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 5187,
+            "sha256": "ff528f52ab35f9998a21bc49051a1dc73cd0a374299f2952a24ea858eed29e51",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          },
+          {
+            "format": "journal_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__journal_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 15042,
+            "sha256": "7ea39bd82f439306098fc55e841c5d2c9af8141061c3d8237ccaa7df7a346b96",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          },
+          {
+            "format": "json",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__json.json",
+            "mediaType": "application/json",
+            "encoding": "UTF-8",
+            "byteLength": 21503,
+            "sha256": "161d5887834d566172b88114523dd6c2b359e51f9c9465603b7d6158cbfee8aa",
+            "cellEncoding": "json_exact"
+          },
+          {
+            "format": "owner_controls_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__owner_controls_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 5355,
+            "sha256": "e66a4e32be3b98698682343ba314cac22f6f66cf5ddd7dd3e83dadced2f05a98",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          },
+          {
+            "format": "owner_sources_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__owner_sources_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 5182,
+            "sha256": "d346faaa55c37d572b5c3b563ee7fafeda1d7bec588a1bc366db358cdd024769",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          }
+        ],
+        "dependenciesCurrent": true
+      }
+    },
+    "replay": {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs",
+      "idempotencyKey": "wave_accountant_pack_20260922",
+      "input": {
+        "reportId": "report_e615bcb1242c40df96d9adbaa169fffd",
+        "openingExplanation": "Synthetic development observation only. Actual company opening balances have not been supplied or verified.",
+        "openingEvidenceIds": [],
+        "accountantNotes": "No accountant has accepted this pack. It describes only the retained local synthetic ledger and evidence.",
+        "excludedSources": [
+          {
+            "name": "Actual company source inventory",
+            "reason": "Not supplied. This development book must not stand in for company records."
+          }
+        ]
+      },
+      "status": 200,
+      "result": {
+        "pack": {
+          "id": "review_pack_0e38180b595141b09bcbc1762d395e17",
+          "kind": "accountant_review_pack_v1",
+          "scope": {
+            "entityId": "entity_synthetic",
+            "bookId": "book_synthetic"
+          },
+          "report": {
+            "kind": "trial_balance_v1",
+            "startsOn": "2026-01-01",
+            "endsOn": "2026-12-31",
+            "id": "report_e615bcb1242c40df96d9adbaa169fffd",
+            "scope": {
+              "entityId": "entity_synthetic",
+              "bookId": "book_synthetic"
+            },
+            "sequence": "5",
+            "currency": "SEK",
+            "createdAt": "2026-09-22T19:26:14.524090Z",
+            "accountCount": 2,
+            "voucherCount": 5,
+            "debitMinor": "26700",
+            "creditMinor": "26700",
+            "balanced": true,
+            "coverage": "not_established",
+            "warnings": [
+              "Internal synthetic trial balance only; not a statutory financial statement.",
+              "A balanced ledger does not establish complete source records, tax correctness or period readiness.",
+              "Opening balances include all earlier postings; no fiscal-year profit transfer is inferred."
+            ]
+          },
+          "openingBasis": {
+            "status": "not_verified",
+            "method": "recorded_pre_interval_postings_only",
+            "explanation": "Synthetic development observation only. Actual company opening balances have not been supplied or verified.",
+            "evidenceIds": [],
+            "earlierVoucherCount": 0
+          },
+          "accountantNotes": "No accountant has accepted this pack. It describes only the retained local synthetic ledger and evidence.",
+          "basis": {
+            "sequence": "5",
+            "profile": "synthetic-core-v1",
+            "profileVersion": "1",
+            "writerAuthority": "native",
+            "writerEpoch": "1",
+            "currency": "SEK",
+            "currencyScale": 2,
+            "configurationDigest": "sha256:770fae5169797ddd29fecce89a8fa55f58f36de4e4b1592b911d21a0d3863828",
+            "evidenceInventoryDigest": "sha256:094fe8c691f47a84bd0d303883565022556f432237a89fe5dcab3a5c4bbe8e8a",
+            "closingStateDigest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "owners": {
+              "schemaVersion": 1,
+              "coverage": "not_established",
+              "startsOn": "2026-01-01",
+              "endsOn": "2026-12-31",
+              "registeredRecordCount": 0,
+              "unresolvedReviewCount": 0,
+              "unlinkedRecordCount": 0,
+              "sourceDigest": "sha256:2291b726dff9e0f2e0bd020132bbeccf7ef7634e636d3d714650a2bd913d12ef",
+              "blockers": []
+            },
+            "expenseTax": {
+              "basisDigest": "sha256:1d5900140b4f9553f2dbc1bb33837a0b2b419897a3bde4a4e3eb50820db41319",
+              "sourceCount": 0,
+              "missingOrStaleReviewCount": 0,
+              "coverageEstablished": false,
+              "productionProfileApproved": false,
+              "vatReturnReady": false,
+              "postingEnabled": false
+            },
+            "ownerInventoryDigest": "sha256:33fdb5402a9967a20265da5c0775c934c3bf53fc87e89dfd5f7345fdec1dc78b",
+            "bank": {
+              "sources": [
+                {
+                  "accountId": "account_bank",
+                  "sourceId": "synthetic-bank-account-001",
+                  "revision": "3",
+                  "reconciliationId": null,
+                  "reconciliationKind": null,
+                  "reconciliationCreatedAt": null
+                }
+              ],
+              "allRepresentedReady": false
+            },
+            "commerce": {
+              "schemaVersion": 1,
+              "coverage": "not_established",
+              "startsOn": "2026-01-01",
+              "endsOn": "2026-12-31",
+              "registeredInvoiceCount": 0,
+              "invalidRecognitionCount": 0,
+              "invalidAllocationCount": 0,
+              "conservationFailureCount": 0,
+              "sourceDigest": "sha256:a2bc2c23e431cad19f10284758466fa51fa4ef6486a5b9c88eab07f043f9e2d2",
+              "blockers": []
+            },
+            "schedules": {
+              "coverageEstablished": false,
+              "scheduleRevisionDigest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "scheduleCount": 0,
+              "dueUnpreparedCount": 0,
+              "dueUnpostedCount": 0,
+              "reversedOccurrenceCount": 0,
+              "conflictedOccurrenceCount": 0,
+              "limitation": "Schedule inventory completeness and control-account reconciliation are not established."
+            },
+            "declaredBankInventories": [
+              {
+                "periodId": "period_synthetic_2026",
+                "inventoryId": null,
+                "evidenceId": null,
+                "expectedAccountIds": null
+              }
+            ]
+          },
+          "basisDigest": "sha256:99ed94ba8e399e3622f8094ddb3a6d8bb4a4e67c4f8f68211edd4e8f0b4a8d04",
+          "rowsDigest": "sha256:0e90dc17a71b6d44289fc3cdb628de6daba2418ae5d43b59624f788a3fdf9bab",
+          "digest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+          "counts": {
+            "balances": 2,
+            "journal": 10,
+            "evidence": 3,
+            "coverage": 14,
+            "owner_sources": 0,
+            "owner_controls": 0,
+            "expense_tax": 0
+          },
+          "companyCompleteness": "not_established",
+          "statutoryReady": false,
+          "generatorVersion": "accountant-review-v1",
+          "createdBy": "actor_operator",
+          "createdAt": "2026-09-22T19:26:55.808346Z"
+        },
+        "artifacts": [
+          {
+            "format": "balances_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__balances_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 5787,
+            "sha256": "738ed100503e239ff7aec4bc1c7cba3424411b2cba2719f0aca53ae762b4bacd",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          },
+          {
+            "format": "coverage_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__coverage_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 10752,
+            "sha256": "2408c191250a5b73c3ce95bfc70bf917958d6b7eda445a437c08d6f7521ae279",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          },
+          {
+            "format": "evidence_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__evidence_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 7967,
+            "sha256": "23ce85bcbacee2ece875a3a595e0f8d768b37e404facac441fa0de2dfc086be3",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          },
+          {
+            "format": "expense_tax_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__expense_tax_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 5187,
+            "sha256": "ff528f52ab35f9998a21bc49051a1dc73cd0a374299f2952a24ea858eed29e51",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          },
+          {
+            "format": "journal_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__journal_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 15042,
+            "sha256": "7ea39bd82f439306098fc55e841c5d2c9af8141061c3d8237ccaa7df7a346b96",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          },
+          {
+            "format": "json",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__json.json",
+            "mediaType": "application/json",
+            "encoding": "UTF-8",
+            "byteLength": 21503,
+            "sha256": "161d5887834d566172b88114523dd6c2b359e51f9c9465603b7d6158cbfee8aa",
+            "cellEncoding": "json_exact"
+          },
+          {
+            "format": "owner_controls_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__owner_controls_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 5355,
+            "sha256": "e66a4e32be3b98698682343ba314cac22f6f66cf5ddd7dd3e83dadced2f05a98",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          },
+          {
+            "format": "owner_sources_csv",
+            "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__owner_sources_csv.csv",
+            "mediaType": "text/csv",
+            "encoding": "UTF-8",
+            "byteLength": 5182,
+            "sha256": "d346faaa55c37d572b5c3b563ee7fafeda1d7bec588a1bc366db358cdd024769",
+            "cellEncoding": "apostrophe_prefixed_text_v1"
+          }
+        ],
+        "dependenciesCurrent": true
+      }
+    },
+    "sections": {
+      "balances": {
+        "method": "GET",
+        "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/rows/balances",
+        "idempotencyKey": null,
+        "input": null,
+        "status": 200,
+        "result": {
+          "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+          "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+          "section": "balances",
+          "total": 2,
+          "items": [
+            {
+              "section": "balances",
+              "accountId": "account_bank",
+              "code": "1930",
+              "name": "Synthetic bank account",
+              "recordedOpeningMinor": "0",
+              "movementDebitMinor": "13000",
+              "movementCreditMinor": "13700",
+              "recordedClosingMinor": "-700"
+            },
+            {
+              "section": "balances",
+              "accountId": "account_clearing",
+              "code": "2999",
+              "name": "Synthetic clearing account",
+              "recordedOpeningMinor": "0",
+              "movementDebitMinor": "13700",
+              "movementCreditMinor": "13000",
+              "recordedClosingMinor": "700"
+            }
+          ],
+          "next": null
+        }
+      },
+      "journal": {
+        "method": "GET",
+        "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/rows/journal",
+        "idempotencyKey": null,
+        "input": null,
+        "status": 200,
+        "result": {
+          "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+          "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+          "section": "journal",
+          "total": 10,
+          "items": [
+            {
+              "section": "journal",
+              "part": "movement",
+              "voucherId": "voucher_a25257049b914733a9606083bb16be7f",
+              "lineId": "line_b95ffa567c5e45688027e63f04da4361",
+              "ordinal": 1,
+              "sequence": "1",
+              "postingDate": "2026-09-22",
+              "fiscalYearId": "year_synthetic_2026",
+              "periodId": "period_synthetic_2026",
+              "series": "A",
+              "voucherNumber": "1",
+              "accountId": "account_clearing",
+              "accountCode": "2999",
+              "description": "Synthetic clearing debit",
+              "debitMinor": "12500",
+              "creditMinor": "0",
+              "eventId": "event_c698c2ebffa34f0296c6759b8f230711",
+              "postingPurpose": "adjustment",
+              "correctsVoucherId": null,
+              "changeSetId": "change_0e6bce2ac15c4429ad7b434ea07adf87",
+              "planDigest": "sha256:0db1dd80428ff06d013c26dcd98e2bbd3ce56cff581d28c95ebd6b9b86126384",
+              "receiptId": "receipt_f5a9580469ea45c1bc7d5beb501e55fe",
+              "approvalId": "approval_8512c89a1ff64d34ba68da242e90e341",
+              "approvedBy": "actor_operator",
+              "committedAt": "2026-09-22T14:29:02.098294Z",
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_6d82183b2044483a9814dcb3593317f1",
+                  "sha256": "f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f",
+                  "locator": "clearing-transfer"
+                }
+              ]
+            },
+            {
+              "section": "journal",
+              "part": "movement",
+              "voucherId": "voucher_a25257049b914733a9606083bb16be7f",
+              "lineId": "line_4350e04ac57c4eb5bf9e95c4c0c53d97",
+              "ordinal": 2,
+              "sequence": "1",
+              "postingDate": "2026-09-22",
+              "fiscalYearId": "year_synthetic_2026",
+              "periodId": "period_synthetic_2026",
+              "series": "A",
+              "voucherNumber": "1",
+              "accountId": "account_bank",
+              "accountCode": "1930",
+              "description": "Synthetic bank credit",
+              "debitMinor": "0",
+              "creditMinor": "12500",
+              "eventId": "event_c698c2ebffa34f0296c6759b8f230711",
+              "postingPurpose": "adjustment",
+              "correctsVoucherId": null,
+              "changeSetId": "change_0e6bce2ac15c4429ad7b434ea07adf87",
+              "planDigest": "sha256:0db1dd80428ff06d013c26dcd98e2bbd3ce56cff581d28c95ebd6b9b86126384",
+              "receiptId": "receipt_f5a9580469ea45c1bc7d5beb501e55fe",
+              "approvalId": "approval_8512c89a1ff64d34ba68da242e90e341",
+              "approvedBy": "actor_operator",
+              "committedAt": "2026-09-22T14:29:02.098294Z",
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_6d82183b2044483a9814dcb3593317f1",
+                  "sha256": "f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f",
+                  "locator": "clearing-transfer"
+                }
+              ]
+            },
+            {
+              "section": "journal",
+              "part": "movement",
+              "voucherId": "voucher_bbd455fa0a6e464da1a799e4a3e2eb9f",
+              "lineId": "line_2222704641214102b63e4e9d2fdcdc5a",
+              "ordinal": 1,
+              "sequence": "2",
+              "postingDate": "2026-09-22",
+              "fiscalYearId": "year_synthetic_2026",
+              "periodId": "period_synthetic_2026",
+              "series": "A",
+              "voucherNumber": "2",
+              "accountId": "account_clearing",
+              "accountCode": "2999",
+              "description": "Synthetic clearing debit",
+              "debitMinor": "0",
+              "creditMinor": "12500",
+              "eventId": "event_c698c2ebffa34f0296c6759b8f230711",
+              "postingPurpose": "reversal",
+              "correctsVoucherId": "voucher_a25257049b914733a9606083bb16be7f",
+              "changeSetId": "change_52db7241c19c49cdbe362c08dca58b1c",
+              "planDigest": "sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1",
+              "receiptId": "receipt_1296c37a457c4d82880654c340655355",
+              "approvalId": "approval_f65e583609704ee9b1189666621b7ac6",
+              "approvedBy": "actor_operator",
+              "committedAt": "2026-09-22T14:37:02.626911Z",
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_6d82183b2044483a9814dcb3593317f1",
+                  "sha256": "f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f",
+                  "locator": "clearing-transfer"
+                }
+              ]
+            },
+            {
+              "section": "journal",
+              "part": "movement",
+              "voucherId": "voucher_bbd455fa0a6e464da1a799e4a3e2eb9f",
+              "lineId": "line_d434050743c54573948634b392193a00",
+              "ordinal": 2,
+              "sequence": "2",
+              "postingDate": "2026-09-22",
+              "fiscalYearId": "year_synthetic_2026",
+              "periodId": "period_synthetic_2026",
+              "series": "A",
+              "voucherNumber": "2",
+              "accountId": "account_bank",
+              "accountCode": "1930",
+              "description": "Synthetic bank credit",
+              "debitMinor": "12500",
+              "creditMinor": "0",
+              "eventId": "event_c698c2ebffa34f0296c6759b8f230711",
+              "postingPurpose": "reversal",
+              "correctsVoucherId": "voucher_a25257049b914733a9606083bb16be7f",
+              "changeSetId": "change_52db7241c19c49cdbe362c08dca58b1c",
+              "planDigest": "sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1",
+              "receiptId": "receipt_1296c37a457c4d82880654c340655355",
+              "approvalId": "approval_f65e583609704ee9b1189666621b7ac6",
+              "approvedBy": "actor_operator",
+              "committedAt": "2026-09-22T14:37:02.626911Z",
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_6d82183b2044483a9814dcb3593317f1",
+                  "sha256": "f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f",
+                  "locator": "clearing-transfer"
+                }
+              ]
+            },
+            {
+              "section": "journal",
+              "part": "movement",
+              "voucherId": "voucher_9e27982035254504b81f0af2650b3b96",
+              "lineId": "line_7bab4e56b3e04791a9e8842119ec89f6",
+              "ordinal": 1,
+              "sequence": "3",
+              "postingDate": "2026-09-22",
+              "fiscalYearId": "year_synthetic_2026",
+              "periodId": "period_synthetic_2026",
+              "series": "A",
+              "voucherNumber": "3",
+              "accountId": "account_clearing",
+              "accountCode": "2999",
+              "description": "Synthetic clearing debit",
+              "debitMinor": "500",
+              "creditMinor": "0",
+              "eventId": "event_9d83c2d7b93c414582fd051f4915c18d",
+              "postingPurpose": "adjustment",
+              "correctsVoucherId": null,
+              "changeSetId": "change_d37e8e1fc2c84d0aa79723c3fa2dce43",
+              "planDigest": "sha256:76bf2cbef546021bdc0cb78416bfa0b0772e528fde98f32796166dce6823e53d",
+              "receiptId": "receipt_055f9a47c3e643ed93967dea41520f0c",
+              "approvalId": "approval_582ac8a09c5643efa76da53a0310421d",
+              "approvedBy": "actor_operator",
+              "committedAt": "2026-09-22T16:16:53.395336Z",
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+                  "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+                  "locator": "synthetic-correction-bundle-origin"
+                }
+              ]
+            },
+            {
+              "section": "journal",
+              "part": "movement",
+              "voucherId": "voucher_9e27982035254504b81f0af2650b3b96",
+              "lineId": "line_be32649088c1494eb3f8dc796a1b2fd5",
+              "ordinal": 2,
+              "sequence": "3",
+              "postingDate": "2026-09-22",
+              "fiscalYearId": "year_synthetic_2026",
+              "periodId": "period_synthetic_2026",
+              "series": "A",
+              "voucherNumber": "3",
+              "accountId": "account_bank",
+              "accountCode": "1930",
+              "description": "Synthetic bank credit",
+              "debitMinor": "0",
+              "creditMinor": "500",
+              "eventId": "event_9d83c2d7b93c414582fd051f4915c18d",
+              "postingPurpose": "adjustment",
+              "correctsVoucherId": null,
+              "changeSetId": "change_d37e8e1fc2c84d0aa79723c3fa2dce43",
+              "planDigest": "sha256:76bf2cbef546021bdc0cb78416bfa0b0772e528fde98f32796166dce6823e53d",
+              "receiptId": "receipt_055f9a47c3e643ed93967dea41520f0c",
+              "approvalId": "approval_582ac8a09c5643efa76da53a0310421d",
+              "approvedBy": "actor_operator",
+              "committedAt": "2026-09-22T16:16:53.395336Z",
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+                  "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+                  "locator": "synthetic-correction-bundle-origin"
+                }
+              ]
+            },
+            {
+              "section": "journal",
+              "part": "movement",
+              "voucherId": "voucher_e288832f1f3c40b6be4218c35c564954",
+              "lineId": "line_299ca1a5620648c1895cdeb5b89ec5dc",
+              "ordinal": 1,
+              "sequence": "4",
+              "postingDate": "2026-09-22",
+              "fiscalYearId": "year_synthetic_2026",
+              "periodId": "period_synthetic_2026",
+              "series": "A",
+              "voucherNumber": "4",
+              "accountId": "account_clearing",
+              "accountCode": "2999",
+              "description": "Synthetic clearing debit",
+              "debitMinor": "0",
+              "creditMinor": "500",
+              "eventId": "event_9d83c2d7b93c414582fd051f4915c18d",
+              "postingPurpose": "reversal",
+              "correctsVoucherId": "voucher_9e27982035254504b81f0af2650b3b96",
+              "changeSetId": "change_e806d571076d4a5fa53228db91cf890d",
+              "planDigest": "sha256:74fb57cfdd3ff4554815e4c9572767c41c97e0cc0f23c06c5573600be521af6a",
+              "receiptId": "receipt_04b8590bc3714b84b5620f232137f666",
+              "approvalId": "approval_67eb37fd1a354fc988a0bf2c5dbf63aa",
+              "approvedBy": "actor_operator",
+              "committedAt": "2026-09-22T16:19:45.231958Z",
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+                  "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+                  "locator": "synthetic-correction-bundle-origin"
+                }
+              ]
+            },
+            {
+              "section": "journal",
+              "part": "movement",
+              "voucherId": "voucher_e288832f1f3c40b6be4218c35c564954",
+              "lineId": "line_bfa06d1f14874ae29d6371db144611d6",
+              "ordinal": 2,
+              "sequence": "4",
+              "postingDate": "2026-09-22",
+              "fiscalYearId": "year_synthetic_2026",
+              "periodId": "period_synthetic_2026",
+              "series": "A",
+              "voucherNumber": "4",
+              "accountId": "account_bank",
+              "accountCode": "1930",
+              "description": "Synthetic bank credit",
+              "debitMinor": "500",
+              "creditMinor": "0",
+              "eventId": "event_9d83c2d7b93c414582fd051f4915c18d",
+              "postingPurpose": "reversal",
+              "correctsVoucherId": "voucher_9e27982035254504b81f0af2650b3b96",
+              "changeSetId": "change_e806d571076d4a5fa53228db91cf890d",
+              "planDigest": "sha256:74fb57cfdd3ff4554815e4c9572767c41c97e0cc0f23c06c5573600be521af6a",
+              "receiptId": "receipt_04b8590bc3714b84b5620f232137f666",
+              "approvalId": "approval_67eb37fd1a354fc988a0bf2c5dbf63aa",
+              "approvedBy": "actor_operator",
+              "committedAt": "2026-09-22T16:19:45.231958Z",
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+                  "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+                  "locator": "synthetic-correction-bundle-origin"
+                }
+              ]
+            },
+            {
+              "section": "journal",
+              "part": "movement",
+              "voucherId": "voucher_094df4fc29ec427ca0821ff67c980315",
+              "lineId": "line_0c1a6ba12ec2404c8c2b4520d58e1964",
+              "ordinal": 1,
+              "sequence": "5",
+              "postingDate": "2026-09-22",
+              "fiscalYearId": "year_synthetic_2026",
+              "periodId": "period_synthetic_2026",
+              "series": "A",
+              "voucherNumber": "5",
+              "accountId": "account_clearing",
+              "accountCode": "2999",
+              "description": "Corrected synthetic clearing debit",
+              "debitMinor": "700",
+              "creditMinor": "0",
+              "eventId": "event_fabadf7c63ff49bfa1c3db09b47f5be1",
+              "postingPurpose": "adjustment",
+              "correctsVoucherId": null,
+              "changeSetId": "change_4bdc2c70246244b491427e871c935ff9",
+              "planDigest": "sha256:a0383cf43ebb7c0de3ea1b406086f68a30c7793a01c24817d11af91a64700a20",
+              "receiptId": "receipt_0f37989b53434220902afff09874ac5d",
+              "approvalId": "approval_3a7414210fa0430892cb59e166c52413",
+              "approvedBy": "actor_operator",
+              "committedAt": "2026-09-22T16:19:45.235164Z",
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+                  "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+                  "locator": "synthetic-correction-bundle-origin"
+                }
+              ]
+            },
+            {
+              "section": "journal",
+              "part": "movement",
+              "voucherId": "voucher_094df4fc29ec427ca0821ff67c980315",
+              "lineId": "line_40530046e29a47bc8228213a5542bb05",
+              "ordinal": 2,
+              "sequence": "5",
+              "postingDate": "2026-09-22",
+              "fiscalYearId": "year_synthetic_2026",
+              "periodId": "period_synthetic_2026",
+              "series": "A",
+              "voucherNumber": "5",
+              "accountId": "account_bank",
+              "accountCode": "1930",
+              "description": "Corrected synthetic bank credit",
+              "debitMinor": "0",
+              "creditMinor": "700",
+              "eventId": "event_fabadf7c63ff49bfa1c3db09b47f5be1",
+              "postingPurpose": "adjustment",
+              "correctsVoucherId": null,
+              "changeSetId": "change_4bdc2c70246244b491427e871c935ff9",
+              "planDigest": "sha256:a0383cf43ebb7c0de3ea1b406086f68a30c7793a01c24817d11af91a64700a20",
+              "receiptId": "receipt_0f37989b53434220902afff09874ac5d",
+              "approvalId": "approval_3a7414210fa0430892cb59e166c52413",
+              "approvedBy": "actor_operator",
+              "committedAt": "2026-09-22T16:19:45.235164Z",
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+                  "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+                  "locator": "synthetic-correction-bundle-origin"
+                }
+              ]
+            }
+          ],
+          "next": null
+        }
+      },
+      "evidence": {
+        "method": "GET",
+        "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/rows/evidence",
+        "idempotencyKey": null,
+        "input": null,
+        "status": 200,
+        "result": {
+          "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+          "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+          "section": "evidence",
+          "total": 3,
+          "items": [
+            {
+              "section": "evidence",
+              "id": "evidence_1130a58a4f974315ba50d0a8408edae4",
+              "title": "Synthetic correction bundle example",
+              "origin": "Local synthetic operator",
+              "mediaType": "text/plain",
+              "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+              "content": "Local synthetic example: original clearing transfer entered as500minor units; correct amount700minor units. No invoice, taxable supply, payment initiation or real-company transaction.",
+              "createdAt": "2026-09-22T16:16:32.422037Z",
+              "usedForOpeningExplanation": false,
+              "includedVoucherIds": [
+                "voucher_9e27982035254504b81f0af2650b3b96",
+                "voucher_e288832f1f3c40b6be4218c35c564954",
+                "voucher_094df4fc29ec427ca0821ff67c980315"
+              ],
+              "excludedVoucherIds": [],
+              "disposition": "included_in_ledger_basis"
+            },
+            {
+              "section": "evidence",
+              "id": "evidence_228b5bae954c4c6eb8b498f5d877ff0d",
+              "title": "Synthetic bank statement for development",
+              "origin": "Manual synthetic development scenario, not a bank export",
+              "mediaType": "application/json",
+              "sha256": "a874e29b6c2280c0360dcf59defee8377e888dfe335b611b54fe3a7669e03a90",
+              "content": "{\"kind\":\"synthetic_bank_statement_v1\",\"statementIdentifier\":\"development-2026\",\"sourceBankAccountId\":\"synthetic-bank-account-001\",\"accountId\":\"account_bank\",\"currency\":\"SEK\",\"startsOn\":\"2026-01-01\",\"endsOn\":\"2026-12-31\",\"openingMinor\":\"0\",\"closingMinor\":\"0\",\"completeness\":{\"declaredComplete\":true,\"basis\":\"Explicit synthetic scenario: only the development journal and its linked reversal exist for this account.\"},\"rows\":[{\"rowOrdinal\":1,\"providerId\":null,\"date\":\"2026-09-22\",\"description\":\"Synthetic transfer\",\"amountMinor\":\"-12500\"},{\"rowOrdinal\":2,\"providerId\":null,\"date\":\"2026-09-22\",\"description\":\"Synthetic reversal\",\"amountMinor\":\"12500\"}]}",
+              "createdAt": "2026-09-22T14:51:33.415162Z",
+              "usedForOpeningExplanation": false,
+              "includedVoucherIds": [],
+              "excludedVoucherIds": [],
+              "disposition": "no_included_posting"
+            },
+            {
+              "section": "evidence",
+              "id": "evidence_6d82183b2044483a9814dcb3593317f1",
+              "title": "Synthetic bank movement",
+              "origin": "Local development operator",
+              "mediaType": "text/plain",
+              "sha256": "f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f",
+              "content": "Synthetic development example only: 12500 \u00f6re transferred to a clearing account on 2026-09-22. No invoice or taxable supply.",
+              "createdAt": "2026-09-22T14:26:56.719401Z",
+              "usedForOpeningExplanation": false,
+              "includedVoucherIds": [
+                "voucher_a25257049b914733a9606083bb16be7f",
+                "voucher_bbd455fa0a6e464da1a799e4a3e2eb9f"
+              ],
+              "excludedVoucherIds": [],
+              "disposition": "included_in_ledger_basis"
+            }
+          ],
+          "next": null
+        }
+      },
+      "coverage": {
+        "method": "GET",
+        "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/rows/coverage",
+        "idempotencyKey": null,
+        "input": null,
+        "status": 200,
+        "result": {
+          "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+          "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+          "section": "coverage",
+          "total": 14,
+          "items": [
+            {
+              "section": "coverage",
+              "code": "opening_basis",
+              "status": "unverified",
+              "detail": "Only recorded pre-interval postings form the numeric opening. First year and absence of prior vouchers do not establish zero opening balances. Supplied explanation/evidence is not an approved OpeningSet."
+            },
+            {
+              "section": "coverage",
+              "code": "company_profile",
+              "status": "missing",
+              "detail": "Legal entity type, fiscal facts, accounting method, VAT registration and complete obligations have not been verified for this synthetic book."
+            },
+            {
+              "section": "coverage",
+              "code": "required_source_inventory",
+              "status": "unverified",
+              "detail": "The retained bank inventory is narrow and cannot establish all company records. Every expected account, privately paid item and external register needs independent review."
+            },
+            {
+              "section": "coverage",
+              "code": "bank_controls",
+              "status": "missing",
+              "detail": "Captured bank hook reports represented-source reconciliation only. Empty sources are not not-applicable. Reopen can require fresh closing signoff even when an old reconciliation is arithmetically unchanged."
+            },
+            {
+              "section": "coverage",
+              "code": "commerce_controls",
+              "status": "unverified",
+              "detail": "Registered invoice/allocation counts and validity are captured. A zero register count does not establish no invoices or no liabilities; unregistered sources remain unknown."
+            },
+            {
+              "section": "coverage",
+              "code": "schedule_controls",
+              "status": "unverified",
+              "detail": "Captured schedules expose due/unposted/reversed occurrences, not a complete asset/deferral inventory or independent control-account reconciliation."
+            },
+            {
+              "section": "coverage",
+              "code": "owner_funding",
+              "status": "unverified",
+              "detail": "Captured owner sources, reviews, posted effects, allocations and provider control balances. Unresolved reviews: 0; sources without posted coverage: 0. Unpaid linked claims are not technical errors. Opening and company completeness remain unknown."
+            },
+            {
+              "section": "coverage",
+              "code": "vat_tax",
+              "status": "unverified",
+              "detail": "Captured every expense observation/current review and provider control/exclusion assessment in actual_review mode. Missing or stale reviews: 0; unsupported/unreconciled known sources: 0. A current review may still contain unknown facts. No tax contribution, legal eligibility, VAT return or ledger reconciliation is established."
+            },
+            {
+              "section": "coverage",
+              "code": "other_obligations",
+              "status": "unverified",
+              "detail": "Payroll, FX, statutory disclosures and other obligations require applicability evidence. Reported no employees does not replace reviewed company facts."
+            },
+            {
+              "section": "coverage",
+              "code": "unlinked_evidence",
+              "status": "unverified",
+              "detail": "1 retained evidence records have no included posting or opening-explanation use. Review their disposition; a source/control document need not itself create a posting. Their full content remains visible. Unretained missing sources cannot be counted."
+            },
+            {
+              "section": "coverage",
+              "code": "later_dated_vouchers",
+              "status": "excluded",
+              "detail": "0 vouchers at the captured committed sequence are dated after the interval. Their lines and source references are visible but excluded from opening/movement totals."
+            },
+            {
+              "section": "coverage",
+              "code": "statutory_outputs",
+              "status": "unavailable",
+              "detail": "This accountant review pack is not a financial close, annual report, SIE, iXBRL, tax filing, external acceptance or a verified Visma interchange format."
+            },
+            {
+              "section": "coverage",
+              "code": "bank_inventory_period_synthetic_2026",
+              "status": "missing",
+              "detail": "No explicit expected bank-source declaration is retained for period period_synthetic_2026."
+            },
+            {
+              "section": "coverage",
+              "code": "declared_exclusion_13",
+              "status": "excluded",
+              "detail": "Preparer declaration, not a not-applicable conclusion: Actual company source inventory \u2014 Not supplied. This development book must not stand in for company records."
+            }
+          ],
+          "next": null
+        }
+      },
+      "owner_sources": {
+        "method": "GET",
+        "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/rows/owner_sources",
+        "idempotencyKey": null,
+        "input": null,
+        "status": 200,
+        "result": {
+          "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+          "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+          "section": "owner_sources",
+          "total": 0,
+          "items": [],
+          "next": null
+        }
+      },
+      "owner_controls": {
+        "method": "GET",
+        "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/rows/owner_controls",
+        "idempotencyKey": null,
+        "input": null,
+        "status": 200,
+        "result": {
+          "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+          "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+          "section": "owner_controls",
+          "total": 0,
+          "items": [],
+          "next": null
+        }
+      },
+      "expense_tax": {
+        "method": "GET",
+        "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/rows/expense_tax",
+        "idempotencyKey": null,
+        "input": null,
+        "status": 200,
+        "result": {
+          "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+          "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+          "section": "expense_tax",
+          "total": 0,
+          "items": [],
+          "next": null
+        }
+      }
+    },
+    "artifacts": {
+      "balances_csv": {
+        "observation": {
+          "method": "GET",
+          "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/artifacts/balances_csv",
+          "idempotencyKey": null,
+          "input": null,
+          "status": 200,
+          "result": {
+            "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+            "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+            "descriptor": {
+              "format": "balances_csv",
+              "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__balances_csv.csv",
+              "mediaType": "text/csv",
+              "encoding": "UTF-8",
+              "byteLength": 5787,
+              "sha256": "738ed100503e239ff7aec4bc1c7cba3424411b2cba2719f0aca53ae762b4bacd",
+              "cellEncoding": "apostrophe_prefixed_text_v1"
+            },
+            "content": "\"recordType\",\"packId\",\"packDigest\",\"reportId\",\"recordedThroughSequence\",\"currency\",\"currencyScale\",\"openingBasis\",\"companyCompleteness\",\"statutoryReady\",\"coverage\",\"providerBasis\",\"generatorVersion\",\"accountId\",\"code\",\"name\",\"recordedOpeningMinor\",\"movementDebitMinor\",\"movementCreditMinor\",\"recordedClosingMinor\"\r\n\"'manifest\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'report_e615bcb1242c40df96d9adbaa169fffd\",\"'5\",\"'SEK\",\"'2\",\"'{\"\"method\"\": \"\"recorded_pre_interval_postings_only\"\", \"\"status\"\": \"\"not_verified\"\", \"\"evidenceIds\"\": [], \"\"explanation\"\": \"\"Synthetic development observation only. Actual company opening balances have not been supplied or verified.\"\", \"\"earlierVoucherCount\"\": 0}\",\"'not_established\",\"'false\",\"'[{\"\"code\"\": \"\"opening_basis\"\", \"\"detail\"\": \"\"Only recorded pre-interval postings form the numeric opening. First year and absence of prior vouchers do not establish zero opening balances. Supplied explanation/evidence is not an approved OpeningSet.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"company_profile\"\", \"\"detail\"\": \"\"Legal entity type, fiscal facts, accounting method, VAT registration and complete obligations have not been verified for this synthetic book.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"required_source_inventory\"\", \"\"detail\"\": \"\"The retained bank inventory is narrow and cannot establish all company records. Every expected account, privately paid item and external register needs independent review.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_controls\"\", \"\"detail\"\": \"\"Captured bank hook reports represented-source reconciliation only. Empty sources are not not-applicable. Reopen can require fresh closing signoff even when an old reconciliation is arithmetically unchanged.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"commerce_controls\"\", \"\"detail\"\": \"\"Registered invoice/allocation counts and validity are captured. A zero register count does not establish no invoices or no liabilities; unregistered sources remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"schedule_controls\"\", \"\"detail\"\": \"\"Captured schedules expose due/unposted/reversed occurrences, not a complete asset/deferral inventory or independent control-account reconciliation.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"owner_funding\"\", \"\"detail\"\": \"\"Captured owner sources, reviews, posted effects, allocations and provider control balances. Unresolved reviews: 0; sources without posted coverage: 0. Unpaid linked claims are not technical errors. Opening and company completeness remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"vat_tax\"\", \"\"detail\"\": \"\"Captured every expense observation/current review and provider control/exclusion assessment in actual_review mode. Missing or stale reviews: 0; unsupported/unreconciled known sources: 0. A current review may still contain unknown facts. No tax contribution, legal eligibility, VAT return or ledger reconciliation is established.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"other_obligations\"\", \"\"detail\"\": \"\"Payroll, FX, statutory disclosures and other obligations require applicability evidence. Reported no employees does not replace reviewed company facts.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"unlinked_evidence\"\", \"\"detail\"\": \"\"1 retained evidence records have no included posting or opening-explanation use. Review their disposition; a source/control document need not itself create a posting. Their full content remains visible. Unretained missing sources cannot be counted.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"later_dated_vouchers\"\", \"\"detail\"\": \"\"0 vouchers at the captured committed sequence are dated after the interval. Their lines and source references are visible but excluded from opening/movement totals.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"statutory_outputs\"\", \"\"detail\"\": \"\"This accountant review pack is not a financial close, annual report, SIE, iXBRL, tax filing, external acceptance or a verified Visma interchange format.\"\", \"\"status\"\": \"\"unavailable\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_inventory_period_synthetic_2026\"\", \"\"detail\"\": \"\"No explicit expected bank-source declaration is retained for period period_synthetic_2026.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"declared_exclusion_13\"\", \"\"detail\"\": \"\"Preparer declaration, not a not-applicable conclusion: Actual company source inventory \u2014 Not supplied. This development book must not stand in for company records.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}]\",\"'{\"\"ownerSourceDigest\"\": \"\"sha256:2291b726dff9e0f2e0bd020132bbeccf7ef7634e636d3d714650a2bd913d12ef\"\", \"\"ownerInventoryDigest\"\": \"\"sha256:33fdb5402a9967a20265da5c0775c934c3bf53fc87e89dfd5f7345fdec1dc78b\"\", \"\"expenseTaxBasisDigest\"\": \"\"sha256:1d5900140b4f9553f2dbc1bb33837a0b2b419897a3bde4a4e3eb50820db41319\"\"}\",\"'accountant-review-v1\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\"\r\n\"'balances\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'account_bank\",\"'1930\",\"'Synthetic bank account\",\"'0\",\"'13000\",\"'13700\",\"'-700\"\r\n\"'balances\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'account_clearing\",\"'2999\",\"'Synthetic clearing account\",\"'0\",\"'13700\",\"'13000\",\"'700\"\r\n"
+          }
+        },
+        "sha256Matches": true,
+        "byteLengthMatches": true
+      },
+      "coverage_csv": {
+        "observation": {
+          "method": "GET",
+          "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/artifacts/coverage_csv",
+          "idempotencyKey": null,
+          "input": null,
+          "status": 200,
+          "result": {
+            "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+            "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+            "descriptor": {
+              "format": "coverage_csv",
+              "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__coverage_csv.csv",
+              "mediaType": "text/csv",
+              "encoding": "UTF-8",
+              "byteLength": 10752,
+              "sha256": "2408c191250a5b73c3ce95bfc70bf917958d6b7eda445a437c08d6f7521ae279",
+              "cellEncoding": "apostrophe_prefixed_text_v1"
+            },
+            "content": "\"recordType\",\"packId\",\"packDigest\",\"reportId\",\"recordedThroughSequence\",\"currency\",\"currencyScale\",\"openingBasis\",\"companyCompleteness\",\"statutoryReady\",\"coverage\",\"providerBasis\",\"generatorVersion\",\"code\",\"status\",\"detail\"\r\n\"'manifest\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'report_e615bcb1242c40df96d9adbaa169fffd\",\"'5\",\"'SEK\",\"'2\",\"'{\"\"method\"\": \"\"recorded_pre_interval_postings_only\"\", \"\"status\"\": \"\"not_verified\"\", \"\"evidenceIds\"\": [], \"\"explanation\"\": \"\"Synthetic development observation only. Actual company opening balances have not been supplied or verified.\"\", \"\"earlierVoucherCount\"\": 0}\",\"'not_established\",\"'false\",\"'[{\"\"code\"\": \"\"opening_basis\"\", \"\"detail\"\": \"\"Only recorded pre-interval postings form the numeric opening. First year and absence of prior vouchers do not establish zero opening balances. Supplied explanation/evidence is not an approved OpeningSet.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"company_profile\"\", \"\"detail\"\": \"\"Legal entity type, fiscal facts, accounting method, VAT registration and complete obligations have not been verified for this synthetic book.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"required_source_inventory\"\", \"\"detail\"\": \"\"The retained bank inventory is narrow and cannot establish all company records. Every expected account, privately paid item and external register needs independent review.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_controls\"\", \"\"detail\"\": \"\"Captured bank hook reports represented-source reconciliation only. Empty sources are not not-applicable. Reopen can require fresh closing signoff even when an old reconciliation is arithmetically unchanged.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"commerce_controls\"\", \"\"detail\"\": \"\"Registered invoice/allocation counts and validity are captured. A zero register count does not establish no invoices or no liabilities; unregistered sources remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"schedule_controls\"\", \"\"detail\"\": \"\"Captured schedules expose due/unposted/reversed occurrences, not a complete asset/deferral inventory or independent control-account reconciliation.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"owner_funding\"\", \"\"detail\"\": \"\"Captured owner sources, reviews, posted effects, allocations and provider control balances. Unresolved reviews: 0; sources without posted coverage: 0. Unpaid linked claims are not technical errors. Opening and company completeness remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"vat_tax\"\", \"\"detail\"\": \"\"Captured every expense observation/current review and provider control/exclusion assessment in actual_review mode. Missing or stale reviews: 0; unsupported/unreconciled known sources: 0. A current review may still contain unknown facts. No tax contribution, legal eligibility, VAT return or ledger reconciliation is established.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"other_obligations\"\", \"\"detail\"\": \"\"Payroll, FX, statutory disclosures and other obligations require applicability evidence. Reported no employees does not replace reviewed company facts.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"unlinked_evidence\"\", \"\"detail\"\": \"\"1 retained evidence records have no included posting or opening-explanation use. Review their disposition; a source/control document need not itself create a posting. Their full content remains visible. Unretained missing sources cannot be counted.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"later_dated_vouchers\"\", \"\"detail\"\": \"\"0 vouchers at the captured committed sequence are dated after the interval. Their lines and source references are visible but excluded from opening/movement totals.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"statutory_outputs\"\", \"\"detail\"\": \"\"This accountant review pack is not a financial close, annual report, SIE, iXBRL, tax filing, external acceptance or a verified Visma interchange format.\"\", \"\"status\"\": \"\"unavailable\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_inventory_period_synthetic_2026\"\", \"\"detail\"\": \"\"No explicit expected bank-source declaration is retained for period period_synthetic_2026.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"declared_exclusion_13\"\", \"\"detail\"\": \"\"Preparer declaration, not a not-applicable conclusion: Actual company source inventory \u2014 Not supplied. This development book must not stand in for company records.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}]\",\"'{\"\"ownerSourceDigest\"\": \"\"sha256:2291b726dff9e0f2e0bd020132bbeccf7ef7634e636d3d714650a2bd913d12ef\"\", \"\"ownerInventoryDigest\"\": \"\"sha256:33fdb5402a9967a20265da5c0775c934c3bf53fc87e89dfd5f7345fdec1dc78b\"\", \"\"expenseTaxBasisDigest\"\": \"\"sha256:1d5900140b4f9553f2dbc1bb33837a0b2b419897a3bde4a4e3eb50820db41319\"\"}\",\"'accountant-review-v1\",\"'\",\"'\",\"'\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'opening_basis\",\"'unverified\",\"'Only recorded pre-interval postings form the numeric opening. First year and absence of prior vouchers do not establish zero opening balances. Supplied explanation/evidence is not an approved OpeningSet.\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'company_profile\",\"'missing\",\"'Legal entity type, fiscal facts, accounting method, VAT registration and complete obligations have not been verified for this synthetic book.\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'required_source_inventory\",\"'unverified\",\"'The retained bank inventory is narrow and cannot establish all company records. Every expected account, privately paid item and external register needs independent review.\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'bank_controls\",\"'missing\",\"'Captured bank hook reports represented-source reconciliation only. Empty sources are not not-applicable. Reopen can require fresh closing signoff even when an old reconciliation is arithmetically unchanged.\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'commerce_controls\",\"'unverified\",\"'Registered invoice/allocation counts and validity are captured. A zero register count does not establish no invoices or no liabilities; unregistered sources remain unknown.\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'schedule_controls\",\"'unverified\",\"'Captured schedules expose due/unposted/reversed occurrences, not a complete asset/deferral inventory or independent control-account reconciliation.\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'owner_funding\",\"'unverified\",\"'Captured owner sources, reviews, posted effects, allocations and provider control balances. Unresolved reviews: 0; sources without posted coverage: 0. Unpaid linked claims are not technical errors. Opening and company completeness remain unknown.\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'vat_tax\",\"'unverified\",\"'Captured every expense observation/current review and provider control/exclusion assessment in actual_review mode. Missing or stale reviews: 0; unsupported/unreconciled known sources: 0. A current review may still contain unknown facts. No tax contribution, legal eligibility, VAT return or ledger reconciliation is established.\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'other_obligations\",\"'unverified\",\"'Payroll, FX, statutory disclosures and other obligations require applicability evidence. Reported no employees does not replace reviewed company facts.\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'unlinked_evidence\",\"'unverified\",\"'1 retained evidence records have no included posting or opening-explanation use. Review their disposition; a source/control document need not itself create a posting. Their full content remains visible. Unretained missing sources cannot be counted.\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'later_dated_vouchers\",\"'excluded\",\"'0 vouchers at the captured committed sequence are dated after the interval. Their lines and source references are visible but excluded from opening/movement totals.\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'statutory_outputs\",\"'unavailable\",\"'This accountant review pack is not a financial close, annual report, SIE, iXBRL, tax filing, external acceptance or a verified Visma interchange format.\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'bank_inventory_period_synthetic_2026\",\"'missing\",\"'No explicit expected bank-source declaration is retained for period period_synthetic_2026.\"\r\n\"'coverage\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'declared_exclusion_13\",\"'excluded\",\"'Preparer declaration, not a not-applicable conclusion: Actual company source inventory \u2014 Not supplied. This development book must not stand in for company records.\"\r\n"
+          }
+        },
+        "sha256Matches": true,
+        "byteLengthMatches": true
+      },
+      "evidence_csv": {
+        "observation": {
+          "method": "GET",
+          "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/artifacts/evidence_csv",
+          "idempotencyKey": null,
+          "input": null,
+          "status": 200,
+          "result": {
+            "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+            "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+            "descriptor": {
+              "format": "evidence_csv",
+              "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__evidence_csv.csv",
+              "mediaType": "text/csv",
+              "encoding": "UTF-8",
+              "byteLength": 7967,
+              "sha256": "23ce85bcbacee2ece875a3a595e0f8d768b37e404facac441fa0de2dfc086be3",
+              "cellEncoding": "apostrophe_prefixed_text_v1"
+            },
+            "content": "\"recordType\",\"packId\",\"packDigest\",\"reportId\",\"recordedThroughSequence\",\"currency\",\"currencyScale\",\"openingBasis\",\"companyCompleteness\",\"statutoryReady\",\"coverage\",\"providerBasis\",\"generatorVersion\",\"id\",\"title\",\"origin\",\"mediaType\",\"sha256\",\"createdAt\",\"disposition\",\"usedForOpeningExplanation\",\"includedVoucherIds\",\"excludedVoucherIds\",\"content\"\r\n\"'manifest\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'report_e615bcb1242c40df96d9adbaa169fffd\",\"'5\",\"'SEK\",\"'2\",\"'{\"\"method\"\": \"\"recorded_pre_interval_postings_only\"\", \"\"status\"\": \"\"not_verified\"\", \"\"evidenceIds\"\": [], \"\"explanation\"\": \"\"Synthetic development observation only. Actual company opening balances have not been supplied or verified.\"\", \"\"earlierVoucherCount\"\": 0}\",\"'not_established\",\"'false\",\"'[{\"\"code\"\": \"\"opening_basis\"\", \"\"detail\"\": \"\"Only recorded pre-interval postings form the numeric opening. First year and absence of prior vouchers do not establish zero opening balances. Supplied explanation/evidence is not an approved OpeningSet.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"company_profile\"\", \"\"detail\"\": \"\"Legal entity type, fiscal facts, accounting method, VAT registration and complete obligations have not been verified for this synthetic book.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"required_source_inventory\"\", \"\"detail\"\": \"\"The retained bank inventory is narrow and cannot establish all company records. Every expected account, privately paid item and external register needs independent review.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_controls\"\", \"\"detail\"\": \"\"Captured bank hook reports represented-source reconciliation only. Empty sources are not not-applicable. Reopen can require fresh closing signoff even when an old reconciliation is arithmetically unchanged.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"commerce_controls\"\", \"\"detail\"\": \"\"Registered invoice/allocation counts and validity are captured. A zero register count does not establish no invoices or no liabilities; unregistered sources remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"schedule_controls\"\", \"\"detail\"\": \"\"Captured schedules expose due/unposted/reversed occurrences, not a complete asset/deferral inventory or independent control-account reconciliation.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"owner_funding\"\", \"\"detail\"\": \"\"Captured owner sources, reviews, posted effects, allocations and provider control balances. Unresolved reviews: 0; sources without posted coverage: 0. Unpaid linked claims are not technical errors. Opening and company completeness remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"vat_tax\"\", \"\"detail\"\": \"\"Captured every expense observation/current review and provider control/exclusion assessment in actual_review mode. Missing or stale reviews: 0; unsupported/unreconciled known sources: 0. A current review may still contain unknown facts. No tax contribution, legal eligibility, VAT return or ledger reconciliation is established.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"other_obligations\"\", \"\"detail\"\": \"\"Payroll, FX, statutory disclosures and other obligations require applicability evidence. Reported no employees does not replace reviewed company facts.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"unlinked_evidence\"\", \"\"detail\"\": \"\"1 retained evidence records have no included posting or opening-explanation use. Review their disposition; a source/control document need not itself create a posting. Their full content remains visible. Unretained missing sources cannot be counted.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"later_dated_vouchers\"\", \"\"detail\"\": \"\"0 vouchers at the captured committed sequence are dated after the interval. Their lines and source references are visible but excluded from opening/movement totals.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"statutory_outputs\"\", \"\"detail\"\": \"\"This accountant review pack is not a financial close, annual report, SIE, iXBRL, tax filing, external acceptance or a verified Visma interchange format.\"\", \"\"status\"\": \"\"unavailable\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_inventory_period_synthetic_2026\"\", \"\"detail\"\": \"\"No explicit expected bank-source declaration is retained for period period_synthetic_2026.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"declared_exclusion_13\"\", \"\"detail\"\": \"\"Preparer declaration, not a not-applicable conclusion: Actual company source inventory \u2014 Not supplied. This development book must not stand in for company records.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}]\",\"'{\"\"ownerSourceDigest\"\": \"\"sha256:2291b726dff9e0f2e0bd020132bbeccf7ef7634e636d3d714650a2bd913d12ef\"\", \"\"ownerInventoryDigest\"\": \"\"sha256:33fdb5402a9967a20265da5c0775c934c3bf53fc87e89dfd5f7345fdec1dc78b\"\", \"\"expenseTaxBasisDigest\"\": \"\"sha256:1d5900140b4f9553f2dbc1bb33837a0b2b419897a3bde4a4e3eb50820db41319\"\"}\",\"'accountant-review-v1\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\"\r\n\"'evidence\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'evidence_1130a58a4f974315ba50d0a8408edae4\",\"'Synthetic correction bundle example\",\"'Local synthetic operator\",\"'text/plain\",\"'797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\",\"'2026-09-22T16:16:32.422037Z\",\"'included_in_ledger_basis\",\"'false\",\"'[\"\"voucher_9e27982035254504b81f0af2650b3b96\"\", \"\"voucher_e288832f1f3c40b6be4218c35c564954\"\", \"\"voucher_094df4fc29ec427ca0821ff67c980315\"\"]\",\"'[]\",\"'Local synthetic example: original clearing transfer entered as500minor units; correct amount700minor units. No invoice, taxable supply, payment initiation or real-company transaction.\"\r\n\"'evidence\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'evidence_228b5bae954c4c6eb8b498f5d877ff0d\",\"'Synthetic bank statement for development\",\"'Manual synthetic development scenario, not a bank export\",\"'application/json\",\"'a874e29b6c2280c0360dcf59defee8377e888dfe335b611b54fe3a7669e03a90\",\"'2026-09-22T14:51:33.415162Z\",\"'no_included_posting\",\"'false\",\"'[]\",\"'[]\",\"'{\"\"kind\"\":\"\"synthetic_bank_statement_v1\"\",\"\"statementIdentifier\"\":\"\"development-2026\"\",\"\"sourceBankAccountId\"\":\"\"synthetic-bank-account-001\"\",\"\"accountId\"\":\"\"account_bank\"\",\"\"currency\"\":\"\"SEK\"\",\"\"startsOn\"\":\"\"2026-01-01\"\",\"\"endsOn\"\":\"\"2026-12-31\"\",\"\"openingMinor\"\":\"\"0\"\",\"\"closingMinor\"\":\"\"0\"\",\"\"completeness\"\":{\"\"declaredComplete\"\":true,\"\"basis\"\":\"\"Explicit synthetic scenario: only the development journal and its linked reversal exist for this account.\"\"},\"\"rows\"\":[{\"\"rowOrdinal\"\":1,\"\"providerId\"\":null,\"\"date\"\":\"\"2026-09-22\"\",\"\"description\"\":\"\"Synthetic transfer\"\",\"\"amountMinor\"\":\"\"-12500\"\"},{\"\"rowOrdinal\"\":2,\"\"providerId\"\":null,\"\"date\"\":\"\"2026-09-22\"\",\"\"description\"\":\"\"Synthetic reversal\"\",\"\"amountMinor\"\":\"\"12500\"\"}]}\"\r\n\"'evidence\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'evidence_6d82183b2044483a9814dcb3593317f1\",\"'Synthetic bank movement\",\"'Local development operator\",\"'text/plain\",\"'f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f\",\"'2026-09-22T14:26:56.719401Z\",\"'included_in_ledger_basis\",\"'false\",\"'[\"\"voucher_a25257049b914733a9606083bb16be7f\"\", \"\"voucher_bbd455fa0a6e464da1a799e4a3e2eb9f\"\"]\",\"'[]\",\"'Synthetic development example only: 12500 \u00f6re transferred to a clearing account on 2026-09-22. No invoice or taxable supply.\"\r\n"
+          }
+        },
+        "sha256Matches": true,
+        "byteLengthMatches": true
+      },
+      "expense_tax_csv": {
+        "observation": {
+          "method": "GET",
+          "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/artifacts/expense_tax_csv",
+          "idempotencyKey": null,
+          "input": null,
+          "status": 200,
+          "result": {
+            "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+            "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+            "descriptor": {
+              "format": "expense_tax_csv",
+              "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__expense_tax_csv.csv",
+              "mediaType": "text/csv",
+              "encoding": "UTF-8",
+              "byteLength": 5187,
+              "sha256": "ff528f52ab35f9998a21bc49051a1dc73cd0a374299f2952a24ea858eed29e51",
+              "cellEncoding": "apostrophe_prefixed_text_v1"
+            },
+            "content": "\"recordType\",\"packId\",\"packDigest\",\"reportId\",\"recordedThroughSequence\",\"currency\",\"currencyScale\",\"openingBasis\",\"companyCompleteness\",\"statutoryReady\",\"coverage\",\"providerBasis\",\"generatorVersion\",\"assessmentMode\",\"source\",\"review\",\"assessment\"\r\n\"'manifest\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'report_e615bcb1242c40df96d9adbaa169fffd\",\"'5\",\"'SEK\",\"'2\",\"'{\"\"method\"\": \"\"recorded_pre_interval_postings_only\"\", \"\"status\"\": \"\"not_verified\"\", \"\"evidenceIds\"\": [], \"\"explanation\"\": \"\"Synthetic development observation only. Actual company opening balances have not been supplied or verified.\"\", \"\"earlierVoucherCount\"\": 0}\",\"'not_established\",\"'false\",\"'[{\"\"code\"\": \"\"opening_basis\"\", \"\"detail\"\": \"\"Only recorded pre-interval postings form the numeric opening. First year and absence of prior vouchers do not establish zero opening balances. Supplied explanation/evidence is not an approved OpeningSet.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"company_profile\"\", \"\"detail\"\": \"\"Legal entity type, fiscal facts, accounting method, VAT registration and complete obligations have not been verified for this synthetic book.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"required_source_inventory\"\", \"\"detail\"\": \"\"The retained bank inventory is narrow and cannot establish all company records. Every expected account, privately paid item and external register needs independent review.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_controls\"\", \"\"detail\"\": \"\"Captured bank hook reports represented-source reconciliation only. Empty sources are not not-applicable. Reopen can require fresh closing signoff even when an old reconciliation is arithmetically unchanged.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"commerce_controls\"\", \"\"detail\"\": \"\"Registered invoice/allocation counts and validity are captured. A zero register count does not establish no invoices or no liabilities; unregistered sources remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"schedule_controls\"\", \"\"detail\"\": \"\"Captured schedules expose due/unposted/reversed occurrences, not a complete asset/deferral inventory or independent control-account reconciliation.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"owner_funding\"\", \"\"detail\"\": \"\"Captured owner sources, reviews, posted effects, allocations and provider control balances. Unresolved reviews: 0; sources without posted coverage: 0. Unpaid linked claims are not technical errors. Opening and company completeness remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"vat_tax\"\", \"\"detail\"\": \"\"Captured every expense observation/current review and provider control/exclusion assessment in actual_review mode. Missing or stale reviews: 0; unsupported/unreconciled known sources: 0. A current review may still contain unknown facts. No tax contribution, legal eligibility, VAT return or ledger reconciliation is established.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"other_obligations\"\", \"\"detail\"\": \"\"Payroll, FX, statutory disclosures and other obligations require applicability evidence. Reported no employees does not replace reviewed company facts.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"unlinked_evidence\"\", \"\"detail\"\": \"\"1 retained evidence records have no included posting or opening-explanation use. Review their disposition; a source/control document need not itself create a posting. Their full content remains visible. Unretained missing sources cannot be counted.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"later_dated_vouchers\"\", \"\"detail\"\": \"\"0 vouchers at the captured committed sequence are dated after the interval. Their lines and source references are visible but excluded from opening/movement totals.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"statutory_outputs\"\", \"\"detail\"\": \"\"This accountant review pack is not a financial close, annual report, SIE, iXBRL, tax filing, external acceptance or a verified Visma interchange format.\"\", \"\"status\"\": \"\"unavailable\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_inventory_period_synthetic_2026\"\", \"\"detail\"\": \"\"No explicit expected bank-source declaration is retained for period period_synthetic_2026.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"declared_exclusion_13\"\", \"\"detail\"\": \"\"Preparer declaration, not a not-applicable conclusion: Actual company source inventory \u2014 Not supplied. This development book must not stand in for company records.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}]\",\"'{\"\"ownerSourceDigest\"\": \"\"sha256:2291b726dff9e0f2e0bd020132bbeccf7ef7634e636d3d714650a2bd913d12ef\"\", \"\"ownerInventoryDigest\"\": \"\"sha256:33fdb5402a9967a20265da5c0775c934c3bf53fc87e89dfd5f7345fdec1dc78b\"\", \"\"expenseTaxBasisDigest\"\": \"\"sha256:1d5900140b4f9553f2dbc1bb33837a0b2b419897a3bde4a4e3eb50820db41319\"\"}\",\"'accountant-review-v1\",\"'\",\"'\",\"'\",\"'\"\r\n"
+          }
+        },
+        "sha256Matches": true,
+        "byteLengthMatches": true
+      },
+      "journal_csv": {
+        "observation": {
+          "method": "GET",
+          "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/artifacts/journal_csv",
+          "idempotencyKey": null,
+          "input": null,
+          "status": 200,
+          "result": {
+            "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+            "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+            "descriptor": {
+              "format": "journal_csv",
+              "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__journal_csv.csv",
+              "mediaType": "text/csv",
+              "encoding": "UTF-8",
+              "byteLength": 15042,
+              "sha256": "7ea39bd82f439306098fc55e841c5d2c9af8141061c3d8237ccaa7df7a346b96",
+              "cellEncoding": "apostrophe_prefixed_text_v1"
+            },
+            "content": "\"recordType\",\"packId\",\"packDigest\",\"reportId\",\"recordedThroughSequence\",\"currency\",\"currencyScale\",\"openingBasis\",\"companyCompleteness\",\"statutoryReady\",\"coverage\",\"providerBasis\",\"generatorVersion\",\"part\",\"sequence\",\"postingDate\",\"series\",\"voucherNumber\",\"voucherId\",\"lineId\",\"ordinal\",\"accountCode\",\"accountId\",\"description\",\"debitMinor\",\"creditMinor\",\"fiscalYearId\",\"periodId\",\"eventId\",\"postingPurpose\",\"correctsVoucherId\",\"changeSetId\",\"planDigest\",\"receiptId\",\"approvalId\",\"approvedBy\",\"committedAt\",\"evidenceRefs\"\r\n\"'manifest\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'report_e615bcb1242c40df96d9adbaa169fffd\",\"'5\",\"'SEK\",\"'2\",\"'{\"\"method\"\": \"\"recorded_pre_interval_postings_only\"\", \"\"status\"\": \"\"not_verified\"\", \"\"evidenceIds\"\": [], \"\"explanation\"\": \"\"Synthetic development observation only. Actual company opening balances have not been supplied or verified.\"\", \"\"earlierVoucherCount\"\": 0}\",\"'not_established\",\"'false\",\"'[{\"\"code\"\": \"\"opening_basis\"\", \"\"detail\"\": \"\"Only recorded pre-interval postings form the numeric opening. First year and absence of prior vouchers do not establish zero opening balances. Supplied explanation/evidence is not an approved OpeningSet.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"company_profile\"\", \"\"detail\"\": \"\"Legal entity type, fiscal facts, accounting method, VAT registration and complete obligations have not been verified for this synthetic book.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"required_source_inventory\"\", \"\"detail\"\": \"\"The retained bank inventory is narrow and cannot establish all company records. Every expected account, privately paid item and external register needs independent review.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_controls\"\", \"\"detail\"\": \"\"Captured bank hook reports represented-source reconciliation only. Empty sources are not not-applicable. Reopen can require fresh closing signoff even when an old reconciliation is arithmetically unchanged.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"commerce_controls\"\", \"\"detail\"\": \"\"Registered invoice/allocation counts and validity are captured. A zero register count does not establish no invoices or no liabilities; unregistered sources remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"schedule_controls\"\", \"\"detail\"\": \"\"Captured schedules expose due/unposted/reversed occurrences, not a complete asset/deferral inventory or independent control-account reconciliation.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"owner_funding\"\", \"\"detail\"\": \"\"Captured owner sources, reviews, posted effects, allocations and provider control balances. Unresolved reviews: 0; sources without posted coverage: 0. Unpaid linked claims are not technical errors. Opening and company completeness remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"vat_tax\"\", \"\"detail\"\": \"\"Captured every expense observation/current review and provider control/exclusion assessment in actual_review mode. Missing or stale reviews: 0; unsupported/unreconciled known sources: 0. A current review may still contain unknown facts. No tax contribution, legal eligibility, VAT return or ledger reconciliation is established.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"other_obligations\"\", \"\"detail\"\": \"\"Payroll, FX, statutory disclosures and other obligations require applicability evidence. Reported no employees does not replace reviewed company facts.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"unlinked_evidence\"\", \"\"detail\"\": \"\"1 retained evidence records have no included posting or opening-explanation use. Review their disposition; a source/control document need not itself create a posting. Their full content remains visible. Unretained missing sources cannot be counted.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"later_dated_vouchers\"\", \"\"detail\"\": \"\"0 vouchers at the captured committed sequence are dated after the interval. Their lines and source references are visible but excluded from opening/movement totals.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"statutory_outputs\"\", \"\"detail\"\": \"\"This accountant review pack is not a financial close, annual report, SIE, iXBRL, tax filing, external acceptance or a verified Visma interchange format.\"\", \"\"status\"\": \"\"unavailable\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_inventory_period_synthetic_2026\"\", \"\"detail\"\": \"\"No explicit expected bank-source declaration is retained for period period_synthetic_2026.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"declared_exclusion_13\"\", \"\"detail\"\": \"\"Preparer declaration, not a not-applicable conclusion: Actual company source inventory \u2014 Not supplied. This development book must not stand in for company records.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}]\",\"'{\"\"ownerSourceDigest\"\": \"\"sha256:2291b726dff9e0f2e0bd020132bbeccf7ef7634e636d3d714650a2bd913d12ef\"\", \"\"ownerInventoryDigest\"\": \"\"sha256:33fdb5402a9967a20265da5c0775c934c3bf53fc87e89dfd5f7345fdec1dc78b\"\", \"\"expenseTaxBasisDigest\"\": \"\"sha256:1d5900140b4f9553f2dbc1bb33837a0b2b419897a3bde4a4e3eb50820db41319\"\"}\",\"'accountant-review-v1\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\"\r\n\"'journal\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'movement\",\"'1\",\"'2026-09-22\",\"'A\",\"'1\",\"'voucher_a25257049b914733a9606083bb16be7f\",\"'line_b95ffa567c5e45688027e63f04da4361\",\"'1\",\"'2999\",\"'account_clearing\",\"'Synthetic clearing debit\",\"'12500\",\"'0\",\"'year_synthetic_2026\",\"'period_synthetic_2026\",\"'event_c698c2ebffa34f0296c6759b8f230711\",\"'adjustment\",\"'\",\"'change_0e6bce2ac15c4429ad7b434ea07adf87\",\"'sha256:0db1dd80428ff06d013c26dcd98e2bbd3ce56cff581d28c95ebd6b9b86126384\",\"'receipt_f5a9580469ea45c1bc7d5beb501e55fe\",\"'approval_8512c89a1ff64d34ba68da242e90e341\",\"'actor_operator\",\"'2026-09-22T14:29:02.098294Z\",\"'[{\"\"sha256\"\": \"\"f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f\"\", \"\"locator\"\": \"\"clearing-transfer\"\", \"\"evidenceId\"\": \"\"evidence_6d82183b2044483a9814dcb3593317f1\"\"}]\"\r\n\"'journal\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'movement\",\"'1\",\"'2026-09-22\",\"'A\",\"'1\",\"'voucher_a25257049b914733a9606083bb16be7f\",\"'line_4350e04ac57c4eb5bf9e95c4c0c53d97\",\"'2\",\"'1930\",\"'account_bank\",\"'Synthetic bank credit\",\"'0\",\"'12500\",\"'year_synthetic_2026\",\"'period_synthetic_2026\",\"'event_c698c2ebffa34f0296c6759b8f230711\",\"'adjustment\",\"'\",\"'change_0e6bce2ac15c4429ad7b434ea07adf87\",\"'sha256:0db1dd80428ff06d013c26dcd98e2bbd3ce56cff581d28c95ebd6b9b86126384\",\"'receipt_f5a9580469ea45c1bc7d5beb501e55fe\",\"'approval_8512c89a1ff64d34ba68da242e90e341\",\"'actor_operator\",\"'2026-09-22T14:29:02.098294Z\",\"'[{\"\"sha256\"\": \"\"f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f\"\", \"\"locator\"\": \"\"clearing-transfer\"\", \"\"evidenceId\"\": \"\"evidence_6d82183b2044483a9814dcb3593317f1\"\"}]\"\r\n\"'journal\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'movement\",\"'2\",\"'2026-09-22\",\"'A\",\"'2\",\"'voucher_bbd455fa0a6e464da1a799e4a3e2eb9f\",\"'line_2222704641214102b63e4e9d2fdcdc5a\",\"'1\",\"'2999\",\"'account_clearing\",\"'Synthetic clearing debit\",\"'0\",\"'12500\",\"'year_synthetic_2026\",\"'period_synthetic_2026\",\"'event_c698c2ebffa34f0296c6759b8f230711\",\"'reversal\",\"'voucher_a25257049b914733a9606083bb16be7f\",\"'change_52db7241c19c49cdbe362c08dca58b1c\",\"'sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1\",\"'receipt_1296c37a457c4d82880654c340655355\",\"'approval_f65e583609704ee9b1189666621b7ac6\",\"'actor_operator\",\"'2026-09-22T14:37:02.626911Z\",\"'[{\"\"sha256\"\": \"\"f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f\"\", \"\"locator\"\": \"\"clearing-transfer\"\", \"\"evidenceId\"\": \"\"evidence_6d82183b2044483a9814dcb3593317f1\"\"}]\"\r\n\"'journal\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'movement\",\"'2\",\"'2026-09-22\",\"'A\",\"'2\",\"'voucher_bbd455fa0a6e464da1a799e4a3e2eb9f\",\"'line_d434050743c54573948634b392193a00\",\"'2\",\"'1930\",\"'account_bank\",\"'Synthetic bank credit\",\"'12500\",\"'0\",\"'year_synthetic_2026\",\"'period_synthetic_2026\",\"'event_c698c2ebffa34f0296c6759b8f230711\",\"'reversal\",\"'voucher_a25257049b914733a9606083bb16be7f\",\"'change_52db7241c19c49cdbe362c08dca58b1c\",\"'sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1\",\"'receipt_1296c37a457c4d82880654c340655355\",\"'approval_f65e583609704ee9b1189666621b7ac6\",\"'actor_operator\",\"'2026-09-22T14:37:02.626911Z\",\"'[{\"\"sha256\"\": \"\"f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f\"\", \"\"locator\"\": \"\"clearing-transfer\"\", \"\"evidenceId\"\": \"\"evidence_6d82183b2044483a9814dcb3593317f1\"\"}]\"\r\n\"'journal\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'movement\",\"'3\",\"'2026-09-22\",\"'A\",\"'3\",\"'voucher_9e27982035254504b81f0af2650b3b96\",\"'line_7bab4e56b3e04791a9e8842119ec89f6\",\"'1\",\"'2999\",\"'account_clearing\",\"'Synthetic clearing debit\",\"'500\",\"'0\",\"'year_synthetic_2026\",\"'period_synthetic_2026\",\"'event_9d83c2d7b93c414582fd051f4915c18d\",\"'adjustment\",\"'\",\"'change_d37e8e1fc2c84d0aa79723c3fa2dce43\",\"'sha256:76bf2cbef546021bdc0cb78416bfa0b0772e528fde98f32796166dce6823e53d\",\"'receipt_055f9a47c3e643ed93967dea41520f0c\",\"'approval_582ac8a09c5643efa76da53a0310421d\",\"'actor_operator\",\"'2026-09-22T16:16:53.395336Z\",\"'[{\"\"sha256\"\": \"\"797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\"\", \"\"locator\"\": \"\"synthetic-correction-bundle-origin\"\", \"\"evidenceId\"\": \"\"evidence_1130a58a4f974315ba50d0a8408edae4\"\"}]\"\r\n\"'journal\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'movement\",\"'3\",\"'2026-09-22\",\"'A\",\"'3\",\"'voucher_9e27982035254504b81f0af2650b3b96\",\"'line_be32649088c1494eb3f8dc796a1b2fd5\",\"'2\",\"'1930\",\"'account_bank\",\"'Synthetic bank credit\",\"'0\",\"'500\",\"'year_synthetic_2026\",\"'period_synthetic_2026\",\"'event_9d83c2d7b93c414582fd051f4915c18d\",\"'adjustment\",\"'\",\"'change_d37e8e1fc2c84d0aa79723c3fa2dce43\",\"'sha256:76bf2cbef546021bdc0cb78416bfa0b0772e528fde98f32796166dce6823e53d\",\"'receipt_055f9a47c3e643ed93967dea41520f0c\",\"'approval_582ac8a09c5643efa76da53a0310421d\",\"'actor_operator\",\"'2026-09-22T16:16:53.395336Z\",\"'[{\"\"sha256\"\": \"\"797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\"\", \"\"locator\"\": \"\"synthetic-correction-bundle-origin\"\", \"\"evidenceId\"\": \"\"evidence_1130a58a4f974315ba50d0a8408edae4\"\"}]\"\r\n\"'journal\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'movement\",\"'4\",\"'2026-09-22\",\"'A\",\"'4\",\"'voucher_e288832f1f3c40b6be4218c35c564954\",\"'line_299ca1a5620648c1895cdeb5b89ec5dc\",\"'1\",\"'2999\",\"'account_clearing\",\"'Synthetic clearing debit\",\"'0\",\"'500\",\"'year_synthetic_2026\",\"'period_synthetic_2026\",\"'event_9d83c2d7b93c414582fd051f4915c18d\",\"'reversal\",\"'voucher_9e27982035254504b81f0af2650b3b96\",\"'change_e806d571076d4a5fa53228db91cf890d\",\"'sha256:74fb57cfdd3ff4554815e4c9572767c41c97e0cc0f23c06c5573600be521af6a\",\"'receipt_04b8590bc3714b84b5620f232137f666\",\"'approval_67eb37fd1a354fc988a0bf2c5dbf63aa\",\"'actor_operator\",\"'2026-09-22T16:19:45.231958Z\",\"'[{\"\"sha256\"\": \"\"797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\"\", \"\"locator\"\": \"\"synthetic-correction-bundle-origin\"\", \"\"evidenceId\"\": \"\"evidence_1130a58a4f974315ba50d0a8408edae4\"\"}]\"\r\n\"'journal\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'movement\",\"'4\",\"'2026-09-22\",\"'A\",\"'4\",\"'voucher_e288832f1f3c40b6be4218c35c564954\",\"'line_bfa06d1f14874ae29d6371db144611d6\",\"'2\",\"'1930\",\"'account_bank\",\"'Synthetic bank credit\",\"'500\",\"'0\",\"'year_synthetic_2026\",\"'period_synthetic_2026\",\"'event_9d83c2d7b93c414582fd051f4915c18d\",\"'reversal\",\"'voucher_9e27982035254504b81f0af2650b3b96\",\"'change_e806d571076d4a5fa53228db91cf890d\",\"'sha256:74fb57cfdd3ff4554815e4c9572767c41c97e0cc0f23c06c5573600be521af6a\",\"'receipt_04b8590bc3714b84b5620f232137f666\",\"'approval_67eb37fd1a354fc988a0bf2c5dbf63aa\",\"'actor_operator\",\"'2026-09-22T16:19:45.231958Z\",\"'[{\"\"sha256\"\": \"\"797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\"\", \"\"locator\"\": \"\"synthetic-correction-bundle-origin\"\", \"\"evidenceId\"\": \"\"evidence_1130a58a4f974315ba50d0a8408edae4\"\"}]\"\r\n\"'journal\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'movement\",\"'5\",\"'2026-09-22\",\"'A\",\"'5\",\"'voucher_094df4fc29ec427ca0821ff67c980315\",\"'line_0c1a6ba12ec2404c8c2b4520d58e1964\",\"'1\",\"'2999\",\"'account_clearing\",\"'Corrected synthetic clearing debit\",\"'700\",\"'0\",\"'year_synthetic_2026\",\"'period_synthetic_2026\",\"'event_fabadf7c63ff49bfa1c3db09b47f5be1\",\"'adjustment\",\"'\",\"'change_4bdc2c70246244b491427e871c935ff9\",\"'sha256:a0383cf43ebb7c0de3ea1b406086f68a30c7793a01c24817d11af91a64700a20\",\"'receipt_0f37989b53434220902afff09874ac5d\",\"'approval_3a7414210fa0430892cb59e166c52413\",\"'actor_operator\",\"'2026-09-22T16:19:45.235164Z\",\"'[{\"\"sha256\"\": \"\"797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\"\", \"\"locator\"\": \"\"synthetic-correction-bundle-origin\"\", \"\"evidenceId\"\": \"\"evidence_1130a58a4f974315ba50d0a8408edae4\"\"}]\"\r\n\"'journal\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'movement\",\"'5\",\"'2026-09-22\",\"'A\",\"'5\",\"'voucher_094df4fc29ec427ca0821ff67c980315\",\"'line_40530046e29a47bc8228213a5542bb05\",\"'2\",\"'1930\",\"'account_bank\",\"'Corrected synthetic bank credit\",\"'0\",\"'700\",\"'year_synthetic_2026\",\"'period_synthetic_2026\",\"'event_fabadf7c63ff49bfa1c3db09b47f5be1\",\"'adjustment\",\"'\",\"'change_4bdc2c70246244b491427e871c935ff9\",\"'sha256:a0383cf43ebb7c0de3ea1b406086f68a30c7793a01c24817d11af91a64700a20\",\"'receipt_0f37989b53434220902afff09874ac5d\",\"'approval_3a7414210fa0430892cb59e166c52413\",\"'actor_operator\",\"'2026-09-22T16:19:45.235164Z\",\"'[{\"\"sha256\"\": \"\"797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\"\", \"\"locator\"\": \"\"synthetic-correction-bundle-origin\"\", \"\"evidenceId\"\": \"\"evidence_1130a58a4f974315ba50d0a8408edae4\"\"}]\"\r\n"
+          }
+        },
+        "sha256Matches": true,
+        "byteLengthMatches": true
+      },
+      "json": {
+        "observation": {
+          "method": "GET",
+          "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/artifacts/json",
+          "idempotencyKey": null,
+          "input": null,
+          "status": 200,
+          "result": {
+            "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+            "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+            "descriptor": {
+              "format": "json",
+              "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__json.json",
+              "mediaType": "application/json",
+              "encoding": "UTF-8",
+              "byteLength": 21503,
+              "sha256": "161d5887834d566172b88114523dd6c2b359e51f9c9465603b7d6158cbfee8aa",
+              "cellEncoding": "json_exact"
+            },
+            "content": "{\"pack\":{\"accountantNotes\":\"No accountant has accepted this pack. It describes only the retained local synthetic ledger and evidence.\",\"basis\":{\"bank\":{\"allRepresentedReady\":false,\"sources\":[{\"accountId\":\"account_bank\",\"reconciliationCreatedAt\":null,\"reconciliationId\":null,\"reconciliationKind\":null,\"revision\":\"3\",\"sourceId\":\"synthetic-bank-account-001\"}]},\"closingStateDigest\":\"sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945\",\"commerce\":{\"blockers\":[],\"conservationFailureCount\":0,\"coverage\":\"not_established\",\"endsOn\":\"2026-12-31\",\"invalidAllocationCount\":0,\"invalidRecognitionCount\":0,\"registeredInvoiceCount\":0,\"schemaVersion\":1,\"sourceDigest\":\"sha256:a2bc2c23e431cad19f10284758466fa51fa4ef6486a5b9c88eab07f043f9e2d2\",\"startsOn\":\"2026-01-01\"},\"configurationDigest\":\"sha256:770fae5169797ddd29fecce89a8fa55f58f36de4e4b1592b911d21a0d3863828\",\"currency\":\"SEK\",\"currencyScale\":2,\"declaredBankInventories\":[{\"evidenceId\":null,\"expectedAccountIds\":null,\"inventoryId\":null,\"periodId\":\"period_synthetic_2026\"}],\"evidenceInventoryDigest\":\"sha256:094fe8c691f47a84bd0d303883565022556f432237a89fe5dcab3a5c4bbe8e8a\",\"expenseTax\":{\"basisDigest\":\"sha256:1d5900140b4f9553f2dbc1bb33837a0b2b419897a3bde4a4e3eb50820db41319\",\"coverageEstablished\":false,\"missingOrStaleReviewCount\":0,\"postingEnabled\":false,\"productionProfileApproved\":false,\"sourceCount\":0,\"vatReturnReady\":false},\"ownerInventoryDigest\":\"sha256:33fdb5402a9967a20265da5c0775c934c3bf53fc87e89dfd5f7345fdec1dc78b\",\"owners\":{\"blockers\":[],\"coverage\":\"not_established\",\"endsOn\":\"2026-12-31\",\"registeredRecordCount\":0,\"schemaVersion\":1,\"sourceDigest\":\"sha256:2291b726dff9e0f2e0bd020132bbeccf7ef7634e636d3d714650a2bd913d12ef\",\"startsOn\":\"2026-01-01\",\"unlinkedRecordCount\":0,\"unresolvedReviewCount\":0},\"profile\":\"synthetic-core-v1\",\"profileVersion\":\"1\",\"schedules\":{\"conflictedOccurrenceCount\":0,\"coverageEstablished\":false,\"dueUnpostedCount\":0,\"dueUnpreparedCount\":0,\"limitation\":\"Schedule inventory completeness and control-account reconciliation are not established.\",\"reversedOccurrenceCount\":0,\"scheduleCount\":0,\"scheduleRevisionDigest\":\"sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945\"},\"sequence\":\"5\",\"writerAuthority\":\"native\",\"writerEpoch\":\"1\"},\"basisDigest\":\"sha256:99ed94ba8e399e3622f8094ddb3a6d8bb4a4e67c4f8f68211edd4e8f0b4a8d04\",\"companyCompleteness\":\"not_established\",\"counts\":{\"balances\":2,\"coverage\":14,\"evidence\":3,\"expense_tax\":0,\"journal\":10,\"owner_controls\":0,\"owner_sources\":0},\"createdAt\":\"2026-09-22T19:26:55.808346Z\",\"createdBy\":\"actor_operator\",\"digest\":\"sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"generatorVersion\":\"accountant-review-v1\",\"id\":\"review_pack_0e38180b595141b09bcbc1762d395e17\",\"kind\":\"accountant_review_pack_v1\",\"openingBasis\":{\"earlierVoucherCount\":0,\"evidenceIds\":[],\"explanation\":\"Synthetic development observation only. Actual company opening balances have not been supplied or verified.\",\"method\":\"recorded_pre_interval_postings_only\",\"status\":\"not_verified\"},\"report\":{\"accountCount\":2,\"balanced\":true,\"coverage\":\"not_established\",\"createdAt\":\"2026-09-22T19:26:14.524090Z\",\"creditMinor\":\"26700\",\"currency\":\"SEK\",\"debitMinor\":\"26700\",\"endsOn\":\"2026-12-31\",\"id\":\"report_e615bcb1242c40df96d9adbaa169fffd\",\"kind\":\"trial_balance_v1\",\"scope\":{\"bookId\":\"book_synthetic\",\"entityId\":\"entity_synthetic\"},\"sequence\":\"5\",\"startsOn\":\"2026-01-01\",\"voucherCount\":5,\"warnings\":[\"Internal synthetic trial balance only; not a statutory financial statement.\",\"A balanced ledger does not establish complete source records, tax correctness or period readiness.\",\"Opening balances include all earlier postings; no fiscal-year profit transfer is inferred.\"]},\"rowsDigest\":\"sha256:0e90dc17a71b6d44289fc3cdb628de6daba2418ae5d43b59624f788a3fdf9bab\",\"scope\":{\"bookId\":\"book_synthetic\",\"entityId\":\"entity_synthetic\"},\"statutoryReady\":false},\"sections\":{\"balances\":[{\"accountId\":\"account_bank\",\"code\":\"1930\",\"movementCreditMinor\":\"13700\",\"movementDebitMinor\":\"13000\",\"name\":\"Synthetic bank account\",\"recordedClosingMinor\":\"-700\",\"recordedOpeningMinor\":\"0\",\"section\":\"balances\"},{\"accountId\":\"account_clearing\",\"code\":\"2999\",\"movementCreditMinor\":\"13000\",\"movementDebitMinor\":\"13700\",\"name\":\"Synthetic clearing account\",\"recordedClosingMinor\":\"700\",\"recordedOpeningMinor\":\"0\",\"section\":\"balances\"}],\"coverage\":[{\"code\":\"opening_basis\",\"detail\":\"Only recorded pre-interval postings form the numeric opening. First year and absence of prior vouchers do not establish zero opening balances. Supplied explanation/evidence is not an approved OpeningSet.\",\"section\":\"coverage\",\"status\":\"unverified\"},{\"code\":\"company_profile\",\"detail\":\"Legal entity type, fiscal facts, accounting method, VAT registration and complete obligations have not been verified for this synthetic book.\",\"section\":\"coverage\",\"status\":\"missing\"},{\"code\":\"required_source_inventory\",\"detail\":\"The retained bank inventory is narrow and cannot establish all company records. Every expected account, privately paid item and external register needs independent review.\",\"section\":\"coverage\",\"status\":\"unverified\"},{\"code\":\"bank_controls\",\"detail\":\"Captured bank hook reports represented-source reconciliation only. Empty sources are not not-applicable. Reopen can require fresh closing signoff even when an old reconciliation is arithmetically unchanged.\",\"section\":\"coverage\",\"status\":\"missing\"},{\"code\":\"commerce_controls\",\"detail\":\"Registered invoice/allocation counts and validity are captured. A zero register count does not establish no invoices or no liabilities; unregistered sources remain unknown.\",\"section\":\"coverage\",\"status\":\"unverified\"},{\"code\":\"schedule_controls\",\"detail\":\"Captured schedules expose due/unposted/reversed occurrences, not a complete asset/deferral inventory or independent control-account reconciliation.\",\"section\":\"coverage\",\"status\":\"unverified\"},{\"code\":\"owner_funding\",\"detail\":\"Captured owner sources, reviews, posted effects, allocations and provider control balances. Unresolved reviews: 0; sources without posted coverage: 0. Unpaid linked claims are not technical errors. Opening and company completeness remain unknown.\",\"section\":\"coverage\",\"status\":\"unverified\"},{\"code\":\"vat_tax\",\"detail\":\"Captured every expense observation/current review and provider control/exclusion assessment in actual_review mode. Missing or stale reviews: 0; unsupported/unreconciled known sources: 0. A current review may still contain unknown facts. No tax contribution, legal eligibility, VAT return or ledger reconciliation is established.\",\"section\":\"coverage\",\"status\":\"unverified\"},{\"code\":\"other_obligations\",\"detail\":\"Payroll, FX, statutory disclosures and other obligations require applicability evidence. Reported no employees does not replace reviewed company facts.\",\"section\":\"coverage\",\"status\":\"unverified\"},{\"code\":\"unlinked_evidence\",\"detail\":\"1 retained evidence records have no included posting or opening-explanation use. Review their disposition; a source/control document need not itself create a posting. Their full content remains visible. Unretained missing sources cannot be counted.\",\"section\":\"coverage\",\"status\":\"unverified\"},{\"code\":\"later_dated_vouchers\",\"detail\":\"0 vouchers at the captured committed sequence are dated after the interval. Their lines and source references are visible but excluded from opening/movement totals.\",\"section\":\"coverage\",\"status\":\"excluded\"},{\"code\":\"statutory_outputs\",\"detail\":\"This accountant review pack is not a financial close, annual report, SIE, iXBRL, tax filing, external acceptance or a verified Visma interchange format.\",\"section\":\"coverage\",\"status\":\"unavailable\"},{\"code\":\"bank_inventory_period_synthetic_2026\",\"detail\":\"No explicit expected bank-source declaration is retained for period period_synthetic_2026.\",\"section\":\"coverage\",\"status\":\"missing\"},{\"code\":\"declared_exclusion_13\",\"detail\":\"Preparer declaration, not a not-applicable conclusion: Actual company source inventory \u2014 Not supplied. This development book must not stand in for company records.\",\"section\":\"coverage\",\"status\":\"excluded\"}],\"evidence\":[{\"content\":\"Local synthetic example: original clearing transfer entered as500minor units; correct amount700minor units. No invoice, taxable supply, payment initiation or real-company transaction.\",\"createdAt\":\"2026-09-22T16:16:32.422037Z\",\"disposition\":\"included_in_ledger_basis\",\"excludedVoucherIds\":[],\"id\":\"evidence_1130a58a4f974315ba50d0a8408edae4\",\"includedVoucherIds\":[\"voucher_9e27982035254504b81f0af2650b3b96\",\"voucher_e288832f1f3c40b6be4218c35c564954\",\"voucher_094df4fc29ec427ca0821ff67c980315\"],\"mediaType\":\"text/plain\",\"origin\":\"Local synthetic operator\",\"section\":\"evidence\",\"sha256\":\"797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\",\"title\":\"Synthetic correction bundle example\",\"usedForOpeningExplanation\":false},{\"content\":\"{\\\"kind\\\":\\\"synthetic_bank_statement_v1\\\",\\\"statementIdentifier\\\":\\\"development-2026\\\",\\\"sourceBankAccountId\\\":\\\"synthetic-bank-account-001\\\",\\\"accountId\\\":\\\"account_bank\\\",\\\"currency\\\":\\\"SEK\\\",\\\"startsOn\\\":\\\"2026-01-01\\\",\\\"endsOn\\\":\\\"2026-12-31\\\",\\\"openingMinor\\\":\\\"0\\\",\\\"closingMinor\\\":\\\"0\\\",\\\"completeness\\\":{\\\"declaredComplete\\\":true,\\\"basis\\\":\\\"Explicit synthetic scenario: only the development journal and its linked reversal exist for this account.\\\"},\\\"rows\\\":[{\\\"rowOrdinal\\\":1,\\\"providerId\\\":null,\\\"date\\\":\\\"2026-09-22\\\",\\\"description\\\":\\\"Synthetic transfer\\\",\\\"amountMinor\\\":\\\"-12500\\\"},{\\\"rowOrdinal\\\":2,\\\"providerId\\\":null,\\\"date\\\":\\\"2026-09-22\\\",\\\"description\\\":\\\"Synthetic reversal\\\",\\\"amountMinor\\\":\\\"12500\\\"}]}\",\"createdAt\":\"2026-09-22T14:51:33.415162Z\",\"disposition\":\"no_included_posting\",\"excludedVoucherIds\":[],\"id\":\"evidence_228b5bae954c4c6eb8b498f5d877ff0d\",\"includedVoucherIds\":[],\"mediaType\":\"application/json\",\"origin\":\"Manual synthetic development scenario, not a bank export\",\"section\":\"evidence\",\"sha256\":\"a874e29b6c2280c0360dcf59defee8377e888dfe335b611b54fe3a7669e03a90\",\"title\":\"Synthetic bank statement for development\",\"usedForOpeningExplanation\":false},{\"content\":\"Synthetic development example only: 12500 \u00f6re transferred to a clearing account on 2026-09-22. No invoice or taxable supply.\",\"createdAt\":\"2026-09-22T14:26:56.719401Z\",\"disposition\":\"included_in_ledger_basis\",\"excludedVoucherIds\":[],\"id\":\"evidence_6d82183b2044483a9814dcb3593317f1\",\"includedVoucherIds\":[\"voucher_a25257049b914733a9606083bb16be7f\",\"voucher_bbd455fa0a6e464da1a799e4a3e2eb9f\"],\"mediaType\":\"text/plain\",\"origin\":\"Local development operator\",\"section\":\"evidence\",\"sha256\":\"f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f\",\"title\":\"Synthetic bank movement\",\"usedForOpeningExplanation\":false}],\"expense_tax\":[],\"journal\":[{\"accountCode\":\"2999\",\"accountId\":\"account_clearing\",\"approvalId\":\"approval_8512c89a1ff64d34ba68da242e90e341\",\"approvedBy\":\"actor_operator\",\"changeSetId\":\"change_0e6bce2ac15c4429ad7b434ea07adf87\",\"committedAt\":\"2026-09-22T14:29:02.098294Z\",\"correctsVoucherId\":null,\"creditMinor\":\"0\",\"debitMinor\":\"12500\",\"description\":\"Synthetic clearing debit\",\"eventId\":\"event_c698c2ebffa34f0296c6759b8f230711\",\"evidenceRefs\":[{\"evidenceId\":\"evidence_6d82183b2044483a9814dcb3593317f1\",\"locator\":\"clearing-transfer\",\"sha256\":\"f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f\"}],\"fiscalYearId\":\"year_synthetic_2026\",\"lineId\":\"line_b95ffa567c5e45688027e63f04da4361\",\"ordinal\":1,\"part\":\"movement\",\"periodId\":\"period_synthetic_2026\",\"planDigest\":\"sha256:0db1dd80428ff06d013c26dcd98e2bbd3ce56cff581d28c95ebd6b9b86126384\",\"postingDate\":\"2026-09-22\",\"postingPurpose\":\"adjustment\",\"receiptId\":\"receipt_f5a9580469ea45c1bc7d5beb501e55fe\",\"section\":\"journal\",\"sequence\":\"1\",\"series\":\"A\",\"voucherId\":\"voucher_a25257049b914733a9606083bb16be7f\",\"voucherNumber\":\"1\"},{\"accountCode\":\"1930\",\"accountId\":\"account_bank\",\"approvalId\":\"approval_8512c89a1ff64d34ba68da242e90e341\",\"approvedBy\":\"actor_operator\",\"changeSetId\":\"change_0e6bce2ac15c4429ad7b434ea07adf87\",\"committedAt\":\"2026-09-22T14:29:02.098294Z\",\"correctsVoucherId\":null,\"creditMinor\":\"12500\",\"debitMinor\":\"0\",\"description\":\"Synthetic bank credit\",\"eventId\":\"event_c698c2ebffa34f0296c6759b8f230711\",\"evidenceRefs\":[{\"evidenceId\":\"evidence_6d82183b2044483a9814dcb3593317f1\",\"locator\":\"clearing-transfer\",\"sha256\":\"f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f\"}],\"fiscalYearId\":\"year_synthetic_2026\",\"lineId\":\"line_4350e04ac57c4eb5bf9e95c4c0c53d97\",\"ordinal\":2,\"part\":\"movement\",\"periodId\":\"period_synthetic_2026\",\"planDigest\":\"sha256:0db1dd80428ff06d013c26dcd98e2bbd3ce56cff581d28c95ebd6b9b86126384\",\"postingDate\":\"2026-09-22\",\"postingPurpose\":\"adjustment\",\"receiptId\":\"receipt_f5a9580469ea45c1bc7d5beb501e55fe\",\"section\":\"journal\",\"sequence\":\"1\",\"series\":\"A\",\"voucherId\":\"voucher_a25257049b914733a9606083bb16be7f\",\"voucherNumber\":\"1\"},{\"accountCode\":\"2999\",\"accountId\":\"account_clearing\",\"approvalId\":\"approval_f65e583609704ee9b1189666621b7ac6\",\"approvedBy\":\"actor_operator\",\"changeSetId\":\"change_52db7241c19c49cdbe362c08dca58b1c\",\"committedAt\":\"2026-09-22T14:37:02.626911Z\",\"correctsVoucherId\":\"voucher_a25257049b914733a9606083bb16be7f\",\"creditMinor\":\"12500\",\"debitMinor\":\"0\",\"description\":\"Synthetic clearing debit\",\"eventId\":\"event_c698c2ebffa34f0296c6759b8f230711\",\"evidenceRefs\":[{\"evidenceId\":\"evidence_6d82183b2044483a9814dcb3593317f1\",\"locator\":\"clearing-transfer\",\"sha256\":\"f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f\"}],\"fiscalYearId\":\"year_synthetic_2026\",\"lineId\":\"line_2222704641214102b63e4e9d2fdcdc5a\",\"ordinal\":1,\"part\":\"movement\",\"periodId\":\"period_synthetic_2026\",\"planDigest\":\"sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1\",\"postingDate\":\"2026-09-22\",\"postingPurpose\":\"reversal\",\"receiptId\":\"receipt_1296c37a457c4d82880654c340655355\",\"section\":\"journal\",\"sequence\":\"2\",\"series\":\"A\",\"voucherId\":\"voucher_bbd455fa0a6e464da1a799e4a3e2eb9f\",\"voucherNumber\":\"2\"},{\"accountCode\":\"1930\",\"accountId\":\"account_bank\",\"approvalId\":\"approval_f65e583609704ee9b1189666621b7ac6\",\"approvedBy\":\"actor_operator\",\"changeSetId\":\"change_52db7241c19c49cdbe362c08dca58b1c\",\"committedAt\":\"2026-09-22T14:37:02.626911Z\",\"correctsVoucherId\":\"voucher_a25257049b914733a9606083bb16be7f\",\"creditMinor\":\"0\",\"debitMinor\":\"12500\",\"description\":\"Synthetic bank credit\",\"eventId\":\"event_c698c2ebffa34f0296c6759b8f230711\",\"evidenceRefs\":[{\"evidenceId\":\"evidence_6d82183b2044483a9814dcb3593317f1\",\"locator\":\"clearing-transfer\",\"sha256\":\"f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f\"}],\"fiscalYearId\":\"year_synthetic_2026\",\"lineId\":\"line_d434050743c54573948634b392193a00\",\"ordinal\":2,\"part\":\"movement\",\"periodId\":\"period_synthetic_2026\",\"planDigest\":\"sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1\",\"postingDate\":\"2026-09-22\",\"postingPurpose\":\"reversal\",\"receiptId\":\"receipt_1296c37a457c4d82880654c340655355\",\"section\":\"journal\",\"sequence\":\"2\",\"series\":\"A\",\"voucherId\":\"voucher_bbd455fa0a6e464da1a799e4a3e2eb9f\",\"voucherNumber\":\"2\"},{\"accountCode\":\"2999\",\"accountId\":\"account_clearing\",\"approvalId\":\"approval_582ac8a09c5643efa76da53a0310421d\",\"approvedBy\":\"actor_operator\",\"changeSetId\":\"change_d37e8e1fc2c84d0aa79723c3fa2dce43\",\"committedAt\":\"2026-09-22T16:16:53.395336Z\",\"correctsVoucherId\":null,\"creditMinor\":\"0\",\"debitMinor\":\"500\",\"description\":\"Synthetic clearing debit\",\"eventId\":\"event_9d83c2d7b93c414582fd051f4915c18d\",\"evidenceRefs\":[{\"evidenceId\":\"evidence_1130a58a4f974315ba50d0a8408edae4\",\"locator\":\"synthetic-correction-bundle-origin\",\"sha256\":\"797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\"}],\"fiscalYearId\":\"year_synthetic_2026\",\"lineId\":\"line_7bab4e56b3e04791a9e8842119ec89f6\",\"ordinal\":1,\"part\":\"movement\",\"periodId\":\"period_synthetic_2026\",\"planDigest\":\"sha256:76bf2cbef546021bdc0cb78416bfa0b0772e528fde98f32796166dce6823e53d\",\"postingDate\":\"2026-09-22\",\"postingPurpose\":\"adjustment\",\"receiptId\":\"receipt_055f9a47c3e643ed93967dea41520f0c\",\"section\":\"journal\",\"sequence\":\"3\",\"series\":\"A\",\"voucherId\":\"voucher_9e27982035254504b81f0af2650b3b96\",\"voucherNumber\":\"3\"},{\"accountCode\":\"1930\",\"accountId\":\"account_bank\",\"approvalId\":\"approval_582ac8a09c5643efa76da53a0310421d\",\"approvedBy\":\"actor_operator\",\"changeSetId\":\"change_d37e8e1fc2c84d0aa79723c3fa2dce43\",\"committedAt\":\"2026-09-22T16:16:53.395336Z\",\"correctsVoucherId\":null,\"creditMinor\":\"500\",\"debitMinor\":\"0\",\"description\":\"Synthetic bank credit\",\"eventId\":\"event_9d83c2d7b93c414582fd051f4915c18d\",\"evidenceRefs\":[{\"evidenceId\":\"evidence_1130a58a4f974315ba50d0a8408edae4\",\"locator\":\"synthetic-correction-bundle-origin\",\"sha256\":\"797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\"}],\"fiscalYearId\":\"year_synthetic_2026\",\"lineId\":\"line_be32649088c1494eb3f8dc796a1b2fd5\",\"ordinal\":2,\"part\":\"movement\",\"periodId\":\"period_synthetic_2026\",\"planDigest\":\"sha256:76bf2cbef546021bdc0cb78416bfa0b0772e528fde98f32796166dce6823e53d\",\"postingDate\":\"2026-09-22\",\"postingPurpose\":\"adjustment\",\"receiptId\":\"receipt_055f9a47c3e643ed93967dea41520f0c\",\"section\":\"journal\",\"sequence\":\"3\",\"series\":\"A\",\"voucherId\":\"voucher_9e27982035254504b81f0af2650b3b96\",\"voucherNumber\":\"3\"},{\"accountCode\":\"2999\",\"accountId\":\"account_clearing\",\"approvalId\":\"approval_67eb37fd1a354fc988a0bf2c5dbf63aa\",\"approvedBy\":\"actor_operator\",\"changeSetId\":\"change_e806d571076d4a5fa53228db91cf890d\",\"committedAt\":\"2026-09-22T16:19:45.231958Z\",\"correctsVoucherId\":\"voucher_9e27982035254504b81f0af2650b3b96\",\"creditMinor\":\"500\",\"debitMinor\":\"0\",\"description\":\"Synthetic clearing debit\",\"eventId\":\"event_9d83c2d7b93c414582fd051f4915c18d\",\"evidenceRefs\":[{\"evidenceId\":\"evidence_1130a58a4f974315ba50d0a8408edae4\",\"locator\":\"synthetic-correction-bundle-origin\",\"sha256\":\"797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\"}],\"fiscalYearId\":\"year_synthetic_2026\",\"lineId\":\"line_299ca1a5620648c1895cdeb5b89ec5dc\",\"ordinal\":1,\"part\":\"movement\",\"periodId\":\"period_synthetic_2026\",\"planDigest\":\"sha256:74fb57cfdd3ff4554815e4c9572767c41c97e0cc0f23c06c5573600be521af6a\",\"postingDate\":\"2026-09-22\",\"postingPurpose\":\"reversal\",\"receiptId\":\"receipt_04b8590bc3714b84b5620f232137f666\",\"section\":\"journal\",\"sequence\":\"4\",\"series\":\"A\",\"voucherId\":\"voucher_e288832f1f3c40b6be4218c35c564954\",\"voucherNumber\":\"4\"},{\"accountCode\":\"1930\",\"accountId\":\"account_bank\",\"approvalId\":\"approval_67eb37fd1a354fc988a0bf2c5dbf63aa\",\"approvedBy\":\"actor_operator\",\"changeSetId\":\"change_e806d571076d4a5fa53228db91cf890d\",\"committedAt\":\"2026-09-22T16:19:45.231958Z\",\"correctsVoucherId\":\"voucher_9e27982035254504b81f0af2650b3b96\",\"creditMinor\":\"0\",\"debitMinor\":\"500\",\"description\":\"Synthetic bank credit\",\"eventId\":\"event_9d83c2d7b93c414582fd051f4915c18d\",\"evidenceRefs\":[{\"evidenceId\":\"evidence_1130a58a4f974315ba50d0a8408edae4\",\"locator\":\"synthetic-correction-bundle-origin\",\"sha256\":\"797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\"}],\"fiscalYearId\":\"year_synthetic_2026\",\"lineId\":\"line_bfa06d1f14874ae29d6371db144611d6\",\"ordinal\":2,\"part\":\"movement\",\"periodId\":\"period_synthetic_2026\",\"planDigest\":\"sha256:74fb57cfdd3ff4554815e4c9572767c41c97e0cc0f23c06c5573600be521af6a\",\"postingDate\":\"2026-09-22\",\"postingPurpose\":\"reversal\",\"receiptId\":\"receipt_04b8590bc3714b84b5620f232137f666\",\"section\":\"journal\",\"sequence\":\"4\",\"series\":\"A\",\"voucherId\":\"voucher_e288832f1f3c40b6be4218c35c564954\",\"voucherNumber\":\"4\"},{\"accountCode\":\"2999\",\"accountId\":\"account_clearing\",\"approvalId\":\"approval_3a7414210fa0430892cb59e166c52413\",\"approvedBy\":\"actor_operator\",\"changeSetId\":\"change_4bdc2c70246244b491427e871c935ff9\",\"committedAt\":\"2026-09-22T16:19:45.235164Z\",\"correctsVoucherId\":null,\"creditMinor\":\"0\",\"debitMinor\":\"700\",\"description\":\"Corrected synthetic clearing debit\",\"eventId\":\"event_fabadf7c63ff49bfa1c3db09b47f5be1\",\"evidenceRefs\":[{\"evidenceId\":\"evidence_1130a58a4f974315ba50d0a8408edae4\",\"locator\":\"synthetic-correction-bundle-origin\",\"sha256\":\"797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\"}],\"fiscalYearId\":\"year_synthetic_2026\",\"lineId\":\"line_0c1a6ba12ec2404c8c2b4520d58e1964\",\"ordinal\":1,\"part\":\"movement\",\"periodId\":\"period_synthetic_2026\",\"planDigest\":\"sha256:a0383cf43ebb7c0de3ea1b406086f68a30c7793a01c24817d11af91a64700a20\",\"postingDate\":\"2026-09-22\",\"postingPurpose\":\"adjustment\",\"receiptId\":\"receipt_0f37989b53434220902afff09874ac5d\",\"section\":\"journal\",\"sequence\":\"5\",\"series\":\"A\",\"voucherId\":\"voucher_094df4fc29ec427ca0821ff67c980315\",\"voucherNumber\":\"5\"},{\"accountCode\":\"1930\",\"accountId\":\"account_bank\",\"approvalId\":\"approval_3a7414210fa0430892cb59e166c52413\",\"approvedBy\":\"actor_operator\",\"changeSetId\":\"change_4bdc2c70246244b491427e871c935ff9\",\"committedAt\":\"2026-09-22T16:19:45.235164Z\",\"correctsVoucherId\":null,\"creditMinor\":\"700\",\"debitMinor\":\"0\",\"description\":\"Corrected synthetic bank credit\",\"eventId\":\"event_fabadf7c63ff49bfa1c3db09b47f5be1\",\"evidenceRefs\":[{\"evidenceId\":\"evidence_1130a58a4f974315ba50d0a8408edae4\",\"locator\":\"synthetic-correction-bundle-origin\",\"sha256\":\"797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0\"}],\"fiscalYearId\":\"year_synthetic_2026\",\"lineId\":\"line_40530046e29a47bc8228213a5542bb05\",\"ordinal\":2,\"part\":\"movement\",\"periodId\":\"period_synthetic_2026\",\"planDigest\":\"sha256:a0383cf43ebb7c0de3ea1b406086f68a30c7793a01c24817d11af91a64700a20\",\"postingDate\":\"2026-09-22\",\"postingPurpose\":\"adjustment\",\"receiptId\":\"receipt_0f37989b53434220902afff09874ac5d\",\"section\":\"journal\",\"sequence\":\"5\",\"series\":\"A\",\"voucherId\":\"voucher_094df4fc29ec427ca0821ff67c980315\",\"voucherNumber\":\"5\"}],\"owner_controls\":[],\"owner_sources\":[]}}"
+          }
+        },
+        "sha256Matches": true,
+        "byteLengthMatches": true
+      },
+      "owner_controls_csv": {
+        "observation": {
+          "method": "GET",
+          "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/artifacts/owner_controls_csv",
+          "idempotencyKey": null,
+          "input": null,
+          "status": 200,
+          "result": {
+            "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+            "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+            "descriptor": {
+              "format": "owner_controls_csv",
+              "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__owner_controls_csv.csv",
+              "mediaType": "text/csv",
+              "encoding": "UTF-8",
+              "byteLength": 5355,
+              "sha256": "e66a4e32be3b98698682343ba314cac22f6f66cf5ddd7dd3e83dadced2f05a98",
+              "cellEncoding": "apostrophe_prefixed_text_v1"
+            },
+            "content": "\"recordType\",\"packId\",\"packDigest\",\"reportId\",\"recordedThroughSequence\",\"currency\",\"currencyScale\",\"openingBasis\",\"companyCompleteness\",\"statutoryReady\",\"coverage\",\"providerBasis\",\"generatorVersion\",\"owner\",\"startsOn\",\"endsOn\",\"sourceCoverage\",\"openingBalanceMinor\",\"unlinkedRecordCount\",\"records\",\"effects\",\"allocations\",\"ownerBalances\",\"movements\",\"accountControls\",\"blockers\"\r\n\"'manifest\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'report_e615bcb1242c40df96d9adbaa169fffd\",\"'5\",\"'SEK\",\"'2\",\"'{\"\"method\"\": \"\"recorded_pre_interval_postings_only\"\", \"\"status\"\": \"\"not_verified\"\", \"\"evidenceIds\"\": [], \"\"explanation\"\": \"\"Synthetic development observation only. Actual company opening balances have not been supplied or verified.\"\", \"\"earlierVoucherCount\"\": 0}\",\"'not_established\",\"'false\",\"'[{\"\"code\"\": \"\"opening_basis\"\", \"\"detail\"\": \"\"Only recorded pre-interval postings form the numeric opening. First year and absence of prior vouchers do not establish zero opening balances. Supplied explanation/evidence is not an approved OpeningSet.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"company_profile\"\", \"\"detail\"\": \"\"Legal entity type, fiscal facts, accounting method, VAT registration and complete obligations have not been verified for this synthetic book.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"required_source_inventory\"\", \"\"detail\"\": \"\"The retained bank inventory is narrow and cannot establish all company records. Every expected account, privately paid item and external register needs independent review.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_controls\"\", \"\"detail\"\": \"\"Captured bank hook reports represented-source reconciliation only. Empty sources are not not-applicable. Reopen can require fresh closing signoff even when an old reconciliation is arithmetically unchanged.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"commerce_controls\"\", \"\"detail\"\": \"\"Registered invoice/allocation counts and validity are captured. A zero register count does not establish no invoices or no liabilities; unregistered sources remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"schedule_controls\"\", \"\"detail\"\": \"\"Captured schedules expose due/unposted/reversed occurrences, not a complete asset/deferral inventory or independent control-account reconciliation.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"owner_funding\"\", \"\"detail\"\": \"\"Captured owner sources, reviews, posted effects, allocations and provider control balances. Unresolved reviews: 0; sources without posted coverage: 0. Unpaid linked claims are not technical errors. Opening and company completeness remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"vat_tax\"\", \"\"detail\"\": \"\"Captured every expense observation/current review and provider control/exclusion assessment in actual_review mode. Missing or stale reviews: 0; unsupported/unreconciled known sources: 0. A current review may still contain unknown facts. No tax contribution, legal eligibility, VAT return or ledger reconciliation is established.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"other_obligations\"\", \"\"detail\"\": \"\"Payroll, FX, statutory disclosures and other obligations require applicability evidence. Reported no employees does not replace reviewed company facts.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"unlinked_evidence\"\", \"\"detail\"\": \"\"1 retained evidence records have no included posting or opening-explanation use. Review their disposition; a source/control document need not itself create a posting. Their full content remains visible. Unretained missing sources cannot be counted.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"later_dated_vouchers\"\", \"\"detail\"\": \"\"0 vouchers at the captured committed sequence are dated after the interval. Their lines and source references are visible but excluded from opening/movement totals.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"statutory_outputs\"\", \"\"detail\"\": \"\"This accountant review pack is not a financial close, annual report, SIE, iXBRL, tax filing, external acceptance or a verified Visma interchange format.\"\", \"\"status\"\": \"\"unavailable\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_inventory_period_synthetic_2026\"\", \"\"detail\"\": \"\"No explicit expected bank-source declaration is retained for period period_synthetic_2026.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"declared_exclusion_13\"\", \"\"detail\"\": \"\"Preparer declaration, not a not-applicable conclusion: Actual company source inventory \u2014 Not supplied. This development book must not stand in for company records.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}]\",\"'{\"\"ownerSourceDigest\"\": \"\"sha256:2291b726dff9e0f2e0bd020132bbeccf7ef7634e636d3d714650a2bd913d12ef\"\", \"\"ownerInventoryDigest\"\": \"\"sha256:33fdb5402a9967a20265da5c0775c934c3bf53fc87e89dfd5f7345fdec1dc78b\"\", \"\"expenseTaxBasisDigest\"\": \"\"sha256:1d5900140b4f9553f2dbc1bb33837a0b2b419897a3bde4a4e3eb50820db41319\"\"}\",\"'accountant-review-v1\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\",\"'\"\r\n"
+          }
+        },
+        "sha256Matches": true,
+        "byteLengthMatches": true
+      },
+      "owner_sources_csv": {
+        "observation": {
+          "method": "GET",
+          "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/accountant-review-packs/review_pack_0e38180b595141b09bcbc1762d395e17/artifacts/owner_sources_csv",
+          "idempotencyKey": null,
+          "input": null,
+          "status": 200,
+          "result": {
+            "packId": "review_pack_0e38180b595141b09bcbc1762d395e17",
+            "packDigest": "sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a",
+            "descriptor": {
+              "format": "owner_sources_csv",
+              "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__owner_sources_csv.csv",
+              "mediaType": "text/csv",
+              "encoding": "UTF-8",
+              "byteLength": 5182,
+              "sha256": "d346faaa55c37d572b5c3b563ee7fafeda1d7bec588a1bc366db358cdd024769",
+              "cellEncoding": "apostrophe_prefixed_text_v1"
+            },
+            "content": "\"recordType\",\"packId\",\"packDigest\",\"reportId\",\"recordedThroughSequence\",\"currency\",\"currencyScale\",\"openingBasis\",\"companyCompleteness\",\"statutoryReady\",\"coverage\",\"providerBasis\",\"generatorVersion\",\"disposition\",\"source\",\"revision\",\"review\"\r\n\"'manifest\",\"'review_pack_0e38180b595141b09bcbc1762d395e17\",\"'sha256:f82d1f9ee5413f91244e1c679975bdab96de710623028e7ade3a9a89ee74ad9a\",\"'report_e615bcb1242c40df96d9adbaa169fffd\",\"'5\",\"'SEK\",\"'2\",\"'{\"\"method\"\": \"\"recorded_pre_interval_postings_only\"\", \"\"status\"\": \"\"not_verified\"\", \"\"evidenceIds\"\": [], \"\"explanation\"\": \"\"Synthetic development observation only. Actual company opening balances have not been supplied or verified.\"\", \"\"earlierVoucherCount\"\": 0}\",\"'not_established\",\"'false\",\"'[{\"\"code\"\": \"\"opening_basis\"\", \"\"detail\"\": \"\"Only recorded pre-interval postings form the numeric opening. First year and absence of prior vouchers do not establish zero opening balances. Supplied explanation/evidence is not an approved OpeningSet.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"company_profile\"\", \"\"detail\"\": \"\"Legal entity type, fiscal facts, accounting method, VAT registration and complete obligations have not been verified for this synthetic book.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"required_source_inventory\"\", \"\"detail\"\": \"\"The retained bank inventory is narrow and cannot establish all company records. Every expected account, privately paid item and external register needs independent review.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_controls\"\", \"\"detail\"\": \"\"Captured bank hook reports represented-source reconciliation only. Empty sources are not not-applicable. Reopen can require fresh closing signoff even when an old reconciliation is arithmetically unchanged.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"commerce_controls\"\", \"\"detail\"\": \"\"Registered invoice/allocation counts and validity are captured. A zero register count does not establish no invoices or no liabilities; unregistered sources remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"schedule_controls\"\", \"\"detail\"\": \"\"Captured schedules expose due/unposted/reversed occurrences, not a complete asset/deferral inventory or independent control-account reconciliation.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"owner_funding\"\", \"\"detail\"\": \"\"Captured owner sources, reviews, posted effects, allocations and provider control balances. Unresolved reviews: 0; sources without posted coverage: 0. Unpaid linked claims are not technical errors. Opening and company completeness remain unknown.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"vat_tax\"\", \"\"detail\"\": \"\"Captured every expense observation/current review and provider control/exclusion assessment in actual_review mode. Missing or stale reviews: 0; unsupported/unreconciled known sources: 0. A current review may still contain unknown facts. No tax contribution, legal eligibility, VAT return or ledger reconciliation is established.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"other_obligations\"\", \"\"detail\"\": \"\"Payroll, FX, statutory disclosures and other obligations require applicability evidence. Reported no employees does not replace reviewed company facts.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"unlinked_evidence\"\", \"\"detail\"\": \"\"1 retained evidence records have no included posting or opening-explanation use. Review their disposition; a source/control document need not itself create a posting. Their full content remains visible. Unretained missing sources cannot be counted.\"\", \"\"status\"\": \"\"unverified\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"later_dated_vouchers\"\", \"\"detail\"\": \"\"0 vouchers at the captured committed sequence are dated after the interval. Their lines and source references are visible but excluded from opening/movement totals.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"statutory_outputs\"\", \"\"detail\"\": \"\"This accountant review pack is not a financial close, annual report, SIE, iXBRL, tax filing, external acceptance or a verified Visma interchange format.\"\", \"\"status\"\": \"\"unavailable\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"bank_inventory_period_synthetic_2026\"\", \"\"detail\"\": \"\"No explicit expected bank-source declaration is retained for period period_synthetic_2026.\"\", \"\"status\"\": \"\"missing\"\", \"\"section\"\": \"\"coverage\"\"}, {\"\"code\"\": \"\"declared_exclusion_13\"\", \"\"detail\"\": \"\"Preparer declaration, not a not-applicable conclusion: Actual company source inventory \u2014 Not supplied. This development book must not stand in for company records.\"\", \"\"status\"\": \"\"excluded\"\", \"\"section\"\": \"\"coverage\"\"}]\",\"'{\"\"ownerSourceDigest\"\": \"\"sha256:2291b726dff9e0f2e0bd020132bbeccf7ef7634e636d3d714650a2bd913d12ef\"\", \"\"ownerInventoryDigest\"\": \"\"sha256:33fdb5402a9967a20265da5c0775c934c3bf53fc87e89dfd5f7345fdec1dc78b\"\", \"\"expenseTaxBasisDigest\"\": \"\"sha256:1d5900140b4f9553f2dbc1bb33837a0b2b419897a3bde4a4e3eb50820db41319\"\"}\",\"'accountant-review-v1\",\"'\",\"'\",\"'\",\"'\"\r\n"
+          }
+        },
+        "sha256Matches": true,
+        "byteLengthMatches": true
+      }
+    },
+    "independentlySummedJournal": {
+      "debitMinor": "26700",
+      "creditMinor": "26700",
+      "journalRows": 10
+    },
+    "downloads": [
+      {
+        "format": "balances_csv",
+        "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__balances_csv.csv",
+        "mediaType": "text/csv",
+        "encoding": "UTF-8",
+        "byteLength": 5787,
+        "sha256": "738ed100503e239ff7aec4bc1c7cba3424411b2cba2719f0aca53ae762b4bacd",
+        "cellEncoding": "apostrophe_prefixed_text_v1",
+        "path": ".cache/openerp-development/accountant-review/review_pack_0e38180b595141b09bcbc1762d395e17/review_pack_0e38180b595141b09bcbc1762d395e17__balances_csv.csv"
+      },
+      {
+        "format": "coverage_csv",
+        "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__coverage_csv.csv",
+        "mediaType": "text/csv",
+        "encoding": "UTF-8",
+        "byteLength": 10752,
+        "sha256": "2408c191250a5b73c3ce95bfc70bf917958d6b7eda445a437c08d6f7521ae279",
+        "cellEncoding": "apostrophe_prefixed_text_v1",
+        "path": ".cache/openerp-development/accountant-review/review_pack_0e38180b595141b09bcbc1762d395e17/review_pack_0e38180b595141b09bcbc1762d395e17__coverage_csv.csv"
+      },
+      {
+        "format": "evidence_csv",
+        "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__evidence_csv.csv",
+        "mediaType": "text/csv",
+        "encoding": "UTF-8",
+        "byteLength": 7967,
+        "sha256": "23ce85bcbacee2ece875a3a595e0f8d768b37e404facac441fa0de2dfc086be3",
+        "cellEncoding": "apostrophe_prefixed_text_v1",
+        "path": ".cache/openerp-development/accountant-review/review_pack_0e38180b595141b09bcbc1762d395e17/review_pack_0e38180b595141b09bcbc1762d395e17__evidence_csv.csv"
+      },
+      {
+        "format": "expense_tax_csv",
+        "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__expense_tax_csv.csv",
+        "mediaType": "text/csv",
+        "encoding": "UTF-8",
+        "byteLength": 5187,
+        "sha256": "ff528f52ab35f9998a21bc49051a1dc73cd0a374299f2952a24ea858eed29e51",
+        "cellEncoding": "apostrophe_prefixed_text_v1",
+        "path": ".cache/openerp-development/accountant-review/review_pack_0e38180b595141b09bcbc1762d395e17/review_pack_0e38180b595141b09bcbc1762d395e17__expense_tax_csv.csv"
+      },
+      {
+        "format": "journal_csv",
+        "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__journal_csv.csv",
+        "mediaType": "text/csv",
+        "encoding": "UTF-8",
+        "byteLength": 15042,
+        "sha256": "7ea39bd82f439306098fc55e841c5d2c9af8141061c3d8237ccaa7df7a346b96",
+        "cellEncoding": "apostrophe_prefixed_text_v1",
+        "path": ".cache/openerp-development/accountant-review/review_pack_0e38180b595141b09bcbc1762d395e17/review_pack_0e38180b595141b09bcbc1762d395e17__journal_csv.csv"
+      },
+      {
+        "format": "json",
+        "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__json.json",
+        "mediaType": "application/json",
+        "encoding": "UTF-8",
+        "byteLength": 21503,
+        "sha256": "161d5887834d566172b88114523dd6c2b359e51f9c9465603b7d6158cbfee8aa",
+        "cellEncoding": "json_exact",
+        "path": ".cache/openerp-development/accountant-review/review_pack_0e38180b595141b09bcbc1762d395e17/review_pack_0e38180b595141b09bcbc1762d395e17__json.json"
+      },
+      {
+        "format": "owner_controls_csv",
+        "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__owner_controls_csv.csv",
+        "mediaType": "text/csv",
+        "encoding": "UTF-8",
+        "byteLength": 5355,
+        "sha256": "e66a4e32be3b98698682343ba314cac22f6f66cf5ddd7dd3e83dadced2f05a98",
+        "cellEncoding": "apostrophe_prefixed_text_v1",
+        "path": ".cache/openerp-development/accountant-review/review_pack_0e38180b595141b09bcbc1762d395e17/review_pack_0e38180b595141b09bcbc1762d395e17__owner_controls_csv.csv"
+      },
+      {
+        "format": "owner_sources_csv",
+        "filename": "review_pack_0e38180b595141b09bcbc1762d395e17__owner_sources_csv.csv",
+        "mediaType": "text/csv",
+        "encoding": "UTF-8",
+        "byteLength": 5182,
+        "sha256": "d346faaa55c37d572b5c3b563ee7fafeda1d7bec588a1bc366db358cdd024769",
+        "cellEncoding": "apostrophe_prefixed_text_v1",
+        "path": ".cache/openerp-development/accountant-review/review_pack_0e38180b595141b09bcbc1762d395e17/review_pack_0e38180b595141b09bcbc1762d395e17__owner_sources_csv.csv"
+      }
+    ],
+    "ledger": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_synthetic/books/book_synthetic/ledger",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "sequence": "5",
+        "accounts": [
+          {
+            "accountId": "account_bank",
+            "code": "1930",
+            "name": "Synthetic bank account",
+            "debitMinor": "13000",
+            "creditMinor": "13700",
+            "balanceMinor": "-700"
+          },
+          {
+            "accountId": "account_clearing",
+            "code": "2999",
+            "name": "Synthetic clearing account",
+            "debitMinor": "13700",
+            "creditMinor": "13000",
+            "balanceMinor": "700"
+          }
+        ]
+      }
+    }
+  },
+  "limits": [
+    "Local synthetic observations only; no real-company facts or financial postings created",
+    "No new tests/fixtures or automated suites",
+    "Owner and tax populated flows, CSV admission, approval revocation races, concurrent recovery and browser interactions remain unobserved",
+    "No backup/restore rehearsal, deployment, statutory acceptance or full-system acceptance"
+  ]
+}

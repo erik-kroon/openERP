@@ -42,9 +42,7 @@
         "method": "GET",
         "path": "/api/health",
         "parameters": [],
-        "responseCodes": [
-          "200"
-        ],
+        "responseCodes": ["200"],
         "declaredSecurity": [],
         "schemaFingerprint": "7c47ff6107bdf5bb74dc3032e56534bd1725f64fb8daaa3625d872a09f464f03",
         "handler": {
@@ -60,9 +58,7 @@
         "method": "GET",
         "path": "/api/v1/system",
         "parameters": [],
-        "responseCodes": [
-          "200"
-        ],
+        "responseCodes": ["200"],
         "declaredSecurity": [],
         "schemaFingerprint": "b1e950c3ee88939d268cf5d13ad30b83d9985a75479cb1b4ac6b5e225d3deb64",
         "handler": {
@@ -78,24 +74,13 @@
         "method": "POST",
         "path": "/api/v1/session",
         "parameters": [],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "9d499c5574ac59a5fa0feede3721ea9088de0c7d2498614cb1122260cde3f71b",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 122,
-          "capabilities": [
-            "book_list"
-          ],
+          "capabilities": ["book_list"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -115,16 +100,7 @@
         "method": "DELETE",
         "path": "/api/v1/session",
         "parameters": [],
-        "responseCodes": [
-          "204",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["204", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "2dd5c1687d2c515b167a76dadba9c6bdb5035bbe1e4399eab720e60bf0293a1c",
         "handler": {
@@ -151,24 +127,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "8d971f83a4533b31e712992b2ee5835708ed7084088fcd3861aad073c474e54c",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 12,
-          "capabilities": [
-            "book_get_status"
-          ],
+          "capabilities": ["book_get_status"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -188,24 +153,13 @@
         "method": "GET",
         "path": "/api/v1/books",
         "parameters": [],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "93ce9c110dca7e9ef3c181f69780745cd9dd81c8e1f0df0f965c66f41f2731c2",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 17,
-          "capabilities": [
-            "book_list"
-          ],
+          "capabilities": ["book_list"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -236,24 +190,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "18d38d8c266136d4221ea352b8821b452460cda473e0b1d4c36df9592794425c",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 20,
-          "capabilities": [
-            "book_get_setup"
-          ],
+          "capabilities": ["book_get_setup"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -289,24 +232,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "dc49aae1ccb0bc10f49f2b6e7e2f9833c08847fafe7bcf5cd7a6a67328017b0c",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 25,
-          "capabilities": [
-            "evidence_create"
-          ],
+          "capabilities": ["evidence_create"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -342,24 +274,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "7c10968a90d2c21893d1e0caa9e184f0189d489fc128466306f011352422f4c2",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 34,
-          "capabilities": [
-            "evidence_get"
-          ],
+          "capabilities": ["evidence_get"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -395,24 +316,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "e2788a994d1549f1ec64a6cab6b8311341e5f1913d0fe87c8738bef58caa1234",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 39,
-          "capabilities": [
-            "ledger_prepare_journal"
-          ],
+          "capabilities": ["ledger_prepare_journal"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -448,24 +358,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "505db3853876c85ae3b988cb5ee0d2101b54948148e22b44605577b3d14d070f",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 48,
-          "capabilities": [
-            "changes_get"
-          ],
+          "capabilities": ["changes_get"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -506,24 +405,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "f85bcf9ec2b4beaf8425f647a39f9a121ec036c895b3bb13ca77273cc3d0865e",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 53,
-          "capabilities": [
-            "changes_validate"
-          ],
+          "capabilities": ["changes_validate"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -564,25 +452,14 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "aa6c08cb76d2f706f079adfba7c5b075b98eda59b0e2dba56d2ec409e1ed39d2",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 62,
           "capabilities": [],
-          "directDatabaseOperations": [
-            "approveChange"
-          ]
+          "directDatabaseOperations": ["approveChange"]
         },
         "databaseOperations": [
           {
@@ -622,24 +499,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "920040605b28c0b6fdbbe7fbe3d6b38fbee50f1fb68a2d727cd8685820279366",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 77,
-          "capabilities": [
-            "changes_execute"
-          ],
+          "capabilities": ["changes_execute"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -680,24 +546,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "40192e57fe9f5d6edadd723bee7f8463299691e4c233299825437ec669390fd1",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 87,
-          "capabilities": [
-            "ledger_prepare_correction"
-          ],
+          "capabilities": ["ledger_prepare_correction"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -733,24 +588,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "3139e171c9318753a6621850fbc4c264d1c976189c7dad3d1f2e427c2171bdcb",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 97,
-          "capabilities": [
-            "ledger_get_voucher"
-          ],
+          "capabilities": ["ledger_get_voucher"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -786,24 +630,13 @@
             "required": false
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "e9121afde9c26b002057a529bb06e3188dcb98246835aebeb3318c297b27fb97",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 102,
-          "capabilities": [
-            "ledger_list"
-          ],
+          "capabilities": ["ledger_list"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -834,24 +667,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "210188e97cd135ace48a704c787b53e8759d8808824cebe900cb7d0db4f21535",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 107,
-          "capabilities": [
-            "ledger_snapshot"
-          ],
+          "capabilities": ["ledger_snapshot"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -887,24 +709,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "3443968b2e426d2417ae97a619de9de22e15238af8c582ecb9efc303685e074e",
         "handler": {
           "path": "apps/api/src/accounting.ts",
           "line": 112,
-          "capabilities": [
-            "receipts_get"
-          ],
+          "capabilities": ["receipts_get"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -940,24 +751,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "0493e161d331e288f4120ead4ebaa3db8b0a0884f1151297a7b7f32f2d2b9013",
         "handler": {
           "path": "apps/api/src/reports.ts",
           "line": 9,
-          "capabilities": [
-            "reports_prepare"
-          ],
+          "capabilities": ["reports_prepare"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -993,24 +793,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "fe1e0b72228fc7734f81db813c42dc4b819b53a6c8657bda0449921213fe4b4d",
         "handler": {
           "path": "apps/api/src/reports.ts",
           "line": 18,
-          "capabilities": [
-            "reports_get"
-          ],
+          "capabilities": ["reports_get"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1051,24 +840,13 @@
             "required": false
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "c178ee9aa655448cea95b307eb5ccd2af7f1f79b8d039c753924e20a9d9a0d69",
         "handler": {
           "path": "apps/api/src/reports.ts",
           "line": 23,
-          "capabilities": [
-            "reports_lines"
-          ],
+          "capabilities": ["reports_lines"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1114,24 +892,13 @@
             "required": false
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "868a4da9c7589a3ce60df00512e87792fbe63b198ae120b40ab12d3a3d1c9669",
         "handler": {
           "path": "apps/api/src/reports.ts",
           "line": 32,
-          "capabilities": [
-            "reports_explain"
-          ],
+          "capabilities": ["reports_explain"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1167,24 +934,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "90301495efe10bd15825379bca7eb0a667e050b9572d5e9255ac3b72c7ba9d7d",
         "handler": {
           "path": "apps/api/src/reconciliation.ts",
           "line": 9,
-          "capabilities": [
-            "bank_import_statement"
-          ],
+          "capabilities": ["bank_import_statement"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1220,24 +976,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "f4cdca376544ae0063b4e6151ed668c9a39d1ff95f4bfccbb052b4861c5000d5",
         "handler": {
           "path": "apps/api/src/reconciliation.ts",
           "line": 18,
-          "capabilities": [
-            "bank_get_statement"
-          ],
+          "capabilities": ["bank_get_statement"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1273,24 +1018,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "bc9280313da848890296046c21265c8cf18ee0d40a15db86a71166e3adff34bd",
         "handler": {
           "path": "apps/api/src/reconciliation.ts",
           "line": 23,
-          "capabilities": [
-            "bank_match_observation"
-          ],
+          "capabilities": ["bank_match_observation"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1326,24 +1060,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "ad73e206086addce3e7e07488f4e3ca3a63de0f542fcc794bba59bb5b39d4859",
         "handler": {
           "path": "apps/api/src/reconciliation.ts",
           "line": 32,
-          "capabilities": [
-            "bank_reconcile"
-          ],
+          "capabilities": ["bank_reconcile"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1379,24 +1102,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "8fd24ff446c7732015c66e45cecb5857d8879aae4b2713c367761d7d35f221f0",
         "handler": {
           "path": "apps/api/src/reconciliation.ts",
           "line": 41,
-          "capabilities": [
-            "bank_get_reconciliation"
-          ],
+          "capabilities": ["bank_get_reconciliation"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1432,24 +1144,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "74f5de0b2f70d15f6826851fe52262814b669ef4ab66bbac43fb676afb9cf8e8",
         "handler": {
           "path": "apps/api/src/cases.ts",
           "line": 9,
-          "capabilities": [
-            "cases_prepare_snapshot"
-          ],
+          "capabilities": ["cases_prepare_snapshot"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1495,24 +1196,13 @@
             "required": false
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "a4ffce605bc2715f9f8721a7410e39386c23f64cf67ff33f65e9b86cffe200a7",
         "handler": {
           "path": "apps/api/src/cases.ts",
           "line": 18,
-          "capabilities": [
-            "cases_list"
-          ],
+          "capabilities": ["cases_list"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1568,24 +1258,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "ddfd2b58bef6ea4aa4bac2b4bdc322b8585e0811cc8835047b270c8795ce2d40",
         "handler": {
           "path": "apps/api/src/cases.ts",
           "line": 27,
-          "capabilities": [
-            "cases_get_context"
-          ],
+          "capabilities": ["cases_get_context"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1621,24 +1300,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "590b6e9e98c01e8016d270c55cefcec7442e20eadc9c0673ef48faf6a9b70b68",
         "handler": {
           "path": "apps/api/src/automation.ts",
           "line": 11,
-          "capabilities": [
-            "rules_propose"
-          ],
+          "capabilities": ["rules_propose"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1674,24 +1342,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "11a8b73f3c0417ad89c1bb2e1e171c8b00a13e5b79e5140e86a918a25dfa1633",
         "handler": {
           "path": "apps/api/src/automation.ts",
           "line": 20,
-          "capabilities": [
-            "rules_get"
-          ],
+          "capabilities": ["rules_get"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1727,24 +1384,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "61d9f1976a8939fb7941782b6d7d8944c27f1fc2916a4eb5f19c3b35d9175d9a",
         "handler": {
           "path": "apps/api/src/automation.ts",
           "line": 25,
-          "capabilities": [
-            "rules_simulate"
-          ],
+          "capabilities": ["rules_simulate"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1780,24 +1426,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "3306c40b9b3b2d29138ac81dff399f15493ce6b529f0efdcfe598a030b5a3aaa",
         "handler": {
           "path": "apps/api/src/automation.ts",
           "line": 34,
-          "capabilities": [
-            "rules_get_simulation"
-          ],
+          "capabilities": ["rules_get_simulation"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1833,25 +1468,14 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "65716dae1bbfbb58257db48b1834dfdbe87e81a495ec98fdd081afd7589cf4bc",
         "handler": {
           "path": "apps/api/src/automation.ts",
           "line": 66,
           "capabilities": [],
-          "directDatabaseOperations": [
-            "activateRecurringRule"
-          ]
+          "directDatabaseOperations": ["activateRecurringRule"]
         },
         "databaseOperations": [
           {
@@ -1886,25 +1510,14 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "0144cf4c26d4a4f911afc653dcd4f84d62c4d13181f95fdcc7a84cf2158b2fb3",
         "handler": {
           "path": "apps/api/src/automation.ts",
           "line": 75,
           "capabilities": [],
-          "directDatabaseOperations": [
-            "deactivateRecurringRule"
-          ]
+          "directDatabaseOperations": ["deactivateRecurringRule"]
         },
         "databaseOperations": [
           {
@@ -1939,24 +1552,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "0ff4f1697f337acb929480fc0f5c24c794e3212e13e6080ce18c238249fa037b",
         "handler": {
           "path": "apps/api/src/automation.ts",
           "line": 42,
-          "capabilities": [
-            "runs_create_preparation"
-          ],
+          "capabilities": ["runs_create_preparation"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -1992,24 +1594,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "4dd48c96f163422ab8c4dc2c4511cbf2e04e1a200f649f5ad9afef6c0bceac99",
         "handler": {
           "path": "apps/api/src/automation.ts",
           "line": 51,
-          "capabilities": [
-            "runs_get"
-          ],
+          "capabilities": ["runs_get"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2050,24 +1641,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "6c4cad2e0351cdb9cf80641ccc1f5b5bddc305e71fd47a39091e676ad5d253a2",
         "handler": {
           "path": "apps/api/src/automation.ts",
           "line": 56,
-          "capabilities": [
-            "runs_advance"
-          ],
+          "capabilities": ["runs_advance"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2103,24 +1683,13 @@
             "required": false
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "96d76defd9fb8f22fad5308d4e05833a686d9fc0d3002fced364c92da7892ae7",
         "handler": {
           "path": "apps/api/src/posting-recovery.ts",
           "line": 9,
-          "capabilities": [
-            "posting_list_recovery"
-          ],
+          "capabilities": ["posting_list_recovery"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2161,24 +1730,13 @@
             "required": false
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "4dbc32c142cdba5b6ba25528a7c3a0073b90c6b2320137900111705cd3047c01",
         "handler": {
           "path": "apps/api/src/posting-recovery.ts",
           "line": 14,
-          "capabilities": [
-            "posting_get_recovery"
-          ],
+          "capabilities": ["posting_get_recovery"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2214,24 +1772,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "bef5e44392c58fa7fc62d120a1749fd0d9dd80940192cb70a62f1d70369a6b7c",
         "handler": {
           "path": "apps/api/src/posting-recovery.ts",
           "line": 23,
-          "capabilities": [
-            "posting_recover_request"
-          ],
+          "capabilities": ["posting_recover_request"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2272,24 +1819,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "b163e94a73f9e9fca4ead84a686ace24ddd343b7265e1b8cb75c5d00afd6e86c",
         "handler": {
           "path": "apps/api/src/corrections.ts",
           "line": 11,
-          "capabilities": [
-            "corrections_prepare"
-          ],
+          "capabilities": ["corrections_prepare"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2325,24 +1861,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "61da67df4a1d3f82a8f2721c135373bdb3eff427e34afe1a3890cc2eb1e1ac85",
         "handler": {
           "path": "apps/api/src/corrections.ts",
           "line": 26,
-          "capabilities": [
-            "corrections_for_voucher"
-          ],
+          "capabilities": ["corrections_for_voucher"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2378,24 +1903,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "62f7f9cb4c320b9c9080aa81bfd1601b13e2c45975b008abee866ae4dca8ead8",
         "handler": {
           "path": "apps/api/src/corrections.ts",
           "line": 21,
-          "capabilities": [
-            "corrections_get"
-          ],
+          "capabilities": ["corrections_get"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2436,25 +1950,14 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "c25a0cda362897951de37556e665eec5a4e3434b63fc187b96a95ca54ce17673",
         "handler": {
           "path": "apps/api/src/corrections.ts",
           "line": 34,
           "capabilities": [],
-          "directDatabaseOperations": [
-            "approveCorrectionBundle"
-          ]
+          "directDatabaseOperations": ["approveCorrectionBundle"]
         },
         "databaseOperations": [
           {
@@ -2494,24 +1997,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "f77b4cb0b18d6e523a80646dc12382e003d52e1e8072b0708f101abb28c1b2b5",
         "handler": {
           "path": "apps/api/src/corrections.ts",
           "line": 49,
-          "capabilities": [
-            "corrections_execute"
-          ],
+          "capabilities": ["corrections_execute"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2547,24 +2039,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "023eb8603b2884bb3248203b4731d95c189eb8f18c1b92bc7df0a9274560ce55",
         "handler": {
           "path": "apps/api/src/settlements.ts",
           "line": 11,
-          "capabilities": [
-            "bank_prepare_allocation"
-          ],
+          "capabilities": ["bank_prepare_allocation"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2600,24 +2081,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "c423e97f352b187ac923b45be1bb8c4bde410dd80acb0f7135e1273cd04dee1a",
         "handler": {
           "path": "apps/api/src/settlements.ts",
           "line": 20,
-          "capabilities": [
-            "bank_get_allocation"
-          ],
+          "capabilities": ["bank_get_allocation"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2658,25 +2128,14 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "a81cfcfbac67bc7be0578ea3589dc40f84d1f3b8720cb0d62e01684f311bead2",
         "handler": {
           "path": "apps/api/src/settlements.ts",
           "line": 28,
           "capabilities": [],
-          "directDatabaseOperations": [
-            "approveBankAllocation"
-          ]
+          "directDatabaseOperations": ["approveBankAllocation"]
         },
         "databaseOperations": [
           {
@@ -2716,24 +2175,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "1df3608c6e0dbfdd7fa66330d346bdef3a973ac12f835c1a51111507343e7a54",
         "handler": {
           "path": "apps/api/src/settlements.ts",
           "line": 43,
-          "capabilities": [
-            "bank_execute_allocation"
-          ],
+          "capabilities": ["bank_execute_allocation"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2769,24 +2217,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "20891f1149502830603f638f92532fa0347f9d09a5be0f13ccc7db488616d536",
         "handler": {
           "path": "apps/api/src/settlements.ts",
           "line": 53,
-          "capabilities": [
-            "bank_reconcile_capacity"
-          ],
+          "capabilities": ["bank_reconcile_capacity"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2822,24 +2259,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "743eccfbf1e66fd1a5401b03cfc9a62cfb17f91c0dfda362741f87ddf442b4fe",
         "handler": {
           "path": "apps/api/src/settlements.ts",
           "line": 62,
-          "capabilities": [
-            "bank_get_capacity_reconciliation"
-          ],
+          "capabilities": ["bank_get_capacity_reconciliation"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2875,24 +2301,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "ce4d4071a9ea1cbffcbe3b6836c2c415df5d56355e4b4d27b8c03aec344bd8cc",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 11,
-          "capabilities": [
-            "commerce_create_counterparty"
-          ],
+          "capabilities": ["commerce_create_counterparty"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2928,24 +2343,13 @@
             "required": false
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "7547a4f0600ea4a7b3dc56c34b755535a3319d0f2172e7676d2515b3ee391cbe",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 39,
-          "capabilities": [
-            "commerce_list_counterparties"
-          ],
+          "capabilities": ["commerce_list_counterparties"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -2986,24 +2390,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "33ed1348c4088295dc33131b35d3d41b0db21fc2752b5097b4ea28d811a15659",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 20,
-          "capabilities": [
-            "commerce_revise_counterparty"
-          ],
+          "capabilities": ["commerce_revise_counterparty"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3044,24 +2437,13 @@
             "required": false
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "03b7c4919877b4856085cf61bbf6f002c4c64f5141cae90498eb43f231ed4c42",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 30,
-          "capabilities": [
-            "commerce_get_counterparty"
-          ],
+          "capabilities": ["commerce_get_counterparty"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3097,24 +2479,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "d4a60e81206e71e83fdb819415adce97c32ee96fef706835beebfda75c18bdac",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 47,
-          "capabilities": [
-            "commerce_create_invoice"
-          ],
+          "capabilities": ["commerce_create_invoice"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3150,24 +2521,13 @@
             "required": false
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "1811ca6be32897806bdae8c93f622dbd358e0b8770803919e97580c0dc2f0dd3",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 80,
-          "capabilities": [
-            "commerce_list_invoices"
-          ],
+          "capabilities": ["commerce_list_invoices"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3208,24 +2568,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "a9b7a6299acbe63194f025e73c36ce2a6aed41bfaab4cc8fda46bd365ea04c31",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 56,
-          "capabilities": [
-            "commerce_revise_invoice"
-          ],
+          "capabilities": ["commerce_revise_invoice"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3266,24 +2615,13 @@
             "required": false
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "5186c83919942f54f98eb9acd4d7b0acbcf8f2f2b5ea944c67f7091207efbbe1",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 71,
-          "capabilities": [
-            "commerce_invoice_history"
-          ],
+          "capabilities": ["commerce_invoice_history"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3319,24 +2657,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "a460f237a98a5bf49f7eb1048948bf529104a20324ba71fb2152c6198b100529",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 66,
-          "capabilities": [
-            "commerce_get_invoice"
-          ],
+          "capabilities": ["commerce_get_invoice"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3377,24 +2704,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "b80cddde6afac46c5dd54c95318736dfabb5569723d58a93827749bb5804b335",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 85,
-          "capabilities": [
-            "commerce_get_payment_capacity"
-          ],
+          "capabilities": ["commerce_get_payment_capacity"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3430,24 +2746,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "dc0648030d16ab3a18599e1ce49ad3682ba37c9a954e161b36a5b46a8b5d9a1e",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 94,
-          "capabilities": [
-            "commerce_prepare_allocation"
-          ],
+          "capabilities": ["commerce_prepare_allocation"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3483,24 +2788,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "6b42e94ec947a8e18ff45ca4c3b8925d8e63a138944c8de2cd1e2d91d2150c68",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 103,
-          "capabilities": [
-            "commerce_get_allocation"
-          ],
+          "capabilities": ["commerce_get_allocation"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3541,25 +2835,14 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "acd68c4b31187474c8a9b9a1a5ce36b108b29e6811046086deffd7be88f85197",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 108,
           "capabilities": [],
-          "directDatabaseOperations": [
-            "commerceApproveAllocation"
-          ]
+          "directDatabaseOperations": ["commerceApproveAllocation"]
         },
         "databaseOperations": [
           {
@@ -3599,24 +2882,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "4f0335ba04827f89f171e58baa579e9f582faae5cb2a6bcd9a31981ac18f3fb5",
         "handler": {
           "path": "apps/api/src/commerce.ts",
           "line": 123,
-          "capabilities": [
-            "commerce_apply_allocation"
-          ],
+          "capabilities": ["commerce_apply_allocation"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3657,25 +2929,14 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "41c7c68f3c567bbdc55e10b2c7d50a2ada3ac33269014fe7cd0d800a0d291fee",
         "handler": {
           "path": "apps/api/src/closing.ts",
           "line": 11,
           "capabilities": [],
-          "directDatabaseOperations": [
-            "declareClosingInventory"
-          ]
+          "directDatabaseOperations": ["declareClosingInventory"]
         },
         "databaseOperations": [
           {
@@ -3710,24 +2971,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "e5c7074599829af40af60a1924c7713b1fd9268231b4226722f24c0ca80f1bed",
         "handler": {
           "path": "apps/api/src/closing.ts",
           "line": 26,
-          "capabilities": [
-            "periods_closing_readiness"
-          ],
+          "capabilities": ["periods_closing_readiness"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3768,24 +3018,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "ab1d298b3f1e0e7b87a1f5326b783d6394f3ad651e0cee9ff5fcc8b503477d72",
         "handler": {
           "path": "apps/api/src/closing.ts",
           "line": 34,
-          "capabilities": [
-            "periods_prepare_closing"
-          ],
+          "capabilities": ["periods_prepare_closing"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3821,24 +3060,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "99f442ba4e1b8ea26404b4475593d92d393477740d082d916aa80b01408c6105",
         "handler": {
           "path": "apps/api/src/closing.ts",
           "line": 44,
-          "capabilities": [
-            "periods_get_closing_proposal"
-          ],
+          "capabilities": ["periods_get_closing_proposal"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3879,25 +3107,14 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "954e60308698a676054fd8024b84880ae14ef73988bba9cc156d2ff5498a239e",
         "handler": {
           "path": "apps/api/src/closing.ts",
           "line": 52,
           "capabilities": [],
-          "directDatabaseOperations": [
-            "approveClosing"
-          ]
+          "directDatabaseOperations": ["approveClosing"]
         },
         "databaseOperations": [
           {
@@ -3937,24 +3154,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "aee79ee27da0e61a257bf9181cb328eff682a14b1530de562a172a40f14a436c",
         "handler": {
           "path": "apps/api/src/closing.ts",
           "line": 67,
-          "capabilities": [
-            "periods_execute_closing"
-          ],
+          "capabilities": ["periods_execute_closing"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -3995,24 +3201,13 @@
             "required": false
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "c49e5b14d63784e23c8b120da2fffe77b1929d5133baeb1ca05cfc54586d3d00",
         "handler": {
           "path": "apps/api/src/closing.ts",
           "line": 77,
-          "capabilities": [
-            "periods_closing_history"
-          ],
+          "capabilities": ["periods_closing_history"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -4048,24 +3243,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "6adeea4d56cca56de56af18d5bfb571629c2240369bec51878e6d3da7aa0f22e",
         "handler": {
           "path": "apps/api/src/closing.ts",
           "line": 86,
-          "capabilities": [
-            "periods_get_closing_certificate"
-          ],
+          "capabilities": ["periods_get_closing_certificate"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -4101,24 +3285,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "8d85b2e0d4c3fb84df10f99b70ce4ecaf48846239a7588605b6b5ad08e23b5bb",
         "handler": {
           "path": "apps/api/src/subledgers.ts",
           "line": 9,
-          "capabilities": [
-            "schedules_create"
-          ],
+          "capabilities": ["schedules_create"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -4154,24 +3327,13 @@
             "required": false
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "30a2b7b8b20b9204a7c1630c3b6811ec3ec00e1ec94de1598616dce55dfd987b",
         "handler": {
           "path": "apps/api/src/subledgers.ts",
           "line": 18,
-          "capabilities": [
-            "schedules_list"
-          ],
+          "capabilities": ["schedules_list"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -4207,24 +3369,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "73be0c81393daeecc02f0525c3fc0c58267b21c2f45908e126ca853f109b2a8a",
         "handler": {
           "path": "apps/api/src/subledgers.ts",
           "line": 26,
-          "capabilities": [
-            "schedules_get"
-          ],
+          "capabilities": ["schedules_get"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -4265,24 +3416,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "9178be837f0a90541e63fef7fac3f41ca171af00e7f860ef8dac534c6a5a7f7e",
         "handler": {
           "path": "apps/api/src/subledgers.ts",
           "line": 34,
-          "capabilities": [
-            "schedules_revise"
-          ],
+          "capabilities": ["schedules_revise"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -4323,24 +3463,13 @@
             "required": true
           }
         ],
-        "responseCodes": [
-          "200",
-          "401",
-          "403",
-          "404",
-          "409",
-          "422",
-          "500",
-          "503"
-        ],
+        "responseCodes": ["200", "401", "403", "404", "409", "422", "500", "503"],
         "declaredSecurity": [],
         "schemaFingerprint": "7b846390a5fbc62e44ae90a79546bc3dae28196f72d88a64d642457f9a1db43c",
         "handler": {
           "path": "apps/api/src/subledgers.ts",
           "line": 44,
-          "capabilities": [
-            "schedules_prepare"
-          ],
+          "capabilities": ["schedules_prepare"],
           "directDatabaseOperations": []
         },
         "databaseOperations": [
@@ -5210,9 +4339,7 @@
       "name": "0002-posting-action-binding.sql",
       "sha256": "e343c433850bf8476c473aaa70e2a071f12fe769ef0b8e8a1cc7f3b95d91e9ee",
       "path": "apps/api/migrations/0002-posting-action-binding.sql",
-      "functionsDefined": [
-        "execute_change"
-      ],
+      "functionsDefined": ["execute_change"],
       "tablesCreated": [],
       "triggersCreated": []
     },
@@ -5220,9 +4347,7 @@
       "name": "0003-deferred-balance-and-ledger.sql",
       "sha256": "8ddd0d717d983c68936fa3b4fbd84d26baa221bdf76288d5773f20ca54712aac",
       "path": "apps/api/migrations/0003-deferred-balance-and-ledger.sql",
-      "functionsDefined": [
-        "ledger_snapshot"
-      ],
+      "functionsDefined": ["ledger_snapshot"],
       "tablesCreated": [],
       "triggersCreated": []
     },
@@ -5230,9 +4355,7 @@
       "name": "0004-reversal-source-binding.sql",
       "sha256": "d4423f760b70c0b1440b8275a68a9f64f408c2e1e03d3bd233b8681ab32eabde",
       "path": "apps/api/migrations/0004-reversal-source-binding.sql",
-      "functionsDefined": [
-        "inspect_action"
-      ],
+      "functionsDefined": ["inspect_action"],
       "tablesCreated": [],
       "triggersCreated": []
     },
@@ -5240,10 +4363,7 @@
       "name": "0005-evidence-review.sql",
       "sha256": "54c4ce9a3fba433d190936ee608bad0898ac53d4d5e72177552febdf973b1908",
       "path": "apps/api/migrations/0005-evidence-review.sql",
-      "functionsDefined": [
-        "book_setup",
-        "get_evidence"
-      ],
+      "functionsDefined": ["book_setup", "get_evidence"],
       "tablesCreated": [],
       "triggersCreated": []
     },
@@ -5290,9 +4410,7 @@
       "name": "0101-bounded-bank-reports.sql",
       "sha256": "fa14e08315f267caa8600844df531018b58d99456acafccee5ce638478e7209c",
       "path": "apps/api/migrations/0101-bounded-bank-reports.sql",
-      "functionsDefined": [
-        "reconcile_bank"
-      ],
+      "functionsDefined": ["reconcile_bank"],
       "tablesCreated": [],
       "triggersCreated": []
     },
@@ -5312,24 +4430,14 @@
         "list_cases",
         "get_case_context"
       ],
-      "tablesCreated": [
-        "case_context_snapshots",
-        "case_context_items",
-        "case_context_plans"
-      ],
-      "triggersCreated": [
-        "immutable_case_snapshot",
-        "immutable_case_item",
-        "immutable_case_plan"
-      ]
+      "tablesCreated": ["case_context_snapshots", "case_context_items", "case_context_plans"],
+      "triggersCreated": ["immutable_case_snapshot", "immutable_case_item", "immutable_case_plan"]
     },
     {
       "name": "0111-case-snapshot-binding.sql",
       "sha256": "6089ceab5e95355eb2830c7d47a4f252ffb62bf0523039ee51f79ec090897dbd",
       "path": "apps/api/migrations/0111-case-snapshot-binding.sql",
-      "functionsDefined": [
-        "prepare_case_snapshot"
-      ],
+      "functionsDefined": ["prepare_case_snapshot"],
       "tablesCreated": [],
       "triggersCreated": []
     },
@@ -5343,22 +4451,14 @@
         "get_report_lines",
         "explain_report_line"
       ],
-      "tablesCreated": [
-        "report_snapshots",
-        "report_lines"
-      ],
-      "triggersCreated": [
-        "immutable_report",
-        "immutable_report_line"
-      ]
+      "tablesCreated": ["report_snapshots", "report_lines"],
+      "triggersCreated": ["immutable_report", "immutable_report_line"]
     },
     {
       "name": "0130-book-readiness.sql",
       "sha256": "f1490368d838170517fea05ebcd072aabb935444f48e53ac8c3a9486cf4dcd3b",
       "path": "apps/api/migrations/0130-book-readiness.sql",
-      "functionsDefined": [
-        "get_book_status"
-      ],
+      "functionsDefined": ["get_book_status"],
       "tablesCreated": [],
       "triggersCreated": []
     },
@@ -5424,11 +4524,7 @@
       "name": "0210-admission-authority-locks.sql",
       "sha256": "14a773d6036c7ec655dc8c8e9304c972219ae27f83f4496b65fbb641f069b0c2",
       "path": "apps/api/migrations/0210-admission-authority-locks.sql",
-      "functionsDefined": [
-        "authenticate",
-        "authorize",
-        "book_versions"
-      ],
+      "functionsDefined": ["authenticate", "authorize", "book_versions"],
       "tablesCreated": [],
       "triggersCreated": []
     },
@@ -5436,9 +4532,7 @@
       "name": "0211-recurring-readiness.sql",
       "sha256": "f94449c3dba78725454d1e46c23a3bdfa59d5f2e8c0e294bff49a6ee2e24f9f4",
       "path": "apps/api/migrations/0211-recurring-readiness.sql",
-      "functionsDefined": [
-        "get_book_status"
-      ],
+      "functionsDefined": ["get_book_status"],
       "tablesCreated": [],
       "triggersCreated": []
     },
@@ -5486,9 +4580,7 @@
       "name": "0401-correction-input-precedence.sql",
       "sha256": "6eae5e35b64dcc3c7d154e8531547039e879e28bc1ced5f9198ddc9d0dddbae5",
       "path": "apps/api/migrations/0401-correction-input-precedence.sql",
-      "functionsDefined": [
-        "prepare_correction_bundle"
-      ],
+      "functionsDefined": ["prepare_correction_bundle"],
       "tablesCreated": [],
       "triggersCreated": []
     },
@@ -5531,10 +4623,7 @@
       "name": "0501-recurring-allocation-guards.sql",
       "sha256": "7433df5f8493a46d41a38e88d3e7b8a1d671e2e355ff3cea62c645ad4104bd51",
       "path": "apps/api/migrations/0501-recurring-allocation-guards.sql",
-      "functionsDefined": [
-        "recurring_selection",
-        "recurring_prepare_observation"
-      ],
+      "functionsDefined": ["recurring_selection", "recurring_prepare_observation"],
       "tablesCreated": [],
       "triggersCreated": []
     },
@@ -5542,13 +4631,9 @@
       "name": "0502-recurring-posting-capacity-guard.sql",
       "sha256": "2058797f9bf4d9b62ecb2af5703bd6310fd03fdb7f53fe364023ffc59a5e1f50",
       "path": "apps/api/migrations/0502-recurring-posting-capacity-guard.sql",
-      "functionsDefined": [
-        "bank_guard_recurring_posting"
-      ],
+      "functionsDefined": ["bank_guard_recurring_posting"],
       "tablesCreated": [],
-      "triggersCreated": [
-        "bank_recurring_source_capacity"
-      ]
+      "triggersCreated": ["bank_recurring_source_capacity"]
     },
     {
       "name": "0600-commerce.sql",
@@ -5703,9 +4788,7 @@
       "sha256": "4e277ab2040e6c31f7812cc5d98ef9eebc55a576b962410f23b77a1dd818204a",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "canonical"
-      ]
+      "calls": ["canonical"]
     },
     {
       "name": "digest",
@@ -5715,9 +4798,7 @@
       "sha256": "3d9044b165fd0178cac98dcf16ec8220f6c85961fe92d875789c773fa3435e5b",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "canonical"
-      ]
+      "calls": ["canonical"]
     },
     {
       "name": "authenticate",
@@ -5727,9 +4808,7 @@
       "sha256": "739c5dd1329f3548410abf400ad83653814ffa24127436f4d6f61d8e9f4655e1",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "authorize",
@@ -5739,10 +4818,7 @@
       "sha256": "7f5a68f4b8dc72115e05bf8ba577fb2a1b26855b05179039c82ed64ebebf0018",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "authenticate",
-        "fail"
-      ]
+      "calls": ["authenticate", "fail"]
     },
     {
       "name": "immutable_row",
@@ -5752,9 +4828,7 @@
       "sha256": "bfd4f1c707f954ee02bbd71844eaadd271feac4d95c73935d35859c70c09c238",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "check_voucher_balance",
@@ -5764,9 +4838,7 @@
       "sha256": "3b85254b999929c2108b1ad7c1fbaef90abe6809536d1a13178175355a6af631",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "replay",
@@ -5776,10 +4848,7 @@
       "sha256": "dd9c1ab415e27eb2025e86766d7d6d6e1657f3be9fd264afcb0ac45ae4d3842a",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "digest",
-        "fail"
-      ]
+      "calls": ["digest", "fail"]
     },
     {
       "name": "save_command",
@@ -5789,9 +4858,7 @@
       "sha256": "808d3fda49b5a611055ec7cdfd44d6736d0bfbe292a08b2938cdda0377f64967",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "digest"
-      ]
+      "calls": ["digest"]
     },
     {
       "name": "list_books",
@@ -5801,9 +4868,7 @@
       "sha256": "33c2d070137c73a018ad9cda7a13157e96285d2dd7f2deb26fa6ba87cd5c75e6",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authenticate"
-      ]
+      "calls": ["authenticate"]
     },
     {
       "name": "book_setup",
@@ -5813,9 +4878,7 @@
       "sha256": "48db9f07969996ba8a9db6c4cc491b9749106be6c12be8bde1406ccc7fa6f7f4",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize"
-      ]
+      "calls": ["authorize"]
     },
     {
       "name": "create_evidence",
@@ -5825,14 +4888,7 @@
       "sha256": "9eca8d005832059ecea26bd19e94c0eded84bbb185153ed5a7aa9407eac6d005",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "evidence",
-        "fail",
-        "new_id",
-        "replay",
-        "save_command"
-      ]
+      "calls": ["authorize", "evidence", "fail", "new_id", "replay", "save_command"]
     },
     {
       "name": "bump_version",
@@ -5852,9 +4908,7 @@
       "sha256": "dd5fd965f4c01dd901d78dbf804418a64ba12a6252e41e477dc19ba7a97b9c8f",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "inspect_action",
@@ -5864,9 +4918,7 @@
       "sha256": "b791e52c3f12585f0636c190dc855b0bec0f3b57da2709b514bd2c23401f77db",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "seal",
@@ -5876,12 +4928,7 @@
       "sha256": "fd5f482ce91a7a515b549476351b1872084fd47c649e70fda4b3fc4fba147cbe",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "change_sets",
-        "digest",
-        "inspect_action",
-        "new_id"
-      ]
+      "calls": ["change_sets", "digest", "inspect_action", "new_id"]
     },
     {
       "name": "prepare_journal",
@@ -5891,14 +4938,7 @@
       "sha256": "f7348147c9a0581728ec99c551d912dce7c95ac18bed913541bd82fbd871ac0b",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail",
-        "new_id",
-        "replay",
-        "save_command",
-        "seal"
-      ]
+      "calls": ["authorize", "fail", "new_id", "replay", "save_command", "seal"]
     },
     {
       "name": "get_change",
@@ -5908,10 +4948,7 @@
       "sha256": "76259fdcea865f3d6e92c3ee9c9a77c0e59a757333ac22b3620a11e6896f2a83",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail"
-      ]
+      "calls": ["authorize", "fail"]
     },
     {
       "name": "check_dependencies",
@@ -5921,11 +4958,7 @@
       "sha256": "667fbc3fa93ad21ee18cf538a77a18d6da0de802a9d4f805760de15b715cd7d9",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "digest",
-        "fail",
-        "inspect_action"
-      ]
+      "calls": ["digest", "fail", "inspect_action"]
     },
     {
       "name": "validate_change",
@@ -5935,13 +4968,7 @@
       "sha256": "42747b0e2e5c7e0e999f212868f7c923b00178c8d97bbb6d6d04ff2638efaed1",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "check_dependencies",
-        "get_change",
-        "replay",
-        "save_command"
-      ]
+      "calls": ["authorize", "check_dependencies", "get_change", "replay", "save_command"]
     },
     {
       "name": "approve_change",
@@ -5992,14 +5019,7 @@
       "sha256": "abdbc739c1dd89a0e01ef6bb6b22734980cd0eb6ae8cb4e80cc638ebe76e1308",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail",
-        "new_id",
-        "replay",
-        "save_command",
-        "seal"
-      ]
+      "calls": ["authorize", "fail", "new_id", "replay", "save_command", "seal"]
     },
     {
       "name": "voucher_body",
@@ -6019,11 +5039,7 @@
       "sha256": "51c095f5449922cd629d970b3d0dab04bf19826deb773658e5e478c490ef4fd3",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail",
-        "voucher_body"
-      ]
+      "calls": ["authorize", "fail", "voucher_body"]
     },
     {
       "name": "list_vouchers",
@@ -6033,11 +5049,7 @@
       "sha256": "3c50691f2cd7b58cc86241e1417b68ab8c0cc14cf664643ae0e1121b0156b21a",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail",
-        "voucher_body"
-      ]
+      "calls": ["authorize", "fail", "voucher_body"]
     },
     {
       "name": "ledger_snapshot",
@@ -6047,9 +5059,7 @@
       "sha256": "80c03dfccb2472eb8ffed8f075dcc58c1954c088387df6fcd829f5357d2600fb",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize"
-      ]
+      "calls": ["authorize"]
     },
     {
       "name": "get_receipt",
@@ -6059,10 +5069,7 @@
       "sha256": "f8266b05f322246fc84aa96e7b7f249109865505b27f44420d9b24c109b0d4c5",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail"
-      ]
+      "calls": ["authorize", "fail"]
     },
     {
       "name": "check_calendar",
@@ -6072,9 +5079,7 @@
       "sha256": "97e83c00e7cad7290f67083693b2ac69b4b5254da870d7787f765c29ccdb5f40",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "get_evidence",
@@ -6084,10 +5089,7 @@
       "sha256": "3432e7f882138fe07ab02118aa630f9462c94bd7a64a5fbabab9113384b4cbc5",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail"
-      ]
+      "calls": ["authorize", "fail"]
     },
     {
       "name": "bank_date",
@@ -6097,9 +5099,7 @@
       "sha256": "b28c286ae1736e314be8d39774da220618dd0eacecefd3a9ea0cf83191438732",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "bank_require_profile",
@@ -6109,9 +5109,7 @@
       "sha256": "77164c1bf6cb01238c365346086923c6cc7c0fe9e708d2a0eae0c4d27f7888f8",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "bank_checkpoint",
@@ -6151,10 +5149,7 @@
       "sha256": "51f931f7a65d4f12b3480e7e12edeb432f09762edd10ff6748b5824cf371539a",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "bank_match_body",
-        "fail"
-      ]
+      "calls": ["bank_match_body", "fail"]
     },
     {
       "name": "import_bank_statement",
@@ -6187,13 +5182,7 @@
       "sha256": "3ca167ef2d6593a6b7f7fbcb42a5e88d96d505ed40f51a7d3f19883787298d50",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "bank_checkpoint",
-        "bank_match_body",
-        "bank_statement_body",
-        "fail"
-      ]
+      "calls": ["authorize", "bank_checkpoint", "bank_match_body", "bank_statement_body", "fail"]
     },
     {
       "name": "match_bank_observation",
@@ -6240,10 +5229,7 @@
       "sha256": "086fd810b35cb31e68086245bb4390b370f9f019b102243a5506f0fa31df612d",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail"
-      ]
+      "calls": ["authorize", "fail"]
     },
     {
       "name": "case_base_uri",
@@ -6293,9 +5279,7 @@
       "sha256": "3dac604d5a8563e52a601c4718fb8309180cd48eb37aa518319b6b1a30297a0b",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "case_voucher_ref"
-      ]
+      "calls": ["case_voucher_ref"]
     },
     {
       "name": "prepare_case_snapshot",
@@ -6326,9 +5310,7 @@
       "sha256": "c2f8d55c611df38ffc8d5817eed4746c1564d5174809a33c4aa9294966abefcd",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "case_after",
@@ -6338,9 +5320,7 @@
       "sha256": "514aedef87cc8791bcd9728b5bd3e63c4700511cc8b34883f522c831e8a39ddf",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "list_cases",
@@ -6350,13 +5330,7 @@
       "sha256": "233ef3f697b3c3e16dd4e84cb47532decbe32fd0549f636778fffcc381619cac",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "case_access",
-        "case_after",
-        "case_page_limit",
-        "fail"
-      ]
+      "calls": ["authorize", "case_access", "case_after", "case_page_limit", "fail"]
     },
     {
       "name": "get_case_context",
@@ -6366,13 +5340,7 @@
       "sha256": "911d3a1e97755c7228f139539baccaa327f6e2f59ee28b7d459530159d400701",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "case_access",
-        "case_after",
-        "case_page_limit",
-        "fail"
-      ]
+      "calls": ["authorize", "case_access", "case_after", "case_page_limit", "fail"]
     },
     {
       "name": "prepare_report",
@@ -6382,14 +5350,7 @@
       "sha256": "d1dcf19daeba78bac99b8390565cc8ce6eb16964380dcdc44d04cb4643f09729",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail",
-        "new_id",
-        "replay",
-        "report_lines",
-        "save_command"
-      ]
+      "calls": ["authorize", "fail", "new_id", "replay", "report_lines", "save_command"]
     },
     {
       "name": "get_report",
@@ -6399,10 +5360,7 @@
       "sha256": "fe9766cb67f5bdfbcfb9e7887f1242ce138e704b803818942d1f3535aa25c3d3",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail"
-      ]
+      "calls": ["authorize", "fail"]
     },
     {
       "name": "get_report_lines",
@@ -6412,9 +5370,7 @@
       "sha256": "184fadf4022fc14ce87fcfaa4dab934f8e397f765cb9efa03f6485b518f3f39c",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "get_report"
-      ]
+      "calls": ["get_report"]
     },
     {
       "name": "explain_report_line",
@@ -6424,10 +5380,7 @@
       "sha256": "aaab68f17f1c324aa92ed631eb7174bf6e21f1ef3c467e558bb701b7801c16bb",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "fail",
-        "get_report"
-      ]
+      "calls": ["fail", "get_report"]
     },
     {
       "name": "get_book_status",
@@ -6454,9 +5407,7 @@
       "sha256": "7332e02ccebf0fb2745b2945c93b2c1a1917e236c61a54e2c7860f1887a1ed58",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "recurring_rule_body",
@@ -6466,9 +5417,7 @@
       "sha256": "b8d349535d945bad162fbf81ac0903f7dc56d7a975dff8d790adb3d910678d87",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "recurring_dependencies_current",
@@ -6478,9 +5427,7 @@
       "sha256": "f06c3718fa2e2f35da87fa181f36e75f3f56fd195993c1cc59371225da01fa9d",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "digest"
-      ]
+      "calls": ["digest"]
     },
     {
       "name": "recurring_overlaps",
@@ -6534,11 +5481,7 @@
       "sha256": "7ff553d4054526f843de9f44e5000aa7407ba7d14c1c61a4bea43d983dd55ad5",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "recurring_dependencies_current",
-        "recurring_rule_body"
-      ]
+      "calls": ["authorize", "recurring_dependencies_current", "recurring_rule_body"]
     },
     {
       "name": "simulate_recurring_rule",
@@ -6567,10 +5510,7 @@
       "sha256": "acd26fb5f921c90573a2760e518ff9607cb2644f4c411da94584f504779ecfd8",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail"
-      ]
+      "calls": ["authorize", "fail"]
     },
     {
       "name": "activate_recurring_rule",
@@ -6598,12 +5538,7 @@
       "sha256": "80b6df1dd304527c0fe6c659276106c1d0b5324c6bf7c22f74c6f683ad3caf37",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail",
-        "replay",
-        "save_command"
-      ]
+      "calls": ["authorize", "fail", "replay", "save_command"]
     },
     {
       "name": "recurring_require_activation",
@@ -6613,9 +5548,7 @@
       "sha256": "8aad610aed341ff78c395f66a0de42e914e55456d2703f5b727e7fc5713558f8",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "preparation_run_body",
@@ -6635,9 +5568,7 @@
       "sha256": "f7273a091df36cc36a6e6dfffdfd5886bad30dbbdf7167de13f940ba86dbba88",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "preparation_run_body"
-      ]
+      "calls": ["preparation_run_body"]
     },
     {
       "name": "create_preparation_run",
@@ -6668,11 +5599,7 @@
       "sha256": "c18005f5e63d3c717b55ba4fec51c92d9a69c8d33dd64a13322a6180a96b37ef",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail",
-        "preparation_run_body"
-      ]
+      "calls": ["authorize", "fail", "preparation_run_body"]
     },
     {
       "name": "recurring_prepare_observation",
@@ -6739,12 +5666,7 @@
       "sha256": "e89715cf56641abedcc29c1f2e1f3359f02e9c953eba207be023b4dc6141595f",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail",
-        "posting_recovery_standalone",
-        "posting_recovery_summary"
-      ]
+      "calls": ["authorize", "fail", "posting_recovery_standalone", "posting_recovery_summary"]
     },
     {
       "name": "get_posting_recovery",
@@ -6770,10 +5692,7 @@
       "sha256": "c2f379f24c393797a61a896c6d798241c8337f56460e8ed17ce88cb313327a0e",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail"
-      ]
+      "calls": ["authorize", "fail"]
     },
     {
       "name": "require_complete_correction_bundle",
@@ -6783,9 +5702,7 @@
       "sha256": "b3c98f5abf25681b1faffd57f214d825b00465d3565ff03c07c35eb760257067",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "get_correction_bundle",
@@ -6795,10 +5712,7 @@
       "sha256": "1cc7a184891bb9e66fe5d0a0f72d9e4422140008a2e08033bfa4e875e19ded4a",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail"
-      ]
+      "calls": ["authorize", "fail"]
     },
     {
       "name": "get_correction_bundle_for_voucher",
@@ -6808,11 +5722,7 @@
       "sha256": "25122a45e6d3ad25bc5d97df871e2fab468e8d9fb8c64eaf663ca29d192677f3",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail",
-        "get_correction_bundle"
-      ]
+      "calls": ["authorize", "fail", "get_correction_bundle"]
     },
     {
       "name": "prepare_correction_bundle",
@@ -6843,11 +5753,7 @@
       "sha256": "0d544f6e1ff0774dbd00e2c96884cd64580326f7fba5f75da34d060c48869b03",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "check_dependencies",
-        "digest",
-        "fail"
-      ]
+      "calls": ["check_dependencies", "digest", "fail"]
     },
     {
       "name": "approve_correction_bundle",
@@ -6917,9 +5823,7 @@
       "sha256": "db5f4a35501729aa7e51e585ceffaf6df0681882a3697c7ee4a3b72d882838fd",
       "securityDefiner": true,
       "fixedSearchPath": false,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "bank_allocation_versions",
@@ -6929,9 +5833,7 @@
       "sha256": "3b5e0976244c2aea8b63f442dadde64dc17ba294d6324e57846daf48a8c7f377",
       "securityDefiner": false,
       "fixedSearchPath": false,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "bank_allocation_snapshot",
@@ -6941,12 +5843,7 @@
       "sha256": "833a7cd62275e6ef7e5fbe968ab70acfe6e8ef42db2d28fda76cdd312bb14b3d",
       "securityDefiner": false,
       "fixedSearchPath": false,
-      "calls": [
-        "bank_allocated_line",
-        "bank_allocated_source",
-        "bank_allocation_versions",
-        "fail"
-      ]
+      "calls": ["bank_allocated_line", "bank_allocated_source", "bank_allocation_versions", "fail"]
     },
     {
       "name": "prepare_bank_allocation",
@@ -6974,11 +5871,7 @@
       "sha256": "39f503d0824845e8e1cec6d09bd3ceb4562be53a4575931e090eb1e354098fd2",
       "securityDefiner": false,
       "fixedSearchPath": false,
-      "calls": [
-        "bank_allocation_versions",
-        "bank_require_profile",
-        "fail"
-      ]
+      "calls": ["bank_allocation_versions", "bank_require_profile", "fail"]
     },
     {
       "name": "approve_bank_allocation",
@@ -6988,13 +5881,7 @@
       "sha256": "9ce37b3c8aad8a4820572e84073d9aa83cac65f05518643c0cf09cff580c8778",
       "securityDefiner": true,
       "fixedSearchPath": false,
-      "calls": [
-        "authorize",
-        "bank_allocation_checked",
-        "new_id",
-        "replay",
-        "save_command"
-      ]
+      "calls": ["authorize", "bank_allocation_checked", "new_id", "replay", "save_command"]
     },
     {
       "name": "execute_bank_allocation",
@@ -7021,11 +5908,7 @@
       "sha256": "0f3173e86566198046fedf74576de09f8fd75545c802a48b20c0d7b7bb8f5707",
       "securityDefiner": true,
       "fixedSearchPath": false,
-      "calls": [
-        "authorize",
-        "bank_allocation_versions",
-        "fail"
-      ]
+      "calls": ["authorize", "bank_allocation_versions", "fail"]
     },
     {
       "name": "reconcile_bank_capacity",
@@ -7057,10 +5940,7 @@
       "sha256": "bc8b594afc3f5d208154ebea0711597e0daded2cbf639ebd58293f70f6bd39ca",
       "securityDefiner": true,
       "fixedSearchPath": false,
-      "calls": [
-        "authorize",
-        "fail"
-      ]
+      "calls": ["authorize", "fail"]
     },
     {
       "name": "bank_close_dependencies",
@@ -7080,10 +5960,7 @@
       "sha256": "4e0bc2fb63e6725b16ab5d0b8fa9a2d5abe2c2b50a1198360a061308094334be",
       "securityDefiner": true,
       "fixedSearchPath": false,
-      "calls": [
-        "bank_allocated_source",
-        "fail"
-      ]
+      "calls": ["bank_allocated_source", "fail"]
     },
     {
       "name": "commerce_freeze_identity",
@@ -7093,9 +5970,7 @@
       "sha256": "225aae018149eec7013e7a461555b338adc81113fcae4e02e385e374c09fb950",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "commerce_require_profile",
@@ -7105,9 +5980,7 @@
       "sha256": "cc8d83c53176822f8c4246f3e824670742a3c3e498fad2174a0ae56df33a3395",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "commerce_exact_object",
@@ -7117,9 +5990,7 @@
       "sha256": "a51a87a51042ceb509904cd2d638b1e087e7bc00f159987e9089230bcb18d529",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "commerce_text",
@@ -7129,9 +6000,7 @@
       "sha256": "ee295c40a7ce355948a66bb7f4d63d5adae09304cc999c1fac0a391924a0dacc",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "commerce_positive_minor",
@@ -7141,9 +6010,7 @@
       "sha256": "6d67995e98b35ec07b71c5876bf5161f35c92bd69f051a745f1608a03a4a18ac",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "commerce_evidence",
@@ -7153,9 +6020,7 @@
       "sha256": "f5d705aaaa996cc2d6bc48692d9906ef8e9f609b716335aad6048c90887baead",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "commerce_record_metadata",
@@ -7185,10 +6050,7 @@
       "sha256": "6eebd9e4934bae5baa1856553759cab04dbe8b7745f27e15176e0defda020f99",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "commerce_voucher_current",
-        "fail"
-      ]
+      "calls": ["commerce_voucher_current", "fail"]
     },
     {
       "name": "commerce_payment_body",
@@ -7198,10 +6060,7 @@
       "sha256": "714110ae8ce02c6ced02797c5b80284f258485c183c10faf4152624e5b689989",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "commerce_voucher_current",
-        "fail"
-      ]
+      "calls": ["commerce_voucher_current", "fail"]
     },
     {
       "name": "commerce_create_counterparty",
@@ -7252,10 +6111,7 @@
       "sha256": "71721e6cb1ecac05ae0f0032e058a58319abcb3fe23a49ed9e7f815bbcad718a",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail"
-      ]
+      "calls": ["authorize", "fail"]
     },
     {
       "name": "commerce_list_counterparties",
@@ -7265,9 +6121,7 @@
       "sha256": "f2e85d6096f82f03a58b054636633ffa5bac78354648667d76e557266180d7b1",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize"
-      ]
+      "calls": ["authorize"]
     },
     {
       "name": "commerce_create_invoice",
@@ -7324,10 +6178,7 @@
       "sha256": "2ecb6122039436e09daa47e20b9bd7cecac8de05346f58c572aa62fb07762df6",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "commerce_invoice_body"
-      ]
+      "calls": ["authorize", "commerce_invoice_body"]
     },
     {
       "name": "commerce_list_invoices",
@@ -7337,10 +6188,7 @@
       "sha256": "ca8097489414fc6a16b5f52036af5fd33f014c54d4a9d0a6c5d6767df6070e0a",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "commerce_invoice_body"
-      ]
+      "calls": ["authorize", "commerce_invoice_body"]
     },
     {
       "name": "commerce_invoice_history",
@@ -7350,10 +6198,7 @@
       "sha256": "cd540d11c50e81dfe4ca9b914f8a604c80575c263c6f853901f5374f63715a65",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail"
-      ]
+      "calls": ["authorize", "fail"]
     },
     {
       "name": "commerce_get_payment_capacity",
@@ -7363,10 +6208,7 @@
       "sha256": "eff5dbb601a886bc0376bb2506204646c850d6fe1c6b9397dfa3ea2803928658",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "commerce_payment_body"
-      ]
+      "calls": ["authorize", "commerce_payment_body"]
     },
     {
       "name": "commerce_allocation_selection",
@@ -7395,10 +6237,7 @@
       "sha256": "01136ab08eda6dbedd7a4e77e1f8044a10aac58f90ce9eb592d427158d5cc81f",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "commerce_allocation_selection",
-        "digest"
-      ]
+      "calls": ["commerce_allocation_selection", "digest"]
     },
     {
       "name": "commerce_prepare_allocation",
@@ -7426,11 +6265,7 @@
       "sha256": "ea59c3ec178d9b86b8ee4fbd7bd4b602fbb02c7322b735b1015d9d532f4a0054",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "commerce_allocation_current",
-        "fail"
-      ]
+      "calls": ["authorize", "commerce_allocation_current", "fail"]
     },
     {
       "name": "commerce_approve_allocation",
@@ -7477,9 +6312,7 @@
       "sha256": "18d00323b141d0e47023072b8c4f8d4034f28a4c3e0323eb6c54d48fc628f37b",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "commerce_guard_control_account",
@@ -7489,9 +6322,7 @@
       "sha256": "dcacc7312dede4409b740d06b0a8e518daf1f2b5ce95fe2768af69e593e260cd",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "commerce_guard_voucher_reversal",
@@ -7501,9 +6332,7 @@
       "sha256": "e4c84651bd04a087bf5416f4e3a5568d0c7bd0a40b1d18f3525f3cc88395f100",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "commerce_assert_allocation",
@@ -7513,10 +6342,7 @@
       "sha256": "6225be376d38aab8bb97c0f5ac8c6c594e273e2e28359e41b15a4c8095219a82",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "commerce_voucher_current",
-        "fail"
-      ]
+      "calls": ["commerce_voucher_current", "fail"]
     },
     {
       "name": "commerce_check_allocation",
@@ -7526,9 +6352,7 @@
       "sha256": "ada65f6ea819985247ee3f9bb48a708a0c5f6b3c7d0540a45d3c6766f002fe56",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "commerce_assert_allocation"
-      ]
+      "calls": ["commerce_assert_allocation"]
     },
     {
       "name": "commerce_period_status",
@@ -7538,11 +6362,7 @@
       "sha256": "e619a9e7f28d6bcec604887ca2e2488ba3e5ffb1aa7fd41937c67b2a39b33c0f",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "commerce_voucher_current",
-        "digest",
-        "fail"
-      ]
+      "calls": ["commerce_voucher_current", "digest", "fail"]
     },
     {
       "name": "subledger_current",
@@ -7552,9 +6372,7 @@
       "sha256": "c45faaa20c98f79b17e07f03ce2ee1167023aeb8e272b9afafe06927db150cbd",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "fail"
-      ]
+      "calls": ["fail"]
     },
     {
       "name": "create_schedule",
@@ -7564,14 +6382,7 @@
       "sha256": "cdc85d50c4e9a33dc01ff39324aa63a786a0449c9ae87827f04e7c7b85089f95",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail",
-        "new_id",
-        "replay",
-        "save_command",
-        "subledger_revision_body"
-      ]
+      "calls": ["authorize", "fail", "new_id", "replay", "save_command", "subledger_revision_body"]
     },
     {
       "name": "revise_schedule",
@@ -7608,11 +6419,7 @@
       "sha256": "b681600093a1d27187cee3832dc0efe71389cb682c396553462281e336dcb8c2",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "subledger_current",
-        "subledger_occurrence_states"
-      ]
+      "calls": ["authorize", "subledger_current", "subledger_occurrence_states"]
     },
     {
       "name": "list_schedules",
@@ -7622,10 +6429,7 @@
       "sha256": "a3c317adbfbb41dc4f160df120053e436055e33f6db54775056613b4e0d15f4e",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail"
-      ]
+      "calls": ["authorize", "fail"]
     },
     {
       "name": "prepare_schedule_occurrence",
@@ -7654,10 +6458,7 @@
       "sha256": "bef07a7cee033b8720fc693e186c4be33519b88507b52d4da5c99bf9407a0ef5",
       "securityDefiner": false,
       "fixedSearchPath": true,
-      "calls": [
-        "digest",
-        "subledger_occurrence_states"
-      ]
+      "calls": ["digest", "subledger_occurrence_states"]
     },
     {
       "name": "declare_closing_inventory",
@@ -7701,10 +6502,7 @@
       "sha256": "d0d9c0140238621beda6588cb4a53ec82632989f22f581f366ae7f0458bdbb20",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "closing_basis"
-      ]
+      "calls": ["authorize", "closing_basis"]
     },
     {
       "name": "prepare_closing",
@@ -7733,11 +6531,7 @@
       "sha256": "6532bdbf7d2729d2df80cf5c7ba46d1007103bc6b93e2a58309361f7d48d7dd8",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "closing_basis",
-        "fail"
-      ]
+      "calls": ["authorize", "closing_basis", "fail"]
     },
     {
       "name": "approve_closing",
@@ -7747,14 +6541,7 @@
       "sha256": "9d9e2b7163c0d93488d758038e98f24a0328c9d9126e71c895a0c0807af2a46b",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "closing_basis",
-        "fail",
-        "new_id",
-        "replay",
-        "save_command"
-      ]
+      "calls": ["authorize", "closing_basis", "fail", "new_id", "replay", "save_command"]
     },
     {
       "name": "execute_closing",
@@ -7764,15 +6551,7 @@
       "sha256": "92cac6a2ead4699346c9144b82eb514feca5a01ab59b3d05f437a7a66d633b4f",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "closing_basis",
-        "digest",
-        "fail",
-        "new_id",
-        "replay",
-        "save_command"
-      ]
+      "calls": ["authorize", "closing_basis", "digest", "fail", "new_id", "replay", "save_command"]
     },
     {
       "name": "get_closing_certificate",
@@ -7782,11 +6561,7 @@
       "sha256": "4e3ac92b13f1358a424abd3742cea0560be217c1444e4fd869d7480f6089fa41",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "closing_basis",
-        "fail"
-      ]
+      "calls": ["authorize", "closing_basis", "fail"]
     },
     {
       "name": "get_closing_history",
@@ -7796,10 +6571,7 @@
       "sha256": "fc4fdd6bf10fa7e6f102129c64ed390cec92c65f720c718c3ea363f71f3dccd1",
       "securityDefiner": true,
       "fixedSearchPath": true,
-      "calls": [
-        "authorize",
-        "fail"
-      ]
+      "calls": ["authorize", "fail"]
     }
   ],
   "declaredRuntimeFunctions": [
