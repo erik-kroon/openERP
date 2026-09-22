@@ -1,0 +1,273 @@
+{
+  "scope": "Manual local read-only recovery observation; not concurrency/crash/recovery proof.",
+  "migration": "0300-posting-recovery.sql",
+  "migrationSha256": "9161e9c4461ba8fed982b5800be96b872bd08408d68a947949a614e14af7f582",
+  "list": {
+    "scope": {
+      "entityId": "entity_synthetic",
+      "bookId": "book_synthetic"
+    },
+    "actorId": "actor_operator",
+    "checkedAt": "2026-09-22T16:08:38.666127Z",
+    "sequence": "2",
+    "items": [
+      {
+        "changeSetId": "change_52db7241c19c49cdbe362c08dca58b1c",
+        "planDigest": "sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1",
+        "createdAt": "2026-09-22T14:30:30.261363Z",
+        "createdBy": "actor_operator",
+        "description": "Reversal: Synthetic bank to clearing movement",
+        "postingStatus": "posted",
+        "executionReceipt": {
+          "id": "receipt_1296c37a457c4d82880654c340655355",
+          "changeSetId": "change_52db7241c19c49cdbe362c08dca58b1c",
+          "voucherId": "voucher_bbd455fa0a6e464da1a799e4a3e2eb9f",
+          "planDigest": "sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1",
+          "sequence": "2",
+          "voucherNumber": "2",
+          "committedAt": "2026-09-22T14:37:02.626911Z"
+        }
+      },
+      {
+        "changeSetId": "change_0e6bce2ac15c4429ad7b434ea07adf87",
+        "planDigest": "sha256:0db1dd80428ff06d013c26dcd98e2bbd3ce56cff581d28c95ebd6b9b86126384",
+        "createdAt": "2026-09-22T14:27:05.944003Z",
+        "createdBy": "actor_operator",
+        "description": "Synthetic bank to clearing movement",
+        "postingStatus": "posted",
+        "executionReceipt": {
+          "id": "receipt_f5a9580469ea45c1bc7d5beb501e55fe",
+          "changeSetId": "change_0e6bce2ac15c4429ad7b434ea07adf87",
+          "voucherId": "voucher_a25257049b914733a9606083bb16be7f",
+          "planDigest": "sha256:0db1dd80428ff06d013c26dcd98e2bbd3ce56cff581d28c95ebd6b9b86126384",
+          "sequence": "1",
+          "voucherNumber": "1",
+          "committedAt": "2026-09-22T14:29:02.098294Z"
+        }
+      }
+    ],
+    "next": null
+  },
+  "detail": {
+    "scope": {
+      "entityId": "entity_synthetic",
+      "bookId": "book_synthetic"
+    },
+    "actorId": "actor_operator",
+    "checkedAt": "2026-09-22T16:08:57.312347Z",
+    "sequence": "2",
+    "summary": {
+      "changeSetId": "change_52db7241c19c49cdbe362c08dca58b1c",
+      "planDigest": "sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1",
+      "createdAt": "2026-09-22T14:30:30.261363Z",
+      "createdBy": "actor_operator",
+      "description": "Reversal: Synthetic bank to clearing movement",
+      "postingStatus": "posted",
+      "executionReceipt": {
+        "id": "receipt_1296c37a457c4d82880654c340655355",
+        "changeSetId": "change_52db7241c19c49cdbe362c08dca58b1c",
+        "voucherId": "voucher_bbd455fa0a6e464da1a799e4a3e2eb9f",
+        "planDigest": "sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1",
+        "sequence": "2",
+        "voucherNumber": "2",
+        "committedAt": "2026-09-22T14:37:02.626911Z"
+      }
+    },
+    "plan": {
+      "schemaVersion": "1",
+      "canonicalization": "openerp-c14n-v1",
+      "id": "change_52db7241c19c49cdbe362c08dca58b1c",
+      "version": 1,
+      "scope": {
+        "entityId": "entity_synthetic",
+        "bookId": "book_synthetic"
+      },
+      "createdAt": "2026-09-22T14:30:30.260843Z",
+      "dependencies": [
+        {
+          "kind": "profile",
+          "resourceId": "book_synthetic",
+          "version": "1",
+          "reason": "Book currency and supported profile"
+        },
+        {
+          "kind": "writer_epoch",
+          "resourceId": "book_synthetic",
+          "version": "1",
+          "reason": "Single authoritative writer"
+        },
+        {
+          "kind": "period",
+          "resourceId": "period_synthetic_2026",
+          "version": "1",
+          "reason": "Posting dates and lock state"
+        },
+        {
+          "kind": "account",
+          "resourceId": "account_bank",
+          "version": "1",
+          "reason": "Exact account configuration"
+        },
+        {
+          "kind": "account",
+          "resourceId": "account_clearing",
+          "version": "1",
+          "reason": "Exact account configuration"
+        }
+      ],
+      "groups": [
+        {
+          "id": "group_412a3c3c6dec47b199b72b6fab5d2d08",
+          "dependsOnGroupIds": [],
+          "actions": [
+            {
+              "kind": "post_voucher",
+              "correctsVoucherId": "voucher_a25257049b914733a9606083bb16be7f",
+              "eventId": "event_c698c2ebffa34f0296c6759b8f230711",
+              "postingPurpose": "reversal",
+              "occurrenceKey": "voucher_a25257049b914733a9606083bb16be7f",
+              "fiscalYearId": "year_synthetic_2026",
+              "accountingPeriodId": "period_synthetic_2026",
+              "postingDate": "2026-09-22",
+              "series": "A",
+              "currency": "SEK",
+              "description": "Reversal: Synthetic bank to clearing movement",
+              "rationale": "Reverse the synthetic development movement; no real company activity.",
+              "taxAssessment": "not_applicable",
+              "lines": [
+                {
+                  "accountId": "account_clearing",
+                  "debitMinor": "0",
+                  "creditMinor": "12500",
+                  "description": "Synthetic clearing debit",
+                  "lineId": "line_2222704641214102b63e4e9d2fdcdc5a"
+                },
+                {
+                  "accountId": "account_bank",
+                  "debitMinor": "12500",
+                  "creditMinor": "0",
+                  "description": "Synthetic bank credit",
+                  "lineId": "line_d434050743c54573948634b392193a00"
+                }
+              ],
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_6d82183b2044483a9814dcb3593317f1",
+                  "sha256": "f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f",
+                  "locator": "clearing-transfer"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "planDigest": "sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1"
+    },
+    "validation": {
+      "status": "current",
+      "blocker": null
+    },
+    "availableApproval": null,
+    "requests": [
+      {
+        "key": "dev_correction_execute_001",
+        "operation": "execute_change",
+        "actorId": "actor_operator",
+        "requestDigest": "sha256:56c55db842b0a1ebd38f985cc1723c6f517432a90ce3e05164d8a9b87f59d969",
+        "recordedAt": "2026-09-22T14:37:02.628473Z",
+        "resultId": "receipt_1296c37a457c4d82880654c340655355",
+        "planDigest": "sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1",
+        "approvalState": null
+      },
+      {
+        "key": "dev_correction_approval_001",
+        "operation": "approve_change",
+        "actorId": "actor_operator",
+        "requestDigest": "sha256:ce23445a2c1b5b95aec813445bca3da9312d54fd032fbbce8c470cb5e339bef0",
+        "recordedAt": "2026-09-22T14:37:02.602030Z",
+        "resultId": "approval_f65e583609704ee9b1189666621b7ac6",
+        "planDigest": "sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1",
+        "approvalState": "consumed"
+      },
+      {
+        "key": "dev_correction_001",
+        "operation": "prepare_correction",
+        "actorId": "actor_operator",
+        "requestDigest": "sha256:3420f1b2bb53333d1059a8c04e94703eb6d5002e565466e6f943ad2a8418006f",
+        "recordedAt": "2026-09-22T14:30:30.262776Z",
+        "resultId": "change_52db7241c19c49cdbe362c08dca58b1c",
+        "planDigest": "sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1",
+        "approvalState": null
+      }
+    ],
+    "nextRequest": null
+  },
+  "committedRequest": {
+    "scope": {
+      "entityId": "entity_synthetic",
+      "bookId": "book_synthetic"
+    },
+    "key": "dev_correction_execute_001",
+    "checkedAt": "2026-09-22T16:08:57.346771Z",
+    "state": "committed",
+    "operation": "execute_change",
+    "actorId": "actor_operator",
+    "requestDigest": "sha256:56c55db842b0a1ebd38f985cc1723c6f517432a90ce3e05164d8a9b87f59d969",
+    "result": {
+      "id": "receipt_1296c37a457c4d82880654c340655355",
+      "changeSetId": "change_52db7241c19c49cdbe362c08dca58b1c",
+      "voucherId": "voucher_bbd455fa0a6e464da1a799e4a3e2eb9f",
+      "planDigest": "sha256:abb1b8f6f02841cfe3c348df1335863ce652c2c4c01badd99ac3be1d9cee58e1",
+      "sequence": "2",
+      "voucherNumber": "2",
+      "committedAt": "2026-09-22T14:37:02.626911Z"
+    },
+    "recordedAt": "2026-09-22T14:37:02.628473Z",
+    "sameActor": true
+  },
+  "absentRequest": {
+    "scope": {
+      "entityId": "entity_synthetic",
+      "bookId": "book_synthetic"
+    },
+    "key": "not_observed_manual_recovery",
+    "checkedAt": "2026-09-22T16:08:57.358887Z",
+    "state": "not_observed",
+    "operation": null,
+    "actorId": null,
+    "requestDigest": null,
+    "result": null,
+    "recordedAt": null,
+    "sameActor": null
+  },
+  "unpostedBookList": {
+    "scope": {
+      "entityId": "entity_automation",
+      "bookId": "book_automation"
+    },
+    "actorId": "actor_automation",
+    "checkedAt": "2026-09-22T16:08:57.373361Z",
+    "sequence": "0",
+    "items": [
+      {
+        "changeSetId": "change_aa2df6c9c23743ec91e30de3cbc6a32d",
+        "planDigest": "sha256:49a1dea036ebf0d6bec202957fb2c84e629f7d0b25895e035f3c1042a3f7a36b",
+        "createdAt": "2026-09-22T15:21:27.741363Z",
+        "createdBy": "actor_automation",
+        "description": "Synthetic recurring deposit",
+        "postingStatus": "unposted_at_check",
+        "executionReceipt": null
+      },
+      {
+        "changeSetId": "change_8962b4e46a324931adba2027806c0c55",
+        "planDigest": "sha256:aead5a002276a0057a2502532ebfef8953281801ba4a32962e8cadce04f3565c",
+        "createdAt": "2026-09-22T15:21:16.480820Z",
+        "createdBy": "actor_automation",
+        "description": "Synthetic recurring deposit",
+        "postingStatus": "unposted_at_check",
+        "executionReceipt": null
+      }
+    ],
+    "next": null
+  }
+}

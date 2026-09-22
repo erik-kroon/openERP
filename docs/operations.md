@@ -1,0 +1,55 @@
+# Operations and review
+
+Status: working design with partial implementation. [Area plans](plans/README.md) define delivery contracts; the [roadmap](roadmap.md) records observed results.
+
+## Shared operations
+
+Define JSON-safe inputs, outputs and errors in `packages/contracts`. UI, REST, MCP and jobs call the same owning handler. Generate transport descriptions from those contracts. Each operation declares scope, permission, side effects, approval, idempotency, snapshot, atomicity and recovery semantics.
+
+Preserve supported operation IDs, `/api/v1` routes and generated `/api/openapi.json`. Resolve and recheck entity/book scope for every resource, including ID-only URLs. [Shared contracts](plans/00-shared-contracts.md#common-operation-contract) own errors, cursors and compatibility; D-05 owns actual transport proof. Advertise only supported handlers.
+
+## Prepare, approve, execute, recover
+
+Retain evidence → prepare a sealed plan → review exact effects → approve selected groups → execute → recover the durable receipt.
+
+Preparation returns a complete plan or explicit blockers; it does not post. Edits create revisions. Validation records what was checked; execution rechecks dependencies and authority. Approval requests do not grant approval. Execution supplies references, never replacement financial content.
+
+A sealed revision has immutable groups and separate execution progress. Each group is pending, blocked or committed with a receipt. Expiry/revocation stops new approval consumption without erasing prior results. Superseding one group cannot hide already applied or still-valid groups.
+
+One group is the atomic boundary. Multiple groups require durable run admission, one receipt per group and recovery of unfinished work. An array in a schema does not prove multi-group support. Preserve `openerp-c14n-v1` interpretation under the [seal contract](plans/00-shared-contracts.md#exact-values-and-canonical-identity); independent vectors remain D-03.
+
+Derive identity at the trusted server boundary. Agents may request review and execute within granted scope, but cannot mint human approval or activate their own mandate. Posting, payment, closing, filing and signature are distinct powers. Production OIDC/session inputs remain D-01; a synthetic operator token does not prove human review.
+
+Errors name affected resources, missing/changed facts, retryability and a supported remedy. Business refusals are not transient failures. A timeout during commit leaves an unknown outcome; recover by the original identity. A missing receipt at one observation time does not prove cancellation.
+
+## Human workbench
+
+Show the selected scope, missing evidence, exceptions, eligible approvals and completed work. Review joins original evidence, accepted/conflicting facts and exact financial/tax effects. Show assumptions, dependency changes and approval scope. Group equivalent cases while exposing exceptions.
+
+Human and agent views use the same sealed plan. Query keys include entity/book and revision/snapshot/filter scope. Preserve drafts on failure, recover durable work after reload, and display financial success only after a receipt. Keep posted, reconciled, prepared, signed and accepted distinct.
+
+Reuse StyleX components and Paraglide. Provide loading, empty, blocked, stale, denied, pending, uncertain and recoverable states. Verify accessibility through the [human journeys](verification-strategy.md#human-journeys). Stable links carry scope and immutable review references; optional chat opens the same operations and review screens.
+
+## Governed rules and agent context
+
+A resolved exception may propose typed predicates and a constrained treatment with evidence and positive/negative examples. Simulate against relevant history, expose differences/conflicts, then approve activation of that exact version and scope. Arrival order cannot resolve conflicting rules. A company rule cannot override jurisdiction policy or turn one approval into a universal treatment.
+
+Retain selected model interpretations with source digest, extraction/prompt schema, model version, rule context and review status. Retries reuse that result rather than reinterpret approved evidence. Calculations use explicit facts/rates/rule versions. Store concise decisions and references, not private reasoning transcripts. Source prose and model confidence grant no authority.
+
+Return compact scoped observations with snapshot, coverage, blockers and next actions. Distinguish source assertions, human confirmations and derived facts. Batch related reads; expand from summary to rows, lineage or source. Declare truncation and stable cursors. Aliases resolve to immutable revisions. Resource IDs grant no access. Durable checkpoints retain inputs, versions, results and pending work beyond a chat or transport session.
+
+Keep the negotiated MCP catalogue deterministic. Discovery describes capabilities; it does not register tools a client never listed. Hosts may select subsets without changing semantics. Schemas describe encoded JSON and annotations do not enforce authorization. New protocols/transports require D-05 proof; platform task state cannot overrule business receipts.
+
+Standing mandates require explicit operation/book/period/account scope, currency, validity, revocation and cumulative limits. Reserve/consume shared budgets atomically. Per-entry caps cannot enforce daily allowances. A mandate never implicitly authorizes payment, closure, signature or filing.
+
+Evaluate proposal quality separately from accounting correctness. Use versioned, independently reviewed cases, accepted alternatives and holdouts. Measure correct outcomes, missed/false exceptions, duplicates, unnecessary questions, repeated retrieval, calls, bytes/tokens, cost and time on identical work. Efficiency cannot excuse omitted checks.
+
+## Provider and delivery boundaries
+
+Provider contracts specify environment, credential scopes, resource/format versions, pagination/detail coverage, quotas, idempotency, lookup and supported actions. Preserve raw records, retrieval metadata, exact values and errors. Missing, invalid, not-fetched and zero differ. Failed detail hydration cannot yield a complete import.
+
+Coordinate token rotation and quotas across the actual provider/account scope. Transient refresh failure must not erase valid credentials or recovery state; distinguish expiry, revocation and invalid grant. Persist bounded retries and cursors. Callbacks verify signatures over defined bytes, replay policy and tenant binding before applying effects; durable event identity handles duplicates. Keep secrets out of evidence.
+
+Persist external intent and artifact identity before sending. Distinguish unconfigured/test/production capability and pending/rejected/accepted/unknown outcomes. Look up an uncertain result before resubmission. An exported payment file or upload acknowledgement does not prove settlement or fulfilled filing.
+
+Outbox workers need bounded cycles, claim ownership, fenced leases, accurate attempts and release of unattempted claims. Lease timing covers the whole cycle and in-flight allowance. Stale workers cannot commit after losing their fence; duplicate delivery cannot repost the originating voucher. Detailed recovery belongs to the [operations plan](plans/07-restore-operations-cutover.md).

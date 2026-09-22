@@ -1,0 +1,97 @@
+# Imports, matching and reconciliation
+
+Owner: evidence/imports and bank reconciliation. Phase: P2, with durable execution machinery shared with P3/operations. The existing synthetic statement/match/reconciliation APIs and reviewed capacity-allocation draft are retained; they do not yet establish a complete provider migration or source archive.
+
+## Intended workflow
+
+Declare the period's required source accounts and systems, retain original bytes, inspect parsing and coverage, resolve mappings/overlaps, approve the interpretation, import durably, review relationships and reconcile items plus independent totals. The final result identifies exactly which sources and ledger/register cutoff were reconciled. Missing sources and equal-but-ambiguous candidates remain visible.
+
+Supported source families are explicit profiles: normalized bank statements, selected provider resources, historical SIE and linked evidence/register exports. Select the first real provider/format using D-06. The neutral intake contract is implemented before provider breadth; no speculative universal connector is required.
+
+## Data model
+
+| Record | Key fields and invariants |
+| --- | --- |
+| Content object | SHA-256, byte size, media type, immutable storage version and availability. Retain exact original bytes before accepting a reference. |
+| Source occurrence | Source system/account, external ID/revision or immutable file+ordinal, effective/observed times, content locator, source payload hash. Same bytes can have multiple occurrences. |
+| Parser result | Source hash, parser/profile version, encoding decision, all record locators, normalized facts, unsupported records and diagnostics. Reparse creates a new result. |
+| Import plan | Source inventory, account/dimension mappings, proposed event/recognition identities, opening policy, preserved relationships, expected counts/control totals, excluded records with reasons and plan digest. |
+| Import run/chunk | Admitted plan hash, deterministic chunk membership and hash, lease/fence, state, immutable chunk receipt, counters and failure/continuation position. |
+| Relationship decision | Source↔event/line/invoice relationship, exact amount/currency, basis `source_asserted`, `reviewed_exact` or `reviewed_heuristic`, reviewer and supersession history. |
+| Reconciliation snapshot | Declared inventory, source revision, GL/register cutoff, coverage/check results, unmatched/ambiguous items, independent controls, approved waivers and digest. |
+
+Unique source identity is `(book,sourceSystem,sourceAccount,externalId,revision)` where the provider defines stable IDs. Otherwise use admitted content occurrence plus record ordinal; overlapping exports require an explicit overlap map. Do not collapse identical rows in one file. A source revision can supersede an observation but cannot create a second recognition of the same causal event.
+
+Content deduplication shares bytes only. It preserves acquisition/provenance multiplicity. Source assertions of “paid” or “booked” retain that asserted state and its evidence; missing dated payment history does not become a zero balance or a synthetic payment date.
+
+Historical bulk import holds an explicit book/import-in-progress fence and advances a cursor through a frozen approved manifest. Only the admitted chunks may advance that cursor; unrelated writers cannot introduce competing target history during the import. A lease renewal or retry cannot change chunk membership, mappings or economic effects under the old approval. Committed chunks retain receipts and unresolved chunks remain visible; atomicity applies to each actual transaction, not the entire multi-transaction import.
+
+## Operations and durable state
+
+The import API adds `source-inventories`, `import-previews`, `import-plans` and `import-runs` under the scoped book route. Operations retain/upload content, parse/preview, accept mappings, validate/seal a plan, approve admission, start, inspect, resume, pause/cancel remaining work, and prepare undo/replacement. Read operations expose manifest, rejected records and progress with stable cursors. Existing bank-statement admission stays supported and uses the same occurrence identity beneath it.
+
+```mermaid
+stateDiagram-v2
+  [*] --> retained
+  retained --> parsed
+  parsed --> blocked
+  blocked --> parsed: new parser or reviewed mapping
+  parsed --> sealed
+  sealed --> admitted: exact plan approval
+  admitted --> running
+  running --> paused
+  paused --> running: current authority and lease
+  running --> failed
+  failed --> running: recover unchanged chunk
+  running --> reconciling
+  reconciling --> completed: coverage and controls pass
+  running --> stopped: cancel remaining chunks
+  completed --> compensating: separate reviewed undo
+  stopped --> compensating: separate reviewed undo
+  compensating --> compensated
+```
+
+Already committed chunks are never erased by cancellation. Undo appends linked corrections, with its own approval, and retains source history. Replacement links old and new admitted source interpretations; an unresolved historical mapping cannot be “fixed” by deleting provenance.
+
+Begin with the reference-informed admission limits: one chunk at most 200 vouchers, 2,000 lines and 1 MiB normalized payload; first supported file limit 50 MiB/50,000 vouchers. These are product bounds to benchmark under the actual runtime, not performance claims. Account for attachments separately with explicit object limits. Reject oversized work or split deterministically before execution; never silently truncate it. Do not hold a browser request open for an entire file.
+
+Leases include a monotonically increasing fencing token. A worker checks it under the transaction lock before committing a chunk. A lease timer alone cannot authorize a stale worker. The chunk receipt, fiscal hold, identities, financial/register effects, checkpoints and counters commit together. A completed receipt makes replay return the same result.
+
+## Historical accounting and openings
+
+SIE profiles retain format/version, exporter identity, encoding, original series/number/date, account/dimension references, final lines, correction-history records and control records. Unsupported variants fail with locators. Final transaction lines and historical correction records have different meanings and cannot all be summed. The [SIE publisher's format catalogue](https://sie.se/format/) distinguishes SIE 4, 4i and 5; treat them as separate capabilities with their own specification/roundtrip fixtures.
+
+Keep source voucher references as immutable external identifiers. Assign native identities independently. If continuing a source's voucher series, initialize its transactional native counter once from the reviewed cutover boundary and retained provenance; never allocate ordinary numbers using a live `MAX(number)` query. Conflicting historical references create an import decision, not automatic renumbering that loses the original.
+
+Choose one opening basis per year: full retained prior history linked to an approved prior close, or an explicitly reviewed migration OpeningSet. A reduced-history midyear migration records the unavailable detail and required comparative limitations. Importing movements and an opening that represents those same movements is refused. Preserve previous filings, period locks, unpaid items, schedules and existing matches when supplied.
+
+While an admitted import affecting a period is incomplete, new complete-readiness claims, close and dependent filing are blocked. Authorized diagnostic reads remain available with the hold and partial state visible. Unrelated books/periods can continue only when their dependencies do not include the changing scope.
+
+## Matching and allocation
+
+Candidate generation is read-only and explains exact reference/provider matches separately from amount/date/name heuristics. Equal amounts alone never establish identity. One source row can match multiple posted lines and one posted line can match multiple observations through signed allocation legs. The existing `settlements.ts` capacity model is the starting point: enforce account/currency/sign consistency and remaining capacity under the book/domain locks.
+
+Approval seals all proposed legs and capacity versions. Recheck at execution; append allocation effects and receipt atomically. Unmatching appends reversal legs with reason and original references, restoring capacity exactly once. Historic exact matches are retained with their original basis; speculative matches are never promoted merely because importing them is convenient.
+
+**Bank matching does not pay an invoice.** It relates external cash evidence to posted cash lines. Commerce owns invoice↔payment allocations. Link the two through the immutable payment event/voucher and preserve both conserved dimensions. No shared mutable “remaining” field serves both meanings.
+
+## Reconciliation and human review
+
+Readiness requires a reviewed source inventory; an empty import table is not an empty bank account. Inventory can explicitly say an account/family is inapplicable or inactive for dates, with evidence. Required accounts, statement intervals and balances must be represented. Checks include source opening plus signed movements equals closing; duplicates/overlap coverage; item allocations; ledger control total; currency/date basis; orphan links; and unclassified/rejected records.
+
+A signoff pins inventory, source and allocation revisions, ledger cutoff, controls and check versions. Subsequent relevant input marks it stale. A waiver records exact difference, reason, authority and affected readiness claim; it cannot waive missing mandatory source coverage or make unsupported legal treatment disappear.
+
+The workbench shows upload/source coverage, parser diagnostics with original locators, mapping preview, durable progress, ambiguous candidates, partial allocation residuals and signoff evidence. Resume must recover the same job. “Complete” appears only after the run and required reconciliation checks agree, not when upload succeeds.
+
+## Delivery packets
+
+| ID | Deliverable | Depends on | Acceptance |
+| --- | --- | --- | --- |
+| IMP-01 | Content/occurrence split, source inventory and immutable parsing/diagnostics. | FND-03, PST-01 | E-05/E-12: duplicate bytes preserve distinct occurrences; malformed/unsupported records remain visible. |
+| IMP-02 | Actual-source profile, loss-preserving SIE/provider mapping and reviewed import plan. | IMP-01 | E-12/E-18: supplied history, original references, corrections/dimensions and match basis preserved. |
+| IMP-03 | Bounded durable chunk admission, lease fencing, receipts, pause/resume and compensation. | IMP-02, PST-05, COR-02 | E-04/E-08/E-17: worker death/reclaim produces one effect; partial period cannot claim complete. |
+| IMP-04 | Reviewed many-to-many bank capacity, unmatch reversal and ambiguity UI over current draft. | IMP-01, PST-02 | E-11/E-13: concurrent allocations cannot overconsume; relationship reversal restores capacity once. |
+| IMP-05 | Inventory-bound reconciliation, independent controls and stale signoff behavior. | IMP-03, IMP-04 | E-07/E-15: missing account and offsetting missing rows block a zero-difference signoff. |
+| IMP-06 | Actual-company historical/opening comparison and retained match/filing handoff. | IMP-05, COM-06 | E-12/E-14/E-16: agreed history scope and all supplied relationships/control totals accounted for. |
+
+IMP-06 and later cutover consume actual D-04/D-06 material. Synthetic acceptance of the machinery is independently useful but cannot close the actual-data gate.

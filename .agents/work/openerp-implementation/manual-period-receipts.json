@@ -1,0 +1,373 @@
+{
+  "scope": "Manual local synthetic development use, not automated testing or Swedish compliance verification.",
+  "statementInput": {
+    "kind": "synthetic_bank_statement_v1",
+    "statementIdentifier": "development-2026",
+    "sourceBankAccountId": "synthetic-bank-account-001",
+    "accountId": "account_bank",
+    "currency": "SEK",
+    "startsOn": "2026-01-01",
+    "endsOn": "2026-12-31",
+    "openingMinor": "0",
+    "closingMinor": "0",
+    "completeness": {
+      "declaredComplete": true,
+      "basis": "Explicit synthetic scenario: only the development journal and its linked reversal exist for this account."
+    },
+    "rows": [
+      {
+        "rowOrdinal": 1,
+        "providerId": null,
+        "date": "2026-09-22",
+        "description": "Synthetic transfer",
+        "amountMinor": "-12500"
+      },
+      {
+        "rowOrdinal": 2,
+        "providerId": null,
+        "date": "2026-09-22",
+        "description": "Synthetic reversal",
+        "amountMinor": "12500"
+      }
+    ],
+    "evidenceId": "evidence_228b5bae954c4c6eb8b498f5d877ff0d",
+    "existingMatches": [
+      {
+        "rowOrdinal": 1,
+        "voucherId": "voucher_a25257049b914733a9606083bb16be7f",
+        "lineId": "line_4350e04ac57c4eb5bf9e95c4c0c53d97"
+      },
+      {
+        "rowOrdinal": 2,
+        "voucherId": "voucher_bbd455fa0a6e464da1a799e4a3e2eb9f",
+        "lineId": "line_d434050743c54573948634b392193a00"
+      }
+    ]
+  },
+  "statementReceipt": {
+    "statement": {
+      "kind": "synthetic_bank_statement_v1",
+      "statementIdentifier": "development-2026",
+      "sourceBankAccountId": "synthetic-bank-account-001",
+      "accountId": "account_bank",
+      "currency": "SEK",
+      "startsOn": "2026-01-01",
+      "endsOn": "2026-12-31",
+      "openingMinor": "0",
+      "closingMinor": "0",
+      "completeness": {
+        "declaredComplete": true,
+        "basis": "Explicit synthetic scenario: only the development journal and its linked reversal exist for this account."
+      },
+      "rows": [
+        {
+          "rowOrdinal": 1,
+          "providerId": null,
+          "date": "2026-09-22",
+          "description": "Synthetic transfer",
+          "amountMinor": "-12500"
+        },
+        {
+          "rowOrdinal": 2,
+          "providerId": null,
+          "date": "2026-09-22",
+          "description": "Synthetic reversal",
+          "amountMinor": "12500"
+        }
+      ],
+      "id": "statement_9279e3dd465f4834b93b6ac899549c5a",
+      "evidenceId": "evidence_228b5bae954c4c6eb8b498f5d877ff0d",
+      "evidenceSha256": "a874e29b6c2280c0360dcf59defee8377e888dfe335b611b54fe3a7669e03a90"
+    },
+    "matches": [
+      {
+        "statementId": "statement_9279e3dd465f4834b93b6ac899549c5a",
+        "rowOrdinal": 1,
+        "voucherId": "voucher_a25257049b914733a9606083bb16be7f",
+        "lineId": "line_4350e04ac57c4eb5bf9e95c4c0c53d97",
+        "origin": "imported",
+        "actorId": "actor_operator"
+      },
+      {
+        "statementId": "statement_9279e3dd465f4834b93b6ac899549c5a",
+        "rowOrdinal": 2,
+        "voucherId": "voucher_bbd455fa0a6e464da1a799e4a3e2eb9f",
+        "lineId": "line_d434050743c54573948634b392193a00",
+        "origin": "imported",
+        "actorId": "actor_operator"
+      }
+    ],
+    "checkpoint": {
+      "sequence": "2",
+      "sourceRevision": "3"
+    },
+    "receipt": {
+      "key": "development_bank_import_001",
+      "operation": "import_bank_statement",
+      "actorId": "actor_operator"
+    }
+  },
+  "reconciliationInput": {
+    "accountId": "account_bank",
+    "startsOn": "2026-01-01",
+    "endsOn": "2026-12-31"
+  },
+  "reconciliation": {
+    "accountId": "account_bank",
+    "startsOn": "2026-01-01",
+    "endsOn": "2026-12-31",
+    "id": "reconciliation_5f13590f6d404624bd33fd2b805f0d14",
+    "scope": {
+      "entityId": "entity_synthetic",
+      "bookId": "book_synthetic"
+    },
+    "currency": "SEK",
+    "status": "complete",
+    "checkpoint": {
+      "sequence": "2",
+      "sourceRevision": "3"
+    },
+    "accountLedgerSequence": "2",
+    "ledgerOpeningMinor": "0",
+    "ledgerClosingMinor": "0",
+    "bankOpeningMinor": "0",
+    "bankClosingMinor": "0",
+    "openingDifferenceMinor": "0",
+    "closingDifferenceMinor": "0",
+    "sourceCoverageComplete": true,
+    "statements": [
+      {
+        "kind": "synthetic_bank_statement_v1",
+        "statementIdentifier": "development-2026",
+        "sourceBankAccountId": "synthetic-bank-account-001",
+        "accountId": "account_bank",
+        "currency": "SEK",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31",
+        "openingMinor": "0",
+        "closingMinor": "0",
+        "completeness": {
+          "declaredComplete": true,
+          "basis": "Explicit synthetic scenario: only the development journal and its linked reversal exist for this account."
+        },
+        "rows": [
+          {
+            "rowOrdinal": 1,
+            "providerId": null,
+            "date": "2026-09-22",
+            "description": "Synthetic transfer",
+            "amountMinor": "-12500"
+          },
+          {
+            "rowOrdinal": 2,
+            "providerId": null,
+            "date": "2026-09-22",
+            "description": "Synthetic reversal",
+            "amountMinor": "12500"
+          }
+        ],
+        "id": "statement_9279e3dd465f4834b93b6ac899549c5a",
+        "evidenceId": "evidence_228b5bae954c4c6eb8b498f5d877ff0d",
+        "evidenceSha256": "a874e29b6c2280c0360dcf59defee8377e888dfe335b611b54fe3a7669e03a90"
+      }
+    ],
+    "sourceRows": [
+      {
+        "statementId": "statement_9279e3dd465f4834b93b6ac899549c5a",
+        "evidenceId": "evidence_228b5bae954c4c6eb8b498f5d877ff0d",
+        "evidenceSha256": "a874e29b6c2280c0360dcf59defee8377e888dfe335b611b54fe3a7669e03a90",
+        "rowOrdinal": 1,
+        "providerId": null,
+        "date": "2026-09-22",
+        "description": "Synthetic transfer",
+        "amountMinor": "-12500"
+      },
+      {
+        "statementId": "statement_9279e3dd465f4834b93b6ac899549c5a",
+        "evidenceId": "evidence_228b5bae954c4c6eb8b498f5d877ff0d",
+        "evidenceSha256": "a874e29b6c2280c0360dcf59defee8377e888dfe335b611b54fe3a7669e03a90",
+        "rowOrdinal": 2,
+        "providerId": null,
+        "date": "2026-09-22",
+        "description": "Synthetic reversal",
+        "amountMinor": "12500"
+      }
+    ],
+    "ledgerLines": [
+      {
+        "voucherId": "voucher_a25257049b914733a9606083bb16be7f",
+        "lineId": "line_4350e04ac57c4eb5bf9e95c4c0c53d97",
+        "date": "2026-09-22",
+        "sequence": "1",
+        "description": "Synthetic bank credit",
+        "amountMinor": "-12500"
+      },
+      {
+        "voucherId": "voucher_bbd455fa0a6e464da1a799e4a3e2eb9f",
+        "lineId": "line_d434050743c54573948634b392193a00",
+        "date": "2026-09-22",
+        "sequence": "2",
+        "description": "Synthetic bank credit",
+        "amountMinor": "12500"
+      }
+    ],
+    "matches": [
+      {
+        "statementId": "statement_9279e3dd465f4834b93b6ac899549c5a",
+        "rowOrdinal": 1,
+        "voucherId": "voucher_a25257049b914733a9606083bb16be7f",
+        "lineId": "line_4350e04ac57c4eb5bf9e95c4c0c53d97",
+        "origin": "imported",
+        "actorId": "actor_operator"
+      },
+      {
+        "statementId": "statement_9279e3dd465f4834b93b6ac899549c5a",
+        "rowOrdinal": 2,
+        "voucherId": "voucher_bbd455fa0a6e464da1a799e4a3e2eb9f",
+        "lineId": "line_d434050743c54573948634b392193a00",
+        "origin": "imported",
+        "actorId": "actor_operator"
+      }
+    ],
+    "unmatchedSource": [],
+    "unmatchedLedger": [],
+    "differences": [],
+    "coverageGaps": [],
+    "receipt": {
+      "key": "development_bank_reconcile_001",
+      "operation": "reconcile_bank",
+      "actorId": "actor_operator"
+    },
+    "createdAt": "2026-09-22T14:51:42.651860Z"
+  },
+  "reportInput": {
+    "kind": "trial_balance_v1",
+    "startsOn": "2026-01-01",
+    "endsOn": "2026-12-31"
+  },
+  "report": {
+    "kind": "trial_balance_v1",
+    "startsOn": "2026-01-01",
+    "endsOn": "2026-12-31",
+    "id": "report_0b905550fd22473ba2c3efad9d507872",
+    "scope": {
+      "entityId": "entity_synthetic",
+      "bookId": "book_synthetic"
+    },
+    "sequence": "2",
+    "currency": "SEK",
+    "createdAt": "2026-09-22T14:48:05.549724Z",
+    "accountCount": 2,
+    "voucherCount": 2,
+    "debitMinor": "25000",
+    "creditMinor": "25000",
+    "balanced": true,
+    "coverage": "not_established",
+    "warnings": [
+      "Internal synthetic trial balance only; not a statutory financial statement.",
+      "A balanced ledger does not establish complete source records, tax correctness or period readiness.",
+      "Opening balances include all earlier postings; no fiscal-year profit transfer is inferred."
+    ]
+  },
+  "reportLines": {
+    "reportId": "report_0b905550fd22473ba2c3efad9d507872",
+    "total": 2,
+    "items": [
+      {
+        "accountId": "account_bank",
+        "code": "1930",
+        "name": "Synthetic bank account",
+        "openingMinor": "0",
+        "debitMinor": "12500",
+        "creditMinor": "12500",
+        "closingMinor": "0"
+      },
+      {
+        "accountId": "account_clearing",
+        "code": "2999",
+        "name": "Synthetic clearing account",
+        "openingMinor": "0",
+        "debitMinor": "12500",
+        "creditMinor": "12500",
+        "closingMinor": "0"
+      }
+    ],
+    "next": null
+  },
+  "accountExplanation": {
+    "report": {
+      "kind": "trial_balance_v1",
+      "startsOn": "2026-01-01",
+      "endsOn": "2026-12-31",
+      "id": "report_0b905550fd22473ba2c3efad9d507872",
+      "scope": {
+        "entityId": "entity_synthetic",
+        "bookId": "book_synthetic"
+      },
+      "sequence": "2",
+      "currency": "SEK",
+      "createdAt": "2026-09-22T14:48:05.549724Z",
+      "accountCount": 2,
+      "voucherCount": 2,
+      "debitMinor": "25000",
+      "creditMinor": "25000",
+      "balanced": true,
+      "coverage": "not_established",
+      "warnings": [
+        "Internal synthetic trial balance only; not a statutory financial statement.",
+        "A balanced ledger does not establish complete source records, tax correctness or period readiness.",
+        "Opening balances include all earlier postings; no fiscal-year profit transfer is inferred."
+      ]
+    },
+    "line": {
+      "accountId": "account_bank",
+      "code": "1930",
+      "name": "Synthetic bank account",
+      "openingMinor": "0",
+      "debitMinor": "12500",
+      "creditMinor": "12500",
+      "closingMinor": "0"
+    },
+    "formula": "closing = opening + debits - credits",
+    "totalContributions": 2,
+    "items": [
+      {
+        "voucherId": "voucher_a25257049b914733a9606083bb16be7f",
+        "lineId": "line_4350e04ac57c4eb5bf9e95c4c0c53d97",
+        "sequence": "1",
+        "ordinal": 2,
+        "postingDate": "2026-09-22",
+        "part": "movement",
+        "description": "Synthetic bank credit",
+        "debitMinor": "0",
+        "creditMinor": "12500",
+        "evidenceRefs": [
+          {
+            "evidenceId": "evidence_6d82183b2044483a9814dcb3593317f1",
+            "sha256": "f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f",
+            "locator": "clearing-transfer"
+          }
+        ]
+      },
+      {
+        "voucherId": "voucher_bbd455fa0a6e464da1a799e4a3e2eb9f",
+        "lineId": "line_d434050743c54573948634b392193a00",
+        "sequence": "2",
+        "ordinal": 2,
+        "postingDate": "2026-09-22",
+        "part": "movement",
+        "description": "Synthetic bank credit",
+        "debitMinor": "12500",
+        "creditMinor": "0",
+        "evidenceRefs": [
+          {
+            "evidenceId": "evidence_6d82183b2044483a9814dcb3593317f1",
+            "sha256": "f86ffb91401c4a558ac09039e00990733b5e73f1033dbd01275546770de9376f",
+            "locator": "clearing-transfer"
+          }
+        ]
+      }
+    ],
+    "next": null
+  }
+}

@@ -1,0 +1,791 @@
+{
+  "scope": "Manual local synthetic preparation only; no automated tests or financial postings in this book.",
+  "statementInput": {
+    "kind": "synthetic_bank_statement_v1",
+    "statementIdentifier": "synthetic-recurring-2026",
+    "sourceBankAccountId": "synthetic-recurring-bank",
+    "accountId": "account_bank",
+    "currency": "SEK",
+    "startsOn": "2026-01-01",
+    "endsOn": "2026-12-31",
+    "openingMinor": "0",
+    "closingMinor": "2000",
+    "completeness": {
+      "declaredComplete": true,
+      "basis": "Explicit synthetic recurring-preparation scenario with two distinct equal bank observations."
+    },
+    "rows": [
+      {
+        "rowOrdinal": 1,
+        "providerId": null,
+        "date": "2026-09-22",
+        "description": "Synthetic recurring deposit",
+        "amountMinor": "1000"
+      },
+      {
+        "rowOrdinal": 2,
+        "providerId": null,
+        "date": "2026-09-22",
+        "description": "Synthetic recurring deposit",
+        "amountMinor": "1000"
+      }
+    ],
+    "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+    "existingMatches": []
+  },
+  "statementReceipt": {
+    "statement": {
+      "kind": "synthetic_bank_statement_v1",
+      "statementIdentifier": "synthetic-recurring-2026",
+      "sourceBankAccountId": "synthetic-recurring-bank",
+      "accountId": "account_bank",
+      "currency": "SEK",
+      "startsOn": "2026-01-01",
+      "endsOn": "2026-12-31",
+      "openingMinor": "0",
+      "closingMinor": "2000",
+      "completeness": {
+        "declaredComplete": true,
+        "basis": "Explicit synthetic recurring-preparation scenario with two distinct equal bank observations."
+      },
+      "rows": [
+        {
+          "rowOrdinal": 1,
+          "providerId": null,
+          "date": "2026-09-22",
+          "description": "Synthetic recurring deposit",
+          "amountMinor": "1000"
+        },
+        {
+          "rowOrdinal": 2,
+          "providerId": null,
+          "date": "2026-09-22",
+          "description": "Synthetic recurring deposit",
+          "amountMinor": "1000"
+        }
+      ],
+      "id": "statement_81fb1b804391473bb936519525af9392",
+      "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+      "evidenceSha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5"
+    },
+    "matches": [],
+    "checkpoint": {
+      "sequence": "0",
+      "sourceRevision": "1"
+    },
+    "receipt": {
+      "key": "automation_import_001",
+      "operation": "import_bank_statement",
+      "actorId": "actor_automation"
+    }
+  },
+  "ruleInput": {
+    "kind": "synthetic_recurring_preparation_v1",
+    "name": "Synthetic recurring deposits",
+    "sourceBankAccountId": "synthetic-recurring-bank",
+    "accountId": "account_bank",
+    "description": "Synthetic recurring deposit",
+    "sign": "positive",
+    "counterpartAccountId": "account_clearing",
+    "series": "A",
+    "taxAssessment": "not_applicable"
+  },
+  "rule": {
+    "id": "rule_cc869519c5f44f5a86a8f7aaddfe636b",
+    "version": 1,
+    "scope": {
+      "entityId": "entity_automation",
+      "bookId": "book_automation"
+    },
+    "input": {
+      "kind": "synthetic_recurring_preparation_v1",
+      "name": "Synthetic recurring deposits",
+      "sourceBankAccountId": "synthetic-recurring-bank",
+      "accountId": "account_bank",
+      "description": "Synthetic recurring deposit",
+      "sign": "positive",
+      "counterpartAccountId": "account_clearing",
+      "series": "A",
+      "taxAssessment": "not_applicable"
+    },
+    "dependencies": [
+      {
+        "kind": "profile",
+        "resourceId": "book_automation",
+        "version": "1",
+        "reason": "Synthetic book currency and profile"
+      },
+      {
+        "kind": "writer_epoch",
+        "resourceId": "book_automation",
+        "version": "1",
+        "reason": "Native writer authority"
+      },
+      {
+        "kind": "account",
+        "resourceId": "account_bank",
+        "version": "1",
+        "reason": "Exact recurring account configuration"
+      },
+      {
+        "kind": "account",
+        "resourceId": "account_clearing",
+        "version": "1",
+        "reason": "Exact recurring account configuration"
+      }
+    ],
+    "digest": "sha256:f024f6431c19441c3461a6e7dd46056b8f47c0d2600b080d586082bd35fc09c3",
+    "createdAt": "2026-09-22T15:15:42.541884Z",
+    "proposedBy": "actor_automation",
+    "receipt": {
+      "key": "auto_rule_001",
+      "operation": "propose_recurring_rule",
+      "actorId": "actor_automation"
+    }
+  },
+  "simulation": {
+    "startsOn": "2026-01-01",
+    "endsOn": "2026-12-31",
+    "sourceRevision": "1",
+    "sequence": "0",
+    "rows": [
+      {
+        "statementId": "statement_81fb1b804391473bb936519525af9392",
+        "rowOrdinal": 1,
+        "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+        "date": "2026-09-22",
+        "description": "Synthetic recurring deposit",
+        "amountMinor": "1000",
+        "accountingPeriodId": "period_synthetic_2026",
+        "periodVersion": "1"
+      },
+      {
+        "statementId": "statement_81fb1b804391473bb936519525af9392",
+        "rowOrdinal": 2,
+        "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+        "date": "2026-09-22",
+        "description": "Synthetic recurring deposit",
+        "amountMinor": "1000",
+        "accountingPeriodId": "period_synthetic_2026",
+        "periodVersion": "1"
+      }
+    ],
+    "matchingCount": 2,
+    "totalMinor": "2000",
+    "unmatchedCount": 0,
+    "alreadyMatchedCount": 0,
+    "overlappingRuleIds": [],
+    "blockers": [],
+    "id": "simulation_66abe8279bf343dc88f585a92827d8d5",
+    "ruleId": "rule_cc869519c5f44f5a86a8f7aaddfe636b",
+    "ruleDigest": "sha256:f024f6431c19441c3461a6e7dd46056b8f47c0d2600b080d586082bd35fc09c3",
+    "digest": "sha256:3e1f70c7e19f25804f3fc97106edee1211244aa37ce3519fd9dff192422fa242",
+    "createdAt": "2026-09-22T15:15:49.138687Z",
+    "receipt": {
+      "key": "auto_simulation_001",
+      "operation": "simulate_recurring_rule",
+      "actorId": "actor_automation"
+    }
+  },
+  "activation": {
+    "id": "activation_c599e70847ac47ad9e175a51b00de7f3",
+    "ruleId": "rule_cc869519c5f44f5a86a8f7aaddfe636b",
+    "ruleDigest": "sha256:f024f6431c19441c3461a6e7dd46056b8f47c0d2600b080d586082bd35fc09c3",
+    "simulationId": "simulation_66abe8279bf343dc88f585a92827d8d5",
+    "simulationDigest": "sha256:3e1f70c7e19f25804f3fc97106edee1211244aa37ce3519fd9dff192422fa242",
+    "actorId": "actor_automation",
+    "activatedAt": "2026-09-22T15:15:59.146319Z",
+    "authority": "prepare_only",
+    "receipt": {
+      "key": "auto_activation_001",
+      "operation": "activate_recurring_rule",
+      "actorId": "actor_automation"
+    }
+  },
+  "runCreated": {
+    "id": "run_8a2fde0a598345cd9ccca39084ffc5bf",
+    "scope": {
+      "entityId": "entity_automation",
+      "bookId": "book_automation"
+    },
+    "ruleId": "rule_cc869519c5f44f5a86a8f7aaddfe636b",
+    "ruleDigest": "sha256:f024f6431c19441c3461a6e7dd46056b8f47c0d2600b080d586082bd35fc09c3",
+    "activationId": "activation_c599e70847ac47ad9e175a51b00de7f3",
+    "selection": {
+      "startsOn": "2026-01-01",
+      "endsOn": "2026-12-31",
+      "sourceRevision": "1",
+      "sequence": "0",
+      "rows": [
+        {
+          "statementId": "statement_81fb1b804391473bb936519525af9392",
+          "rowOrdinal": 1,
+          "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+          "date": "2026-09-22",
+          "description": "Synthetic recurring deposit",
+          "amountMinor": "1000",
+          "accountingPeriodId": "period_synthetic_2026",
+          "periodVersion": "1"
+        },
+        {
+          "statementId": "statement_81fb1b804391473bb936519525af9392",
+          "rowOrdinal": 2,
+          "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+          "date": "2026-09-22",
+          "description": "Synthetic recurring deposit",
+          "amountMinor": "1000",
+          "accountingPeriodId": "period_synthetic_2026",
+          "periodVersion": "1"
+        }
+      ],
+      "matchingCount": 2,
+      "totalMinor": "2000",
+      "unmatchedCount": 0,
+      "alreadyMatchedCount": 0,
+      "overlappingRuleIds": [],
+      "blockers": []
+    },
+    "state": "ready",
+    "cursor": 0,
+    "total": 2,
+    "results": [],
+    "blocker": null,
+    "audit": [
+      {
+        "index": 1,
+        "action": "create",
+        "state": "ready",
+        "cursor": 0,
+        "blocker": null,
+        "actorId": "actor_automation",
+        "recordedAt": "2026-09-22T15:15:59.173903Z",
+        "receipt": {
+          "key": "auto_run_001",
+          "operation": "create_preparation_run",
+          "actorId": "actor_automation"
+        }
+      }
+    ],
+    "requiresPostingApproval": true
+  },
+  "firstChunk": {
+    "id": "run_8a2fde0a598345cd9ccca39084ffc5bf",
+    "scope": {
+      "entityId": "entity_automation",
+      "bookId": "book_automation"
+    },
+    "ruleId": "rule_cc869519c5f44f5a86a8f7aaddfe636b",
+    "ruleDigest": "sha256:f024f6431c19441c3461a6e7dd46056b8f47c0d2600b080d586082bd35fc09c3",
+    "activationId": "activation_c599e70847ac47ad9e175a51b00de7f3",
+    "selection": {
+      "startsOn": "2026-01-01",
+      "endsOn": "2026-12-31",
+      "sourceRevision": "1",
+      "sequence": "0",
+      "rows": [
+        {
+          "statementId": "statement_81fb1b804391473bb936519525af9392",
+          "rowOrdinal": 1,
+          "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+          "date": "2026-09-22",
+          "description": "Synthetic recurring deposit",
+          "amountMinor": "1000",
+          "accountingPeriodId": "period_synthetic_2026",
+          "periodVersion": "1"
+        },
+        {
+          "statementId": "statement_81fb1b804391473bb936519525af9392",
+          "rowOrdinal": 2,
+          "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+          "date": "2026-09-22",
+          "description": "Synthetic recurring deposit",
+          "amountMinor": "1000",
+          "accountingPeriodId": "period_synthetic_2026",
+          "periodVersion": "1"
+        }
+      ],
+      "matchingCount": 2,
+      "totalMinor": "2000",
+      "unmatchedCount": 0,
+      "alreadyMatchedCount": 0,
+      "overlappingRuleIds": [],
+      "blockers": []
+    },
+    "state": "ready",
+    "cursor": 1,
+    "total": 2,
+    "results": [
+      {
+        "statementId": "statement_81fb1b804391473bb936519525af9392",
+        "rowOrdinal": 1,
+        "state": "prepared",
+        "changeSetId": "change_8962b4e46a324931adba2027806c0c55",
+        "planDigest": "sha256:aead5a002276a0057a2502532ebfef8953281801ba4a32962e8cadce04f3565c",
+        "voucherId": null
+      }
+    ],
+    "blocker": null,
+    "audit": [
+      {
+        "index": 1,
+        "action": "create",
+        "state": "ready",
+        "cursor": 0,
+        "blocker": null,
+        "actorId": "actor_automation",
+        "recordedAt": "2026-09-22T15:15:59.173903Z",
+        "receipt": {
+          "key": "auto_run_001",
+          "operation": "create_preparation_run",
+          "actorId": "actor_automation"
+        }
+      },
+      {
+        "index": 2,
+        "action": "continue",
+        "state": "ready",
+        "cursor": 1,
+        "blocker": null,
+        "actorId": "actor_automation",
+        "recordedAt": "2026-09-22T15:21:16.483600Z",
+        "receipt": {
+          "key": "auto_chunk_001",
+          "operation": "advance_preparation_run",
+          "actorId": "actor_automation"
+        }
+      }
+    ],
+    "requiresPostingApproval": true
+  },
+  "cancelled": {
+    "id": "run_8a2fde0a598345cd9ccca39084ffc5bf",
+    "scope": {
+      "entityId": "entity_automation",
+      "bookId": "book_automation"
+    },
+    "ruleId": "rule_cc869519c5f44f5a86a8f7aaddfe636b",
+    "ruleDigest": "sha256:f024f6431c19441c3461a6e7dd46056b8f47c0d2600b080d586082bd35fc09c3",
+    "activationId": "activation_c599e70847ac47ad9e175a51b00de7f3",
+    "selection": {
+      "startsOn": "2026-01-01",
+      "endsOn": "2026-12-31",
+      "sourceRevision": "1",
+      "sequence": "0",
+      "rows": [
+        {
+          "statementId": "statement_81fb1b804391473bb936519525af9392",
+          "rowOrdinal": 1,
+          "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+          "date": "2026-09-22",
+          "description": "Synthetic recurring deposit",
+          "amountMinor": "1000",
+          "accountingPeriodId": "period_synthetic_2026",
+          "periodVersion": "1"
+        },
+        {
+          "statementId": "statement_81fb1b804391473bb936519525af9392",
+          "rowOrdinal": 2,
+          "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+          "date": "2026-09-22",
+          "description": "Synthetic recurring deposit",
+          "amountMinor": "1000",
+          "accountingPeriodId": "period_synthetic_2026",
+          "periodVersion": "1"
+        }
+      ],
+      "matchingCount": 2,
+      "totalMinor": "2000",
+      "unmatchedCount": 0,
+      "alreadyMatchedCount": 0,
+      "overlappingRuleIds": [],
+      "blockers": []
+    },
+    "state": "cancelled",
+    "cursor": 1,
+    "total": 2,
+    "results": [
+      {
+        "statementId": "statement_81fb1b804391473bb936519525af9392",
+        "rowOrdinal": 1,
+        "state": "prepared",
+        "changeSetId": "change_8962b4e46a324931adba2027806c0c55",
+        "planDigest": "sha256:aead5a002276a0057a2502532ebfef8953281801ba4a32962e8cadce04f3565c",
+        "voucherId": null
+      }
+    ],
+    "blocker": null,
+    "audit": [
+      {
+        "index": 1,
+        "action": "create",
+        "state": "ready",
+        "cursor": 0,
+        "blocker": null,
+        "actorId": "actor_automation",
+        "recordedAt": "2026-09-22T15:15:59.173903Z",
+        "receipt": {
+          "key": "auto_run_001",
+          "operation": "create_preparation_run",
+          "actorId": "actor_automation"
+        }
+      },
+      {
+        "index": 2,
+        "action": "continue",
+        "state": "ready",
+        "cursor": 1,
+        "blocker": null,
+        "actorId": "actor_automation",
+        "recordedAt": "2026-09-22T15:21:16.483600Z",
+        "receipt": {
+          "key": "auto_chunk_001",
+          "operation": "advance_preparation_run",
+          "actorId": "actor_automation"
+        }
+      },
+      {
+        "index": 3,
+        "action": "cancel",
+        "state": "cancelled",
+        "cursor": 1,
+        "blocker": null,
+        "actorId": "actor_automation",
+        "recordedAt": "2026-09-22T15:21:27.706751Z",
+        "receipt": {
+          "key": "auto_cancel_001",
+          "operation": "advance_preparation_run",
+          "actorId": "actor_automation"
+        }
+      }
+    ],
+    "requiresPostingApproval": true
+  },
+  "resumed": {
+    "id": "run_8a2fde0a598345cd9ccca39084ffc5bf",
+    "scope": {
+      "entityId": "entity_automation",
+      "bookId": "book_automation"
+    },
+    "ruleId": "rule_cc869519c5f44f5a86a8f7aaddfe636b",
+    "ruleDigest": "sha256:f024f6431c19441c3461a6e7dd46056b8f47c0d2600b080d586082bd35fc09c3",
+    "activationId": "activation_c599e70847ac47ad9e175a51b00de7f3",
+    "selection": {
+      "startsOn": "2026-01-01",
+      "endsOn": "2026-12-31",
+      "sourceRevision": "1",
+      "sequence": "0",
+      "rows": [
+        {
+          "statementId": "statement_81fb1b804391473bb936519525af9392",
+          "rowOrdinal": 1,
+          "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+          "date": "2026-09-22",
+          "description": "Synthetic recurring deposit",
+          "amountMinor": "1000",
+          "accountingPeriodId": "period_synthetic_2026",
+          "periodVersion": "1"
+        },
+        {
+          "statementId": "statement_81fb1b804391473bb936519525af9392",
+          "rowOrdinal": 2,
+          "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+          "date": "2026-09-22",
+          "description": "Synthetic recurring deposit",
+          "amountMinor": "1000",
+          "accountingPeriodId": "period_synthetic_2026",
+          "periodVersion": "1"
+        }
+      ],
+      "matchingCount": 2,
+      "totalMinor": "2000",
+      "unmatchedCount": 0,
+      "alreadyMatchedCount": 0,
+      "overlappingRuleIds": [],
+      "blockers": []
+    },
+    "state": "completed",
+    "cursor": 2,
+    "total": 2,
+    "results": [
+      {
+        "statementId": "statement_81fb1b804391473bb936519525af9392",
+        "rowOrdinal": 1,
+        "state": "prepared",
+        "changeSetId": "change_8962b4e46a324931adba2027806c0c55",
+        "planDigest": "sha256:aead5a002276a0057a2502532ebfef8953281801ba4a32962e8cadce04f3565c",
+        "voucherId": null
+      },
+      {
+        "statementId": "statement_81fb1b804391473bb936519525af9392",
+        "rowOrdinal": 2,
+        "state": "prepared",
+        "changeSetId": "change_aa2df6c9c23743ec91e30de3cbc6a32d",
+        "planDigest": "sha256:49a1dea036ebf0d6bec202957fb2c84e629f7d0b25895e035f3c1042a3f7a36b",
+        "voucherId": null
+      }
+    ],
+    "blocker": null,
+    "audit": [
+      {
+        "index": 1,
+        "action": "create",
+        "state": "ready",
+        "cursor": 0,
+        "blocker": null,
+        "actorId": "actor_automation",
+        "recordedAt": "2026-09-22T15:15:59.173903Z",
+        "receipt": {
+          "key": "auto_run_001",
+          "operation": "create_preparation_run",
+          "actorId": "actor_automation"
+        }
+      },
+      {
+        "index": 2,
+        "action": "continue",
+        "state": "ready",
+        "cursor": 1,
+        "blocker": null,
+        "actorId": "actor_automation",
+        "recordedAt": "2026-09-22T15:21:16.483600Z",
+        "receipt": {
+          "key": "auto_chunk_001",
+          "operation": "advance_preparation_run",
+          "actorId": "actor_automation"
+        }
+      },
+      {
+        "index": 3,
+        "action": "cancel",
+        "state": "cancelled",
+        "cursor": 1,
+        "blocker": null,
+        "actorId": "actor_automation",
+        "recordedAt": "2026-09-22T15:21:27.706751Z",
+        "receipt": {
+          "key": "auto_cancel_001",
+          "operation": "advance_preparation_run",
+          "actorId": "actor_automation"
+        }
+      },
+      {
+        "index": 4,
+        "action": "resume",
+        "state": "completed",
+        "cursor": 2,
+        "blocker": null,
+        "actorId": "actor_automation",
+        "recordedAt": "2026-09-22T15:21:27.743083Z",
+        "receipt": {
+          "key": "auto_resume_001",
+          "operation": "advance_preparation_run",
+          "actorId": "actor_automation"
+        }
+      }
+    ],
+    "requiresPostingApproval": true
+  },
+  "plans": [
+    {
+      "schemaVersion": "1",
+      "canonicalization": "openerp-c14n-v1",
+      "id": "change_8962b4e46a324931adba2027806c0c55",
+      "version": 1,
+      "scope": {
+        "entityId": "entity_automation",
+        "bookId": "book_automation"
+      },
+      "createdAt": "2026-09-22T15:21:16.480396Z",
+      "dependencies": [
+        {
+          "kind": "profile",
+          "resourceId": "book_automation",
+          "version": "1",
+          "reason": "Book currency and supported profile"
+        },
+        {
+          "kind": "writer_epoch",
+          "resourceId": "book_automation",
+          "version": "1",
+          "reason": "Single authoritative writer"
+        },
+        {
+          "kind": "period",
+          "resourceId": "period_synthetic_2026",
+          "version": "1",
+          "reason": "Posting dates and lock state"
+        },
+        {
+          "kind": "account",
+          "resourceId": "account_bank",
+          "version": "1",
+          "reason": "Exact account configuration"
+        },
+        {
+          "kind": "account",
+          "resourceId": "account_clearing",
+          "version": "1",
+          "reason": "Exact account configuration"
+        }
+      ],
+      "groups": [
+        {
+          "id": "group_44002c12e71c496e9b9450b2bdb3477b",
+          "dependsOnGroupIds": [],
+          "actions": [
+            {
+              "kind": "post_voucher",
+              "correctsVoucherId": null,
+              "eventId": "event_1fa4fecb5f344bd5acb0cb6fc845d094",
+              "postingPurpose": "adjustment",
+              "occurrenceKey": "manual_journal",
+              "fiscalYearId": "year_synthetic_2026",
+              "accountingPeriodId": "period_synthetic_2026",
+              "postingDate": "2026-09-22",
+              "series": "A",
+              "currency": "SEK",
+              "description": "Synthetic recurring deposit",
+              "rationale": "Prepared by recurring rule rule_cc869519c5f44f5a86a8f7aaddfe636b; separate operator approval is required.",
+              "taxAssessment": "not_applicable",
+              "lines": [
+                {
+                  "accountId": "account_bank",
+                  "debitMinor": "1000",
+                  "creditMinor": "0",
+                  "description": "Synthetic recurring deposit",
+                  "lineId": "line_0ab74da98a0d44b7a11c7a15eb1240ac"
+                },
+                {
+                  "accountId": "account_clearing",
+                  "debitMinor": "0",
+                  "creditMinor": "1000",
+                  "description": "Synthetic recurring deposit",
+                  "lineId": "line_99405f5e63104842b181c92d24df424a"
+                }
+              ],
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+                  "sha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5",
+                  "locator": "bank_statement_81fb1b804391473bb936519525af9392_1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "planDigest": "sha256:aead5a002276a0057a2502532ebfef8953281801ba4a32962e8cadce04f3565c"
+    },
+    {
+      "schemaVersion": "1",
+      "canonicalization": "openerp-c14n-v1",
+      "id": "change_aa2df6c9c23743ec91e30de3cbc6a32d",
+      "version": 1,
+      "scope": {
+        "entityId": "entity_automation",
+        "bookId": "book_automation"
+      },
+      "createdAt": "2026-09-22T15:21:27.740926Z",
+      "dependencies": [
+        {
+          "kind": "profile",
+          "resourceId": "book_automation",
+          "version": "1",
+          "reason": "Book currency and supported profile"
+        },
+        {
+          "kind": "writer_epoch",
+          "resourceId": "book_automation",
+          "version": "1",
+          "reason": "Single authoritative writer"
+        },
+        {
+          "kind": "period",
+          "resourceId": "period_synthetic_2026",
+          "version": "1",
+          "reason": "Posting dates and lock state"
+        },
+        {
+          "kind": "account",
+          "resourceId": "account_bank",
+          "version": "1",
+          "reason": "Exact account configuration"
+        },
+        {
+          "kind": "account",
+          "resourceId": "account_clearing",
+          "version": "1",
+          "reason": "Exact account configuration"
+        }
+      ],
+      "groups": [
+        {
+          "id": "group_e3946065475145aea318bcf4f392ed53",
+          "dependsOnGroupIds": [],
+          "actions": [
+            {
+              "kind": "post_voucher",
+              "correctsVoucherId": null,
+              "eventId": "event_e26bbf5ac47944eb9e977a29004b2f8d",
+              "postingPurpose": "adjustment",
+              "occurrenceKey": "manual_journal",
+              "fiscalYearId": "year_synthetic_2026",
+              "accountingPeriodId": "period_synthetic_2026",
+              "postingDate": "2026-09-22",
+              "series": "A",
+              "currency": "SEK",
+              "description": "Synthetic recurring deposit",
+              "rationale": "Prepared by recurring rule rule_cc869519c5f44f5a86a8f7aaddfe636b; separate operator approval is required.",
+              "taxAssessment": "not_applicable",
+              "lines": [
+                {
+                  "accountId": "account_bank",
+                  "debitMinor": "1000",
+                  "creditMinor": "0",
+                  "description": "Synthetic recurring deposit",
+                  "lineId": "line_67a42f08309540709a0cf5e51e7879db"
+                },
+                {
+                  "accountId": "account_clearing",
+                  "debitMinor": "0",
+                  "creditMinor": "1000",
+                  "description": "Synthetic recurring deposit",
+                  "lineId": "line_59df41665a2d42b18db53a59d2fd4f67"
+                }
+              ],
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+                  "sha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5",
+                  "locator": "bank_statement_81fb1b804391473bb936519525af9392_2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "planDigest": "sha256:49a1dea036ebf0d6bec202957fb2c84e629f7d0b25895e035f3c1042a3f7a36b"
+    }
+  ],
+  "ledgerAfterPreparation": {
+    "sequence": "0",
+    "accounts": [
+      {
+        "accountId": "account_bank",
+        "code": "1930",
+        "name": "Synthetic bank account",
+        "debitMinor": "0",
+        "creditMinor": "0",
+        "balanceMinor": "0"
+      },
+      {
+        "accountId": "account_clearing",
+        "code": "2999",
+        "name": "Synthetic clearing account",
+        "debitMinor": "0",
+        "creditMinor": "0",
+        "balanceMinor": "0"
+      }
+    ]
+  }
+}

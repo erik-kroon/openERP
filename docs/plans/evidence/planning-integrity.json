@@ -1,0 +1,200 @@
+{
+  "checkedAt": "2026-09-22T17:11:03.047205+00:00",
+  "headObservedAtValidation": "4acf5aac92cb74705915408ce1c29ec93dfb0bd9",
+  "result": "passed_document_integrity_only",
+  "reproduce": "python3 docs/plans/check-plan.py",
+  "checks": {
+    "areaSpecifications": 7,
+    "workPackages": 53,
+    "mandatoryDependencyEdges": 101,
+    "mandatoryDependencyCycles": 0,
+    "conditionalGateRows": 7,
+    "localLinksAndAnchorsChecked": 126,
+    "documentsChecked": 24,
+    "coverage": {
+      "R": [
+        "R-01",
+        "R-02",
+        "R-03",
+        "R-04",
+        "R-05",
+        "R-06",
+        "R-07",
+        "R-08",
+        "R-09",
+        "R-10",
+        "R-11",
+        "R-12"
+      ],
+      "I": [
+        "I-01",
+        "I-02",
+        "I-03",
+        "I-04",
+        "I-05",
+        "I-06",
+        "I-07",
+        "I-08",
+        "I-09",
+        "I-10",
+        "I-11",
+        "I-12"
+      ],
+      "E": [
+        "E-01",
+        "E-02",
+        "E-03",
+        "E-04",
+        "E-05",
+        "E-06",
+        "E-07",
+        "E-08",
+        "E-09",
+        "E-10",
+        "E-11",
+        "E-12",
+        "E-13",
+        "E-14",
+        "E-15",
+        "E-16",
+        "E-17",
+        "E-18",
+        "E-19",
+        "E-20",
+        "E-21"
+      ]
+    },
+    "externalInputs": [
+      "D-01",
+      "D-02",
+      "D-03",
+      "D-04",
+      "D-05",
+      "D-06",
+      "D-07",
+      "D-08",
+      "D-09",
+      "D-10"
+    ],
+    "trailingWhitespace": "passed",
+    "gitDiffCheck": "passed"
+  },
+  "manualReview": "See 09-acceptance.md: monetary compatibility, atomic correction, source multiplicity, distinct capacities, completeness, close/tax sequencing and old-writer fencing. Manual review is not mechanically proven by this script.",
+  "limitations": [
+    "No product tests or proposed acceptance scenarios executed by this planning task.",
+    "No legal rule bundle, provider protocol or company applicability certified.",
+    "Concurrent implementation may differ from the dated planning baseline.",
+    "Web links are excluded from local-link validation; source observations/access limits are recorded in 10-external-inputs.md.",
+    "Documentation/index validation does not establish runtime correctness or production readiness."
+  ],
+  "files": [
+    {
+      "path": "docs/README.md",
+      "sha256": "a00089616bc4c25e15cb5ada0b008018c4b83963d36ca6362d5490fccba29451"
+    },
+    {
+      "path": "docs/adr/0002-exact-posting-and-approval.md",
+      "sha256": "26ae3de736d8b46fcf116391c36e55fbec380fb1c52021d617e254e7b02cf73f"
+    },
+    {
+      "path": "docs/adr/0004-complete-accounting-delivery-contract.md",
+      "sha256": "42ea9bb5d9e88821bf0c2e6ee698214f4a4015ed9413f30a115a763f8019fcb3"
+    },
+    {
+      "path": "docs/adr/README.md",
+      "sha256": "2dda4c583ce5e9f6503406afd2ad5e59dafa8b19dc433e32334595a467fa6647"
+    },
+    {
+      "path": "docs/architecture.md",
+      "sha256": "ff24ac261b95145874ebf98da503b4f6423c591c9c941e4efb6819dc0fdeec9d"
+    },
+    {
+      "path": "docs/compliance.md",
+      "sha256": "e2f04cfa31503a0f92c64ab72f18d928abb6bc65edbb2a7d33ad54908e32733f"
+    },
+    {
+      "path": "docs/domain.md",
+      "sha256": "0a4ed7ca1a5a0e419c5586d0c7e68c944e83186186889f13ea17e9196b63e254"
+    },
+    {
+      "path": "docs/open-decisions.md",
+      "sha256": "65705b88594ba7c2cab752a2a6885ee92fbf37b63534848b53a3e932dce783fa"
+    },
+    {
+      "path": "docs/operations.md",
+      "sha256": "67233536af2f8824f7e1268d22cdfaf361318a0d4e8f2624d5688d381d74c238"
+    },
+    {
+      "path": "docs/plans/00-shared-contracts.md",
+      "sha256": "3cc18e631821d63998e20c2ddaf3d0c05e5c10aa886a04bc27161202e08aa9d6"
+    },
+    {
+      "path": "docs/plans/01-posting-approval-receipts.md",
+      "sha256": "3e8adf656af31d4fc8b1c4c7d669ed10c00bfc0556bd8f5c5d133c0ddc5dde3d"
+    },
+    {
+      "path": "docs/plans/02-corrections.md",
+      "sha256": "550bddfa8d16b76bdc093822cdfeeec8712586eb2f4deeede21ec0bbd9900dfa"
+    },
+    {
+      "path": "docs/plans/03-imports-matching-reconciliation.md",
+      "sha256": "c97d6c20ab8c2e1d4dc78ba7370ec8856345a18ce7ebc0f50f08a780677caad2"
+    },
+    {
+      "path": "docs/plans/04-invoices-payments-registers.md",
+      "sha256": "5bce2b2cab5e64a2dd40bda35fd7c24a1447e3eabfce49e056d5eba10478802d"
+    },
+    {
+      "path": "docs/plans/05-vat-payroll-assets-fx.md",
+      "sha256": "45643a64eb9131e74ed9b47c913433e177d48a022522b4b732266efed7591528"
+    },
+    {
+      "path": "docs/plans/06-year-end-reports-filing.md",
+      "sha256": "e86ab284a41d036110c6c54afd53972dd4ea42f689b9ba51194994ec056af30c"
+    },
+    {
+      "path": "docs/plans/07-restore-operations-cutover.md",
+      "sha256": "ede679cbd5372f9e1d425d82a12f9687a94c44b7baa83e4c7718a5698cd90871"
+    },
+    {
+      "path": "docs/plans/08-delivery.md",
+      "sha256": "93333e549cda8669bfe05b2106cf6c7bec806087b2fec70ba898e8c7ff95f4f8"
+    },
+    {
+      "path": "docs/plans/09-acceptance.md",
+      "sha256": "865eaf3d578e83623af50ec409f60b65fa3115512a2e3a8ea73b20c60e17ceef"
+    },
+    {
+      "path": "docs/plans/10-external-inputs.md",
+      "sha256": "077352b644167105902f704a54b141a096d40b625814ac5fa6343e60b69b5164"
+    },
+    {
+      "path": "docs/plans/README.md",
+      "sha256": "9af4deaadbf249f80384061aa7f27bcc424950ad42ebf64e50db96842c3930f4"
+    },
+    {
+      "path": "docs/plans/check-plan.py",
+      "sha256": "4d39b0193545588516b130cf0842b658465d06c6bfa08357e52af5af64f765ea"
+    },
+    {
+      "path": "docs/plans/evidence/planning-baseline.json",
+      "sha256": "04990036ab6d8a581c4ac7a51da244b4619f1b79e9f5e58b3d2ccdf31e4f1207"
+    },
+    {
+      "path": "docs/plans/evidence/work-packages.json",
+      "sha256": "b2ce77c344e28a5987aa8b79e85b7afb999e507f02ecfe8c05af06af10b92d88"
+    },
+    {
+      "path": "docs/plans/fnd01-reconciliation.md",
+      "sha256": "3e9e883d48c51410ad46cacc59e6579e89280bf792075c19ff1085679bd5296f"
+    },
+    {
+      "path": "docs/roadmap.md",
+      "sha256": "059f2e54a1d67a2bb63665216c8dd723cfe29d1e90cee0a303711f9a60e7ee00"
+    },
+    {
+      "path": "docs/verification.md",
+      "sha256": "63926d700595e02316f0dad67fe7c4b9712b5352b894762ea9217b1d7c8cd163"
+    }
+  ]
+}

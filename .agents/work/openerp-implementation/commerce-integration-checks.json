@@ -1,0 +1,191 @@
+{
+  "scope": "Commerce UI integration and bounded current-Worker smoke observations. No tests added or automated suite/browser interaction run. No full commerce mutation, concurrency, crash-recovery, statutory or production proof.",
+  "checks": [
+    {
+      "command": "bun run check-types",
+      "exitCode": 0,
+      "output": "$ vp run --filter api --filter web --filter @open-erp/ui --filter @open-erp/contracts check-types && bun run check:infra && bun run check:tests\n~/packages/ui$ tsc --noEmit \u2298 cache disabled\n~/packages/contracts$ tsc --noEmit \u2298 cache disabled\n\n~/apps/api$ tsc --noEmit \u2298 cache disabled\n\n~/apps/web$ vp build \u2298 cache disabled\n\n~/apps/api$ tsc --project scripts/tsconfig.json --noEmit \u2298 cache disabled\n\n\u2139 [paraglide-js] Compilation skipped \u2014 inputs unchanged (message-modules)\n\u001b[2K\rtransforming...\u2713 2950 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/client/assets/index-DI-1p5QD.css               29.73 kB \u2502 gzip:   6.90 kB\ndist/client/assets/evidence-inspector-FLQyQcKg.js    2.00 kB \u2502 gzip:   0.93 kB\ndist/client/assets/reconciliation-BN9iwErB.js        2.61 kB \u2502 gzip:   1.15 kB\ndist/client/assets/panel-C0JdW2BD.js                10.90 kB \u2502 gzip:   3.10 kB\ndist/client/assets/schedules-Ds-4xXXP.js            12.89 kB \u2502 gzip:   3.68 kB\ndist/client/assets/settlements-rjUGFbCu.js          12.99 kB \u2502 gzip:   3.53 kB\ndist/client/assets/commerce-panel-Cmv6LKcA.js       25.00 kB \u2502 gzip:   5.95 kB\ndist/client/assets/useSelector-omckny5l.js          36.69 kB \u2502 gzip:  12.09 kB\ndist/client/assets/routes-By27kJzi.js              167.61 kB \u2502 gzip:  40.43 kB\ndist/client/assets/data-table-C0WCXdgt.js          332.23 kB \u2502 gzip: 109.69 kB\ndist/client/assets/index-o5GjLGe0.js               335.05 kB \u2502 gzip: 107.65 kB\n\n\u2713 built in 1.59s\n\u2139 [paraglide-js] Compilation skipped \u2014 inputs unchanged (message-modules)\n\u001b[2K\rtransforming...\u2713 867 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/server/assets/start-Dv79nk_x.js                         0.21 kB \u2502 gzip:   0.17 kB\ndist/server/assets/empty-plugin-adapters-CRmm9IFd.js         0.28 kB \u2502 gzip:   0.18 kB\ndist/server/assets/_tanstack-start-manifest_v-BWVeP1av.js    0.71 kB \u2502 gzip:   0.40 kB\ndist/server/assets/evidence-inspector-CZnAieXS.js            3.70 kB \u2502 gzip:   1.28 kB\ndist/server/assets/reconciliation-CZwV5auo.js                5.83 kB \u2502 gzip:   1.61 kB\ndist/server/assets/panel-APplQYZI.js                        20.31 kB \u2502 gzip:   4.13 kB\ndist/server/assets/router-F8ji2ZSW.js                       23.70 kB \u2502 gzip:   7.53 kB\ndist/server/assets/schedules-C38Z3FYN.js                    23.97 kB \u2502 gzip:   4.91 kB\ndist/server/assets/settlements-5IwBJjOc.js                  24.18 kB \u2502 gzip:   4.85 kB\ndist/server/assets/commerce-panel-lr9qOf--.js               45.47 kB \u2502 gzip:   8.14 kB\ndist/server/server.js                                      237.73 kB \u2502 gzip:  55.12 kB\ndist/server/assets/routes-syTMceAv.js                      275.90 kB \u2502 gzip:  50.40 kB\ndist/server/assets/data-table-C4Q27NI4.js                  532.30 kB \u2502 gzip: 127.31 kB\n\n\u2713 built in 1.51s\n[prerender] Prerendering pages...\n[prerender] Concurrency: 8\n[prerender] Crawling: /\n[prerender] Prerendered 1 pages:\n[prerender] - /\n\n~/apps/web$ tsc --noEmit \u2298 cache disabled\n\n---\nvp run: 0/6 cache hit (0%). (Run `vp run --last-details` for full details)\n$ tsc --project infra/alchemy/tsconfig.json --noEmit\n$ tsc --project apps/api/tests/tsconfig.json --noEmit\n"
+    },
+    {
+      "command": "bun run lint",
+      "exitCode": 0,
+      "output": "$ oxlint --config .oxlintrc.type-aware.json apps/api/src apps/api/scripts apps/api/tests apps/web/src apps/web/tests infra/alchemy packages/contracts/src packages/ui/src\nFound 0 warnings and 0 errors.\nFinished in 2.7s on 136 files with 146 rules using 8 threads.\n"
+    },
+    {
+      "command": "bun run format:check",
+      "exitCode": 0,
+      "output": "$ oxfmt --check apps/api apps/web/src apps/web/tests infra/alchemy packages/contracts packages/ui/src packages/config apps/web/vite.config.ts vite.config.ts\nChecking formatting...\n\nAll matched files use the correct format.\nFinished in 385ms on 165 files using 8 threads.\n"
+    },
+    {
+      "command": "bun run build",
+      "exitCode": 0,
+      "output": "$ vp run --filter api --filter web build\n~/apps/api$ wrangler deploy --dry-run --outdir dist \u2298 cache disabled\n~/apps/web$ vp build \u2298 cache disabled\n\n \u26c5\ufe0f wrangler 4.136.2 (update available 4.136.3)\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nTotal Upload: 1579.87 KiB / gzip: 307.16 KiB\nNo bindings found.\n--dry-run: exiting now.\n\n\u2139 [paraglide-js] Compilation skipped \u2014 inputs unchanged (message-modules)\n\u001b[2K\rtransforming...\u2713 2950 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/client/assets/index-DI-1p5QD.css               29.73 kB \u2502 gzip:   6.90 kB\ndist/client/assets/evidence-inspector-FLQyQcKg.js    2.00 kB \u2502 gzip:   0.93 kB\ndist/client/assets/reconciliation-BN9iwErB.js        2.61 kB \u2502 gzip:   1.15 kB\ndist/client/assets/panel-C0JdW2BD.js                10.90 kB \u2502 gzip:   3.10 kB\ndist/client/assets/schedules-Ds-4xXXP.js            12.89 kB \u2502 gzip:   3.68 kB\ndist/client/assets/settlements-rjUGFbCu.js          12.99 kB \u2502 gzip:   3.53 kB\ndist/client/assets/commerce-panel-Cmv6LKcA.js       25.00 kB \u2502 gzip:   5.95 kB\ndist/client/assets/useSelector-omckny5l.js          36.69 kB \u2502 gzip:  12.09 kB\ndist/client/assets/routes-By27kJzi.js              167.61 kB \u2502 gzip:  40.43 kB\ndist/client/assets/data-table-C0WCXdgt.js          332.23 kB \u2502 gzip: 109.69 kB\ndist/client/assets/index-o5GjLGe0.js               335.05 kB \u2502 gzip: 107.65 kB\n\n\u2713 built in 1.15s\n\u2139 [paraglide-js] Compilation skipped \u2014 inputs unchanged (message-modules)\n\u001b[2K\rtransforming...\u2713 867 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/server/assets/start-Dv79nk_x.js                         0.21 kB \u2502 gzip:   0.17 kB\ndist/server/assets/empty-plugin-adapters-CRmm9IFd.js         0.28 kB \u2502 gzip:   0.18 kB\ndist/server/assets/_tanstack-start-manifest_v-BWVeP1av.js    0.71 kB \u2502 gzip:   0.40 kB\ndist/server/assets/evidence-inspector-CZnAieXS.js            3.70 kB \u2502 gzip:   1.28 kB\ndist/server/assets/reconciliation-CZwV5auo.js                5.83 kB \u2502 gzip:   1.61 kB\ndist/server/assets/panel-APplQYZI.js                        20.31 kB \u2502 gzip:   4.13 kB\ndist/server/assets/router-F8ji2ZSW.js                       23.70 kB \u2502 gzip:   7.53 kB\ndist/server/assets/schedules-C38Z3FYN.js                    23.97 kB \u2502 gzip:   4.91 kB\ndist/server/assets/settlements-5IwBJjOc.js                  24.18 kB \u2502 gzip:   4.85 kB\ndist/server/assets/commerce-panel-lr9qOf--.js               45.47 kB \u2502 gzip:   8.14 kB\ndist/server/server.js                                      237.73 kB \u2502 gzip:  55.12 kB\ndist/server/assets/routes-syTMceAv.js                      275.90 kB \u2502 gzip:  50.40 kB\ndist/server/assets/data-table-C4Q27NI4.js                  532.30 kB \u2502 gzip: 127.31 kB\n\n\u2713 built in 797ms\n[prerender] Prerendering pages...\n[prerender] Concurrency: 8\n[prerender] Crawling: /\n[prerender] Prerendered 1 pages:\n[prerender] - /\n\n---\nvp run: 0/2 cache hit (0%). (Run `vp run --last-details` for full details)\n"
+    }
+  ],
+  "apiSmoke": {
+    "/ledger": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/ledger",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "sequence": "1",
+        "accounts": [
+          {
+            "accountId": "account_bank",
+            "code": "1930",
+            "name": "Synthetic bank account",
+            "debitMinor": "2000",
+            "creditMinor": "0",
+            "balanceMinor": "2000"
+          },
+          {
+            "accountId": "account_clearing",
+            "code": "2999",
+            "name": "Synthetic clearing account",
+            "debitMinor": "0",
+            "creditMinor": "2000",
+            "balanceMinor": "-2000"
+          }
+        ]
+      }
+    },
+    "/commerce/counterparties": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/commerce/counterparties",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "items": [],
+        "next": null
+      }
+    },
+    "/commerce/invoices": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/commerce/invoices",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "items": [],
+        "next": null
+      }
+    },
+    "/periods/period_synthetic_2026/closing-readiness": {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/periods/period_synthetic_2026/closing-readiness",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "periodId": "period_synthetic_2026",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31",
+        "locked": false,
+        "inventory": {
+          "evidenceId": "evidence_b3bddd42be9949e2bfa651675cdf185b",
+          "bankAccountIds": [
+            "account_bank"
+          ],
+          "id": "closing_inventory_54b728c00cbc441aa427c64870fd5126",
+          "evidenceSha256": "57cb8678189604373a2131b2cccadf0018b581fba823da6f4b30bf3a58c0434b",
+          "actorId": "actor_automation",
+          "declaredAt": "2026-09-22T16:46:34.894656Z",
+          "coverage": "synthetic_bank_sources_only"
+        },
+        "dependencies": {
+          "periodVersion": "3",
+          "ledgerSequence": "1",
+          "profileVersion": "1",
+          "writerEpoch": "1",
+          "periodDigest": "sha256:b7c7a284468f0c2d1a01c982745ebec5816ac66ae58b4036084add4db3edc83f",
+          "accountsDigest": "sha256:832451157bc5c4b1a6d0563ec45e9ad9442e66624a3379d1c85de8aa62969286",
+          "bankDigest": "sha256:89e865b860e5dc3de365637ff35c933dbe7f5b46653bc1393a6edc83df072f73",
+          "scheduleDigest": "sha256:de3284317810d44e3b7f62ec156fb44e4c4b5b8eeac3a7d9b09ed5523477fe89",
+          "inventoryDigest": "sha256:49557aeafb8049080257cc1c73e007cee2152c7713e1b51ea0bc7d0094611055",
+          "reportId": null
+        },
+        "checks": [
+          {
+            "code": "DeclaredBankInventory",
+            "passed": true,
+            "detail": "An operator must explicitly declare expected synthetic bank accounts with evidence. Every expected account needs a retained source, and every observed source must be declared."
+          },
+          {
+            "code": "SyntheticNativeProfile",
+            "passed": true,
+            "detail": "Only the native synthetic profile supports this technical lock."
+          },
+          {
+            "code": "PeriodBoundaries",
+            "passed": true,
+            "detail": "The period must fit its fiscal year and must not overlap another posting period."
+          },
+          {
+            "code": "CurrentTrialBalance",
+            "passed": false,
+            "detail": "A current balanced internal trial balance must cover this exact period. It is not an annual report."
+          },
+          {
+            "code": "RepresentedBankSources",
+            "passed": false,
+            "detail": "Every represented bank source needs a fresh complete reconciliation for this exact period; missing sources are not inferred absent."
+          },
+          {
+            "code": "RegisteredCommerce",
+            "passed": true,
+            "detail": "Registered invoices and allocations must remain valid and conserve exact amounts. Unpaid invoices are allowed; company invoice completeness is not established."
+          },
+          {
+            "code": "RepresentedSchedules",
+            "passed": true,
+            "detail": "Represented due schedule occurrences must be posted and unreversed; schedule inventory and control-account completeness remain unestablished."
+          }
+        ],
+        "technicalCloseAllowed": false,
+        "statutoryReady": false,
+        "statutoryBlockers": [
+          "Actual company profile, accounting method, obligations and complete expected source inventory are not established.",
+          "Tax, receivables/payables, owner balances, assets, payroll, valuation and control-account completeness are not certified.",
+          "Technical locking does not perform year-end transfers, tax calculation, annual reporting, SIE or iXBRL validation.",
+          "Retention, restore, reviewed statutory schemas, signing authority and filing acceptance remain unverified."
+        ]
+      }
+    },
+    "stale-execution": {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/change-sets/change_aa2df6c9c23743ec91e30de3cbc6a32d/execute",
+      "idempotencyKey": "manual-matched-recurring-execute-v1",
+      "input": {
+        "planDigest": "sha256:49a1dea036ebf0d6bec202957fb2c84e629f7d0b25895e035f3c1042a3f7a36b",
+        "version": 1,
+        "approvalId": "approval_37c60e525c4343958dc81da13c4c9a5e"
+      },
+      "status": 409,
+      "result": {
+        "_tag": "AccountingError",
+        "code": "StaleDependency",
+        "message": "The period dependency period_synthetic_2026 changed. Prepare and approve a new plan."
+      }
+    }
+  },
+  "sourceSha256": {
+    "apps/web/src/components/commerce/allocations.tsx": "c4ffb2f6f07e13ac39274a97c88fe54f8400f0c5f96c9b4fef605f2e9fcca854",
+    "apps/web/src/components/commerce/commerce-panel.tsx": "d9e409ea16ff592ccf486868718cf1530a99a6c92f5536392d40f0141f80bfe5",
+    "apps/web/src/components/commerce/counterparties.tsx": "1c7ec5577bfdbf731fed92a95c3da04b5d5b93eb5829e80e9e2c0bc526eb8ac5",
+    "apps/web/src/components/commerce/invoices.tsx": "27fa4f85352bee3318764e41e1358e2b1839171104555280a24431417e258df8",
+    "apps/web/src/components/commerce/shared.tsx": "05a3b73232f5aee76d06458b6e624be6a03406d3b7e1a6280ac3da1d595e0392",
+    "apps/web/src/components/commerce/copy.ts": "2b05d2a68a1425c759e9ef21529c011fc0ce872c192859e611a5eac130d43e0e",
+    "apps/web/src/components/accounting-workspace.tsx": "cd122b9ade55fabda6b0fb55ff1e949dd2e55748a368d51dad4f0e13dd83b875",
+    "packages/contracts/src/commerce.ts": "77e24bfb53ce2a58aa69f3563d2a4b8af5825b74c896d8d35f462077403e8ddf",
+    "apps/api/src/database.ts": "322748f1b42a835e463d2056991d6122e07b18bd18f0271f8aeaf5c1d3313490"
+  },
+  "concurrentChanges": "Database adapter, setup scripts, dependencies, instructions and other documentation changed concurrently. They are preserved and excluded from the commerce UI commit. API smoke is bounded, not adapter-migration acceptance.",
+  "recoveryLimit": "Captured revision-editor requests survive query refresh until explicit reset. No automatic browser persistence. Exact values/revision/key must be saved before sending; export exists after send only."
+}

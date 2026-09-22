@@ -1,0 +1,1027 @@
+{
+  "scope": "Local synthetic technical lock/reopen observations only. No statutory close, year-end financial transfer, filing or production readiness.",
+  "migrationSha256": "38ea720dd52c85433abff0163bc7715a16dc5193eb1d7cf43a07d534b8825372",
+  "steps": [
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/evidence",
+      "idempotencyKey": "manual-close-inventory-evidence-v1",
+      "input": {
+        "title": "Synthetic bank source inventory",
+        "content": "For this local synthetic book and2026period, account_bank is the only expected bank source. This declaration does not establish real-company or statutory completeness.",
+        "mediaType": "text/plain",
+        "origin": "Local synthetic operator"
+      },
+      "status": 200,
+      "result": {
+        "id": "evidence_b3bddd42be9949e2bfa651675cdf185b",
+        "title": "Synthetic bank source inventory",
+        "sha256": "57cb8678189604373a2131b2cccadf0018b581fba823da6f4b30bf3a58c0434b",
+        "mediaType": "text/plain",
+        "origin": "Local synthetic operator",
+        "createdAt": "2026-09-22T16:46:34.868725Z"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/periods/period_synthetic_2026/closing-source-inventories",
+      "idempotencyKey": "manual-close-inventory-declare-v1",
+      "input": {
+        "evidenceId": "evidence_b3bddd42be9949e2bfa651675cdf185b",
+        "bankAccountIds": [
+          "account_bank"
+        ]
+      },
+      "status": 200,
+      "result": {
+        "evidenceId": "evidence_b3bddd42be9949e2bfa651675cdf185b",
+        "bankAccountIds": [
+          "account_bank"
+        ],
+        "id": "closing_inventory_54b728c00cbc441aa427c64870fd5126",
+        "evidenceSha256": "57cb8678189604373a2131b2cccadf0018b581fba823da6f4b30bf3a58c0434b",
+        "actorId": "actor_automation",
+        "declaredAt": "2026-09-22T16:46:34.894656Z",
+        "coverage": "synthetic_bank_sources_only"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/periods/period_synthetic_2026/closing-readiness",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "periodId": "period_synthetic_2026",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31",
+        "locked": false,
+        "inventory": {
+          "evidenceId": "evidence_b3bddd42be9949e2bfa651675cdf185b",
+          "bankAccountIds": [
+            "account_bank"
+          ],
+          "id": "closing_inventory_54b728c00cbc441aa427c64870fd5126",
+          "evidenceSha256": "57cb8678189604373a2131b2cccadf0018b581fba823da6f4b30bf3a58c0434b",
+          "actorId": "actor_automation",
+          "declaredAt": "2026-09-22T16:46:34.894656Z",
+          "coverage": "synthetic_bank_sources_only"
+        },
+        "dependencies": {
+          "periodVersion": "1",
+          "ledgerSequence": "1",
+          "profileVersion": "1",
+          "writerEpoch": "1",
+          "periodDigest": "sha256:c30117e7db7dde271548ecb579990bdfc0989a74c83a93952faadf3d9fbf583d",
+          "accountsDigest": "sha256:832451157bc5c4b1a6d0563ec45e9ad9442e66624a3379d1c85de8aa62969286",
+          "bankDigest": "sha256:89e865b860e5dc3de365637ff35c933dbe7f5b46653bc1393a6edc83df072f73",
+          "scheduleDigest": "sha256:de3284317810d44e3b7f62ec156fb44e4c4b5b8eeac3a7d9b09ed5523477fe89",
+          "inventoryDigest": "sha256:49557aeafb8049080257cc1c73e007cee2152c7713e1b51ea0bc7d0094611055",
+          "reportId": null
+        },
+        "checks": [
+          {
+            "code": "DeclaredBankInventory",
+            "passed": true,
+            "detail": "An operator must explicitly declare expected synthetic bank accounts with evidence. Every expected account needs a retained source, and every observed source must be declared."
+          },
+          {
+            "code": "SyntheticNativeProfile",
+            "passed": true,
+            "detail": "Only the native synthetic profile supports this technical lock."
+          },
+          {
+            "code": "PeriodBoundaries",
+            "passed": true,
+            "detail": "The period must fit its fiscal year and must not overlap another posting period."
+          },
+          {
+            "code": "CurrentTrialBalance",
+            "passed": false,
+            "detail": "A current balanced internal trial balance must cover this exact period. It is not an annual report."
+          },
+          {
+            "code": "RepresentedBankSources",
+            "passed": true,
+            "detail": "Every represented bank source needs a fresh complete reconciliation for this exact period; missing sources are not inferred absent."
+          },
+          {
+            "code": "RegisteredCommerce",
+            "passed": true,
+            "detail": "Registered invoices and allocations must remain valid and conserve exact amounts. Unpaid invoices are allowed; company invoice completeness is not established."
+          },
+          {
+            "code": "RepresentedSchedules",
+            "passed": true,
+            "detail": "Represented due schedule occurrences must be posted and unreversed; schedule inventory and control-account completeness remain unestablished."
+          }
+        ],
+        "technicalCloseAllowed": false,
+        "statutoryReady": false,
+        "statutoryBlockers": [
+          "Actual company profile, accounting method, obligations and complete expected source inventory are not established.",
+          "Tax, receivables/payables, owner balances, assets, payroll, valuation and control-account completeness are not certified.",
+          "Technical locking does not perform year-end transfers, tax calculation, annual reporting, SIE or iXBRL validation.",
+          "Retention, restore, reviewed statutory schemas, signing authority and filing acceptance remain unverified."
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/report-snapshots",
+      "idempotencyKey": "manual-technical-close-trial-v1",
+      "input": {
+        "kind": "trial_balance_v1",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31"
+      },
+      "status": 200,
+      "result": {
+        "kind": "trial_balance_v1",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31",
+        "id": "report_982e848abe9d47bba8a118f876a96419",
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "sequence": "1",
+        "currency": "SEK",
+        "createdAt": "2026-09-22T16:47:08.762655Z",
+        "accountCount": 2,
+        "voucherCount": 1,
+        "debitMinor": "2000",
+        "creditMinor": "2000",
+        "balanced": true,
+        "coverage": "not_established",
+        "warnings": [
+          "Internal synthetic trial balance only; not a statutory financial statement.",
+          "A balanced ledger does not establish complete source records, tax correctness or period readiness.",
+          "Opening balances include all earlier postings; no fiscal-year profit transfer is inferred."
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/periods/period_synthetic_2026/closing-readiness",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "periodId": "period_synthetic_2026",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31",
+        "locked": false,
+        "inventory": {
+          "evidenceId": "evidence_b3bddd42be9949e2bfa651675cdf185b",
+          "bankAccountIds": [
+            "account_bank"
+          ],
+          "id": "closing_inventory_54b728c00cbc441aa427c64870fd5126",
+          "evidenceSha256": "57cb8678189604373a2131b2cccadf0018b581fba823da6f4b30bf3a58c0434b",
+          "actorId": "actor_automation",
+          "declaredAt": "2026-09-22T16:46:34.894656Z",
+          "coverage": "synthetic_bank_sources_only"
+        },
+        "dependencies": {
+          "periodVersion": "1",
+          "ledgerSequence": "1",
+          "profileVersion": "1",
+          "writerEpoch": "1",
+          "periodDigest": "sha256:c30117e7db7dde271548ecb579990bdfc0989a74c83a93952faadf3d9fbf583d",
+          "accountsDigest": "sha256:832451157bc5c4b1a6d0563ec45e9ad9442e66624a3379d1c85de8aa62969286",
+          "bankDigest": "sha256:89e865b860e5dc3de365637ff35c933dbe7f5b46653bc1393a6edc83df072f73",
+          "scheduleDigest": "sha256:de3284317810d44e3b7f62ec156fb44e4c4b5b8eeac3a7d9b09ed5523477fe89",
+          "inventoryDigest": "sha256:49557aeafb8049080257cc1c73e007cee2152c7713e1b51ea0bc7d0094611055",
+          "reportId": "report_982e848abe9d47bba8a118f876a96419"
+        },
+        "checks": [
+          {
+            "code": "DeclaredBankInventory",
+            "passed": true,
+            "detail": "An operator must explicitly declare expected synthetic bank accounts with evidence. Every expected account needs a retained source, and every observed source must be declared."
+          },
+          {
+            "code": "SyntheticNativeProfile",
+            "passed": true,
+            "detail": "Only the native synthetic profile supports this technical lock."
+          },
+          {
+            "code": "PeriodBoundaries",
+            "passed": true,
+            "detail": "The period must fit its fiscal year and must not overlap another posting period."
+          },
+          {
+            "code": "CurrentTrialBalance",
+            "passed": true,
+            "detail": "A current balanced internal trial balance must cover this exact period. It is not an annual report."
+          },
+          {
+            "code": "RepresentedBankSources",
+            "passed": true,
+            "detail": "Every represented bank source needs a fresh complete reconciliation for this exact period; missing sources are not inferred absent."
+          },
+          {
+            "code": "RegisteredCommerce",
+            "passed": true,
+            "detail": "Registered invoices and allocations must remain valid and conserve exact amounts. Unpaid invoices are allowed; company invoice completeness is not established."
+          },
+          {
+            "code": "RepresentedSchedules",
+            "passed": true,
+            "detail": "Represented due schedule occurrences must be posted and unreversed; schedule inventory and control-account completeness remain unestablished."
+          }
+        ],
+        "technicalCloseAllowed": true,
+        "statutoryReady": false,
+        "statutoryBlockers": [
+          "Actual company profile, accounting method, obligations and complete expected source inventory are not established.",
+          "Tax, receivables/payables, owner balances, assets, payroll, valuation and control-account completeness are not certified.",
+          "Technical locking does not perform year-end transfers, tax calculation, annual reporting, SIE or iXBRL validation.",
+          "Retention, restore, reviewed statutory schemas, signing authority and filing acceptance remain unverified."
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/periods/period_synthetic_2026/closing-proposals",
+      "idempotencyKey": "manual-technical-close-prepare-v1",
+      "input": {
+        "action": "close",
+        "reason": "Local synthetic technical lock after exact bank-capacity reconciliation and current internal trial balance. No statutory close."
+      },
+      "status": 200,
+      "result": {
+        "id": "closing_proposal_c362b921b71446ec869b59632e0ad0e8",
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "periodId": "period_synthetic_2026",
+        "action": "close",
+        "reason": "Local synthetic technical lock after exact bank-capacity reconciliation and current internal trial balance. No statutory close.",
+        "basis": {
+          "scope": {
+            "entityId": "entity_automation",
+            "bookId": "book_automation"
+          },
+          "periodId": "period_synthetic_2026",
+          "startsOn": "2026-01-01",
+          "endsOn": "2026-12-31",
+          "locked": false,
+          "inventory": {
+            "evidenceId": "evidence_b3bddd42be9949e2bfa651675cdf185b",
+            "bankAccountIds": [
+              "account_bank"
+            ],
+            "id": "closing_inventory_54b728c00cbc441aa427c64870fd5126",
+            "evidenceSha256": "57cb8678189604373a2131b2cccadf0018b581fba823da6f4b30bf3a58c0434b",
+            "actorId": "actor_automation",
+            "declaredAt": "2026-09-22T16:46:34.894656Z",
+            "coverage": "synthetic_bank_sources_only"
+          },
+          "dependencies": {
+            "periodVersion": "1",
+            "ledgerSequence": "1",
+            "profileVersion": "1",
+            "writerEpoch": "1",
+            "periodDigest": "sha256:c30117e7db7dde271548ecb579990bdfc0989a74c83a93952faadf3d9fbf583d",
+            "accountsDigest": "sha256:832451157bc5c4b1a6d0563ec45e9ad9442e66624a3379d1c85de8aa62969286",
+            "bankDigest": "sha256:89e865b860e5dc3de365637ff35c933dbe7f5b46653bc1393a6edc83df072f73",
+            "scheduleDigest": "sha256:de3284317810d44e3b7f62ec156fb44e4c4b5b8eeac3a7d9b09ed5523477fe89",
+            "inventoryDigest": "sha256:49557aeafb8049080257cc1c73e007cee2152c7713e1b51ea0bc7d0094611055",
+            "reportId": "report_982e848abe9d47bba8a118f876a96419"
+          },
+          "checks": [
+            {
+              "code": "DeclaredBankInventory",
+              "passed": true,
+              "detail": "An operator must explicitly declare expected synthetic bank accounts with evidence. Every expected account needs a retained source, and every observed source must be declared."
+            },
+            {
+              "code": "SyntheticNativeProfile",
+              "passed": true,
+              "detail": "Only the native synthetic profile supports this technical lock."
+            },
+            {
+              "code": "PeriodBoundaries",
+              "passed": true,
+              "detail": "The period must fit its fiscal year and must not overlap another posting period."
+            },
+            {
+              "code": "CurrentTrialBalance",
+              "passed": true,
+              "detail": "A current balanced internal trial balance must cover this exact period. It is not an annual report."
+            },
+            {
+              "code": "RepresentedBankSources",
+              "passed": true,
+              "detail": "Every represented bank source needs a fresh complete reconciliation for this exact period; missing sources are not inferred absent."
+            },
+            {
+              "code": "RegisteredCommerce",
+              "passed": true,
+              "detail": "Registered invoices and allocations must remain valid and conserve exact amounts. Unpaid invoices are allowed; company invoice completeness is not established."
+            },
+            {
+              "code": "RepresentedSchedules",
+              "passed": true,
+              "detail": "Represented due schedule occurrences must be posted and unreversed; schedule inventory and control-account completeness remain unestablished."
+            }
+          ],
+          "technicalCloseAllowed": true,
+          "statutoryReady": false,
+          "statutoryBlockers": [
+            "Actual company profile, accounting method, obligations and complete expected source inventory are not established.",
+            "Tax, receivables/payables, owner balances, assets, payroll, valuation and control-account completeness are not certified.",
+            "Technical locking does not perform year-end transfers, tax calculation, annual reporting, SIE or iXBRL validation.",
+            "Retention, restore, reviewed statutory schemas, signing authority and filing acceptance remain unverified."
+          ]
+        },
+        "digest": "sha256:dee2919832e78e2744abef875019e0788638d66b12c17ca6c8ab069b8b9eaa1d",
+        "proposedBy": "actor_automation",
+        "createdAt": "2026-09-22T16:47:08.805522Z"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/closing-proposals/closing_proposal_c362b921b71446ec869b59632e0ad0e8/approvals",
+      "idempotencyKey": "manual-technical-close-approve-v1",
+      "input": {
+        "digest": "sha256:dee2919832e78e2744abef875019e0788638d66b12c17ca6c8ab069b8b9eaa1d"
+      },
+      "status": 200,
+      "result": {
+        "id": "closing_approval_396c60edeb37452b90faebb0aa5a7df1",
+        "proposalId": "closing_proposal_c362b921b71446ec869b59632e0ad0e8",
+        "digest": "sha256:dee2919832e78e2744abef875019e0788638d66b12c17ca6c8ab069b8b9eaa1d",
+        "actorId": "actor_automation",
+        "expiresAt": "2026-09-22T17:02:30.264089Z"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/closing-proposals/closing_proposal_c362b921b71446ec869b59632e0ad0e8/executions",
+      "idempotencyKey": "manual-technical-close-execute-v1",
+      "input": {
+        "digest": "sha256:dee2919832e78e2744abef875019e0788638d66b12c17ca6c8ab069b8b9eaa1d",
+        "approvalId": "closing_approval_396c60edeb37452b90faebb0aa5a7df1"
+      },
+      "status": 200,
+      "result": {
+        "id": "closing_receipt_b675350501c949358e2642d30a9121ef",
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "periodId": "period_synthetic_2026",
+        "proposalId": "closing_proposal_c362b921b71446ec869b59632e0ad0e8",
+        "approvalId": "closing_approval_396c60edeb37452b90faebb0aa5a7df1",
+        "action": "close",
+        "locked": true,
+        "periodVersion": "2",
+        "certificateId": "technical_certificate_fb91479a237249d4a4a00702c5f55b51",
+        "invalidatedCertificates": 0,
+        "invalidatedReports": 0,
+        "approvedBy": "actor_automation",
+        "executedBy": "actor_automation",
+        "committedAt": "2026-09-22T16:47:30.305143Z",
+        "statutoryReady": false
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/closing-certificates/technical_certificate_fb91479a237249d4a4a00702c5f55b51",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "certificate": {
+          "id": "technical_certificate_fb91479a237249d4a4a00702c5f55b51",
+          "kind": "synthetic_technical_period_lock_v1",
+          "digest": "sha256:aee5d771e023366a515cbe68602932d3ab9de887ffa5d34a5aaad141f4332401",
+          "proposal": {
+            "id": "closing_proposal_c362b921b71446ec869b59632e0ad0e8",
+            "scope": {
+              "entityId": "entity_automation",
+              "bookId": "book_automation"
+            },
+            "periodId": "period_synthetic_2026",
+            "action": "close",
+            "reason": "Local synthetic technical lock after exact bank-capacity reconciliation and current internal trial balance. No statutory close.",
+            "basis": {
+              "scope": {
+                "entityId": "entity_automation",
+                "bookId": "book_automation"
+              },
+              "periodId": "period_synthetic_2026",
+              "startsOn": "2026-01-01",
+              "endsOn": "2026-12-31",
+              "locked": false,
+              "inventory": {
+                "evidenceId": "evidence_b3bddd42be9949e2bfa651675cdf185b",
+                "bankAccountIds": [
+                  "account_bank"
+                ],
+                "id": "closing_inventory_54b728c00cbc441aa427c64870fd5126",
+                "evidenceSha256": "57cb8678189604373a2131b2cccadf0018b581fba823da6f4b30bf3a58c0434b",
+                "actorId": "actor_automation",
+                "declaredAt": "2026-09-22T16:46:34.894656Z",
+                "coverage": "synthetic_bank_sources_only"
+              },
+              "dependencies": {
+                "periodVersion": "1",
+                "ledgerSequence": "1",
+                "profileVersion": "1",
+                "writerEpoch": "1",
+                "periodDigest": "sha256:c30117e7db7dde271548ecb579990bdfc0989a74c83a93952faadf3d9fbf583d",
+                "accountsDigest": "sha256:832451157bc5c4b1a6d0563ec45e9ad9442e66624a3379d1c85de8aa62969286",
+                "bankDigest": "sha256:89e865b860e5dc3de365637ff35c933dbe7f5b46653bc1393a6edc83df072f73",
+                "scheduleDigest": "sha256:de3284317810d44e3b7f62ec156fb44e4c4b5b8eeac3a7d9b09ed5523477fe89",
+                "inventoryDigest": "sha256:49557aeafb8049080257cc1c73e007cee2152c7713e1b51ea0bc7d0094611055",
+                "reportId": "report_982e848abe9d47bba8a118f876a96419"
+              },
+              "checks": [
+                {
+                  "code": "DeclaredBankInventory",
+                  "passed": true,
+                  "detail": "An operator must explicitly declare expected synthetic bank accounts with evidence. Every expected account needs a retained source, and every observed source must be declared."
+                },
+                {
+                  "code": "SyntheticNativeProfile",
+                  "passed": true,
+                  "detail": "Only the native synthetic profile supports this technical lock."
+                },
+                {
+                  "code": "PeriodBoundaries",
+                  "passed": true,
+                  "detail": "The period must fit its fiscal year and must not overlap another posting period."
+                },
+                {
+                  "code": "CurrentTrialBalance",
+                  "passed": true,
+                  "detail": "A current balanced internal trial balance must cover this exact period. It is not an annual report."
+                },
+                {
+                  "code": "RepresentedBankSources",
+                  "passed": true,
+                  "detail": "Every represented bank source needs a fresh complete reconciliation for this exact period; missing sources are not inferred absent."
+                },
+                {
+                  "code": "RegisteredCommerce",
+                  "passed": true,
+                  "detail": "Registered invoices and allocations must remain valid and conserve exact amounts. Unpaid invoices are allowed; company invoice completeness is not established."
+                },
+                {
+                  "code": "RepresentedSchedules",
+                  "passed": true,
+                  "detail": "Represented due schedule occurrences must be posted and unreversed; schedule inventory and control-account completeness remain unestablished."
+                }
+              ],
+              "technicalCloseAllowed": true,
+              "statutoryReady": false,
+              "statutoryBlockers": [
+                "Actual company profile, accounting method, obligations and complete expected source inventory are not established.",
+                "Tax, receivables/payables, owner balances, assets, payroll, valuation and control-account completeness are not certified.",
+                "Technical locking does not perform year-end transfers, tax calculation, annual reporting, SIE or iXBRL validation.",
+                "Retention, restore, reviewed statutory schemas, signing authority and filing acceptance remain unverified."
+              ]
+            },
+            "digest": "sha256:dee2919832e78e2744abef875019e0788638d66b12c17ca6c8ab069b8b9eaa1d",
+            "proposedBy": "actor_automation",
+            "createdAt": "2026-09-22T16:47:08.805522Z"
+          },
+          "receipt": {
+            "id": "closing_receipt_b675350501c949358e2642d30a9121ef",
+            "scope": {
+              "entityId": "entity_automation",
+              "bookId": "book_automation"
+            },
+            "periodId": "period_synthetic_2026",
+            "proposalId": "closing_proposal_c362b921b71446ec869b59632e0ad0e8",
+            "approvalId": "closing_approval_396c60edeb37452b90faebb0aa5a7df1",
+            "action": "close",
+            "locked": true,
+            "periodVersion": "2",
+            "certificateId": "technical_certificate_fb91479a237249d4a4a00702c5f55b51",
+            "invalidatedCertificates": 0,
+            "invalidatedReports": 0,
+            "approvedBy": "actor_automation",
+            "executedBy": "actor_automation",
+            "committedAt": "2026-09-22T16:47:30.305143Z",
+            "statutoryReady": false
+          },
+          "effectiveDependencies": {
+            "periodVersion": "2",
+            "ledgerSequence": "1",
+            "profileVersion": "1",
+            "writerEpoch": "1",
+            "periodDigest": "sha256:ede31cea00d9c1eda1796d22544c07c08366e9287798fb7ddfd2513ba39b8a52",
+            "accountsDigest": "sha256:832451157bc5c4b1a6d0563ec45e9ad9442e66624a3379d1c85de8aa62969286",
+            "bankDigest": "sha256:89e865b860e5dc3de365637ff35c933dbe7f5b46653bc1393a6edc83df072f73",
+            "scheduleDigest": "sha256:de3284317810d44e3b7f62ec156fb44e4c4b5b8eeac3a7d9b09ed5523477fe89",
+            "inventoryDigest": "sha256:49557aeafb8049080257cc1c73e007cee2152c7713e1b51ea0bc7d0094611055",
+            "reportId": "report_982e848abe9d47bba8a118f876a96419"
+          }
+        },
+        "current": true,
+        "invalidatedBy": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/change-sets",
+      "idempotencyKey": "manual-locked-period-prepare-v1",
+      "input": {
+        "kind": "manual_journal",
+        "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+        "eventKey": "synthetic_locked_period_observation",
+        "accountingPeriodId": "period_synthetic_2026",
+        "postingDate": "2026-09-22",
+        "series": "A",
+        "description": "Synthetic locked-period observation",
+        "rationale": "Synthetic existing ledger recognition for the two retained1000minor-unit bank rows; match explicitly without recognizing them again.",
+        "taxAssessment": "not_applicable",
+        "lines": [
+          {
+            "accountId": "account_bank",
+            "debitMinor": "2000",
+            "creditMinor": "0",
+            "description": "Synthetic combined deposit"
+          },
+          {
+            "accountId": "account_clearing",
+            "debitMinor": "0",
+            "creditMinor": "2000",
+            "description": "Synthetic combined counterpart"
+          }
+        ]
+      },
+      "status": 409,
+      "result": {
+        "_tag": "AccountingError",
+        "code": "PeriodLocked",
+        "message": "The period is locked. Use an open correction period or the authorized reopen workflow."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/periods/period_synthetic_2026/closing-proposals",
+      "idempotencyKey": "manual-technical-reopen-prepare-v1",
+      "input": {
+        "action": "reopen",
+        "reason": "Local synthetic reopen observation. Preserve old vouchers and invalidate earlier technical readiness evidence."
+      },
+      "status": 200,
+      "result": {
+        "id": "closing_proposal_3f267e26d61548ba895bcb0dde4d9a6f",
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "periodId": "period_synthetic_2026",
+        "action": "reopen",
+        "reason": "Local synthetic reopen observation. Preserve old vouchers and invalidate earlier technical readiness evidence.",
+        "basis": {
+          "scope": {
+            "entityId": "entity_automation",
+            "bookId": "book_automation"
+          },
+          "periodId": "period_synthetic_2026",
+          "startsOn": "2026-01-01",
+          "endsOn": "2026-12-31",
+          "locked": true,
+          "inventory": {
+            "evidenceId": "evidence_b3bddd42be9949e2bfa651675cdf185b",
+            "bankAccountIds": [
+              "account_bank"
+            ],
+            "id": "closing_inventory_54b728c00cbc441aa427c64870fd5126",
+            "evidenceSha256": "57cb8678189604373a2131b2cccadf0018b581fba823da6f4b30bf3a58c0434b",
+            "actorId": "actor_automation",
+            "declaredAt": "2026-09-22T16:46:34.894656Z",
+            "coverage": "synthetic_bank_sources_only"
+          },
+          "dependencies": {
+            "periodVersion": "2",
+            "ledgerSequence": "1",
+            "profileVersion": "1",
+            "writerEpoch": "1",
+            "periodDigest": "sha256:ede31cea00d9c1eda1796d22544c07c08366e9287798fb7ddfd2513ba39b8a52",
+            "accountsDigest": "sha256:832451157bc5c4b1a6d0563ec45e9ad9442e66624a3379d1c85de8aa62969286",
+            "bankDigest": "sha256:89e865b860e5dc3de365637ff35c933dbe7f5b46653bc1393a6edc83df072f73",
+            "scheduleDigest": "sha256:de3284317810d44e3b7f62ec156fb44e4c4b5b8eeac3a7d9b09ed5523477fe89",
+            "inventoryDigest": "sha256:49557aeafb8049080257cc1c73e007cee2152c7713e1b51ea0bc7d0094611055",
+            "reportId": "report_982e848abe9d47bba8a118f876a96419"
+          },
+          "checks": [
+            {
+              "code": "DeclaredBankInventory",
+              "passed": true,
+              "detail": "An operator must explicitly declare expected synthetic bank accounts with evidence. Every expected account needs a retained source, and every observed source must be declared."
+            },
+            {
+              "code": "SyntheticNativeProfile",
+              "passed": true,
+              "detail": "Only the native synthetic profile supports this technical lock."
+            },
+            {
+              "code": "PeriodBoundaries",
+              "passed": true,
+              "detail": "The period must fit its fiscal year and must not overlap another posting period."
+            },
+            {
+              "code": "CurrentTrialBalance",
+              "passed": true,
+              "detail": "A current balanced internal trial balance must cover this exact period. It is not an annual report."
+            },
+            {
+              "code": "RepresentedBankSources",
+              "passed": true,
+              "detail": "Every represented bank source needs a fresh complete reconciliation for this exact period; missing sources are not inferred absent."
+            },
+            {
+              "code": "RegisteredCommerce",
+              "passed": true,
+              "detail": "Registered invoices and allocations must remain valid and conserve exact amounts. Unpaid invoices are allowed; company invoice completeness is not established."
+            },
+            {
+              "code": "RepresentedSchedules",
+              "passed": true,
+              "detail": "Represented due schedule occurrences must be posted and unreversed; schedule inventory and control-account completeness remain unestablished."
+            }
+          ],
+          "technicalCloseAllowed": false,
+          "statutoryReady": false,
+          "statutoryBlockers": [
+            "Actual company profile, accounting method, obligations and complete expected source inventory are not established.",
+            "Tax, receivables/payables, owner balances, assets, payroll, valuation and control-account completeness are not certified.",
+            "Technical locking does not perform year-end transfers, tax calculation, annual reporting, SIE or iXBRL validation.",
+            "Retention, restore, reviewed statutory schemas, signing authority and filing acceptance remain unverified."
+          ]
+        },
+        "digest": "sha256:ca4c0730a6b3d571cedea1088e9f43c5f49fa5106aae09915c7b41cf3acbfe86",
+        "proposedBy": "actor_automation",
+        "createdAt": "2026-09-22T16:48:03.848939Z"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/closing-proposals/closing_proposal_3f267e26d61548ba895bcb0dde4d9a6f/approvals",
+      "idempotencyKey": "manual-technical-reopen-approve-v1",
+      "input": {
+        "digest": "sha256:ca4c0730a6b3d571cedea1088e9f43c5f49fa5106aae09915c7b41cf3acbfe86"
+      },
+      "status": 200,
+      "result": {
+        "id": "closing_approval_32c4084ca83b4adaa8dbaa1daabd60d0",
+        "proposalId": "closing_proposal_3f267e26d61548ba895bcb0dde4d9a6f",
+        "digest": "sha256:ca4c0730a6b3d571cedea1088e9f43c5f49fa5106aae09915c7b41cf3acbfe86",
+        "actorId": "actor_automation",
+        "expiresAt": "2026-09-22T17:03:03.883382Z"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/closing-proposals/closing_proposal_3f267e26d61548ba895bcb0dde4d9a6f/executions",
+      "idempotencyKey": "manual-technical-reopen-execute-v1",
+      "input": {
+        "digest": "sha256:ca4c0730a6b3d571cedea1088e9f43c5f49fa5106aae09915c7b41cf3acbfe86",
+        "approvalId": "closing_approval_32c4084ca83b4adaa8dbaa1daabd60d0"
+      },
+      "status": 200,
+      "result": {
+        "id": "closing_receipt_26c41978f8954ec48982ad78b38f1fcc",
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "periodId": "period_synthetic_2026",
+        "proposalId": "closing_proposal_3f267e26d61548ba895bcb0dde4d9a6f",
+        "approvalId": "closing_approval_32c4084ca83b4adaa8dbaa1daabd60d0",
+        "action": "reopen",
+        "locked": false,
+        "periodVersion": "3",
+        "certificateId": null,
+        "invalidatedCertificates": 1,
+        "invalidatedReports": 1,
+        "approvedBy": "actor_automation",
+        "executedBy": "actor_automation",
+        "committedAt": "2026-09-22T16:48:03.909629Z",
+        "statutoryReady": false
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/closing-certificates/technical_certificate_fb91479a237249d4a4a00702c5f55b51",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "certificate": {
+          "id": "technical_certificate_fb91479a237249d4a4a00702c5f55b51",
+          "kind": "synthetic_technical_period_lock_v1",
+          "digest": "sha256:aee5d771e023366a515cbe68602932d3ab9de887ffa5d34a5aaad141f4332401",
+          "proposal": {
+            "id": "closing_proposal_c362b921b71446ec869b59632e0ad0e8",
+            "scope": {
+              "entityId": "entity_automation",
+              "bookId": "book_automation"
+            },
+            "periodId": "period_synthetic_2026",
+            "action": "close",
+            "reason": "Local synthetic technical lock after exact bank-capacity reconciliation and current internal trial balance. No statutory close.",
+            "basis": {
+              "scope": {
+                "entityId": "entity_automation",
+                "bookId": "book_automation"
+              },
+              "periodId": "period_synthetic_2026",
+              "startsOn": "2026-01-01",
+              "endsOn": "2026-12-31",
+              "locked": false,
+              "inventory": {
+                "evidenceId": "evidence_b3bddd42be9949e2bfa651675cdf185b",
+                "bankAccountIds": [
+                  "account_bank"
+                ],
+                "id": "closing_inventory_54b728c00cbc441aa427c64870fd5126",
+                "evidenceSha256": "57cb8678189604373a2131b2cccadf0018b581fba823da6f4b30bf3a58c0434b",
+                "actorId": "actor_automation",
+                "declaredAt": "2026-09-22T16:46:34.894656Z",
+                "coverage": "synthetic_bank_sources_only"
+              },
+              "dependencies": {
+                "periodVersion": "1",
+                "ledgerSequence": "1",
+                "profileVersion": "1",
+                "writerEpoch": "1",
+                "periodDigest": "sha256:c30117e7db7dde271548ecb579990bdfc0989a74c83a93952faadf3d9fbf583d",
+                "accountsDigest": "sha256:832451157bc5c4b1a6d0563ec45e9ad9442e66624a3379d1c85de8aa62969286",
+                "bankDigest": "sha256:89e865b860e5dc3de365637ff35c933dbe7f5b46653bc1393a6edc83df072f73",
+                "scheduleDigest": "sha256:de3284317810d44e3b7f62ec156fb44e4c4b5b8eeac3a7d9b09ed5523477fe89",
+                "inventoryDigest": "sha256:49557aeafb8049080257cc1c73e007cee2152c7713e1b51ea0bc7d0094611055",
+                "reportId": "report_982e848abe9d47bba8a118f876a96419"
+              },
+              "checks": [
+                {
+                  "code": "DeclaredBankInventory",
+                  "passed": true,
+                  "detail": "An operator must explicitly declare expected synthetic bank accounts with evidence. Every expected account needs a retained source, and every observed source must be declared."
+                },
+                {
+                  "code": "SyntheticNativeProfile",
+                  "passed": true,
+                  "detail": "Only the native synthetic profile supports this technical lock."
+                },
+                {
+                  "code": "PeriodBoundaries",
+                  "passed": true,
+                  "detail": "The period must fit its fiscal year and must not overlap another posting period."
+                },
+                {
+                  "code": "CurrentTrialBalance",
+                  "passed": true,
+                  "detail": "A current balanced internal trial balance must cover this exact period. It is not an annual report."
+                },
+                {
+                  "code": "RepresentedBankSources",
+                  "passed": true,
+                  "detail": "Every represented bank source needs a fresh complete reconciliation for this exact period; missing sources are not inferred absent."
+                },
+                {
+                  "code": "RegisteredCommerce",
+                  "passed": true,
+                  "detail": "Registered invoices and allocations must remain valid and conserve exact amounts. Unpaid invoices are allowed; company invoice completeness is not established."
+                },
+                {
+                  "code": "RepresentedSchedules",
+                  "passed": true,
+                  "detail": "Represented due schedule occurrences must be posted and unreversed; schedule inventory and control-account completeness remain unestablished."
+                }
+              ],
+              "technicalCloseAllowed": true,
+              "statutoryReady": false,
+              "statutoryBlockers": [
+                "Actual company profile, accounting method, obligations and complete expected source inventory are not established.",
+                "Tax, receivables/payables, owner balances, assets, payroll, valuation and control-account completeness are not certified.",
+                "Technical locking does not perform year-end transfers, tax calculation, annual reporting, SIE or iXBRL validation.",
+                "Retention, restore, reviewed statutory schemas, signing authority and filing acceptance remain unverified."
+              ]
+            },
+            "digest": "sha256:dee2919832e78e2744abef875019e0788638d66b12c17ca6c8ab069b8b9eaa1d",
+            "proposedBy": "actor_automation",
+            "createdAt": "2026-09-22T16:47:08.805522Z"
+          },
+          "receipt": {
+            "id": "closing_receipt_b675350501c949358e2642d30a9121ef",
+            "scope": {
+              "entityId": "entity_automation",
+              "bookId": "book_automation"
+            },
+            "periodId": "period_synthetic_2026",
+            "proposalId": "closing_proposal_c362b921b71446ec869b59632e0ad0e8",
+            "approvalId": "closing_approval_396c60edeb37452b90faebb0aa5a7df1",
+            "action": "close",
+            "locked": true,
+            "periodVersion": "2",
+            "certificateId": "technical_certificate_fb91479a237249d4a4a00702c5f55b51",
+            "invalidatedCertificates": 0,
+            "invalidatedReports": 0,
+            "approvedBy": "actor_automation",
+            "executedBy": "actor_automation",
+            "committedAt": "2026-09-22T16:47:30.305143Z",
+            "statutoryReady": false
+          },
+          "effectiveDependencies": {
+            "periodVersion": "2",
+            "ledgerSequence": "1",
+            "profileVersion": "1",
+            "writerEpoch": "1",
+            "periodDigest": "sha256:ede31cea00d9c1eda1796d22544c07c08366e9287798fb7ddfd2513ba39b8a52",
+            "accountsDigest": "sha256:832451157bc5c4b1a6d0563ec45e9ad9442e66624a3379d1c85de8aa62969286",
+            "bankDigest": "sha256:89e865b860e5dc3de365637ff35c933dbe7f5b46653bc1393a6edc83df072f73",
+            "scheduleDigest": "sha256:de3284317810d44e3b7f62ec156fb44e4c4b5b8eeac3a7d9b09ed5523477fe89",
+            "inventoryDigest": "sha256:49557aeafb8049080257cc1c73e007cee2152c7713e1b51ea0bc7d0094611055",
+            "reportId": "report_982e848abe9d47bba8a118f876a96419"
+          }
+        },
+        "current": false,
+        "invalidatedBy": "closing_receipt_26c41978f8954ec48982ad78b38f1fcc"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/periods/period_synthetic_2026/closing-readiness",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "periodId": "period_synthetic_2026",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31",
+        "locked": false,
+        "inventory": {
+          "evidenceId": "evidence_b3bddd42be9949e2bfa651675cdf185b",
+          "bankAccountIds": [
+            "account_bank"
+          ],
+          "id": "closing_inventory_54b728c00cbc441aa427c64870fd5126",
+          "evidenceSha256": "57cb8678189604373a2131b2cccadf0018b581fba823da6f4b30bf3a58c0434b",
+          "actorId": "actor_automation",
+          "declaredAt": "2026-09-22T16:46:34.894656Z",
+          "coverage": "synthetic_bank_sources_only"
+        },
+        "dependencies": {
+          "periodVersion": "3",
+          "ledgerSequence": "1",
+          "profileVersion": "1",
+          "writerEpoch": "1",
+          "periodDigest": "sha256:b7c7a284468f0c2d1a01c982745ebec5816ac66ae58b4036084add4db3edc83f",
+          "accountsDigest": "sha256:832451157bc5c4b1a6d0563ec45e9ad9442e66624a3379d1c85de8aa62969286",
+          "bankDigest": "sha256:89e865b860e5dc3de365637ff35c933dbe7f5b46653bc1393a6edc83df072f73",
+          "scheduleDigest": "sha256:de3284317810d44e3b7f62ec156fb44e4c4b5b8eeac3a7d9b09ed5523477fe89",
+          "inventoryDigest": "sha256:49557aeafb8049080257cc1c73e007cee2152c7713e1b51ea0bc7d0094611055",
+          "reportId": null
+        },
+        "checks": [
+          {
+            "code": "DeclaredBankInventory",
+            "passed": true,
+            "detail": "An operator must explicitly declare expected synthetic bank accounts with evidence. Every expected account needs a retained source, and every observed source must be declared."
+          },
+          {
+            "code": "SyntheticNativeProfile",
+            "passed": true,
+            "detail": "Only the native synthetic profile supports this technical lock."
+          },
+          {
+            "code": "PeriodBoundaries",
+            "passed": true,
+            "detail": "The period must fit its fiscal year and must not overlap another posting period."
+          },
+          {
+            "code": "CurrentTrialBalance",
+            "passed": false,
+            "detail": "A current balanced internal trial balance must cover this exact period. It is not an annual report."
+          },
+          {
+            "code": "RepresentedBankSources",
+            "passed": false,
+            "detail": "Every represented bank source needs a fresh complete reconciliation for this exact period; missing sources are not inferred absent."
+          },
+          {
+            "code": "RegisteredCommerce",
+            "passed": true,
+            "detail": "Registered invoices and allocations must remain valid and conserve exact amounts. Unpaid invoices are allowed; company invoice completeness is not established."
+          },
+          {
+            "code": "RepresentedSchedules",
+            "passed": true,
+            "detail": "Represented due schedule occurrences must be posted and unreversed; schedule inventory and control-account completeness remain unestablished."
+          }
+        ],
+        "technicalCloseAllowed": false,
+        "statutoryReady": false,
+        "statutoryBlockers": [
+          "Actual company profile, accounting method, obligations and complete expected source inventory are not established.",
+          "Tax, receivables/payables, owner balances, assets, payroll, valuation and control-account completeness are not certified.",
+          "Technical locking does not perform year-end transfers, tax calculation, annual reporting, SIE or iXBRL validation.",
+          "Retention, restore, reviewed statutory schemas, signing authority and filing acceptance remain unverified."
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/periods/period_synthetic_2026/closing-history",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "items": [
+          {
+            "id": "closing_receipt_b675350501c949358e2642d30a9121ef",
+            "scope": {
+              "entityId": "entity_automation",
+              "bookId": "book_automation"
+            },
+            "periodId": "period_synthetic_2026",
+            "proposalId": "closing_proposal_c362b921b71446ec869b59632e0ad0e8",
+            "approvalId": "closing_approval_396c60edeb37452b90faebb0aa5a7df1",
+            "action": "close",
+            "locked": true,
+            "periodVersion": "2",
+            "certificateId": "technical_certificate_fb91479a237249d4a4a00702c5f55b51",
+            "invalidatedCertificates": 0,
+            "invalidatedReports": 0,
+            "approvedBy": "actor_automation",
+            "executedBy": "actor_automation",
+            "committedAt": "2026-09-22T16:47:30.305143Z",
+            "statutoryReady": false
+          },
+          {
+            "id": "closing_receipt_26c41978f8954ec48982ad78b38f1fcc",
+            "scope": {
+              "entityId": "entity_automation",
+              "bookId": "book_automation"
+            },
+            "periodId": "period_synthetic_2026",
+            "proposalId": "closing_proposal_3f267e26d61548ba895bcb0dde4d9a6f",
+            "approvalId": "closing_approval_32c4084ca83b4adaa8dbaa1daabd60d0",
+            "action": "reopen",
+            "locked": false,
+            "periodVersion": "3",
+            "certificateId": null,
+            "invalidatedCertificates": 1,
+            "invalidatedReports": 1,
+            "approvedBy": "actor_automation",
+            "executedBy": "actor_automation",
+            "committedAt": "2026-09-22T16:48:03.909629Z",
+            "statutoryReady": false
+          }
+        ],
+        "next": null
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/ledger",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "sequence": "1",
+        "accounts": [
+          {
+            "accountId": "account_bank",
+            "code": "1930",
+            "name": "Synthetic bank account",
+            "debitMinor": "2000",
+            "creditMinor": "0",
+            "balanceMinor": "2000"
+          },
+          {
+            "accountId": "account_clearing",
+            "code": "2999",
+            "name": "Synthetic clearing account",
+            "debitMinor": "0",
+            "creditMinor": "2000",
+            "balanceMinor": "-2000"
+          }
+        ]
+      }
+    }
+  ]
+}

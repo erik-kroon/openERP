@@ -1,0 +1,336 @@
+{
+  "capturedAt": "2026-09-22T16:12:14.608376+00:00",
+  "head": "1965622afa65285fa8e9013ccdd98a47ebe86dfb",
+  "workingTree": " M apps/api/migrations/0300-posting-recovery.sql\n M apps/api/scripts/operations/safety.ts\n M apps/api/scripts/tsconfig.json\n M apps/api/src/capabilities.ts\n M apps/api/src/database.ts\n M apps/api/src/index.ts\n M apps/api/src/subledgers.ts\n M apps/api/tests/support/fixtures.ts\n M apps/api/tests/tsconfig.json\n M apps/web/src/components/accounting-workspace.tsx\n M package.json\n M packages/contracts/package.json\n M packages/contracts/src/api.ts\n M packages/contracts/src/capabilities.ts\n M packages/contracts/src/closing.ts\n M packages/contracts/src/operations.ts\n M packages/contracts/src/subledgers.ts\n M vite.config.ts\n?? .agents/work/domain-integration.md\n?? .agents/work/openerp-implementation/manual-posting-recovery-receipts.json\n?? apps/api/CORRECTIONS.md\n?? apps/api/POSTING-RECOVERY.md\n?? apps/api/migrations/0400-correction-bundles.sql\n?? apps/api/migrations/0500-reviewed-bank-allocations.sql\n?? apps/api/migrations/0700-subledger-schedules.sql\n?? apps/api/migrations/0800-technical-period-closing.sql\n?? apps/api/scripts/operations/cli.ts\n?? apps/api/scripts/operations/snapshot.ts\n?? apps/api/scripts/operations/workflows.ts\n?? apps/api/src/closing.ts\n?? apps/api/src/corrections.ts\n?? apps/api/src/posting-recovery.ts\n?? apps/api/src/settlements.ts\n?? apps/api/tests/admission.e2e.test.ts\n?? apps/api/tests/mcp.e2e.test.ts\n?? apps/api/tests/persistence.e2e.test.ts\n?? apps/web/src/components/closing/\n?? apps/web/src/components/corrections/\n?? apps/web/src/components/posting-recovery/\n?? apps/web/src/components/subledgers/\n?? apps/web/tests/\n?? docs/operations/\n?? docs/references/erp-mafia-review/evidence/files.jsonl\n?? docs/references/erp-mafia-review/evidence/github-items.jsonl\n?? docs/references/erp-mafia-review/evidence/source-summary.json\n?? docs/references/erp-mafia-review/evidence/sql-definition-index.json\n?? packages/contracts/src/commerce.ts\n?? packages/contracts/src/corrections.ts\n?? packages/contracts/src/posting-recovery.ts\n?? packages/contracts/src/settlements.ts\n",
+  "meaning": "Source inventory for planning, not acceptance or a fixed release. Concurrent drafts are preserved.",
+  "files": [
+    {
+      "path": "apps/api/src/reports.ts",
+      "sha256": "7239570d3d4054a8f0f8b43b15e2e0a29fc296f5b34dfdd9acbaf6c429f6768b"
+    },
+    {
+      "path": "apps/api/src/corrections.ts",
+      "sha256": "5bc07e88fc3d35927115be9f88244bbbdb0f045bee9f9781e95fb89bd595c9e6"
+    },
+    {
+      "path": "apps/api/src/mcp.ts",
+      "sha256": "c5a2f5e73acb94ede6d5000672672371573d2e9ea4f92713bc12dfeed3ff04a8"
+    },
+    {
+      "path": "apps/api/src/capabilities.ts",
+      "sha256": "27f660078603fe8007a42ce28b21b9ab4e76908ee445fdb3ffc8244cb77578de"
+    },
+    {
+      "path": "apps/api/src/cases.ts",
+      "sha256": "2263e313b54eeefbd3ec8ef23bf7786c350e408144d1b462a44e0f19ff90ca16"
+    },
+    {
+      "path": "apps/api/src/posting-recovery.ts",
+      "sha256": "a7d85121cb1bda5cc76ff4027e749091ebcef7c209535b2d5fc8ca1ceb8b02da"
+    },
+    {
+      "path": "apps/api/src/database.ts",
+      "sha256": "de9239249cecaa3fd9534ab0894cf20ce5dc4811445113f66aeca26d96c556ea"
+    },
+    {
+      "path": "apps/api/src/automation.ts",
+      "sha256": "4f4302392eef98b276117081760396f623cd9bdbf79353deaf6b2f614144df0c"
+    },
+    {
+      "path": "apps/api/src/subledgers.ts",
+      "sha256": "11f808e700afd9b5654bfcb05d2dc9366043b6743847d84806806d18986ae5ab"
+    },
+    {
+      "path": "apps/api/src/closing.ts",
+      "sha256": "8a89f29f87ed97cf1247ef3101c67d47de5c2ae66df01f5e397e82c0c6fed47e"
+    },
+    {
+      "path": "apps/api/src/reconciliation.ts",
+      "sha256": "553d403048092a1e714dd2c888b60241f77a5caf1017a98e1d400806fd2dcb29"
+    },
+    {
+      "path": "apps/api/src/index.ts",
+      "sha256": "48ce32f4839ad653830f686496a6e7335cb13d09007bf5f75187620191721adb"
+    },
+    {
+      "path": "apps/api/src/body.ts",
+      "sha256": "64592cc4c47dfedfa1c06678b84772002b2e0ccebaaf0a0703b9b3104377a519"
+    },
+    {
+      "path": "apps/api/src/accounting.ts",
+      "sha256": "01b49dfdc3c8214d782ae10ea46baae60141e6be466e05661ebb9e48f64f829c"
+    },
+    {
+      "path": "apps/api/src/settlements.ts",
+      "sha256": "2da4b234a99cf8b96bd467925cfcbf5444342236bcfc3f23491054e8bd7f5eaf"
+    },
+    {
+      "path": "apps/api/src/auth.ts",
+      "sha256": "e4eb1502ddf04cb73ca83914be4bb1bc3798ef7e021ffafafa61009590901dd1"
+    },
+    {
+      "path": "apps/api/migrations/0500-reviewed-bank-allocations.sql",
+      "sha256": "52c4ada3eff49208969e2d267dd8ac06372dad41a41dd873ecad946a5ba4a397"
+    },
+    {
+      "path": "apps/api/migrations/0700-subledger-schedules.sql",
+      "sha256": "e1f475eb488067294f58d9ab2c1d39ab11024de688e42263f000377d69b94911"
+    },
+    {
+      "path": "apps/api/migrations/0100-bank-reconciliation.sql",
+      "sha256": "80196396399ce8ac028c7e79478f4a96abe6df2e4c3de3f96fa94a8262c9dcbf"
+    },
+    {
+      "path": "apps/api/migrations/0130-book-readiness.sql",
+      "sha256": "f1490368d838170517fea05ebcd072aabb935444f48e53ac8c3a9486cf4dcd3b"
+    },
+    {
+      "path": "apps/api/migrations/0210-admission-authority-locks.sql",
+      "sha256": "14a773d6036c7ec655dc8c8e9304c972219ae27f83f4496b65fbb641f069b0c2"
+    },
+    {
+      "path": "apps/api/migrations/0201-recurring-command-guards.sql",
+      "sha256": "94e54410886c19bd37f23f7431f5ffe7057ab19b2914812be9ae00d6e797d26a"
+    },
+    {
+      "path": "apps/api/migrations/0101-bounded-bank-reports.sql",
+      "sha256": "fa14e08315f267caa8600844df531018b58d99456acafccee5ce638478e7209c"
+    },
+    {
+      "path": "apps/api/migrations/0800-technical-period-closing.sql",
+      "sha256": "8c5773052ea1f26b850dd4b96a888f4cc5aef1d41a27f5f61fe53362b3921a23"
+    },
+    {
+      "path": "apps/api/migrations/0001-accounting.sql",
+      "sha256": "0d8f9853c9f5d69804221602f13739c42268726361d7040727bf07deaad5fa9d"
+    },
+    {
+      "path": "apps/api/migrations/0003-deferred-balance-and-ledger.sql",
+      "sha256": "8ddd0d717d983c68936fa3b4fbd84d26baa221bdf76288d5773f20ca54712aac"
+    },
+    {
+      "path": "apps/api/migrations/0111-case-snapshot-binding.sql",
+      "sha256": "6089ceab5e95355eb2830c7d47a4f252ffb62bf0523039ee51f79ec090897dbd"
+    },
+    {
+      "path": "apps/api/migrations/0400-correction-bundles.sql",
+      "sha256": "d0cf028c6610b83c174c5fe6b6d3033f85c4c337e9ce5d98acd04fd57f4a2545"
+    },
+    {
+      "path": "apps/api/migrations/0002-posting-action-binding.sql",
+      "sha256": "e343c433850bf8476c473aaa70e2a071f12fe769ef0b8e8a1cc7f3b95d91e9ee"
+    },
+    {
+      "path": "apps/api/migrations/0004-reversal-source-binding.sql",
+      "sha256": "d4423f760b70c0b1440b8275a68a9f64f408c2e1e03d3bd233b8681ab32eabde"
+    },
+    {
+      "path": "apps/api/migrations/0005-evidence-review.sql",
+      "sha256": "54c4ce9a3fba433d190936ee608bad0898ac53d4d5e72177552febdf973b1908"
+    },
+    {
+      "path": "apps/api/migrations/0006-private-function-default.sql",
+      "sha256": "2ce116c5508d7bd93dd757c989787bbaf31d301171a07d65503034e8a8aa8f66"
+    },
+    {
+      "path": "apps/api/migrations/0110-case-context.sql",
+      "sha256": "8cf134ee9195208bdcd42b9ab2ba24d628e4750221d2e648a21068cc2185786f"
+    },
+    {
+      "path": "apps/api/migrations/0120-trial-balance-reports.sql",
+      "sha256": "5455dc64b47b5aa82f3baec6fa7f4ab10be554e69e865afed8f1bbe2c4e510c3"
+    },
+    {
+      "path": "apps/api/migrations/0300-posting-recovery.sql",
+      "sha256": "9161e9c4461ba8fed982b5800be96b872bd08408d68a947949a614e14af7f582"
+    },
+    {
+      "path": "apps/api/migrations/0200-recurring-preparation.sql",
+      "sha256": "67179796c1f99bdeaf7f9d81addbddc62a52c1a0778d24355290b85592d4d1fd"
+    },
+    {
+      "path": "apps/api/migrations/0211-recurring-readiness.sql",
+      "sha256": "f94449c3dba78725454d1e46c23a3bdfa59d5f2e8c0e294bff49a6ee2e24f9f4"
+    },
+    {
+      "path": "packages/contracts/src/reports.ts",
+      "sha256": "26191d026ae83f03488ad23a90dc317c0604606a7280d9d92ce77eb1e86f7e4a"
+    },
+    {
+      "path": "packages/contracts/src/corrections.ts",
+      "sha256": "efbae651b249729b7e749ba6e50b2f251c4dbb0868830adbb17c850d4db96685"
+    },
+    {
+      "path": "packages/contracts/src/capabilities.ts",
+      "sha256": "21eedc301642c60ca9eb7d37eba8f3503541c69b57adf8fa6de354684d1f6743"
+    },
+    {
+      "path": "packages/contracts/src/operations.ts",
+      "sha256": "66fbe02bcd817a20fc6d46fb6cd13bd305e8bbbf5e5143ea9adb4298f007d868"
+    },
+    {
+      "path": "packages/contracts/src/api.ts",
+      "sha256": "6a645dc789278e37c9383b1d2e0b302d9b919c2795c65fa72354f6de57daf09c"
+    },
+    {
+      "path": "packages/contracts/src/cases.ts",
+      "sha256": "1ff031d23c79713bc4f893b23e3d53c5f593c8457bdf926934b6eefc65e5db60"
+    },
+    {
+      "path": "packages/contracts/src/accounting-errors.ts",
+      "sha256": "e5f7b95fe930ebf3a05e174bd384ffc110214dd3cd7ebd636ae470b472036087"
+    },
+    {
+      "path": "packages/contracts/src/posting-recovery.ts",
+      "sha256": "dfb7e16bdffbe5984b49ce7fc9c6db012ef709b6c4a7fc29eb609070a8e544f5"
+    },
+    {
+      "path": "packages/contracts/src/automation.ts",
+      "sha256": "ebadb98ef4130cc48f01c211729a997c6ad440438c527468fd6ee062f5f014c8"
+    },
+    {
+      "path": "packages/contracts/src/subledgers.ts",
+      "sha256": "69bfbfa7b211bb839262b732aef8c8d536b8619086a62452d69e42551fced475"
+    },
+    {
+      "path": "packages/contracts/src/closing.ts",
+      "sha256": "c0fe79c81d85f1f180bb8e0493e92cffeec2adf58485ad1f5af946fac0ba77b4"
+    },
+    {
+      "path": "packages/contracts/src/reconciliation.ts",
+      "sha256": "684e966df396c01f6fe135723b456cfe57bf090bbc528ac29d665304f0247897"
+    },
+    {
+      "path": "packages/contracts/src/accounting.ts",
+      "sha256": "18f3b204d7dd970442418909decdb49d70435606ae7a5fa6f989c0170d70f092"
+    },
+    {
+      "path": "packages/contracts/src/system.ts",
+      "sha256": "cdc489e89937a30607186b6477c11d17c81c7dd5f2f8a1ad4d157ec6b2385f36"
+    },
+    {
+      "path": "packages/contracts/src/settlements.ts",
+      "sha256": "bc9886c26e3aed02d07ef42f96aa9ebf27158feb8e78e06ff6016860d53e2d13"
+    },
+    {
+      "path": "packages/contracts/src/commerce.ts",
+      "sha256": "6aa092d9f27fba4cfd10bcaccba5ac965eafacfadd567a2fe17875a2a07aba2d"
+    },
+    {
+      "path": "apps/api/tests/persistence.e2e.test.ts",
+      "sha256": "d29e48c45082451b551b13916745e96ee69911ea0a6b4e484b6560a77f99a707"
+    },
+    {
+      "path": "apps/api/tests/mcp.e2e.test.ts",
+      "sha256": "68035e20ce435aa67262ce4e593f15a4d75cd1cd65353615028e07b61e50b170"
+    },
+    {
+      "path": "apps/api/tests/README.md",
+      "sha256": "6be9867ea75d2e240c7310d8b509221b50526739815a98242e9fe28f6c3266ad"
+    },
+    {
+      "path": "apps/api/tests/posting.e2e.test.ts",
+      "sha256": "ecb377fad59f57f86e433967f1f0ef6bb90ac427f0411b7476751840f76752fc"
+    },
+    {
+      "path": "apps/api/tests/admission.e2e.test.ts",
+      "sha256": "e3b6069af706f923003bb29200e3728d8b3798edeaa53c5bc17d2e7017b2d268"
+    },
+    {
+      "path": "apps/api/tests/support/fixtures.ts",
+      "sha256": "319580804a1d05e82b2f8a6f67cbf417828106f82c2d889a96fe07247cb846a6"
+    },
+    {
+      "path": "apps/api/tests/support/environment.ts",
+      "sha256": "a79e6d452ab85ee0e60e80a2f808f5b6391b4e3176d3a38518eaf2cdd8364376"
+    },
+    {
+      "path": "apps/api/tests/support/global-setup.ts",
+      "sha256": "68635acb561929f9fb4559823ed74d32bb4a41191a872a5d2d766444ef657e6a"
+    },
+    {
+      "path": "apps/web/tests/browser.e2e.test.ts",
+      "sha256": "7a16f14b0c2d3a35dadac4855a8acf6ece743f9378fa146c4634a57453016fd7"
+    },
+    {
+      "path": "apps/web/tests/vite.config.ts",
+      "sha256": "2b3b28b92faf1322e394eff302446fccbbf86ac13e99e64601ad3373e87fde89"
+    },
+    {
+      "path": "docs/product.md",
+      "sha256": "6ab7fc4fa3fa40c531467415b8b5a659e559c3f1260525a7777f44bfb25b2935"
+    },
+    {
+      "path": "docs/architecture.md",
+      "sha256": "0476b81b71e58006bf82644c501c5cb4e4c0279cc6be56c4ef9b5e845d254fab"
+    },
+    {
+      "path": "docs/operations.md",
+      "sha256": "c7f361954d9fed0b17d04753e24dc480939242a2074905ea5e8e78db2a22dd4b"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "ba1752c8e4969940809731b8aef7ec4e322b491ea362d64f1c2fe9a9ba6d2e36"
+    },
+    {
+      "path": "docs/verification.md",
+      "sha256": "aa005b869712199c5d892933893e9ae0e2e65b70f20022eb3bc1a24997d502d5"
+    },
+    {
+      "path": "docs/compliance.md",
+      "sha256": "1da6da04934bd1d438e120c5b32638ca8a1da729696ee91c84cf91130dbd1ff9"
+    },
+    {
+      "path": "docs/domain.md",
+      "sha256": "d5ca0b4a75959f8917347fdc7acdff8d626d5cb6a5bd4c2c4b9b188df5afa4ab"
+    },
+    {
+      "path": "docs/roadmap.md",
+      "sha256": "59fc194bb773ee2cf0e6adad7f96741f15eecc452fec22666b604ae533e13f19"
+    },
+    {
+      "path": "docs/open-decisions.md",
+      "sha256": "bdea6f9440d22c2107f8d2629d4ad6afcd9be2338262d01204ae33da79febef7"
+    },
+    {
+      "path": "docs/adr/0002-swedish-vat-profile-boundary.md",
+      "sha256": "8a6cda4d5fd5ff9ae27e28655fc75369ea0f5cd68e0b1769c8f7d18ada63479e"
+    },
+    {
+      "path": "docs/adr/0002-exact-posting-and-approval.md",
+      "sha256": "636c870048593f312ee0000d3252fd390f3236f944b3f9152500ce8b33fb8acf"
+    },
+    {
+      "path": "docs/adr/README.md",
+      "sha256": "c5a27fd8a387bdbb7bd1efc8f20e47fe0ca3a140a104314045c32dfe89b09f3c"
+    },
+    {
+      "path": "docs/adr/0001-checkout-runtime-and-accounting-boundary.md",
+      "sha256": "07703c1270a1a9fb4ab9ba6f4c10937d2c91628a63df04c3647d36cafdc50ed8"
+    },
+    {
+      "path": "docs/adr/0003-native-target-and-reference-use.md",
+      "sha256": "4e89b142e0245b9dc69563cc8c3b5a0ce0a8fe2469e900ba0799b7adfbc3e620"
+    },
+    {
+      "path": "docs/references/documentation-review.md",
+      "sha256": "4034ec01d789f937f94f938f3004dccab7e95fdb47e63da3e0667ad2bfa439f6"
+    },
+    {
+      "path": "docs/references/design-reconciliation.md",
+      "sha256": "5492cf1271de0a00a125c4c5c6f351cd5f7a703e4b2a6975f72b8d6b135b8b5b"
+    },
+    {
+      "path": "docs/references/initial-runtime-checkpoint.md",
+      "sha256": "d62622d6f8e2ba55de2a0911403bd69e592e1b6987607f0bb98c4d779cf944d2"
+    },
+    {
+      "path": "docs/references/test-suite-review.md",
+      "sha256": "2979d3c4786c1d8132c4c3276a4a8ae57f0e201e50ab548d972bffe2f612a2e3"
+    },
+    {
+      "path": "docs/operations/local-recovery.md",
+      "sha256": "574bbcefe3fcb294e639f478b8073fde8a471e8698e41fd89ad238f045301d25"
+    }
+  ]
+}

@@ -1,0 +1,1041 @@
+{
+  "scope": "Local synthetic API observations, not automated suite/crash/concurrency proof. No payment initiation or production accounting.",
+  "migrationSha256": {
+    "0500-reviewed-bank-allocations.sql": "caa7f435e115e91e4b68a77f9ecec4f912e31356015ff3a83bae8f6a4b25d4a9",
+    "0501-recurring-allocation-guards.sql": "7433df5f8493a46d41a38e88d3e7b8a1d671e2e355ff3cea62c645ad4104bd51",
+    "0502-recurring-posting-capacity-guard.sql": "2058797f9bf4d9b62ecb2af5703bd6310fd03fdb7f53fe364023ffc59a5e1f50"
+  },
+  "steps": [
+    {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/ledger",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "sequence": "0",
+        "accounts": [
+          {
+            "accountId": "account_bank",
+            "code": "1930",
+            "name": "Synthetic bank account",
+            "debitMinor": "0",
+            "creditMinor": "0",
+            "balanceMinor": "0"
+          },
+          {
+            "accountId": "account_clearing",
+            "code": "2999",
+            "name": "Synthetic clearing account",
+            "debitMinor": "0",
+            "creditMinor": "0",
+            "balanceMinor": "0"
+          }
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/change-sets",
+      "idempotencyKey": "manual-capacity-combined-prepare-v1",
+      "input": {
+        "kind": "manual_journal",
+        "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+        "eventKey": "synthetic_combined_existing_deposit",
+        "accountingPeriodId": "period_synthetic_2026",
+        "postingDate": "2026-09-22",
+        "series": "A",
+        "description": "Synthetic combined existing bank deposit",
+        "rationale": "Synthetic existing ledger recognition for the two retained1000minor-unit bank rows; match explicitly without recognizing them again.",
+        "taxAssessment": "not_applicable",
+        "lines": [
+          {
+            "accountId": "account_bank",
+            "debitMinor": "2000",
+            "creditMinor": "0",
+            "description": "Synthetic combined deposit"
+          },
+          {
+            "accountId": "account_clearing",
+            "debitMinor": "0",
+            "creditMinor": "2000",
+            "description": "Synthetic combined counterpart"
+          }
+        ]
+      },
+      "status": 200,
+      "result": {
+        "schemaVersion": "1",
+        "canonicalization": "openerp-c14n-v1",
+        "id": "change_4e944cccdf9d4e6480094e56ae22976f",
+        "version": 1,
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "createdAt": "2026-09-22T16:43:23.829021Z",
+        "dependencies": [
+          {
+            "kind": "profile",
+            "resourceId": "book_automation",
+            "version": "1",
+            "reason": "Book currency and supported profile"
+          },
+          {
+            "kind": "writer_epoch",
+            "resourceId": "book_automation",
+            "version": "1",
+            "reason": "Single authoritative writer"
+          },
+          {
+            "kind": "period",
+            "resourceId": "period_synthetic_2026",
+            "version": "1",
+            "reason": "Posting dates and lock state"
+          },
+          {
+            "kind": "account",
+            "resourceId": "account_bank",
+            "version": "1",
+            "reason": "Exact account configuration"
+          },
+          {
+            "kind": "account",
+            "resourceId": "account_clearing",
+            "version": "1",
+            "reason": "Exact account configuration"
+          }
+        ],
+        "groups": [
+          {
+            "id": "group_64823274566e4753bcb69cc4968b4d01",
+            "dependsOnGroupIds": [],
+            "actions": [
+              {
+                "kind": "post_voucher",
+                "correctsVoucherId": null,
+                "eventId": "event_3db780f26e4246f5869cccfcfbc92e35",
+                "postingPurpose": "adjustment",
+                "occurrenceKey": "manual_journal",
+                "fiscalYearId": "year_synthetic_2026",
+                "accountingPeriodId": "period_synthetic_2026",
+                "postingDate": "2026-09-22",
+                "series": "A",
+                "currency": "SEK",
+                "description": "Synthetic combined existing bank deposit",
+                "rationale": "Synthetic existing ledger recognition for the two retained1000minor-unit bank rows; match explicitly without recognizing them again.",
+                "taxAssessment": "not_applicable",
+                "lines": [
+                  {
+                    "accountId": "account_bank",
+                    "debitMinor": "2000",
+                    "creditMinor": "0",
+                    "description": "Synthetic combined deposit",
+                    "lineId": "line_6a98db51301e4a23b894b0a65d45cc89"
+                  },
+                  {
+                    "accountId": "account_clearing",
+                    "debitMinor": "0",
+                    "creditMinor": "2000",
+                    "description": "Synthetic combined counterpart",
+                    "lineId": "line_2d014fea23c8468386901bcd97d4492d"
+                  }
+                ],
+                "evidenceRefs": [
+                  {
+                    "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+                    "sha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5",
+                    "locator": "synthetic_combined_existing_deposit"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "planDigest": "sha256:777e7d1b8d34f562086d06fba40bb388c1aeff25aa8c58659f057289132535c9"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/change-sets/change_4e944cccdf9d4e6480094e56ae22976f/approvals",
+      "idempotencyKey": "manual-capacity-combined-approve-v1",
+      "input": {
+        "planDigest": "sha256:777e7d1b8d34f562086d06fba40bb388c1aeff25aa8c58659f057289132535c9",
+        "version": 1
+      },
+      "status": 200,
+      "result": {
+        "id": "approval_9ade40c5dc48466f9db63e479ea6650e",
+        "changeSetId": "change_4e944cccdf9d4e6480094e56ae22976f",
+        "planDigest": "sha256:777e7d1b8d34f562086d06fba40bb388c1aeff25aa8c58659f057289132535c9",
+        "actorId": "actor_automation",
+        "expiresAt": "2026-09-22T17:44:05.044795Z"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/change-sets/change_4e944cccdf9d4e6480094e56ae22976f/execute",
+      "idempotencyKey": "manual-capacity-combined-execute-v1",
+      "input": {
+        "planDigest": "sha256:777e7d1b8d34f562086d06fba40bb388c1aeff25aa8c58659f057289132535c9",
+        "version": 1,
+        "approvalId": "approval_9ade40c5dc48466f9db63e479ea6650e"
+      },
+      "status": 200,
+      "result": {
+        "id": "receipt_074a19fd4a1347f3b2bbae5170ca4ba6",
+        "changeSetId": "change_4e944cccdf9d4e6480094e56ae22976f",
+        "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+        "planDigest": "sha256:777e7d1b8d34f562086d06fba40bb388c1aeff25aa8c58659f057289132535c9",
+        "sequence": "1",
+        "voucherNumber": "1",
+        "committedAt": "2026-09-22T16:44:05.106754Z"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/vouchers/voucher_498cf7c87ce14366b0647c00b140ca1a",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "id": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+        "number": "1",
+        "sequence": "1",
+        "recordedAt": "2026-09-22T16:44:05.106754Z",
+        "action": {
+          "kind": "post_voucher",
+          "correctsVoucherId": null,
+          "eventId": "event_3db780f26e4246f5869cccfcfbc92e35",
+          "postingPurpose": "adjustment",
+          "occurrenceKey": "manual_journal",
+          "fiscalYearId": "year_synthetic_2026",
+          "accountingPeriodId": "period_synthetic_2026",
+          "postingDate": "2026-09-22",
+          "series": "A",
+          "currency": "SEK",
+          "description": "Synthetic combined existing bank deposit",
+          "rationale": "Synthetic existing ledger recognition for the two retained1000minor-unit bank rows; match explicitly without recognizing them again.",
+          "taxAssessment": "not_applicable",
+          "lines": [
+            {
+              "accountId": "account_bank",
+              "debitMinor": "2000",
+              "creditMinor": "0",
+              "description": "Synthetic combined deposit",
+              "lineId": "line_6a98db51301e4a23b894b0a65d45cc89"
+            },
+            {
+              "accountId": "account_clearing",
+              "debitMinor": "0",
+              "creditMinor": "2000",
+              "description": "Synthetic combined counterpart",
+              "lineId": "line_2d014fea23c8468386901bcd97d4492d"
+            }
+          ],
+          "evidenceRefs": [
+            {
+              "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+              "sha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5",
+              "locator": "synthetic_combined_existing_deposit"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/bank-allocation-plans",
+      "idempotencyKey": "manual-partial-allocation-prepare-v1",
+      "input": {
+        "accountId": "account_bank",
+        "reason": "Manually reviewed synthetic partial capacity:500 of source row2 against the existing combined2000bank line.",
+        "ambiguityAcknowledged": true,
+        "legs": [
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "rowOrdinal": 2,
+            "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+            "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+            "amountMinor": "500"
+          }
+        ]
+      },
+      "status": 200,
+      "result": {
+        "id": "bankplan_42cd973d77444b129ddb2d49555b540d",
+        "version": 1,
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "currency": "SEK",
+        "currencyScale": 2,
+        "input": {
+          "accountId": "account_bank",
+          "reason": "Manually reviewed synthetic partial capacity:500 of source row2 against the existing combined2000bank line.",
+          "ambiguityAcknowledged": true,
+          "legs": [
+            {
+              "statementId": "statement_81fb1b804391473bb936519525af9392",
+              "rowOrdinal": 2,
+              "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+              "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+              "amountMinor": "500"
+            }
+          ]
+        },
+        "snapshot": {
+          "versions": {
+            "profileVersion": "1",
+            "writerEpoch": "1",
+            "accountVersion": "1",
+            "sourceRevision": "1",
+            "accountLedgerSequence": "1"
+          },
+          "capacities": [
+            {
+              "leg": {
+                "statementId": "statement_81fb1b804391473bb936519525af9392",
+                "rowOrdinal": 2,
+                "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+                "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+                "amountMinor": "500"
+              },
+              "sourceAmountMinor": "1000",
+              "sourceAllocatedMinor": "0",
+              "lineAmountMinor": "2000",
+              "lineAllocatedMinor": "0",
+              "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+              "evidenceSha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5",
+              "providerId": null,
+              "sourceBankAccountId": "synthetic-recurring-bank",
+              "observedOn": "2026-09-22",
+              "postedOn": "2026-09-22",
+              "candidateCount": 1
+            }
+          ]
+        },
+        "createdBy": "actor_automation",
+        "createdAt": "2026-09-22T16:44:05.148855Z",
+        "digest": "sha256:042884fbcba89fc8183fc2e299567ccb302f32b10a14b629df5726d608a78f1a",
+        "receipt": {
+          "key": "manual-partial-allocation-prepare-v1",
+          "operation": "prepare_bank_allocation",
+          "actorId": "actor_automation"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/change-sets/change_aa2df6c9c23743ec91e30de3cbc6a32d/approvals",
+      "idempotencyKey": "manual-pre-match-recurring-approval-v1",
+      "input": {
+        "planDigest": "sha256:49a1dea036ebf0d6bec202957fb2c84e629f7d0b25895e035f3c1042a3f7a36b",
+        "version": 1
+      },
+      "status": 200,
+      "result": {
+        "id": "approval_37c60e525c4343958dc81da13c4c9a5e",
+        "changeSetId": "change_aa2df6c9c23743ec91e30de3cbc6a32d",
+        "planDigest": "sha256:49a1dea036ebf0d6bec202957fb2c84e629f7d0b25895e035f3c1042a3f7a36b",
+        "actorId": "actor_automation",
+        "expiresAt": "2026-09-22T17:44:49.324530Z"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/bank-allocation-plans/bankplan_42cd973d77444b129ddb2d49555b540d/approve",
+      "idempotencyKey": "manual-partial-allocation-approve-v1",
+      "input": {
+        "digest": "sha256:042884fbcba89fc8183fc2e299567ccb302f32b10a14b629df5726d608a78f1a",
+        "version": 1
+      },
+      "status": 200,
+      "result": {
+        "digest": "sha256:042884fbcba89fc8183fc2e299567ccb302f32b10a14b629df5726d608a78f1a",
+        "version": 1,
+        "id": "bankapproval_3609f47a41e04cf4b80ca4cc367f53c1",
+        "planId": "bankplan_42cd973d77444b129ddb2d49555b540d",
+        "actorId": "actor_automation",
+        "expiresAt": "2026-09-22T17:44:49.346168Z",
+        "receipt": {
+          "key": "manual-partial-allocation-approve-v1",
+          "operation": "approve_bank_allocation",
+          "actorId": "actor_automation"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/bank-allocation-plans/bankplan_42cd973d77444b129ddb2d49555b540d/execute",
+      "idempotencyKey": "manual-partial-allocation-execute-v1",
+      "input": {
+        "digest": "sha256:042884fbcba89fc8183fc2e299567ccb302f32b10a14b629df5726d608a78f1a",
+        "version": 1,
+        "approvalId": "bankapproval_3609f47a41e04cf4b80ca4cc367f53c1"
+      },
+      "status": 200,
+      "result": {
+        "digest": "sha256:042884fbcba89fc8183fc2e299567ccb302f32b10a14b629df5726d608a78f1a",
+        "version": 1,
+        "approvalId": "bankapproval_3609f47a41e04cf4b80ca4cc367f53c1",
+        "planId": "bankplan_42cd973d77444b129ddb2d49555b540d",
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "accountId": "account_bank",
+        "currency": "SEK",
+        "currencyScale": 2,
+        "legs": [
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "rowOrdinal": 2,
+            "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+            "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+            "amountMinor": "500",
+            "planId": "bankplan_42cd973d77444b129ddb2d49555b540d",
+            "ordinal": 1
+          }
+        ],
+        "executedAt": "2026-09-22T16:44:49.380421Z",
+        "receipt": {
+          "key": "manual-partial-allocation-execute-v1",
+          "operation": "execute_bank_allocation",
+          "actorId": "actor_automation"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/bank-capacity-reconciliations",
+      "idempotencyKey": "manual-partial-capacity-report-v1",
+      "input": {
+        "accountId": "account_bank",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31"
+      },
+      "status": 200,
+      "result": {
+        "accountId": "account_bank",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31",
+        "id": "bankcapacity_b9a3044f41d242e1b8231fc8917d2a4b",
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "currency": "SEK",
+        "status": "differences",
+        "checkpoint": {
+          "sequence": "1",
+          "sourceRevision": "2"
+        },
+        "accountLedgerSequence": "1",
+        "ledgerOpeningMinor": "0",
+        "ledgerClosingMinor": "2000",
+        "bankOpeningMinor": "0",
+        "bankClosingMinor": "2000",
+        "openingDifferenceMinor": "0",
+        "closingDifferenceMinor": "0",
+        "sourceCoverageComplete": true,
+        "statements": [
+          {
+            "kind": "synthetic_bank_statement_v1",
+            "statementIdentifier": "synthetic-recurring-2026",
+            "sourceBankAccountId": "synthetic-recurring-bank",
+            "accountId": "account_bank",
+            "currency": "SEK",
+            "startsOn": "2026-01-01",
+            "endsOn": "2026-12-31",
+            "openingMinor": "0",
+            "closingMinor": "2000",
+            "completeness": {
+              "declaredComplete": true,
+              "basis": "Explicit synthetic recurring-preparation scenario with two distinct equal bank observations."
+            },
+            "rows": [
+              {
+                "rowOrdinal": 1,
+                "providerId": null,
+                "date": "2026-09-22",
+                "description": "Synthetic recurring deposit",
+                "amountMinor": "1000"
+              },
+              {
+                "rowOrdinal": 2,
+                "providerId": null,
+                "date": "2026-09-22",
+                "description": "Synthetic recurring deposit",
+                "amountMinor": "1000"
+              }
+            ],
+            "id": "statement_81fb1b804391473bb936519525af9392",
+            "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+            "evidenceSha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5"
+          }
+        ],
+        "sourceRows": [
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+            "evidenceSha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5",
+            "rowOrdinal": 1,
+            "providerId": null,
+            "date": "2026-09-22",
+            "description": "Synthetic recurring deposit",
+            "amountMinor": "1000",
+            "allocatedMinor": "0",
+            "remainingMinor": "1000"
+          },
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+            "evidenceSha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5",
+            "rowOrdinal": 2,
+            "providerId": null,
+            "date": "2026-09-22",
+            "description": "Synthetic recurring deposit",
+            "amountMinor": "1000",
+            "allocatedMinor": "500",
+            "remainingMinor": "500"
+          }
+        ],
+        "ledgerLines": [
+          {
+            "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+            "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+            "date": "2026-09-22",
+            "sequence": "1",
+            "description": "Synthetic combined deposit",
+            "amountMinor": "2000",
+            "allocatedMinor": "500",
+            "remainingMinor": "1500"
+          }
+        ],
+        "matches": [],
+        "unmatchedSource": [
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+            "evidenceSha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5",
+            "rowOrdinal": 1,
+            "providerId": null,
+            "date": "2026-09-22",
+            "description": "Synthetic recurring deposit",
+            "amountMinor": "1000",
+            "allocatedMinor": "0",
+            "remainingMinor": "1000"
+          },
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+            "evidenceSha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5",
+            "rowOrdinal": 2,
+            "providerId": null,
+            "date": "2026-09-22",
+            "description": "Synthetic recurring deposit",
+            "amountMinor": "1000",
+            "allocatedMinor": "500",
+            "remainingMinor": "500"
+          }
+        ],
+        "unmatchedLedger": [
+          {
+            "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+            "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+            "date": "2026-09-22",
+            "sequence": "1",
+            "description": "Synthetic combined deposit",
+            "amountMinor": "2000",
+            "allocatedMinor": "500",
+            "remainingMinor": "1500"
+          }
+        ],
+        "differences": [
+          "Retained bank observations have unallocated residual amounts.",
+          "Posted bank lines have unallocated residual amounts."
+        ],
+        "coverageGaps": [],
+        "receipt": {
+          "key": "manual-partial-capacity-report-v1",
+          "operation": "reconcile_bank_capacity",
+          "actorId": "actor_automation"
+        },
+        "createdAt": "2026-09-22T16:44:49.413402Z",
+        "schemaVersion": "bank-capacity-v2",
+        "currencyScale": 2,
+        "allocations": [
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "rowOrdinal": 2,
+            "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+            "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+            "amountMinor": "500",
+            "planId": "bankplan_42cd973d77444b129ddb2d49555b540d",
+            "ordinal": 1
+          }
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/change-sets/change_aa2df6c9c23743ec91e30de3cbc6a32d/execute",
+      "idempotencyKey": "manual-matched-recurring-execute-v1",
+      "input": {
+        "planDigest": "sha256:49a1dea036ebf0d6bec202957fb2c84e629f7d0b25895e035f3c1042a3f7a36b",
+        "version": 1,
+        "approvalId": "approval_37c60e525c4343958dc81da13c4c9a5e"
+      },
+      "status": 409,
+      "result": {
+        "_tag": "AccountingError",
+        "code": "StaleDependency",
+        "message": "This recurring source already has bank matching allocations. Review the existing posting and match; the full-amount proposal cannot be posted."
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/ledger",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "sequence": "1",
+        "accounts": [
+          {
+            "accountId": "account_bank",
+            "code": "1930",
+            "name": "Synthetic bank account",
+            "debitMinor": "2000",
+            "creditMinor": "0",
+            "balanceMinor": "2000"
+          },
+          {
+            "accountId": "account_clearing",
+            "code": "2999",
+            "name": "Synthetic clearing account",
+            "debitMinor": "0",
+            "creditMinor": "2000",
+            "balanceMinor": "-2000"
+          }
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/recurring-rule-simulations",
+      "idempotencyKey": "manual-after-partial-simulation-v1",
+      "input": {
+        "ruleId": "rule_cc869519c5f44f5a86a8f7aaddfe636b",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31"
+      },
+      "status": 200,
+      "result": {
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31",
+        "sourceRevision": "2",
+        "sequence": "1",
+        "rows": [
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "rowOrdinal": 1,
+            "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+            "date": "2026-09-22",
+            "description": "Synthetic recurring deposit",
+            "amountMinor": "1000",
+            "accountingPeriodId": "period_synthetic_2026",
+            "periodVersion": "1"
+          }
+        ],
+        "matchingCount": 1,
+        "totalMinor": "1000",
+        "unmatchedCount": 0,
+        "alreadyMatchedCount": 1,
+        "overlappingRuleIds": [],
+        "blockers": [],
+        "id": "simulation_a0bf488c3cf344f499cdaecc1f695b3b",
+        "ruleId": "rule_cc869519c5f44f5a86a8f7aaddfe636b",
+        "ruleDigest": "sha256:f024f6431c19441c3461a6e7dd46056b8f47c0d2600b080d586082bd35fc09c3",
+        "digest": "sha256:b7254fa925463c8f5f99573e338f54ff09a3f32b429c767618195a6a79d724aa",
+        "createdAt": "2026-09-22T16:45:14.710473Z",
+        "receipt": {
+          "key": "manual-after-partial-simulation-v1",
+          "operation": "simulate_recurring_rule",
+          "actorId": "actor_automation"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/bank-allocation-plans",
+      "idempotencyKey": "manual-capacity-remainder-prepare-v1",
+      "input": {
+        "accountId": "account_bank",
+        "reason": "Complete the reviewed synthetic matches against the same existing combined bank posting.",
+        "ambiguityAcknowledged": true,
+        "legs": [
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "rowOrdinal": 1,
+            "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+            "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+            "amountMinor": "1000"
+          },
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "rowOrdinal": 2,
+            "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+            "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+            "amountMinor": "500"
+          }
+        ]
+      },
+      "status": 200,
+      "result": {
+        "id": "bankplan_e584bd7068d24b189cfb07b738dd939f",
+        "version": 1,
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "currency": "SEK",
+        "currencyScale": 2,
+        "input": {
+          "accountId": "account_bank",
+          "reason": "Complete the reviewed synthetic matches against the same existing combined bank posting.",
+          "ambiguityAcknowledged": true,
+          "legs": [
+            {
+              "statementId": "statement_81fb1b804391473bb936519525af9392",
+              "rowOrdinal": 1,
+              "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+              "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+              "amountMinor": "1000"
+            },
+            {
+              "statementId": "statement_81fb1b804391473bb936519525af9392",
+              "rowOrdinal": 2,
+              "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+              "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+              "amountMinor": "500"
+            }
+          ]
+        },
+        "snapshot": {
+          "versions": {
+            "profileVersion": "1",
+            "writerEpoch": "1",
+            "accountVersion": "1",
+            "sourceRevision": "2",
+            "accountLedgerSequence": "1"
+          },
+          "capacities": [
+            {
+              "leg": {
+                "statementId": "statement_81fb1b804391473bb936519525af9392",
+                "rowOrdinal": 1,
+                "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+                "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+                "amountMinor": "1000"
+              },
+              "sourceAmountMinor": "1000",
+              "sourceAllocatedMinor": "0",
+              "lineAmountMinor": "2000",
+              "lineAllocatedMinor": "500",
+              "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+              "evidenceSha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5",
+              "providerId": null,
+              "sourceBankAccountId": "synthetic-recurring-bank",
+              "observedOn": "2026-09-22",
+              "postedOn": "2026-09-22",
+              "candidateCount": 1
+            },
+            {
+              "leg": {
+                "statementId": "statement_81fb1b804391473bb936519525af9392",
+                "rowOrdinal": 2,
+                "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+                "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+                "amountMinor": "500"
+              },
+              "sourceAmountMinor": "1000",
+              "sourceAllocatedMinor": "500",
+              "lineAmountMinor": "2000",
+              "lineAllocatedMinor": "500",
+              "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+              "evidenceSha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5",
+              "providerId": null,
+              "sourceBankAccountId": "synthetic-recurring-bank",
+              "observedOn": "2026-09-22",
+              "postedOn": "2026-09-22",
+              "candidateCount": 1
+            }
+          ]
+        },
+        "createdBy": "actor_automation",
+        "createdAt": "2026-09-22T16:46:05.705581Z",
+        "digest": "sha256:851fcbda3e00ac4438b710fcf7fa45c59daca53e254d8c756bff52358cb49c4a",
+        "receipt": {
+          "key": "manual-capacity-remainder-prepare-v1",
+          "operation": "prepare_bank_allocation",
+          "actorId": "actor_automation"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/bank-allocation-plans/bankplan_e584bd7068d24b189cfb07b738dd939f/approve",
+      "idempotencyKey": "manual-capacity-remainder-approve-v1",
+      "input": {
+        "digest": "sha256:851fcbda3e00ac4438b710fcf7fa45c59daca53e254d8c756bff52358cb49c4a",
+        "version": 1
+      },
+      "status": 200,
+      "result": {
+        "digest": "sha256:851fcbda3e00ac4438b710fcf7fa45c59daca53e254d8c756bff52358cb49c4a",
+        "version": 1,
+        "id": "bankapproval_db2e236120bf4023946e25ba42d24bc8",
+        "planId": "bankplan_e584bd7068d24b189cfb07b738dd939f",
+        "actorId": "actor_automation",
+        "expiresAt": "2026-09-22T17:46:05.722242Z",
+        "receipt": {
+          "key": "manual-capacity-remainder-approve-v1",
+          "operation": "approve_bank_allocation",
+          "actorId": "actor_automation"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/bank-allocation-plans/bankplan_e584bd7068d24b189cfb07b738dd939f/execute",
+      "idempotencyKey": "manual-capacity-remainder-execute-v1",
+      "input": {
+        "digest": "sha256:851fcbda3e00ac4438b710fcf7fa45c59daca53e254d8c756bff52358cb49c4a",
+        "version": 1,
+        "approvalId": "bankapproval_db2e236120bf4023946e25ba42d24bc8"
+      },
+      "status": 200,
+      "result": {
+        "digest": "sha256:851fcbda3e00ac4438b710fcf7fa45c59daca53e254d8c756bff52358cb49c4a",
+        "version": 1,
+        "approvalId": "bankapproval_db2e236120bf4023946e25ba42d24bc8",
+        "planId": "bankplan_e584bd7068d24b189cfb07b738dd939f",
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "accountId": "account_bank",
+        "currency": "SEK",
+        "currencyScale": 2,
+        "legs": [
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "rowOrdinal": 1,
+            "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+            "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+            "amountMinor": "1000",
+            "planId": "bankplan_e584bd7068d24b189cfb07b738dd939f",
+            "ordinal": 1
+          },
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "rowOrdinal": 2,
+            "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+            "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+            "amountMinor": "500",
+            "planId": "bankplan_e584bd7068d24b189cfb07b738dd939f",
+            "ordinal": 2
+          }
+        ],
+        "executedAt": "2026-09-22T16:46:05.744045Z",
+        "receipt": {
+          "key": "manual-capacity-remainder-execute-v1",
+          "operation": "execute_bank_allocation",
+          "actorId": "actor_automation"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/bank-capacity-reconciliations",
+      "idempotencyKey": "manual-capacity-complete-report-v1",
+      "input": {
+        "accountId": "account_bank",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31"
+      },
+      "status": 200,
+      "result": {
+        "accountId": "account_bank",
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31",
+        "id": "bankcapacity_71f5b297274f45e2b5667d5887a76350",
+        "scope": {
+          "entityId": "entity_automation",
+          "bookId": "book_automation"
+        },
+        "currency": "SEK",
+        "status": "complete",
+        "checkpoint": {
+          "sequence": "1",
+          "sourceRevision": "3"
+        },
+        "accountLedgerSequence": "1",
+        "ledgerOpeningMinor": "0",
+        "ledgerClosingMinor": "2000",
+        "bankOpeningMinor": "0",
+        "bankClosingMinor": "2000",
+        "openingDifferenceMinor": "0",
+        "closingDifferenceMinor": "0",
+        "sourceCoverageComplete": true,
+        "statements": [
+          {
+            "kind": "synthetic_bank_statement_v1",
+            "statementIdentifier": "synthetic-recurring-2026",
+            "sourceBankAccountId": "synthetic-recurring-bank",
+            "accountId": "account_bank",
+            "currency": "SEK",
+            "startsOn": "2026-01-01",
+            "endsOn": "2026-12-31",
+            "openingMinor": "0",
+            "closingMinor": "2000",
+            "completeness": {
+              "declaredComplete": true,
+              "basis": "Explicit synthetic recurring-preparation scenario with two distinct equal bank observations."
+            },
+            "rows": [
+              {
+                "rowOrdinal": 1,
+                "providerId": null,
+                "date": "2026-09-22",
+                "description": "Synthetic recurring deposit",
+                "amountMinor": "1000"
+              },
+              {
+                "rowOrdinal": 2,
+                "providerId": null,
+                "date": "2026-09-22",
+                "description": "Synthetic recurring deposit",
+                "amountMinor": "1000"
+              }
+            ],
+            "id": "statement_81fb1b804391473bb936519525af9392",
+            "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+            "evidenceSha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5"
+          }
+        ],
+        "sourceRows": [
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+            "evidenceSha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5",
+            "rowOrdinal": 1,
+            "providerId": null,
+            "date": "2026-09-22",
+            "description": "Synthetic recurring deposit",
+            "amountMinor": "1000",
+            "allocatedMinor": "1000",
+            "remainingMinor": "0"
+          },
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "evidenceId": "evidence_e8ea183ed07848759782062c2ccffb59",
+            "evidenceSha256": "da41e78e1c5755aa0fed6c75221395d90fb8f28214fce822296986bea6ca31f5",
+            "rowOrdinal": 2,
+            "providerId": null,
+            "date": "2026-09-22",
+            "description": "Synthetic recurring deposit",
+            "amountMinor": "1000",
+            "allocatedMinor": "1000",
+            "remainingMinor": "0"
+          }
+        ],
+        "ledgerLines": [
+          {
+            "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+            "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+            "date": "2026-09-22",
+            "sequence": "1",
+            "description": "Synthetic combined deposit",
+            "amountMinor": "2000",
+            "allocatedMinor": "2000",
+            "remainingMinor": "0"
+          }
+        ],
+        "matches": [],
+        "unmatchedSource": [],
+        "unmatchedLedger": [],
+        "differences": [],
+        "coverageGaps": [],
+        "receipt": {
+          "key": "manual-capacity-complete-report-v1",
+          "operation": "reconcile_bank_capacity",
+          "actorId": "actor_automation"
+        },
+        "createdAt": "2026-09-22T16:46:05.765399Z",
+        "schemaVersion": "bank-capacity-v2",
+        "currencyScale": 2,
+        "allocations": [
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "rowOrdinal": 2,
+            "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+            "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+            "amountMinor": "500",
+            "planId": "bankplan_42cd973d77444b129ddb2d49555b540d",
+            "ordinal": 1
+          },
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "rowOrdinal": 1,
+            "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+            "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+            "amountMinor": "1000",
+            "planId": "bankplan_e584bd7068d24b189cfb07b738dd939f",
+            "ordinal": 1
+          },
+          {
+            "statementId": "statement_81fb1b804391473bb936519525af9392",
+            "rowOrdinal": 2,
+            "voucherId": "voucher_498cf7c87ce14366b0647c00b140ca1a",
+            "lineId": "line_6a98db51301e4a23b894b0a65d45cc89",
+            "amountMinor": "500",
+            "planId": "bankplan_e584bd7068d24b189cfb07b738dd939f",
+            "ordinal": 2
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/entities/entity_automation/books/book_automation/ledger",
+      "idempotencyKey": null,
+      "input": null,
+      "status": 200,
+      "result": {
+        "sequence": "1",
+        "accounts": [
+          {
+            "accountId": "account_bank",
+            "code": "1930",
+            "name": "Synthetic bank account",
+            "debitMinor": "2000",
+            "creditMinor": "0",
+            "balanceMinor": "2000"
+          },
+          {
+            "accountId": "account_clearing",
+            "code": "2999",
+            "name": "Synthetic clearing account",
+            "debitMinor": "0",
+            "creditMinor": "2000",
+            "balanceMinor": "-2000"
+          }
+        ]
+      }
+    }
+  ]
+}

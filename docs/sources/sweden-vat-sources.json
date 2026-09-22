@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 1,
+  "status": "research-only; no approved or enabled compliance profile",
+  "scope": "Official-source research for a candidate Swedish domestic standard-rate accrual VAT preparation profile and the distinction between a skattekonto transfer and a tax assessment. Not legal advice, filing approval, or business-fact verification.",
+  "createdAt": "2026-09-22T15:07:36.280618+00:00",
+  "decisionRecord": "docs/adr/0002-swedish-vat-profile-boundary.md",
+  "provenance": {
+    "method": "Direct HTTPS retrieval from official Skatteverket and Riksdagen URLs, with redirects followed. Discovery followed official links. Serper search was unavailable; no search snippets are authority evidence.",
+    "snapshotPolicy": "Only bounded, verbatim extracted-text excerpts are persisted inline in this manifest. Complete response bodies were hashed during retrieval but are not archived in the repository. Re-fetching a live page may not reproduce its response hash.",
+    "hashMeaning": "SHA-256 of HTTP client response.content bytes after client decoding of HTTP content encoding. Excerpt hashes are SHA-256 of the exact stored UTF-8 text. Hashes identify observed bytes, not legal authenticity or applicability.",
+    "extraction": "HTML parsed with BeautifulSoup; main-content text extracted with newline separators and stripped. Excerpt offsets locate the start in that transient extracted text, not the HTML. Excerpts omit surrounding context; use the linked full source for review.",
+    "limitations": [
+      "No complete immutable authority archive.",
+      "No professional/legal sign-off.",
+      "No business registration or transaction evidence supplied.",
+      "Consolidated legislation includes future provisions and transitional exceptions.",
+      "No assertion of licence terms for full-page republication; only short research quotations retained."
+    ]
+  },
+  "enablement": {
+    "approvedProfileId": null,
+    "effectiveFrom": null,
+    "effectiveUntil": null,
+    "legalVerificationComplete": false,
+    "businessFactsAccepted": false,
+    "postingEnabled": false,
+    "filingEnabled": false
+  },
+  "observedLegalDates": [
+    {
+      "source": "sfs_vat",
+      "locator": "Header",
+      "kind": "issued",
+      "value": "2023-04-27",
+      "note": "Not the commencement date."
+    },
+    {
+      "source": "sfs_vat",
+      "locator": "Header",
+      "kind": "consolidationThrough",
+      "value": "SFS 2026:1025",
+      "note": "Observed consolidation label; not every displayed provision is yet operative."
+    },
+    {
+      "source": "sfs_vat",
+      "locator": "Övergångsbestämmelser 2023:200 point 1",
+      "kind": "statuteCommencement",
+      "value": "2023-07-01",
+      "note": "Transitional provisions preserve older law in specified cases; not a profile start date."
+    },
+    {
+      "source": "sfs_vat",
+      "locator": "Övergångsbestämmelser 2026:118 points 1-2; 9 kap. 2 §",
+      "kind": "amendmentCommencement",
+      "value": "2026-04-01",
+      "note": "The displayed pre-2028 standard-rate clause cites 2026:118. Older rules continue for taxable events before commencement. This is not the historical origin of the 25 percent rate."
+    },
+    {
+      "source": "sfs_vat",
+      "locator": "Övergångsbestämmelser 2026:119 points 1-2; 9 kap. 2 §",
+      "kind": "futureAmendmentCommencement",
+      "value": "2028-01-01",
+      "note": "Both displayed versions say 25 percent but reference different exceptions. Do not merge their applicability or infer an approved period."
+    },
+    {
+      "source": "sfs_taxprocedure",
+      "locator": "Header",
+      "kind": "issued",
+      "value": "2011-12-01",
+      "note": "Not a verified applicability range for this proposed profile."
+    },
+    {
+      "source": "sfs_taxprocedure",
+      "locator": "Header",
+      "kind": "consolidationThrough",
+      "value": "SFS 2026:1305",
+      "note": "Observed consolidation label; clause-level historical and future applicability still requires review."
+    }
+  ],
+  "researchFindings": [
+    {
+      "id": "standard-rate",
+      "sources": [
+        "sfs_vat"
+      ],
+      "finding": "9 kap. 2 § displays a standard rate of 25 percent, subject to statutory exceptions. Domestic location alone does not establish that rate.",
+      "readiness": "Supports candidate scope, not automatic classification."
+    },
+    {
+      "id": "accrual-period",
+      "sources": [
+        "skv_when",
+        "sfs_vat"
+      ],
+      "finding": "Faktureringsmetoden follows the period in which sale or purchase was or should have been booked. Invoice issue/receipt are usual evidence; advances have separate rules.",
+      "readiness": "Requires verified method, period and transaction date basis; exclude advances and special timing."
+    },
+    {
+      "id": "return-boxes",
+      "sources": [
+        "skv_boxes"
+      ],
+      "finding": "Ordinary domestic taxable sales excluding VAT contribute to 05; 25 percent output VAT to 10; deductible input VAT to 48. General 49 formula sums 10,11,12,30,31,32,60,61,62 minus 48. Only with complete candidate-scope coverage does it reduce to 10 minus 48.",
+      "readiness": "Partial contributions are not a complete return. No automatic zero declaration."
+    },
+    {
+      "id": "input-deduction",
+      "sources": [
+        "sfs_vat",
+        "skv_input",
+        "skv_invoice"
+      ],
+      "finding": "Deduction depends on use in taxable activity, applicable restrictions and supporting invoice evidence; VAT printed on an invoice is not by itself entitlement. Foreign VAT is not deductible on the Swedish return.",
+      "readiness": "Explicit eligibility evidence required."
+    },
+    {
+      "id": "rounding-gap",
+      "sources": [
+        "skv_returnfile"
+      ],
+      "finding": "The file interface requires integer amounts without decimals. The retrieved evidence does not establish the rounding/truncation algorithm, order of aggregation, negative-value behaviour or ledger adjustment.",
+      "readiness": "Block final box values/export until resolved; preserve exact underlying amounts."
+    },
+    {
+      "id": "transfer-not-assessment",
+      "sources": [
+        "skv_taxaccount",
+        "skv_taxdeposit",
+        "sfs_taxprocedure"
+      ],
+      "finding": "A general tax-account deposit cannot be earmarked for one tax. Tax charges and payments are separately recorded. A bank debit alone does not prove VAT assessment, filing, tax-account credit or settlement of that VAT.",
+      "readiness": "Keep transfer and tax-account charge evidence separate; no automatic tax posting."
+    },
+    {
+      "id": "assessment-evidence",
+      "sources": [
+        "sfs_taxprocedure",
+        "skv_corrections"
+      ],
+      "finding": "Under SFL 53 kap. 2 § a timely, properly submitted return may itself give rise to a deemed decision. A separate paper decision is not always required. Corrections increasing VAT may generate a decision with amount and due date.",
+      "readiness": "No inference of submission or decision from a draft or bank transfer."
+    }
+  ],
+  "sources": [
+    {
+      "id": "skv_when",
+      "publisher": "Skatteverket",
+      "title": "När ska jag deklarera moms\n | Skatteverket",
+      "requestedUrl": "https://www.skatteverket.se/foretag/moms/deklareramoms/narskajagdeklareramoms.4.6d02084411db6e252fe80008988.html",
+      "resolvedUrl": "https://www.skatteverket.se/foretag/moms/deklareramoms/narskajagdeklareramoms.4.6d02084411db6e252fe80008988.html",
+      "retrievedAt": "2026-09-22T15:02:48.387650+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html;charset=UTF-8",
+      "responseBodySha256": "b92b3c67ce75d450e3aace8265220b82a595ea05af82318fe90684b53f1f5c53",
+      "responseBodyBytes": 214266,
+      "observedDates": {
+        "httpDate": "Tue, 22 Sep 2026 15:02:48 GMT",
+        "httpLastModified": null,
+        "pageMetadata": {
+          "DC.Date.Created": "2008-12-04",
+          "DC.Date.Modified": "2026-07-20"
+        }
+      },
+      "dateMeaning": "HTTP and page metadata dates describe the retrieved resource; they do not establish legal applicability.",
+      "excerpts": [
+        {
+          "locator": "Opening: registration determines reporting dates",
+          "extracted_text_start": 28,
+          "text": "Tidpunkten för att deklarera och betala moms beror på hur du är registrerad hos Skatteverket.\nTidpunkter för att deklarera och betala moms\nDu kan vara registrerad för att lämna momsdeklaration en gång per år, varje kvartal eller varje månad. Oavsett vilken tidpunkt som gäller ska momsen vara både inbetald och bokförd på skattekontot senast samma dag som deklarationsdagen. Är du redan momsregistrerad tar du snabbast reda på dina deklarationsdatum genom att logga in i tjänsten Lämna momsdeklaration.\nDu kan också se datumen i Viktiga datum.\nViktiga datum\n[object Object]",
+          "sha256_utf8": "4683d3a33575fb480553eec3037452e8597bf38bccfaaab6e91fa135b9caee3f"
+        },
+        {
+          "locator": "Faktureringsmetoden / Rätt period / Redovisa förskott",
+          "extracted_text_start": 4756,
+          "text": "Faktureringsmetoden\nÄr du bokföringsskyldig och har en årsomsättning som överstiger 3 miljoner kronor ska du löpande bokföra dina affärshändelser i företaget. Då använder du faktureringsmetoden för din momsredovisning.\nRätt period för momsredovisningen\nDu tar upp momsen i din momsdeklaration i den redovisningsperiod när försäljningen eller inköpet har bokförts eller skulle ha bokförts.\nHuvudprincipen är att du ska bokföra och redovisa\n- utgående moms i samband med att du ställer ut en faktura till köparen, vanligtvis på fakturadagen\n- ingående moms när du tar emot inköpsfakturan från din leverantör, vanligtvis på ankomstdagen.\nRedovisa förskott\nHar du tagit emot eller lämnat förskott eller à conto (delbetalning i förskott) ska du redovisa den utgående momsen när du får betalt och den ingående momsen när du betalar. Du får inte dra av momsen förrän förskottsfakturan är betald.",
+          "sha256_utf8": "945a681fcfba3784094b6e0219875262e3d3159cb9c006f346712a8893a46064"
+        },
+        {
+          "locator": "Bokslutsmetoden/kontantmetoden",
+          "extracted_text_start": 5645,
+          "text": "Bokslutsmetoden/kontantmetoden\nDu som har en årsomsättning på högst tre miljoner kronor kan välja bokslutsmetoden. Du bokför dina affärshändelser när du får betalt, respektive när du betalar. När du gör bokslutet vid räkenskapsårets slut måste du även bokföra alla kvarvarande obetalda fordringar och skulder.\nRätt redovisningsperiod för momsredovisningen\nDu tar upp momsen i din momsdeklaration i den redovisningsperiod när du får betalt för din försäljning eller när du har betalat dina inköp.\nFör varje redovisningsperiod ska du redovisa moms på\nkontanta betalningar\nbetalningar i form av varor eller tjänster, det vill säga byten\nförskott eller à conto för beställda varor och tjänster\nvärdet av gjorda uttag\nSista deklarationen på beskattningsåret\nI den deklaration som avser sista redovisningsperioden för beskattningsåret ska du även redovisa momsen på obetalda fakturor. Betalningen styr alltså momsredovisningen förutom vid årsbokslutet. Tänk på att inte redovisa de obetalda fakturorna dubbelt i nästa period.",
+          "sha256_utf8": "e07912c8095a30e0ff17ab3a3f633169f4fdbfc86e581f73115b6e1bcdf7a0c2"
+        }
+      ]
+    },
+    {
+      "id": "skv_boxes",
+      "publisher": "Skatteverket",
+      "title": "Fylla i momsdeklarationen\n | Skatteverket",
+      "requestedUrl": "https://www.skatteverket.se/foretag/moms/deklareramoms/fyllaimomsdeklarationen.4.3a2a542410ab40a421c80004214.html",
+      "resolvedUrl": "https://www.skatteverket.se/foretag/moms/deklareramoms/fyllaimomsdeklarationen.4.3a2a542410ab40a421c80004214.html",
+      "retrievedAt": "2026-09-22T15:01:03.183631+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html;charset=UTF-8",
+      "responseBodySha256": "9c948c91fdff390b7fad93184495ee0f0f7ce0b36f29f7349becc8ba601043f2",
+      "responseBodyBytes": 118007,
+      "observedDates": {
+        "httpDate": "Tue, 22 Sep 2026 15:01:03 GMT",
+        "httpLastModified": null,
+        "pageMetadata": {
+          "DC.Date.Created": "2006-05-11",
+          "DC.Date.Modified": "2026-09-21"
+        }
+      },
+      "dateMeaning": "HTTP and page metadata dates describe the retrieved resource; they do not establish legal applicability.",
+      "excerpts": [
+        {
+          "locator": "A / Fält 05",
+          "extracted_text_start": 150,
+          "text": "Beloppen i fält 05–08 ska gälla samma redovisningsperiod som momsen i fält 10–12.\nFält 05 – Momspliktig försäljning som inte ingår i fält 06, 07 eller 08\nHär redovisar du din momspliktiga försäljning av varor och tjänster inom Sverige exklusive moms. Du ska också redovisa försäljning av inventarier som du haft rätt att dra av moms för eller fått moms återbetald för.",
+          "sha256_utf8": "0e56af71fce37aef55eb5883ade53f8ae61695ccc067a78581d650d22465c9a7"
+        },
+        {
+          "locator": "B / Fält 10-12; C ordinary domestic purchases excluded",
+          "extracted_text_start": 3480,
+          "text": "B – Utgående moms på försäljning eller uttag i fält 05–08\nFält 10 – Utgående moms 25\n%\nFält 11 – Utgående moms 12\n%\nFält 12 – Utgående moms 6\n%\nHär redovisar du den utgående momsen för varje momssats på:\nförsäljning av varor och tjänster inom Sverige (inklusive hyresinkomster vid frivillig beskattning och försäljning där momsen beräknas på vinstmarginalen)\nuttag av varor och tjänster\nförskott för en vara eller tjänst som en kund i Sverige har beställt av dig.\nC – Momspliktiga inköp vid omvänd betalningsskyldighet\nHär redovisar du inköp där du själv ska räkna ut och redovisa den utgående momsen. Avsnittet gäller endast inköp där du enligt särskilda regler själv är skyldig att beräkna momsen, till exempel vid omvänd betalningsskyldighet. Vanliga inköp i Sverige, där säljaren lägger på moms på fakturan, ska inte redovisas här.",
+          "sha256_utf8": "4e6ca08c2f8b090b6ac9714e43531ecafed06e5759bdd1538e09ea28cb87834f"
+        },
+        {
+          "locator": "F / Fält 48 and G / Fält 49",
+          "extracted_text_start": 18472,
+          "text": "Fält 48 – Ingående moms att dra av\nHär redovisar du den ingående moms som du får dra av (moms som du betalat på inköp). I beloppet ingår\nmoms på varor och tjänster du köpt inom Sverige\nmoms på varor som du importerat\nmoms på tjänster du köpt från länder utanför EU\nmoms på varor och tjänster du köpt från andra EU-länder.\nDu får aldrig dra av utländsk moms i momsdeklarationen. Sådan moms kan dock i vissa fall återbetalas av en utländsk skattemyndighet. Du kan också ha avdragsrätt för momsen på inköp i Sverige även om du ska redovisa den utgående momsen i ett annat land.\nÅterbetalning av utländsk moms\nTidigare avdragen moms att betala tillbaka\nHär redovisar du bara om du har tidigare avdragen moms att betala tillbaka som uppgår till ett högre belopp än den ingående moms som du har rätt att dra av. Det kan till exempel bli aktuellt till när du tagit emot kreditfakturor.\nDet här fältet finns bara i e-tjänsten Lämna momsdeklaration.\nG – Moms att betala eller få tillbaka (ifylls alltid)\nFält 49 – Moms att betala eller få tillbaka\nHär redovisar du hur mycket moms du ska betala eller få tillbaka för perioden. Beloppet är summan av fälten 10, 11, 12, 30, 31, 32, 60, 61 och 62 minus beloppet i fält 48. Fält 49 ska du alltid fylla i.\nOm du inte har någon moms att redovisa för perioden:\ntryck på knappen Deklarera noll i e-tjänsten\nskriv 0 i fält 49 om du deklarerar på pappersblankett.",
+          "sha256_utf8": "202eeed7067f9d54e1b2771d96bcec1b2d48a207fb057bda309c654e07105571"
+        }
+      ]
+    },
+    {
+      "id": "skv_invoice",
+      "publisher": "Skatteverket",
+      "title": "Momslagens regler om fakturering\n | Skatteverket",
+      "requestedUrl": "https://www.skatteverket.se/foretag/moms/saljavarorochtjanster/momslagensregleromfakturering.4.58d555751259e4d66168000403.html",
+      "resolvedUrl": "https://www.skatteverket.se/foretag/moms/saljavarorochtjanster/momslagensregleromfakturering.4.58d555751259e4d66168000403.html",
+      "retrievedAt": "2026-09-22T15:00:38.859123+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html;charset=UTF-8",
+      "responseBodySha256": "5d0d4a5661d4f75444846bd3538755edc84b23a6497fbe2079f0bab87181424a",
+      "responseBodyBytes": 151567,
+      "observedDates": {
+        "httpDate": "Tue, 22 Sep 2026 15:00:38 GMT",
+        "httpLastModified": null,
+        "pageMetadata": {
+          "DC.Date.Created": "2009-12-30",
+          "DC.Date.Modified": "2026-03-19"
+        }
+      },
+      "dateMeaning": "HTTP and page metadata dates describe the retrieved resource; they do not establish legal applicability.",
+      "excerpts": [
+        {
+          "locator": "Fakturans innehåll: full invoice particulars",
+          "extracted_text_start": 9521,
+          "text": "Följande uppgifter ska finnas med på en fullständig faktura:\nDatum för utfärdandet av fakturan.\nEtt unikt löpnummer för varje faktura baserat på en eller flera serier.\nSäljarens momsregistreringsnummer.\nKöparens momsregistreringsnummer om köparen är betalningsskyldig för köpet, så kallad omvänd betalningsskyldighet.\nSäljarens och köparens namn och adress.\nVarornas mängd och art eller tjänsternas omfattning och art.\nDatum då försäljningen av varorna eller tjänsterna utförts eller slutförts eller det datum då förskotts- eller a conto-betalning skett, om ett sådant datum kan fastställas och det skiljer sig från fakturadatumet.\nBeskattningsunderlaget för varje momssats eller undantag, enhetspriset exklusive moms, samt eventuell prissänkning eller rabatt som inte ingår i enhetspriset.\nTillämpad momssats.\nDet momsbelopp som ska betalas. Om säljaren använder vinstmarginalbeskattning på transaktionen ska momsbelopp inte anges i fakturan.\nEn säljare som är momsbefriad (undantagen från momsplikt) för att årsomsättningen är högst 120 000 kronor, ska inte ta ut moms på försäljningen och därför inte ange någon moms i fakturan. Säljaren ska däremot skriva i fakturan att försäljningen är undantagen från momsplikt.\nOm du köper något till din verksamhet är det viktigt att du får en fullständig faktura av säljaren. Om fakturan saknar en eller flera uppgifter kan det påverka din rätt att göra avdrag för ingående moms i momsdeklarationen. I vissa fall är det tillräckligt med en förenklad faktura.",
+          "sha256_utf8": "a11bf575d1c6bc28c4bd4d4622564bfb9573d4861e1638c81850601fd1e32b52"
+        }
+      ]
+    },
+    {
+      "id": "skv_input",
+      "publisher": "Skatteverket",
+      "title": "Köpa varor eller tjänster till företaget\n | Skatteverket",
+      "requestedUrl": "https://www.skatteverket.se/foretag/moms/kopavarorochtjanster/kopavarorellertjanstertillforetaget.4.7459477810df5bccdd480005156.html",
+      "resolvedUrl": "https://www.skatteverket.se/foretag/moms/kopavarorochtjanster/kopavarorellertjanstertillforetaget.4.7459477810df5bccdd480005156.html",
+      "retrievedAt": "2026-09-22T15:03:06.925892+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html;charset=UTF-8",
+      "responseBodySha256": "1aa34fb3a4d1465209a7f87b93162a35be89ef568c2cf47febaaf0b4edf90828",
+      "responseBodyBytes": 129158,
+      "observedDates": {
+        "httpDate": "Tue, 22 Sep 2026 15:03:07 GMT",
+        "httpLastModified": null,
+        "pageMetadata": {
+          "DC.Date.Created": "2006-10-25",
+          "DC.Date.Modified": "2026-07-20"
+        }
+      },
+      "dateMeaning": "HTTP and page metadata dates describe the retrieved resource; they do not establish legal applicability.",
+      "excerpts": [
+        {
+          "locator": "Evidence required for deduction",
+          "extracted_text_start": 12892,
+          "text": "Underlaget ska normalt vara en faktura eller kvitto där momsen är specificerad. Spara därför alltid faktura, kvitto eller liknande på de varor eller tjänster du köper i din bokföring.\nFör att du ska få göra avdrag för moms är det viktigt att fakturan innehåller de uppgifter som måste finnas med på en faktura. Det finns särskilda regler om totalbeloppet på fakturan eller kvittot inte är högre än 4 000 kronor inklusive moms.\nFakturans innehåll\nSe till att alltid få en korrekt faktura eller liknande från säljaren.",
+          "sha256_utf8": "872a363fa602f17032ecf925159eed75fe346edb8103187a4efc5f90e3f00788"
+        }
+      ]
+    },
+    {
+      "id": "skv_taxaccount",
+      "publisher": "Skatteverket",
+      "title": "Skattekonto - betala och få tillbaka skatt - företag\n | Skatteverket",
+      "requestedUrl": "https://www.skatteverket.se/foretag/skatterochavdrag/skattekontobetalaochfatillbaka.4.6a6688231259309ff1f800029122.html",
+      "resolvedUrl": "https://www.skatteverket.se/foretag/skatterochavdrag/skattekontobetalaochfatillbaka.4.6a6688231259309ff1f800029122.html",
+      "retrievedAt": "2026-09-22T15:02:48.380095+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html;charset=UTF-8",
+      "responseBodySha256": "5ea8f1b004a5a3f88facd72fae2f833b6eed8ab845c1a24630c199ca08728aab",
+      "responseBodyBytes": 417865,
+      "observedDates": {
+        "httpDate": "Tue, 22 Sep 2026 15:02:48 GMT",
+        "httpLastModified": null,
+        "pageMetadata": {
+          "DC.Date.Created": "2009-12-22",
+          "DC.Date.Modified": "2026-03-31"
+        }
+      },
+      "dateMeaning": "HTTP and page metadata dates describe the retrieved resource; they do not establish legal applicability.",
+      "excerpts": [
+        {
+          "locator": "Ingen avräkningsordning",
+          "extracted_text_start": 1169,
+          "text": "Ingen avräkningsordning\nPå skattekontot finns ingen avräkningsordning mellan olika poster. Det innebär att en inbetalning inte kan vara avsedd för en viss enskild skatt eller avgift.",
+          "sha256_utf8": "704749ee014a549db8745f05d7a980f5f32527c266ca599c646aa8677afcc180"
+        }
+      ]
+    },
+    {
+      "id": "skv_taxdeposit",
+      "publisher": "Skatteverket",
+      "title": "Inbetalning till skattekontot - för företag\n | Skatteverket",
+      "requestedUrl": "https://www.skatteverket.se/foretag/skatterochavdrag/skattekontobetalaochfatillbaka/inbetalningtillskattekontot.4.233f91f71260075abe8800014355.html",
+      "resolvedUrl": "https://www.skatteverket.se/foretag/skatterochavdrag/skattekontobetalaochfatillbaka/inbetalningtillskattekontot.4.233f91f71260075abe8800014355.html",
+      "retrievedAt": "2026-09-22T15:01:03.189984+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html;charset=UTF-8",
+      "responseBodySha256": "0e564d649ba795295bee86a4d830ca68534a3499fa79b1bda7007546a3247391",
+      "responseBodyBytes": 417177,
+      "observedDates": {
+        "httpDate": "Tue, 22 Sep 2026 15:01:03 GMT",
+        "httpLastModified": null,
+        "pageMetadata": {
+          "DC.Date.Created": "2010-01-27",
+          "DC.Date.Modified": "2026-03-31"
+        }
+      },
+      "dateMeaning": "HTTP and page metadata dates describe the retrieved resource; they do not establish legal applicability.",
+      "excerpts": [
+        {
+          "locator": "Förfallodag",
+          "extracted_text_start": 1859,
+          "text": "Förfallodag\nEn inbetalning måste vara bokförd på Skatteverkets bankgiro senast på förfallodagen. Det räcker alltså inte att girera eller betala in på förfallodagen för att slippa räntekonsekvenser.",
+          "sha256_utf8": "5ccae25c701d0104960c1693890fb9097a682cf3268c63fed747aec8635a306e"
+        }
+      ]
+    },
+    {
+      "id": "skv_corrections",
+      "publisher": "Skatteverket",
+      "title": "Rätta en momsdeklaration\n | Skatteverket",
+      "requestedUrl": "https://www.skatteverket.se/foretag/moms/deklareramoms/rattaenmomsdeklaration.4.3684199413c956649b552c4.html",
+      "resolvedUrl": "https://www.skatteverket.se/foretag/moms/deklareramoms/rattaenmomsdeklaration.4.3684199413c956649b552c4.html",
+      "retrievedAt": "2026-09-22T15:01:03.194250+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html;charset=UTF-8",
+      "responseBodySha256": "01d5672be2f32f9238e9aee0ec3b08dcdcb1cbb877020858d8ba0314684ce842",
+      "responseBodyBytes": 196981,
+      "observedDates": {
+        "httpDate": "Tue, 22 Sep 2026 15:01:03 GMT",
+        "httpLastModified": null,
+        "pageMetadata": {
+          "DC.Date.Created": "2013-02-05",
+          "DC.Date.Modified": "2026-07-20"
+        }
+      },
+      "dateMeaning": "HTTP and page metadata dates describe the retrieved resource; they do not establish legal applicability.",
+      "excerpts": [
+        {
+          "locator": "Correction and resulting decision",
+          "extracted_text_start": 2442,
+          "text": "Om du lämnar en rättelse som gör att du ska betala in mer pengar på skattekontot, kommer du att få ett beslut från oss. Där står det hur mycket du ska betala och när du senast ska betala in resten av momsen.",
+          "sha256_utf8": "68b3f2d5d7d1203055c4da9a90c9530ee76660bd445cb763fad423602c5b96ad"
+        }
+      ]
+    },
+    {
+      "id": "skv_returnfile",
+      "publisher": "Skatteverket",
+      "title": "Lämna momsdeklaration via fil i e-tjänsten\n | Skatteverket",
+      "requestedUrl": "https://www.skatteverket.se/foretag/moms/deklareramoms/lamnamomsdeklarationviafilietjansten.4.2fb39afe18dabf1e4d223cc.html",
+      "resolvedUrl": "https://www.skatteverket.se/foretag/moms/deklareramoms/lamnamomsdeklarationviafilietjansten.4.2fb39afe18dabf1e4d223cc.html",
+      "retrievedAt": "2026-09-22T15:01:03.198130+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html;charset=UTF-8",
+      "responseBodySha256": "5cb04c1e703068968b8650a8a2ed5bb0dc834f319c7e29292730a5ec16be4fe5",
+      "responseBodyBytes": 220742,
+      "observedDates": {
+        "httpDate": "Tue, 22 Sep 2026 15:01:03 GMT",
+        "httpLastModified": null,
+        "pageMetadata": {
+          "DC.Date.Created": "2024-03-14",
+          "DC.Date.Modified": "2026-07-20"
+        }
+      },
+      "dateMeaning": "HTTP and page metadata dates describe the retrieved resource; they do not establish legal applicability.",
+      "excerpts": [
+        {
+          "locator": "Validation: integer amounts",
+          "extracted_text_start": 8518,
+          "text": "Endast siffror (0–9) samt inledande plustecken (+) eller minustecken (-) tillåts. Belopp måste anges i heltal utan decimaler.",
+          "sha256_utf8": "b4749cc20d251f69b613cba794450726ce40e3d87b111b704c849734a7b16f0a"
+        }
+      ]
+    },
+    {
+      "id": "sfs_vat",
+      "publisher": "Sveriges riksdag / Svensk författningssamling",
+      "title": "Mervärdesskattelag (2023:200) | Sveriges riksdag",
+      "requestedUrl": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/mervardesskattelag-2023200_sfs-2023-200/",
+      "resolvedUrl": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/mervardesskattelag-2023200_sfs-2023-200/",
+      "retrievedAt": "2026-09-22T15:00:04.126018+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "responseBodySha256": "43765498e0091e85ccf585d8f4e2aa8a136576c5a3f3897bffa8e2183c174fe6",
+      "responseBodyBytes": 1555758,
+      "observedDates": {
+        "httpDate": "Tue, 22 Sep 2026 15:00:04 GMT",
+        "httpLastModified": null,
+        "pageMetadata": {}
+      },
+      "dateMeaning": "HTTP and page metadata dates describe the retrieved resource; they do not establish legal applicability.",
+      "excerpts": [
+        {
+          "locator": "Document header; consolidation, not commencement",
+          "extracted_text_start": 0,
+          "text": "Mervärdesskattelag (2023:200)\nSvensk författningssamling\nSvensk författningssamling (SFS) innehåller gällande lagar och förordningar. Om en författning ändras ersätts den gamla texten med den nya.\nSFS nr\n:     \n2023:200\nDepartement/myndighet\n:   \nFinansdepartementet\nUtfärdad\n:   \n2023-04-27\nÄndrad\n:   \nt.o.m. SFS 2026:1025",
+          "sha256_utf8": "f620286b28eb16d8f94bed889430acffe8341445864365c9f19ea6329d897d3f"
+        },
+        {
+          "locator": "9 kap. 2 §; current and future displayed versions",
+          "extracted_text_start": 117940,
+          "text": "Normalskattesats - 25 procent\n2 §\n/Upphör att gälla U:2028-01-01/\nSkatt enligt denna lag tas ut med 25 procent av  beskattningsunderlaget om inte annat följer av 4-19 §§.\nLag (2026:118)\n.\n2 §\n/Träder i kraft I:2028-01-01/\nSkatt enligt denna lag tas ut med 25 procent av  beskattningsunderlaget om inte annat följer av 3-18 §§.\nLag (2026:119)\n.",
+          "sha256_utf8": "2cb7db5962c67bbde861564e53a478893678cbfd25da74d943e0992a9fcf73cf"
+        },
+        {
+          "locator": "7 kap. 14 §; output tax reporting, general rule",
+          "extracted_text_start": 86786,
+          "text": "Redovisning av utgående skatt - huvudregler\n14 §\nOm inget annat följer av 15-27 §§, ska utgående skatt  redovisas för den redovisningsperiod då\n1. den som enligt 16 kap. 5 § är betalningsskyldig för  mervärdesskatt för en leverans av en vara eller ett  tillhandahållande av en tjänst enligt god redovisningssed har  bokfört eller borde ha bokfört leveransen eller  tillhandahållandet,\n2. den som enligt 16 kap. 6, 8, 9, 10, 11, 12, 13, 14, 15  eller 16 § är betalningsskyldig för mervärdesskatt för förvärv  av en vara eller en tjänst enligt god redovisningssed har  bokfört eller borde ha bokfört förvärvet, eller\n3. den som anges i 1 eller 2 har tagit emot eller lämnat  förskotts- eller a conto-betalning.",
+          "sha256_utf8": "cc8533520f252e90c6a3ef1500f36fd8f3ccb91fc755a5b1848ad00e2d8f3fde"
+        },
+        {
+          "locator": "7 kap. 31 §; input tax reporting, general rule",
+          "extracted_text_start": 95502,
+          "text": "Redovisning av ingående skatt - huvudregler\n31 §\nOm inget annat följer av 32-41 §§ eller av 20 kap. 18 §,  ska ingående skatt dras av för den redovisningsperiod då\n1. den som förvärvar en vara eller en tjänst enligt god  redovisningssed har bokfört eller borde ha bokfört förvärvet,  eller\n2. den som förvärvar en vara eller en tjänst har lämnat  förskotts- eller a conto-betalning.",
+          "sha256_utf8": "df5c8cdcb0fb3b9c54b48bc0131b2ce9ecafa487fd349cb9a98aaa781ea29642"
+        },
+        {
+          "locator": "13 kap. 6 §; extent of input deduction",
+          "extracted_text_start": 193343,
+          "text": "Avdragsrättens omfattning\nHuvudregel\n6 §\nI den utsträckning en beskattningsbar person använder  varorna och tjänsterna för sina beskattade transaktioner inom  landet får denne, från den mervärdesskatt som ska betalas, dra  av ingående skatt som hänför sig till\n1. leverans av varor eller tillhandahållande av tjänster till  den beskattningsbara personen,\n2. sådana unionsinterna förvärv av varor som görs av den  beskattningsbara personen,\n3. sådana överföringar som enligt 5 kap. 23-25 §§ likställs  med unionsinterna förvärv av varor mot ersättning och som görs  av den beskattningsbara personen, och\n4. import av varor.",
+          "sha256_utf8": "e462fd2d80ffc9dc4968dc0bf288a8d3cffa8cfa90c5552275294dfdc5f39f31"
+        },
+        {
+          "locator": "13 kap. 31-32 §§; deduction evidence",
+          "extracted_text_start": 209144,
+          "text": "Avdrag ska styrkas\n31 §\nEn beskattningsbar person har bara rätt att göra avdrag  för ingående skatt om den kan styrkas.\nLeverans av varor, tillhandahållande av tjänster och  unionsinternt förvärv\n32 §\nAvdraget ska styrkas genom faktura, om den ingående  skatten hänför sig till\n1. leverans av varor eller tillhandahållande av tjänster,  eller\n2. unionsinternt förvärv av varor.",
+          "sha256_utf8": "f9f3381d6442986e4f685e5981f079534c43a040bd34fd51a81a248d8ecbb10b"
+        },
+        {
+          "locator": "Övergångsbestämmelser 2023:200, point 1",
+          "extracted_text_start": 371538,
+          "text": "Övergångsbestämmelser\n2023:200\n1. Denna lag träder i kraft den 1 juli 2023.",
+          "sha256_utf8": "da1d6665e5fdf541c7fc217aaf2705700722555c1b3ee64b1870afaa6a878911"
+        },
+        {
+          "locator": "Övergångsbestämmelser 2026:118 and 2026:119",
+          "extracted_text_start": 376433,
+          "text": "2026:118\n1. Denna lag träder i kraft den 1 april 2026.\n2. Äldre föreskrifter gäller fortfarande för mervärdesskatt  som avser beskattningsbara transaktioner för vilka den  beskattningsgrundande händelsen inträffat före  ikraftträdandet.\n2026:119\n1. Denna lag träder i kraft den 1 januari 2028.\n2. Äldre föreskrifter gäller fortfarande för mervärdesskatt  som avser beskattningsbara transaktioner för vilka den  beskattningsgrundande händelsen inträffat före  ikraftträdandet.",
+          "sha256_utf8": "6eba1957597c9f361f196057f7934b65d690fb22f4eac2f0b653c64dde26bcac"
+        }
+      ]
+    },
+    {
+      "id": "sfs_taxprocedure",
+      "publisher": "Sveriges riksdag / Svensk författningssamling",
+      "title": "Skatteförfarandelag (2011:1244) | Sveriges riksdag",
+      "requestedUrl": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/skatteforfarandelag-20111244_sfs-2011-1244/",
+      "resolvedUrl": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/skatteforfarandelag-20111244_sfs-2011-1244/",
+      "retrievedAt": "2026-09-22T15:01:03.201874+00:00",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "responseBodySha256": "d6cfaf5a1f86c6592834ad6a63c4afb2902bf03b98721945bfa0a639cce68a01",
+      "responseBodyBytes": 2305704,
+      "observedDates": {
+        "httpDate": "Tue, 22 Sep 2026 15:01:03 GMT",
+        "httpLastModified": null,
+        "pageMetadata": {}
+      },
+      "dateMeaning": "HTTP and page metadata dates describe the retrieved resource; they do not establish legal applicability.",
+      "excerpts": [
+        {
+          "locator": "Document header; consolidation, not commencement",
+          "extracted_text_start": 0,
+          "text": "Skatteförfarandelag (2011:1244)\nSvensk författningssamling\nSvensk författningssamling (SFS) innehåller gällande lagar och förordningar. Om en författning ändras ersätts den gamla texten med den nya.\nSFS nr\n:     \n2011:1244\nDepartement/myndighet\n:   \nFinansdepartementet S3\nUtfärdad\n:   \n2011-12-01\nÄndrad\n:   \nt.o.m. SFS 2026:1305",
+          "sha256_utf8": "a78efbbb5d77ae6d4374180c0aa30e8780986216e770307ef59c0c3db8bd1935"
+        },
+        {
+          "locator": "53 kap. 1-2 §§; decision may be deemed from a timely, proper return",
+          "extracted_text_start": 396590,
+          "text": "53 kap. Beslut om skatteavdrag, arbetsgivaravgifter, mervärdesskatt och punktskatt\n1 §\nBeslut om skatteavdrag, arbetsgivaravgifter,  mervärdesskatt och punktskatt ska fattas för varje  redovisningsperiod för sig med ledning av innehållet i  skattedeklarationer och andra tillgängliga uppgifter.\nOm mervärdesskatt ska redovisas i en särskild  skattedeklaration för varje förvärv enligt 26 kap. 7 § andra  stycket, ska beslut om skatten fattas för varje förvärv med  ledning av innehållet i den särskilda skattedeklarationen och  andra tillgängliga uppgifter. Om avdrag för ingående skatt har  begärts i en särskild skattedeklaration för varje leverans  enligt 26 kap. 7 § tredje stycket, ska beslut om skatten  fattas för varje leverans med ledning av innehållet i den  särskilda skattedeklarationen och andra tillgängliga  uppgifter.\nOm punktskatt ska redovisas i en särskild skattedeklaration  för varje händelse som medför skattskyldighet enligt 26 kap. \n8 §, ska beslut om skatten fattas för varje händelse med  ledning av innehållet i den särskilda skattedeklarationen och  andra tillgängliga uppgifter.\nFör beslut om ansvar för den som har betalat ut ersättning  utan att göra skatteavdrag med rätt belopp gäller 59 kap. \n2-6 §§.\nLag (2023:208)\n.\n2 §\nOm en skattedeklaration har lämnats i rätt tid och på rätt sätt, anses ett beslut om skatten och avgifterna ha fattats i enlighet med deklarationen.\nHar beslut fattats i enlighet med en arbetsgivardeklaration eller en förenklad arbetsgivardeklaration enligt vad som föreskrivs i första stycket och kommer en sådan deklaration därefter in för sent, ska beslut om skatten och avgifterna anses ha fattats i enlighet med denna deklaration, om\n1. en eller flera förenklade arbetsgivardeklarationer har lämnats, och\n2. omprövning inte har begärts eller beslutats.",
+          "sha256_utf8": "1f8904febef670a76361088a7087bc09d283e69403b7ad10bd06ea6bdef8a869"
+        },
+        {
+          "locator": "61 kap. 1-2 §§; distinct taxes and payments; booking timing",
+          "extracted_text_start": 434824,
+          "text": "61 kap. Skattekonton\nVad ska registreras på ett skattekonto?\n1 §\nPå ett skattekonto ska Skatteverket registrera\n1. skatter och avgifter som ska betalas eller tillgodoräknas,\n2. belopp som ska dras ifrån eller läggas till slutlig skatt enligt 56 kap. 9 §, samt\n3. inbetalningar och utbetalningar.\nSkatter och avgifter som ska betalas enligt ett beslut om ansvar enligt 59 kap. ska dock inte registreras. Ersättningar ska inte heller registreras.\n1 a §\nFör registrering av nationell tilläggsskatt enligt \n56 a kap. 6 § ska det upprättas ett särskilt skattekonto.\nLag (2023:880)\n.\nNär ska registreringen på skattekontot göras?\nHuvudregeln\n2 §\nBelopp som ska betalas ska registreras på förfallodagen.\nBelopp som ska tillgodoräknas ska registreras så snart det finns underlag.",
+          "sha256_utf8": "377938244e7e59290c49560bbfa9caa0fbf5f12b1c9cc1d2d87b3f7696740a3d"
+        },
+        {
+          "locator": "62 kap. 2 §; payment date",
+          "extracted_text_start": 438525,
+          "text": "Inbetalning till det särskilda kontot för skattebetalningar\n2 §\nSkatter och avgifter ska betalas in till Skatteverkets särskilda konto för skattebetalningar.\nSkatten eller avgiften är betald den dag betalningen har bokförts på det särskilda kontot.",
+          "sha256_utf8": "5a91db87c647c319b0a472e47e8707104e18b644664a7304ffb85d6c1a658487"
+        }
+      ]
+    }
+  ],
+  "failedAccess": [
+    {
+      "id": "skv_rate_legal",
+      "requestedUrl": "https://www4.skatteverket.se/rattsligvagledning/394966.html",
+      "resolvedUrl": "https://www4.skatteverket.se/rattsligvagledning/394966.html",
+      "retrievedAt": "2026-09-22T15:00:38.867383+00:00",
+      "httpStatus": 200,
+      "responseBodySha256": "04ce58e943547ffdec0efa6983cb5400766f1850dab438ebb5ebf2d9a6a70310",
+      "observedTitle": "Request Rejected",
+      "usableAsAuthority": false,
+      "reason": "Response is a Request Rejected page, not the requested legal guidance. A successful HTTP status is not successful source access."
+    },
+    {
+      "id": "skv_rate_legal_edition",
+      "requestedUrl": "https://www4.skatteverket.se/rattsligvagledning/edition/2026.13/394966.html",
+      "resolvedUrl": "https://www4.skatteverket.se/rattsligvagledning/edition/2026.13/394966.html",
+      "retrievedAt": "2026-09-22T15:03:06.935815+00:00",
+      "httpStatus": 200,
+      "responseBodySha256": "b51085abf693c0e425339d8d7eacc606263b8c3b457738d9fbdc5e5351a121bd",
+      "observedTitle": "Request Rejected",
+      "usableAsAuthority": false,
+      "reason": "Response is a Request Rejected page, not the requested legal guidance. A successful HTTP status is not successful source access."
+    }
+  ],
+  "openVerificationItems": [
+    "Select and independently verify the exact transaction-date applicability interval and clause versions; no default legal interval is set.",
+    "Verify entity, VAT registration and status, declared accounting method, reporting period, currency, tax-account ownership and registered deadlines.",
+    "Verify domestic place of supply, seller liability, standard-rate classification, invoice validity, business use and full input deduction for each included transaction.",
+    "Resolve official rounding and signed-value rules; distinguish invoice precision, period aggregation and return presentation.",
+    "Verify full-period coverage and all exclusions before presenting any total as a complete return.",
+    "Review corrections, late invoices and special timing independently; they are excluded from the candidate profile.",
+    "Archive complete dated source snapshots and obtain qualified review before any production compliance claim."
+  ]
+}

@@ -1,0 +1,3 @@
+$ oxlint --config .oxlintrc.type-aware.json apps/api/src apps/web/src infra/alchemy packages/contracts/src packages/ui/src
+Found 0 warnings and 0 errors.
+Finished in 2.5s on 43 files with 146 rules using 8 threads.

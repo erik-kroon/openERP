@@ -1,0 +1,784 @@
+{
+  "scope": "Manual local synthetic paired correction and receipt recovery; not complete failure/crash/concurrency proof.",
+  "migrations": [
+    "0400-correction-bundles.sql",
+    "0401-correction-input-precedence.sql"
+  ],
+  "evidence": {
+    "id": "evidence_1130a58a4f974315ba50d0a8408edae4",
+    "title": "Synthetic correction bundle example",
+    "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+    "mediaType": "text/plain",
+    "origin": "Local synthetic operator",
+    "createdAt": "2026-09-22T16:16:32.422037Z"
+  },
+  "originalInput": {
+    "kind": "manual_journal",
+    "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+    "eventKey": "synthetic-correction-bundle-origin",
+    "accountingPeriodId": "period_synthetic_2026",
+    "postingDate": "2026-09-22",
+    "series": "A",
+    "description": "Synthetic correction bundle original",
+    "rationale": "Synthetic original requiring amount correction; no tax event.",
+    "taxAssessment": "not_applicable",
+    "lines": [
+      {
+        "accountId": "account_clearing",
+        "debitMinor": "500",
+        "creditMinor": "0",
+        "description": "Synthetic clearing debit"
+      },
+      {
+        "accountId": "account_bank",
+        "debitMinor": "0",
+        "creditMinor": "500",
+        "description": "Synthetic bank credit"
+      }
+    ]
+  },
+  "originalPlan": {
+    "schemaVersion": "1",
+    "canonicalization": "openerp-c14n-v1",
+    "id": "change_d37e8e1fc2c84d0aa79723c3fa2dce43",
+    "version": 1,
+    "scope": {
+      "entityId": "entity_synthetic",
+      "bookId": "book_synthetic"
+    },
+    "createdAt": "2026-09-22T16:16:32.456254Z",
+    "dependencies": [
+      {
+        "kind": "profile",
+        "resourceId": "book_synthetic",
+        "version": "1",
+        "reason": "Book currency and supported profile"
+      },
+      {
+        "kind": "writer_epoch",
+        "resourceId": "book_synthetic",
+        "version": "1",
+        "reason": "Single authoritative writer"
+      },
+      {
+        "kind": "period",
+        "resourceId": "period_synthetic_2026",
+        "version": "1",
+        "reason": "Posting dates and lock state"
+      },
+      {
+        "kind": "account",
+        "resourceId": "account_bank",
+        "version": "1",
+        "reason": "Exact account configuration"
+      },
+      {
+        "kind": "account",
+        "resourceId": "account_clearing",
+        "version": "1",
+        "reason": "Exact account configuration"
+      }
+    ],
+    "groups": [
+      {
+        "id": "group_14bff7db30fd4ee4b69676707ce6372d",
+        "dependsOnGroupIds": [],
+        "actions": [
+          {
+            "kind": "post_voucher",
+            "correctsVoucherId": null,
+            "eventId": "event_9d83c2d7b93c414582fd051f4915c18d",
+            "postingPurpose": "adjustment",
+            "occurrenceKey": "manual_journal",
+            "fiscalYearId": "year_synthetic_2026",
+            "accountingPeriodId": "period_synthetic_2026",
+            "postingDate": "2026-09-22",
+            "series": "A",
+            "currency": "SEK",
+            "description": "Synthetic correction bundle original",
+            "rationale": "Synthetic original requiring amount correction; no tax event.",
+            "taxAssessment": "not_applicable",
+            "lines": [
+              {
+                "accountId": "account_clearing",
+                "debitMinor": "500",
+                "creditMinor": "0",
+                "description": "Synthetic clearing debit",
+                "lineId": "line_7bab4e56b3e04791a9e8842119ec89f6"
+              },
+              {
+                "accountId": "account_bank",
+                "debitMinor": "0",
+                "creditMinor": "500",
+                "description": "Synthetic bank credit",
+                "lineId": "line_be32649088c1494eb3f8dc796a1b2fd5"
+              }
+            ],
+            "evidenceRefs": [
+              {
+                "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+                "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+                "locator": "synthetic-correction-bundle-origin"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "planDigest": "sha256:76bf2cbef546021bdc0cb78416bfa0b0772e528fde98f32796166dce6823e53d"
+  },
+  "originalApproval": {
+    "id": "approval_582ac8a09c5643efa76da53a0310421d",
+    "changeSetId": "change_d37e8e1fc2c84d0aa79723c3fa2dce43",
+    "planDigest": "sha256:76bf2cbef546021bdc0cb78416bfa0b0772e528fde98f32796166dce6823e53d",
+    "actorId": "actor_operator",
+    "expiresAt": "2026-09-22T17:16:53.366757Z"
+  },
+  "originalExecution": {
+    "id": "receipt_055f9a47c3e643ed93967dea41520f0c",
+    "changeSetId": "change_d37e8e1fc2c84d0aa79723c3fa2dce43",
+    "voucherId": "voucher_9e27982035254504b81f0af2650b3b96",
+    "planDigest": "sha256:76bf2cbef546021bdc0cb78416bfa0b0772e528fde98f32796166dce6823e53d",
+    "sequence": "3",
+    "voucherNumber": "3",
+    "committedAt": "2026-09-22T16:16:53.395336Z"
+  },
+  "bundleInput": {
+    "datePolicy": "explicit_open_period",
+    "accountingPeriodId": "period_synthetic_2026",
+    "postingDate": "2026-09-22",
+    "rationale": "Correct synthetic clearing transfer from500 to700minor units.",
+    "replacement": {
+      "description": "Synthetic corrected clearing transfer",
+      "lines": [
+        {
+          "accountId": "account_clearing",
+          "debitMinor": "700",
+          "creditMinor": "0",
+          "description": "Corrected synthetic clearing debit"
+        },
+        {
+          "accountId": "account_bank",
+          "debitMinor": "0",
+          "creditMinor": "700",
+          "description": "Corrected synthetic bank credit"
+        }
+      ]
+    }
+  },
+  "initialPreparationError": {
+    "_tag": "AccountingError",
+    "code": "InternalError",
+    "message": "The accounting service could not complete this request."
+  },
+  "forwardFix": "Parenthesized nested JSON extraction before subtracting allowed-key array. Original0400 remains immutable.",
+  "bundle": {
+    "id": "correction_77d1478c12be40f5afe7570e1e592835",
+    "version": 1,
+    "scope": {
+      "entityId": "entity_synthetic",
+      "bookId": "book_synthetic"
+    },
+    "originalVoucher": {
+      "id": "voucher_9e27982035254504b81f0af2650b3b96",
+      "number": "3",
+      "sequence": "3",
+      "recordedAt": "2026-09-22T16:16:53.395336Z",
+      "action": {
+        "kind": "post_voucher",
+        "correctsVoucherId": null,
+        "eventId": "event_9d83c2d7b93c414582fd051f4915c18d",
+        "postingPurpose": "adjustment",
+        "occurrenceKey": "manual_journal",
+        "fiscalYearId": "year_synthetic_2026",
+        "accountingPeriodId": "period_synthetic_2026",
+        "postingDate": "2026-09-22",
+        "series": "A",
+        "currency": "SEK",
+        "description": "Synthetic correction bundle original",
+        "rationale": "Synthetic original requiring amount correction; no tax event.",
+        "taxAssessment": "not_applicable",
+        "lines": [
+          {
+            "accountId": "account_clearing",
+            "debitMinor": "500",
+            "creditMinor": "0",
+            "description": "Synthetic clearing debit",
+            "lineId": "line_7bab4e56b3e04791a9e8842119ec89f6"
+          },
+          {
+            "accountId": "account_bank",
+            "debitMinor": "0",
+            "creditMinor": "500",
+            "description": "Synthetic bank credit",
+            "lineId": "line_be32649088c1494eb3f8dc796a1b2fd5"
+          }
+        ],
+        "evidenceRefs": [
+          {
+            "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+            "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+            "locator": "synthetic-correction-bundle-origin"
+          }
+        ]
+      }
+    },
+    "datePolicy": "explicit_open_period",
+    "rationale": "Correct synthetic clearing transfer from500 to700minor units.",
+    "reversal": {
+      "schemaVersion": "1",
+      "canonicalization": "openerp-c14n-v1",
+      "id": "change_e806d571076d4a5fa53228db91cf890d",
+      "version": 1,
+      "scope": {
+        "entityId": "entity_synthetic",
+        "bookId": "book_synthetic"
+      },
+      "createdAt": "2026-09-22T16:19:17.250771Z",
+      "dependencies": [
+        {
+          "kind": "profile",
+          "resourceId": "book_synthetic",
+          "version": "1",
+          "reason": "Book currency and supported profile"
+        },
+        {
+          "kind": "writer_epoch",
+          "resourceId": "book_synthetic",
+          "version": "1",
+          "reason": "Single authoritative writer"
+        },
+        {
+          "kind": "period",
+          "resourceId": "period_synthetic_2026",
+          "version": "1",
+          "reason": "Posting dates and lock state"
+        },
+        {
+          "kind": "account",
+          "resourceId": "account_bank",
+          "version": "1",
+          "reason": "Exact account configuration"
+        },
+        {
+          "kind": "account",
+          "resourceId": "account_clearing",
+          "version": "1",
+          "reason": "Exact account configuration"
+        }
+      ],
+      "groups": [
+        {
+          "id": "group_b8616d6b1a2b4fdfaf23838ebf925d60",
+          "dependsOnGroupIds": [],
+          "actions": [
+            {
+              "kind": "post_voucher",
+              "correctsVoucherId": "voucher_9e27982035254504b81f0af2650b3b96",
+              "eventId": "event_9d83c2d7b93c414582fd051f4915c18d",
+              "postingPurpose": "reversal",
+              "occurrenceKey": "voucher_9e27982035254504b81f0af2650b3b96",
+              "fiscalYearId": "year_synthetic_2026",
+              "accountingPeriodId": "period_synthetic_2026",
+              "postingDate": "2026-09-22",
+              "series": "A",
+              "currency": "SEK",
+              "description": "Reversal: Synthetic correction bundle original",
+              "rationale": "Correct synthetic clearing transfer from500 to700minor units.",
+              "taxAssessment": "not_applicable",
+              "lines": [
+                {
+                  "accountId": "account_clearing",
+                  "debitMinor": "0",
+                  "creditMinor": "500",
+                  "description": "Synthetic clearing debit",
+                  "lineId": "line_299ca1a5620648c1895cdeb5b89ec5dc"
+                },
+                {
+                  "accountId": "account_bank",
+                  "debitMinor": "500",
+                  "creditMinor": "0",
+                  "description": "Synthetic bank credit",
+                  "lineId": "line_bfa06d1f14874ae29d6371db144611d6"
+                }
+              ],
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+                  "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+                  "locator": "synthetic-correction-bundle-origin"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "planDigest": "sha256:74fb57cfdd3ff4554815e4c9572767c41c97e0cc0f23c06c5573600be521af6a"
+    },
+    "replacement": {
+      "schemaVersion": "1",
+      "canonicalization": "openerp-c14n-v1",
+      "id": "change_4bdc2c70246244b491427e871c935ff9",
+      "version": 1,
+      "scope": {
+        "entityId": "entity_synthetic",
+        "bookId": "book_synthetic"
+      },
+      "createdAt": "2026-09-22T16:19:17.252494Z",
+      "dependencies": [
+        {
+          "kind": "profile",
+          "resourceId": "book_synthetic",
+          "version": "1",
+          "reason": "Book currency and supported profile"
+        },
+        {
+          "kind": "writer_epoch",
+          "resourceId": "book_synthetic",
+          "version": "1",
+          "reason": "Single authoritative writer"
+        },
+        {
+          "kind": "period",
+          "resourceId": "period_synthetic_2026",
+          "version": "1",
+          "reason": "Posting dates and lock state"
+        },
+        {
+          "kind": "account",
+          "resourceId": "account_bank",
+          "version": "1",
+          "reason": "Exact account configuration"
+        },
+        {
+          "kind": "account",
+          "resourceId": "account_clearing",
+          "version": "1",
+          "reason": "Exact account configuration"
+        }
+      ],
+      "groups": [
+        {
+          "id": "group_95000f1ea19842058edd50fc31e4b3f8",
+          "dependsOnGroupIds": [],
+          "actions": [
+            {
+              "kind": "post_voucher",
+              "correctsVoucherId": null,
+              "eventId": "event_fabadf7c63ff49bfa1c3db09b47f5be1",
+              "postingPurpose": "adjustment",
+              "occurrenceKey": "manual_journal",
+              "fiscalYearId": "year_synthetic_2026",
+              "accountingPeriodId": "period_synthetic_2026",
+              "postingDate": "2026-09-22",
+              "series": "A",
+              "currency": "SEK",
+              "description": "Synthetic corrected clearing transfer",
+              "rationale": "Correct synthetic clearing transfer from500 to700minor units.",
+              "taxAssessment": "not_applicable",
+              "lines": [
+                {
+                  "accountId": "account_clearing",
+                  "debitMinor": "700",
+                  "creditMinor": "0",
+                  "description": "Corrected synthetic clearing debit",
+                  "lineId": "line_0c1a6ba12ec2404c8c2b4520d58e1964"
+                },
+                {
+                  "accountId": "account_bank",
+                  "debitMinor": "0",
+                  "creditMinor": "700",
+                  "description": "Corrected synthetic bank credit",
+                  "lineId": "line_40530046e29a47bc8228213a5542bb05"
+                }
+              ],
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+                  "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+                  "locator": "synthetic-correction-bundle-origin"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "planDigest": "sha256:a0383cf43ebb7c0de3ea1b406086f68a30c7793a01c24817d11af91a64700a20"
+    },
+    "createdAt": "2026-09-22T16:19:17.252984Z",
+    "createdBy": "actor_operator",
+    "bundleDigest": "sha256:aafc5aeb58636344ab3191960afcd55b7c523bbcd88b8175ce064fa323910b46"
+  },
+  "approval": {
+    "id": "bundleapproval_a67e65dbc3af4f17b59f0284800fd9d0",
+    "bundleId": "correction_77d1478c12be40f5afe7570e1e592835",
+    "bundleDigest": "sha256:aafc5aeb58636344ab3191960afcd55b7c523bbcd88b8175ce064fa323910b46",
+    "actorId": "actor_operator",
+    "expiresAt": "2026-09-22T17:19:45.183784Z"
+  },
+  "execution": {
+    "id": "bundlereceipt_a496e04125be407cbf27305c47803db5",
+    "bundleId": "correction_77d1478c12be40f5afe7570e1e592835",
+    "bundleDigest": "sha256:aafc5aeb58636344ab3191960afcd55b7c523bbcd88b8175ce064fa323910b46",
+    "approvalId": "bundleapproval_a67e65dbc3af4f17b59f0284800fd9d0",
+    "originalVoucherId": "voucher_9e27982035254504b81f0af2650b3b96",
+    "reversal": {
+      "id": "receipt_04b8590bc3714b84b5620f232137f666",
+      "changeSetId": "change_e806d571076d4a5fa53228db91cf890d",
+      "voucherId": "voucher_e288832f1f3c40b6be4218c35c564954",
+      "planDigest": "sha256:74fb57cfdd3ff4554815e4c9572767c41c97e0cc0f23c06c5573600be521af6a",
+      "sequence": "4",
+      "voucherNumber": "4",
+      "committedAt": "2026-09-22T16:19:45.231958Z"
+    },
+    "replacement": {
+      "id": "receipt_0f37989b53434220902afff09874ac5d",
+      "changeSetId": "change_4bdc2c70246244b491427e871c935ff9",
+      "voucherId": "voucher_094df4fc29ec427ca0821ff67c980315",
+      "planDigest": "sha256:a0383cf43ebb7c0de3ea1b406086f68a30c7793a01c24817d11af91a64700a20",
+      "sequence": "5",
+      "voucherNumber": "5",
+      "committedAt": "2026-09-22T16:19:45.235164Z"
+    },
+    "committedAt": "2026-09-22T16:19:45.235970Z"
+  },
+  "sameKeyRecovery": {
+    "id": "bundlereceipt_a496e04125be407cbf27305c47803db5",
+    "bundleId": "correction_77d1478c12be40f5afe7570e1e592835",
+    "bundleDigest": "sha256:aafc5aeb58636344ab3191960afcd55b7c523bbcd88b8175ce064fa323910b46",
+    "approvalId": "bundleapproval_a67e65dbc3af4f17b59f0284800fd9d0",
+    "originalVoucherId": "voucher_9e27982035254504b81f0af2650b3b96",
+    "reversal": {
+      "id": "receipt_04b8590bc3714b84b5620f232137f666",
+      "changeSetId": "change_e806d571076d4a5fa53228db91cf890d",
+      "voucherId": "voucher_e288832f1f3c40b6be4218c35c564954",
+      "planDigest": "sha256:74fb57cfdd3ff4554815e4c9572767c41c97e0cc0f23c06c5573600be521af6a",
+      "sequence": "4",
+      "voucherNumber": "4",
+      "committedAt": "2026-09-22T16:19:45.231958Z"
+    },
+    "replacement": {
+      "id": "receipt_0f37989b53434220902afff09874ac5d",
+      "changeSetId": "change_4bdc2c70246244b491427e871c935ff9",
+      "voucherId": "voucher_094df4fc29ec427ca0821ff67c980315",
+      "planDigest": "sha256:a0383cf43ebb7c0de3ea1b406086f68a30c7793a01c24817d11af91a64700a20",
+      "sequence": "5",
+      "voucherNumber": "5",
+      "committedAt": "2026-09-22T16:19:45.235164Z"
+    },
+    "committedAt": "2026-09-22T16:19:45.235970Z"
+  },
+  "newKeyRecovery": {
+    "id": "bundlereceipt_a496e04125be407cbf27305c47803db5",
+    "bundleId": "correction_77d1478c12be40f5afe7570e1e592835",
+    "bundleDigest": "sha256:aafc5aeb58636344ab3191960afcd55b7c523bbcd88b8175ce064fa323910b46",
+    "approvalId": "bundleapproval_a67e65dbc3af4f17b59f0284800fd9d0",
+    "originalVoucherId": "voucher_9e27982035254504b81f0af2650b3b96",
+    "reversal": {
+      "id": "receipt_04b8590bc3714b84b5620f232137f666",
+      "changeSetId": "change_e806d571076d4a5fa53228db91cf890d",
+      "voucherId": "voucher_e288832f1f3c40b6be4218c35c564954",
+      "planDigest": "sha256:74fb57cfdd3ff4554815e4c9572767c41c97e0cc0f23c06c5573600be521af6a",
+      "sequence": "4",
+      "voucherNumber": "4",
+      "committedAt": "2026-09-22T16:19:45.231958Z"
+    },
+    "replacement": {
+      "id": "receipt_0f37989b53434220902afff09874ac5d",
+      "changeSetId": "change_4bdc2c70246244b491427e871c935ff9",
+      "voucherId": "voucher_094df4fc29ec427ca0821ff67c980315",
+      "planDigest": "sha256:a0383cf43ebb7c0de3ea1b406086f68a30c7793a01c24817d11af91a64700a20",
+      "sequence": "5",
+      "voucherNumber": "5",
+      "committedAt": "2026-09-22T16:19:45.235164Z"
+    },
+    "committedAt": "2026-09-22T16:19:45.235970Z"
+  },
+  "finalView": {
+    "bundle": {
+      "id": "correction_77d1478c12be40f5afe7570e1e592835",
+      "version": 1,
+      "scope": {
+        "entityId": "entity_synthetic",
+        "bookId": "book_synthetic"
+      },
+      "originalVoucher": {
+        "id": "voucher_9e27982035254504b81f0af2650b3b96",
+        "number": "3",
+        "sequence": "3",
+        "recordedAt": "2026-09-22T16:16:53.395336Z",
+        "action": {
+          "kind": "post_voucher",
+          "correctsVoucherId": null,
+          "eventId": "event_9d83c2d7b93c414582fd051f4915c18d",
+          "postingPurpose": "adjustment",
+          "occurrenceKey": "manual_journal",
+          "fiscalYearId": "year_synthetic_2026",
+          "accountingPeriodId": "period_synthetic_2026",
+          "postingDate": "2026-09-22",
+          "series": "A",
+          "currency": "SEK",
+          "description": "Synthetic correction bundle original",
+          "rationale": "Synthetic original requiring amount correction; no tax event.",
+          "taxAssessment": "not_applicable",
+          "lines": [
+            {
+              "accountId": "account_clearing",
+              "debitMinor": "500",
+              "creditMinor": "0",
+              "description": "Synthetic clearing debit",
+              "lineId": "line_7bab4e56b3e04791a9e8842119ec89f6"
+            },
+            {
+              "accountId": "account_bank",
+              "debitMinor": "0",
+              "creditMinor": "500",
+              "description": "Synthetic bank credit",
+              "lineId": "line_be32649088c1494eb3f8dc796a1b2fd5"
+            }
+          ],
+          "evidenceRefs": [
+            {
+              "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+              "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+              "locator": "synthetic-correction-bundle-origin"
+            }
+          ]
+        }
+      },
+      "datePolicy": "explicit_open_period",
+      "rationale": "Correct synthetic clearing transfer from500 to700minor units.",
+      "reversal": {
+        "schemaVersion": "1",
+        "canonicalization": "openerp-c14n-v1",
+        "id": "change_e806d571076d4a5fa53228db91cf890d",
+        "version": 1,
+        "scope": {
+          "entityId": "entity_synthetic",
+          "bookId": "book_synthetic"
+        },
+        "createdAt": "2026-09-22T16:19:17.250771Z",
+        "dependencies": [
+          {
+            "kind": "profile",
+            "resourceId": "book_synthetic",
+            "version": "1",
+            "reason": "Book currency and supported profile"
+          },
+          {
+            "kind": "writer_epoch",
+            "resourceId": "book_synthetic",
+            "version": "1",
+            "reason": "Single authoritative writer"
+          },
+          {
+            "kind": "period",
+            "resourceId": "period_synthetic_2026",
+            "version": "1",
+            "reason": "Posting dates and lock state"
+          },
+          {
+            "kind": "account",
+            "resourceId": "account_bank",
+            "version": "1",
+            "reason": "Exact account configuration"
+          },
+          {
+            "kind": "account",
+            "resourceId": "account_clearing",
+            "version": "1",
+            "reason": "Exact account configuration"
+          }
+        ],
+        "groups": [
+          {
+            "id": "group_b8616d6b1a2b4fdfaf23838ebf925d60",
+            "dependsOnGroupIds": [],
+            "actions": [
+              {
+                "kind": "post_voucher",
+                "correctsVoucherId": "voucher_9e27982035254504b81f0af2650b3b96",
+                "eventId": "event_9d83c2d7b93c414582fd051f4915c18d",
+                "postingPurpose": "reversal",
+                "occurrenceKey": "voucher_9e27982035254504b81f0af2650b3b96",
+                "fiscalYearId": "year_synthetic_2026",
+                "accountingPeriodId": "period_synthetic_2026",
+                "postingDate": "2026-09-22",
+                "series": "A",
+                "currency": "SEK",
+                "description": "Reversal: Synthetic correction bundle original",
+                "rationale": "Correct synthetic clearing transfer from500 to700minor units.",
+                "taxAssessment": "not_applicable",
+                "lines": [
+                  {
+                    "accountId": "account_clearing",
+                    "debitMinor": "0",
+                    "creditMinor": "500",
+                    "description": "Synthetic clearing debit",
+                    "lineId": "line_299ca1a5620648c1895cdeb5b89ec5dc"
+                  },
+                  {
+                    "accountId": "account_bank",
+                    "debitMinor": "500",
+                    "creditMinor": "0",
+                    "description": "Synthetic bank credit",
+                    "lineId": "line_bfa06d1f14874ae29d6371db144611d6"
+                  }
+                ],
+                "evidenceRefs": [
+                  {
+                    "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+                    "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+                    "locator": "synthetic-correction-bundle-origin"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "planDigest": "sha256:74fb57cfdd3ff4554815e4c9572767c41c97e0cc0f23c06c5573600be521af6a"
+      },
+      "replacement": {
+        "schemaVersion": "1",
+        "canonicalization": "openerp-c14n-v1",
+        "id": "change_4bdc2c70246244b491427e871c935ff9",
+        "version": 1,
+        "scope": {
+          "entityId": "entity_synthetic",
+          "bookId": "book_synthetic"
+        },
+        "createdAt": "2026-09-22T16:19:17.252494Z",
+        "dependencies": [
+          {
+            "kind": "profile",
+            "resourceId": "book_synthetic",
+            "version": "1",
+            "reason": "Book currency and supported profile"
+          },
+          {
+            "kind": "writer_epoch",
+            "resourceId": "book_synthetic",
+            "version": "1",
+            "reason": "Single authoritative writer"
+          },
+          {
+            "kind": "period",
+            "resourceId": "period_synthetic_2026",
+            "version": "1",
+            "reason": "Posting dates and lock state"
+          },
+          {
+            "kind": "account",
+            "resourceId": "account_bank",
+            "version": "1",
+            "reason": "Exact account configuration"
+          },
+          {
+            "kind": "account",
+            "resourceId": "account_clearing",
+            "version": "1",
+            "reason": "Exact account configuration"
+          }
+        ],
+        "groups": [
+          {
+            "id": "group_95000f1ea19842058edd50fc31e4b3f8",
+            "dependsOnGroupIds": [],
+            "actions": [
+              {
+                "kind": "post_voucher",
+                "correctsVoucherId": null,
+                "eventId": "event_fabadf7c63ff49bfa1c3db09b47f5be1",
+                "postingPurpose": "adjustment",
+                "occurrenceKey": "manual_journal",
+                "fiscalYearId": "year_synthetic_2026",
+                "accountingPeriodId": "period_synthetic_2026",
+                "postingDate": "2026-09-22",
+                "series": "A",
+                "currency": "SEK",
+                "description": "Synthetic corrected clearing transfer",
+                "rationale": "Correct synthetic clearing transfer from500 to700minor units.",
+                "taxAssessment": "not_applicable",
+                "lines": [
+                  {
+                    "accountId": "account_clearing",
+                    "debitMinor": "700",
+                    "creditMinor": "0",
+                    "description": "Corrected synthetic clearing debit",
+                    "lineId": "line_0c1a6ba12ec2404c8c2b4520d58e1964"
+                  },
+                  {
+                    "accountId": "account_bank",
+                    "debitMinor": "0",
+                    "creditMinor": "700",
+                    "description": "Corrected synthetic bank credit",
+                    "lineId": "line_40530046e29a47bc8228213a5542bb05"
+                  }
+                ],
+                "evidenceRefs": [
+                  {
+                    "evidenceId": "evidence_1130a58a4f974315ba50d0a8408edae4",
+                    "sha256": "797cb7797263edc62f48a53c9760e3b580186b8577b36228324d2145ebb65bf0",
+                    "locator": "synthetic-correction-bundle-origin"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "planDigest": "sha256:a0383cf43ebb7c0de3ea1b406086f68a30c7793a01c24817d11af91a64700a20"
+      },
+      "createdAt": "2026-09-22T16:19:17.252984Z",
+      "createdBy": "actor_operator",
+      "bundleDigest": "sha256:aafc5aeb58636344ab3191960afcd55b7c523bbcd88b8175ce064fa323910b46"
+    },
+    "approval": null,
+    "receipt": {
+      "id": "bundlereceipt_a496e04125be407cbf27305c47803db5",
+      "bundleId": "correction_77d1478c12be40f5afe7570e1e592835",
+      "bundleDigest": "sha256:aafc5aeb58636344ab3191960afcd55b7c523bbcd88b8175ce064fa323910b46",
+      "approvalId": "bundleapproval_a67e65dbc3af4f17b59f0284800fd9d0",
+      "originalVoucherId": "voucher_9e27982035254504b81f0af2650b3b96",
+      "reversal": {
+        "id": "receipt_04b8590bc3714b84b5620f232137f666",
+        "changeSetId": "change_e806d571076d4a5fa53228db91cf890d",
+        "voucherId": "voucher_e288832f1f3c40b6be4218c35c564954",
+        "planDigest": "sha256:74fb57cfdd3ff4554815e4c9572767c41c97e0cc0f23c06c5573600be521af6a",
+        "sequence": "4",
+        "voucherNumber": "4",
+        "committedAt": "2026-09-22T16:19:45.231958Z"
+      },
+      "replacement": {
+        "id": "receipt_0f37989b53434220902afff09874ac5d",
+        "changeSetId": "change_4bdc2c70246244b491427e871c935ff9",
+        "voucherId": "voucher_094df4fc29ec427ca0821ff67c980315",
+        "planDigest": "sha256:a0383cf43ebb7c0de3ea1b406086f68a30c7793a01c24817d11af91a64700a20",
+        "sequence": "5",
+        "voucherNumber": "5",
+        "committedAt": "2026-09-22T16:19:45.235164Z"
+      },
+      "committedAt": "2026-09-22T16:19:45.235970Z"
+    }
+  },
+  "ledger": {
+    "sequence": "5",
+    "accounts": [
+      {
+        "accountId": "account_bank",
+        "code": "1930",
+        "name": "Synthetic bank account",
+        "debitMinor": "13000",
+        "creditMinor": "13700",
+        "balanceMinor": "-700"
+      },
+      {
+        "accountId": "account_clearing",
+        "code": "2999",
+        "name": "Synthetic clearing account",
+        "debitMinor": "13700",
+        "creditMinor": "13000",
+        "balanceMinor": "700"
+      }
+    ]
+  }
+}

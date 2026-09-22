@@ -1,0 +1,24 @@
+# Architecture follow-up and distribution setup
+
+This compares the third supplied architecture package and the subsequent open-accounting proposal with the live repository. The supplied prose is design input, not evidence that a feature exists or authority to create accounts, deploy, publish, use customer data or add tests.
+
+## Earlier architecture recommendations
+
+| Recommendation | Current disposition |
+| --- | --- |
+| One PostgreSQL authority, exact money, immutable approval, transactional receipts and shared REST/MCP/UI semantics | Already retained in architecture, domain, shared contracts and posting plans. Implementation and full acceptance remain separate. |
+| Capture consistent inputs, compile pure calculations, persist the exact plan and commit through one owner | Domain/SQL ownership was already specified; make the capture/compile/persist sequence explicit in the shared plan. Existing small SQL preparation functions are not rewritten solely for a diagram. |
+| Distinguish posting eligibility from period content so independent proposals do not stale each other | The narrow-versus-aggregate requirement existed; explicitly name the two dependency versions and their mutation rules. This is a required future implementation/proof detail, not a new claim about current SQL. |
+| Consider dimensions, tax and register meaning when checking a correction for no change | Add the explicit rule to the correction plan. Comparing only debit/credit account totals is insufficient once those effects are supported. |
+| Frozen bulk-import manifest and exclusive progress fence | Chunk identities and leases already exist in the import plan; make competing-writer exclusion and fixed membership explicit. General historical import remains planned. |
+| Signed journal amounts and proposed alternate API/package names | Do not adopt: ADR 0004 reconciles the existing paired debit/credit contract and existing callers. Preserve sealed-record interpretation. |
+| Newer Effect source version, broader schemas and money example | Reference material only. Keep the installed Effect version, owned Effect contracts and existing precision guards. No reference module or tests are imported wholesale. |
+| Assume a live Accounted migration | Keep conditional on the actual source/version and company inputs, as required by the native-accounting migration ADR. |
+
+## Open-accounting setup
+
+The new [ADR 0005](adr/0005-open-accounting-and-managed-services.md) records open accounting and jurisdiction/agent layers, optional managed operations, current module ownership and deferred Rust extraction. [LICENSING.md](../LICENSING.md) records the user's AGPL-3.0-only choice for all project-owned code; package metadata and the full license agree. Third-party terms remain intact.
+
+[CONTRIBUTING.md](../CONTRIBUTING.md) supplies contributor entry points and scope/provenance rules. [The self-host package](../infra/self-host/README.md) adds the Bun runtime, local configuration and PostgreSQL Compose recipe. It does not implement unavailable accounting, archive, provider or regulatory capabilities merely by packaging the current application.
+
+No managed-service repository, hosted billing, credential vault, Rust crate, additional jurisdiction or cloud deployment is created. These require real consumers or external arrangements. Runtime evidence and container verification limits are recorded alongside the self-host package.

@@ -1,0 +1,42 @@
+$ vp run --filter api --filter web --filter @open-erp/ui --filter @open-erp/contracts check-types && bun run check:infra
+~/packages/ui$ tsc --noEmit ⊘ cache disabled
+~/packages/contracts$ tsc --noEmit ⊘ cache disabled
+
+~/apps/api$ tsc --noEmit ⊘ cache disabled
+
+
+~/apps/web$ vp build ⊘ cache disabled
+ℹ [paraglide-js] Compilation skipped — inputs unchanged (message-modules)
+[2Ktransforming...✓ 418 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/client/assets/index-DbcPOGgg.css            23.71 kB │ gzip:   5.58 kB
+dist/client/assets/use-page-locale-BHDKSpqQ.js   26.81 kB │ gzip:   9.45 kB
+dist/client/assets/routes-Cu0KtRtO.js           189.12 kB │ gzip:  62.27 kB
+dist/client/assets/index-CQe7SzY0.js            344.30 kB │ gzip: 110.14 kB
+
+✓ built in 614ms
+ℹ [paraglide-js] Compilation skipped — inputs unchanged (message-modules)
+[2Ktransforming...✓ 177 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/server/assets/start-Dv79nk_x.js                         0.21 kB │ gzip:  0.17 kB
+dist/server/assets/empty-plugin-adapters-CRmm9IFd.js         0.28 kB │ gzip:  0.18 kB
+dist/server/assets/_tanstack-start-manifest_v-BE-H7zlB.js    0.59 kB │ gzip:  0.34 kB
+dist/server/assets/router-CNmCfi6c.js                        5.95 kB │ gzip:  1.88 kB
+dist/server/assets/use-page-locale-B4sfWuEU.js              17.44 kB │ gzip:  5.70 kB
+dist/server/assets/routes-B3pHU4_q.js                       72.60 kB │ gzip: 17.95 kB
+dist/server/server.js                                      237.71 kB │ gzip: 55.11 kB
+
+✓ built in 461ms
+[prerender] Prerendering pages...
+[prerender] Concurrency: 8
+[prerender] Crawling: /
+[prerender] Prerendered 1 pages:
+[prerender] - /
+
+~/apps/web$ tsc --noEmit ⊘ cache disabled
+
+---
+vp run: 0/5 cache hit (0%). (Run `vp run --last-details` for full details)
+$ tsc --project infra/alchemy/tsconfig.json --noEmit

@@ -1,0 +1,6 @@
+HTTP/1.1 200 OK
+Content-Length: 97
+Content-Type: application/json
+Cache-Control: no-store
+
+{"status":"ok","service":"open-erp-api","effectVersion":"4.0.0-rc.112","checkedAt":1790085858797}

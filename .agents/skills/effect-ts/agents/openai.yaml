@@ -1,0 +1,4 @@
+interface:
+  display_name: "Effect 4 for OpenERP"
+  short_description: "Build new Effect 4 services, schemas, and APIs"
+  default_prompt: "Use $effect-ts to implement new Effect 4 code in OpenERP using the installed APIs and repository boundaries."

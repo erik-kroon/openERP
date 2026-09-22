@@ -1,0 +1,5 @@
+$ oxfmt --check apps/api apps/web/src infra/alchemy packages/contracts packages/ui/src packages/config apps/web/vite.config.ts vite.config.ts
+Checking formatting...
+
+All matched files use the correct format.
+Finished in 190ms on 57 files using 8 threads.

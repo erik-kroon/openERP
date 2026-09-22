@@ -1,0 +1,360 @@
+{
+  "packet": "FND-01",
+  "checkedAt": "2026-09-22T17:03:17.075593+00:00",
+  "reconciliationStatus": "complete_for_pinned_checkpoint",
+  "productGateStatus": "open",
+  "revision": "90db69b454c8a3aa4509d75e8a57b185c27ae5d7",
+  "isolatedWorktree": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP",
+  "sourceWorktreeDiffSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "sourceTreeWasClean": true,
+  "staticChecks": [
+    {
+      "command": "bun run check-types",
+      "exitCode": 0,
+      "seconds": 18.08,
+      "log": "/Users/admin/openERP/output/fnd01/types.log"
+    },
+    {
+      "command": "bun run lint",
+      "exitCode": 0,
+      "seconds": 5.08,
+      "log": "/Users/admin/openERP/output/fnd01/lint.log"
+    },
+    {
+      "command": "bun run format:check",
+      "exitCode": 0,
+      "seconds": 1.1,
+      "log": "/Users/admin/openERP/output/fnd01/format.log"
+    }
+  ],
+  "existingSuite": {
+    "command": {
+      "command": "bun run test:e2e",
+      "startedAt": "2026-09-22T17:00:42.572640+00:00",
+      "exitCode": 1,
+      "nodeHarness": "22.23.2",
+      "browserCache": "/Users/admin/openERP/output/fnd01/browsers",
+      "cwd": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP",
+      "revision": "90db69b454c8a3aa4509d75e8a57b185c27ae5d7"
+    },
+    "total": 20,
+    "passed": 19,
+    "failed": 1,
+    "success": false,
+    "cases": [
+      {
+        "name": "operator signs in, retains evidence, reviews, posts once and recovers after reload",
+        "status": "failed",
+        "failures": [
+          "tracing.stop: Must start tracing before stopping\n    at /Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/apps/web/tests/browser.e2e.test.ts:166:27\n    at /Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/node_modules/.bun/@vitest+runner@4.1.10/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:20"
+        ]
+      },
+      {
+        "name": "cross-book reads and agent approval cannot cross authority boundaries",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "locked period rejects execution without consuming approval or counters",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "changed account rejects execution without consuming approval or counters",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "expired approval rejects execution without consuming approval or counters",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "an approval for another plan or a tampered digest cannot post",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "wire amount -1 is rejected before journaling",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "wire amount 1.5 is rejected before journaling",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "wire amount 01 is rejected before journaling",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "wire amount 1e3 is rejected before journaling",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "wire amount 100000000000000000000000000000000000000 is rejected before journaling",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "unbalanced lines and missing evidence reject without journaling",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "cookie mutations require same origin and revoked credentials stop working",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "MCP negotiates the protocol, exposes no approval tool, and reads the same committed ledger",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "runtime cannot bypass admission and posted records reject owner mutation",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "a late database fault rolls back the complete posting and leaves a retry usable",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "migration rerun preserves posted state and checksum drift stops the migrator",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "review is read-only; posting preserves exact money beyond Number.MAX_SAFE_INTEGER",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "concurrent retries and receipt recovery converge on one committed posting",
+        "status": "passed",
+        "failures": []
+      },
+      {
+        "name": "linked reversal cancels balances and preserves the original voucher",
+        "status": "passed",
+        "failures": []
+      }
+    ],
+    "manifest": {
+      "startedAt": "2026-09-22T17:00:49.329Z",
+      "revision": "90db69b454c8a3aa4509d75e8a57b185c27ae5d7",
+      "worktreeDiffSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "lockSha256": "9571cab8bb1a214eef8c3b59658f00320db5c696559c357bff51fc7a58094093",
+      "node": "v22.23.2",
+      "postgres": "postgres (PostgreSQL) 17.11 (Homebrew)",
+      "runner": "Vitest 4.1.10",
+      "runtime": "local workerd; real PostgreSQL; restricted runtime role",
+      "migrations": [
+        {
+          "name": "0001-accounting.sql",
+          "sha256": "0d8f9853c9f5d69804221602f13739c42268726361d7040727bf07deaad5fa9d"
+        },
+        {
+          "name": "0002-posting-action-binding.sql",
+          "sha256": "e343c433850bf8476c473aaa70e2a071f12fe769ef0b8e8a1cc7f3b95d91e9ee"
+        },
+        {
+          "name": "0003-deferred-balance-and-ledger.sql",
+          "sha256": "8ddd0d717d983c68936fa3b4fbd84d26baa221bdf76288d5773f20ca54712aac"
+        },
+        {
+          "name": "0004-reversal-source-binding.sql",
+          "sha256": "d4423f760b70c0b1440b8275a68a9f64f408c2e1e03d3bd233b8681ab32eabde"
+        },
+        {
+          "name": "0005-evidence-review.sql",
+          "sha256": "54c4ce9a3fba433d190936ee608bad0898ac53d4d5e72177552febdf973b1908"
+        },
+        {
+          "name": "0006-private-function-default.sql",
+          "sha256": "2ce116c5508d7bd93dd757c989787bbaf31d301171a07d65503034e8a8aa8f66"
+        },
+        {
+          "name": "0100-bank-reconciliation.sql",
+          "sha256": "80196396399ce8ac028c7e79478f4a96abe6df2e4c3de3f96fa94a8262c9dcbf"
+        },
+        {
+          "name": "0101-bounded-bank-reports.sql",
+          "sha256": "fa14e08315f267caa8600844df531018b58d99456acafccee5ce638478e7209c"
+        },
+        {
+          "name": "0110-case-context.sql",
+          "sha256": "8cf134ee9195208bdcd42b9ab2ba24d628e4750221d2e648a21068cc2185786f"
+        },
+        {
+          "name": "0111-case-snapshot-binding.sql",
+          "sha256": "6089ceab5e95355eb2830c7d47a4f252ffb62bf0523039ee51f79ec090897dbd"
+        },
+        {
+          "name": "0120-trial-balance-reports.sql",
+          "sha256": "5455dc64b47b5aa82f3baec6fa7f4ab10be554e69e865afed8f1bbe2c4e510c3"
+        },
+        {
+          "name": "0130-book-readiness.sql",
+          "sha256": "f1490368d838170517fea05ebcd072aabb935444f48e53ac8c3a9486cf4dcd3b"
+        },
+        {
+          "name": "0200-recurring-preparation.sql",
+          "sha256": "67179796c1f99bdeaf7f9d81addbddc62a52c1a0778d24355290b85592d4d1fd"
+        },
+        {
+          "name": "0201-recurring-command-guards.sql",
+          "sha256": "94e54410886c19bd37f23f7431f5ffe7057ab19b2914812be9ae00d6e797d26a"
+        },
+        {
+          "name": "0210-admission-authority-locks.sql",
+          "sha256": "14a773d6036c7ec655dc8c8e9304c972219ae27f83f4496b65fbb641f069b0c2"
+        },
+        {
+          "name": "0211-recurring-readiness.sql",
+          "sha256": "f94449c3dba78725454d1e46c23a3bdfa59d5f2e8c0e294bff49a6ee2e24f9f4"
+        },
+        {
+          "name": "0300-posting-recovery.sql",
+          "sha256": "9161e9c4461ba8fed982b5800be96b872bd08408d68a947949a614e14af7f582"
+        },
+        {
+          "name": "0400-correction-bundles.sql",
+          "sha256": "8048dd42105483945d7c9f72e7053ce617958929a19c6407c0d79c1606e73881"
+        },
+        {
+          "name": "0401-correction-input-precedence.sql",
+          "sha256": "6eae5e35b64dcc3c7d154e8531547039e879e28bc1ced5f9198ddc9d0dddbae5"
+        },
+        {
+          "name": "0500-reviewed-bank-allocations.sql",
+          "sha256": "caa7f435e115e91e4b68a77f9ecec4f912e31356015ff3a83bae8f6a4b25d4a9"
+        },
+        {
+          "name": "0501-recurring-allocation-guards.sql",
+          "sha256": "7433df5f8493a46d41a38e88d3e7b8a1d671e2e355ff3cea62c645ad4104bd51"
+        },
+        {
+          "name": "0502-recurring-posting-capacity-guard.sql",
+          "sha256": "2058797f9bf4d9b62ecb2af5703bd6310fd03fdb7f53fe364023ffc59a5e1f50"
+        },
+        {
+          "name": "0600-commerce.sql",
+          "sha256": "f64a79a52d1363db46d0fc7ee8d0dc686f36cc3382618a625faf852666e3beb2"
+        },
+        {
+          "name": "0700-subledger-schedules.sql",
+          "sha256": "0d893a6b1f9b72bebc1a70ccc5f9d444ff534870b425845beec7b0f5000d8f6a"
+        },
+        {
+          "name": "0800-technical-period-closing.sql",
+          "sha256": "38ea720dd52c85433abff0163bc7715a16dc5193eb1d7cf43a07d534b8825372"
+        }
+      ]
+    }
+  },
+  "browserObservation": {
+    "observed": "The saved final screenshot shows sign-in refused with Forbidden. No journal review/post/reload browser result was reached.",
+    "reportedFailure": "tracing.stop: Must start tracing before stopping",
+    "interpretation": "Cleanup error masks the earlier failure. Source inspection points to the same-origin guard at session creation; the exact dev-proxy origin mismatch was not independently instrumented.",
+    "screenshot": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/test-results/e2e/browser-final.png",
+    "fixtureClass": "disposable synthetic data",
+    "fullBrowserAcceptance": "not_passed"
+  },
+  "environmentRemediation": [
+    "Initial shared-checkout run passed 19 existing checks; browser could not launch because its pinned executable was absent. This was superseded for source provenance by the clean isolated run.",
+    "Installed existing lockfile dependencies without changes. Installed Playwright 1.58.2 Chromium headless shell revision 1208 and FFmpeg in a task-local cache using existing Node 22.23.2 after the Node 26 downloader stalled during extraction.",
+    "No product source, applied SQL migration or test definition was changed by FND-01."
+  ],
+  "reproduction": {
+    "checkout": "90db69b454c8a3aa4509d75e8a57b185c27ae5d7",
+    "dependencyInstall": "bun install --frozen-lockfile",
+    "browserInstall": "PLAYWRIGHT_BROWSERS_PATH=<isolated-cache> node node_modules/playwright/cli.js install --only-shell chromium",
+    "test": "PLAYWRIGHT_BROWSERS_PATH=<same-cache> bun run test:e2e",
+    "node": "22.23.2",
+    "postgres": "postgres (PostgreSQL) 17.11 (Homebrew)",
+    "artifacts": "test-results/e2e; preserve any earlier run because existing setup replaces this directory",
+    "cleanupCaveat": "If browser setup or trace cleanup fails, inspect the run-specific server port/command before terminating only that owned process."
+  },
+  "cleanup": [
+    {
+      "port": "55783",
+      "group": 97053,
+      "reason": "Existing test cleanup failed before closing its browser server; stopped only the verified server from this run."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/test-results/e2e/atomic-rollback-and-retry.json",
+      "bytes": 649,
+      "sha256": "fc671cf485f67e173cabcf274c10e1d8e0dbf38a8a142a869653556e2a265b55"
+    },
+    {
+      "path": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/test-results/e2e/browser-errors.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/test-results/e2e/browser-final.png",
+      "bytes": 51703,
+      "sha256": "1f7d6c64cf97a4e8f58b0ce202c418a629b52e7986f4e96713e32b9870e0a2ad"
+    },
+    {
+      "path": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/test-results/e2e/browser-server.log",
+      "bytes": 770,
+      "sha256": "e3b019d25638f121aaffeeb804103e099504d80f15e07e71af978aeb9b1ad8b4"
+    },
+    {
+      "path": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/test-results/e2e/exact-money.json",
+      "bytes": 693,
+      "sha256": "b5cd9f98c0fd54293eebdd3c8fa8196a8a19977e481007405fe1cb3388cb117d"
+    },
+    {
+      "path": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/test-results/e2e/manifest.json",
+      "bytes": 4068,
+      "sha256": "7e8ec5c66c540f28563f8369de43c864f0a27a612924495493a8879a6b8df61e"
+    },
+    {
+      "path": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/test-results/e2e/migrations.log",
+      "bytes": 988,
+      "sha256": "8916527ca464ba1b34829aaa4b241b0e761c69f3236decc18077615a72d120c2"
+    },
+    {
+      "path": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/test-results/e2e/postgres.log",
+      "bytes": 10922,
+      "sha256": "1bed78920c345f502cc230afc706415f172f20870314df1cb6b3653766bc5c31"
+    },
+    {
+      "path": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/test-results/e2e/results.json",
+      "bytes": 7256,
+      "sha256": "d520959e638a9b134752427b89112bf786a0ac4014c59cfc55cdb77f8643e0b5"
+    },
+    {
+      "path": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/test-results/e2e/retry.json",
+      "bytes": 649,
+      "sha256": "78cbb09ecc6852721f0971ef5907fea3790862edfee0ae72065dcc667ad9ba48"
+    },
+    {
+      "path": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/test-results/e2e/reversal.json",
+      "bytes": 648,
+      "sha256": "8cf1deca76f321afc4d2ba1d4ce4148d53d7a540dfb0deaf7ba2962cb6ae8e1b"
+    },
+    {
+      "path": "/Users/admin/.codex/worktrees/fnd01-reconciliation/openERP/test-results/e2e/worker.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "limits": [
+    "Nineteen passing existing cases do not establish all E-01–E-21 scenarios.",
+    "No full correction-bundle rollback/concurrency, partial-allocation, commerce, closing, restore, provider or real-company acceptance was added.",
+    "Migration rerun proof does not establish old-populated-schema upgrade.",
+    "Concurrent main-checkout adapter/UI changes are excluded from this fixed-revision result.",
+    "Runtime-grant inventory is declaration-based; existing tests exercise selected write denials, not every pg_catalog privilege."
+  ]
+}

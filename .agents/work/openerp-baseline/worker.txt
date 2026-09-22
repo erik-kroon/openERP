@@ -1,0 +1,33 @@
+
+ ⛅️ wrangler 4.136.2
+────────────────────
+Wrangler detected this dev session is running in an AI agent.
+The Local Explorer API is available at http://localhost:18788/cdn-cgi/local/explorer/api
+Useful routes:
+  GET http://localhost:18788/cdn-cgi/local/explorer/api/local/workers - local Workers and bindings
+  GET http://localhost:18788/cdn-cgi/local/explorer/api/storage/kv/namespaces - KV namespaces
+  GET http://localhost:18788/cdn-cgi/local/explorer/api/d1/database - D1 databases
+  GET http://localhost:18788/cdn-cgi/local/explorer/api/r2/buckets - R2 buckets
+  GET http://localhost:18788/cdn-cgi/local/explorer/api/workers/durable_objects/namespaces - Durable Object namespaces
+  GET http://localhost:18788/cdn-cgi/local/explorer/api/workflows - Workflows
+  POST http://localhost:18788/cdn-cgi/local/explorer/api/local/observability/query - run a read-only SQL query (SELECT/WITH only) over captured request traces and console logs. Tables: spans, logs (read attributes via json(attributes)). Example:
+    curl -X POST http://localhost:18788/cdn-cgi/local/explorer/api/local/observability/query -H 'Content-Type: application/json' -d '{"sql":"SELECT service, name, outcome, duration_ms FROM spans WHERE parent_id IS NULL LIMIT 20"}'
+  POST http://localhost:18788/cdn-cgi/local/explorer/api/local/observability/clear - clear all captured traces and logs
+If the routes above don't cover what you need, fetch the full OpenAPI schema (large - use only as a last resort):
+  GET http://localhost:18788/cdn-cgi/local/explorer/api - OpenAPI schema
+⎔ Starting local server...
+[wrangler:info] Ready on http://localhost:18788
+[14:04:18.765] INFO (#3) http.span=1ms: Sent HTTP response { 'http.method': 'GET', 'http.url': '/api/health', 'http.status': 200 }
+[wrangler:info] GET /api/health 200 OK (27ms)
+[14:04:18.798] INFO (#4) http.span=1ms: Sent HTTP response {
+  'http.method': 'GET',
+  'http.url': '/api/v1/system',
+  'http.status': 200
+}
+[wrangler:info] GET /api/v1/system 200 OK (2ms)
+[14:04:18.819] INFO (#5) http.span=2ms: Sent HTTP response {
+  'http.method': 'GET',
+  'http.url': '/api/openapi.json',
+  'http.status': 200
+}
+[wrangler:info] GET /api/openapi.json 200 OK (4ms)
