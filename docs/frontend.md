@@ -1,6 +1,6 @@
 # Customer frontend plan
 
-Status: working design, 2026-09-22. This specifies the customer application; it does not claim the new routes, queues or audience views are implemented. [ADR 0006](adr/0006-customer-workspaces.md) records the choice. Accounting behavior and release gates remain owned by the [area plans](plans/README.md) and [open decisions](open-decisions.md).
+Status: working design and implementation record, 2026-09-22. The implementation section distinguishes delivered surfaces from the remaining customer application. [ADR 0006](adr/0006-customer-workspaces.md) records the choice. Accounting behavior and release gates remain owned by the [area plans](plans/README.md) and [open decisions](open-decisions.md).
 
 Build one application around the work people need to finish. Founders start with decisions and business position. In-house finance starts with the work queue. Accountants working across clients start with a portfolio and enter the same company workspace. Every view opens the same evidence, revisions, approvals and receipts.
 
@@ -26,17 +26,15 @@ Customer quality, implemented behavior and verified accounting behavior are sepa
 
 Apply **better-layout**, **make-interfaces-feel-better** and **better-ui**, together with the repository's software-engineering guidance. Better-layout replaces taste at the user's request. Preserve StyleX, existing tokens, Inter/system fonts, Lucide, Base UI, TanStack Start/Router/Query and the owned table components. Do not introduce a second design system or animation dependency.
 
-Accounted is the reference for customer workflows and information hierarchy. Its source contains a real customer frontend, including company navigation, a to-do home, pending approvals, reconciliation and an accounting-firm cockpit. The reference is the inspected revision `f7d326689cd03e08f78da46f471597e1e859f2d9`, not a claim about the current deployed service or full feature parity.
+Build the customer interface around grouped company navigation, a to-do home, structured review, account reconciliation and a firm portfolio. Each screen must expose supported operations and make its data coverage clear.
 
-| Accounted reference | Carry into OpenERP | Adapt to our boundaries |
+| Surface | Customer purpose | Implementation boundary |
 | --- | --- | --- |
-| [Company navigation](https://github.com/erp-mafia/accounted/blob/f7d326689cd03e08f78da46f471597e1e859f2d9/components/dashboard/nav-v2.ts) | Familiar areas for bank accounts, sales, purchases, bookkeeping and reports | Expose a destination when its underlying workflow is available; do not copy unsupported payroll, payment or filing actions |
-| [Company home](https://github.com/erp-mafia/accounted/blob/f7d326689cd03e08f78da46f471597e1e859f2d9/app/%28dashboard%29/page.tsx), [to-do section](https://github.com/erp-mafia/accounted/blob/f7d326689cd03e08f78da46f471597e1e859f2d9/components/dashboard/AttGoraSection.tsx) | Work first, with reasons and a useful next action | Incomplete sources and unavailable domains must remain visible, even when the queue is empty |
-| [Pending approvals](https://github.com/erp-mafia/accounted/blob/f7d326689cd03e08f78da46f471597e1e859f2d9/app/%28dashboard%29/pending/page.tsx) | Structured proposals, evidence and review | Preserve OpenERP's immutable revision, exact effect, distinct authority and receipt recovery |
-| [Reconciliation workspace](https://github.com/erp-mafia/accounted/blob/f7d326689cd03e08f78da46f471597e1e859f2d9/components/reconciliation/ReconciliationWorkspace.tsx) | Account overview followed by a focused account flow; selection in the URL | Begin with supported statement imports and existing allocations; distinguish imported coverage from a live bank balance |
-| [Firm cockpit](https://github.com/erp-mafia/accounted/blob/f7d326689cd03e08f78da46f471597e1e859f2d9/app/%28dashboard%29/byra/page.tsx) | Client overview, urgency and explicit drill-in | Requires real firm/client membership and scoped summaries; a list of accessible books is not sufficient |
-
-Use the workflow patterns as design evidence. Reuse of external code or assets would require the source and terms review already owned by D-08. This plan imports neither.
+| Company navigation | Familiar areas for bank accounts, sales, purchases, bookkeeping and reports | Expose a destination when its underlying workflow is available; omit unsupported payroll, payment or filing actions |
+| Company home | Work first, with reasons and a useful next action | Incomplete sources and unavailable domains must remain visible, even when the queue is empty |
+| Pending approvals | Structured proposals, evidence and review | Preserve immutable revisions, exact effects, distinct authority and receipt recovery |
+| Reconciliation workspace | Account overview followed by a focused account flow; selection in the URL | Begin with supported statement imports and existing allocations; distinguish imported coverage from a live bank balance |
+| Firm portfolio | Client overview, urgency and explicit drill-in | Requires real firm/client membership and scoped summaries; a list of accessible books is not sufficient |
 
 ### What exists here
 
@@ -267,7 +265,7 @@ These are frontend delivery slices, not replacements for the existing accounting
 
 FE-01 and FE-02 form the first customer-facing milestone. FE-03 and FE-04 progressively cover the current accounting tools. FE-05 completes the promised multi-client audience. Visual polish is part of every slice; FE-06 verifies integration rather than postponing accessibility to the end.
 
-No reliable calendar estimate follows from route counts. FE-01 mostly reorganizes supported behavior; FE-02 and FE-05 introduce material read-model and identity work. VAT, payroll, bank feeds, invoice issuance/delivery and external filing remain domain projects with their own acceptance gates. Frontend completion cannot establish Accounted feature parity by itself.
+No reliable calendar estimate follows from route counts. FE-01 mostly reorganizes supported behavior; FE-02 and FE-05 introduce material read-model and identity work. VAT, payroll, bank feeds, invoice issuance/delivery and external filing remain domain projects with their own acceptance gates. Frontend completion does not establish those domain capabilities.
 
 ## Acceptance and verification
 
@@ -288,10 +286,10 @@ Retain a run manifest with commit and dirty-tree identity, environment, syntheti
 
 ### Source inspection and remaining proof
 
-Planning coverage includes the current route/composition and shared workspace, data grid, buttons, tabs, links and tokens, plus the pinned Accounted files above. Typography has existing smoothing and tabular-number support; surfaces have owned light/dark and elevation tokens; motion inspection found existing press/reduced-motion handling and a 250ms tab indicator; icons use the installed Lucide base. Performance was assessed structurally, not timed.
+Planning coverage includes the current route/composition and shared workspace, data grid, buttons, tabs, links and tokens. Typography has existing smoothing and tabular-number support; surfaces have owned light/dark and elevation tokens; motion inspection found existing press/reduced-motion handling and a 250ms tab indicator; icons use the installed Lucide base. Performance was assessed structurally, not timed.
 
 Two concrete component changes to carry into FE-01 are real-link support at the navigation boundary (`packages/ui/src/components/workspace.tsx`, `WorkspaceNavItem`, and the app's current section navigation) and optional static button feedback (`packages/ui/src/components/button.tsx`). Review tab-indicator motion (`packages/ui/src/components/tabs.tsx`) as the new high-frequency workspace consumes it. These are planned changes, not observed browser regressions.
 
-Rejected changes: replacing the font/design system, animating recurring work-list entrances, giving every row a card, copying Accounted's framework, and treating a frontend audience selector as authorization. Each adds inconsistency or complexity without serving these workflows.
+Rejected changes: replacing the font/design system or application stack, animating recurring work-list entrances, giving every row a card, and treating a frontend audience selector as authorization. Each adds inconsistency or complexity without serving these workflows.
 
-The earlier interactive audience sketches use fictional data and illustrate the discussion. They are neither Accounted screenshots nor verification of the proposed application. New routes, responsive layouts, actual 200% zoom, RTL, both themes, assistive behavior, slowed motion and performance are **Not verified** for this plan. Implementation acceptance remains open until the evidence above exists.
+The earlier interactive audience sketches use fictional data and illustrate the proposed workflows. They do not verify the application. New routes, responsive layouts, actual 200% zoom, RTL, both themes, assistive behavior, slowed motion and performance are **Not verified** for this plan. Implementation acceptance remains open until the evidence above exists.

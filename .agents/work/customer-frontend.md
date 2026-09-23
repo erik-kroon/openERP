@@ -52,3 +52,9 @@ The actual source → decimal journal → immutable review → approval → post
 No full frontend completion claim. FE-01 has its first full successful posting journey; denial/race/recovery and broad accessibility/theme checks remain. FE-02 has the authoritative journal projection and working filtered queue, while the founder overview remains basic. FE-03 through FE-06 remain. More tools still exposes the old composition and is not the intended final customer interface.
 
 Additional integration repair: two new VAT SelectField consumers used unsupported `onChange`; changed only those callbacks to the existing `onValueChange` contract. Other concurrent domain work is preserved. Full web/UI lint currently fails in other newly added VAT/invoice files; focused checks and web/UI types pass, and the production build passes.
+
+## Company workspace implementation
+
+The company frame, grouped navigation, task home, voucher register and journal modal use the existing stack and OpenERP's palette/fonts. The current working decision and route coverage are recorded in docs/frontend.md and ADR 0006. The verified scope covers the journal-to-review flow and narrow layouts; the older domain forms still need customer-facing workflow work.
+
+The isolated preview remains on web 3106 / worker 18789 / PG 63180. It preserves the original A1 voucher and one newly prepared, unapproved 10.00 SEK proposal. New invoice drafts/VAT pages were not promoted into the new navigation because migration 0940's checksum mismatch correctly blocks the old preview schema's upgrade. Do not rewrite the receipt or weaken the migrator. The shared backend restructure and commit happened concurrently; preserve those changes. No tests were added or modified, and this task did not create a commit or deploy.
