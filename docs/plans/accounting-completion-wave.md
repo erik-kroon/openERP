@@ -99,3 +99,17 @@ Both migrations are source-reviewed only, unapplied and runtime-unverified. No t
 Forward `2800-preparation-identity-admission.sql` carries the identity-disable rule into durable preparation jobs. Provisioning revokes browser sessions, but can leave an API credential and book membership intact; those alone no longer authorize another queued step for a disabled submitter. Delivery checks the original identity admission between credential/session and membership/book locks. An existing admission row remains locked through the step; an absent row keeps the authentication layer's legacy behavior. Authorized replacement admission can also recognize the disabled original submitter without reversing lock order.
 
 No new posting, identity-management or run-resume authority is introduced. Existing checkpoints, terminal replay and saved receipts remain intact. Migration2800 is source-only, unapplied and runtime-unverified; concurrent identity provisioning and historical migrations were not changed.
+
+## Supplier-invoice duplicate diagnostics
+
+The [COM-01 diagnostic lookup](04-invoices-payments-registers.md#supplier-invoice-duplicate-diagnostics)
+is implemented through shared contracts, REST/MCP dispatch and forward
+`3000-supplier-invoice-duplicates.sql`. It pages same-supplier registrations matching
+an exact document number or original evidence content, with explicit reasons and
+live invoice details. It does not merge records, post, relax registration guards
+or claim source completeness. Other suppliers and customer invoices are excluded.
+
+API/contracts type checks and targeted type-aware lint/format checks passed for
+this follow-up. No tests were added or run. The migration remains unapplied;
+SQL/runtime acceptance and broader COM-01 work remain open. Concurrent sales and
+frontend work was preserved.

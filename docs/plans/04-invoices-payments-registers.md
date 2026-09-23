@@ -91,3 +91,33 @@ This does not establish legally active VAT/rounding profiles, verified legal ide
 The [invoice-issuance handoff](../../apps/api/INVOICE-ISSUANCE.md) records forward1400 and its shared API/read-capability/UI integration. A current operator reviews an exact draft revision and explicit accounts, approves, then atomically commits kernel recognition, an internal SYN number, customer registration and an immutable issue receipt. Owned retained evidence cannot be posted separately merely by changing its event key. Issued draft heads are frozen; live issue history, not old draft flags, controls the selected-record editor.
 
 This supports only the explicit synthetic profile and evidenced zero asserted tax. `issued` and `recognized` are true on the committed synthetic receipt; `legalInvoice` and `delivered` remain false. It does not establish legal identity/numbering, activate VAT, send an invoice or support issue corrections. The forward migration remains unapplied and runtime-unverified. COM-02 and COM-05 acceptance remain open.
+
+## Supplier-invoice duplicate diagnostics
+
+Forward `3000-supplier-invoice-duplicates.sql` adds a read-only COM-01 subset through
+`GET /v1/entities/:entityId/books/:bookId/commerce/supplier-invoice-duplicates`
+and the shared MCP capability `commerce_supplier_invoice_duplicates`.
+
+Supply `counterpartyId`, `documentNumber` and retained `evidenceId`; pass `after`
+from `next` to continue with unchanged criteria. Each page returns at most 50
+registered supplier invoices with the same supplier and either the exact,
+case-sensitive document number or the original evidence SHA-256. Each candidate
+includes its match reasons, retained original evidence and recognition link,
+current metadata, outstanding amount and live blockers. A metadata revision's
+supporting evidence does not replace the original evidence identity.
+
+Current book authorization runs before lookup. A missing/non-supplier counterpart
+or evidence outside that book refuses the request. Customer invoices and other
+suppliers are excluded, even if their names or document numbers match. Blocked or
+corrected registrations remain visible. No record is merged, revised or posted;
+the existing transactional registration uniqueness checks remain authoritative.
+
+This is a live diagnostic read, not a saved review, duplicate verdict, reservation
+or permission to register. Pages can observe later registrations and changed live
+status; restart the lookup for a fresh review. Empty results do not establish source
+completeness. Coverage is explicitly `registered_supplier_invoices_only`: no
+unregistered documents, inferred supplier aliases, fuzzy number matching or
+cross-book search. Separate source occurrences are not inferred from equal bytes.
+The migration is unapplied and SQL/runtime behavior remains unverified. API and
+contract type checks, targeted type-aware lint and formatting checks passed for
+this working-tree implementation. No tests were added or run.
