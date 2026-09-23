@@ -9,7 +9,7 @@ Status: remaining configuration, company facts, authority and proof gates. Techn
 | D-03 | Independent vectors and compatibility proof for selected paired amounts, decimal bounds and existing/new canonicalization versions.                                                                                                                                                                                        | Contract owner; exact expected byte/hash/rounding cases across actual runtimes.                 | Accepting affected sealed-plan compatibility and monetary contracts as verified. | Preserve existing immutable interpretation; implement selected admission rules.                                              |
 | D-04 | Actual legal entity, fiscal year, accounting/VAT methods, registrations, K2/K3 applicability, currencies, payroll and source coverage.                                                                                                                                                                                     | Owner/accounting records; primary-source rule review where needed.                              | Real-company fixtures, period readiness or statutory claims.                     | Explicitly synthetic local scenarios.                                                                                        |
 | D-05 | Generated contract/capability inventory, supported MCP version/transport and observed parity for retained routes and selected new error/recovery contracts.                                                                                                                                                                | Contract integrator using actual UI, REST, MCP and job callers.                                 | Advertising an affected public capability and P1 transport parity.               | Existing compatible operations and owned contract additions.                                                                 |
-| D-06 | Actual previous bookkeeping source/version, export shape, matched material, permitted data use and full-history versus reduced-history cutover.                                                                                                                                                                            | Owner-supplied source inventory and isolated import inspection.                                 | P2 actual import; any legacy adapter.                                            | Native kernel and synthetic import examples after test approval.                                                             |
+| D-06 | Actual previous bookkeeping source/version, export shape, matched material, permitted data use and full-history versus reduced-history cutover.                                                                                                                                                                            | Owner-supplied source inventory and isolated import inspection.                                 | P2 actual import; any previous-system adapter.                                            | Native kernel and synthetic import examples after test approval.                                                             |
 | D-07 | Database/object hosting, archive location/retention/access, backup, recovery targets and deployment authority.                                                                                                                                                                                                             | Operator and owner; applicable rule/source review.                                              | Real retained records, hosted deployment or production readiness.                | Portable adapters and local restore design.                                                                                  |
 | D-08 | Current applicable Swedish rules, charts, schema/taxonomy versions, fixture provenance and any reused code/data terms.                                                                                                                                                                                                     | Module implementer plus accounting/domain review and primary evidence.                          | Advertising the affected scenario as supported.                                  | Core arithmetic, provenance and explicit unsupported states.                                                                 |
 | D-09 | Explicit scope for any new test/fixture changes; existing implementation-task authorization must be read in context.                                                                                                                                                                                                       | User, as required by [AGENTS.md](../AGENTS.md); implementing task records its actual authority. | Adding or extending tests outside already authorized scope.                      | Documentation and existing permitted checks. This plan adds no tests and neither broadens nor revokes earlier authorization. |
@@ -17,7 +17,7 @@ Status: remaining configuration, company facts, authority and proof gates. Techn
 
 ## Resolved for the working design
 
-The repository settles the Effect major, application names, shared schemas and styling system ([ADR 0001](adr/0001-checkout-runtime-and-accounting-boundary.md)). The accounting design uses one PostgreSQL authority, exact minor-unit posting values, sealed approval and transactional receipts ([ADR 0002](adr/0002-exact-posting-and-approval.md)), plus a native target without a speculative legacy bridge ([ADR 0003](adr/0003-native-accounting-and-migration.md)). [ADR 0004](adr/0004-complete-accounting-delivery-contract.md) retains implemented paired amounts and digest compatibility, chooses Effect/domain versus SQL ownership, source-occurrence separation, production admission shape and physically fenced first cutover. These working choices do not resolve actual company/provider facts or substitute for proof.
+The repository settles the Effect major, application names, shared schemas and styling system ([ADR 0001](adr/0001-checkout-runtime-and-accounting-boundary.md)). The accounting design uses one PostgreSQL authority, exact minor-unit posting values, sealed approval and transactional receipts ([ADR 0002](adr/0002-exact-posting-and-approval.md)), plus a native target without a speculative previous-system bridge ([ADR 0003](adr/0003-native-accounting-and-migration.md)). [ADR 0004](adr/0004-complete-accounting-delivery-contract.md) retains implemented paired amounts and digest compatibility, chooses Effect/domain versus SQL ownership, source-occurrence separation, production admission shape and physically fenced first cutover. These working choices do not resolve actual company/provider facts or substitute for proof.
 
 When closing a decision, record the chosen behavior, rejected alternative, evidence and affected verification scenarios. Do not mark a question resolved merely because an example file contains a value.
 
@@ -45,7 +45,6 @@ policy also need explicit choices when those cases enter scope. These are contra
 review decisions in addition to actual-company legal activation. No financial FX migration
 or endpoint was added. Existing manual rate reviews and independent backend work continue.
 
-
 ## Cross-register line references do not establish role exclusivity
 
 Source inspection found that a retained subledger carrying-basis line and a tax-account
@@ -56,3 +55,24 @@ The overlap is not, by itself, evidence of duplicate posting. Public read views 
 exact related records for review, but this does not change matching/posting eligibility or
 assess role compatibility. A future exclusivity policy requires an explicit contract choice
 and both-direction admission plus existing-record handling; no such policy is selected here.
+
+## Interim impairment posting contract
+
+AST-03 partial impairment is not defined by the existing acquisition, recognition or terminal
+no-proceeds disposal roles. Before implementation, explicitly select:
+
+1. The credited role: existing accumulated recognition, a separate impairment contra account,
+   or specified gross basis lines. Also define the operator-supplied loss account and eligibility.
+2. Whether the financial effect and a reviewed positive future reallocation commit atomically,
+   or recognition becomes explicitly blocked until a separate estimate is approved.
+3. The supported correction/reversal policy, consumed-history guards and repeated-effect bound.
+
+Original carrying cost `C = G - O` must stay immutable. With ordinary recognition `R`, effective
+impairment `I`, future installments `F` and residual `S`, the selected profile must enforce
+`R + I + F + S = C`. Impairment cannot be hidden in ordinary recognition or a changed original
+cost. Controls and disposal must consume the owned effect and its selected account roles.
+These are financial contract choices, not permission to infer actual-company facts or activate
+legal treatment. No impairment posting profile or migration has been selected.
+
+See the [source feasibility review](../apps/api/SUBLEDGER-IMPAIRMENT-FEASIBILITY.md) for the
+concrete carrying-value witness, alternative credit-role equations and required consumers.

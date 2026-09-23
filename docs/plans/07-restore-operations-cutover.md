@@ -105,7 +105,7 @@ Source/static implementation is distinct from pending OPS-03 runtime/concurrency
 The existing backup/restore evidence control now distinguishes the exact saved posting
 request command column from committed records. Pending/refused input may name unavailable
 evidence only when no non-refused outcome and no same-book reserved-key command receipt
-exist. A legacy kernel call can commit before recording an outcome, so absence of an outcome
+exist. A original kernel call can commit before recording an outcome, so absence of an outcome
 alone never selects the exemption. All other evidence owners remain strict. Counts, raw
 history, fingerprints, dumps, external-pointer refusal and quarantine gates are unchanged.
 See [the failure contract](../operations/recovery-acceptance.md#saved-posting-intent-evidence-closure--failure-contract-before-implementation).

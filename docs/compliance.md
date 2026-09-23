@@ -33,7 +33,7 @@ A restore includes the database, original evidence, matches, approvals, correcti
 
 ## Company migration
 
-[ADR 0003](adr/0003-native-accounting-and-migration.md) defines native accounting and the company migration boundary. No actual legacy accounting connection or company export has been established. Establish the actual source/version and data-use permission before choosing an adapter ([D-06](open-decisions.md)).
+[ADR 0003](adr/0003-native-accounting-and-migration.md) defines native accounting and the company migration boundary. No actual previous accounting-system connection or company export has been established. Establish the actual source/version and data-use permission before choosing an adapter ([D-06](open-decisions.md)).
 
 The preferred migration is an isolated full available history import with source IDs and relationships, followed by independent reconciliation. Preserve official voucher references, historical inline/reversal corrections, prior filing artifacts, unpaid items, schedules, period locks and receipt matches. Missing historical semantics remain labeled unresolved. Old source approvals do not authorize newly interpreted target plans.
 

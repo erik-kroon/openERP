@@ -143,7 +143,7 @@ Evidence: `.cache/customer-frontend/invoice-undo-proof.json`, `undo-proof-before
 Next implementation: draft save recovery, revision conflicts and unsaved-close. `EvidenceCommandForm` currently retains the draft's final command only in component state and keeps its input builder in a closure; the source operation has its own durable owner, but a reload loses the final draft request. `DraftEditor` and its parent dialogs have no dirty-close handling. Preserve entered facts, authoritative revision/digest checks and exact-request retries when addressing these gaps. The fuller register, downloadable invoice artifact, remaining failure observations and visual acceptance still prevent Sales acceptance. All later journeys remain open.
 
 
-Final undo verification: `bun run lint`, full `bun run check-types` (including web build/prerender, infra and existing API test type checks), `bun run build`, and `git diff --check` passed. Logs: `undo-final-lint.log`, `undo-final-types.log`, `undo-final-build.log` in `.cache/customer-frontend`. The refreshed-review capture was visually inspected: named invoice, formatted balances, full effect and primary action are visible together. Removed unused legacy compact-mode/copy branches after moving the owning review. No test files added. Current task tab 10 is at the filtered Sales register and retained for continuation; other tasks/previews remain untouched.
+Final undo verification: `bun run lint`, full `bun run check-types` (including web build/prerender, infra and existing API test type checks), `bun run build`, and `git diff --check` passed. Logs: `undo-final-lint.log`, `undo-final-types.log`, `undo-final-build.log` in `.cache/customer-frontend`. The refreshed-review capture was visually inspected: named invoice, formatted balances, full effect and primary action are visible together. Removed unused compact-mode/copy branches after moving the owning review. No test files added. Current task tab 10 is at the filtered Sales register and retained for continuation; other tasks/previews remain untouched.
 
 ### Draft editing — failure contract before implementation
 
@@ -226,3 +226,37 @@ Remaining core work: multi-entry selection and contextual undo/report completion
 Further observations in this checkpoint: statement import opens from the selected account and closing its upload dialog preserves the account/date URL, with a return-to-account action. To do → overdue invoices opened the one overdue invoice register; selecting SYN-2 retained its overdue/due-date view and showed 400 SEK matched and 550 SEK outstanding. The bank matching operation did not mark that invoice paid. Posted-voucher inspection now uses one full-width debit/credit table and collapsible evidence instead of repeated headings and a narrow stacked review table.
 
 Read-only snapshot: `bun .cache/customer-frontend/bank-home-observation.ts` refreshes `bank-home-observation.json` from the authorized local APIs. This supplements the browser walkthrough and does not replay mutations. Verification: `bun run lint`, `bun run check-types`, `bun run build`, and both staged/unstaged `git diff --check` passed. Logs: `banking-home-final-lint.log`, `banking-home-final-types.log`, `banking-home-build.log`. The shared checkout was committed by another task during this work; this task did not create a commit or push.
+
+
+## Tax layout and everyday review — 23 September 2026
+
+This pass addresses the tax and expense review screens. Short choices use an owned native radio control; variable source lists and the longer treatment list remain selects. VAT entry groups source/amounts and assessment side by side, accepts decimal currency amounts, and saves entered assessment evidence through the existing command owner. A new manual source may cite existing evidence through the optional references section; imported expense sources retain their identity and revision digests. Unknown eligibility is not inferred from imported amounts. Decimal fields use aligned tabular numerals. The expense original stays beside the scrolling review form.
+
+VAT facts, VAT drafts and saved expense reviews have record URLs. Saved expense periods have a dedicated list and compact creation dialog. Revision selection is a visible list, and the current expense assessment is readable immediately after saving. VAT detail leads with totals and dates; draft calculations and unresolved controls share a row. Technical references remain available separately. No new tests, dependencies, commits or deployments were made by this pass.
+
+Observed through the real local desktop application (Swedish, 1600 × 900):
+
+- A manual synthetic VAT record saved decimal input `1000,00 + 250,00 = 1250,00` as exact minor values `100000`, `25000`, `125000`; its detail reopened after reload.
+- A September synthetic VAT draft saved and opened its record URL. Unknown other boxes remained unknown and box 49 remained unavailable.
+- The retained demo receipt was reviewed through the visible registration/method/profile/rounding choices. The source detail changed to Reviewed and retained revision 2.
+- A September expense period review saved with one included synthetic source, `100000` total minor units and `20000` VAT minor units, displayed as 1,000.00 and 200.00 SEK.
+- The current reviewed expense prefills and saves as a linked VAT fact; amounts, source identity, source/review digests and explicit unknown eligibility survive the command.
+
+Repeatable read-only observation: `bun .cache/customer-frontend/tax-layout-observation.ts`, output `tax-layout-observation.json`. Screenshots: `tax-assessment-editor.png`, `tax-period-editor.png`, `tax-assessment-detail.png`, `tax-draft-detail.png`, `expense-assessment-editor.png`, `expense-period-review.png`. These are synthetic local observations, not production acceptance. The existing local preview lacked expense withdrawal, VAT lineage and snapshot-list overload migrations; the checked-in migrations were applied with receipts so current reads decode correctly. The general local migration sweep encountered a separate pre-existing subledger migration conflict; no migration source or receipt was rewritten.
+
+Scope of layout/polish inspection: the desktop tax entry, saved fact/draft, expense review and saved-period journeys in React/StyleX. Inspected grouping, action placement, field density, selected states, numeric alignment, loading and saved states. Motion was not added; no animation timing review was needed. Mobile, RTL and 200% zoom were not verified in this implementation-focused pass. The wider frontend acceptance remains open; this pass does not establish full application parity or production company readiness.
+
+Verification completed: `bun run lint`, `bun run check-types`, `bun run build`, and staged/unstaged `git diff --check` passed. Logs are `tax-polish-final-lint.log`, `tax-polish-final-types.log`, and `tax-polish-final-build.log`. The sticky original remained visible while the dates/reasoning portion scrolled; `expense-review-sticky-source.png` records that state. The selected saved draft correctly became stale after the later linked fact was added; its captured basis and unavailable box 49 remained unchanged.
+
+Layout/polish decisions in this scope:
+
+| Principle | Before | Implemented result |
+| --- | --- | --- |
+| Group related work | One long VAT field column, internal identifiers mixed with amounts | Source/amounts and assessment columns; dates grouped; optional references separate |
+| Make short choices visible | Registration, method, profile and mode require opening menus | Native radio choices show the alternatives and selected state |
+| Put the next action beside its context | Edit below the full VAT detail; create snapshot nested below expenses | Edit at the record heading; saved periods have their own page and creation dialog |
+| Preserve useful context | Original scrolls out of expense review | Original remains beside dates and assessment while scrolling |
+| Make amounts readable | VAT inputs require integer minor units; period totals display raw integers | Decimal entry, exact retained minor units, aligned tabular figures and currency-unit period totals |
+| Flatten history | Nested revision disclosures and record-navigation chevrons | Visible revision selectors and ordinary record buttons with dedicated URLs |
+
+Considered and rejected: turning the full expense treatment list into radio cards would crowd the review column; long source/treatment lists remain selects. Adding animation to every selection would add repeated visual noise; selected borders/backgrounds provide immediate feedback. Changing the global palette or typography was outside this pass.

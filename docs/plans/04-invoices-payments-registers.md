@@ -132,3 +132,27 @@ unallocation and the physical fence remain unchanged; no account-role policy is 
 See [commerce admission](../../apps/api/COMMERCE-TAX-RESERVATION-ADMISSION.md).
 Independent source review found no actionable blocker. SQL execution and concurrent behavior
 remain unverified.
+
+### Consumed payment-allocation approval recovery
+
+Forward6500 makes committed allocation reads return the exact approval referenced by their
+retained application, not a newer unused approval for the same plan. It follows the receipt
+FK and checks book, plan, digest and saved-body linkage; inconsistent history refuses rather
+than selecting a substitute. Expiry and later unallocation do not erase the consumed approval.
+Uncommitted plans keep their previous latest-approval selection. Writes, capacity, currentness,
+replay, grants, schemas and UI are unchanged.
+
+Root and independent source review found no blocker. Shared backend/web type checks and
+targeted lint passed. The SQL is unapplied and runtime-unverified. See
+[commerce](../../apps/api/COMMERCE.md).
+
+### Consumed owner-allocation approval recovery
+
+Forward6600 applies the same exact-history repair to `owners_get_allocation`: an applied plan
+returns its receipt-linked consumed approval, with exact book/plan/digest/body checks and no
+substitute on inconsistent history. Pending selection, currentness, immutable owner effects,
+account partitions, capacity, replay and write guards are unchanged. Historical expiry or
+role loss does not erase the consumed approval or grant new authority. Root and independent
+source review found no blocker. No TypeScript changed after the last shared static checkpoint;
+SQL compilation/application and runtime behavior remain unverified. See
+[owner register](../../apps/api/OWNER-REGISTER.md).

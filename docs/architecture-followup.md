@@ -13,7 +13,7 @@ This compares the third supplied architecture package and the subsequent open-ac
 | Frozen bulk-import manifest and exclusive progress fence                                                           | Chunk identities and leases already exist in the import plan; make competing-writer exclusion and fixed membership explicit. General historical import remains planned.                                          |
 | Signed journal amounts and proposed alternate API/package names                                                    | Do not adopt: ADR 0004 reconciles the existing paired debit/credit contract and existing callers. Preserve sealed-record interpretation.                                                                         |
 | Newer Effect source version, broader schemas and money example                                                     | Reference material only. Keep the installed Effect version, owned Effect contracts and existing precision guards. No reference module or tests are imported wholesale.                                           |
-| Assume a live legacy migration                                                                                     | Keep conditional on the actual source/version and company inputs, as required by the native-accounting migration ADR.                                                                                            |
+| Assume a live previous-system migration                                                                                     | Keep conditional on the actual source/version and company inputs, as required by the native-accounting migration ADR.                                                                                            |
 
 ## Open-accounting setup
 

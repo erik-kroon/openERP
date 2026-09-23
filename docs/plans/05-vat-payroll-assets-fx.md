@@ -266,7 +266,7 @@ Forward5200 adds an optional exact source filter to the existing expense snapsho
 A fixed25-snapshot window is scanned before membership filtering, so empty items can still
 have a continuation. The cursor binds scope, source and captured ceiling; scan progress is
 explicit. Saved v1/v2 assessments/revision/review/withdrawal identities are copied without
-live recalculation. Legacy absent withdrawal metadata stays absent. Unfiltered requests
+live recalculation. Previously absent withdrawal metadata stays absent. Unfiltered requests
 keep0710 summaries and cursors. See
 [expense snapshot membership](../../apps/api/EXPENSE-SNAPSHOT-MEMBERSHIP.md).
 Source is integrated and backend type checks pass. Independent source review found no
@@ -292,8 +292,8 @@ integrated; source/static review is separate from unperformed runtime verificati
 Forward6100 extends the existing operator estimates command, without a new endpoint or
 financial policy. Different-count requests emit `remaining_lifetime_v1`: every replacement
 future occurrence receives a fresh never-reused key, while the posted/full-reversed prefix,
-original carrying basis and accounts remain unchanged. All removed and replacement entries
-must be future/open and unposted. Net recognized plus positive future amounts plus residual
+original carrying basis and accounts remain unchanged. Every old suffix entry, including
+removed ordinals, and every replacement must be future/open and unposted. Net recognized plus positive future amounts plus residual
 must equal retained carrying cost. `usefulPeriods` is the current slot count, not a legal
 useful-life recommendation.
 
@@ -308,3 +308,42 @@ jurisdiction and web type checks passed; targeted contract lint reported zero wa
 No tests, SQL compilation/application, runtime, concurrency or actual-company validation were
 performed. Fully posted reopening, zero cessation, impairment, proceeds and automatic/legal
 lifetime policy remain unsupported. See the [complete contract and handoff](../../apps/api/SUBLEDGER-ESTIMATE-AMENDMENTS.md).
+
+### Interim impairment remains a contract decision
+
+The [impairment feasibility review](../../apps/api/SUBLEDGER-IMPAIRMENT-FEASIBILITY.md)
+identifies an actual posting/control gap, but existing recognition and terminal disposal
+roles do not select an interim impairment credit role. Credit/loss account eligibility,
+atomic future reallocation versus an explicit recognition block, and correction/repetition
+policy must be selected first. An amount-only annotation or unrelated manual journal would
+leave controls and disposal wrong; neither is an implementation substitute. No impairment
+profile, migration, endpoint or posting authority has been added. Other backend work continues.
+
+### Resolve an unknown tax-account event
+
+Forward6700 adds an evidenced operator resolution for an originally `unknown` retained event.
+The event can receive one existing non-unknown classification; known events cannot be revised
+through this command. Original statement/event bytes, dates, amounts, accounts and source
+identity stay unchanged. A scoped GET and read-only MCP capability expose the original event,
+its resolution and effective classification. Resolution mutation is operator-only REST.
+
+Matching uses the effective classification and pins the immutable resolution reference without
+changing capacity, unmatch or correction guards. New v3 controls use effective unknown IDs and
+capture compact resolution references. Relevant control/closing dependencies change when a
+resolution exists; untouched accounts/books retain their prior dependency shape. Old controls,
+statements and successful-key replay remain historical. No financial posting, legal role,
+coverage or financial-close readiness is inferred.
+
+The one-shot inventory is bounded at1000/book. Backend/web type checks and targeted lint passed;
+SQL compilation/application and runtime behavior remain unverified. See
+[classification resolution](../../apps/api/TAX-ACCOUNT-CLASSIFICATION.md).
+
+Forward6800 adds a live unresolved-event worklist for the classification command. A scoped
+REST GET and read-only MCP capability scan50 retained event identities before filtering their
+effective classifications. Bound book/account cursors advance by the last examined event;
+empty result pages may still continue, and resolved anchors remain valid. No control artifact,
+receipt or financial state is created. This is not a frozen inventory or completeness claim.
+Backend/contracts/jurisdiction type checks and targeted lint pass. The current web type check
+is blocked by separate invoice UI pagination edits (`after`, `pageParam`, `Pager`, `setAfter` in
+`apps/web/src/components/commerce/invoices.tsx`); those files were not changed by this slice.
+SQL and runtime behavior remain unverified.

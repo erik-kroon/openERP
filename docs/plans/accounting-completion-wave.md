@@ -42,7 +42,7 @@ The user authorized implementation across selected domains without focusing on b
 | Asset schedules           | Evidence-backed acquisition/imported carrying basis and immutable declared-account GL controls                               | `1500-subledger-controls.sql`             |
 | Closing/review dependency | Whole asset-control dependency, mandatory coverage blockers, historical decoding and accountant-review-v3 exports            | `1510-closing-subledger-dependencies.sql` |
 
-All slices have shared contracts exports, API/handler composition, database dispatch and permitted MCP bindings. Human approval and basis-review commands are not ordinary agent approval tools. The routed interface exposes matching/unmatch under Accounts, synthetic issuance and live issue-aware draft inspection under Sales, and asset controls under Reports. Legacy workspace composition is also connected. Existing unrelated UI changes are preserved.
+All slices have shared contracts exports, API/handler composition, database dispatch and permitted MCP bindings. Human approval and basis-review commands are not ordinary agent approval tools. The routed interface exposes matching/unmatch under Accounts, synthetic issuance and live issue-aware draft inspection under Sales, and asset controls under Reports. Tools workspace composition is also connected. Existing unrelated UI changes are preserved.
 
 Source review found and corrected an invoice aggregate escape through a different event key on the same retained evidence. Ownership now binds both the event and evidence references; pre-existing posting on the retained draft source refuses issuance. Approval usability is caller-specific. Issued drafts are frozen; retained draft flags are historical, while a fresh issue-history overlay controls the editor. These are source observations, not runtime proof.
 
@@ -61,7 +61,7 @@ The user asked to keep implementing without focusing on tests, browser or mobile
 
 1900 integration and request-recovery fixes are present.2000 bank statement interval coverage is source-integrated under Accounts → Statement coverage, reusing the existing reviewed closing inventory and exposing gaps, overlaps and independent balance continuity without satisfying closing gates.2100 immutable synthetic invoice documents are source-integrated beside issued reviews: fixed escaped HTML, resumable capture/render/seal and integrity-checked historical downloads, never legal issuance or delivery. Independent source reviews found no concrete blocker in1900 arithmetic,2000 interval controls or2100 document safety; they are not runtime/security proof.1600–2100 remain runtime-unverified.
 
-Candidate-to-allocation identifier handoff is source-integrated in routed and legacy matching workspaces. Only explicit discard/start adopts the seed; no amount, rationale, acknowledgment or approval is inferred.2300 evidence-backed permanent withdrawal of erroneous manual rate observations is source-integrated through the existing exchange-rate group. Retained revisions and artifacts remain readable; successful old-key replay remains available while new revisions/conversions refuse. Independent source review found no concrete blocker; execution remains unverified.2200 native synthetic invoice cancellation is source-integrated beside issued reviews. Its exact reversal and immutable cancellation aggregate require the same approving current operator, open periods, and no active payment/bank/owner/schedule or carrying-basis conflicts. New register snapshots retain and explain original recognition and economically dated cancellation contributions; historical issue/document/report bytes remain unchanged. Independent source review found no remaining concrete blocker after the basis-ownership refusal. Stable approval-bound form instances retain uncertain requests when later approvals arrive. The package/API/query/capability registrations omitted in the initial partial handoff are now connected. Type, SQL and runtime verification remain outstanding. Root owns shared integration and preserves concurrent UI work. No historical migration, test or external system is changed by this authority.
+Candidate-to-allocation identifier handoff is source-integrated in routed and tools matching workspaces. Only explicit discard/start adopts the seed; no amount, rationale, acknowledgment or approval is inferred.2300 evidence-backed permanent withdrawal of erroneous manual rate observations is source-integrated through the existing exchange-rate group. Retained revisions and artifacts remain readable; successful old-key replay remains available while new revisions/conversions refuse. Independent source review found no concrete blocker; execution remains unverified.2200 native synthetic invoice cancellation is source-integrated beside issued reviews. Its exact reversal and immutable cancellation aggregate require the same approving current operator, open periods, and no active payment/bank/owner/schedule or carrying-basis conflicts. New register snapshots retain and explain original recognition and economically dated cancellation contributions; historical issue/document/report bytes remain unchanged. Independent source review found no remaining concrete blocker after the basis-ownership refusal. Stable approval-bound form instances retain uncertain requests when later approvals arrive. The package/API/query/capability registrations omitted in the initial partial handoff are now connected. Type, SQL and runtime verification remain outstanding. Root owns shared integration and preserves concurrent UI work. No historical migration, test or external system is changed by this authority.
 
 ## Observed baseline
 
@@ -96,7 +96,7 @@ Both migrations are source-reviewed only, unapplied and runtime-unverified. No t
 
 ### Stored submitter identity admission
 
-Forward `2800-preparation-identity-admission.sql` carries the identity-disable rule into durable preparation jobs. Provisioning revokes browser sessions, but can leave an API credential and book membership intact; those alone no longer authorize another queued step for a disabled submitter. Delivery checks the original identity admission between credential/session and membership/book locks. An existing admission row remains locked through the step; an absent row keeps the authentication layer's legacy behavior. Authorized replacement admission can also recognize the disabled original submitter without reversing lock order.
+Forward `2800-preparation-identity-admission.sql` carries the identity-disable rule into durable preparation jobs. Provisioning revokes browser sessions, but can leave an API credential and book membership intact; those alone no longer authorize another queued step for a disabled submitter. Delivery checks the original identity admission between credential/session and membership/book locks. An existing admission row remains locked through the step; an absent row keeps the authentication layer's earlier behavior. Authorized replacement admission can also recognize the disabled original submitter without reversing lock order.
 
 No new posting, identity-management or run-resume authority is introduced. Existing checkpoints, terminal replay and saved receipts remain intact. Migration2800 is source-only, unapplied and runtime-unverified; concurrent identity provisioning and historical migrations were not changed.
 
@@ -166,7 +166,7 @@ bounded outbox counters, preparation run/job checkpoints and saved posting outco
 Snapshot bindings, complete family counts, file hashes and restored semantic equality
 are checked by the implementation. A separately hashed suspension report records the
 observed database quarantine and expressly withholds worker/provider resumption.
-Legacy bundles report missing inventory rather than an empty queue. No migration or
+Bundles without the new inventory report missing inventory rather than an empty queue. No migration or
 new application authority was needed; see [durable-work recovery](../operations/durable-work-recovery.md).
 
 API (including operations scripts), contracts and Swedish-domain type checks passed
@@ -351,7 +351,7 @@ Effect typed-decoder suggestion at line72. These separate frontend edits were no
 No SQL/runtime/concurrency/provider execution occurred.
 
 Independent5200 source review found no actionable blocker in scan-before-filter bounds,
-empty-page continuation, fixed-ceiling/source/mode isolation, legacy delegation or exact
+empty-page continuation, fixed-ceiling/source/mode isolation, earlier delegation or exact
 saved v1/v2 semantics. No runtime paging or concurrency scenario was executed.
 
 5300/5400 source-integrated public reads disclose exact subledger-basis/tax-match line
@@ -380,7 +380,7 @@ whole-line tax reservation fence. It does not change capacity arithmetic, stored
 receipts, unallocation or policy. Independent source review found no actionable blocker.
 
 Backup/restore evidence controls now treat only uncommitted saved posting command input
-as intent: absent/refused outcome AND no scoped reserved-key command receipt. Legacy
+as intent: absent/refused outcome AND no scoped reserved-key command receipt. Earlier
 kernel execution without an outcome remains strict. Other evidence owners, all syntactic
 reference counts, external-pointer refusal, fingerprints and quarantine remain unchanged.
 Independent source review found no actionable blocker. Backend/scripts/contracts/jurisdiction
@@ -412,8 +412,8 @@ Old snapshots and no-owner outputs are preserved. The hardcoded browser review h
 remains unresolved; this is not a complete web-flow repair.
 
 5800 binds report explanation cursors to their saved report/account and a real included
-opening or movement row. Legacy two-part cursors explicitly require a first-page restart;
-stored reports, accounting values, ordering and other cursor families are unchanged.
+opening or movement row. The earlier two-part cursor is invalid; omitting `after` starts page1.
+Stored reports, accounting values, ordering and other cursor families are unchanged.
 
 5900 makes conflicting retained-source/account mappings stale preview GET and new review
 captures and refuses fresh approval/admission, using the importer's existing exact rule.
@@ -445,3 +445,51 @@ Root and both independent6100 source reviews found no concrete blocker. API/scri
 contracts, Swedish-jurisdiction and direct web type checks passed; targeted subledger-contract
 lint reported zero warnings/errors. SQL remains unapplied and uncompiled; no runtime,
 concurrency, financial outcome or actual-company proof is implied.
+
+6300 adds actor/book/key-bound recovery of committed source-retention results without original
+bytes or storage access. It returns only the frozen occurrence result for the two retention
+operations. Pending or absent results remain non-final; no completion or new-key authority is
+implied.
+
+6400 binds accountant row cursors to pack, section and a real saved ordinal, leaving
+list cursors, complete JSON/CSV and SIE artifacts unchanged. Numeric-only cursors are invalid;
+omitting `after` restarts the section.
+
+6500 recovers the exact consumed commerce allocation approval through its receipt FK;
+uncommitted latest-approval behavior stays unchanged.
+
+All three changes passed root and independent source review. API/scripts/contracts/Swedish
+jurisdiction and direct web type checks passed; targeted lint found zero warnings/errors on
+five integration/contract files. No tests, SQL compilation/application, runtime or concurrency
+checks were performed. External6200 bank workspace work was preserved, not owned by this slice.
+
+Forward6600 repairs owner-allocation consumed-approval recovery only. Applied reads follow
+and validate their retained receipt's exact approval; pending reads keep their old selection.
+Root and independent source review found no blocker. No write, authority, capacity, replay,
+schema or UI change was made; SQL remains unapplied and runtime-unverified.
+
+Similar-looking bank getters were deliberately not changed: their approval field represents
+current pending authority, while executed callers use the immutable execution first. Closing
+receipts/certificates already retain exact consumed approval identity; disposal returns the
+bounded full approval history and explicit winning review. No grounded defect was found there.
+
+Forward6700 completes a one-shot operator classification resolution for originally unknown
+tax-account events. The new REST command/read and read-only MCP getter are integrated. Matching
+pins an immutable resolution reference; controlv3 uses effective unknown classifications while
+retaining original statement bytes and all financial calculations. Account/closing dependencies
+include resolution inventory only when nonempty. No reclassification, capacity release, legal
+role, financial posting or readiness claim is introduced.
+
+Root and two focused implementation reviews found no blocker. Backend/scripts/contracts/
+Swedish-jurisdiction and web type checks passed; targeted lint found zero warnings/errors on
+five files. Nine owned files were formatted. SQL remains unapplied/uncompiled; no tests,
+application/runtime/concurrency or provider execution was performed.
+
+Forward6800 integrates the live unresolved tax-event worklist with the existing classification
+resolution flow. The50-row scan window precedes classification filtering;51st-row lookahead,
+real retained anchors and book/account-bound cursors prevent skipped sparse-window work.
+Membership is live, not frozen; callers follow non-null next even for empty items and restart
+for new arrivals. No saved artifact or financial transition is introduced. Root and focused
+peer source review found no blocker. Backend/contracts/jurisdiction type checks and lint pass.
+Web checking currently encounters unrelated invoice UI pagination errors in `invoices.tsx`;
+no web files were modified. No SQL/runtime/provider/test execution was performed.

@@ -170,3 +170,19 @@ inventory. Unrelated mappings do not stale the preview through this predicate. O
 recovery, admitted history, supersession and previously captured bytes stay unchanged.
 Independent source review found no actionable blocker; SQL/runtime behavior remains unverified.
 See [source intake](../../apps/api/SOURCE-INTAKE.md).
+
+### Source-retention recovery by request key
+
+Forward6300 adds `GET /api/v1/entities/:entityId/books/:bookId/source-retention-requests/:key`
+and read-only `source_recover_retention`. A caller that loses the retention response can
+recover its frozen `SourceOccurrence` without the original file, bytes or object storage.
+The read requires current scope authorization and the exact committed command's actor,
+book, key and retention operation. Deduplicated results retain the original occurrence's
+actor/key provenance; that is not used to authorize this request.
+
+Pending uploads are not completed. Missing results are absence at this check, not proof that
+an in-flight command failed or permission to use a new key. No approval/admission material,
+private object locator, request payload or current-availability claim is returned. Root and
+independent source review found no blocker; native type checks and targeted lint passed.
+SQL application/execution and response-loss recovery remain runtime-unverified. See
+[source intake](../../apps/api/SOURCE-INTAKE.md).

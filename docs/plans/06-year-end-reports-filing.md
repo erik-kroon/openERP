@@ -152,8 +152,22 @@ checks, shared integration and database/runtime evidence remain distinct gates.
 Forward5800 binds explanation continuation to the exact saved report/account and a real
 included contribution. Opening and movement rows use the same pinned cutoff and ordering.
 Out-of-context, missing and out-of-range anchors refuse instead of silently skipping data.
-Legacy two-part cursors cannot prove context and now require restarting from the first page;
-old saved reports remain readable and unchanged. General-ledger, comparison and report-line
+The earlier two-part cursor cannot prove context; callers omit `after` to start from the first
+page. Saved reports remain readable and unchanged. General-ledger, comparison and report-line
 cursors are unaffected. See [explanation cursors](../../apps/api/REPORT-EXPLANATION-CURSORS.md).
 This is implemented source; independent review and static checks are recorded in the active
 wave. SQL execution remains unverified.
+
+### Frozen accountant-row continuation
+
+Forward6400 binds row continuation to the immutable pack ID, section and a real retained
+ordinal. Cross-pack/section, nonexistent, malformed, zero and overflowing anchors refuse.
+Numeric-only cursors are invalid; omitting `after` starts the first page.
+The separate pack-list cursor remains unchanged. Saved JSON/CSV, SIE selection, row order,
+25-row pages, totals, digests and terminal-page behavior are preserved.
+
+This closes a REST/MCP continuation mismatch. The current web client already separates its
+pack/section queries; no ordinary tab-switching reproduction or UI repair is claimed. Root
+and independent source reviews found no blocker. Native backend/web types and targeted lint
+passed; no SQL compilation/application, browser or runtime execution was performed. See
+[accountant review](../../apps/api/ACCOUNTANT-REVIEW.md).

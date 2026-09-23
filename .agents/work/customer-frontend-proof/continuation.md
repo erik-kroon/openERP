@@ -75,7 +75,7 @@ To replay the meaningful transitions, create a new invoice or expense through th
 | Invoice required a manually created source note | Direct entry retains submitted facts automatically | A founder can create a draft in one flow |
 | Customer setup interrupted invoice work | Compact inline customer dialog | New customer returns selected to the draft |
 | Expense preparation separated from its source | Original beside decimal entry and review | Reviewer can compare facts with retained evidence |
-| Legacy unknown currency implicitly problematic | Explicit currency/scale establishment before editing | The UI does not silently reinterpret unknown amounts |
+| Previously entered unknown currency implicitly problematic | Explicit currency/scale establishment before editing | The UI does not silently reinterpret unknown amounts |
 | Old review could look current after source edit | Needs-review state plus previous-review label | A stale assessment is not presented as current |
 | Unknown direct-save outcome had weak recovery | Captured request download and same-request retry | The entered operation remains recoverable |
 | CSV required every format field manually | Conservative editable format/header suggestions | Simple imports take fewer steps without guessing financial meaning |

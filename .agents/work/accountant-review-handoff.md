@@ -11,7 +11,7 @@ END-03 bounded synthetic first-year accountant-review/export slice is source-com
 - `apps/api/src/accountant-review.ts`
 - `apps/api/migrations/0810-accountant-review-packs.sql` — NEW, still-unapplied source extended with0610/0710 provider capture
 - `apps/api/migrations/0820-closing-owner-tax-dependencies.sql` — NEW forward replacement of private closing basis only
-- `apps/api/CLOSING.md`; `apps/web/src/components/closing/copy.ts`, `review.tsx` — new check scope and explicit legacy display
+- `apps/api/CLOSING.md`; `apps/web/src/components/closing/copy.ts`, `review.tsx` — new check scope and explicit narrower-scope display
 - `apps/api/ACCOUNTANT-REVIEW.md` — risk/acceptance cases were recorded before transition implementation; concrete behavior/limits now documented
 - `apps/web/src/components/accountant-review/panel.tsx`, `inspector.tsx`, `copy.ts`
 - `docs/plans/06-year-end-reports-filing.md` — bounded END-03 source status, not acceptance completion
@@ -66,7 +66,7 @@ The contract exports exact schemas and endpoint names. Paths are book-scoped `/a
 
 ##0820 closing integration
 
-No new public closing route/capability/dispatcher operation is required. Existing locked prepare/approve/execute/read calls use the replaced private basis. `OwnerSourceReview` blocks unresolved/unlinked sources through end date; `ExpenseReviewCurrentness` checks only book-wide missing/stale reviews. Independent `ExpenseControlCoverage` blocks every known expense source because this provider does not supply posting/reconciled close coverage; current all-unknown reviews do not resolve it. `ownerSourceDigest` and `expenseTaxBasisDigest` are captured/rechecked by existing complete-basis comparisons. Unpaid linked claims are not errors. `ownerTaxStatus` supplies exact counts; legacy payloads omit it and the UI identifies their narrower historical scope.
+No new public closing route/capability/dispatcher operation is required. Existing locked prepare/approve/execute/read calls use the replaced private basis. `OwnerSourceReview` blocks unresolved/unlinked sources through end date; `ExpenseReviewCurrentness` checks only book-wide missing/stale reviews. Independent `ExpenseControlCoverage` blocks every known expense source because this provider does not supply posting/reconciled close coverage; current all-unknown reviews do not resolve it. `ownerSourceDigest` and `expenseTaxBasisDigest` are captured/rechecked by existing complete-basis comparisons. Unpaid linked claims are not errors. `ownerTaxStatus` supplies exact counts; earlier payloads omit it and the UI identifies their narrower historical scope.
 
 Old proposals/approvals and certificates keep original bytes/digests. New-basis inequality makes old unexecuted approvals stale and old certificates noncurrent. Already committed commands still replay exactly. No migration updates journals, lock state or retained certificates. New explicit reopen remains available for repair.
 
@@ -80,7 +80,7 @@ Creation is bounded to1000 vouchers,5000 lines,1000 accounts,1000 evidence recor
 
 ## Next root action
 
-Confirm existing shared integration, run native types plus lint/format, review updated0810 and new0820, then apply only those unapplied migrations in the authorized synthetic database. Manually exercise create/read/page/download/replay/historical-currentness. Include missing/stale tax review, unresolved/unlinked owner sources, unpaid linked claims, provider mutation after proposal/pack capture and legacy certificate/approval decoding. Check downloaded UTF-8 hashes and amounts/lineage independently. Use existing retained synthetic data; no new tests/fixtures are authorized. Capture observations separately from static checks. No production or external action is requested.
+Confirm existing shared integration, run native types plus lint/format, review updated0810 and new0820, then apply only those unapplied migrations in the authorized synthetic database. Manually exercise create/read/page/download/replay/historical-currentness. Include missing/stale tax review, unresolved/unlinked owner sources, unpaid linked claims, provider mutation after proposal/pack capture and earlier certificate/approval decoding. Check downloaded UTF-8 hashes and amounts/lineage independently. Use existing retained synthetic data; no new tests/fixtures are authorized. Capture observations separately from static checks. No production or external action is requested.
 
 
 Exact source hashes and owned static-check outputs: `.agents/work/accountant-review-static-checks.json`. No native type, SQL execution, migration, race, browser or financial validation was performed by this worker. The static receipt must not be cited as those results.

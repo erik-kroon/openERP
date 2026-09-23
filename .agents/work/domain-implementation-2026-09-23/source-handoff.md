@@ -6,7 +6,7 @@
 - Invoice1400: synthetic issue review and same-operator approval/execution, atomic kernel posting/internal SYN number/customer register/issue receipt, frozen issued draft and fresh issue-history editor overlay. No legal invoice, delivery or correction workflow.
 - Asset1500: evidence-backed original/accumulated/carrying basis linked to posted lines; immutable all-row declared-account controls. Reporting/linkage does not gate existing schedule posting.
 - Closing1510: complete asset-control dependency, mandatory missing-basis/coverage blockers and accountant-review-v3 exports. Old artifacts remain decodable and unchanged, with separately stale currentness.
-- Shared exports, capability catalog/bindings, SQL dispatch, HTTP handlers and both current routed and legacy UI composition are connected.
+- Shared exports, capability catalog/bindings, SQL dispatch, HTTP handlers and both routed and tools UI composition are connected.
 
 ## Source review
 
