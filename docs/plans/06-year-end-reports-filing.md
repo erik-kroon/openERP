@@ -87,3 +87,30 @@ coverage, so declaring those families required conservatively blocks this techni
 This is not a financial close or legal applicability review. See the pre-change acceptance
 cases and integration contract in [CLOSING.md](../../apps/api/CLOSING.md#end-01-family-inventory-scope-and-acceptance-before0930).
 Owned-file static checks do not complete END-01's runtime/concurrency/browser gates.
+
+## Snapshot-bound general ledger account view
+
+Forward `3400-report-general-ledger.sql` extends END-03 with an account general
+ledger over the existing immutable trial-balance snapshot. REST exposes
+`GET /v1/entities/:entityId/books/:bookId/report-snapshots/:id/lines/:lineId/general-ledger`;
+MCP exposes `reports_general_ledger`. Here `lineId` is the snapshot account ID,
+consistent with the existing explanation endpoint.
+
+The response retains the report header and frozen account labels/totals, then pages
+period movements in committed-sequence/line-ordinal order with exact signed running
+balances, voucher series/number, posting purpose, correction link and original evidence.
+`pageOpeningMinor` carries the balance immediately before the page; `pageClosingMinor`
+is the balance after it. Every page reports the full movement count. Opening uses
+the snapshot's earlier postings, not an inferred fiscal-year transfer or a reviewed
+OpeningSet. Zero-movement accounts return their unchanged opening with an empty page.
+
+The cursor binds report and account and must identify a real movement within that
+snapshot. Malformed, overflowing, cross-report, cross-account and out-of-snapshot
+cursors refuse. Current authorization is checked before reads. Later postings,
+including backdated postings, cannot enter the pinned sequence. Reversals remain
+separate signed movements; no current-state filter removes their originals. Account
+renames do not change retained report labels. Paging is bounded to 100 movements.
+
+This is an internal synthetic reporting view, not a statutory report or complete
+source/opening control. Historical snapshot meanings remain unchanged. Source and
+SQL/runtime acceptance are separate; the forward migration remains unapplied.

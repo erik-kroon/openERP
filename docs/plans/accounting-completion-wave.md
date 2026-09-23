@@ -113,3 +113,22 @@ API/contracts type checks and targeted type-aware lint/format checks passed for
 this follow-up. No tests were added or run. The migration remains unapplied;
 SQL/runtime acceptance and broader COM-01 work remain open. Concurrent sales and
 frontend work was preserved.
+
+## Parallel backend continuation
+
+The user authorized continued parallel backend implementation without test work.
+Domain ownership is split between source intake, asset schedules and VAT, with
+shared API/MCP wiring and reporting owned by the root integrator. Forward migration
+prefixes3100,3200,3300 and3400 separate these changes from the concurrent sales work.
+
+Forward `3400-report-general-ledger.sql` adds the [snapshot-bound general ledger
+account view](06-year-end-reports-filing.md#snapshot-bound-general-ledger-account-view)
+through REST and MCP. It uses frozen account labels/opening totals, exact signed
+running balances, retained voucher/correction/evidence links and report/account-bound
+continuation. It does not change historical snapshots or infer fiscal openings.
+Source implementation is present; SQL/runtime acceptance remains open.
+
+VAT amendment read/compare dispatch is connected while its domain implementation
+is in progress. Asset and source-intake implementation/integration remain in progress.
+No tests, migration application, deployment or provider action is authorized by this
+continuation. Narrow static checks are allowed; financial behavior remains unverified.
