@@ -54,12 +54,12 @@ Implementation notes: [bank unmatch](../../apps/api/BANK-MATCH-REVERSALS.md), [s
 
 The user asked to keep implementing without focusing on tests, browser or mobile work. The next source-only packet is assigned to the retained domain owners:
 
--1600: read-only bank match candidates using effective capacities, explicit heuristic reasons and unresolved ambiguity. No automatic match or posting.
--1700: reviewed whole-allocation payment unallocation with immutable originals, once-only capacity release and forward updates to effective commerce consumers.
+-1600: read-only bank match candidates are source-integrated using effective capacities, explicit heuristic reasons and unresolved ambiguity. No automatic match or posting.
+-1700: reviewed whole-allocation payment unallocation is source-integrated with immutable originals, once-only capacity release and forward updates to effective commerce consumers. Accounts → Payment allocation exposes the workflow; historical receipts and reports now show separate live status. Independent source review found no concrete blocker; runtime proof remains open.
 -1800: linked carrying-basis validity is implemented and source-integrated at preparation, shared validation and physical posting, including already-prepared/generic paths and known correction ancestry. Standalone synthetic schedule semantics remain. Runtime proof is open.
--1900: evidence-backed manual exchange rates and exact immutable conversion review are assigned next. No cross-currency posting, revaluation or legal-rate activation is included.
+-1900: evidence-backed manual exchange rates and exact immutable conversion review are source-integrated under Reports → Exchange rates. Rates are directional, evidence-backed operator decisions; conversion reviews retain exact quotient/remainder, named synthetic rounding and signed residuals. No cross-currency posting, revaluation or legal-rate activation is included. A source-review fix for keeping uncertain form requests mounted across rate refreshes is in progress.
 
-1600,1700 and1900 remain active assignments;1800 is source-integrated but unverified. Root owns shared integration and preserves concurrent UI work. No historical migration, test or external system is changed by this authority.
+1900 integration is present with a request-recovery fix in progress.2000 bank statement interval coverage review remains active.2100 immutable synthetic invoice documents are source-integrated beside issued reviews: fixed escaped HTML, resumable capture/render/seal and integrity-checked historical downloads, never legal issuance or delivery. Independent security/source review is in progress.1600–1900 and2100 remain runtime-unverified. Root owns shared integration and preserves concurrent UI work. No historical migration, test or external system is changed by this authority.
 
 ## Observed baseline
 

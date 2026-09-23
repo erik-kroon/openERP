@@ -78,6 +78,20 @@ Period remeasurement selects eligible open monetary items from a fixed snapshot,
 
 The FX review UI shows source amount/currency, carrying amount, selected rate/source/date, calculated settlement/revaluation, fees and residual. Per-currency registers reconcile to book-currency control accounts through recorded conversion effects; summing unrelated currencies is never presented as a meaningful balance.
 
+### Manual exchange-rate review subset (implemented source; runtime unverified)
+
+[Manual exchange-rate reviews](../../apps/api/EXCHANGE-RATE-REVIEWS.md) adds forward1900:
+operator-reviewed directional rational rates, immutable evidence-backed revisions and exact
+nonnegative conversion review artifacts. New capture requires the exact current revision and
+matching effective date. Source scale is explicit; book scale comes from metadata. The named
+synthetic half-up policy retains the exact fraction, quotient, remainder, rounded minor units and
+signed residual. Missing/stale rates never default to1 or invert silently. Historical JSON bytes
+remain unchanged, with separate live dependency currentness.
+
+Shared composition and runtime proof remain root-owned. No legal/company profile, foreign-currency
+invoice/payment recognition, settlement gain/loss, carrying register or revaluation posting is
+activated. This is a bounded FX-01 review subset, not completed FX-02/03 or financial-close readiness.
+
 ## Delivery packets
 
 | ID     | Deliverable                                                                                   | Depends on             | Acceptance                                                                                            |
