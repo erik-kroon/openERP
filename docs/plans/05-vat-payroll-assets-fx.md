@@ -86,7 +86,11 @@ nonnegative conversion review artifacts. New capture requires the exact current 
 matching effective date. Source scale is explicit; book scale comes from metadata. The named
 synthetic half-up policy retains the exact fraction, quotient, remainder, rounded minor units and
 signed residual. Missing/stale rates never default to1 or invert silently. Historical JSON bytes
-remain unchanged, with separate live dependency currentness.
+remain unchanged, with separate live dependency currentness. Forward2300 adds permanent,
+operator-reviewed observation withdrawal without rewriting those bytes. New revisions/conversion
+captures refuse withdrawn observations; successful old command replay and historical reads remain
+available. Live usability is separate from retained rate facts, and withdrawal makes saved review
+currentness false. Pinned UI drafts retain their exact-key recovery path after withdrawal.
 
 Shared composition and runtime proof remain root-owned. No legal/company profile, foreign-currency
 invoice/payment recognition, settlement gain/loss, carrying register or revaluation posting is

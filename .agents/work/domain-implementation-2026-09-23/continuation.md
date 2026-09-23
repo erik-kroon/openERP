@@ -21,3 +21,41 @@ Workers report final source handoffs or real blockers only. Source review and ru
 Next retained assignments: compliance-gap-map1900 exchange-rate reviews; core-gap-map2000 bank interval coverage; commerce-gap-map2100 immutable synthetic issue documents. All forward/source-only, root integration still owns shared files.
 
 1900 rates/conversion review registered in domain+contracts/API/MCP/SQL and mounted under Reports/Exchange rates plus legacy workspace. Owner is fixing form recovery when observed rate revision changes.2100 invoice artifacts wired through Effect workflow only and mounted beside committed synthetic issue receipts; independent security source review assigned.2000 source coverage still active.
+
+### Root integration: statement-row candidate entry (failure cases before code)
+
+A viewed statement must open candidate discovery for the exact retained row without retyping identifiers. A wrong statement response must refuse. Selected candidate state must reset on book/statement change. Switching candidate rows must not replace the existing manual match form or any pending match request. Discovery stays read-only, does not infer amounts/identity or submit a match, and links users to the reviewed matching workspace. No additional route or backend API is needed; reuse1600 BankCandidateResults. Source-only; no browser/runtime checks.
+
+## Next packet after source integration1900–2100
+
+Independent source review found no concrete blocker in1900 exact arithmetic,2000 coverage or2100 document rendering/sealing paths.1900 pinned-form and unknown-currentness fixes are complete in source. Root added per-statement-row candidate discovery and preserved concurrently added money formatting. No runtime validation.
+
+Retained owners now: core-gap-map safe identifier-only candidate-to-allocation draft handoff (owns settlements/index.tsx plus candidate-local workspace; not bank-statement.tsx); commerce-gap-map2200 full native synthetic invoice cancellation, proposing cross-domain live/effective shape before broad edits; compliance-gap-map2300 evidence-backed manual-rate withdrawal. Root still owns shared composition and integration. Historical migrations through2100 must not be rewritten. No financial source delivery is accepted if aggregate/register/report dependencies remain open.
+
+###2200 root shared-shape agreement (before source edits)
+
+Cancellation must not erase original amount/recognition, allow new invoice revisions/allocations, hide reversal ledger rows, or relabel old snapshots as current. Add optional live cancellation summary and effective/cancelled amounts to current invoice/report schemas; old bodies must still decode. New status label must be explicit. Keep InvoiceRevisionForm mounted to retain uncertain requests; CommandForm retry is outside the allowed/new-command gate, so prohibit new revisions after cancellation without blocking saved-key recovery. Report columns distinguish missing historical fields from zero and display saved cancellation contributions; report status remains historical. Owner handles exact financial aggregate and forward SQL separately.
+
+### Root issue-review recovery follow-up (failure cases before code)
+
+A prepare/approve/execute request can have an uncertain response. A later failed query refresh currently changes isSuccess to false and unmounts its CommandForm, dropping captured request/key. Retain the last scoped review/draft data on query errors, gate new commands on a successful idle read after mount, and leave CommandForm exact captured retries available outside that gate. Confirmed issued receipt remains the historical success path. Do not interpret query failure as no issue, current approval or permission to edit. No test or runtime execution.
+
+### Root integration update
+
+Candidate handoff is source-integrated in both routed Accounts/Matching and legacy workspace through BankMatchingWorkspace. Only explicit discard/use candidate resets a draft; no amount, reason or acknowledgment is copied.2300 rate withdrawal is source-integrated through the existing exchange-rates contract/group/statements composition, with no ordinary MCP mutation. Core is independently reviewing2300; compliance is independently checking existing2200 downstream consumers for omissions. Root agreed and added optional cancellation schemas and historical report columns;2200 financial transition remains in progress. Root retained issuance cached forms on query-refresh errors and gated new commands on a successful idle post-mount read; saved-key CommandForm retries remain available. No runtime validation.
+
+2200 independent preflight found that correction_impact_resources lacks1500 subledger_bases ownership: an issued voucher can back a carrying basis. Owner was directed to refuse cancellation when a scoped basis references the recognition voucher, including approval/execution rechecks.1800 future-post guards do not repair already-posted recognition. No other omitted consumer was found in this source review.
+
+### Root parent recovery boundary (failure cases before code)
+
+Independent source review found BookWorkspace unmounts all routed forms after a transient shared setup refresh error, losing captured commands despite leaf retention. Keep previously loaded setup/children mounted for non-access errors. Explicit Unauthorized/Forbidden/NotFound setup results still hide the scoped workspace; AccountingAccess authentication/identity gating and sign-out cache clearing remain unchanged. Thus recovery preservation is within the retained authenticated scope, not a promise to survive identity loss or auth-gate failures. Also fix duplicate outer sibling keys for legacy coverage/matching mounts.
+
+## User error triage pause
+
+User said "errors n shieet". Root paused all new feature work and asked permission for type/lint checks (no tests), or the observed app error. No validation authority has been confirmed yet. All three workers instructed to stop new edits.2200 is saved but incomplete: migration, invoice-cancellations contract/statements/routes and UI exist; shared package/API/dispatcher/handler wiring and UI mount NOT added. See apps/api/SYNTHETIC-INVOICE-CANCELLATIONS.md partial handoff. Basis-conflict refusal is in the resources path. Do not claim2200 source-ready or resume feature expansion before triage decision.
+
+## Source-only error repair continuation
+
+Goal continuation resumed bounded source fixes, not new domain expansion or validation commands. Root repaired concrete2200 package export/Api group/catalog/two read bindings/query statements/HTTP-layer registration gaps. Independent source financial review found no remaining blocker after the basis ownership refusal; execution remains unverified. Core reviews owned2200 contract/route/UI shape. Commerce is fixing current-approval-key remounting that can discard uncertain execute/revoke requests. UI mount waits that handoff. Source import search found no remaining undeclared contracts/domain package subpath in the scanned TypeScript source; this is not type checking.
+
+2200 root integration completed after owner recovery fix: package/API/catalog/query/handler composition and issued-review cancellation panel mounted. Independent financial review has no remaining concrete blocker; core found no additional definite source/type/API-shape mismatch after registration repair. All claims remain source-only; original reported user error still has no supplied output or authorized type/lint diagnostic run. No new domain expansion was started.
