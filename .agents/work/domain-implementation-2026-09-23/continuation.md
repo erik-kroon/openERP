@@ -59,3 +59,51 @@ User said "errors n shieet". Root paused all new feature work and asked permissi
 Goal continuation resumed bounded source fixes, not new domain expansion or validation commands. Root repaired concrete2200 package export/Api group/catalog/two read bindings/query statements/HTTP-layer registration gaps. Independent source financial review found no remaining blocker after the basis ownership refusal; execution remains unverified. Core reviews owned2200 contract/route/UI shape. Commerce is fixing current-approval-key remounting that can discard uncertain execute/revoke requests. UI mount waits that handoff. Source import search found no remaining undeclared contracts/domain package subpath in the scanned TypeScript source; this is not type checking.
 
 2200 root integration completed after owner recovery fix: package/API/catalog/query/handler composition and issued-review cancellation panel mounted. Independent financial review has no remaining concrete blocker; core found no additional definite source/type/API-shape mismatch after registration repair. All claims remain source-only; original reported user error still has no supplied output or authorized type/lint diagnostic run. No new domain expansion was started.
+
+### Source lint and access-error repairs
+
+Workers fixed definite configured no-overzealous-destructuring violations in settlements/index.tsx, commerce/invoice-documents.tsx and exchange-rates/{forms,views,withdrawal-form}.tsx. No lint invocation or rule suppression.
+
+Before the shared reader fix: malformed/non-JSON401/403/404 error bodies must still trigger explicit access/scope failures, not cached-setup retention. Valid structured ApprovalRequired and other domain errors must retain their codes. Successful response JSON/schema validation must remain strict, and non-access/network failures must not be mislabeled as authorization loss. HTTP status is available even when parsing its failure body fails. Fix readAccounting at the common boundary, not each form. No tests/checks run.
+
+### Prior-denial recovery case (before fix)
+
+Source reviewer found setup success → explicit403 → generic500 retry could re-expose cached setup because only the latest error was checked. Latch a denied/unconfirmed scope until a successful idle post-mount scoped setup fetch; initialize blocked on every mount and force mount refresh. Ordinary transient failures after a confirmed scope preserve forms. Explicit denial still immediately unmounts them, and a remount cannot rely on a cached old success. No hidden wrappers (which would not contain portaled dialogs), query-cache mutation or auth fallback is needed. No tests/checks.
+
+The prior-denial latch received a narrow independent source review with no blocker found: initial mount needs fresh scoped success; confirmed scope retains forms on ordinary transient errors; explicit denial stays blocked through later generic failures. AccountingStatus now shows pending while a blocked cached scope is being rechecked. No execution proof.
+
+### Issuance committed-status recovery (before code)
+
+1400 UI still removed prepare forms when issue history became issued, and approval/execute forms when a receipt appeared. That can discard an uncertain command completed through another approval/review or a successful fetch after an ambiguous response. Keep existing form positions mounted, gate only new commands on current unissued/operator state, and leave captured-key retry/download available through CommandForm. Historical issued receipts/documents remain separate. No new API/financial behavior or tests.
+
+### Existing workflow recovery follow-through
+
+Root1400 preparation/approval/execute forms now stay mounted after issuance appears; only new commands are disabled, while captured request retry/download survives. Commerce owner applied equivalent1700 release recovery, with stable retained approval rows and successful idle fetch gating; backend automation execution authority unchanged.
+
+Core has explicit delegated ownership of router.tsx (and one helper only if needed) for request-scoped Unauthorized handling from any read/mutation. Cancel/remove accounting query state and close books gate; preserve403 ApprovalRequired/transient failures. Old cleared request callbacks must not log out a new session. This is bounded error repair, not feature expansion. No checks/runtime.
+
+### Request-scoped auth-loss repair delivered
+
+Core changed router.tsx and accounting-access.tsx only. Current-cache typed Unauthorized from reads/mutations cancels accounting reads, null-notifies current books gate, removes accounting Query instances, retires mutation cache and seeds fresh null books gate. Cache-object membership guards ignore retired callbacks. AccountingAccess no longer swallows /books401; null disables automatic retries until login resetQueries restores a fresh read. Source rationale: /Users/admin/.prime/agent/session-artifacts/01a0cd4f-12f6-756f-bb98-e326197e1ae3/sub-ceeb3deb/AUTH-LOSS-BOUNDARY.md. No runtime proof. Independent source review assigned compliance. Existing component-local SignOut onSuccess can still run after cache retirement; this is a recorded separate race, not solved by global callbacks. Ordinary /books errors still use the existing fail-closed ancestor behavior; do not overclaim universal form retention.
+
+Independent auth-boundary source review found no new concrete blocker and traced installed TanStack reset/observer semantics. Router/client remain request-scoped. No runtime claims; existing detached component-local SignOut callback race remains outside this bounded fix. Current source hashes are in error-repair-source-manifest.json (shared contributions, not an atomic tree or validation artifact).
+
+###2000 coverage currentness follow-up (before edit)
+
+Saved report bytes may remain verified when a later dependency refresh fails, pauses or is in flight. BankSourceCoverageInspector currently shows the old currentness during fetch and removes the report on error. Retain only previously verified cached data, report currentness unknown unless successful idle fetched-after-mount, and leave exact saved bytes downloadable. No money recomputation, new endpoint, readiness waiver or check/test. Match the existing1900/subledger-control pattern.
+
+### Bounded currentness/recovery source repair assignments
+
+Root completed2000 cached artifact/unknown-currentness fix. Active retained workers: core bank settlements/review.tsx + bank-match-reversals/review.tsx; commerce ordinary commerce/allocations.tsx; compliance closing/review.tsx + accountant-review/inspector.tsx with copy modules as needed. Scope is concrete stale-status/new-action gating or uncertain-key loss only, no new features/SQL/frameworks/tests/checks. Preserve root overlays, concurrent money formatting, exact authority and authentication clearing. New commands need successful idle current reads; saved-key replay remains separately available.
+
+### Post-mount action-read admission (before edits)
+
+Router queries default to30-second freshness. Adding isFetchedAfterMount gates without forcing a read can leave recently cached financial reviews permanently disabled until manual refresh. Cancellation preparation's setup observer can hit this on its first mount after the parent loaded setup. Set staleTime0/refetchOnMount always only on reads that admit new review commands; keep immutable historical artifact downloads independent of live freshness. No API/writes/checks changed.
+
+Bank allocation/unmatch, ordinary payment allocation, closing and accountant-review repairs are source-delivered. New actions distinguish unknown cached status from successful idle reads, and captured requests survive live status changes. Root additionally enabled fresh-on-mount reads on actionable review queries so post-mount gates do not strand freshly cached views. Historical-only artifact reads were not broadly forced to refetch. No validation commands or runtime acceptance.
+
+### Authenticated book-list transient recovery (before edit)
+
+AccountingAccess still unmounts the entire feature tree on a temporary /books refresh failure, discarding captured requests despite leaf recovery fixes. Preserve an already-authorized cached book list during transient errors, with visible error/retry UI. Explicit401/403/404 or a null auth gate must block immediately and remain blocked through a later generic failure. A remount seeing a cached error starts blocked until success. Do not use isFetchedAfterMount to reopen login after resetQueries: reset counters can equal an observer's captured initial count. Successful idle non-null data clears the local denial latch; global Unauthorized cache retirement stays authoritative. No checks/tests or backend changes.
+
+Book-list transient retention latch independently source-reviewed with no blocker. Remaining explicit predicates using !isFetching on cached data assigned narrowly: core source-intake/review.tsx; commerce recurring-rule.tsx; compliance owner-register/owner-register-panel.tsx. Fix paused/currentness/new-action admission and captured retry loss only; no new domain/API/SQL/checks. Scope is existing behavior error repair.

@@ -1,0 +1,27 @@
+{
+  "capturedAt": "2026-09-23T10:46:27.590281+00:00",
+  "kind": "source-repair-checkpoint",
+  "limits": "Read-only file hashes from a shared worktree. Includes concurrent contributions. Not an atomic repository snapshot, exclusive ownership claim, executed check, test, or runtime verification.",
+  "files": {
+    "apps/web/src/router.tsx": "25e1f6fc1e24e68ab32fc00daf2099c2fb6fd6ed44c8e4090788823c37e8bb27",
+    "apps/web/src/lib/accounting-api.ts": "2d75639087b033e9fc222ef747a4575aa45b62c94083e6b1eddffd4580b7c130",
+    "apps/web/src/components/accounting-access.tsx": "3bcf77c239cbe0aed3b3fca795cae65fd1e900aa3507000e138bf967b7dc1880",
+    "apps/web/src/components/book-workspace.tsx": "3d99477ea4c8f2782137f5b9b955ab953fb3c13fe65e749e3b00c2a90007aad2",
+    "apps/web/src/components/accounting-workspace.tsx": "c7541cd7a926f15ce63664704552afc918f841797a0bdaa01d58bd639dc9f3b0",
+    "apps/web/src/components/finance-area.tsx": "90a3c3a499bb83ff2c4b5dbd3f6c17cdbb48f9ef8fa2d86921f3fb548a1fbb05",
+    "apps/web/src/components/commerce/invoice-issuance.tsx": "41e9becc6039242bc2c05f0c5fb8cbb33c7e2f67646dffcd25a5a0df03f44ca2",
+    "apps/web/src/components/commerce/invoice-cancellations.tsx": "1317f09ebfa6f5dcdea5e4f8f44861a4aa9cf2d7fd8bbb7a776211e5a2d67d68",
+    "apps/web/src/components/commerce/allocation-reversals.tsx": "0ceba7a1af60d23ef740d2a0e681b0f138c751e100985856d32be114d4735e5e",
+    "apps/web/src/components/commerce/invoice-documents.tsx": "5c92eea613141da2c00f7aaf84bac77df468bbbe79778a910ce14bf4b37b5be9",
+    "apps/web/src/components/settlements/index.tsx": "3f78a9f8b7bc9a5f3ea398083cb36285d0e43998b121478e67d7b5491e792782",
+    "apps/web/src/components/exchange-rates/forms.tsx": "4b3b375e85a23477cf1dbdc2ee0fdbf6f20cb699332a8b35baf10c873a6731ff",
+    "apps/web/src/components/exchange-rates/views.tsx": "3bac6e76bcdcb0e7f6b7710a5695eed082a2f6bfc9968f569bdab925a582b2cb",
+    "apps/web/src/components/exchange-rates/withdrawal-form.tsx": "7895f01c88b7090eaa99fc74cdd2b74e2dd8b290e3f60acc72adc98fbda5a346",
+    "packages/contracts/package.json": "f0234509db2587372f81fc8e58f8d411ab63675ed08d4b79d104000a23becf42",
+    "packages/contracts/src/api.ts": "5830463136295fdabfcffa92212cd0b705c1b61d0b5b2134d5ed7df0d39622af",
+    "packages/contracts/src/capabilities.ts": "242a70c0d2f1a7076e1934656af444cd0b6f3024c60b40f6bc9ffc61a31bee8d",
+    "apps/api/src/db/query.ts": "6bfc13311fcfc83d764c45d3657e7acadc6d2f1c8180b77017992f735165412a",
+    "apps/api/src/index.ts": "688658edc36f5f375b014e0776cd714b7dbebfff37cce407492feb430759009b",
+    "apps/api/src/application/capabilities.ts": "051cd43a6a6c1d03631347e5c4db10aa4e2dad28d63a40f122ef65d95ea1e56a"
+  }
+}

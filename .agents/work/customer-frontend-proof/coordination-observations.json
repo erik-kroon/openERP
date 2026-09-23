@@ -1,0 +1,43 @@
+{
+  "environment": "local synthetic frontend_20260923_ui2",
+  "observedAt": "2026-09-23T10:36:52.718Z",
+  "observations": [
+    {
+      "name": "Attention with persisted assignment",
+      "status": 200
+    },
+    {
+      "name": "Stale handoff refused",
+      "status": 409,
+      "code": "StaleDependency"
+    },
+    {
+      "name": "Nonmember handoff refused",
+      "status": 422,
+      "code": "InvalidJournal"
+    },
+    {
+      "name": "Wrong entity refused",
+      "status": 403,
+      "code": "Forbidden"
+    },
+    {
+      "name": "Original handoff replay",
+      "status": 200,
+      "revision": 1
+    },
+    {
+      "name": "Changed payload with original key refused",
+      "status": 409,
+      "code": "IdempotencyConflict"
+    },
+    {
+      "name": "Create temporary saved view",
+      "status": 200
+    },
+    {
+      "name": "Remove own temporary saved view",
+      "status": 200
+    }
+  ]
+}
