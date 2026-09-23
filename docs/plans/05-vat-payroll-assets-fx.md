@@ -116,3 +116,88 @@ activated. This is a bounded FX-01 review subset, not completed FX-02/03 or fina
 | FX-03  | Period remeasurement/reversal and valuation report controls.                                  | FX-02, END-03          | E-07/E-14: stable selected item set, no duplicate valuation and correct later settlement.             |
 
 Payroll, assets and VAT can progress independently after their foundations; none is falsely dependent on a finished module merely because they share P5. Full-company close depends on whichever rows its reviewed inventory requires. Every activated profile needs both functional proof and current domain/source review; a synthetic schedule or example tax calculation cannot serve as blanket parity.
+
+## Backend continuation: retained amendments
+
+- **AST-02 subset:** forward `3100-subledger-schedule-amendments.sql` adds an
+  operator-reviewed future-date amendment for the complete unposted suffix of a
+  linked-basis synthetic schedule. Amounts, accounts, occurrence identities, residual
+  and posted history stay unchanged. Both old and replacement suffix dates must be
+  future and their periods open. The revised schedule digest invalidates pending
+  posting authority through the existing shared and physical posting guards; native
+  re-preparation requires fresh approval. Controls accept the retained basis lineage
+  without rewriting saved artifacts. Forward4000 now adds explicit remaining-amount
+  estimates as described below; lifetime/count changes, impairment and disposal remain separate work. See [the implementation boundary](../../apps/api/SUBLEDGER-SCHEDULE-AMENDMENTS.md).
+- **VAT-04 subset:** forward `3300-vat-draft-amendments.sql` compares exact later
+  same-period synthetic drafts and retains an evidenced operator review of their
+  relationship. It preserves fact revisions, assessment/exclusion lineage and exact
+  contribution/box deltas; unavailable reported amounts remain null. Review requires
+  the exact impact digest and current replacement basis. Successful exact-key replay
+  and historical reads preserve both original drafts and the saved review. This is an
+  internal amendment, never a filed return or new tax calculation. See
+  [VAT amendments](../../apps/api/VAT-AMENDMENTS.md).
+
+Both slices are connected to their existing API groups. Authorized read/compare
+operations remain available through shared MCP capabilities; human amendment review
+is operator-only REST. Migrations are unapplied and SQL/runtime behavior remains
+unverified. No tests or legal/company profiles were added.
+
+Forward `3700-vat-fact-withdrawals.sql` adds permanent, evidenced operator withdrawal
+of an erroneous VAT fact identity. New revisions refuse; successful existing command
+replay and all retained history remain. Withdrawal metadata participates in the current
+basis digest. New `vat-return-draft-v2` calculations retain and explicitly exclude the
+withdrawn observation, while active corrected facts can reuse its source/line claims.
+Sealing refuses an included withdrawn fact. Saved v1/v2 drafts and amendment comparisons
+remain readable without recalculation. Existing closing/review dependency digests stale
+through the changed VAT basis; no legal or filing readiness is gained. See
+[withdrawal boundaries](../../apps/api/VAT-FACT-WITHDRAWALS.md). This migration also remains
+unapplied and runtime-unverified.
+
+### Tax-account statement controls and closing dependency
+
+Forward3800 retains operator-reviewed synthetic tax-account statements and stable event
+identities with exact signed opening/movement/closing conservation. Saved control artifacts
+include complete selected-account ledger history and expose gaps, overlaps, unknown
+classifications and unmatched rows. They do not recognize taxable activity or claim complete
+reconciliation. [Tax-account scope](../../apps/api/TAX-ACCOUNT.md) records the actual bounds.
+
+Forward3950 includes statement/control inventories in the existing VAT dependency owner,
+without changing VAT fact/draft count meanings. Known tax-account records block an
+inapplicable tax-family claim and stale closing/accountant dependencies. Zero differences
+cannot satisfy unavailable tax coverage. Historical artifacts stay readable. See
+[closing integration](../../apps/api/TAX-ACCOUNT-CLOSING-DEPENDENCIES.md).
+
+### Explicit remaining-basis schedule estimates
+
+Forward4000 reuses the existing immutable schedule revision owner for evidenced operator
+amendments under `explicit_remaining_minor_v1`. Gross/imported carrying basis, accounts,
+occurrence count and identities stay fixed. Posted and genuinely reversed prefix history
+remains unchanged. Net recognized amount plus explicit positive future installments and
+nonnegative residual must equal the retained carrying cost. Correction replacement lineage
+cannot fund a new estimate. Both old and new suffix dates must be future/open; new dates
+follow prefix reversals. Changed captures stale old posting authority through the existing
+kernel and physical guards. Later reversals block further recognition until reviewed again;
+normal installment posting preserves peer captures. Zero-value cessation, count/lifetime
+changes, disposal and real legal depreciation policy remain unsupported. See
+[estimate boundary](../../apps/api/SUBLEDGER-ESTIMATE-AMENDMENTS.md).
+
+All three migrations remain unapplied and runtime-unverified. Source review is not proof of
+SQL compilation, concurrent execution, financial outcomes or actual-company readiness.
+
+
+### Exact tax-account matching
+
+Forward4100 adds evidenced operator match/unmatch of one whole known-classified source
+event to one existing posted line with the same date, account, currency and signed amount.
+Read-only basis previews confer no authority. Immutable history and a private reservation
+projection enforce unique event/line capacity; deferred constraints require an active
+reservation or immutable unmatch, never both. Symmetric bank/owner/commerce guards prevent
+cross-owner reuse. A matched voucher must be explicitly unmatched before correction.
+
+New v2 controls consume only usable effective pairs, retaining invalid, unknown and unmatched
+items plus complete source/GL controls. V1 bytes stay unchanged. Match history and effective
+state participate in control/closing/accountant currentness through the connected tax-account
+dependency owner. This does not create payments, taxable facts or journals; aggregate or
+item agreement still does not establish full source coverage or financial-close readiness.
+See [matching scope](../../apps/api/TAX-ACCOUNT-MATCHING.md). Migration4100 remains unapplied
+and runtime-unverified.

@@ -95,7 +95,7 @@ This supports only the explicit synthetic profile and evidenced zero asserted ta
 ## Supplier-invoice duplicate diagnostics
 
 Forward `3000-supplier-invoice-duplicates.sql` adds a read-only COM-01 subset through
-`GET /v1/entities/:entityId/books/:bookId/commerce/supplier-invoice-duplicates`
+`GET /api/v1/entities/:entityId/books/:bookId/commerce/supplier-invoice-duplicates`
 and the shared MCP capability `commerce_supplier_invoice_duplicates`.
 
 Supply `counterpartyId`, `documentNumber` and retained `evidenceId`; pass `after`

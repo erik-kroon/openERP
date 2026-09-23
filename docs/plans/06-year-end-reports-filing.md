@@ -92,7 +92,7 @@ Owned-file static checks do not complete END-01's runtime/concurrency/browser ga
 
 Forward `3400-report-general-ledger.sql` extends END-03 with an account general
 ledger over the existing immutable trial-balance snapshot. REST exposes
-`GET /v1/entities/:entityId/books/:bookId/report-snapshots/:id/lines/:lineId/general-ledger`;
+`GET /api/v1/entities/:entityId/books/:bookId/report-snapshots/:id/lines/:lineId/general-ledger`;
 MCP exposes `reports_general_ledger`. Here `lineId` is the snapshot account ID,
 consistent with the existing explanation endpoint.
 
@@ -114,3 +114,9 @@ renames do not change retained report labels. Paging is bounded to 100 movements
 This is an internal synthetic reporting view, not a statutory report or complete
 source/opening control. Historical snapshot meanings remain unchanged. Source and
 SQL/runtime acceptance are separate; the forward migration remains unapplied.
+
+The same migration adds `GET /api/v1/entities/:entityId/books/:bookId/report-snapshots`
+and MCP `reports_list` for saved-report rediscovery after a session or response loss.
+Pages contain at most 50 immutable headers and an `after`/`next` ID cursor. The
+inventory is live: restart it to discover later arrivals. Opening a retained ID
+keeps that report's frozen date and sequence basis; it never recalculates the report.

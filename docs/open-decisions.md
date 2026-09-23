@@ -20,3 +20,15 @@ Status: remaining configuration, company facts, authority and proof gates. Techn
 The repository settles the Effect major, application names, shared schemas and styling system ([ADR 0001](adr/0001-checkout-runtime-and-accounting-boundary.md)). The accounting design uses one PostgreSQL authority, exact minor-unit posting values, sealed approval and transactional receipts ([ADR 0002](adr/0002-exact-posting-and-approval.md)), plus a native target without a speculative legacy bridge ([ADR 0003](adr/0003-native-accounting-and-migration.md)). [ADR 0004](adr/0004-complete-accounting-delivery-contract.md) retains implemented paired amounts and digest compatibility, chooses Effect/domain versus SQL ownership, source-occurrence separation, production admission shape and physically fenced first cutover. These working choices do not resolve actual company/provider facts or substitute for proof.
 
 When closing a decision, record the chosen behavior, rejected alternative, evidence and affected verification scenarios. Do not mark a question resolved merely because an example file contains a value.
+
+
+## VAT settlement effect contract remains open
+
+The [settlement feasibility review](../apps/api/VAT-SETTLEMENT-FEASIBILITY.md) found a
+contract gap before implementing the planned return-to-settlement link. D-03/D-08 work
+must explicitly choose the synthetic accounting-effect role, its signed mapping from
+saved `box49.exactMinor`, required account-role evidence and a single reviewed obligation
+identity. Existing adjustment/reversal purposes and a matching tax-account amount do not
+resolve these choices. A bank payment or tax-account deposit is not VAT settlement proof.
+No4400 settlement migration or endpoint was added. Tax-account matching and other
+independent backend work continue without inventing these facts or activating a legal profile.

@@ -96,6 +96,39 @@ The workbench shows upload/source coverage, parser diagnostics with original loc
 
 IMP-06 and later cutover consume actual D-04/D-06 material. Synthetic acceptance of the machinery is independently useful but cannot close the actual-data gate.
 
+## Retained interpretation review artifact slice
+
+The [source review artifact handoff](../../apps/api/SOURCE-REVIEW-ARTIFACTS.md) extends IMP-01
+with a persisted exact-byte interpretation export. It binds the selected immutable preview and
+all its rows/diagnostics to the original occurrence/content hash, plus historical review and
+admission summaries without approval bearer material. Scoped capture/get/list support recovery;
+oversized complete inputs are refused rather than truncated. Migration3900 and domain-local
+REST/MCP contracts and shared wiring are integrated in source. Integrated backend type checks passed; runtime proof remains open;
+this does not establish full source coverage or import/posting authority.
+
+## Bounded reconciliation signoff slice
+
+The [bank signoff handoff](../../apps/api/BANK-RECONCILIATION-SIGNOFFS.md) adds a prepared,
+operator-signed review of one declared bank account using existing source coverage and capacity
+reconciliation reports. It pins inventory/source/allocation/ledger/report digests, requires retained
+review evidence, and returns immutable signed JSON with separate stale-state reads. Unknown bank
+family applicability and unresolved selected-account controls block signing; other accounts and
+source families remain outside its claim. This is an IMP-05 slice, not complete-source assurance,
+a waiver mechanism or a new closing gate. Migration3500 and owned transport code are implemented
+in source; shared integration and runtime/concurrency evidence remain root gates.
+
+## Whole declared bank-inventory signoff slice
+
+The [whole-inventory signoff handoff](../../apps/api/BANK-INVENTORY-SIGNOFFS.md) extends IMP-05
+from3500 selected-account signoff to a complete explicit set of already-signed account plans for
+the latest evidenced required bank inventory and one exact period/cutoff. It rejects missing,
+extra, duplicate, stale or unsigned members and all known source-coverage gaps.4300 retains full
+inventory/member identities and hashes, operator evidence and exact prepared/signed canonical
+bytes, with recovery and separate live currentness. Coverage is only the declared bank inventory;
+company completeness and financial-close readiness are not established. Source implementation
+and owned static checks do not establish runtime/concurrency acceptance. Shared integration and
+verification remain root gates. No existing3500, matching, ledger or closing authority is changed.
+
 ## Current bounded source-intake packet
 
 The [source-intake handoff](../../apps/api/SOURCE-INTAKE.md) implements a first IMP-01/IMP-02 path in source: immutable bytes/occurrences, explicit bounded UTF-8 CSV mapping, retained diagnostics, operator review and atomic observation admission through the existing bank authority. The first slice is limited to 64 KiB/200 data records and the current synthetic admission profile; it is not a SIE/provider migration, bulk-import engine or actual-company activation. Integration and real runtime/browser/failure observations remain root gates. The handoff contains exact operations, limits, ownership maps and the manual evidence recipe. It does not establish completed IMP-03–IMP-06 acceptance.
