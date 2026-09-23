@@ -62,6 +62,12 @@ A future estimate/amendment creates a new schedule revision for the explicitly r
 
 Post an installment and its schedule/register link in one transaction. Disposal seals the asset's current carrying basis, proceeds, tax treatment, accumulated depreciation release and gain/loss, including all register consequences. Direct/cascade deletion of a posted schedule or asset is refused. Deferrals use the same occurrence/receipt machinery but separate recognition/amortization semantics; no duplicate speculative schedule framework is needed.
 
+### Bounded carrying basis and declared-account controls (implemented source)
+
+[Subledger controls](../../apps/api/SUBLEDGER-CONTROLS.md) adds forward1500: immutable acquisition/imported carrying bases linked to existing posted lines, and exact declared-account GL snapshots. Gross cost, prior accumulated recognition and remaining carrying amount are retained separately. Missing/reversed bases, occurrence gaps, all ledger contributions and offsetting unexplained rows remain visible. A clean selected-account difference is not complete source coverage or legal depreciation approval.
+
+Forward1510 binds the whole control dependency into closing and accountant-review-v3 artifacts. Missing bases and unavailable complete controls remain mandatory blockers; new bases or report inventories stale earlier approval scopes without rewriting their bytes. API/MCP/routed UI composition is connected in source. Both migrations remain unapplied and runtime-unverified. Forward1800 now captures linked basis authority on native preparations and checks it during shared validation and physical posting. Known generic occurrence and correction-lineage replacements cannot borrow that authority; genuine full reversals remain separate. Existing standalone synthetic schedules keep their interpretation. This source integration and its routed schedule UI remain runtime-unverified.
+
 ## Foreign currency
 
 `ExchangeRateObservation` records source, retrieval and effective dates, currency pair/direction, exact rate, scale and source evidence. `ValuationPolicy` specifies rate-date selection, source hierarchy, precision, rounding and fallback/refusal. No missing rate is silently replaced with 1 or a nearby convenient date. A manual reviewed rate is a distinct evidence-backed decision.

@@ -1,26 +1,27 @@
 # Customer frontend plan
 
-Status: working design and implementation record, 2026-09-22. The implementation section distinguishes delivered surfaces from the remaining customer application. [ADR 0006](adr/0006-customer-workspaces.md) records the choice. Accounting behavior and release gates remain owned by the [area plans](plans/README.md) and [open decisions](open-decisions.md).
+Status: working design and implementation record, 2026-09-23. The implementation section distinguishes delivered surfaces from the remaining customer application. [ADR 0006](adr/0006-customer-workspaces.md) records the choice. Accounting behavior and release gates remain owned by the [area plans](plans/README.md) and [open decisions](open-decisions.md).
 
 Build one application around the work people need to finish. Founders start with decisions and business position. In-house finance starts with the work queue. Accountants working across clients start with a portfolio and enter the same company workspace. Every view opens the same evidence, revisions, approvals and receipts.
 
-## Implementation status — 22 September 2026
+## Implementation status — 23 September 2026
 
-The journal path has a functional implementation in the application frame: source retention, exact decimal entry, immutable review links, approval/posting, a durable receipt, and filtered queue return. It has been exercised in an isolated synthetic runtime. The user has explicitly rejected its current customer experience. No journey is accepted as customer-ready; successful accounting execution and improved styling do not establish that milestone. The UI defaults to light; theme preference remains unfinished. The founder home is still basic, and remaining accounting tools still use the transitional composition. Detailed functional proof and unresolved checks are recorded in [the working evidence](../.agents/work/customer-frontend-proof/journal-flow.md).
+The desktop application now has focused customer workspaces using the existing interface tokens and accounting contracts. This is implementation progress, not customer acceptance or a production-readiness claim. The journal workflow retains its earlier functional proof; the new desktop observations are recorded in [the workspace evidence](../.agents/work/customer-frontend-proof/desktop-workspaces.md).
 
-### Customer experience gap
+| Area | Implemented surface | Remaining boundary |
+| --- | --- | --- |
+| Company overview and work | Compact review counts, recent draft links, period entry and ledger balances; document and invoice shortcuts from To do | Work counts cover journal proposals. No complete cross-domain task feed, live cash or runway |
+| Contacts and invoices | Searchable registers, one-step contact save with retained entry evidence, named customer selection, decimal invoice editing, document-shaped detail, immutable revisions and issue-review entry | A new draft still needs a source note. Legal identity/tax activation and external invoice delivery remain domain work |
+| Documents and purchases | Original-file upload, paginated filename search, PDF/image/text preview and original download; supplier invoice and expense registers with focused creation | Upload does not extract, classify or post a document. Expense tax review still contains specialist forms |
+| Banking | Account and period selection, saved reconciliation detail, imported-statement entry, matching destinations | Existing import/matching controls need further customer workflow work; no live feed or payment initiation |
+| Reports and period work | Report catalogue, period-based trial balance with decimal totals and contribution drilldown, review-pack entry and period readiness checklist | Advanced exports, VAT facts and locking retain specialist controls. Readiness does not establish statutory acceptance |
+| Company directory | Authorized companies, latest period, journal-review count, freshness and scoped entry; search with ten companies per page | This is an authorized-book directory, not a firm/client relationship model. Assignments, handoffs and shared views need persisted contracts |
 
-The current journal path still exposes the implementation's sequence: manually describe and save source text, enter a journal, prepare a proposal, acknowledge review, approve, acknowledge again, then post. It remains an early technical interface. The earlier rough 20–25% estimate described implementation coverage and must not be used as a customer-readiness estimate.
+The desktop pass separates registers, record detail and creation dialogs. Routine customer screens no longer ask for request keys, internal contact IDs, currency scales or minor-unit amounts. Backend approval, immutable revisions and uncertain-outcome handling remain intact. Source references and technical receipts stay available in details.
 
-The next design must address the workflow before expanding its visual pattern across other pages:
+FE-01/02 have further implementation, FE-03/04 have working destination compositions, and FE-05 has an initial read-only directory. None of these statements marks the full packet complete. Remaining work includes evidence-led preparation without manually reconstructing the source, broader work-queue coverage, customer treatment of the specialist flows, persisted team/firm behavior and release proof. Customer quality, implemented behavior and verified accounting behavior remain separate status dimensions.
 
-- Start ordinary customer work from an actual receipt, invoice, bank transaction or actionable request. Manual journals belong in the accountant's tools, with clear scope.
-- Keep the original document or source visible during review. Reuse existing retained-source capabilities rather than asking customers to reconstruct documents as title/origin/plain-text fields.
-- Lead each review with the recognizable record, amount, current issue and next decision. Keep request identities and recovery mechanics in contextual details; surface them when an uncertain outcome actually needs recovery.
-- Show one clear next action for the current person's authority. Preserve backend approval/posting boundaries while removing needless repeated acknowledgements and exposing their purpose when separate people or decisions require them.
-- Make document details, accounting lines and the action fit a deliberate working layout at the user's actual window size. A generic form in a sidebar does not satisfy this requirement.
-
-Customer quality, implemented behavior and verified accounting behavior are separate status dimensions. FE-01/02 remain in progress on all three until their stated requirements are met.
+No new tests were added for this pass. The requested emphasis was desktop implementation; mobile, accessibility and theme acceptance were not expanded or claimed.
 
 ## Design basis
 

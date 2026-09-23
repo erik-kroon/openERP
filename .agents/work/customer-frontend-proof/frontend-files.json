@@ -1,0 +1,167 @@
+{
+  "recordedAt": "2026-09-23",
+  "baseRevision": "0b0e8c035c8400dfd4d8cfc93c9c79bc5c4287e0",
+  "state": "working tree; concurrent domain changes are outside this manifest",
+  "files": [
+    {
+      "path": "apps/web/src/components/accountant-review/panel.tsx",
+      "sha256": "8e36804a619cf16b98152c1f1a1e87f2afe6d6e26a2c49cc3aa3f034170e6dad"
+    },
+    {
+      "path": "apps/web/src/components/book-navigation.tsx",
+      "sha256": "6f36f2d3f457c675ddb821fb45bf61cdbb31353eb186fb6c27e21b2a395b0ba7"
+    },
+    {
+      "path": "apps/web/src/components/closing/panel.tsx",
+      "sha256": "3aafdfc18c17e0dfe532e3250f71378a08be1a5e665347498023ec6e1bc970e0"
+    },
+    {
+      "path": "apps/web/src/components/closing/workspace.tsx",
+      "sha256": "e35ff3cc4baedf124edd282a039b8a7c0f4ef47faf4347a059329dbcf1b953e3"
+    },
+    {
+      "path": "apps/web/src/components/commerce/counterparties.tsx",
+      "sha256": "2fdf53c0183792d5299da28da9ba3b6b9a694d01a04e0932327d2f07d4da2893"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-drafts.tsx",
+      "sha256": "268953be82d0a9a9c60354c83014e03cd2c658aa354c6b1a0f6ef4da53c3cdcd"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoices.tsx",
+      "sha256": "fb600a6a7e68e5e3e6d624aeb4e07ba03f49aaa614c475b9fcc7bce7e17e6089"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-registration.tsx",
+      "sha256": "5fea5684987d0404d158c6a83ffcfd371ebb21c7c06cc66c7b57a69416585455"
+    },
+    {
+      "path": "apps/web/src/components/commerce/shared.tsx",
+      "sha256": "0c4b67c2a6f3a3ac4cbdc7731f98d2b6110dd10ed5e9017f7252878e3cc748ca"
+    },
+    {
+      "path": "apps/web/src/components/expense-tax/panel.tsx",
+      "sha256": "f590e12c36a62c33ff14abe8a3da04b996193ae8b37c223f4251c478c46fbf1b"
+    },
+    {
+      "path": "apps/web/src/components/expense-tax/expense-editor.tsx",
+      "sha256": "7d74af372ccfeaa75d354df5c4d5d676269e6d56a2e4d49a4ba33c03b1011a5b"
+    },
+    {
+      "path": "apps/web/src/components/finance-area.tsx",
+      "sha256": "56dbf370c4d05f5e0da2705d87ccee678e45bb2e064f98ea2c8f0bc99d452265"
+    },
+    {
+      "path": "apps/web/src/components/trial-balance.tsx",
+      "sha256": "98cdfffec5dfab227578390cd1707e1d7e19e38cd2ec3f1c16e1b5cc92dbd5c6"
+    },
+    {
+      "path": "apps/web/src/components/work-home.tsx",
+      "sha256": "7366a09616c5c0f7e30a4af4733ea36d3c0b83cd54cf6b4df3d2315775894c41"
+    },
+    {
+      "path": "apps/web/src/components/banking-workspace.tsx",
+      "sha256": "7382d3f9e8132071b550dc91cf019e40d053a83389fec34c3d2a7b6694ec2f3f"
+    },
+    {
+      "path": "apps/web/src/components/company-overview.tsx",
+      "sha256": "dd1d879d3a2843c6902a279bd883c21fd1ac0cf90af7b9c6ba5906eb63dae19d"
+    },
+    {
+      "path": "apps/web/src/components/document-inbox.tsx",
+      "sha256": "8475a9d996b2ed3406178a47b2b86825e2819b8a6af387995a7ef1cce1fd5e20"
+    },
+    {
+      "path": "apps/web/src/components/report-workspace.tsx",
+      "sha256": "5f483b7c0a7b0693cbe7e59a46805d9b3df78f228c66bb63af2a98ac7d974389"
+    },
+    {
+      "path": "apps/web/src/components/retained-note.tsx",
+      "sha256": "9a501cbbecc8d7aab2bc885c00117918f82949024f51317ed4bee0fa128a6193"
+    },
+    {
+      "path": "packages/ui/src/components/field.tsx",
+      "sha256": "410a68ecab435d9652f03641baacef42bf2af2f4bc4629396be9996b7c72c08f"
+    },
+    {
+      "path": "packages/ui/src/components/record-layout.tsx",
+      "sha256": "9e64f6553c5df943f19bd17c519b1466a1d3187f7c26b90fbe4b2688b8f3d7f9"
+    },
+    {
+      "path": "packages/ui/src/components/document-preview.tsx",
+      "sha256": "acf98cb11c6e206375accaa548fddfb499000915141f9a22676ef1c3fa330acb"
+    },
+    {
+      "path": "packages/ui/src/theme/tokens.stylex.ts",
+      "sha256": "8fcf3bb81ef575e93cd6915efc8405ce3c155a0c9ead8012d4040ea77d1efd29"
+    },
+    {
+      "path": "packages/ui/src/styles/globals.css",
+      "sha256": "a0fa7dc089a9809d73480bcc63a966653003cc45d49746e2c8abf87f2568367f"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.overview.tsx",
+      "sha256": "a086b185e911f957868fefbc5f9ab0c4cd547e064fafa966138651f2793247b2"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.accounts.tsx",
+      "sha256": "5614e4ee39f800fd36e76b2279aa24312783e672cd134b0fa2af66bae219fe34"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.closing.tsx",
+      "sha256": "b296f2dab1f27ac358872b392c0c4f1b4edb281ec49f7e80683b0f6f18459072"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.purchases.tsx",
+      "sha256": "890fb9d5d0c703f28d1bd3cdc539de04b43f32d2183464c7d7e5009392fa751f"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.reports.tsx",
+      "sha256": "12dae6403f440804ad171f389ce629fa8ba427c34e489a890950f3f9fb232466"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.sales.tsx",
+      "sha256": "41edf4b057a8a96c9651fa805a5df4084edc7f6ebe9c23fadb53f196a3b834ad"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.tax.tsx",
+      "sha256": "0f81f664ee96a52edfbc103f59b2c009ab18a17796887cf09e28ad10a0c88321"
+    },
+    {
+      "path": "apps/web/src/components/commerce/contact-editor.tsx",
+      "sha256": "5fe917743218c470a22d591bdaf6892964f7ae52ce9097d55983cd699eba6c4a"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-draft-issue-overlay.tsx",
+      "sha256": "ae7d2e076ad3bbb63dfd640bcdbba6555a4792b73bf13384793991d4f7b1aa3c"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-draft-copy.ts",
+      "sha256": "86343f0a3e3918eef4e629ab4f054fb0c93f2f1229421cfc1bed55d3ef83f8bc"
+    },
+    {
+      "path": "apps/web/src/components/vat-returns/panel.tsx",
+      "sha256": "002e814cb617ede7a9d3a44250d8b5a3aa5ad13e005d025e7c319e11d58f8c46"
+    },
+    {
+      "path": "apps/web/src/components/company-directory.tsx",
+      "sha256": "c64303f9b42df8d9bdaf602a67e29384604f741c2db3aa9cb0d988a0b345d5b2"
+    },
+    {
+      "path": "apps/web/src/components/book-workspace.tsx",
+      "sha256": "e6a8b6958aa59c33e3804893c415ae187116399b28b700dca08cd1f214ec9bcd"
+    },
+    {
+      "path": "apps/web/src/routes/companies.tsx",
+      "sha256": "8c7ed0620ee2a909d1d0041fe2641e8ab2a67259b5af03ea9dbff7ac4d2e80c3"
+    },
+    {
+      "path": "apps/web/src/routes/index.tsx",
+      "sha256": "20d24d05ee7abcef81d24690a1f09764d03fa89b7c5070be249fa7b9546afc9c"
+    },
+    {
+      "path": "apps/web/src/components/accounting-status.tsx",
+      "sha256": "aabb5d7069ce94fc4ab57c841ccacd0d1bc4c80615807b723e7e5e7fb6e3e831"
+    }
+  ]
+}

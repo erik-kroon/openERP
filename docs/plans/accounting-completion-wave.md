@@ -50,6 +50,17 @@ Asset controls link existing posted lines; they do not create acquisitions or au
 
 Implementation notes: [bank unmatch](../../apps/api/BANK-MATCH-REVERSALS.md), [synthetic invoice issue](../../apps/api/INVOICE-ISSUANCE.md), and [subledger controls](../../apps/api/SUBLEDGER-CONTROLS.md). The source handoff is retained in `.agents/work/domain-implementation-2026-09-23/`. No tests, lint/type/build commands, browser sessions, database execution or migration application were performed for this wave. All new behavior remains runtime-unverified; legal profiles, external delivery and complete accounting readiness remain open.
 
+## Continuous implementation follow-up
+
+The user asked to keep implementing without focusing on tests, browser or mobile work. The next source-only packet is assigned to the retained domain owners:
+
+-1600: read-only bank match candidates using effective capacities, explicit heuristic reasons and unresolved ambiguity. No automatic match or posting.
+-1700: reviewed whole-allocation payment unallocation with immutable originals, once-only capacity release and forward updates to effective commerce consumers.
+-1800: linked carrying-basis validity is implemented and source-integrated at preparation, shared validation and physical posting, including already-prepared/generic paths and known correction ancestry. Standalone synthetic schedule semantics remain. Runtime proof is open.
+-1900: evidence-backed manual exchange rates and exact immutable conversion review are assigned next. No cross-currency posting, revaluation or legal-rate activation is included.
+
+1600,1700 and1900 remain active assignments;1800 is source-integrated but unverified. Root owns shared integration and preserves concurrent UI work. No historical migration, test or external system is changed by this authority.
+
 ## Observed baseline
 
 The baseline `bun run check-types` passed, including the web build and existing test-source compilation. The existing `bun run test:e2e` run passed **17 of 20** cases:
