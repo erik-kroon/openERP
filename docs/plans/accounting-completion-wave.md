@@ -84,3 +84,18 @@ No deployment, production migration, real-company posting, external filing, paym
 ## Latest implementation-only instruction
 
 The user stopped tests and test writing. No further validation commands are running or planned; work continues through implementation and source review. Before this instruction, the frozen0920/0930 checkpoint passed types/build and17/20 existing E2E cases, including MCP; the same three baseline failures remain. This is not acceptance of new report/closing scenarios. Receipts and the exact source/migration manifest are in `.agents/work/accounting-completion-wave-01/`. Unknown concurrent0940 was excluded. A frozen lint attempt selected zero files and is not a pass; formatting did not run. Later VAT/SIE/invoice work remains unvalidated.
+
+## Existing-workflow recovery: source-only follow-up
+
+Forward migrations `2600-preparation-job-recovery.sql` and `2700-source-upload-replay.sql` repair existing workflows; they add no financial execution or posting authority. Historical0940/0910 remain unchanged.
+
+- A new authorized preparation-job admission can atomically stop an obsolete ready job and admit its replacement under the book lock. A changed configured executor, lost original authority or changed run audit can establish obsolescence. An unchanged active job still refuses replacement. Cancelled/blocked runs still require explicit resume. Exact old-key replay returns its original receipt; changing executor identity requires a new explicit command. The UI offers a replacement request, retains uncertain requests for exact-key retry, and reads live job status separately from admission receipts.
+- Completed object-backed source uploads return the exact saved occurrence from authorized, input-matched admission before acquiring, writing or reading object storage. New/pending uploads still require canonical input, digest/length verification and separately authorized completion. Receipt replay does not establish current object availability. Public contracts and inline-source behavior are unchanged.
+
+Both migrations are source-reviewed only, unapplied and runtime-unverified. No test, type, lint, browser or SQL execution was performed for this follow-up. Concurrent workspace/firm migrations are outside this repair's ownership.
+
+### Stored submitter identity admission
+
+Forward `2800-preparation-identity-admission.sql` carries the identity-disable rule into durable preparation jobs. Provisioning revokes browser sessions, but can leave an API credential and book membership intact; those alone no longer authorize another queued step for a disabled submitter. Delivery checks the original identity admission between credential/session and membership/book locks. An existing admission row remains locked through the step; an absent row keeps the authentication layer's legacy behavior. Authorized replacement admission can also recognize the disabled original submitter without reversing lock order.
+
+No new posting, identity-management or run-resume authority is introduced. Existing checkpoints, terminal replay and saved receipts remain intact. Migration2800 is source-only, unapplied and runtime-unverified; concurrent identity provisioning and historical migrations were not changed.

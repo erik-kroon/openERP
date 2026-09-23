@@ -1,0 +1,65 @@
+{
+  "before": {
+    "status": 403,
+    "body": {
+      "_tag": "AccountingError",
+      "code": "Forbidden",
+      "message": "You do not have access to this firm action."
+    }
+  },
+  "added": {
+    "status": 200,
+    "body": {
+      "firmId": "firm_a15959e5b9e04443b2debc387923ea75",
+      "revision": 3
+    }
+  },
+  "after": {
+    "status": 200,
+    "body": {
+      "firm": {
+        "id": "firm_a15959e5b9e04443b2debc387923ea75",
+        "name": "Northstar Accounting · Demo",
+        "role": "accountant"
+      },
+      "actorId": "actor_firm_colleague",
+      "clients": [],
+      "members": [
+        {
+          "actorId": "actor_firm_colleague",
+          "name": "Alex · Demo accountant",
+          "email": "alex-firm-demo@openerp.local",
+          "role": "accountant",
+          "active": true,
+          "signInEnabled": true,
+          "revision": 3
+        },
+        {
+          "actorId": "actor_customer_demo",
+          "name": "Demo operator",
+          "email": "customer-demo@openerp.local",
+          "role": "admin",
+          "active": true,
+          "signInEnabled": true,
+          "revision": 1
+        }
+      ]
+    }
+  },
+  "selfPromote": {
+    "status": 403,
+    "body": {
+      "_tag": "AccountingError",
+      "code": "Forbidden",
+      "message": "You do not have access to this firm action."
+    }
+  },
+  "noBook": {
+    "status": 403,
+    "body": {
+      "_tag": "AccountingError",
+      "code": "Forbidden",
+      "message": "This credential does not have the required book authority."
+    }
+  }
+}

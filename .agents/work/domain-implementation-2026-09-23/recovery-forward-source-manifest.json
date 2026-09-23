@@ -1,0 +1,11 @@
+{
+  "kind": "source-only receipt",
+  "limitations": "Hashes of current shared files, not an atomic tree snapshot, exclusive authorship claim, migration application or runtime validation.",
+  "files": {
+    "apps/api/migrations/2600-preparation-job-recovery.sql": "47ed1fccda90736ccde3ef538995a3f06ea34d2054d133c4c37563612948bf43",
+    "apps/api/migrations/2700-source-upload-replay.sql": "c331c1afb12c2aee9a86fa6a7797e68c39b6646f2dcfd916bdff4665a37524b4",
+    "apps/api/src/application/source-retention.ts": "1550ec3d2abfa73f2310a98ca55c72d2e0d77e225bc6b7354fe4bc573b0c56b5",
+    "apps/web/src/components/preparation-background.tsx": "31bfc078c8631962028db318538a81e588ff77711c0d00f54f0036e1232c1e88",
+    "apps/web/src/components/preparation-run.tsx": "5d6dfbc9df5b6b1d0c3f6c532a99b342156cbd8dd9b6aa8da32b8369e7a85fec"
+  }
+}

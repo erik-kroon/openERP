@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "name": "local",
+      "result": "Success",
+      "method": "password"
+    },
+    {
+      "name": "production_missing_provider",
+      "result": "Failure",
+      "method": null
+    },
+    {
+      "name": "production_password_forbidden",
+      "result": "Failure",
+      "method": null
+    },
+    {
+      "name": "configured_oidc",
+      "result": "Success",
+      "method": "oidc"
+    }
+  ],
+  "providerNamespacesDistinct": true,
+  "externalProviderCallback": "not_verified"
+}

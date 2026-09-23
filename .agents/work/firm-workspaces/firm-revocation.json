@@ -1,0 +1,7 @@
+{
+  "removed": 200,
+  "firmReadAfterRemoval": 403,
+  "bookReadAfterRemoval": 200,
+  "leadAvailableAfterRemoval": false,
+  "restored": 200
+}

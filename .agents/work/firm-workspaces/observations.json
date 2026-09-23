@@ -1,0 +1,81 @@
+{
+  "saved": {
+    "status": 200,
+    "body": {
+      "firmId": "firm_a15959e5b9e04443b2debc387923ea75",
+      "revision": 2
+    }
+  },
+  "replay": {
+    "status": 200,
+    "body": {
+      "firmId": "firm_a15959e5b9e04443b2debc387923ea75",
+      "revision": 2
+    }
+  },
+  "stale": {
+    "status": 409,
+    "body": {
+      "_tag": "AccountingError",
+      "code": "StaleDependency",
+      "message": "This client changed. Reload its details before saving."
+    }
+  },
+  "conflict": {
+    "status": 409,
+    "body": {
+      "_tag": "AccountingError",
+      "code": "IdempotencyConflict",
+      "message": "This request key was already used for different details."
+    }
+  },
+  "finalAdmin": {
+    "status": 422,
+    "body": {
+      "_tag": "AccountingError",
+      "code": "InvalidJournal",
+      "message": "Keep at least one active firm administrator."
+    }
+  },
+  "workspaceStatus": 200,
+  "workspace": {
+    "firm": {
+      "id": "firm_a15959e5b9e04443b2debc387923ea75",
+      "name": "Northstar Accounting · Demo",
+      "role": "admin"
+    },
+    "actorId": "actor_customer_demo",
+    "clients": [
+      {
+        "book": {
+          "entityId": "entity_customer_demo",
+          "id": "book_customer_demo",
+          "name": "Northstar Studio · Demo",
+          "currency": "SEK",
+          "profile": "synthetic-core-v1",
+          "role": "operator",
+          "sequence": "0"
+        },
+        "leadId": "actor_customer_demo",
+        "leadAvailable": true,
+        "nextReviewOn": "2026-09-30",
+        "note": "Confirm September receipts with the founder before the monthly review.",
+        "revision": 2,
+        "eligibleLeadIds": [
+          "actor_customer_demo"
+        ]
+      }
+    ],
+    "members": [
+      {
+        "actorId": "actor_customer_demo",
+        "name": "Demo operator",
+        "email": "customer-demo@openerp.local",
+        "role": "admin",
+        "active": true,
+        "signInEnabled": true,
+        "revision": 1
+      }
+    ]
+  }
+}

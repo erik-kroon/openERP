@@ -1,0 +1,15 @@
+{
+  "grantApply": 0,
+  "oldSessionAfterGrant": 401,
+  "grantedClientCount": 1,
+  "accountantHandoff": 200,
+  "staleGrantApply": 1,
+  "revokeApply": 0,
+  "oldSessionAfterRevoke": 401,
+  "revokedClientCount": 0,
+  "disableApply": 0,
+  "disabledSession": 401,
+  "disabledSignIn": 500,
+  "rebindApply": 1,
+  "restoreDemo": 0
+}
