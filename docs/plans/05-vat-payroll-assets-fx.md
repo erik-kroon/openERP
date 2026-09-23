@@ -127,7 +127,10 @@ Payroll, assets and VAT can progress independently after their foundations; none
   posting authority through the existing shared and physical posting guards; native
   re-preparation requires fresh approval. Controls accept the retained basis lineage
   without rewriting saved artifacts. Forward4000 now adds explicit remaining-amount
-  estimates as described below; lifetime/count changes, impairment and disposal remain separate work. See [the implementation boundary](../../apps/api/SUBLEDGER-SCHEDULE-AMENDMENTS.md).
+  estimates as described below. Forward6100 extends that command with explicit future
+  installment-count changes; forward4200 adds a separate no-proceeds disposal profile.
+  Impairment and legal lifetime/method policy remain separate work. See
+  [the date-amendment boundary](../../apps/api/SUBLEDGER-SCHEDULE-AMENDMENTS.md).
 - **VAT-04 subset:** forward `3300-vat-draft-amendments.sql` compares exact later
   same-period synthetic drafts and retains an evidenced operator review of their
   relationship. It preserves fact revisions, assessment/exclusion lineage and exact
@@ -177,11 +180,12 @@ nonnegative residual must equal the retained carrying cost. Correction replaceme
 cannot fund a new estimate. Both old and new suffix dates must be future/open; new dates
 follow prefix reversals. Changed captures stale old posting authority through the existing
 kernel and physical guards. Later reversals block further recognition until reviewed again;
-normal installment posting preserves peer captures. Zero-value cessation, count/lifetime
-changes, disposal and real legal depreciation policy remain unsupported. See
+normal installment posting preserves peer captures.4000 itself does not change count or
+add disposal. The narrower additional6100 count-change and4200 disposal profiles are described
+below. Zero-value cessation and real legal depreciation policy remain unsupported. See
 [estimate boundary](../../apps/api/SUBLEDGER-ESTIMATE-AMENDMENTS.md).
 
-All three migrations remain unapplied and runtime-unverified. Source review is not proof of
+These migrations remain unapplied and runtime-unverified. Source review is not proof of
 SQL compilation, concurrent execution, financial outcomes or actual-company readiness.
 
 ### Exact tax-account matching
@@ -256,7 +260,6 @@ The source is integrated. Independent source review found no actionable blocker 
 membership, saved-version compatibility, disclosure and complete-read bounds. Backend and
 web type checks passed. Runtime proof remains open.
 
-
 ### Expense snapshot source membership
 
 Forward5200 adds an optional exact source filter to the existing expense snapshot list.
@@ -269,7 +272,6 @@ keep0710 summaries and cursors. See
 Source is integrated and backend type checks pass. Independent source review found no
 actionable blocker in sparse paging, cursor isolation or historical assessment semantics.
 Runtime proof remains open.
-
 
 ### Cross-register line-reference disclosure
 
@@ -284,3 +286,25 @@ unchanged. See [schedule references](../../apps/api/SUBLEDGER-TAX-MATCH-REFERENC
 and [tax-match disclosure](../../apps/api/TAX-ACCOUNT-SUBLEDGER-DISCLOSURE.md).
 No universal account-role exclusivity policy was selected. Both source paths are
 integrated; source/static review is separate from unperformed runtime verification.
+
+### Explicit future installment-count changes
+
+Forward6100 extends the existing operator estimates command, without a new endpoint or
+financial policy. Different-count requests emit `remaining_lifetime_v1`: every replacement
+future occurrence receives a fresh never-reused key, while the posted/full-reversed prefix,
+original carrying basis and accounts remain unchanged. All removed and replacement entries
+must be future/open and unposted. Net recognized plus positive future amounts plus residual
+must equal retained carrying cost. `usefulPeriods` is the current slot count, not a legal
+useful-life recommendation.
+
+The physical revision guard independently checks the whole transition. Preparation display
+matches a preparation's pinned revision identity, not ordinal alone. All-generation ordinal
+attempts remain capped at100;120 current occurrences and20 revisions permit at most2400
+retained identities. Existing1800/4200 posting guards stale prior captures and protect retired
+keys. Same-count/date amendments retain current keys; disposal still freezes revisions.
+
+Root and two independent source reviews found no blocker. Backend/scripts/contracts/Swedish
+jurisdiction and web type checks passed; targeted contract lint reported zero warnings/errors.
+No tests, SQL compilation/application, runtime, concurrency or actual-company validation were
+performed. Fully posted reopening, zero cessation, impairment, proceeds and automatic/legal
+lifetime policy remain unsupported. See the [complete contract and handoff](../../apps/api/SUBLEDGER-ESTIMATE-AMENDMENTS.md).

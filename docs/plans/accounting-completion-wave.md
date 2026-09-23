@@ -9,7 +9,7 @@ Status: in progress. This record keeps source delivery, observed checks and exte
 | Bank reconciliation       | Exact matches, approved partial/many-to-many allocations and reviewed unmatch in source; retained CSV preview/admission                                                | Runtime acceptance, complete source coverage and broader recovery proof                                                 |
 | Invoice registers         | Evidence-backed registration, approved payment allocation and frozen ageing/GL controls                                                                                | Historical open items, credits/refunds/corrections, completeness and domain proof                                       |
 | Invoice issuance/delivery | Immutable commercial drafts and bounded synthetic issue with atomic recognition, internal numbering and customer registration in source; no legal issuance or delivery | Runtime acceptance, reviewed legal/tax profiles, legal numbering, credits/corrections and durable delivery              |
-| Asset schedules           | Synthetic schedules, linked basis guards, evidenced future-date/remaining-basis changes and no-proceeds disposal in source                                             | Runtime acceptance, complete inventory/reconciliation, broader lifetime/impairment/proceeds policies and reviewed rules |
+| Asset schedules           | Synthetic schedules, linked basis guards, evidenced future-date/remaining-basis/count changes and no-proceeds disposal in source                                       | Runtime acceptance, complete inventory/reconciliation, broader lifetime/impairment/proceeds policies and reviewed rules |
 | MCP                       | Shared schema-backed tool catalog, scoped handlers, no approval tools                                                                                                  | Complete operation-specific parity/recovery proof; catalog-key coverage now enforced by types                           |
 | Internal reports          | Trial-balance snapshots and retained accountant-review JSON/CSV packs                                                                                                  | Reviewed opening basis, further report families and independent domain proof                                            |
 | Technical closing         | Evidenced family declarations, domain dependency blockers and retained close/reopen certificates                                                                       | Complete applicable family controls, broader failure/concurrency proof and separate financial-close semantics           |
@@ -431,3 +431,17 @@ The former function-qualified local could fail before persisting `stopped`; the 
 locks, checkpoint/results or step idempotency. Root and independent full-function diffs
 found only the intended identifier/binding substitution. SQL compilation/execution remains
 unverified; prior TypeScript checks are not evidence for this SQL branch.
+
+Forward6100 adds explicit future installment-count changes through the existing estimates
+command. It preserves posted/full-reversed prefix bytes and immutable carrying basis/accounts,
+assigns fresh never-reused keys to the replacement future suffix, and independently enforces
+complete old/new suffix validation and exact conservation in the physical revision guard.
+Preparation state follows pinned evidence/ordinal/key identity; ordinal attempt counters still
+span every generation. Existing posting/dependency guards and all-history retired-key fences
+remain unchanged. No automatic/legal lifetime, zero cessation or fully posted reopening was
+added. See [the estimate handoff](../../apps/api/SUBLEDGER-ESTIMATE-AMENDMENTS.md).
+
+Root and both independent6100 source reviews found no concrete blocker. API/scripts,
+contracts, Swedish-jurisdiction and direct web type checks passed; targeted subledger-contract
+lint reported zero warnings/errors. SQL remains unapplied and uncompiled; no runtime,
+concurrency, financial outcome or actual-company proof is implied.

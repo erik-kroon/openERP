@@ -2,7 +2,11 @@
 
 Status: active. The acceptance ledger in `docs/frontend.md` remains incomplete. Continue through its journeys without treating a completed route, API operation or build as whole-task completion. No test additions are authorized.
 
-## Current unit: Sales
+## Current focus: core daily workflows
+
+The priority is unfinished customer screens and ordinary daily work. Banking and Home/To do now have an implemented first pass, recorded in the checkpoint below. Continue with contextual bank report/undo and the source-to-purchase workflow, then Books/Reports/period and Firm. Keep remaining Sales acceptance gaps visible; do not let unusual local-edit or recovery cases prevent progress on the core application.
+
+## Sales baseline
 
 Build a unified customer invoice register with server-owned lifecycle state, URL search/status/sort/page, contextual record inspection, document-shaped editing and record-scoped review. Reuse the existing immutable draft and issuance operations. Do not infer legal issuance, delivery or payment from a rendered preview.
 
@@ -52,7 +56,7 @@ Remaining Sales work (required, not optional polish; updated after the draft che
 1. Finish payment discovery/history pagination with longer lists. The populated Sales register, date basis, page/search/empty/read-error recovery and record return are now observed; remaining sort/Back combinations belong to the final interaction pass.
 2. The versioned demo invoice layout is implemented and its preview/download is observed, with original artifact bytes preserved. Include the document in the remaining visual/reference acceptance. The supported file is HTML; production legal issuance, PDF and delivery are not established.
 3. Finish remaining failure/scope observations and recovery UX: storage denial/corruption, competing local editing sessions and switched actor; expired approval and multi-invoice undo. Ordinary draft close/reload/discard, two-stage save recovery and server revision conflict are now observed. A competing local session is prevented from overwriting storage, but its current generic storage message and retry-only path need a clearer recovery choice.
-4. Perform the remaining visual/reference acceptance and overall customer interaction review before marking Sales accepted. Continue to Banking, Home/To do, Purchases, Books/Reports/period, Firm and integrated navigation in that order.
+4. Perform the remaining visual/reference acceptance and overall customer interaction review before marking Sales accepted. The core-workflow priority above supersedes the earlier requirement to finish every Sales recovery case before starting Banking and Home.
 
 Document/cancellation failure cases before this pass: a document must be bound to the opened issue, including on reload; no preview/download before source identity, exact byte length and SHA-256 validation; a failed read must hide cached download controls; an interrupted render resumes its retained capture and does not reissue; a download stays HTML and is never labelled PDF or delivery. Cancellation must identify the opened invoice, show formatted reversal amounts and account names, preserve unresolved request identities, distinguish stale/expired approval from completion, and keep the cancelled invoice/document/history available after reload.
 
@@ -196,3 +200,29 @@ Current task-owned browser tab 11 remains on SYN-2. Web 3107 and API 18790 remai
 Next required work: competing-local-edit recovery, then the remaining payment/scope observations and visual/reference pass. Sales is still in progress; Banking and all later journeys remain open. No whole journey is accepted by this checkpoint.
 
 Final checks for this checkpoint: `bun run lint`, full `bun run check-types`, `bun run build`, and `git diff --check` passed. Logs: `.cache/customer-frontend/register-doc-final-lint.log`, `register-doc-final-types.log`, `register-doc-final-build.log`. The shared checkout contains unrelated active accounting changes; this task did not commit, deploy or modify test files.
+
+
+## Banking, Home and voucher checkpoint — 23 September 2026
+
+Implemented:
+
+- A named bank-account register replaces the routine six-tab entry. The account workspace keeps date interval, transaction view, search, pagination and selected matching review in the URL. Statement and ledger balances state their dates; a difference is shown only for the same closing date. Transaction rows show signed decimal amounts, partial matching and remaining capacity.
+- Matching opens from a bank transaction. The customer selects a posted entry, reviews the amount and reason, prepares, approves and confirms using the existing accounting owners. Saved reviews show both transaction descriptions, the amounts after that match and the retained statement evidence. Voucher links open the exact record in a sheet with a compact debit/credit table; source material and technical details are disclosed beneath it.
+- Overview and To do separate overdue invoices, account matching and accounting/expense reviews from saved invoice drafts. Counts come from their domain reads. The overview replaces the raw ledger with dated bank-account balances and unpaid customer invoices. It does not present ledger balances as a live bank feed or infer revenue, runway or statutory readiness.
+
+Observed in the local synthetic book through the browser:
+
+1. Opened Business account, selected Customer receipt, chose the posted 550 SEK entry and completed prepare → approve → confirm.
+2. Receipt remaining changed from 15,000 SEK to 14,450 SEK and its row showed Partly matched. Unmatched ledger entries decreased from two to one. This bank match does not change the separate invoice payment allocation.
+3. Opened the saved matching review from account history and followed it to voucher A2. Browser Back returned to the same account, interval and review.
+4. Opened the account from Overview: 1 January–23 September was retained, statement balance was 14,000 SEK, ledger balance 950 SEK and their difference −13,050 SEK. The overview showed one unpaid/overdue customer invoice and separate resumable drafts.
+
+Repeatable inspection: use `/entities/entity_customer_demo/books/book_customer_demo/overview`; open Business account, then the saved matching history. Saved plan: `bankplan_8757faca55064a438a9325ad23b8afee`. Voucher: `voucher_4977835904664bcfaafa98215280c66b`. The mutation walkthrough used existing synthetic records only. No external payment, invoice delivery or production activation occurred.
+
+Artifacts in `.cache/customer-frontend`: `bank-account-workspace.png`, `bank-match-completed.png`, `bank-voucher-detail.png`, `company-overview.png`. The screenshots are real app captures, not design mockups. Migration `6200-bank-workspace.sql` is applied to the isolated preview database and must remain immutable there. No new test files were added.
+
+Remaining core work: multi-entry selection and contextual undo/report completion in accounts; document-to-purchase composition; complete report/record/period navigation; the firm's daily client-work flow. Home/work assignment and filtered return need an integrated pass. The existing specialist bank panels remain reachable, so this checkpoint does not claim complete bank, home or application acceptance. Production D-01 and D-04 remain open.
+
+Further observations in this checkpoint: statement import opens from the selected account and closing its upload dialog preserves the account/date URL, with a return-to-account action. To do → overdue invoices opened the one overdue invoice register; selecting SYN-2 retained its overdue/due-date view and showed 400 SEK matched and 550 SEK outstanding. The bank matching operation did not mark that invoice paid. Posted-voucher inspection now uses one full-width debit/credit table and collapsible evidence instead of repeated headings and a narrow stacked review table.
+
+Read-only snapshot: `bun .cache/customer-frontend/bank-home-observation.ts` refreshes `bank-home-observation.json` from the authorized local APIs. This supplements the browser walkthrough and does not replay mutations. Verification: `bun run lint`, `bun run check-types`, `bun run build`, and both staged/unstaged `git diff --check` passed. Logs: `banking-home-final-lint.log`, `banking-home-final-types.log`, `banking-home-build.log`. The shared checkout was committed by another task during this work; this task did not create a commit or push.
