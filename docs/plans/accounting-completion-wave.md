@@ -4,21 +4,21 @@ Status: in progress. This record keeps source delivery, observed checks and exte
 
 ## Requested scope and current boundary
 
-| Capability                | Current implementation boundary                                                                                                                                        | Remaining work                                                                                                                          |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Bank reconciliation       | Exact matches, approved partial/many-to-many allocations and reviewed unmatch in source; retained CSV preview/admission                                                | Runtime acceptance, complete source coverage and broader recovery proof                                                                 |
-| Invoice registers         | Evidence-backed registration, approved payment allocation and frozen ageing/GL controls                                                                                | Historical open items, credits/refunds/corrections, completeness and domain proof                                                       |
-| Invoice issuance/delivery | Immutable commercial drafts and bounded synthetic issue with atomic recognition, internal numbering and customer registration in source; no legal issuance or delivery | Runtime acceptance, reviewed legal/tax profiles, legal numbering, credits/corrections and durable delivery                              |
-| Asset schedules           | Synthetic schedules, evidence-backed carrying bases and immutable declared-account GL controls in source                                                               | Runtime acceptance, complete inventory/reconciliation, basis-aware posting authority, amendments/impairment/disposal and reviewed rules |
-| MCP                       | Shared schema-backed tool catalog, scoped handlers, no approval tools                                                                                                  | Complete operation-specific parity/recovery proof; catalog-key coverage now enforced by types                                           |
-| Internal reports          | Trial-balance snapshots and retained accountant-review JSON/CSV packs                                                                                                  | Reviewed opening basis, further report families and independent domain proof                                                            |
-| Technical closing         | Evidenced family declarations, domain dependency blockers and retained close/reopen certificates                                                                       | Complete applicable family controls, broader failure/concurrency proof and separate financial-close semantics                           |
-| VAT returns               | Evidence-backed tax facts and synthetic draft box snapshots; actual-company amounts excluded                                                                           | Reviewed real tax profile and ledger controls, tax-account reconciliation, amendments and filing artifacts                              |
-| Bank feeds                | No connected feed; file intake is not a feed                                                                                                                           | Provider contract/consent, cursors/revisions, durable synchronization and reconciliation                                                |
-| SIE                       | Synthetic SIE4I capture, CP437 encoding, immutable artifacts and download in source                                                                                    | Runtime/semantic/destination acceptance; separate full-book 4E and loss-preserving import profiles                                      |
-| Payroll/AGI               | Not implemented                                                                                                                                                        | Private scoped inputs, reviewed calculation profiles, approval/posting, settlement and declarations                                     |
-| Statutory reports         | Not implemented; review packs are not statutory output                                                                                                                 | Financial close/openings, tax bridge, K2/K3 facts, mappings/schema validation and actual required outcomes                              |
-| Peppol/payment files      | Not implemented                                                                                                                                                        | Exact format profiles, immutable artifacts, validation, authority and provider-specific delivery/recovery                               |
+| Capability                | Current implementation boundary                                                                                                                                        | Remaining work                                                                                                          |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Bank reconciliation       | Exact matches, approved partial/many-to-many allocations and reviewed unmatch in source; retained CSV preview/admission                                                | Runtime acceptance, complete source coverage and broader recovery proof                                                 |
+| Invoice registers         | Evidence-backed registration, approved payment allocation and frozen ageing/GL controls                                                                                | Historical open items, credits/refunds/corrections, completeness and domain proof                                       |
+| Invoice issuance/delivery | Immutable commercial drafts and bounded synthetic issue with atomic recognition, internal numbering and customer registration in source; no legal issuance or delivery | Runtime acceptance, reviewed legal/tax profiles, legal numbering, credits/corrections and durable delivery              |
+| Asset schedules           | Synthetic schedules, linked basis guards, evidenced future-date/remaining-basis changes and no-proceeds disposal in source                                             | Runtime acceptance, complete inventory/reconciliation, broader lifetime/impairment/proceeds policies and reviewed rules |
+| MCP                       | Shared schema-backed tool catalog, scoped handlers, no approval tools                                                                                                  | Complete operation-specific parity/recovery proof; catalog-key coverage now enforced by types                           |
+| Internal reports          | Trial-balance snapshots and retained accountant-review JSON/CSV packs                                                                                                  | Reviewed opening basis, further report families and independent domain proof                                            |
+| Technical closing         | Evidenced family declarations, domain dependency blockers and retained close/reopen certificates                                                                       | Complete applicable family controls, broader failure/concurrency proof and separate financial-close semantics           |
+| VAT returns               | Tax facts/withdrawals, synthetic draft comparisons and exact tax-account registers/matching/controls in source; actual-company amounts excluded                        | Reviewed real tax profile, settlement roles/obligations, financial-close semantics and filing authority                 |
+| Bank feeds                | No connected feed; file intake is not a feed                                                                                                                           | Provider contract/consent, cursors/revisions, durable synchronization and reconciliation                                |
+| SIE                       | Synthetic SIE4I capture, CP437 encoding, immutable artifacts and download in source                                                                                    | Runtime/semantic/destination acceptance; separate full-book 4E and loss-preserving import profiles                      |
+| Payroll/AGI               | Not implemented                                                                                                                                                        | Private scoped inputs, reviewed calculation profiles, approval/posting, settlement and declarations                     |
+| Statutory reports         | Not implemented; review packs are not statutory output                                                                                                                 | Financial close/openings, tax bridge, K2/K3 facts, mappings/schema validation and actual required outcomes              |
+| Peppol/payment files      | Not implemented                                                                                                                                                        | Exact format profiles, immutable artifacts, validation, authority and provider-specific delivery/recovery               |
 
 Missing company/provider facts do not prevent independent synthetic implementation. They do prevent real-company, compliance or external-acceptance claims. No capability is marked complete because an adjacent table, endpoint or outbox exists.
 
@@ -332,7 +332,6 @@ API/scripts/contracts/Swedish-domain and direct web TypeScript checks passed at
 errors no longer reproduce; root did not change that component. SQL migrations remain
 unapplied. No storage outage, runtime workflow or financial execution was exercised.
 
-
 5100 exact preparation-job stopping is source-integrated through REST and
 `runs_stop_background`. Independent lifecycle review found no blocker in exact identity,
 authorization/replay/lock order, terminal safe no-op semantics or the unchanged2800
@@ -351,11 +350,9 @@ in untouched invoice-draft-save.tsx: save.error nullable/code access at line60, 
 Effect typed-decoder suggestion at line72. These separate frontend edits were not changed.
 No SQL/runtime/concurrency/provider execution occurred.
 
-
 Independent5200 source review found no actionable blocker in scan-before-filter bounds,
 empty-page continuation, fixed-ceiling/source/mode isolation, legacy delegation or exact
 saved v1/v2 semantics. No runtime paging or concurrency scenario was executed.
-
 
 5300/5400 source-integrated public reads disclose exact subledger-basis/tax-match line
 references. Investigation did not establish a duplicate-posting bypass or a universal
@@ -363,7 +360,6 @@ exclusive capacity contract, so no new refusal/role policy was invented. Private
 immutable bodies/digests and financial eligibility stay unchanged.5300 independent review
 found no actionable blocker;5400 final independent review and integrated static checks are
 pending. No SQL/runtime operation was executed.
-
 
 Independent5400 review found no actionable blocker. Its getter-only detail schema preserves
 unchanged shared match views for lists and saved controls. Exact nullable basis references
@@ -376,3 +372,62 @@ warnings/errors. Prior unrelated invoice-draft-save web errors no longer reprodu
 root edits to that component. A lexical source comparison of255 TypeScript SQL calls found
 no declaration-name/argument-count mismatch (Drizzle table declarations were excluded).
 This source comparison is not SQL compilation or execution evidence.
+
+### Commerce admission and saved-intent recovery fixes
+
+5500 aligns shared payment capacity and invoice candidate selection with4100's existing
+whole-line tax reservation fence. It does not change capacity arithmetic, stored plans,
+receipts, unallocation or policy. Independent source review found no actionable blocker.
+
+Backup/restore evidence controls now treat only uncommitted saved posting command input
+as intent: absent/refused outcome AND no scoped reserved-key command receipt. Legacy
+kernel execution without an outcome remains strict. Other evidence owners, all syntactic
+reference counts, external-pointer refusal, fingerprints and quarantine remain unchanged.
+Independent source review found no actionable blocker. Backend/scripts/contracts/jurisdiction
+type checks and targeted lint passed at `/tmp/openerp-commerce-recovery-fixes-types.log`
+and `/tmp/openerp-commerce-recovery-fixes-lint.log`. No SQL, backup/restore or runtime
+execution was performed.
+
+### Bank reservation admission alignment
+
+5600 extends the existing4100 reservation rule to selected-leg preparation, approval,
+execution and separate saved-plan currentness. Discovery retains reserved lines and their
+unchanged monetary residuals, with an explicit `tax_account_reserved` blocker and required
+EN/SV labels in the existing copy map. No private bank amount/version, reconciliation,
+signoff or unmatch owner changes. Independent source review found no actionable blocker.
+Backend/scripts/contracts/jurisdiction and web type checks passed at
+`/tmp/openerp-bank-admission-fix-types.log` and
+`/tmp/openerp-bank-admission-fix-web-types.log`; targeted lint passed with zero warnings/errors.
+No SQL compilation, execution or concurrency proof was performed.
+
+The owner-register counterpart needs no extra tax check: allocation helpers consume existing
+immutable owner effects, and4100 fences both admission orders. Owner allocation never releases
+that source-line ownership. No redundant owner-helper patch was added.
+
+### Case ownership, explanation cursors and source mapping
+
+5700 captures exact correction-bundle ownership for case/plan references and replaces
+misleading standalone REST/MCP guidance for owned plans with complete-bundle recovery.
+Old snapshots and no-owner outputs are preserved. The hardcoded browser review handoff
+remains unresolved; this is not a complete web-flow repair.
+
+5800 binds report explanation cursors to their saved report/account and a real included
+opening or movement row. Legacy two-part cursors explicitly require a first-page restart;
+stored reports, accounting values, ordering and other cursor families are unchanged.
+
+5900 makes conflicting retained-source/account mappings stale preview GET and new review
+captures and refuses fresh approval/admission, using the importer's existing exact rule.
+Unrelated mappings, saved dependency shapes, history and successful-key recovery remain
+unchanged. All three packets passed independent source review without an actionable blocker.
+Backend/scripts/contracts/jurisdiction and web types passed at
+`/tmp/openerp-case-report-source-fixes-types.log` and
+`/tmp/openerp-case-report-source-fixes-web-types.log`; targeted lint passed with zero warnings
+or errors. No SQL compilation/application, runtime/concurrency or external-provider proof
+was performed.
+
+6000 repairs only the automatic preparation-job stop branch's PL/pgSQL local binding.
+The former function-qualified local could fail before persisting `stopped`; the distinct
+`stop_reason` variable removes that source defect without changing stop reasons, authority,
+locks, checkpoint/results or step idempotency. Root and independent full-function diffs
+found only the intended identifier/binding substitution. SQL compilation/execution remains
+unverified; prior TypeScript checks are not evidence for this SQL branch.

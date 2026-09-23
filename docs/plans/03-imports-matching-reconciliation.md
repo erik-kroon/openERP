@@ -145,3 +145,28 @@ The existing original download retains its availability/integrity failures. No m
 artifact, list API or import authority was added, and the current UI remains unchanged. See
 [SOURCE-INTAKE.md](../../apps/api/SOURCE-INTAKE.md#metadata-only-occurrence-recovery-failure-contract-before-implementation).
 Source/static checks and shared integration remain distinct from pending runtime evidence.
+
+### Bank admission respects existing tax-account reservations
+
+Forward5600 checks the exact selected posted lines against4100's tax-account reservations
+when preparing, approving and executing bank allocation, and in the saved plan's live
+currentness read. Unusable but still-reserved matches remain blockers until explicit
+unmatch. Successful-key replay and saved plan/approval/execution/unmatch history are unchanged.
+Candidate discovery keeps each reserved line and its original numeric remaining amounts,
+but marks it ineligible with `tax_account_reserved`; existing EN/SV blocker copy explains
+that restriction. Reconciliation, signoff and unmatch calculations do not lose those lines
+or their residual differences. No global role policy or capacity-version format is added.
+See [bank admission](../../apps/api/BANK-TAX-RESERVATION-ADMISSION.md).
+Source is integrated; independent review and current static checks are tracked in the
+[active wave](accounting-completion-wave.md). Runtime behavior remains unverified.
+
+### Exact source-mapping currentness
+
+Forward5900 closes a mapping-currentness gap without changing saved dependency digests.
+If a retained source acquires a conflicting ledger-account mapping after preview, fresh
+approval/admission now refuses and preview/new review-artifact currentness becomes false.
+The check uses the same exact two-way mapping rule as parsing/import, not a whole-book
+inventory. Unrelated mappings do not stale the preview through this predicate. Original-key
+recovery, admitted history, supersession and previously captured bytes stay unchanged.
+Independent source review found no actionable blocker; SQL/runtime behavior remains unverified.
+See [source intake](../../apps/api/SOURCE-INTAKE.md).

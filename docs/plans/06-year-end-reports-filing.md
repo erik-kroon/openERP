@@ -146,3 +146,14 @@ known-ID reads remain the owner of full saved basis and separate currentness. Se
 [CLOSING.md](../../apps/api/CLOSING.md#closing-proposal-discovery-4800-failure-contract-before-implementation).
 This is bounded END-01/END-03 recovery, not another artifact or financial authority. Source/static
 checks, shared integration and database/runtime evidence remain distinct gates.
+
+### Report explanation continuation scope
+
+Forward5800 binds explanation continuation to the exact saved report/account and a real
+included contribution. Opening and movement rows use the same pinned cutoff and ordering.
+Out-of-context, missing and out-of-range anchors refuse instead of silently skipping data.
+Legacy two-part cursors cannot prove context and now require restarting from the first page;
+old saved reports remain readable and unchanged. General-ledger, comparison and report-line
+cursors are unaffected. See [explanation cursors](../../apps/api/REPORT-EXPLANATION-CURSORS.md).
+This is implemented source; independent review and static checks are recorded in the active
+wave. SQL execution remains unverified.

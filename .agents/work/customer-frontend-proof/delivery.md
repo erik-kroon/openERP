@@ -49,8 +49,8 @@ Repeatable entry points:
 
 Remaining Sales work (required, not optional polish; updated after the draft checkpoint below):
 
-1. Inspect fuller/longer register content, sorting/pagination, empty/error states and affected shared controls. Clarify the register date basis for drafts versus issued invoices. Payment discovery/history pagination also needs a longer-list observation.
-2. Improve the generated demo invoice artifact: the existing immutable generator produces audit-oriented HTML. The in-app document preview is polished, but that does not make its downloadable artifact a customer invoice/PDF or legal delivery. Preserve historical generator outputs.
+1. Finish payment discovery/history pagination with longer lists. The populated Sales register, date basis, page/search/empty/read-error recovery and record return are now observed; remaining sort/Back combinations belong to the final interaction pass.
+2. The versioned demo invoice layout is implemented and its preview/download is observed, with original artifact bytes preserved. Include the document in the remaining visual/reference acceptance. The supported file is HTML; production legal issuance, PDF and delivery are not established.
 3. Finish remaining failure/scope observations and recovery UX: storage denial/corruption, competing local editing sessions and switched actor; expired approval and multi-invoice undo. Ordinary draft close/reload/discard, two-stage save recovery and server revision conflict are now observed. A competing local session is prevented from overwriting storage, but its current generic storage message and retry-only path need a clearer recovery choice.
 4. Perform the remaining visual/reference acceptance and overall customer interaction review before marking Sales accepted. Continue to Banking, Home/To do, Purchases, Books/Reports/period, Firm and integrated navigation in that order.
 
@@ -174,3 +174,25 @@ Final checks for the draft checkpoint: `bun run lint`, full `bun run check-types
 A long register must preserve status/search/sort/page through record inspection and Back; controls must remain reachable without scrolling through every row. An out-of-range page must offer a direct return to the first page instead of claiming there are no invoices. Draft update dates and issued invoice dates must be labelled honestly. Counts on a failed read must not look current. Outstanding amounts must remain distinct from original invoice totals.
 
 A new document layout needs a new generator version. Previously captured/sealed documents and their exact bytes remain unchanged and downloadable. The new artifact must contain the full captured customer/seller, dates, lines, exact totals and terms in a readable invoice layout with a clear demo/nonlegal boundary. No live balance, later company data, external assets, scripts, payment instructions or delivery claims may be introduced. Escape source text, validate all immutable source bindings, retain the complete accounting provenance and reject oversize content rather than truncate. Generate and download through the existing capture/render/seal owner and verify retained bytes/hash in the browser.
+
+
+## Register and invoice file checkpoint — 23 September 2026
+
+The register now has pagination above and below long lists, distinct draft-save and invoice-date labels, a remaining amount for partly settled invoices, and a direct first-page action for out-of-range URLs. Failed reads hide counts and rows and expose retry. Invoice detail now also offers Refresh when its first read fails and does not display cached details after a failure. Normal loading no longer shows technical permission copy.
+
+New invoice files use generator `openerp-synthetic-invoice-html-v2`, with seller/customer blocks, dates, line items, terms and exact totals. The full captured accounting record remains available in the file's disclosure. It is a self-contained English HTML demo document with no remote assets or scripts, not a legal invoice, PDF or delivery. Migration `5600-invoice-document-presentation.sql` permits the second version and returns both captures in history; it does not change previous captures or sealed bytes. The original renderer is retained for version 1. The UI can create the new file, preview/download it and inspect the earlier file separately.
+
+Observed on the real local 1600 × 900 desktop application:
+
+- Register populated with 54 additional synthetic drafts and eight named counterparties, including long names, Swedish text, missing details and varied amounts. Total 58 records, 56 drafts. Draft pages contain 50 and 6 disjoint rows. Page two → open draft → reload → close retains page two.
+- Customer sorting returns Alva first; search for Nordic Circular returns seven matches with matching status counts. An unmatched search has zero counts and clear-filter recovery. Page 99 shows a direct return to page one and no impossible page counter. The outstanding row distinguishes original 950 SEK from 550 SEK remaining.
+- One-shot local GET failures: register hides counts/rows and Retry reloads the 58 records; invoice first-read failure exposes Refresh, which restores SYN-2 and its document controls. The loopback proxy passed upstream reads through and hid only the selected responses; its control is null again. Proxy process session is now 77050 on port 18791.
+- SYN-2 file created through browser controls: capture `invoice_document_1455087ed20448e58d2f64c055643f0c`, filename `invoice-SYN-2.html`, 12,791 bytes. The browser-downloaded file exactly matches retained bytes and SHA-256. Both generator outputs reproduce their sealed bytes exactly. Original version-1 capture `invoice_document_c9c6346171574ada99dfd31e93faff4c` remains 7,679 bytes with unchanged hash. Original/new file selection and both previews were observed.
+
+Repeatable scoped read: `bun .cache/customer-frontend/register-document-proof.ts`; result `register-document-proof.json` includes register pages, document identities, hashes, render equivalence and downloaded-file equivalence. Captures: `register-volume.png`, `register-read-error.png`, `invoice-file-preview.png`. Synthetic fixture identities are in `register-fixtures.json`. These are local observations; no test files were added. The saved document and register were visually inspected; rendered upstream reference acceptance is still pending.
+
+Current task-owned browser tab 11 remains on SYN-2. Web 3107 and API 18790 remain available; web uses the 18791 observation proxy. Other tasks share this checkout and may commit changes concurrently. Do not infer missing implementation from an empty diff.
+
+Next required work: competing-local-edit recovery, then the remaining payment/scope observations and visual/reference pass. Sales is still in progress; Banking and all later journeys remain open. No whole journey is accepted by this checkpoint.
+
+Final checks for this checkpoint: `bun run lint`, full `bun run check-types`, `bun run build`, and `git diff --check` passed. Logs: `.cache/customer-frontend/register-doc-final-lint.log`, `register-doc-final-types.log`, `register-doc-final-build.log`. The shared checkout contains unrelated active accounting changes; this task did not commit, deploy or modify test files.

@@ -121,3 +121,14 @@ cross-book search. Separate source occurrences are not inferred from equal bytes
 The migration is unapplied and SQL/runtime behavior remains unverified. API and
 contract type checks, targeted type-aware lint and formatting checks passed for
 this working-tree implementation. No tests were added or run.
+
+### Tax-account reservation admission alignment
+
+Forward5500 applies the existing4100 whole-line reservation rule before payment capacity
+and allocation preparation/approval, not only at the final insert. Invoice payment candidates
+exclude the exact reserved book/voucher/line before evaluating capacity. An unusable match
+still reserves its line until explicit unmatch. Existing arithmetic, saved history, replay,
+unallocation and the physical fence remain unchanged; no account-role policy is added.
+See [commerce admission](../../apps/api/COMMERCE-TAX-RESERVATION-ADMISSION.md).
+Independent source review found no actionable blocker. SQL execution and concurrent behavior
+remain unverified.
