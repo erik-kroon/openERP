@@ -41,7 +41,7 @@ The first UI must display evidence, exact lines, approval scope and receipt stat
 
 ## Current accounting completion wave
 
-The [active implementation record](plans/accounting-completion-wave.md) covers the requested bank, commerce, schedules, MCP, reporting, tax, payroll and interchange gaps. Current parallel work targets immutable invoice control reports and explicit close-family inventory, with separate primary-source VAT and SIE research. Its baseline passed type checks and 17 of 20 existing E2E cases; stale test assumptions and a missing browser remain open. This is not a phase exit or a company-readiness claim.
+The [active implementation record](plans/accounting-completion-wave.md) covers the requested bank, commerce, schedules, MCP, reporting, tax, payroll and interchange gaps. The latest parallel wave adds reviewed bank unmatch, bounded synthetic invoice issue with atomic recognition, and evidence-backed asset carrying bases with declared-account controls. Closing and accountant-review dependencies include the complete asset-control inventory. Shared API/MCP and routed UI integration is present in source; migrations1300–1510 remain unapplied. No tests, browser sessions or validation commands ran for this wave. Earlier baseline checks do not verify these changes. This is not a phase exit, legal issuance, complete financial control or company-readiness claim.
 
 ## Evidence and checkpoints
 

@@ -1,0 +1,8 @@
+{
+  "apps/web/src/components/commerce/counterparties.tsx": "61847ccf8b68eba7a0d4ee0ad36ff1981b07774f6563e32c2aeb69ba97952b4f",
+  "apps/web/src/components/commerce/invoice-drafts.tsx": "41ff5f335ee367d97bbcbfe3838ec7646e99fa2b82abd945d8ba22693c31c1ca",
+  "apps/web/src/components/commerce/shared.tsx": "e17687a172ed8387f51e08fe218f349aa7d544e12b1ecf54a7ddb5e76ef2e287",
+  "packages/ui/src/components/field.tsx": "7ce97f8876a4dc3f1613f0d1f5e184d5a80cb9aade8e2d19bd7ddad737fd5ca7",
+  "apps/web/src/components/retained-note.tsx": "98bd9c232bdbda934f5281c7342e30f1bf03ab9dbbd084ccfeab6eb9471e2166",
+  "packages/ui/src/components/record-layout.tsx": "584f9cd8c63c560374b7aae226cb9fa2e62b58ddb425a34c5055dcc0915eefea"
+}
