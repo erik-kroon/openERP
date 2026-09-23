@@ -6,22 +6,23 @@ Build one application around the work people need to finish. Founders start with
 
 ## Implementation status — 23 September 2026
 
-The desktop application now has focused customer workspaces using the existing interface tokens and accounting contracts. This is implementation progress, not customer acceptance or a production-readiness claim. The journal workflow retains its earlier functional proof; the new desktop observations are recorded in [the workspace evidence](../.agents/work/customer-frontend-proof/desktop-workspaces.md).
+The desktop application has scoped customer workspaces, source-led preparation and persisted coordination using the existing interface tokens and accounting contracts. Implementation, observed behavior and production readiness remain separate. Earlier observations are in [desktop workspace evidence](../.agents/work/customer-frontend-proof/desktop-workspaces.md); the continued journeys, checks and limitations are in [the continuation record](../.agents/work/customer-frontend-proof/continuation.md).
 
 | Area | Implemented surface | Remaining boundary |
 | --- | --- | --- |
-| Company overview and work | Compact review counts, recent draft links, period entry and ledger balances; document and invoice shortcuts from To do | Work counts cover journal proposals. No complete cross-domain task feed, live cash or runway |
-| Contacts and invoices | Searchable registers, one-step contact save with retained entry evidence, named customer selection, decimal invoice editing, document-shaped detail, immutable revisions and issue-review entry | A new draft still needs a source note. Legal identity/tax activation and external invoice delivery remain domain work |
-| Documents and purchases | Original-file upload, paginated filename search, PDF/image/text preview and original download; supplier invoice and expense registers with focused creation | Upload does not extract, classify or post a document. Expense tax review still contains specialist forms |
-| Banking | Account and period selection, saved reconciliation detail, imported-statement entry, matching destinations | Existing import/matching controls need further customer workflow work; no live feed or payment initiation |
-| Reports and period work | Report catalogue, period-based trial balance with decimal totals and contribution drilldown, review-pack entry and period readiness checklist | Advanced exports, VAT facts and locking retain specialist controls. Readiness does not establish statutory acceptance |
-| Company directory | Authorized companies, latest period, journal-review count, freshness and scoped entry; search with ten companies per page | This is an authorized-book directory, not a firm/client relationship model. Assignments, handoffs and shared views need persisted contracts |
+| Company overview and work | One bounded attention projection for journal proposals, invoice drafts and expense reviews; matching counts, search, period/status/type/sort filters, scoped detail links and explicit coverage | Other domains retain their own workspaces. This feed does not establish company completeness, live cash or runway |
+| Contacts and invoices | Searchable registers, direct decimal entry, inline customer creation, automatic retention of entered source facts, document-shaped detail, immutable revisions and issue-review entry | No OCR or invented customer/legal facts. Production tax activation and external invoice delivery retain their domain gates |
+| Documents and purchases | Original upload/search/preview/download; document-to-expense preparation with original beside entered facts; addressable expense detail, revision and review; stale review shown after source changes | Entered and reviewed amounts remain explicit. Unconfirmed currency in legacy records requires a choice; tax review does not imply tax eligibility or posting |
+| Banking | Named account/period, statement upload, simple CSV format suggestions, editable mapping, balance/transaction preview, explicit approval/import, addressable statement detail, match discovery and reconciliation | Complex or ambiguous CSV uses explicit mapping. Account, signs, balances and completeness are never inferred. No live feed or payment initiation |
+| Reports and period work | Report catalogue and snapshots, decimal trial balance/drilldown, invoice register reports, focused review-pack preparation, readable gap list, verified artifact bytes, readiness and technical closing | Saved report scope and currentness remain explicit. Advanced accounting controls retain their domain contracts; files and technical locks do not establish statutory acceptance |
+| Coordination | Persisted personal/team filter views; record assignment to current book members with due date and note; revision checks and replay; removed members display as unavailable | These records grant no accounting authority. No client-request messaging or firm/client relationship is invented |
+| Company directory and settings | Authorized books, period and attention summary, scoped entry/search; named book, currency, access, language, periods and chart in settings | Directory access is book membership, not a production firm/client relationship model. Production admission remains D-01 |
 
-The desktop pass separates registers, record detail and creation dialogs. Routine customer screens no longer ask for request keys, internal contact IDs, currency scales or minor-unit amounts. Backend approval, immutable revisions and uncertain-outcome handling remain intact. Source references and technical receipts stay available in details.
+Registers, detail pages and bounded creation dialogs use the same company frame. Routine creation uses named choices and decimal currency amounts. Original documents, source references, immutable histories and technical receipts remain inspectable. Unknown mutation outcomes retain the captured request identity and recovery data; no optimistic financial success is shown.
 
-FE-01/02 have further implementation, FE-03/04 have working destination compositions, and FE-05 has an initial read-only directory. None of these statements marks the full packet complete. Remaining work includes evidence-led preparation without manually reconstructing the source, broader work-queue coverage, customer treatment of the specialist flows, persisted team/firm behavior and release proof. Customer quality, implemented behavior and verified accounting behavior remain separate status dimensions.
+FE-01–04 now have integrated customer compositions. FE-05 has persisted book-level views and handoffs plus an authorized-book directory. The firm/client relationship, production identity mapping and release acceptance remain distinct open boundaries. The legacy tools route stays available for existing specialist recovery consumers; deleting it before those paths are replaced would remove supported behavior.
 
-No new tests were added for this pass. The requested emphasis was desktop implementation; mobile, accessibility and theme acceptance were not expanded or claimed.
+This continuation added no test files. Desktop creation, revision, review, import, handoff and report journeys were observed against a synthetic local database. Lint, full type checks and build are recorded separately from those observations. Mobile, accessibility, theme and performance acceptance were not expanded or claimed.
 
 ## Design basis
 
@@ -39,11 +40,11 @@ Build the customer interface around grouped company navigation, a to-do home, st
 
 ### What exists here
 
-The current [home route](../apps/web/src/routes/index.tsx) signs in, selects a book and renders [AccountingWorkspace](../apps/web/src/components/accounting-workspace.tsx). Its navigation opens sections of one large page. The repository already has posting/recovery, corrections, source intake, reconciliation, internal reports, review exports, commerce registers, schedules and technical closing surfaces. The migration should retain those consumers and contracts.
+The [home route](../apps/web/src/routes/index.tsx) signs in and enters the only authorized book or shows the company directory. [BookWorkspace](../apps/web/src/components/book-workspace.tsx) owns the company frame. Addressable area routes load their selected domain; the prior [AccountingWorkspace](../apps/web/src/components/accounting-workspace.tsx) remains behind the tools route for advanced recovery consumers. Posting/recovery, corrections, source intake, reconciliation, reports, commerce, schedules and closing keep their owning contracts.
 
 The owned [workspace](../packages/ui/src/components/workspace.tsx), [data grid](../packages/ui/src/components/data-grid.tsx), [buttons](../packages/ui/src/components/button.tsx), fields, tabs, disclosure, status, empty and loading components provide the base. The [router](../apps/web/src/router.tsx) already creates a request-scoped QueryClient. The [API client](../apps/web/src/lib/accounting-api.ts) already includes entity/book query keys and contract decoding. Extend these owners.
 
-The largest frontend gap is composition: addressable customer journeys, a coherent work list, focused record review and audience-appropriate starting views. Some desired screens also need backend capabilities. Invoice registers are not invoice issuance or delivery; statement imports are not bank feeds; technical locks are not statutory year-end; source tax review is not a VAT return.
+The customer composition now includes addressable journeys, a shared attention list, focused source review and audience-appropriate starting views. Remaining production and firm capabilities depend on their owning contracts and acceptance evidence. Invoice registers are not invoice issuance or delivery; statement imports are not bank feeds; technical locks are not statutory year-end; source tax review is not a VAT return.
 
 ## One workspace, three starting views
 
@@ -53,7 +54,7 @@ The largest frontend gap is composition: addressable customer journeys, a cohere
 | In-house finance | To do | Dense, filterable work queue with status, source, amount, reason, period and next action | Prepare, review, reconcile, follow up, inspect completed work | Full accounting detail, registers, schedules, period readiness and recovery |
 | Accountant with several clients | Clients | Client and period matrix: source coverage, reconciliation, review backlog, blockers and known deadlines | Open a client, find blocking work, prepare a handoff | The same company workspace, with explicit client/book/period scope |
 
-Starting view and density are preferences. They confer no permission. An owner can use the detailed finance workspace; an internal accountant need not enter a firm cockpit. Production membership and action permissions remain D-01. Saved shared views, assignments and client requests need persisted contracts before they appear as working controls.
+Starting view and density are preferences. They confer no permission. An owner can use the detailed finance workspace; an internal accountant need not enter a firm cockpit. Production membership and action permissions remain D-01. Personal/team views and book-level handoffs now have persisted contracts. Client requests and production firm relationships still need their own contracts before appearing as working controls.
 
 For the founder home, lead with the highest-impact unresolved decision, then the remaining work. Put business summaries alongside or below it; avoid a wall of equal KPI cards. Label the balance's source and date. Do not calculate runway without an explicit method and sufficient inputs, or imply that booked cash equals current spendable cash.
 
@@ -77,24 +78,28 @@ The company frame has a company/book switcher, selected period, main navigation 
 
 Use subnavigation inside each area instead of adding every domain to the main sidebar. Initially expose only usable children. Keep reasons for unavailable capabilities in setup/readiness or the relevant record; avoid a menu full of disabled future modules. VAT, payroll, invoice sending, payments and filing enter the navigation when their owning capabilities meet their gates.
 
-Proposed route contract, to implement using the current router conventions:
+Implemented route contract (record, period and filter state use validated search parameters where appropriate):
 
 ```text
-/                                           sign-in or preferred authorized entry
-/entities/$entityId/books/$bookId            overview
-/entities/$entityId/books/$bookId/work       work queue
+/                                           sign-in or authorized book entry
+/companies                                  authorized-book directory
+/entities/$entityId/books/$bookId            to-do home
+/entities/$entityId/books/$bookId/overview   founder overview
+/entities/$entityId/books/$bookId/work       filtered work queue
 /entities/$entityId/books/$bookId/reviews/$planId/$revision
-/entities/$entityId/books/$bookId/banking
+/entities/$entityId/books/$bookId/accounts
 /entities/$entityId/books/$bookId/sales
 /entities/$entityId/books/$bookId/purchases
 /entities/$entityId/books/$bookId/books
 /entities/$entityId/books/$bookId/reports
+/entities/$entityId/books/$bookId/tax
+/entities/$entityId/books/$bookId/closing
 /entities/$entityId/books/$bookId/settings
-/firm/clients                               gated portfolio
-/intake                                     existing local statement preview
+/entities/$entityId/books/$bookId/tools      retained advanced recovery tools
+/intake                                    existing local statement preview
 ```
 
-The names above describe planned URL semantics, not current API contracts. Detail routes use the owning resource's actual identity and immutable revision where applicable. Keep period, filters, sort and pagination in validated search parameters. Do not put document contents, secrets or financial payloads in URLs. Server authorization resolves both IDs and rejects mismatches; neither a URL nor a preference grants access.
+Detail destinations use the owning resource's identity and immutable revision where applicable. Period, filters, sort and pagination stay in validated search parameters. URLs carry no document contents, secrets or financial payloads. Server authorization resolves both scope IDs; neither a URL nor a preference grants access. A production firm portfolio remains a separate delivery boundary.
 
 With one authorized book, entry can open its preferred view. With several, offer the last still-authorized context or a chooser. With none, show the actual setup/access state. Do not silently create a company or assume its legal profile. Preserve return destinations through sign-in only after validating them.
 
@@ -223,7 +228,7 @@ Keep server state in TanStack Query. URL state owns navigable scope and filters;
 
 A cross-domain work list needs an owned read contract. Start with existing posting/review/recovery resources, then add domains incrementally. Each item needs a stable kind and source reference, scope, reason, state, exact amount when applicable, available action and detail destination. Return pagination and coverage/freshness explicitly. Counts and rows must describe the same filter and declared observation basis; do not sum overlapping domain items or treat a partially fetched page as a global total.
 
-This projection describes work; the original domain retains approval and execution authority. Reuse each operation's existing input and result schemas. Do not invent a universal writable “task” that duplicates financial state. Shared saved views, assignments, comments/requests and firm membership are separate persisted needs, to add when a delivery slice has a real consumer.
+This projection describes work; the original domain retains approval and execution authority. Reuse each operation's existing input and result schemas. Do not invent a universal writable “task” that duplicates financial state. Workspace views and assignments are separate persisted records; they do not duplicate financial transitions. Comments/requests and firm membership remain separate needs. Assignment accepts a current member and a record in the same book, checks the expected revision and preserves command replay.
 
 Performance follows the journey: load the selected domain, bound/paginate lists, cancel obsolete reads and lazy-load source previews and heavy reports. Avoid mounting and fetching every accounting panel at startup. Use existing table capabilities; introduce virtualization only if measured volume and rendering cost justify it. Capture timings and request counts on a representative dataset before claiming improvement.
 
@@ -253,7 +258,7 @@ During migration, retain a labelled route to remaining current tools for authori
 
 ## Delivery sequence
 
-These are frontend delivery slices, not replacements for the existing accounting work packets. Each includes loading, error, narrow-width, keyboard and recovery behavior from the start. All are planned. Backend work named below is a dependency, not a completed capability.
+These are frontend delivery slices, not replacements for the existing accounting work packets. The table defines the full acceptance target. Implementation status is recorded above; it is not implied by these exit criteria. Desktop UX was the priority for this continuation. Release evidence beyond that scope remains open.
 
 | Slice | Deliverable and owner | Dependencies | Observable exit |
 | --- | --- | --- | --- |
@@ -289,8 +294,8 @@ Retain a run manifest with commit and dirty-tree identity, environment, syntheti
 
 Planning coverage includes the current route/composition and shared workspace, data grid, buttons, tabs, links and tokens. Typography has existing smoothing and tabular-number support; surfaces have owned light/dark and elevation tokens; motion inspection found existing press/reduced-motion handling and a 250ms tab indicator; icons use the installed Lucide base. Performance was assessed structurally, not timed.
 
-Two concrete component changes to carry into FE-01 are real-link support at the navigation boundary (`packages/ui/src/components/workspace.tsx`, `WorkspaceNavItem`, and the app's current section navigation) and optional static button feedback (`packages/ui/src/components/button.tsx`). Review tab-indicator motion (`packages/ui/src/components/tabs.tsx`) as the new high-frequency workspace consumes it. These are planned changes, not observed browser regressions.
+Real links at the navigation boundary and optional static button feedback are implemented. Repeated queue and section controls use immediate state feedback. Compact creation dialogs, record summaries, source/effect columns and progressive disclosure are owned primitives. No new motion library or repeated page entrance animation was introduced.
 
 Rejected changes: replacing the font/design system or application stack, animating recurring work-list entrances, giving every row a card, and treating a frontend audience selector as authorization. Each adds inconsistency or complexity without serving these workflows.
 
-The earlier interactive audience sketches use fictional data and illustrate the proposed workflows. They do not verify the application. New routes, responsive layouts, actual 200% zoom, RTL, both themes, assistive behavior, slowed motion and performance are **Not verified** for this plan. Implementation acceptance remains open until the evidence above exists.
+The earlier interactive audience sketches use fictional data and illustrate the proposed workflows. They do not verify the application. The continuation record documents observed desktop routes and workflows. Responsive layouts, actual 200% zoom, RTL, both themes, assistive behavior, slowed motion and measured performance are **Not verified** for this continuation. Full release acceptance remains open until its required evidence exists.
