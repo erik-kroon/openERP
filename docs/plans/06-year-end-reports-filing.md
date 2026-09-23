@@ -76,7 +76,6 @@ This is synthetic review tooling, not company activation or full END-03 acceptan
 
 Forward0820 binds the released owner-register and expense-review provider digests into technical closing. Unresolved/unlinked owner sources, missing/stale expense reviews and unsupported/unreconciled known expense sources block new technical close proposals; unpaid linked claims do not. Historical0800 approvals/certificates keep their original meanings and bytes and cannot silently acquire the new dependency coverage.
 
-
 The0930 END-01 source slice adds evidence-backed family applicability declarations to the
 existing technical-lock workflow. New proposals require every family to be declared;
 unknown/unsupported obligations, required unavailable controls and represented-state
@@ -120,3 +119,17 @@ and MCP `reports_list` for saved-report rediscovery after a session or response 
 Pages contain at most 50 immutable headers and an `after`/`next` ID cursor. The
 inventory is live: restart it to discover later arrivals. Opening a retained ID
 keeps that report's frozen date and sequence basis; it never recalculates the report.
+
+## Diagnostic saved-report comparison
+
+Forward4600 adds a read-only END-03 comparison of two existing immutable trial-balance snapshots
+in one book. The [focused handoff](../../apps/api/REPORT-COMPARISONS.md) defines full source
+identity/digests, frozen account labels, exact signed right-minus-left opening/movement/closing
+differences and explicit null missing sides. Stable pair-bound cursors page the entire account
+union; complete bounded source totals never silently become page totals. Currency/scale mismatch
+or unavailable retained scale refuses comparison. A narrowly approved forward prepare_report
+replacement records scale only in new headers, preserving old bytes/replay without backfill.
+
+The endpoint is diagnostic saved-snapshot arithmetic. It does not establish reviewed prior-year
+opening/comparative statements, company completeness, statutory comparability or financial close.
+Implementation and owned static checks remain distinct from shared integration and runtime proof.

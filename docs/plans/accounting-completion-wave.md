@@ -256,3 +256,26 @@ single-obligation identity. [The decision record](../../apps/api/VAT-SETTLEMENT-
 identifies those missing semantics without treating an equal amount or tax-account payment
 as settlement evidence. No4400 migration or settlement endpoint exists. Work continues on
 expense-source withdrawal4500 and saved-report comparison4600 instead of inventing this policy.
+
+
+Latest source integration includes4200 synthetic no-proceeds disposal,4500 permanent
+expense-source withdrawal with linked VAT v3 exclusion, and4600 saved-report comparisons.
+Root4200 review found and the owner fixed a missing refusal for declared tax-account
+controls; independent financial source review remains in progress. Independent4600 source
+review found no actionable correctness/security blocker, including frozen scale, exact
+signed differences, missing-side semantics and full-source versus paged totals. Old
+reports lacking retained currencyScale remain readable but cannot be compared by guessing
+from live metadata. No source history was backfilled.
+
+API/scripts/contracts/Swedish-domain and direct web TypeScript checks passed for this
+integrated checkpoint. Root UI edits are limited to exhaustive English/Swedish blocker
+copy required by the new withdrawal codes. No tests, browser/build, SQL compilation,
+migration application, database workflow, provider action or financial execution occurred.
+4200 and4500 independent/source review and all runtime acceptance remain open.
+
+
+Independent4200 review found no remaining actionable financial/security blocker after
+the tax-account control refusal. It traced exact imported-basis/recognition conservation,
+same-operator approval, native kernel/deferred aggregate enforcement, disposal correction
+fences and effective-date control/closing behavior. This remains source review only; no
+journal, disposal, migration or concurrency scenario was executed.

@@ -201,3 +201,32 @@ dependency owner. This does not create payments, taxable facts or journals; aggr
 item agreement still does not establish full source coverage or financial-close readiness.
 See [matching scope](../../apps/api/TAX-ACCOUNT-MATCHING.md). Migration4100 remains unapplied
 and runtime-unverified.
+
+
+### Synthetic no-proceeds disposal
+
+Forward4200 adds operator prepare/approve/execute for the explicit
+`synthetic_no_proceeds_asset_disposal_v1` profile. It reuses the native journal kernel
+and requires represented gross controls, one separate accumulated control, intact basis
+and unambiguous effective recognition history. The exact journal releases gross cost and
+accumulated recognition, with remaining carrying value charged to an explicit non-control
+loss account. Known bank, commerce, owner and tax-account controls cannot be disposal
+accounts. Deferred enforcement requires the journal and disposal register consequence to
+commit together; generic execution or known correction lineage cannot bypass the owner.
+Disposed schedules preserve history, refuse future recognition/amendment, and participate
+in actual control and closing dependencies. Full disposal correction, nonzero proceeds
+and real legal/tax treatment remain unsupported. See
+[disposal boundaries](../../apps/api/SUBLEDGER-DISPOSALS.md). This financial source path
+has not been executed or accepted through runtime/concurrency proof.
+
+### Expense-source withdrawal and linked VAT exclusion
+
+Forward4500 retains evidenced permanent operator withdrawal without changing historical
+source/review/snapshot bytes. New expense assessment excludes withdrawn sources and
+explicit active source-component/shared-voucher ambiguity. It does not infer missing
+line identities or release accounting capacity. The current expense basis carries
+withdrawal identity; retained source counts remain truthful and active review counts are
+separate. Linked VAT observations also expose withdrawal, refuse new revision admission
+and are excluded by the new v3 calculator. Saved v1/v2/v3 drafts remain readable and
+comparable. See [withdrawal boundaries](../../apps/api/EXPENSE-TAX-WITHDRAWALS.md).
+4500 is source-integrated; source review continues and runtime proof remains open.
