@@ -205,7 +205,6 @@ A later reversal makes the estimate unusable until reviewed; ordinary posting pr
 captures. Independent source review is in progress. Exact tax-account matching4100 and bounded
 asset-disposal work4200 are separate work in progress, not delivered financial authority.
 
-
 Latest static checkpoint after3950/4000 integration: API (including operations scripts),
 contracts and Swedish-domain type checks passed. Direct web TypeScript checking also
 passed; the earlier concurrent `commerce/command-recovery.ts` errors no longer reproduced.
@@ -213,13 +212,11 @@ This backend work did not edit that file. No web build, browser, test, SQL or ru
 exercise is implied. Integrated recovery/source-review type-aware lint passed on13 files
 with zero warnings/errors.4100/4200 remain in progress and need their own completed review.
 
-
 Independent4000 source review found no concrete blocker in reversed-prefix funding,
 correction-replacement exclusion, conservation, stale posting authority or peer-plan
 stability. The narrower3100 date-only command still refuses a reversed prefix; such
 history requires another explicit estimate review. This distinction is preserved rather
 than silently broadening the date-only workflow. No runtime/concurrency proof was produced.
-
 
 Forward4100 exact tax-account matching is source-integrated, including read-only shared
 MCP bindings and the optional historical-compatible matching dependency contract. Human
@@ -229,7 +226,6 @@ control consumption. New static checks are in progress; no SQL/concurrency accep
 is implied. Asset disposal4200 and declared-bank-inventory aggregate signoff4300 remain
 in progress. A bounded existing-effect VAT settlement link4400 is under feasibility review;
 no settlement or new financial authority is delivered by that assignment.
-
 
 Forward4300 whole-declared-bank-inventory signoff is source-integrated. It composes one
 current already-signed account plan for every account in the latest nonempty required
@@ -245,7 +241,6 @@ integration is now resolved. Targeted type-aware lint on tax matching, shared ma
 dependencies, subledger contracts/routes/statements and shared capability bindings passed
 with zero warnings/errors. No tests or runtime exercises were run.
 
-
 Independent4100 source review found no actionable financial/security blocker in active
 capacity uniqueness/conservation, symmetric bank/owner/commerce guards, correction refusal,
 v2 residual consumption or bounded dependency propagation. Runtime proof remains open.
@@ -256,7 +251,6 @@ single-obligation identity. [The decision record](../../apps/api/VAT-SETTLEMENT-
 identifies those missing semantics without treating an equal amount or tax-account payment
 as settlement evidence. No4400 migration or settlement endpoint exists. Work continues on
 expense-source withdrawal4500 and saved-report comparison4600 instead of inventing this policy.
-
 
 Latest source integration includes4200 synthetic no-proceeds disposal,4500 permanent
 expense-source withdrawal with linked VAT v3 exclusion, and4600 saved-report comparisons.
@@ -273,9 +267,68 @@ copy required by the new withdrawal codes. No tests, browser/build, SQL compilat
 migration application, database workflow, provider action or financial execution occurred.
 4200 and4500 independent/source review and all runtime acceptance remain open.
 
-
 Independent4200 review found no remaining actionable financial/security blocker after
 the tax-account control refusal. It traced exact imported-basis/recognition conservation,
 same-operator approval, native kernel/deferred aggregate enforcement, disposal correction
 fences and effective-date control/closing behavior. This remains source review only; no
 journal, disposal, migration or concurrency scenario was executed.
+
+4500 independent review identified a missing SQL authority check: the Effect calculator
+excluded facts linked to withdrawn expense sources, but the runtime-granted draft sealer
+only fenced direct VAT-fact withdrawal. The owner added both an inclusion refusal and an
+explicit excluded/null-contribution/withdrawal-blocker requirement against the live basis.
+Root diff review and independent fresh-source recheck confirm that gap is closed. No
+remaining blocker was found in the bounded4500 source review. Targeted integration lint
+passed with zero warnings/errors. None of this establishes SQL/runtime acceptance.
+
+Next reserved source work is4700 tax-account correction-impact closure and4800 saved
+closing-proposal discovery.4900 disposal correction-impact closure follows4700 so the
+shared correction resource owner cannot lose either domain contribution. These extend
+existing admission/recovery consumers; they add no financial roles or external authority.
+
+4700 tax-account correction-impact resources are source-integrated through the existing
+correction contract/owner; no new transport registry is needed. Root compared the complete
+function against1700 and4100's actual match basis/view and found only the intended exact
+reservation contribution and composition.4800 closing-proposal discovery is source-wired
+through the existing closing API/capability/handler groups plus its statement and binding.
+It returns50 captured summaries per live page without approval tokens or live provider
+checks.4900 terminal-disposal impact disclosure is being added after4700, not in parallel
+with replacement of the shared owner. Static checks for the new checkpoint are pending.
+
+4900 is source-integrated with no new registry or contract surface. Root full-function
+comparison against4700 confirms only the intended terminal-disposal resource additions.
+Independent4800 review found no concrete authorization, cursor, disclosure or historical
+recovery blocker. Backend/scripts/contracts/jurisdiction TypeScript checks passed at
+`/tmp/openerp-correction-discovery-types.log`. The same checkpoint's web TypeScript check
+failed in untouched sales-workspace.tsx: InvoicePaymentNavigation lacks releaseId at
+line418 and the line420 id parameter has implicit any. Those separate frontend changes
+were preserved; this checkpoint does not claim a clean web check. Runtime/SQL acceptance
+remains unverified for all three forward packets.
+
+Metadata-only source occurrence recovery is source-integrated as
+`GET /api/v1/entities/:entityId/books/:bookId/source-occurrences/:id/metadata` and
+`source_get_occurrence_metadata`. It reuses the existing scoped storage-metadata owner,
+then returns an allowlisted public occurrence/admission summary with complete bounded
+preview IDs and originalAvailability=not_checked. The existing original-content read is
+unchanged and still verifies fetched bytes. No migration, storage adapter change or UI
+expansion was added. Independent confidentiality/recovery source review is in progress;
+no object-store outage scenario has been executed.
+
+Financial FX remains deferred after inspection of the actual single-currency commerce
+owners. FX-01 conversions cannot silently create paired foreign/book-currency capacities
+or select settlement/remeasurement effect policy. The maintained open decision and focused
+feasibility handoff record the missing choices without inventing an architecture.
+
+
+5000 retained VAT fact lineage is source-integrated through the existing getVatFact
+consumer. Independent review found no actionable blocker in exact fact membership,
+version-specific saved assessments/amendment deltas, original field compatibility,
+allowlisted disclosure or complete-response bounds. Metadata-only occurrence recovery
+also passed independent source review, including preservation of the original download's
+integrity failures and absence of storage/approval material in the new projection.
+
+API/scripts/contracts/Swedish-domain and direct web TypeScript checks passed at
+`/tmp/openerp-metadata-vat-lineage-types.log` and
+`/tmp/openerp-metadata-vat-lineage-web-types.log`. The previous unrelated sales-workspace
+errors no longer reproduce; root did not change that component. SQL migrations remain
+unapplied. No storage outage, runtime workflow or financial execution was exercised.

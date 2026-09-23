@@ -133,3 +133,16 @@ replacement records scale only in new headers, preserving old bytes/replay witho
 The endpoint is diagnostic saved-snapshot arithmetic. It does not establish reviewed prior-year
 opening/comparative statements, company completeness, statutory comparability or financial close.
 Implementation and owned static checks remain distinct from shared integration and runtime proof.
+
+## Saved closing-proposal recovery
+
+Forward4800 adds period-scoped REST/MCP discovery of immutable close/reopen proposals, including
+those never executed. Existing closing history contains only committed transitions and cannot
+recover a lost unexecuted proposal ID. The new consumer returns complete captured summaries,
+optional immutable execution identities and50-item period/real-anchor-bound C-ordered pages.
+It performs no live provider/readiness calculation, exposes no approval bearer material and
+confers no current approvability. Discovery is live; restart it for later arrivals. Existing
+known-ID reads remain the owner of full saved basis and separate currentness. See
+[CLOSING.md](../../apps/api/CLOSING.md#closing-proposal-discovery-4800-failure-contract-before-implementation).
+This is bounded END-01/END-03 recovery, not another artifact or financial authority. Source/static
+checks, shared integration and database/runtime evidence remain distinct gates.

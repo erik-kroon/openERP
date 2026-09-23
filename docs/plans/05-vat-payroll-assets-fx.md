@@ -184,7 +184,6 @@ changes, disposal and real legal depreciation policy remain unsupported. See
 All three migrations remain unapplied and runtime-unverified. Source review is not proof of
 SQL compilation, concurrent execution, financial outcomes or actual-company readiness.
 
-
 ### Exact tax-account matching
 
 Forward4100 adds evidenced operator match/unmatch of one whole known-classified source
@@ -201,7 +200,6 @@ dependency owner. This does not create payments, taxable facts or journals; aggr
 item agreement still does not establish full source coverage or financial-close readiness.
 See [matching scope](../../apps/api/TAX-ACCOUNT-MATCHING.md). Migration4100 remains unapplied
 and runtime-unverified.
-
 
 ### Synthetic no-proceeds disposal
 
@@ -229,4 +227,32 @@ withdrawal identity; retained source counts remain truthful and active review co
 separate. Linked VAT observations also expose withdrawal, refuse new revision admission
 and are excluded by the new v3 calculator. Saved v1/v2/v3 drafts remain readable and
 comparable. See [withdrawal boundaries](../../apps/api/EXPENSE-TAX-WITHDRAWALS.md).
-4500 is source-integrated; source review continues and runtime proof remains open.
+4500 is source-integrated. Independent review found a missing SQL sealer exclusion;
+the owner fixed it and a fresh-source recheck confirmed that withdrawn expense links
+require exclusion, null contribution and the explicit blocker. No remaining blocker was
+found in that bounded source review. Runtime proof remains open.
+
+### Financial FX feasibility boundary
+
+Source inspection of1900/2300 and current commerce owners found no selected financial
+consumer for conversion reviews. Existing invoice/allocation capacity represents one
+book-currency amount, not paired foreign obligation and book carrying amounts. FX-02/03
+therefore remains deferred pending the explicit monetary-item/capacity and effect-policy
+choices recorded in [open decisions](../open-decisions.md#foreign-currency-financial-ownership-remains-open).
+The [financial FX feasibility review](../../apps/api/FX-FINANCIAL-FEASIBILITY.md)
+records exact source owners and the missing decisions. This is not a new FX architecture
+decision and does not change existing commerce meaning. No speculative financial register,
+settlement posting or valuation artifact was added.
+
+
+### Retained VAT fact membership
+
+Forward5000 extends the existing fact read with saved draft and amendment references for
+that exact fact identity. Included and excluded captured assessments, revision/digest,
+engine/interval and retained amendment changes stay version-specific; the reader does not
+recalculate them or infer a legal amendment obligation. Complete500-draft/500-amendment
+inventories and an8MiB whole-response bound refuse rather than truncate. Existing fact
+history/withdrawal fields remain. See [VAT fact lineage](../../apps/api/VAT-FACT-LINEAGE.md).
+The source is integrated. Independent source review found no actionable blocker in exact
+membership, saved-version compatibility, disclosure and complete-read bounds. Backend and
+web type checks passed. Runtime proof remains open.

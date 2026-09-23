@@ -134,3 +134,14 @@ verification remain root gates. No existing3500, matching, ledger or closing aut
 The [source-intake handoff](../../apps/api/SOURCE-INTAKE.md) implements a first IMP-01/IMP-02 path in source: immutable bytes/occurrences, explicit bounded UTF-8 CSV mapping, retained diagnostics, operator review and atomic observation admission through the existing bank authority. The first slice is limited to 64 KiB/200 data records and the current synthetic admission profile; it is not a SIE/provider migration, bulk-import engine or actual-company activation. Integration and real runtime/browser/failure observations remain root gates. The handoff contains exact operations, limits, ownership maps and the manual evidence recipe. It does not establish completed IMP-03–IMP-06 acceptance.
 
 Forward migration3200 and the source-intake REST/MCP contracts add explicit immutable reparse supersession for unadmitted previews. A new interpretation retains the same original bytes, links both preview digests and records a rationale; earlier diagnostics/reviews remain recoverable. Superseded previews cannot receive a fresh approval or admission. The revision-history read exposes lineage, diagnostic counts, latest own reviews and any durable admission without reading object storage. Already admitted statements and matches remain unchanged. Integration and static validation do not establish runtime or concurrency proof; the handoff records the pending observations. This does not implement admitted-source replacement, full required-source inventory or a provider connector.
+
+## Known-ID metadata recovery without original storage
+
+IMP-01 now has an additive source-occurrence metadata GET/read-only MCP consumer. It returns the
+retained occurrence/provenance, complete preview IDs and safe admission summary without fetching
+original bytes or exposing private object descriptors/approval tokens. `originalAvailability`
+remains `not_checked`; an object-store outage cannot hide these committed database references.
+The existing original download retains its availability/integrity failures. No migration,
+artifact, list API or import authority was added, and the current UI remains unchanged. See
+[SOURCE-INTAKE.md](../../apps/api/SOURCE-INTAKE.md#metadata-only-occurrence-recovery-failure-contract-before-implementation).
+Source/static checks and shared integration remain distinct from pending runtime evidence.

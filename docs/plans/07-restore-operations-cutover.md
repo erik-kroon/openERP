@@ -81,7 +81,6 @@ OPS-06's END-07 gate applies when connected statutory fulfillment is required fo
 
 The [v2 recovery package](../operations/recovery-package-handoff.md) adds snapshot schema/role/migration inventory, inline evidence and declared supplementary/configuration closure, source-release capture, retained diagnostics and fenced reconstruction controls. It is implemented but not runtime-verified. Current normal application admission uses row locks and Better Auth mutable state; [restricted application recovery](../operations/application-recovery.md) remains a root-owned security decision. OPS-01/02/04 acceptance remains open; this package does not activate remote archive, production retention or cutover.
 
-
 The [durable work extension](../operations/durable-work-recovery.md) now captures and
 compares bounded outbox counters, preparation run/job checkpoints and saved request outcome
 identities through backup, inspection and quarantined restore. Its suspension report keeps
@@ -89,3 +88,14 @@ observed database quarantine separate from uninspected external workers and unre
 provider results; no command resumes work. Old v2 bundles remain explicitly unassessed for
 this new inventory. This implemented source is runtime-unverified and does not complete
 OPS-02 application recovery, OPS-03 provider attempt history or promotion authority.
+
+## Exact preparation-job containment
+
+Forward5100 provides database-authoritative stop of a retained preparation job ID even when
+Workflow/executor bindings are unavailable. This uses the existing preparation API/runtime
+authority, not a new operations CLI/domain or provider integration. It stops only future chunks
+of that identity; committed preparation and run/audit/receipt history remain intact. A previously
+claimed or replay-dispatched Workflow may still run, but the job's terminal database gate refuses
+further advancement. No remote termination, zero-dispatch claim, automatic replacement or writer
+promotion is implied. See [AUTOMATION.md](../../apps/api/AUTOMATION.md#forward5100-stop-one-admitted-preparation-job).
+Source/static implementation is distinct from pending OPS-03 runtime/concurrency evidence.
