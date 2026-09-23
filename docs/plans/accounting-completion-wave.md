@@ -355,3 +355,24 @@ No SQL/runtime/concurrency/provider execution occurred.
 Independent5200 source review found no actionable blocker in scan-before-filter bounds,
 empty-page continuation, fixed-ceiling/source/mode isolation, legacy delegation or exact
 saved v1/v2 semantics. No runtime paging or concurrency scenario was executed.
+
+
+5300/5400 source-integrated public reads disclose exact subledger-basis/tax-match line
+references. Investigation did not establish a duplicate-posting bypass or a universal
+exclusive capacity contract, so no new refusal/role policy was invented. Private helpers,
+immutable bodies/digests and financial eligibility stay unchanged.5300 independent review
+found no actionable blocker;5400 final independent review and integrated static checks are
+pending. No SQL/runtime operation was executed.
+
+
+Independent5400 review found no actionable blocker. Its getter-only detail schema preserves
+unchanged shared match views for lists and saved controls. Exact nullable basis references
+remain factual even after unmatch, while5300 discloses only active reservations; neither
+side selects a compatibility or exclusive-capacity policy. Root full-function diffs confirm
+public wrappers only. Backend/scripts/contracts/jurisdiction and web type checks passed at
+`/tmp/openerp-cross-register-references-types.log` and
+`/tmp/openerp-cross-register-references-web-types.log`; targeted lint passed with zero
+warnings/errors. Prior unrelated invoice-draft-save web errors no longer reproduce, without
+root edits to that component. A lexical source comparison of255 TypeScript SQL calls found
+no declaration-name/argument-count mismatch (Drizzle table declarations were excluded).
+This source comparison is not SQL compilation or execution evidence.

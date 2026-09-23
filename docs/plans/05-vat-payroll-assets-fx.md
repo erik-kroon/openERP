@@ -269,3 +269,18 @@ keep0710 summaries and cursors. See
 Source is integrated and backend type checks pass. Independent source review found no
 actionable blocker in sparse paging, cursor isolation or historical assessment semantics.
 Runtime proof remains open.
+
+
+### Cross-register line-reference disclosure
+
+Forward5300 extends the public schedule read with exact active tax-match references on
+its retained basis lines. Forward5400 extends the public tax-match read with its exact
+retained subledger basis reference, including historical unmatched reviews. These are
+factual links outside immutable bodies, not a conflict finding, role classification or
+new capacity rule. Private matching/eligibility, posting-basis, control/dependency and
+correction owners remain unchanged. Tax matching keeps its original active/usable values;
+its new detail schema is limited to the public getter so saved control/list decoding stays
+unchanged. See [schedule references](../../apps/api/SUBLEDGER-TAX-MATCH-REFERENCES.md)
+and [tax-match disclosure](../../apps/api/TAX-ACCOUNT-SUBLEDGER-DISCLOSURE.md).
+No universal account-role exclusivity policy was selected. Both source paths are
+integrated; source/static review is separate from unperformed runtime verification.
