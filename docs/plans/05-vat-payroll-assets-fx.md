@@ -244,7 +244,6 @@ records exact source owners and the missing decisions. This is not a new FX arch
 decision and does not change existing commerce meaning. No speculative financial register,
 settlement posting or valuation artifact was added.
 
-
 ### Retained VAT fact membership
 
 Forward5000 extends the existing fact read with saved draft and amendment references for
@@ -256,3 +255,17 @@ history/withdrawal fields remain. See [VAT fact lineage](../../apps/api/VAT-FACT
 The source is integrated. Independent source review found no actionable blocker in exact
 membership, saved-version compatibility, disclosure and complete-read bounds. Backend and
 web type checks passed. Runtime proof remains open.
+
+
+### Expense snapshot source membership
+
+Forward5200 adds an optional exact source filter to the existing expense snapshot list.
+A fixed25-snapshot window is scanned before membership filtering, so empty items can still
+have a continuation. The cursor binds scope, source and captured ceiling; scan progress is
+explicit. Saved v1/v2 assessments/revision/review/withdrawal identities are copied without
+live recalculation. Legacy absent withdrawal metadata stays absent. Unfiltered requests
+keep0710 summaries and cursors. See
+[expense snapshot membership](../../apps/api/EXPENSE-SNAPSHOT-MEMBERSHIP.md).
+Source is integrated and backend type checks pass. Independent source review found no
+actionable blocker in sparse paging, cursor isolation or historical assessment semantics.
+Runtime proof remains open.

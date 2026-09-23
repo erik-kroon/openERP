@@ -319,7 +319,6 @@ owners. FX-01 conversions cannot silently create paired foreign/book-currency ca
 or select settlement/remeasurement effect policy. The maintained open decision and focused
 feasibility handoff record the missing choices without inventing an architecture.
 
-
 5000 retained VAT fact lineage is source-integrated through the existing getVatFact
 consumer. Independent review found no actionable blocker in exact fact membership,
 version-specific saved assessments/amendment deltas, original field compatibility,
@@ -332,3 +331,27 @@ API/scripts/contracts/Swedish-domain and direct web TypeScript checks passed at
 `/tmp/openerp-metadata-vat-lineage-web-types.log`. The previous unrelated sales-workspace
 errors no longer reproduce; root did not change that component. SQL migrations remain
 unapplied. No storage outage, runtime workflow or financial execution was exercised.
+
+
+5100 exact preparation-job stopping is source-integrated through REST and
+`runs_stop_background`. Independent lifecycle review found no blocker in exact identity,
+authorization/replay/lock order, terminal safe no-op semantics or the unchanged2800
+terminal-delivery fence. The command changes only ready-job state/reason/check time;
+it does not cancel the run, remove prepared work or promise remote Workflow termination.
+
+5200 optional expense-source membership is source-integrated through the existing snapshot
+list and explicit four-argument statement. Unfiltered requests delegate to0710 unchanged;
+filtered requests inspect25 saved snapshots before filtering and continue after empty
+matching pages while holding a fixed captured ceiling. Saved v1/v2 assessment semantics
+remain separate from live source state. Independent pagination/history review is pending.
+
+Backend/scripts/contracts/jurisdiction TypeScript checks passed at
+`/tmp/openerp-job-stop-expense-lineage-types.log`. The web check at this checkpoint failed
+in untouched invoice-draft-save.tsx: save.error nullable/code access at line60, plus the
+Effect typed-decoder suggestion at line72. These separate frontend edits were not changed.
+No SQL/runtime/concurrency/provider execution occurred.
+
+
+Independent5200 source review found no actionable blocker in scan-before-filter bounds,
+empty-page continuation, fixed-ceiling/source/mode isolation, legacy delegation or exact
+saved v1/v2 semantics. No runtime paging or concurrency scenario was executed.

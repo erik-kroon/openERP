@@ -44,3 +44,15 @@ Partial carrying release, final residuals, fees, rate selection and remeasuremen
 policy also need explicit choices when those cases enter scope. These are contract/domain
 review decisions in addition to actual-company legal activation. No financial FX migration
 or endpoint was added. Existing manual rate reviews and independent backend work continue.
+
+
+## Cross-register line references do not establish role exclusivity
+
+Source inspection found that a retained subledger carrying-basis line and a tax-account
+match can reference the same posted book/voucher/line. Subledger linkage promises line
+uniqueness inside its own register; the current contracts do not establish a universal
+exclusive financial capacity or legal account classification for those references.
+The overlap is not, by itself, evidence of duplicate posting. Public read views may disclose
+exact related records for review, but this does not change matching/posting eligibility or
+assess role compatibility. A future exclusivity policy requires an explicit contract choice
+and both-direction admission plus existing-record handling; no such policy is selected here.
