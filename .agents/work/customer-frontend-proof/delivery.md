@@ -2,6 +2,14 @@
 
 Status: active. The acceptance ledger in `docs/frontend.md` remains incomplete. Continue through its journeys without treating a completed route, API operation or build as whole-task completion. No test additions are authorized.
 
+## Wave 1 integration checkpoint — 24 September 2026
+
+SALES-1 now retains payment discovery and history pages in the invoice URL. The 58-record synthetic register reached page 2; opening SYN-2, inspecting partial settlement, reloading and closing returned to page 2. Books voucher search and period are URL-backed; filtered A1 opened its voucher, displayed its correction chain and returned to the same filter. Competing-tab invoice edits have explicit recovery choices in code, but their dual-tab behavior has not passed browser verification.
+
+BANK-1 now offers multi-entry matching and contextual reversal. A 100 SEK partial match and approved reversal were observed in the synthetic browser account flow. Report create/reload and a multi-entry execution remain unverified. PUR-1 connects source documents to scoped supplier drafts and expenses, adds backlink navigation, and supports synthetic supplier draft prepare/review/approve/execute in code. Its HTTP journey remains unverified: a fresh database migration stops at the pre-existing syntax error in `4000-subledger-estimate-amendments.sql` line 79, before purchase tables are available. FIRM-1 shows latest-period work, supports lead handoff, and restores the filtered portfolio. The 2026 work link, filtered return and handoff through reload were observed; actual access revocation and 200% zoom remain unverified.
+
+The shared tree passed `bun run lint`, `bun run check-types` (including the web build), and `git diff --check` after these integrations. No new test files were added. The acceptance ledger remains open for the unobserved journeys and failure states.
+
 ## Current focus: core daily workflows
 
 The priority is unfinished customer screens and ordinary daily work. Banking and Home/To do now have an implemented first pass, recorded in the checkpoint below. Continue with contextual bank report/undo and the source-to-purchase workflow, then Books/Reports/period and Firm. Keep remaining Sales acceptance gaps visible; do not let unusual local-edit or recovery cases prevent progress on the core application.
