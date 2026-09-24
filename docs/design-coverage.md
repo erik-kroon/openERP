@@ -28,3 +28,5 @@ The [ADRs](adr/README.md) record selected choices and alternatives. Executable s
 The [initial runtime checkpoint](evidence/initial-runtime-checkpoint.md) retains exact results, migration hashes, failures and unexecuted cases. The [planning baseline](plans/evidence/planning-baseline.json) is a dated observation, not a live inventory. The [VAT research manifest](sources/sweden-vat-sources.json) retains source records and access limits. None establishes production or legal acceptance.
 
 Additional industry, inventory, project, payroll or framework needs enter through the company profile. Missing applicability blocks release of the affected workflow. Broad topic coverage is not a claim of support. Update the owning specification and independent failure case when new knowledge changes a requirement.
+
+The [product capability map](plans/capability-backlog.md) tracks the supplied capability IDs, reuses the owners above and owns supplemental collections, sales operations, dimensions, expense/payroll handoffs and extension requirements. It records planned scope only.

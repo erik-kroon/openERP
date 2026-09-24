@@ -20,6 +20,10 @@ Read [shared contracts](00-shared-contracts.md) first, then the relevant domain.
 
 The backlog contains **53 work packages** with 101 mandatory dependency edges, plus separate company/profile release gates. The [generated index](evidence/work-packages.json) includes a valid implementation order. [FND-01 reconciliation](fnd01-reconciliation.md) is complete for its pinned checkpoint. Continue with FND-02/FND-03/FND-04, comparing later concurrent changes against that baseline; do not restart completed work from the historical source description.
 
+## Supplemental product capabilities
+
+The [capability backlog and coverage map](capability-backlog.md) maps every item in the supplied SALES/PUR/BANK and related list to its existing owner and adds explicit collections, sales operations, dimensions, expense/payroll handoffs and extension requirements. The [comparison reconciliation](capability-backlog.md#repository-comparison-reconciliation) additionally covers supplier OCR/email intake, party master data, recurring sales, conditional ROT/RUT and deadlines/calendar, and resolves assignment aliases. These supplemental requirements are outside the 53-packet accounting index; they are planned scope, not completed implementation or acceptance.
+
 ## Current source baseline
 
 The checkout has advanced beyond the early baseline in the research dossier. HEAD at planning capture was `1965622afa65285fa8e9013ccdd98a47ebe86dfb`, with concurrent changes. The [planning manifest](evidence/planning-baseline.json) records source hashes and the existing dirty state.

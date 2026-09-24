@@ -2,6 +2,8 @@
 
 This is the implementation map for the existing P0–P7 roadmap. Packet IDs, deliverables, dependencies and acceptance are defined in their owning area documents and indexed in [work-packages.json](evidence/work-packages.json). That index is derived from the tables; it is not a second manually maintained backlog. Packet completion requires its observable result, not just a merged migration or a UI stub.
 
+The [repository comparison reconciliation](capability-backlog.md#repository-comparison-reconciliation) maps the supplied assignment aliases and payroll/FX ID conflicts to these owners. Supplemental inbox, party, recurring-sales and deadline scope follows the dependencies stated there; it does not create a competing packet sequence.
+
 ## Ready order
 
 | Wave                               | Packets / outcomes                                                                                                              | Exit and next consumer                                                                                                   |

@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-22T17:11:03.047205+00:00",
-  "headObservedAtValidation": "4acf5aac92cb74705915408ce1c29ec93dfb0bd9",
+  "checkedAt": "2026-09-24T17:10:34.673626+00:00",
+  "headObservedAtValidation": "053372ecfb463283f0a5fb7652e27516352730eb",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,8 +9,8 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 126,
-    "documentsChecked": 24,
+    "localLinksAndAnchorsChecked": 314,
+    "documentsChecked": 27,
     "coverage": {
       "R": [
         "R-01",
@@ -90,7 +90,7 @@
   "files": [
     {
       "path": "docs/README.md",
-      "sha256": "a00089616bc4c25e15cb5ada0b008018c4b83963d36ca6362d5490fccba29451"
+      "sha256": "731e174dc187dfc047e0858a59b20b8c3c1dedffb70463118eeacc84e326cbf9"
     },
     {
       "path": "docs/adr/0002-exact-posting-and-approval.md",
@@ -102,15 +102,15 @@
     },
     {
       "path": "docs/adr/README.md",
-      "sha256": "2dda4c583ce5e9f6503406afd2ad5e59dafa8b19dc433e32334595a467fa6647"
+      "sha256": "1aa08e8f24823972a4cfb5d24df91f8463bf6256549b487b784267a156e086e6"
     },
     {
       "path": "docs/architecture.md",
-      "sha256": "ff24ac261b95145874ebf98da503b4f6423c591c9c941e4efb6819dc0fdeec9d"
+      "sha256": "cd275e8943436abd7b08a2c0614632958c3543e191b6b9d88b1e57195afce6d3"
     },
     {
       "path": "docs/compliance.md",
-      "sha256": "e2f04cfa31503a0f92c64ab72f18d928abb6bc65edbb2a7d33ad54908e32733f"
+      "sha256": "870cae19f33cb3d0b3bfeb00578cbc03b570e4908fb8464ec6927d7e65ab089a"
     },
     {
       "path": "docs/domain.md",
@@ -118,47 +118,47 @@
     },
     {
       "path": "docs/open-decisions.md",
-      "sha256": "65705b88594ba7c2cab752a2a6885ee92fbf37b63534848b53a3e932dce783fa"
+      "sha256": "a1665321d6e73453432c16b3aee9f83c87dedd161de13176e6112839854cd3e3"
     },
     {
       "path": "docs/operations.md",
-      "sha256": "67233536af2f8824f7e1268d22cdfaf361318a0d4e8f2624d5688d381d74c238"
+      "sha256": "2e6b4dfdc3c0acff2c5b2a16db318d9ed139eef0daba4c7399a61573a21ab0f0"
     },
     {
       "path": "docs/plans/00-shared-contracts.md",
-      "sha256": "3cc18e631821d63998e20c2ddaf3d0c05e5c10aa886a04bc27161202e08aa9d6"
+      "sha256": "854cb2bfc9f07c571c83843d5beb031dc0fe146d6014dad87686d3938f23afb5"
     },
     {
       "path": "docs/plans/01-posting-approval-receipts.md",
-      "sha256": "3e8adf656af31d4fc8b1c4c7d669ed10c00bfc0556bd8f5c5d133c0ddc5dde3d"
+      "sha256": "6152abc69c73abfad0592d4af76952617042038c6b93bb16b5476b1b226b4b9c"
     },
     {
       "path": "docs/plans/02-corrections.md",
-      "sha256": "550bddfa8d16b76bdc093822cdfeeec8712586eb2f4deeede21ec0bbd9900dfa"
+      "sha256": "eef47d1939c06c7b7224dfc7ce3f87076eab85b9cc604e98c9bfa097d8c7fe74"
     },
     {
       "path": "docs/plans/03-imports-matching-reconciliation.md",
-      "sha256": "c97d6c20ab8c2e1d4dc78ba7370ec8856345a18ce7ebc0f50f08a780677caad2"
+      "sha256": "6d12bc14734bfd85cad491fc3173e846378b423437fcb86b82617cc1c12c7878"
     },
     {
       "path": "docs/plans/04-invoices-payments-registers.md",
-      "sha256": "5bce2b2cab5e64a2dd40bda35fd7c24a1447e3eabfce49e056d5eba10478802d"
+      "sha256": "dd6eda1563618c484a4d38a185b0b6c5442ca246d9e67540370a42deb94d855a"
     },
     {
       "path": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sha256": "45643a64eb9131e74ed9b47c913433e177d48a022522b4b732266efed7591528"
+      "sha256": "286db31ae645c61442ceded695cf2e0bd7278c881e01c31be9867517b2c982e4"
     },
     {
       "path": "docs/plans/06-year-end-reports-filing.md",
-      "sha256": "e86ab284a41d036110c6c54afd53972dd4ea42f689b9ba51194994ec056af30c"
+      "sha256": "bbb28b985236c0555e3fd24bacbc36ed22da3cfd909fc71378c5cff451a11d76"
     },
     {
       "path": "docs/plans/07-restore-operations-cutover.md",
-      "sha256": "ede679cbd5372f9e1d425d82a12f9687a94c44b7baa83e4c7718a5698cd90871"
+      "sha256": "581f0c6e5b6ae8a79aec2506bed88eefe1c5c434102e91af0b9c7a53cf97e79b"
     },
     {
       "path": "docs/plans/08-delivery.md",
-      "sha256": "93333e549cda8669bfe05b2106cf6c7bec806087b2fec70ba898e8c7ff95f4f8"
+      "sha256": "f4fd3891c1e5198e4acc69984e537efa7949ad3d79e319f07cee2ebebd021efa"
     },
     {
       "path": "docs/plans/09-acceptance.md",
@@ -170,7 +170,15 @@
     },
     {
       "path": "docs/plans/README.md",
-      "sha256": "9af4deaadbf249f80384061aa7f27bcc424950ad42ebf64e50db96842c3930f4"
+      "sha256": "cd91d326e5245902b223651ef531fe3f03901d982c58415b38f4ae51d5f8e649"
+    },
+    {
+      "path": "docs/plans/accounting-completion-wave.md",
+      "sha256": "8cbee0bc81bb1af6c4e629fcb48b6195bf1f3fada3e253c46d808f3224d43354"
+    },
+    {
+      "path": "docs/plans/capability-backlog.md",
+      "sha256": "f3738098ce9e0f8b7063ecef1ddfbe3b9862a05a85d539d462afb3ef6829cf07"
     },
     {
       "path": "docs/plans/check-plan.py",
@@ -178,19 +186,23 @@
     },
     {
       "path": "docs/plans/evidence/planning-baseline.json",
-      "sha256": "04990036ab6d8a581c4ac7a51da244b4619f1b79e9f5e58b3d2ccdf31e4f1207"
+      "sha256": "04ef034be1d41a5672cef0b7aa3edf5fb15b8ec92a9a5bf1808c24e0762afe1f"
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "b2ce77c344e28a5987aa8b79e85b7afb999e507f02ecfe8c05af06af10b92d88"
+      "sha256": "a9098e0f883c0382d081c385c61ee61c229c39d79099cf8afe4a7e3ec5201c18"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
-      "sha256": "3e9e883d48c51410ad46cacc59e6579e89280bf792075c19ff1085679bd5296f"
+      "sha256": "3a35a125a3f9e8260f04214bd348024b65f1b694dac0086f7adb2d2298f5a38b"
+    },
+    {
+      "path": "docs/plans/seb-statement-preview.md",
+      "sha256": "2777b43dba6e9a8975461ab1d29bfab7437dde5223e0646294512987788ad36c"
     },
     {
       "path": "docs/roadmap.md",
-      "sha256": "059f2e54a1d67a2bb63665216c8dd723cfe29d1e90cee0a303711f9a60e7ee00"
+      "sha256": "d214354b629ead83cc2bf611d557f10c4260e286a4f6cfae299f7d9b6ea886fb"
     },
     {
       "path": "docs/verification.md",
