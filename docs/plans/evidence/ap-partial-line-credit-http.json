@@ -1,0 +1,616 @@
+{
+  "observedAt": "2026-09-24",
+  "runtime": "local Wrangler HTTP against disposable PostgreSQL 17 synthetic book; forward 8770 applied",
+  "previousPurchaseProof": "ap-swedish-purchase-http.json",
+  "scope": {
+    "entityId": "entity_vat_cbb6827d",
+    "bookId": "book_vat_cbb6827d"
+  },
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/evidence",
+      "status": 200,
+      "key": "vat-44e324cf508640ef95ff4d634e8a474b",
+      "input": {
+        "title": "partial supplier credit",
+        "content": "Synthetic partial credit after payment cbb6827d",
+        "mediaType": "text/plain",
+        "origin": "local synthetic proof"
+      },
+      "result": {
+        "id": "evidence_4ae016ee323f415e8188f2febc671cb4",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null,
+        "voucherId": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews",
+      "status": 422,
+      "key": "vat-da4ac3d00bdc43f089f36904c9987cc3",
+      "input": {
+        "profile": "swedish-purchase-partial-credit-v1",
+        "invoiceId": "invoice_9b75188faf4e44ef9b98efa90e66159b",
+        "acceptanceDigest": "sha256:7c9af9f3e0cdcfbeb3a2777405fe2b0543d7f49f1e5bf4588a5ad3bb30d39aa4",
+        "expectedInvoiceRevision": "1",
+        "expectedAllocationVersion": "1",
+        "expectedOutstandingMinor": "6000",
+        "creditEvidenceId": "evidence_4ae016ee323f415e8188f2febc671cb4",
+        "supplierCreditNumber": "CN-PART-cbb6827d",
+        "amountMinor": "2100",
+        "creditLines": [
+          {
+            "lineId": "line_vat_second",
+            "netMinor": "1600",
+            "taxMinor": "500"
+          }
+        ],
+        "creditDate": "2026-09-27",
+        "accountingPeriodId": "period_vat_cbb6827d",
+        "series": "AP",
+        "reason": "Credit unpaid residual after applied payment",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": null,
+        "code": "InvalidJournal",
+        "message": "Credit-note net and tax must match the selected original rate.",
+        "digest": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null,
+        "voucherId": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews",
+      "status": 200,
+      "key": "vat-0b0d152204e94b28a126dab8d130d8c9",
+      "input": {
+        "profile": "swedish-purchase-partial-credit-v1",
+        "invoiceId": "invoice_9b75188faf4e44ef9b98efa90e66159b",
+        "acceptanceDigest": "sha256:7c9af9f3e0cdcfbeb3a2777405fe2b0543d7f49f1e5bf4588a5ad3bb30d39aa4",
+        "expectedInvoiceRevision": "1",
+        "expectedAllocationVersion": "1",
+        "expectedOutstandingMinor": "6000",
+        "creditEvidenceId": "evidence_4ae016ee323f415e8188f2febc671cb4",
+        "supplierCreditNumber": "CN-PART-cbb6827d",
+        "amountMinor": "2000",
+        "creditLines": [
+          {
+            "lineId": "line_vat_second",
+            "netMinor": "1600",
+            "taxMinor": "400"
+          }
+        ],
+        "creditDate": "2026-09-27",
+        "accountingPeriodId": "period_vat_cbb6827d",
+        "series": "AP",
+        "reason": "Credit unpaid residual after applied payment",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_credit_review_fd67c860232047c0b65f1cef176841a0",
+        "code": null,
+        "message": null,
+        "digest": "sha256:6963f5ed5fcac42df1805ed343dc4144285fa0951e76874265408dd04529eceb",
+        "taxMinor": "400",
+        "outstandingAfterMinor": null,
+        "voucherId": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews/supplier_credit_review_fd67c860232047c0b65f1cef176841a0/approvals",
+      "status": 200,
+      "key": "vat-bf586b94b62c4932b7c0a4e8f0456acb",
+      "input": {
+        "digest": "sha256:6963f5ed5fcac42df1805ed343dc4144285fa0951e76874265408dd04529eceb",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "credit_approval_8c4aade83236412f986d2b07b93d2cf6",
+        "code": null,
+        "message": null,
+        "digest": "sha256:6963f5ed5fcac42df1805ed343dc4144285fa0951e76874265408dd04529eceb",
+        "taxMinor": null,
+        "outstandingAfterMinor": null,
+        "voucherId": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews/supplier_credit_review_fd67c860232047c0b65f1cef176841a0/execute",
+      "status": 200,
+      "key": "vat-8957c0e1b8a547a7aac0ef6b12b03275",
+      "input": {
+        "digest": "sha256:6963f5ed5fcac42df1805ed343dc4144285fa0951e76874265408dd04529eceb",
+        "approvalId": "credit_approval_8c4aade83236412f986d2b07b93d2cf6",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_credit_ab4d0a3e060d4eb692e2700966ebe85e",
+        "code": null,
+        "message": null,
+        "digest": "sha256:70c2b99d45baa48fcedb6ff64214a8a01d3a27537da0a48e599b970ac773e1f2",
+        "taxMinor": "400",
+        "outstandingAfterMinor": "4000",
+        "voucherId": "voucher_28186ea650a146b1ad1af5b43caf59dc"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/evidence",
+      "status": 200,
+      "key": "vat-342de206af184c8ea7cea6e3ab91059e",
+      "input": {
+        "title": "remaining supplier credit",
+        "content": "Synthetic remaining credit cbb6827d",
+        "mediaType": "text/plain",
+        "origin": "local synthetic proof"
+      },
+      "result": {
+        "id": "evidence_f42626c1650b4c3688a2e25345800a35",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null,
+        "voucherId": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews",
+      "status": 200,
+      "key": "vat-d0374c51a38d4d75901a6a482866e166",
+      "input": {
+        "profile": "swedish-purchase-partial-credit-v1",
+        "invoiceId": "invoice_9b75188faf4e44ef9b98efa90e66159b",
+        "acceptanceDigest": "sha256:7c9af9f3e0cdcfbeb3a2777405fe2b0543d7f49f1e5bf4588a5ad3bb30d39aa4",
+        "expectedInvoiceRevision": "1",
+        "expectedAllocationVersion": "2",
+        "expectedOutstandingMinor": "4000",
+        "creditEvidenceId": "evidence_f42626c1650b4c3688a2e25345800a35",
+        "supplierCreditNumber": "CN-REST-cbb6827d",
+        "amountMinor": "4000",
+        "creditLines": [
+          {
+            "lineId": "line_vat_second",
+            "netMinor": "3200",
+            "taxMinor": "800"
+          }
+        ],
+        "creditDate": "2026-09-28",
+        "accountingPeriodId": "period_vat_cbb6827d",
+        "series": "AP",
+        "reason": "Credit unpaid residual after applied payment",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_credit_review_4883b0b8c24041768badb74ab561ef7b",
+        "code": null,
+        "message": null,
+        "digest": "sha256:370baf294cc656c3fe2bed68c90dbf09d36923330160657cd894cc64809a9ebd",
+        "taxMinor": "800",
+        "outstandingAfterMinor": null,
+        "voucherId": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews/supplier_credit_review_4883b0b8c24041768badb74ab561ef7b/approvals",
+      "status": 200,
+      "key": "vat-8927202e00344da1aa0d9324070e5291",
+      "input": {
+        "digest": "sha256:370baf294cc656c3fe2bed68c90dbf09d36923330160657cd894cc64809a9ebd",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "credit_approval_a34da4a232d44c62a7b4a0f57122545b",
+        "code": null,
+        "message": null,
+        "digest": "sha256:370baf294cc656c3fe2bed68c90dbf09d36923330160657cd894cc64809a9ebd",
+        "taxMinor": null,
+        "outstandingAfterMinor": null,
+        "voucherId": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews/supplier_credit_review_4883b0b8c24041768badb74ab561ef7b/execute",
+      "status": 200,
+      "key": "vat-c3804d58d7d4424b9d0150fcb52d7e17",
+      "input": {
+        "digest": "sha256:370baf294cc656c3fe2bed68c90dbf09d36923330160657cd894cc64809a9ebd",
+        "approvalId": "credit_approval_a34da4a232d44c62a7b4a0f57122545b",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_credit_1871be03894147d89213e38f66da9289",
+        "code": null,
+        "message": null,
+        "digest": "sha256:02a097b95112b120037b18ccd8dee5618bf12bd5a7fc6e8a9509fa857487af22",
+        "taxMinor": "800",
+        "outstandingAfterMinor": "0",
+        "voucherId": "voucher_4947861d11984ba1b33dad0237ae156a"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/evidence",
+      "status": 200,
+      "key": "vat-7629846cce13462a91a6f5ae0c10108d",
+      "input": {
+        "title": "over credit",
+        "content": "Synthetic over-credit cbb6827d",
+        "mediaType": "text/plain",
+        "origin": "local synthetic proof"
+      },
+      "result": {
+        "id": "evidence_67dccc278ac04642ab7131f91b645f04",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null,
+        "voucherId": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews",
+      "status": 409,
+      "key": "vat-9e65ae5e9542477ca56b19b5aa78bf9b",
+      "input": {
+        "profile": "swedish-purchase-partial-credit-v1",
+        "invoiceId": "invoice_9b75188faf4e44ef9b98efa90e66159b",
+        "acceptanceDigest": "sha256:7c9af9f3e0cdcfbeb3a2777405fe2b0543d7f49f1e5bf4588a5ad3bb30d39aa4",
+        "expectedInvoiceRevision": "1",
+        "expectedAllocationVersion": "3",
+        "expectedOutstandingMinor": "0",
+        "creditEvidenceId": "evidence_67dccc278ac04642ab7131f91b645f04",
+        "supplierCreditNumber": "CN-OVER-cbb6827d",
+        "amountMinor": "125",
+        "creditLines": [
+          {
+            "lineId": "line_vat_second",
+            "netMinor": "100",
+            "taxMinor": "25"
+          }
+        ],
+        "creditDate": "2026-09-27",
+        "accountingPeriodId": "period_vat_cbb6827d",
+        "series": "AP",
+        "reason": "Credit unpaid residual after applied payment",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": null,
+        "code": "StaleDependency",
+        "message": "The partial credit exceeds the unpaid payable. Applied payments remain unchanged.",
+        "digest": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null,
+        "voucherId": null
+      }
+    }
+  ],
+  "vouchers": [
+    {
+      "voucherId": "voucher_28186ea650a146b1ad1af5b43caf59dc",
+      "lines": [
+        {
+          "accountId": "account_ap_payable",
+          "debitMinor": "2000",
+          "creditMinor": "0"
+        },
+        {
+          "accountId": "account_ap_expense",
+          "debitMinor": "0",
+          "creditMinor": "1600"
+        },
+        {
+          "accountId": "account_ap_vat",
+          "debitMinor": "0",
+          "creditMinor": "400"
+        }
+      ]
+    },
+    {
+      "voucherId": "voucher_4947861d11984ba1b33dad0237ae156a",
+      "lines": [
+        {
+          "accountId": "account_ap_payable",
+          "debitMinor": "4000",
+          "creditMinor": "0"
+        },
+        {
+          "accountId": "account_ap_expense",
+          "debitMinor": "0",
+          "creditMinor": "3200"
+        },
+        {
+          "accountId": "account_ap_vat",
+          "debitMinor": "0",
+          "creditMinor": "800"
+        }
+      ]
+    }
+  ],
+  "finalInvoice": {
+    "id": "invoice_9b75188faf4e44ef9b98efa90e66159b",
+    "amountMinor": "10000",
+    "creditedMinor": "6000",
+    "recordedAllocatedMinor": "4000",
+    "outstandingMinor": "0",
+    "status": "credited",
+    "allocationVersion": "3"
+  },
+  "databaseCounts": {
+    "partialCreditsForInvoice": 2,
+    "allocationReceipts": 1
+  },
+  "limits": [
+    "Credit source lines are explicit operator assertions against the sealed original.",
+    "No paid principal refund, legal VAT activation or bank-confirmed transfer."
+  ],
+  "lineCapacity": {
+    "originalLines": [
+      {
+        "lineId": "line_two_a",
+        "netMinor": "1000",
+        "taxMinor": "250"
+      },
+      {
+        "lineId": "line_two_b",
+        "netMinor": "1000",
+        "taxMinor": "250"
+      }
+    ],
+    "firstCredit": {
+      "invoiceId": "invoice_4789636e3e5142b59f0af3baa7fe2425",
+      "creditId": "supplier_credit_1fca69f36f344be29b218a4dcd32c3d3",
+      "lineId": "line_two_a",
+      "amountMinor": "1250"
+    },
+    "repeatedLineRefusal": {
+      "status": 422,
+      "code": "InvalidJournal",
+      "message": "Credit-note line exceeds its accepted remaining net or source tax.",
+      "unpaidAtRefusal": "1250"
+    },
+    "secondLineCredit": {
+      "creditId": "supplier_credit_f3142b99dcc54766aeaf70bc9403d3e4",
+      "lineId": "line_two_b",
+      "amountMinor": "1250",
+      "outstandingAfterMinor": "0"
+    },
+    "requests": [
+      {
+        "method": "POST",
+        "path": "/evidence",
+        "status": 200,
+        "key": "vat-47eb599479bb423488e51615bd9b7a03",
+        "input": {
+          "title": "two line purchase",
+          "content": "Synthetic two-line purchase cbb6827d",
+          "mediaType": "text/plain",
+          "origin": "local synthetic proof"
+        },
+        "result": {
+          "id": "evidence_320098c61f654529ab6547695d39dace",
+          "code": null,
+          "message": null,
+          "digest": null,
+          "outstandingAfterMinor": null
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/commerce/supplier-acceptance-reviews",
+        "status": 200,
+        "key": "vat-b8b10c8ecd0d4b2fa04d052486fe2306",
+        "input": {
+          "profile": "swedish-purchase-v1",
+          "draftId": "supplier_invoice_draft_4b8b7da9fd614b00a55fc748b2bd451e",
+          "expectedRevision": "1",
+          "expectedDigest": "sha256:ca781d1299f2fb8e2633277861d3709791c6d79fb053fb9e215b7896d236452c",
+          "controlAccountId": "account_ap_payable",
+          "lineAssignments": [
+            {
+              "lineId": "line_two_a",
+              "expenseAccountId": "account_ap_expense",
+              "vatRatePercent": 25
+            },
+            {
+              "lineId": "line_two_b",
+              "expenseAccountId": "account_ap_expense",
+              "vatRatePercent": 25
+            }
+          ],
+          "accountingPeriodId": "period_vat_cbb6827d",
+          "series": "AP",
+          "reason": "Reviewed synthetic Swedish purchase lines",
+          "acknowledgeSyntheticOnly": true
+        },
+        "result": {
+          "id": "supplier_review_3146772f09224ad1b6bd78c57676566c",
+          "code": null,
+          "message": null,
+          "digest": "sha256:f246a219e94f633e4b09a54687d350fcf7b4b802aa5af8929a0200d198925387",
+          "outstandingAfterMinor": null
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/commerce/supplier-acceptance-reviews/supplier_review_3146772f09224ad1b6bd78c57676566c/approvals",
+        "status": 200,
+        "key": "vat-780ce87ef1cf45b3baa6b90d7e19c379",
+        "input": {
+          "version": 1,
+          "digest": "sha256:f246a219e94f633e4b09a54687d350fcf7b4b802aa5af8929a0200d198925387",
+          "acknowledgeSyntheticOnly": true
+        },
+        "result": {
+          "id": "supplier_approval_bea1bcb1871a4b09b778238d14d1a6fc",
+          "code": null,
+          "message": null,
+          "digest": "sha256:f246a219e94f633e4b09a54687d350fcf7b4b802aa5af8929a0200d198925387",
+          "outstandingAfterMinor": null
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/commerce/supplier-acceptance-reviews/supplier_review_3146772f09224ad1b6bd78c57676566c/execute",
+        "status": 200,
+        "key": "vat-8f09a91407b94f75bc96fb5df8f44a0b",
+        "input": {
+          "version": 1,
+          "digest": "sha256:f246a219e94f633e4b09a54687d350fcf7b4b802aa5af8929a0200d198925387",
+          "approvalId": "supplier_approval_bea1bcb1871a4b09b778238d14d1a6fc",
+          "acknowledgeSyntheticOnly": true
+        },
+        "result": {
+          "id": "supplier_acceptance_e4a5d25d253349a0919236262b9afbc2",
+          "code": null,
+          "message": null,
+          "digest": "sha256:9cc678b69b665cbbdfbbb2244dae4448ada75ec0977444d503680184693b0843",
+          "outstandingAfterMinor": null
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/evidence",
+        "status": 200,
+        "key": "vat-89f82c59053c43e4b439c06a09bd1509",
+        "input": {
+          "title": "first line credit",
+          "content": "Synthetic first line credit cbb6827d",
+          "mediaType": "text/plain",
+          "origin": "local synthetic proof"
+        },
+        "result": {
+          "id": "evidence_6bd33c56c2da4c5dac75f3ed581ab6b2",
+          "code": null,
+          "message": null,
+          "digest": null,
+          "outstandingAfterMinor": null
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/commerce/supplier-credit-reviews/supplier_credit_review_5fa56a1021564843a2c730e4389f952f/approvals",
+        "status": 200,
+        "key": "vat-7443f7e263064bf39e7a22a4bd11ed6c",
+        "input": {
+          "digest": "sha256:e591e570b1b37e4f22878ea477cbb222ad8bfa05e5a74c0ce6c682cd15c74fbc",
+          "acknowledgeSyntheticOnly": true
+        },
+        "result": {
+          "id": "credit_approval_b6b2efc531fc4e02a05f06246d94bda8",
+          "code": null,
+          "message": null,
+          "digest": "sha256:e591e570b1b37e4f22878ea477cbb222ad8bfa05e5a74c0ce6c682cd15c74fbc",
+          "outstandingAfterMinor": null
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/commerce/supplier-credit-reviews/supplier_credit_review_5fa56a1021564843a2c730e4389f952f/execute",
+        "status": 200,
+        "key": "vat-84105d86323944c287575dc08a3f6b45",
+        "input": {
+          "digest": "sha256:e591e570b1b37e4f22878ea477cbb222ad8bfa05e5a74c0ce6c682cd15c74fbc",
+          "approvalId": "credit_approval_b6b2efc531fc4e02a05f06246d94bda8",
+          "acknowledgeSyntheticOnly": true
+        },
+        "result": {
+          "id": "supplier_credit_1fca69f36f344be29b218a4dcd32c3d3",
+          "code": null,
+          "message": null,
+          "digest": "sha256:9c02bbd72cb24b75b3171eec0103cce8eda93584cdc8c70d4318d2fc57ac5619",
+          "outstandingAfterMinor": "1250"
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/evidence",
+        "status": 200,
+        "key": "vat-64f2166fde754c7d9b65d346b6c0e2ec",
+        "input": {
+          "title": "repeat line a credit",
+          "content": "Synthetic repeat first line cbb6827d",
+          "mediaType": "text/plain",
+          "origin": "local synthetic proof"
+        },
+        "result": {
+          "id": "evidence_cfbae7be7a42496d82e8f46bd1ade4f4",
+          "code": null,
+          "message": null,
+          "digest": null,
+          "outstandingAfterMinor": null
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/evidence",
+        "status": 200,
+        "key": "vat-eb43b22956634a0bb169db841f6aec28",
+        "input": {
+          "title": "second line credit",
+          "content": "Synthetic second line cbb6827d",
+          "mediaType": "text/plain",
+          "origin": "local synthetic proof"
+        },
+        "result": {
+          "id": "evidence_ae97b208e37d468e86c9a72a1e3cedde",
+          "code": null,
+          "message": null,
+          "digest": null,
+          "outstandingAfterMinor": null
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/commerce/supplier-credit-reviews/supplier_credit_review_eebe5cc78b314042834d32e7c0505aa0/approvals",
+        "status": 200,
+        "key": "vat-e2e55a82e2d64128a714b6d0126a60e4",
+        "input": {
+          "digest": "sha256:2eb129700fc6c3f44867f967624919acdcdd1154d1c5a938044c4a6fe0b15503",
+          "acknowledgeSyntheticOnly": true
+        },
+        "result": {
+          "id": "credit_approval_a13a5cf0c51f4c2fb54d1722cbfb263c",
+          "code": null,
+          "message": null,
+          "digest": "sha256:2eb129700fc6c3f44867f967624919acdcdd1154d1c5a938044c4a6fe0b15503",
+          "outstandingAfterMinor": null
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/commerce/supplier-credit-reviews/supplier_credit_review_eebe5cc78b314042834d32e7c0505aa0/execute",
+        "status": 200,
+        "key": "vat-3b66ddbbb378426691d0c6fd87316268",
+        "input": {
+          "digest": "sha256:2eb129700fc6c3f44867f967624919acdcdd1154d1c5a938044c4a6fe0b15503",
+          "approvalId": "credit_approval_a13a5cf0c51f4c2fb54d1722cbfb263c",
+          "acknowledgeSyntheticOnly": true
+        },
+        "result": {
+          "id": "supplier_credit_f3142b99dcc54766aeaf70bc9403d3e4",
+          "code": null,
+          "message": null,
+          "digest": "sha256:c8d96430f4aab5c126a7d3d86977366d3d257fdeb72883ab5531cda5a94670ec",
+          "outstandingAfterMinor": "0"
+        }
+      }
+    ]
+  }
+}

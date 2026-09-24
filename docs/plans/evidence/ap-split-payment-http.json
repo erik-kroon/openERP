@@ -1,0 +1,611 @@
+{
+  "observedAt": "2026-09-24",
+  "runtime": "local Wrangler HTTP + disposable PostgreSQL 17, restricted app role and scoped synthetic book",
+  "scope": {
+    "entityId": "entity_vat_cbb6827d",
+    "bookId": "book_vat_cbb6827d"
+  },
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/evidence",
+      "status": 200,
+      "key": "vat-7350870b6e7145dba1a3b5244cb7e7e8",
+      "input": {
+        "title": "batch purchase 1",
+        "content": "Synthetic batch purchase 1 cbb6827d",
+        "mediaType": "text/plain",
+        "origin": "local synthetic proof"
+      },
+      "result": {
+        "id": "evidence_7dacbf41a28941069d2946f6be26bd22",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-invoice-drafts",
+      "status": 200,
+      "key": "vat-977431cd398d4edba2ef55dfd9eb7fe1",
+      "input": {
+        "draftKey": "draft_batch_1_cbb6827d",
+        "content": {
+          "title": "Batch purchase 1",
+          "counterpartyId": "counterparty_63de514d6e254160ae77e2cb40fabcfb",
+          "counterpartyRevision": "1",
+          "supplier": {
+            "legalName": "Supplier cbb6827d",
+            "registrationId": "5560000000",
+            "taxId": null,
+            "address": "Synthetic supplier address",
+            "countryCode": "SE",
+            "evidenceId": "evidence_10ed8b16899e4f7f824f031859e04deb"
+          },
+          "buyer": {
+            "legalName": "Synthetic buyer",
+            "registrationId": "5561111111",
+            "taxId": null,
+            "address": "Synthetic buyer address",
+            "countryCode": "SE",
+            "evidenceId": "evidence_cf6c005bbae34d2eb9a8ee6954d64a69"
+          },
+          "sourceEvidenceId": "evidence_7dacbf41a28941069d2946f6be26bd22",
+          "supplierDocumentNumber": "AP-BATCH-1-cbb6827d",
+          "currency": "SEK",
+          "currencyScale": 2,
+          "documentDate": "2026-09-24",
+          "supplyDate": "2026-09-24",
+          "dueDate": "2026-10-24",
+          "paymentTerms": "30 days",
+          "sourceTotalMinor": "5000",
+          "lines": [
+            {
+              "id": "line_batch_1",
+              "description": "Synthetic service",
+              "quantity": "1",
+              "unitPriceMinor": "4000",
+              "baseMinor": "4000",
+              "discountMinor": "0",
+              "chargeMinor": "0",
+              "taxMinor": "1000",
+              "taxDescription": "Source asserted tax; no deduction",
+              "taxEvidenceId": "evidence_7dacbf41a28941069d2946f6be26bd22",
+              "sourceGrossMinor": "5000"
+            }
+          ]
+        }
+      },
+      "result": {
+        "id": "supplier_invoice_draft_ec3fdd1395dd483380de7c685be5e856",
+        "code": null,
+        "message": null,
+        "digest": "sha256:03e2371f2ee2089255b545d2bb3198ce359937212adf784dff05f24b90d1629f",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-acceptance-reviews",
+      "status": 200,
+      "key": "vat-6861d70146944abcbef37c856872570b",
+      "input": {
+        "profile": "swedish-purchase-v1",
+        "draftId": "supplier_invoice_draft_ec3fdd1395dd483380de7c685be5e856",
+        "expectedRevision": "1",
+        "expectedDigest": "sha256:03e2371f2ee2089255b545d2bb3198ce359937212adf784dff05f24b90d1629f",
+        "controlAccountId": "account_ap_payable",
+        "lineAssignments": [
+          {
+            "lineId": "line_batch_1",
+            "expenseAccountId": "account_ap_expense",
+            "vatRatePercent": 25
+          }
+        ],
+        "accountingPeriodId": "period_vat_cbb6827d",
+        "series": "AP",
+        "reason": "Reviewed synthetic Swedish purchase lines",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_review_703647ac51454efdb4cd7a1456f98c3d",
+        "code": null,
+        "message": null,
+        "digest": "sha256:39ebac577b490be55368840ac481c1fa43e9ee894a9125990cbdfd0407e34dc1",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-acceptance-reviews/supplier_review_703647ac51454efdb4cd7a1456f98c3d/approvals",
+      "status": 200,
+      "key": "vat-2feadfaaf4e244049ae4fbbdbde903e9",
+      "input": {
+        "version": 1,
+        "digest": "sha256:39ebac577b490be55368840ac481c1fa43e9ee894a9125990cbdfd0407e34dc1",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_approval_29da02974ded4559961ebce67ae39cbc",
+        "code": null,
+        "message": null,
+        "digest": "sha256:39ebac577b490be55368840ac481c1fa43e9ee894a9125990cbdfd0407e34dc1",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-acceptance-reviews/supplier_review_703647ac51454efdb4cd7a1456f98c3d/execute",
+      "status": 200,
+      "key": "vat-2f1907e59d754e2da537ec9b976aad82",
+      "input": {
+        "version": 1,
+        "digest": "sha256:39ebac577b490be55368840ac481c1fa43e9ee894a9125990cbdfd0407e34dc1",
+        "approvalId": "supplier_approval_29da02974ded4559961ebce67ae39cbc",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_acceptance_5ebeb7d15a674cc0a997edf92859f081",
+        "code": null,
+        "message": null,
+        "digest": "sha256:274ae4e28895f55cedf8078bda22bb8951cf215d0de91b93f886a097ba5833b8",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": "invoice_df0bed04d69c4637b32be7ee8f404c35",
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/evidence",
+      "status": 200,
+      "key": "vat-9d712390d5ae410db3e2bb0fe63f62da",
+      "input": {
+        "title": "batch purchase 2",
+        "content": "Synthetic batch purchase 2 cbb6827d",
+        "mediaType": "text/plain",
+        "origin": "local synthetic proof"
+      },
+      "result": {
+        "id": "evidence_3715e52b85c14afe9bfa945fe2b7e699",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-invoice-drafts",
+      "status": 200,
+      "key": "vat-d74edafcdabf4341b4766b7987ba549e",
+      "input": {
+        "draftKey": "draft_batch_2_cbb6827d",
+        "content": {
+          "title": "Batch purchase 2",
+          "counterpartyId": "counterparty_63de514d6e254160ae77e2cb40fabcfb",
+          "counterpartyRevision": "1",
+          "supplier": {
+            "legalName": "Supplier cbb6827d",
+            "registrationId": "5560000000",
+            "taxId": null,
+            "address": "Synthetic supplier address",
+            "countryCode": "SE",
+            "evidenceId": "evidence_10ed8b16899e4f7f824f031859e04deb"
+          },
+          "buyer": {
+            "legalName": "Synthetic buyer",
+            "registrationId": "5561111111",
+            "taxId": null,
+            "address": "Synthetic buyer address",
+            "countryCode": "SE",
+            "evidenceId": "evidence_cf6c005bbae34d2eb9a8ee6954d64a69"
+          },
+          "sourceEvidenceId": "evidence_3715e52b85c14afe9bfa945fe2b7e699",
+          "supplierDocumentNumber": "AP-BATCH-2-cbb6827d",
+          "currency": "SEK",
+          "currencyScale": 2,
+          "documentDate": "2026-09-24",
+          "supplyDate": "2026-09-24",
+          "dueDate": "2026-10-24",
+          "paymentTerms": "30 days",
+          "sourceTotalMinor": "7500",
+          "lines": [
+            {
+              "id": "line_batch_2",
+              "description": "Synthetic service",
+              "quantity": "1",
+              "unitPriceMinor": "6000",
+              "baseMinor": "6000",
+              "discountMinor": "0",
+              "chargeMinor": "0",
+              "taxMinor": "1500",
+              "taxDescription": "Source asserted tax; no deduction",
+              "taxEvidenceId": "evidence_3715e52b85c14afe9bfa945fe2b7e699",
+              "sourceGrossMinor": "7500"
+            }
+          ]
+        }
+      },
+      "result": {
+        "id": "supplier_invoice_draft_c6f8783193024757b1ad4ac6e4999c32",
+        "code": null,
+        "message": null,
+        "digest": "sha256:c008f415c1dee9f940bc52a840fc190797445608c6b3207ac46554ad0ba1359b",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-acceptance-reviews",
+      "status": 200,
+      "key": "vat-bba9b420b61a4f5c8d1c17bf364e98bf",
+      "input": {
+        "profile": "swedish-purchase-v1",
+        "draftId": "supplier_invoice_draft_c6f8783193024757b1ad4ac6e4999c32",
+        "expectedRevision": "1",
+        "expectedDigest": "sha256:c008f415c1dee9f940bc52a840fc190797445608c6b3207ac46554ad0ba1359b",
+        "controlAccountId": "account_ap_payable",
+        "lineAssignments": [
+          {
+            "lineId": "line_batch_2",
+            "expenseAccountId": "account_ap_expense",
+            "vatRatePercent": 25
+          }
+        ],
+        "accountingPeriodId": "period_vat_cbb6827d",
+        "series": "AP",
+        "reason": "Reviewed synthetic Swedish purchase lines",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_review_ca174d5d31d94fe4835b039b8f9f5394",
+        "code": null,
+        "message": null,
+        "digest": "sha256:a6e00ec9b28ac6f4dc2c8630f4f49a9bfba61ffc853550f01316333df88fd4ed",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-acceptance-reviews/supplier_review_ca174d5d31d94fe4835b039b8f9f5394/approvals",
+      "status": 200,
+      "key": "vat-4f4673281a094e92b9583b3d13737481",
+      "input": {
+        "version": 1,
+        "digest": "sha256:a6e00ec9b28ac6f4dc2c8630f4f49a9bfba61ffc853550f01316333df88fd4ed",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_approval_ade1abba3bdd4d1886b184230ab8e0cf",
+        "code": null,
+        "message": null,
+        "digest": "sha256:a6e00ec9b28ac6f4dc2c8630f4f49a9bfba61ffc853550f01316333df88fd4ed",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-acceptance-reviews/supplier_review_ca174d5d31d94fe4835b039b8f9f5394/execute",
+      "status": 200,
+      "key": "vat-e9ade61ddb414b0fba89ce6c3612ef17",
+      "input": {
+        "version": 1,
+        "digest": "sha256:a6e00ec9b28ac6f4dc2c8630f4f49a9bfba61ffc853550f01316333df88fd4ed",
+        "approvalId": "supplier_approval_ade1abba3bdd4d1886b184230ab8e0cf",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_acceptance_f1e163c00f6b45b2882cd91dea1cc07c",
+        "code": null,
+        "message": null,
+        "digest": "sha256:f8ac71a62e7c97b197700261656253e360ac20afaef50f4bfdf8d1675c955e7d",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": "invoice_524eb9c554334bf88a7a6bfadb6760f7",
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/evidence",
+      "status": 200,
+      "key": "vat-f0190d9fcf3c493fa63053c69febc59e",
+      "input": {
+        "title": "batch payment source",
+        "content": "Synthetic batch payment cbb6827d",
+        "mediaType": "text/plain",
+        "origin": "local synthetic proof"
+      },
+      "result": {
+        "id": "evidence_3259cb0c707848fcaac93bc83f58099b",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/change-sets",
+      "status": 200,
+      "key": "vat-039418b799544ab5bd2ccd5c2749b805",
+      "input": {
+        "kind": "manual_journal",
+        "evidenceId": "evidence_3259cb0c707848fcaac93bc83f58099b",
+        "eventKey": "batch_payment_cbb6827d",
+        "accountingPeriodId": "period_vat_cbb6827d",
+        "postingDate": "2026-09-29",
+        "series": "AP",
+        "description": "Synthetic batch supplier payment",
+        "rationale": "One posted source with two reviewed allocation legs",
+        "taxAssessment": "not_applicable",
+        "lines": [
+          {
+            "accountId": "account_ap_payable",
+            "debitMinor": "7000",
+            "creditMinor": "0",
+            "description": "Two-invoice payable settlement"
+          },
+          {
+            "accountId": "account_bank",
+            "debitMinor": "0",
+            "creditMinor": "7000",
+            "description": "Synthetic bank reduction"
+          }
+        ]
+      },
+      "result": {
+        "id": "change_71e81ad78c734d22aa68666c176e041a",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": "sha256:5aa51e09242369d4e51bdcddeeb2e99412dc7f188159556f00714c2f66fc10bf",
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/change-sets/change_71e81ad78c734d22aa68666c176e041a/approvals",
+      "status": 200,
+      "key": "vat-b90a74ebba7a4901aec30f22fd21f13e",
+      "input": {
+        "version": 1,
+        "planDigest": "sha256:5aa51e09242369d4e51bdcddeeb2e99412dc7f188159556f00714c2f66fc10bf"
+      },
+      "result": {
+        "id": "approval_9155d5e985aa42f68202b3096fd464ef",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": "sha256:5aa51e09242369d4e51bdcddeeb2e99412dc7f188159556f00714c2f66fc10bf",
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/change-sets/change_71e81ad78c734d22aa68666c176e041a/execute",
+      "status": 200,
+      "key": "vat-946ff0e57808456c96c4748b91444cd4",
+      "input": {
+        "version": 1,
+        "planDigest": "sha256:5aa51e09242369d4e51bdcddeeb2e99412dc7f188159556f00714c2f66fc10bf",
+        "approvalId": "approval_9155d5e985aa42f68202b3096fd464ef"
+      },
+      "result": {
+        "id": "receipt_7701f7cd2e50447680fe3abc5afb7218",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": "sha256:5aa51e09242369d4e51bdcddeeb2e99412dc7f188159556f00714c2f66fc10bf",
+        "voucherId": "voucher_f00644be9bf144d0a0f3e47dae8b10c3",
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/allocation-plans",
+      "status": 409,
+      "key": "vat-9559902952c243aba4458d31a5c2f737",
+      "input": {
+        "voucherId": "voucher_f00644be9bf144d0a0f3e47dae8b10c3",
+        "lineId": "line_c0aadb51307b4af1b727b6a010136db6",
+        "evidenceId": "evidence_3259cb0c707848fcaac93bc83f58099b",
+        "rationale": "Overcapacity rejection probe",
+        "allocations": [
+          {
+            "invoiceId": "invoice_df0bed04d69c4637b32be7ee8f404c35",
+            "amountMinor": "6000"
+          }
+        ]
+      },
+      "result": {
+        "id": null,
+        "code": "StaleDependency",
+        "message": "An allocation exceeds current invoice outstanding capacity.",
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/allocation-plans",
+      "status": 200,
+      "key": "vat-86f49c6a27884e29852212772fd2b7a0",
+      "input": {
+        "voucherId": "voucher_f00644be9bf144d0a0f3e47dae8b10c3",
+        "lineId": "line_c0aadb51307b4af1b727b6a010136db6",
+        "evidenceId": "evidence_3259cb0c707848fcaac93bc83f58099b",
+        "rationale": "Split one posted supplier payment across two accepted invoices",
+        "allocations": [
+          {
+            "invoiceId": "invoice_df0bed04d69c4637b32be7ee8f404c35",
+            "amountMinor": "3000"
+          },
+          {
+            "invoiceId": "invoice_524eb9c554334bf88a7a6bfadb6760f7",
+            "amountMinor": "4000"
+          }
+        ]
+      },
+      "result": {
+        "id": "allocation_6d46c6bca8964aeda87f4b655e0e107e",
+        "code": null,
+        "message": null,
+        "digest": "sha256:53b4542f0912912c840958cba2836aef7dbf58955979b3c51e67a4e3ef08a586",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/allocation-plans/allocation_6d46c6bca8964aeda87f4b655e0e107e/approvals",
+      "status": 200,
+      "key": "vat-56acef68738949aca66fdd7d3af0a94b",
+      "input": {
+        "version": 1,
+        "planDigest": "sha256:53b4542f0912912c840958cba2836aef7dbf58955979b3c51e67a4e3ef08a586"
+      },
+      "result": {
+        "id": "allocation_approval_1fb37eb1f2e449a5821a22fee9ffe64e",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": "sha256:53b4542f0912912c840958cba2836aef7dbf58955979b3c51e67a4e3ef08a586",
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/allocation-plans/allocation_6d46c6bca8964aeda87f4b655e0e107e/apply",
+      "status": 200,
+      "key": "vat-d94a09ea66c643bbbe16a926b4eab730",
+      "input": {
+        "version": 1,
+        "planDigest": "sha256:53b4542f0912912c840958cba2836aef7dbf58955979b3c51e67a4e3ef08a586",
+        "approvalId": "allocation_approval_1fb37eb1f2e449a5821a22fee9ffe64e"
+      },
+      "result": {
+        "id": "allocation_receipt_9587a9aaae674a57b19bb6097b028b6a",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": "sha256:53b4542f0912912c840958cba2836aef7dbf58955979b3c51e67a4e3ef08a586",
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/allocation-plans",
+      "status": 409,
+      "key": "vat-e8d8ba106c46439c9a74ed0d8ef9a377",
+      "input": {
+        "voucherId": "voucher_f00644be9bf144d0a0f3e47dae8b10c3",
+        "lineId": "line_c0aadb51307b4af1b727b6a010136db6",
+        "evidenceId": "evidence_3259cb0c707848fcaac93bc83f58099b",
+        "rationale": "Reject reused payment capacity",
+        "allocations": [
+          {
+            "invoiceId": "invoice_df0bed04d69c4637b32be7ee8f404c35",
+            "amountMinor": "100"
+          }
+        ]
+      },
+      "result": {
+        "id": null,
+        "code": "StaleDependency",
+        "message": "The proposed total exceeds current posted payment capacity.",
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "remainingMinor": null
+      }
+    }
+  ],
+  "applicationRetry": {
+    "status": 200,
+    "sameKeySameBodyIdentical": true
+  },
+  "invoices": [
+    {
+      "id": "invoice_df0bed04d69c4637b32be7ee8f404c35",
+      "originalMinor": "5000",
+      "allocatedMinor": "3000",
+      "outstandingMinor": "2000"
+    },
+    {
+      "id": "invoice_524eb9c554334bf88a7a6bfadb6760f7",
+      "originalMinor": "7500",
+      "allocatedMinor": "4000",
+      "outstandingMinor": "3500"
+    }
+  ],
+  "payment": {
+    "voucherId": "voucher_f00644be9bf144d0a0f3e47dae8b10c3",
+    "lineId": "line_c0aadb51307b4af1b727b6a010136db6",
+    "postedMinor": "7000",
+    "capacityReadStatus": 200,
+    "allocatedMinor": "7000",
+    "remainingMinor": "0"
+  },
+  "refusals": [
+    {
+      "input": "6000 against invoice whose gross is 5000",
+      "status": 409,
+      "code": "StaleDependency"
+    },
+    {
+      "input": "another 100 against fully consumed payment line",
+      "status": 409,
+      "code": "StaleDependency"
+    }
+  ],
+  "limits": [
+    "Payment is an independently posted synthetic manual journal, not a bank/provider-confirmed payment.",
+    "Allocation does not imply a payment-file export was accepted."
+  ]
+}
