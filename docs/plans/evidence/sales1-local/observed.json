@@ -60,7 +60,8 @@
     "sales1-clock-expired-ui.png": "3dbb97a8d4c94bd64dc835864d75c21c461380e696366e8dcc416a767419e9b7",
     "sales1-dual-tab-conflict.png": "9dab082a03844c72ee9a24398cd2efeaa83594e389c143cbc05b6012bc83d7e8",
     "sales1-real-expired-ui.png": "8080d4b4f1707c0c480a11c29cdc02239ba80246942c9e583c6cea75cb3fbfd3",
-    "sales1-real-expiry-reapproved.png": "fd7900bbd59979999383c86f57c31979308bae3299985935a8f0e05dd2286b7a"
+    "sales1-real-expiry-reapproved.png": "fd7900bbd59979999383c86f57c31979308bae3299985935a8f0e05dd2286b7a",
+    "sales1-payment-css-zoom-200.png": "8b195bc59bc320153a3cc3a8dd6563b7707435de2f70c20eb2b95e87590dc5dd"
   },
   "realTimeApprovalExpiry": {
     "planId": "allocation_488227d2832744f99410777bc0f765bb",
