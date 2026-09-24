@@ -90,3 +90,19 @@ Web check-types/build passed and targeted lint passed. Browser submission and re
 Using the owned synthetic review company and plan `sieplan_4a07c42df6b1487188e697e165504f22`, the browser started staging, staged its one voucher, rejected save without scope confirmation, then saved the one-item register after explicit confirmation. A full reload recovered “Historical register saved: 1. No financial posting effect.” and removed the creation form. Fixed the invalid-submission message to use TanStack Form submissionAttempts rather than isSubmitted; visibly verified the feedback before saving.
 
 The old review API was serving pre-change routes (404 on recovery). Restarted only owned review servers: API session 86896 at http://127.0.0.1:52167; web session 18833 remains http://127.0.0.1:56341. Database unchanged at 56339. Retained preview staging and admission succeeded after restart. Original R2 byte persistence across restart has not been independently checked. Targeted lint and whitespace checks passed; no tests added. Payment/match entry, financial cutover, profile seeding, bank onboarding and broader readiness remain open.
+
+### Saved admission disclosure
+
+The recovered register now displays its saved rationale and explicit known/unknown payment chronology, with an expandable receipt containing admission ID/time and supplied payment/match records. Browser reload verified the synthetic receipt `historical_691e02f7dc9f485aacba77f93f23ccb8`, unknown chronology, and zero supplied payments/matches. Targeted lint and web TypeScript checks passed. This does not complete payment-history entry or financial cutover.
+
+### Fiscal-year basis inventory and full-history selection
+
+Added migration 8330 and scoped GET `/historical-bases`, returning fiscal-year dates and existing decisions (including opening posting status). The staging screen now consumes it. TanStack Form provides full-history selection for an unselected year only after source staging; independent account balances and source basis start blank, with an explicit cutover date and rationale. The existing SQL workflow enforces one source year, exact complete mapped controls, no conflicting posted history, operator authority and immutable selection. Unknown write retries retain the original payload/key.
+
+API and web TypeScript checks and targeted lint passed; migration applied to local DB. Runtime-role inventory read returned fy_2026, its exact dates and null basis. Browser selection remains unverified; the local API harness needs reload for the added inventory route. Opening-set proposal/approval integration remains unfinished. All six original goal areas remain in scope.
+
+### Basis verification uncovered a transport contract defect
+
+The new inventory and full-history form rendered through the HTTP server. Native date entry did not accept the automation fill, and opening its picker crashed the in-app browser; browser submission remains unverified. Direct HTTP inspection then found selection rejected before reaching SQL: its route inherited ChangePath (requiring `id`) although POST `/historical-bases` has no `:id`. Corrected that endpoint to Scope parameters. The API harness must reload to verify the fix, incorrect-control rejection, successful selection and replay. No basis was saved by these attempts.
+
+Owned current runtime handles: API session 69172 at 52921; web session 51544 at 56341. PostgreSQL remains 56339. Do not treat the interrupted browser attempt as a successful validation test.
