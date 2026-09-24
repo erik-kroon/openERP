@@ -1,0 +1,74 @@
+{
+  "observedAt": "2026-09-24T13:26:19.195240+00:00",
+  "environment": "Disposable PostgreSQL 17 fresh migrated database, Wrangler local Worker HTTP, two scoped synthetic operator bearer tokens; no bank network or real tenant",
+  "httpBase": "http://127.0.0.1:8797/api/v1/entities/entity_supplier_204307c9/books/book_supplier_204307c9",
+  "syntheticBook": "book_supplier_204307c9",
+  "failureModes": [
+    "Migration or role setup fails on fresh PostgreSQL; database privileges prevent HTTP path",
+    "Auth scope rejects token/operator or lacks independent reviewer grant",
+    "Supplier candidate evidence or exact amount rejected by acceptance admission",
+    "Invoice registration/posting prerequisites unmet or outstanding differs from accepted gross",
+    "Same actor review incorrectly allowed; second actor fails to bind same payee revision/evidence",
+    "Preview includes unverified/stale payee or wrong amount, XML escaping/IBAN checks fail",
+    "Export recheck/immutable bytes and digest differ on repeated retrieval; key replay duplicates reservation",
+    "Reported accepted/unknown/rejected/settled transitions violate monotonic history; settled falsely marks paid/allocation",
+    "Worker runtime not runnable locally or environment setup cannot be isolated"
+  ],
+  "commands": [
+    "initdb -D <disposable-dir> -A trust --no-instructions",
+    "pg_ctl -D <disposable-dir> -o \"-p <disposable-port> -h 127.0.0.1\" start",
+    "createdb -h 127.0.0.1 -p <disposable-port> <disposable-database>",
+    "DATABASE_ADMIN_URL=<disposable-admin-url> bun run --cwd apps/api db:migrate",
+    "DATABASE_ADMIN_URL=<disposable-admin-url> OPENERP_RUNTIME_PASSWORD=<random> bun apps/api/scripts/self-host-role.ts",
+    "DATABASE_ADMIN_URL=<disposable-admin-url> OPENERP_ACCESS_TOKEN=<random> bun run --cwd apps/api db:provision <disposable-synthetic-manifest>",
+    "bunx wrangler dev --config <disposable-wrangler-config> --port <disposable-port> --local",
+    "GET/POST /api/v1/entities/<synthetic-entity>/books/<synthetic-book>/commerce/... (request and response transcript in this artifact)",
+    "bun run --cwd apps/api db:migrate (second independently empty database, includes 8710)"
+  ],
+  "findings": [
+    "GET supplier payment eligibility without after returned HTTP 422 InvalidJournal until owned SQL adapter NULLIF fix; verified HTTP 200 and exact 12345 outstanding",
+    "POST export returned HTTP 500 due to unparenthesized JSON extraction in SQL XML concatenation; forward migration 8710 repairs it; replay/read byte identity verified",
+    "No external provider or bank outcome exercised"
+  ],
+  "proof": {
+    "acceptanceId": "supplier_acceptance_3b66bad1411e4fdab7f54902ed8235f4",
+    "acceptedInvoiceId": "invoice_3cb906dd27c94895b456cb87fdc453a4",
+    "initialOutstandingMinor": "12345",
+    "initialAllocationVersion": "0",
+    "previewId": "pb_b2c3b8ca316b47aa98149684d59bf600",
+    "exportId": "payment_export_730b9ccd291a47edadd4d31ae1a69da8",
+    "xmlSha256": "15c07e8fe18539f90a401fc3e3c2a594074128c486376d91927b2b300b5616ab",
+    "xmlBytes": 1104,
+    "secondAcceptedInvoiceId": "invoice_f12c0ce0167a43399b0293a7047e591d",
+    "secondOutstandingMinor": "7890",
+    "secondExportId": "payment_export_731fb339aa084563b332ea1961a13a34",
+    "secondXmlSha256": "a8585c2dee97bb1677a3d474ada38c75e6e066ecf20d6da78b09f357260623e4",
+    "outcomeSequence": [
+      "unknown",
+      "reported_accepted",
+      "reported_settled"
+    ],
+    "rejectedSequence": [
+      "reported_rejected"
+    ],
+    "paid": false,
+    "bankVerified": false,
+    "allocationCreated": false,
+    "replayIdentical": true,
+    "readIdentical": true,
+    "settlementRemainsUnpaid": true,
+    "dbAllocationReceipts": 0,
+    "secondXmlHashVerified": true,
+    "secondRejectionReplayIdentical": true,
+    "databaseCounts": {
+      "acceptances": 2,
+      "exports": 2,
+      "outcomes": 4,
+      "allocationReceipts": 0
+    }
+  },
+  "gates": {
+    "D04": "Actual company legal identity, year, VAT/accounting methods and source coverage absent; synthetic only",
+    "D10": "No bank/provider credentials, sandbox certificate, approved bank scheme or external bank acceptance; reported states are operator assertions only"
+  }
+}
