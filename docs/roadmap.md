@@ -8,7 +8,7 @@ The synthetic accounting workflow began at `e5fe3e69`. The planning capture at `
 
 An isolated local Worker/PostgreSQL observation exercised evidence retention, proposal, validation, operator approval, posting and receipt lookup. One journal produced the independently expected debit and credit; repeated execution returned the same receipt. [The runtime checkpoint](evidence/initial-runtime-checkpoint.md) records the environment, actual results, migration failures and remaining gaps. This is partial evidence for E-01, E-03, E-04 and E-20, not completion of those scenarios. No browser, provider, restore or actual-company proof was performed in that observation.
 
-The [design coverage map](design-coverage.md) links requirements and detailed edge cases to their owning specifications and acceptance gates. The [verification strategy](verification-strategy.md) defines repeatable runtime evidence.
+The [design coverage map](design-coverage.md) links requirements and detailed edge cases to their owning specifications and acceptance gates. The [verification strategy](verification-strategy.md) defines repeatable runtime evidence. [BANK-1 local synthetic evidence](plans/evidence/bank1-local.md) records multi-entry matching, whole-match reversal, saved-report scope and account/period behavior; it does not close the P2 actual-period gate.
 
 ## Phases and exit gates
 

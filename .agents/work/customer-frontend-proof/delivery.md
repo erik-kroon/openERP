@@ -2,6 +2,16 @@
 
 Status: active. The acceptance ledger in `docs/frontend.md` remains incomplete. Continue through its journeys without treating a completed route, API operation or build as whole-task completion. No test additions are authorized.
 
+## SALES-1 isolated continuation — 24 September 2026
+
+Payment discovery and history now show an explicit first-page action when a saved URL points beyond the current page count. An empty out-of-range page no longer claims that no payments were posted or matched. The change is in `invoice-payments.tsx` and its English/Swedish copy owner. The shared checkout committed this change in `312d5ba` alongside independent work; this checkpoint does not claim ownership of that commit's other files.
+
+An isolated PostgreSQL 17 database on port 63181 migrated through the then-current migration set, and a repeat migration completed without changing receipts. A synthetic book, operator, customer and 950.00 SEK zero-tax draft were created under `entity_sales1_demo` / `book_sales1_demo`. The real browser signed in at `http://localhost:3201`, opened the draft from the Sales register, and showed its exact total, saved facts and unissued status. The record-scoped demo issue review opened. Screenshots: ignored `.cache/sales1-draft.png` and `.cache/sales1-issue-review.png`. No production identity, legal invoice, real payment or VAT treatment was established.
+
+Payment-page UI recovery and longer payment lists are **not yet browser verified**: the synthetic invoice has not been issued in this continuation. The initial browser sign-in failed because the isolated Worker origin used `127.0.0.1` while the web preview used `localhost`; the preview-only binding was corrected. Later browser navigation and API reads timed out while concurrent builds caused repeated development-server reloads. A custom account-selector interaction also remains inconclusive; do not classify it as a product defect from the timed-out automation. `bun run lint` passed before concurrent work changed the shared checkout; `bun run check-types` stopped at an independent `supplier-invoice-editor.tsx` property error and does not prove Sales types. No test files were added.
+
+Next: stabilize an isolated browser preview, finish synthetic issue and payment-page navigation with current scope, then exercise dual-tab recovery, switched actor/storage failures, stale or expired approvals, longer payment history, and rendered-reference acceptance. Keep Sales open until the acceptance ledger's complete record flow is observed.
+
 ## Wave 1 integration checkpoint — 24 September 2026
 
 SALES-1 now retains payment discovery and history pages in the invoice URL. The 58-record synthetic register reached page 2; opening SYN-2, inspecting partial settlement, reloading and closing returned to page 2. Books voucher search and period are URL-backed; filtered A1 opened its voucher, displayed its correction chain and returned to the same filter. Competing-tab invoice edits have explicit recovery choices in code, but their dual-tab behavior has not passed browser verification.

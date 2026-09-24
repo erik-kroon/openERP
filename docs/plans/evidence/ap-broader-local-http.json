@@ -1,0 +1,49 @@
+{
+  "observedAt": "2026-09-24",
+  "surface": "local Wrangler HTTP + disposable PostgreSQL 17",
+  "scope": {
+    "synthetic": true,
+    "entity": "entity_ap_954fba8b",
+    "book": "book_ap_954fba8b"
+  },
+  "positiveTaxDraft": {
+    "id": "supplier_invoice_draft_fb729ed12bb849f6bcd8f9bbff2a65f4",
+    "assertedTaxMinor": "2500",
+    "grossMinor": "12500",
+    "acceptanceHttpStatus": 422,
+    "errorCode": "UnsupportedProfile"
+  },
+  "acceptance": {
+    "reviewId": "supplier_review_a7caae61632d46e1b1698800bba2d7c9",
+    "receiptId": "supplier_acceptance_abfd86513f0f43f69c03d0b4d5b078cf",
+    "invoiceId": "invoice_f16d54beb38d458395efad9b6fc5b7ce",
+    "recognitionVoucherId": "voucher_3e77cfe7dea0410f801a7e955804ae34",
+    "originalAmountMinor": "10000"
+  },
+  "credit": {
+    "reviewId": "supplier_credit_review_6edacae69e7a4d8ebd9ad207a2a2f120",
+    "receiptId": "supplier_credit_af8646820dbd4aaabd6f612cf8eaed89",
+    "voucherId": "voucher_c4a59c4d84d7478cb8dcec93381cb793",
+    "amountMinor": "2000"
+  },
+  "payment": {
+    "postingVoucherId": "voucher_f4b69d0fab15493184c492a000af5c6b",
+    "allocationPlanId": "allocation_212f14b1b9aa45fa8b45e1121cbb96ee",
+    "allocationReceiptId": "allocation_receipt_dee5d2d29ddf47dfb143667dd8c4254d",
+    "amountMinor": "3000"
+  },
+  "finalInvoice": {
+    "creditedMinor": "2000",
+    "allocatedMinor": "3000",
+    "outstandingMinor": "5000"
+  },
+  "limitations": [
+    "All money flows are synthetic zero-tax; no real-company VAT profile or bank outcome was asserted.",
+    "Payment posting was an independently approved synthetic manual journal, not an exported payment file or bank-confirmed transaction."
+  ],
+  "databaseCounts": {
+    "acceptances": 1,
+    "credits": 1,
+    "allocationReceipts": 1
+  }
+}

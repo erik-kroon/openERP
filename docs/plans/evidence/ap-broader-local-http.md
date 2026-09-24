@@ -1,0 +1,14 @@
+# Synthetic AP invoice, credit and payment HTTP observation
+
+The [result IDs and exact minor-unit values](ap-broader-local-http.json) were observed on 2026-09-24 through local Wrangler HTTP against a newly migrated disposable PostgreSQL 17 database. This does not activate VAT or prove bank settlement.
+
+## Repeat with new identities
+
+1. Follow [local development](../../local-development.md) with a **new disposable database** and a new `synthetic-core-v1` book. Add separate payable (2440), expense (6000) and bank (1930) accounts. Use `bun run --cwd apps/api db:migrate`, configure `openerp_app`, provision an operator token, then run local Wrangler with that restricted `DATABASE_URL`.
+2. Through `/api/v1/entities/:entityId/books/:bookId`, POST retained synthetic evidence for supplier identity, buyer identity, original invoice, credit and payment. POST a supplier counterpart, then a supplier draft with explicit source number, source/identity evidence, exact quantity and source totals. Send a positive asserted `taxMinor=2500`, `baseMinor=10000`, `sourceGrossMinor=12500`: `POST /commerce/supplier-acceptance-reviews` must return `422 UnsupportedProfile`.
+3. Revise the same unaccepted draft to an evidenced `taxMinor=0`, `sourceGrossMinor=10000`, `sourceTotalMinor=10000`. Supply legal-name, registration, address and country assertions for each identity, explicit dates and terms, and tax description/evidence. POST acceptance review, approval with its digest, then execute with that approval ID. GET `/commerce/invoices/:id`: assert recognition voucher and `outstandingMinor=10000`.
+4. POST `/commerce/supplier-credit-reviews` using acceptance digest, current invoice revision/capacity, distinct credit evidence and supplier credit number, `amountMinor=2000`. Approve and execute its digest. Assert the credit receipt has a posted voucher and `outstandingAfterMinor=8000`.
+5. POST `/change-sets` with the payment evidence and a synthetic manual journal dated after recognition: debit supplier payable 3000, credit bank 3000. Approve and execute the exact `planDigest`. Use its payable line and voucher with `POST /commerce/allocation-plans` for 3000 against the accepted invoice. Approve and apply the allocation digest. GET the invoice: assert credited 2000, allocated 3000, outstanding 5000. The allocation receipt reports zero payment remaining. Keep a fresh idempotency key for each command; reuse the original key only for a retry.
+6. Stop only the Worker and PostgreSQL instance started for this exercise; delete only the disposable database. Do not submit a payment file or reuse a tenant database.
+
+The payment journal is a synthetic posted source, **not** a file export or proof of bank transfer. The positive-tax attempt was rejected, not posted. No new test or fixture was added. A real VAT deduction, VAT-bearing credit and externally confirmed supplier payment remain open.

@@ -1,0 +1,718 @@
+{
+  "observedAt": "2026-09-24",
+  "runtime": "local Wrangler HTTP, fresh disposable PostgreSQL 17, restricted openerp_app login, synthetic scoped operator",
+  "scope": {
+    "entityId": "entity_gross_16f5d253",
+    "bookId": "book_gross_16f5d253"
+  },
+  "migration": "8750 and forward 8751 applied; 8760 also present in shared working tree",
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/evidence",
+      "status": 200,
+      "key": "gross-ed53dca096254cd78a501fe4b3341540",
+      "input": {
+        "title": "supplier source",
+        "content": "Synthetic gross-cost supplier 16f5d253",
+        "mediaType": "text/plain",
+        "origin": "local synthetic proof"
+      },
+      "result": {
+        "id": "evidence_853a47c752ff48d6b27160e006d28e42",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/evidence",
+      "status": 200,
+      "key": "gross-b4419112c7d54c40bcee0e1e863b1a57",
+      "input": {
+        "title": "buyer source",
+        "content": "Synthetic gross-cost buyer 16f5d253",
+        "mediaType": "text/plain",
+        "origin": "local synthetic proof"
+      },
+      "result": {
+        "id": "evidence_4561538d0dbe4710bf3c436fd6b8b0da",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/evidence",
+      "status": 200,
+      "key": "gross-b1bd0d0230084100a955390c16c21860",
+      "input": {
+        "title": "original source",
+        "content": "Synthetic gross-cost original 16f5d253",
+        "mediaType": "text/plain",
+        "origin": "local synthetic proof"
+      },
+      "result": {
+        "id": "evidence_0b54cfdad19d4be3a1cd8fad908b5ca6",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/evidence",
+      "status": 200,
+      "key": "gross-6b559e20dec249a3b782c38599c42eb2",
+      "input": {
+        "title": "credit source",
+        "content": "Synthetic gross-cost credit 16f5d253",
+        "mediaType": "text/plain",
+        "origin": "local synthetic proof"
+      },
+      "result": {
+        "id": "evidence_56b7fb96271a4fffa47603521eb799ce",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/evidence",
+      "status": 200,
+      "key": "gross-02009b9b3d764daea71c5b793b695333",
+      "input": {
+        "title": "payment source",
+        "content": "Synthetic gross-cost payment 16f5d253",
+        "mediaType": "text/plain",
+        "origin": "local synthetic proof"
+      },
+      "result": {
+        "id": "evidence_f04b8e53fc9544fdb37d62db8505925a",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/counterparties",
+      "status": 200,
+      "key": "gross-1b46e6b4e00d48499eaeb87c4616c0bf",
+      "input": {
+        "kind": "synthetic_counterparty_v1",
+        "externalKey": "supplier_16f5d253",
+        "role": "supplier",
+        "displayName": "Supplier 16f5d253",
+        "evidenceId": "evidence_853a47c752ff48d6b27160e006d28e42",
+        "reason": "Synthetic gross-cost proof"
+      },
+      "result": {
+        "id": "counterparty_5398c4bde0b64d289b668e5f3b42965f",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-invoice-drafts",
+      "status": 200,
+      "key": "gross-9718206253c14be4a45c9012714e24e2",
+      "input": {
+        "draftKey": "draft_gross_16f5d253",
+        "content": {
+          "title": "Gross cost source",
+          "counterpartyId": "counterparty_5398c4bde0b64d289b668e5f3b42965f",
+          "counterpartyRevision": "1",
+          "supplier": {
+            "legalName": "Supplier 16f5d253",
+            "registrationId": "5560000000",
+            "taxId": null,
+            "address": "Synthetic supplier address",
+            "countryCode": "SE",
+            "evidenceId": "evidence_853a47c752ff48d6b27160e006d28e42"
+          },
+          "buyer": {
+            "legalName": "Synthetic buyer",
+            "registrationId": "5561111111",
+            "taxId": null,
+            "address": "Synthetic buyer address",
+            "countryCode": "SE",
+            "evidenceId": "evidence_4561538d0dbe4710bf3c436fd6b8b0da"
+          },
+          "sourceEvidenceId": "evidence_0b54cfdad19d4be3a1cd8fad908b5ca6",
+          "supplierDocumentNumber": "AP-16f5d253",
+          "currency": "SEK",
+          "currencyScale": 2,
+          "documentDate": "2026-09-24",
+          "supplyDate": "2026-09-24",
+          "dueDate": "2026-10-24",
+          "paymentTerms": "30 days",
+          "sourceTotalMinor": "12500",
+          "lines": [
+            {
+              "id": "line_gross_001",
+              "description": "Synthetic service",
+              "quantity": "1",
+              "unitPriceMinor": "10000",
+              "baseMinor": "10000",
+              "discountMinor": "0",
+              "chargeMinor": "0",
+              "taxMinor": "2500",
+              "taxDescription": "Source asserted tax; no deduction",
+              "taxEvidenceId": "evidence_0b54cfdad19d4be3a1cd8fad908b5ca6",
+              "sourceGrossMinor": "12500"
+            }
+          ]
+        }
+      },
+      "result": {
+        "id": "supplier_invoice_draft_82e525359c1f4a3d83510c5b31be66e2",
+        "code": null,
+        "message": null,
+        "digest": "sha256:4e9c378007461a4bd77b16d4e1a68b3cc69ce6263a0647042c7698321a7f6c16",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-acceptance-reviews",
+      "status": 200,
+      "key": "gross-0ac97873ff594398b6bde71eb40a0d3b",
+      "input": {
+        "profile": "synthetic-gross-cost-supplier-v1",
+        "draftId": "supplier_invoice_draft_82e525359c1f4a3d83510c5b31be66e2",
+        "expectedRevision": "1",
+        "expectedDigest": "sha256:4e9c378007461a4bd77b16d4e1a68b3cc69ce6263a0647042c7698321a7f6c16",
+        "controlAccountId": "account_ap_payable",
+        "debitAccountId": "account_ap_expense",
+        "accountingPeriodId": "period_gross_16f5d253",
+        "series": "AP",
+        "reason": "Synthetic gross cost review; no VAT deduction",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_review_7b13f4c954bb4374a0369ae8241c23e2",
+        "code": null,
+        "message": null,
+        "digest": "sha256:23411b4a87feebaeb740d01df7289fb7b4543466842d4d49f70d5f95a5a65ee6",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-acceptance-reviews/supplier_review_7b13f4c954bb4374a0369ae8241c23e2/approvals",
+      "status": 200,
+      "key": "gross-d71d702d299a452e9b7105e028923674",
+      "input": {
+        "version": 1,
+        "digest": "sha256:23411b4a87feebaeb740d01df7289fb7b4543466842d4d49f70d5f95a5a65ee6",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_approval_6eaf918f21904aaa92bb1730d6a3f7b6",
+        "code": null,
+        "message": null,
+        "digest": "sha256:23411b4a87feebaeb740d01df7289fb7b4543466842d4d49f70d5f95a5a65ee6",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-acceptance-reviews/supplier_review_7b13f4c954bb4374a0369ae8241c23e2/execute",
+      "status": 200,
+      "key": "gross-780e71d85fd047b9a05c17eaed4ceabd",
+      "input": {
+        "version": 1,
+        "digest": "sha256:23411b4a87feebaeb740d01df7289fb7b4543466842d4d49f70d5f95a5a65ee6",
+        "approvalId": "supplier_approval_6eaf918f21904aaa92bb1730d6a3f7b6",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_acceptance_9b6bc0590c81487aa53ab7d57caef8fc",
+        "code": null,
+        "message": null,
+        "digest": "sha256:fe3062c6a95e75be3b3bf4305b2816153028d6f151e7352e5a3b287cc06781d8",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": "invoice_a669977f28ee4ca68ca7b9be7fae61b9",
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews",
+      "status": 422,
+      "key": "gross-e61a6cf7e0a041499aba8f86ffc50db2",
+      "input": {
+        "profile": "synthetic-gross-cost-supplier-credit-v1",
+        "invoiceId": "invoice_a669977f28ee4ca68ca7b9be7fae61b9",
+        "acceptanceDigest": "sha256:fe3062c6a95e75be3b3bf4305b2816153028d6f151e7352e5a3b287cc06781d8",
+        "expectedInvoiceRevision": "1",
+        "expectedAllocationVersion": "0",
+        "expectedOutstandingMinor": "12500",
+        "creditEvidenceId": "evidence_56b7fb96271a4fffa47603521eb799ce",
+        "supplierCreditNumber": "CN-16f5d253",
+        "amountMinor": "2500",
+        "taxMinor": "2600",
+        "creditDate": "2026-09-25",
+        "accountingPeriodId": "period_gross_16f5d253",
+        "series": "AP",
+        "reason": "Synthetic partial gross-cost credit; no VAT claim",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": null,
+        "code": "InvalidJournal",
+        "message": "Credit asserted tax cannot exceed its gross amount.",
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews",
+      "status": 200,
+      "key": "gross-aad1d336817547168255ee6a0d6b0b34",
+      "input": {
+        "profile": "synthetic-gross-cost-supplier-credit-v1",
+        "invoiceId": "invoice_a669977f28ee4ca68ca7b9be7fae61b9",
+        "acceptanceDigest": "sha256:fe3062c6a95e75be3b3bf4305b2816153028d6f151e7352e5a3b287cc06781d8",
+        "expectedInvoiceRevision": "1",
+        "expectedAllocationVersion": "0",
+        "expectedOutstandingMinor": "12500",
+        "creditEvidenceId": "evidence_56b7fb96271a4fffa47603521eb799ce",
+        "supplierCreditNumber": "CN-16f5d253",
+        "amountMinor": "2500",
+        "taxMinor": "500",
+        "creditDate": "2026-09-25",
+        "accountingPeriodId": "period_gross_16f5d253",
+        "series": "AP",
+        "reason": "Synthetic partial gross-cost credit; no VAT claim",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_credit_review_f2e928004fdd4ee5a5543a31214e4f2e",
+        "code": null,
+        "message": null,
+        "digest": "sha256:927f04bd5ad11f5d122793f9f3c313e242df759b6b84a73d29a0e47daf5d6d2b",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": "500",
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews/supplier_credit_review_f2e928004fdd4ee5a5543a31214e4f2e/approvals",
+      "status": 200,
+      "key": "gross-83e617740ab84a78bca0ae44cb287313",
+      "input": {
+        "digest": "sha256:927f04bd5ad11f5d122793f9f3c313e242df759b6b84a73d29a0e47daf5d6d2b",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "credit_approval_3178987491364b35875cfad137fa1f55",
+        "code": null,
+        "message": null,
+        "digest": "sha256:927f04bd5ad11f5d122793f9f3c313e242df759b6b84a73d29a0e47daf5d6d2b",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews/supplier_credit_review_f2e928004fdd4ee5a5543a31214e4f2e/execute",
+      "status": 200,
+      "key": "gross-8229de0b82e14ee99310b7fdb577a188",
+      "input": {
+        "digest": "sha256:927f04bd5ad11f5d122793f9f3c313e242df759b6b84a73d29a0e47daf5d6d2b",
+        "approvalId": "credit_approval_3178987491364b35875cfad137fa1f55",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_credit_50a9880fbe46480fa909dd7420b14b46",
+        "code": null,
+        "message": null,
+        "digest": "sha256:1662eab4d17a477d3b457afc05bebab220c419199172d928dbf0a79ae42409e5",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": "500",
+        "outstandingAfterMinor": "10000"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/evidence",
+      "status": 200,
+      "key": "gross-5c6997f3f61a4f35b0ccd615f0cdbdc1",
+      "input": {
+        "title": "excess source",
+        "content": "Synthetic excess credit 16f5d253",
+        "mediaType": "text/plain",
+        "origin": "local synthetic proof"
+      },
+      "result": {
+        "id": "evidence_810d49c396194a27ae635dd808044e51",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews",
+      "status": 200,
+      "key": "gross-6fbbb0185e4d452582255ba3330921af",
+      "input": {
+        "profile": "synthetic-gross-cost-supplier-credit-v1",
+        "invoiceId": "invoice_a669977f28ee4ca68ca7b9be7fae61b9",
+        "acceptanceDigest": "sha256:fe3062c6a95e75be3b3bf4305b2816153028d6f151e7352e5a3b287cc06781d8",
+        "expectedInvoiceRevision": "1",
+        "expectedAllocationVersion": "1",
+        "expectedOutstandingMinor": "10000",
+        "creditEvidenceId": "evidence_810d49c396194a27ae635dd808044e51",
+        "supplierCreditNumber": "CN-EXCESS-16f5d253",
+        "amountMinor": "3000",
+        "taxMinor": "2100",
+        "creditDate": "2026-09-25",
+        "accountingPeriodId": "period_gross_16f5d253",
+        "series": "AP",
+        "reason": "Synthetic partial gross-cost credit; no VAT claim",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": "supplier_credit_review_b5b7f12267b44a869662f360605ca74e",
+        "code": null,
+        "message": null,
+        "digest": "sha256:640d2dffe5bc8a4df35cabf87ec088c3a54d2db57d68ccd8501d360d688bd4f0",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": "2100",
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/supplier-credit-reviews",
+      "status": 422,
+      "key": "gross-399f004c61f54fb78cc4b07eddb4230a",
+      "input": {
+        "profile": "synthetic-gross-cost-supplier-credit-v1",
+        "invoiceId": "invoice_a669977f28ee4ca68ca7b9be7fae61b9",
+        "acceptanceDigest": "sha256:fe3062c6a95e75be3b3bf4305b2816153028d6f151e7352e5a3b287cc06781d8",
+        "expectedInvoiceRevision": "1",
+        "expectedAllocationVersion": "1",
+        "expectedOutstandingMinor": "10000",
+        "creditEvidenceId": "evidence_810d49c396194a27ae635dd808044e51",
+        "supplierCreditNumber": "CN-EXCESS-16f5d253",
+        "amountMinor": "3000",
+        "taxMinor": "2100",
+        "creditDate": "2026-09-25",
+        "accountingPeriodId": "period_gross_16f5d253",
+        "series": "AP",
+        "reason": "Synthetic partial gross-cost credit; no VAT claim",
+        "acknowledgeSyntheticOnly": true
+      },
+      "result": {
+        "id": null,
+        "code": "InvalidJournal",
+        "message": "Credits cannot assert more source tax than the accepted supplier invoice.",
+        "digest": null,
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/change-sets",
+      "status": 200,
+      "key": "gross-a2cfec1965a24389ad1d7c85d9e535a2",
+      "input": {
+        "kind": "manual_journal",
+        "evidenceId": "evidence_f04b8e53fc9544fdb37d62db8505925a",
+        "eventKey": "payment_gross_16f5d253",
+        "accountingPeriodId": "period_gross_16f5d253",
+        "postingDate": "2026-09-26",
+        "series": "AP",
+        "description": "Synthetic supplier payment source",
+        "rationale": "Posted synthetic payment evidence, not export",
+        "taxAssessment": "not_applicable",
+        "lines": [
+          {
+            "accountId": "account_ap_payable",
+            "debitMinor": "4000",
+            "creditMinor": "0",
+            "description": "Reduce payable"
+          },
+          {
+            "accountId": "account_bank",
+            "debitMinor": "0",
+            "creditMinor": "4000",
+            "description": "Synthetic bank reduction"
+          }
+        ]
+      },
+      "result": {
+        "id": "change_bb22d5a7a6de43f2a12ba8079d675044",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": "sha256:b99efb191f75b38ff66cb242ea52e4197a3093a23e3dbc2580589f9e24086460",
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/change-sets/change_bb22d5a7a6de43f2a12ba8079d675044/approvals",
+      "status": 200,
+      "key": "gross-2800fec7b1ae4a609bef51a2477547de",
+      "input": {
+        "planDigest": "sha256:b99efb191f75b38ff66cb242ea52e4197a3093a23e3dbc2580589f9e24086460",
+        "version": 1
+      },
+      "result": {
+        "id": "approval_887366eb8f2a45efb96088e45e077bcd",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": "sha256:b99efb191f75b38ff66cb242ea52e4197a3093a23e3dbc2580589f9e24086460",
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/change-sets/change_bb22d5a7a6de43f2a12ba8079d675044/execute",
+      "status": 200,
+      "key": "gross-a1c2210481f545108baa03ed9102d79f",
+      "input": {
+        "planDigest": "sha256:b99efb191f75b38ff66cb242ea52e4197a3093a23e3dbc2580589f9e24086460",
+        "version": 1,
+        "approvalId": "approval_887366eb8f2a45efb96088e45e077bcd"
+      },
+      "result": {
+        "id": "receipt_eac64b24adbb4643aeac87d02af68061",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": "sha256:b99efb191f75b38ff66cb242ea52e4197a3093a23e3dbc2580589f9e24086460",
+        "voucherId": "voucher_7060bfc90c2f44199d09d95ae2feca9a",
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/allocation-plans",
+      "status": 200,
+      "key": "gross-fda1dba59cbe42a49204bf76f39124b4",
+      "input": {
+        "voucherId": "voucher_7060bfc90c2f44199d09d95ae2feca9a",
+        "lineId": "line_f8e3e2ab6ae54d378796dc2c36f3aca3",
+        "evidenceId": "evidence_f04b8e53fc9544fdb37d62db8505925a",
+        "rationale": "Apply synthetic partial payment",
+        "allocations": [
+          {
+            "invoiceId": "invoice_a669977f28ee4ca68ca7b9be7fae61b9",
+            "amountMinor": "4000"
+          }
+        ]
+      },
+      "result": {
+        "id": "allocation_e1fb6cb5fc414d1dbd0c3b08b8c6e265",
+        "code": null,
+        "message": null,
+        "digest": "sha256:64e96540ec8e9aa2eeb18e33100056eae2a7d8589659ea89a2417dd5345a8535",
+        "planDigest": null,
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/allocation-plans/allocation_e1fb6cb5fc414d1dbd0c3b08b8c6e265/approvals",
+      "status": 200,
+      "key": "gross-6b737bcf12724b8e921d6eea604a1829",
+      "input": {
+        "version": 1,
+        "planDigest": "sha256:64e96540ec8e9aa2eeb18e33100056eae2a7d8589659ea89a2417dd5345a8535"
+      },
+      "result": {
+        "id": "allocation_approval_d93e338bb7bf4bd08a4c9af34f758051",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": "sha256:64e96540ec8e9aa2eeb18e33100056eae2a7d8589659ea89a2417dd5345a8535",
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/commerce/allocation-plans/allocation_e1fb6cb5fc414d1dbd0c3b08b8c6e265/apply",
+      "status": 200,
+      "key": "gross-e11cc2578e934ed59a483478f294b1ea",
+      "input": {
+        "version": 1,
+        "planDigest": "sha256:64e96540ec8e9aa2eeb18e33100056eae2a7d8589659ea89a2417dd5345a8535",
+        "approvalId": "allocation_approval_d93e338bb7bf4bd08a4c9af34f758051"
+      },
+      "result": {
+        "id": "allocation_receipt_74f24648a962415197e9f04dc1140364",
+        "code": null,
+        "message": null,
+        "digest": null,
+        "planDigest": "sha256:64e96540ec8e9aa2eeb18e33100056eae2a7d8589659ea89a2417dd5345a8535",
+        "voucherId": null,
+        "registerInvoiceId": null,
+        "taxMinor": null,
+        "outstandingAfterMinor": null
+      }
+    }
+  ],
+  "postedVouchers": [
+    {
+      "voucherId": "voucher_1940083c38844066942c4d83f0eda872",
+      "status": 200,
+      "lines": [
+        {
+          "accountId": "account_ap_expense",
+          "debitMinor": "12500",
+          "creditMinor": "0"
+        },
+        {
+          "accountId": "account_ap_payable",
+          "debitMinor": "0",
+          "creditMinor": "12500"
+        }
+      ]
+    },
+    {
+      "voucherId": "voucher_e0a661d30069440abe275d349aeaf425",
+      "status": 200,
+      "lines": [
+        {
+          "accountId": "account_ap_payable",
+          "debitMinor": "2500",
+          "creditMinor": "0"
+        },
+        {
+          "accountId": "account_ap_expense",
+          "debitMinor": "0",
+          "creditMinor": "2500"
+        }
+      ]
+    },
+    {
+      "voucherId": "voucher_7060bfc90c2f44199d09d95ae2feca9a",
+      "status": 200,
+      "lines": [
+        {
+          "accountId": "account_ap_payable",
+          "debitMinor": "4000",
+          "creditMinor": "0"
+        },
+        {
+          "accountId": "account_bank",
+          "debitMinor": "0",
+          "creditMinor": "4000"
+        }
+      ]
+    }
+  ],
+  "invoiceAfter": {
+    "id": "invoice_a669977f28ee4ca68ca7b9be7fae61b9",
+    "amountMinor": "12500",
+    "creditedMinor": "2500",
+    "recordedAllocatedMinor": "4000",
+    "outstandingMinor": "6000",
+    "allocationVersion": "2"
+  },
+  "databaseCounts": {
+    "acceptances": 1,
+    "credits": 1,
+    "allocationReceipts": 1
+  },
+  "arithmetic": "12500 gross - 2500 credited - 4000 allocated = 6000 outstanding",
+  "limitations": [
+    "Synthetic gross-cost treatment does not claim VAT deduction or tax fact.",
+    "Payment was a separately posted synthetic manual journal, not an exported file or a bank-confirmed outcome.",
+    "Credit note tax is a source assertion; statutory validation is not claimed."
+  ]
+}
