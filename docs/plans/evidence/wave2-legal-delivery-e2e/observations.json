@@ -1,0 +1,291 @@
+{
+  "scope": "Fresh disposable PostgreSQL 17, local Cloudflare Worker HTTP, three synthetic operators, restricted openerp_app",
+  "migrationCount": 144,
+  "renderer": "openerp-se-invoice-takumi-v2",
+  "pdf": {
+    "byteLength": 10047,
+    "sha256": "f092595b7ddfcda7cebae8a4c87c15deb05f2804cf6d265721ceaf3727fc35ee",
+    "magic": "%PDF-",
+    "captureRows": 1,
+    "artifactRows": 1
+  },
+  "checks": [
+    {
+      "name": "prepare",
+      "http": 200,
+      "status": "awaiting_send_approval",
+      "expected": 200
+    },
+    {
+      "name": "self approval denied",
+      "http": 403,
+      "status": "AccountingError",
+      "expected": 403
+    },
+    {
+      "name": "independent approval",
+      "http": 200,
+      "status": "approved_handoff_ready",
+      "expected": 200
+    },
+    {
+      "name": "start unknown",
+      "http": 200,
+      "status": "provider_unknown",
+      "expected": 200
+    },
+    {
+      "name": "unknown blocks different key",
+      "http": 409,
+      "status": "AccountingError",
+      "expected": 409
+    },
+    {
+      "name": "same-key attempt replay",
+      "http": 200,
+      "status": "provider_unknown",
+      "expected": 200
+    },
+    {
+      "name": "starting operator cannot reconcile",
+      "http": 403,
+      "status": "AccountingError",
+      "expected": 403
+    },
+    {
+      "name": "wrong provider request ID denied",
+      "http": 403,
+      "status": "AccountingError",
+      "expected": 403
+    },
+    {
+      "name": "synthetic confirmed-not-sent",
+      "http": 200,
+      "status": "confirmed_not_sent",
+      "expected": 200
+    },
+    {
+      "name": "fresh attempt after confirmed-not-sent",
+      "http": 200,
+      "status": "provider_unknown",
+      "expected": 200
+    },
+    {
+      "name": "same reconciliation key replay",
+      "http": 200,
+      "status": "confirmed_not_sent",
+      "expected": 200
+    },
+    {
+      "name": "duplicate reconciliation different key",
+      "http": 409,
+      "status": "AccountingError",
+      "expected": 409
+    },
+    {
+      "name": "wrong PDF hash rejected",
+      "http": 409,
+      "status": "AccountingError",
+      "expected": 409
+    },
+    {
+      "name": "duplicate destination rejected",
+      "http": 409,
+      "status": "AccountingError",
+      "expected": 409
+    },
+    {
+      "name": "same intent replay saved snapshot",
+      "http": 200,
+      "status": "awaiting_send_approval",
+      "expected": 200
+    },
+    {
+      "name": "read current intent",
+      "http": 200,
+      "status": "provider_unknown",
+      "expected": 200
+    },
+    {
+      "name": "read history",
+      "http": 200,
+      "status": null,
+      "expected": 200
+    },
+    {
+      "name": "accepted prepare",
+      "http": 200,
+      "status": "awaiting_send_approval",
+      "expected": 200
+    },
+    {
+      "name": "accepted approval",
+      "http": 200,
+      "status": "approved_handoff_ready",
+      "expected": 200
+    },
+    {
+      "name": "accepted unknown reservation",
+      "http": 200,
+      "status": "provider_unknown",
+      "expected": 200
+    },
+    {
+      "name": "rejected prepare",
+      "http": 200,
+      "status": "awaiting_send_approval",
+      "expected": 200
+    },
+    {
+      "name": "rejected approval",
+      "http": 200,
+      "status": "approved_handoff_ready",
+      "expected": 200
+    },
+    {
+      "name": "rejected unknown reservation",
+      "http": 200,
+      "status": "provider_unknown",
+      "expected": 200
+    },
+    {
+      "name": "mock accepted classification",
+      "http": 200,
+      "status": "provider_accepted",
+      "expected": 200
+    },
+    {
+      "name": "mock rejected classification",
+      "http": 200,
+      "status": "provider_rejected",
+      "expected": 200
+    },
+    {
+      "name": "accepted cannot restart",
+      "http": 409,
+      "status": "AccountingError",
+      "expected": 409
+    },
+    {
+      "name": "rejected cannot restart",
+      "http": 409,
+      "status": "AccountingError",
+      "expected": 409
+    },
+    {
+      "name": "peppol prepare",
+      "http": 200,
+      "status": "awaiting_send_approval",
+      "expected": 200
+    },
+    {
+      "name": "peppol approval",
+      "http": 200,
+      "status": "peppol_payload_blocked",
+      "expected": 200
+    },
+    {
+      "name": "Peppol attempt blocked",
+      "http": 422,
+      "status": "AccountingError",
+      "expected": 422
+    },
+    {
+      "name": "cross-book read denied",
+      "http": 403,
+      "status": "AccountingError",
+      "expected": 403
+    },
+    {
+      "name": "cross-book mutation denied",
+      "http": 403,
+      "status": "AccountingError",
+      "expected": 403
+    },
+    {
+      "name": "capture replay",
+      "http": 200,
+      "status": null,
+      "expected": 200
+    },
+    {
+      "name": "PDF GET",
+      "http": 200,
+      "status": null,
+      "expected": 200
+    },
+    {
+      "name": "PDF resume",
+      "http": 200,
+      "status": null,
+      "expected": 200
+    }
+  ],
+  "finalViews": {
+    "confirmed_not_sent_then_unknown": {
+      "http": 200,
+      "status": "provider_unknown",
+      "delivered": false,
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "provider_unknown",
+          "externalTrafficProven": false,
+          "reconciliation": "confirmed_not_sent"
+        },
+        {
+          "ordinal": 2,
+          "status": "provider_unknown",
+          "externalTrafficProven": false,
+          "reconciliation": null
+        }
+      ]
+    },
+    "accepted": {
+      "http": 200,
+      "status": "provider_accepted",
+      "delivered": false,
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "provider_unknown",
+          "externalTrafficProven": false,
+          "reconciliation": "provider_accepted"
+        }
+      ]
+    },
+    "rejected": {
+      "http": 200,
+      "status": "provider_rejected",
+      "delivered": false,
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "provider_unknown",
+          "externalTrafficProven": false,
+          "reconciliation": "provider_rejected"
+        }
+      ]
+    },
+    "peppol": {
+      "http": 200,
+      "status": "peppol_payload_blocked",
+      "delivered": false,
+      "attempts": []
+    }
+  },
+  "databaseCounts": {
+    "captures": 1,
+    "artifacts": 1,
+    "requests": 4,
+    "approvals": 4,
+    "attempts": 4,
+    "reconciliations": 3
+  },
+  "constraints": [
+    "No network call to an email or Peppol provider",
+    "All reconciliation outcomes are synthetic/mock classifications on a disposable database, not real provider evidence or actual acceptance",
+    "All delivered flags remained false",
+    "The current second attempt remains provider_unknown and must be reconciled before any subsequent attempt"
+  ]
+}
