@@ -1,0 +1,1024 @@
+{
+  "environment": {
+    "revision": "2a0fa09",
+    "scope": "synthetic only",
+    "migrationThrough": "8380-sie-proposal-posting-guard.sql"
+  },
+  "calls": [
+    {
+      "label": "unauthorized inventory",
+      "status": 401,
+      "body": {
+        "_tag": "AccountingError",
+        "code": "Unauthorized",
+        "message": "Sign in or provide a valid API token."
+      }
+    },
+    {
+      "label": "financial source",
+      "status": 200,
+      "body": {
+        "id": "source_bd4ac6fd66d7479da5ebac5e8a2e3d15",
+        "scope": {
+          "entityId": "entity_synthetic_third",
+          "bookId": "book_synthetic_third"
+        },
+        "sourceSystem": "synthetic_sie_e2e",
+        "sourceAccountId": "synthetic",
+        "occurrenceKey": "financial-c47e746d153a",
+        "sourceRevision": "1",
+        "filename": "financial.se",
+        "sha256": "sha256:3a607ebde3931f74b9e2266fa5ef518e0c9f489c18da75ea48433d646957b91c",
+        "byteLength": 256,
+        "mediaType": "text/plain",
+        "retainedBy": "actor_operator_third",
+        "retainedAt": "2026-09-24T14:33:10.917381Z",
+        "receipt": {
+          "key": "2c9ffc2b-4830-42d5-a8fc-6abae8f7bac9",
+          "operation": "retain_source_object",
+          "actorId": "actor_operator_third"
+        }
+      }
+    },
+    {
+      "label": "financial source replay",
+      "status": 200,
+      "body": {
+        "id": "source_bd4ac6fd66d7479da5ebac5e8a2e3d15",
+        "scope": {
+          "entityId": "entity_synthetic_third",
+          "bookId": "book_synthetic_third"
+        },
+        "sourceSystem": "synthetic_sie_e2e",
+        "sourceAccountId": "synthetic",
+        "occurrenceKey": "financial-c47e746d153a",
+        "sourceRevision": "1",
+        "filename": "financial.se",
+        "sha256": "sha256:3a607ebde3931f74b9e2266fa5ef518e0c9f489c18da75ea48433d646957b91c",
+        "byteLength": 256,
+        "mediaType": "text/plain",
+        "retainedBy": "actor_operator_third",
+        "retainedAt": "2026-09-24T14:33:10.917381Z",
+        "receipt": {
+          "key": "2c9ffc2b-4830-42d5-a8fc-6abae8f7bac9",
+          "operation": "retain_source_object",
+          "actorId": "actor_operator_third"
+        }
+      }
+    },
+    {
+      "label": "financial source altered digest refused",
+      "status": 409,
+      "body": {
+        "_tag": "AccountingError",
+        "code": "IdempotencyConflict",
+        "message": "This idempotency key was already used for a different command."
+      }
+    },
+    {
+      "label": "financial preview",
+      "status": 200,
+      "body": {
+        "id": "siepreview_0785fdaacf92452ea3e59227fdefc896",
+        "scope": {
+          "entityId": "entity_synthetic_third",
+          "bookId": "book_synthetic_third"
+        },
+        "occurrenceId": "source_bd4ac6fd66d7479da5ebac5e8a2e3d15",
+        "ordinal": 1,
+        "profile": "sie4_source_v1",
+        "encoding": "ibm437",
+        "sourceSha256": "sha256:3a607ebde3931f74b9e2266fa5ef518e0c9f489c18da75ea48433d646957b91c",
+        "records": [
+          {
+            "ordinal": 1,
+            "line": 1,
+            "byteStart": 0,
+            "byteEnd": 10,
+            "tag": "FLAGGA",
+            "text": "#FLAGGA 0",
+            "fields": [
+              "0"
+            ],
+            "voucherOrdinal": null
+          },
+          {
+            "ordinal": 2,
+            "line": 2,
+            "byteStart": 10,
+            "byteEnd": 22,
+            "tag": "FORMAT",
+            "text": "#FORMAT PC8",
+            "fields": [
+              "PC8"
+            ],
+            "voucherOrdinal": null
+          },
+          {
+            "ordinal": 3,
+            "line": 3,
+            "byteStart": 22,
+            "byteEnd": 32,
+            "tag": "SIETYP",
+            "text": "#SIETYP 4",
+            "fields": [
+              "4"
+            ],
+            "voucherOrdinal": null
+          },
+          {
+            "ordinal": 4,
+            "line": 4,
+            "byteStart": 32,
+            "byteEnd": 57,
+            "tag": "RAR",
+            "text": "#RAR 0 20260101 20261231",
+            "fields": [
+              "0",
+              "20260101",
+              "20261231"
+            ],
+            "voucherOrdinal": null
+          },
+          {
+            "ordinal": 5,
+            "line": 5,
+            "byteStart": 57,
+            "byteEnd": 76,
+            "tag": "KONTO",
+            "text": "#KONTO 1930 \"Bank\"",
+            "fields": [
+              "1930",
+              "Bank"
+            ],
+            "voucherOrdinal": null
+          },
+          {
+            "ordinal": 6,
+            "line": 6,
+            "byteStart": 76,
+            "byteEnd": 99,
+            "tag": "KONTO",
+            "text": "#KONTO 2999 \"Clearing\"",
+            "fields": [
+              "2999",
+              "Clearing"
+            ],
+            "voucherOrdinal": null
+          },
+          {
+            "ordinal": 7,
+            "line": 7,
+            "byteStart": 99,
+            "byteEnd": 115,
+            "tag": "IB",
+            "text": "#IB 0 1930 0.00",
+            "fields": [
+              "0",
+              "1930",
+              "0.00"
+            ],
+            "voucherOrdinal": null
+          },
+          {
+            "ordinal": 8,
+            "line": 8,
+            "byteStart": 115,
+            "byteEnd": 133,
+            "tag": "UB",
+            "text": "#UB 0 1930 100.00",
+            "fields": [
+              "0",
+              "1930",
+              "100.00"
+            ],
+            "voucherOrdinal": null
+          },
+          {
+            "ordinal": 9,
+            "line": 9,
+            "byteStart": 133,
+            "byteEnd": 149,
+            "tag": "IB",
+            "text": "#IB 0 2999 0.00",
+            "fields": [
+              "0",
+              "2999",
+              "0.00"
+            ],
+            "voucherOrdinal": null
+          },
+          {
+            "ordinal": 10,
+            "line": 10,
+            "byteStart": 149,
+            "byteEnd": 168,
+            "tag": "UB",
+            "text": "#UB 0 2999 -100.00",
+            "fields": [
+              "0",
+              "2999",
+              "-100.00"
+            ],
+            "voucherOrdinal": null
+          },
+          {
+            "ordinal": 11,
+            "line": 11,
+            "byteStart": 168,
+            "byteEnd": 207,
+            "tag": "VER",
+            "text": "#VER A 1 20260901 \"Synthetic transfer\"",
+            "fields": [
+              "A",
+              "1",
+              "20260901",
+              "Synthetic transfer"
+            ],
+            "voucherOrdinal": 1
+          },
+          {
+            "ordinal": 12,
+            "line": 13,
+            "byteStart": 209,
+            "byteEnd": 231,
+            "tag": "TRANS",
+            "text": "#TRANS 1930 {} 100.00",
+            "fields": [
+              "1930",
+              "{}",
+              "100.00"
+            ],
+            "voucherOrdinal": 1
+          },
+          {
+            "ordinal": 13,
+            "line": 14,
+            "byteStart": 231,
+            "byteEnd": 254,
+            "tag": "TRANS",
+            "text": "#TRANS 2999 {} -100.00",
+            "fields": [
+              "2999",
+              "{}",
+              "-100.00"
+            ],
+            "voucherOrdinal": 1
+          }
+        ],
+        "vouchers": [
+          {
+            "ordinal": 1,
+            "series": "A",
+            "number": "1",
+            "date": "20260901",
+            "recordOrdinal": 11,
+            "sourceReference": "A:1",
+            "transactions": [
+              {
+                "recordOrdinal": 12,
+                "kind": "TRANS",
+                "account": "1930",
+                "dimensions": "{}",
+                "amount": "100.00"
+              },
+              {
+                "recordOrdinal": 13,
+                "kind": "TRANS",
+                "account": "2999",
+                "dimensions": "{}",
+                "amount": "-100.00"
+              }
+            ]
+          }
+        ],
+        "controls": [
+          {
+            "kind": "IB",
+            "year": "0",
+            "account": "1930",
+            "amount": "0.00",
+            "recordOrdinal": 7
+          },
+          {
+            "kind": "UB",
+            "year": "0",
+            "account": "1930",
+            "amount": "100.00",
+            "recordOrdinal": 8
+          },
+          {
+            "kind": "IB",
+            "year": "0",
+            "account": "2999",
+            "amount": "0.00",
+            "recordOrdinal": 9
+          },
+          {
+            "kind": "UB",
+            "year": "0",
+            "account": "2999",
+            "amount": "-100.00",
+            "recordOrdinal": 10
+          }
+        ],
+        "diagnostics": [],
+        "ready": true,
+        "createdBy": "actor_operator_third",
+        "createdAt": "2026-09-24T14:33:10.966285Z",
+        "digest": "sha256:9b0c5eb1a7570d9ca833679ac8ea0dc781b2f6205079be420f9d29d035e1973c",
+        "receipt": {
+          "key": "5a3f054c-9719-46d7-9684-a6beaa78392b",
+          "operation": "capture_sie_source",
+          "actorId": "actor_operator_third"
+        }
+      }
+    },
+    {
+      "label": "financial inventory",
+      "status": 200,
+      "body": {
+        "scope": {
+          "entityId": "entity_synthetic_third",
+          "bookId": "book_synthetic_third"
+        },
+        "occurrenceId": "source_bd4ac6fd66d7479da5ebac5e8a2e3d15",
+        "items": [
+          {
+            "id": "siepreview_0785fdaacf92452ea3e59227fdefc896",
+            "ordinal": 1,
+            "encoding": "ibm437",
+            "ready": true,
+            "createdAt": "2026-09-24T14:33:10.966285Z",
+            "planId": null,
+            "runId": null
+          }
+        ]
+      }
+    },
+    {
+      "label": "financial mismatched source closing refused",
+      "status": 422,
+      "body": {
+        "_tag": "AccountingError",
+        "code": "InvalidJournal",
+        "message": "Independent opening or closing total differs from the retained SIE control."
+      }
+    },
+    {
+      "label": "financial plan",
+      "status": 200,
+      "body": {
+        "id": "sieplan_35893a077c4d46f384db2e3ec44f4a75",
+        "scope": {
+          "entityId": "entity_synthetic_third",
+          "bookId": "book_synthetic_third"
+        },
+        "previewId": "siepreview_0785fdaacf92452ea3e59227fdefc896",
+        "previewDigest": "sha256:9b0c5eb1a7570d9ca833679ac8ea0dc781b2f6205079be420f9d29d035e1973c",
+        "sourceSha256": "sha256:3a607ebde3931f74b9e2266fa5ef518e0c9f489c18da75ea48433d646957b91c",
+        "input": {
+          "digest": "sha256:9b0c5eb1a7570d9ca833679ac8ea0dc781b2f6205079be420f9d29d035e1973c",
+          "mappings": [
+            {
+              "sourceAccount": "1930",
+              "accountId": "account_bank"
+            },
+            {
+              "sourceAccount": "2999",
+              "accountId": "account_clearing"
+            }
+          ],
+          "openingControls": [
+            {
+              "sourceAccount": "1930",
+              "year": "0",
+              "independentOpeningMinor": "0",
+              "independentClosingMinor": "10000",
+              "basis": "Synthetic independent bank control"
+            },
+            {
+              "sourceAccount": "2999",
+              "year": "0",
+              "independentOpeningMinor": "0",
+              "independentClosingMinor": "-10000",
+              "basis": "Synthetic independent clearing control"
+            }
+          ],
+          "openItems": [],
+          "openItemControls": [],
+          "rationale": "Synthetic historical import, not company acceptance",
+          "openingPolicy": "unreconstructable_detail",
+          "sourceKind": "synthetic"
+        },
+        "voucherCount": 1,
+        "createdBy": "actor_operator_third",
+        "createdAt": "2026-09-24T14:33:11.004298Z",
+        "financialAdmission": "unsupported",
+        "unreconstructableDetail": true,
+        "digest": "sha256:b48481f63539d0cbd7d60d15ec10834899ad37d9ca264d1fbca9c6adc13caa19",
+        "receipt": {
+          "key": "6d31ae52-1f1f-4423-9b3f-fcc88943f8ac",
+          "operation": "seal_sie_source_plan",
+          "actorId": "actor_operator_third"
+        }
+      }
+    },
+    {
+      "label": "financial plan replay",
+      "status": 200,
+      "body": {
+        "id": "sieplan_35893a077c4d46f384db2e3ec44f4a75",
+        "scope": {
+          "entityId": "entity_synthetic_third",
+          "bookId": "book_synthetic_third"
+        },
+        "previewId": "siepreview_0785fdaacf92452ea3e59227fdefc896",
+        "previewDigest": "sha256:9b0c5eb1a7570d9ca833679ac8ea0dc781b2f6205079be420f9d29d035e1973c",
+        "sourceSha256": "sha256:3a607ebde3931f74b9e2266fa5ef518e0c9f489c18da75ea48433d646957b91c",
+        "input": {
+          "digest": "sha256:9b0c5eb1a7570d9ca833679ac8ea0dc781b2f6205079be420f9d29d035e1973c",
+          "mappings": [
+            {
+              "sourceAccount": "1930",
+              "accountId": "account_bank"
+            },
+            {
+              "sourceAccount": "2999",
+              "accountId": "account_clearing"
+            }
+          ],
+          "openingControls": [
+            {
+              "sourceAccount": "1930",
+              "year": "0",
+              "independentOpeningMinor": "0",
+              "independentClosingMinor": "10000",
+              "basis": "Synthetic independent bank control"
+            },
+            {
+              "sourceAccount": "2999",
+              "year": "0",
+              "independentOpeningMinor": "0",
+              "independentClosingMinor": "-10000",
+              "basis": "Synthetic independent clearing control"
+            }
+          ],
+          "openItems": [],
+          "openItemControls": [],
+          "rationale": "Synthetic historical import, not company acceptance",
+          "openingPolicy": "unreconstructable_detail",
+          "sourceKind": "synthetic"
+        },
+        "voucherCount": 1,
+        "createdBy": "actor_operator_third",
+        "createdAt": "2026-09-24T14:33:11.004298Z",
+        "financialAdmission": "unsupported",
+        "unreconstructableDetail": true,
+        "digest": "sha256:b48481f63539d0cbd7d60d15ec10834899ad37d9ca264d1fbca9c6adc13caa19",
+        "receipt": {
+          "key": "6d31ae52-1f1f-4423-9b3f-fcc88943f8ac",
+          "operation": "seal_sie_source_plan",
+          "actorId": "actor_operator_third"
+        }
+      }
+    },
+    {
+      "label": "financial source run",
+      "status": 200,
+      "body": {
+        "id": "sierun_60b0937a33364cfb9cc525d8ec8f22cf",
+        "planId": "sieplan_35893a077c4d46f384db2e3ec44f4a75",
+        "planDigest": "sha256:b48481f63539d0cbd7d60d15ec10834899ad37d9ca264d1fbca9c6adc13caa19",
+        "nextOrdinal": 1,
+        "fence": "1",
+        "leaseUntil": "2026-09-24T14:48:11.026252Z",
+        "status": "running",
+        "financialAdmission": "unsupported"
+      }
+    },
+    {
+      "label": "financial stage",
+      "status": 200,
+      "body": {
+        "runId": "sierun_60b0937a33364cfb9cc525d8ec8f22cf",
+        "planDigest": "sha256:b48481f63539d0cbd7d60d15ec10834899ad37d9ca264d1fbca9c6adc13caa19",
+        "firstOrdinal": 1,
+        "lastOrdinal": 1,
+        "fence": "1",
+        "voucherCount": 1,
+        "membershipDigest": "sha256:432e99ecc7825c084ac84d12b04d3333e66a5c4e5649d90ac512ba7cbd3c8970",
+        "receipt": {
+          "key": "0802539f-6850-4481-9108-37eab331bf40",
+          "operation": "advance_sie_source_run",
+          "actorId": "actor_operator_third"
+        }
+      }
+    },
+    {
+      "label": "financial stage replay",
+      "status": 200,
+      "body": {
+        "runId": "sierun_60b0937a33364cfb9cc525d8ec8f22cf",
+        "planDigest": "sha256:b48481f63539d0cbd7d60d15ec10834899ad37d9ca264d1fbca9c6adc13caa19",
+        "firstOrdinal": 1,
+        "lastOrdinal": 1,
+        "fence": "1",
+        "voucherCount": 1,
+        "membershipDigest": "sha256:432e99ecc7825c084ac84d12b04d3333e66a5c4e5649d90ac512ba7cbd3c8970",
+        "receipt": {
+          "key": "0802539f-6850-4481-9108-37eab331bf40",
+          "operation": "advance_sie_source_run",
+          "actorId": "actor_operator_third"
+        }
+      }
+    },
+    {
+      "label": "full history selected",
+      "status": 200,
+      "body": {
+        "fiscalYearId": "year_synthetic_2026",
+        "mode": "full_history",
+        "cutoverOn": "2026-01-01",
+        "sourcePlanId": "sieplan_35893a077c4d46f384db2e3ec44f4a75",
+        "sourceDigest": "sha256:b48481f63539d0cbd7d60d15ec10834899ad37d9ca264d1fbca9c6adc13caa19",
+        "changeSetId": null,
+        "controls": [
+          {
+            "accountId": "account_bank",
+            "signedMinor": "0",
+            "basis": "Independent synthetic source opening"
+          },
+          {
+            "accountId": "account_clearing",
+            "signedMinor": "0",
+            "basis": "Independent synthetic source opening"
+          }
+        ],
+        "rationale": "Synthetic full history; not company acceptance",
+        "actorId": "actor_operator_third",
+        "selectedAt": "2026-09-24T14:33:11.064504Z"
+      }
+    },
+    {
+      "label": "financial run",
+      "status": 200,
+      "body": {
+        "id": "siefin_c18a55c7d3914b9ba83aad658c2149a2",
+        "sourceRunId": "sierun_60b0937a33364cfb9cc525d8ec8f22cf",
+        "fiscalYearId": "year_synthetic_2026",
+        "planDigest": "sha256:b48481f63539d0cbd7d60d15ec10834899ad37d9ca264d1fbca9c6adc13caa19",
+        "nextOrdinal": 1,
+        "fence": "1",
+        "status": "running",
+        "sourceYear": "0"
+      }
+    },
+    {
+      "label": "financial workspace",
+      "status": 200,
+      "body": {
+        "run": {
+          "id": "siefin_c18a55c7d3914b9ba83aad658c2149a2",
+          "sourceRunId": "sierun_60b0937a33364cfb9cc525d8ec8f22cf",
+          "fiscalYearId": "year_synthetic_2026",
+          "planDigest": "sha256:b48481f63539d0cbd7d60d15ec10834899ad37d9ca264d1fbca9c6adc13caa19",
+          "nextOrdinal": 1,
+          "fence": "1",
+          "status": "running",
+          "items": []
+        },
+        "nextProposal": null
+      }
+    },
+    {
+      "label": "stale proposal fence refused",
+      "status": 409,
+      "body": {
+        "_tag": "AccountingError",
+        "code": "StaleDependency",
+        "message": "Resume the current financial run and prepare its next source voucher."
+      }
+    },
+    {
+      "label": "financial proposal",
+      "status": 200,
+      "body": {
+        "schemaVersion": "1",
+        "canonicalization": "openerp-c14n-v1",
+        "id": "change_f9e08c9370394295a13b224ede15ad11",
+        "version": 1,
+        "scope": {
+          "entityId": "entity_synthetic_third",
+          "bookId": "book_synthetic_third"
+        },
+        "createdAt": "2026-09-24T14:33:11.120185Z",
+        "dependencies": [
+          {
+            "kind": "profile",
+            "resourceId": "book_synthetic_third",
+            "version": "1",
+            "reason": "Book currency and supported profile"
+          },
+          {
+            "kind": "writer_epoch",
+            "resourceId": "book_synthetic_third",
+            "version": "1",
+            "reason": "Single authoritative writer"
+          },
+          {
+            "kind": "period",
+            "resourceId": "period_synthetic_2026",
+            "version": "1",
+            "reason": "Posting dates and lock state"
+          },
+          {
+            "kind": "account",
+            "resourceId": "account_bank",
+            "version": "1",
+            "reason": "Exact account configuration"
+          },
+          {
+            "kind": "account",
+            "resourceId": "account_clearing",
+            "version": "1",
+            "reason": "Exact account configuration"
+          }
+        ],
+        "groups": [
+          {
+            "id": "group_7519ba767c3a41b9b85c5f97c1f37d30",
+            "dependsOnGroupIds": [],
+            "actions": [
+              {
+                "kind": "post_voucher",
+                "correctsVoucherId": null,
+                "eventId": "event_279a8fbcb9db459cac9ad5cf6e2b7021",
+                "postingPurpose": "adjustment",
+                "occurrenceKey": "manual_journal",
+                "fiscalYearId": "year_synthetic_2026",
+                "accountingPeriodId": "period_synthetic_2026",
+                "postingDate": "2026-09-01",
+                "series": "SYN",
+                "currency": "SEK",
+                "description": "SIE A:1",
+                "rationale": "Synthetic source voucher reviewed before financial posting",
+                "taxAssessment": "not_applicable",
+                "lines": [
+                  {
+                    "accountId": "account_bank",
+                    "debitMinor": "10000",
+                    "creditMinor": "0",
+                    "description": "SIE A:1",
+                    "lineId": "line_df3d837094934021826af5234d43a0b7"
+                  },
+                  {
+                    "accountId": "account_clearing",
+                    "debitMinor": "0",
+                    "creditMinor": "10000",
+                    "description": "SIE A:1",
+                    "lineId": "line_af6979cd97434d9ab157a640165a8ba7"
+                  }
+                ],
+                "evidenceRefs": [
+                  {
+                    "evidenceId": "evidence_b930da783f784a6c87a838110f995fd3",
+                    "sha256": "fccb03ccb1c4839fea6c28d1791d92fc858b8ff35c5e666f8f77756cfd62a715",
+                    "locator": "sie_sierun_60b0937a33364cfb9cc525d8ec8f22cf_1"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "planDigest": "sha256:a1e0ec112af8a386fbdf8e1c99f70c0d27f48afaf463186d35bc4368e53434c4"
+      }
+    },
+    {
+      "label": "financial proposal replay",
+      "status": 200,
+      "body": {
+        "schemaVersion": "1",
+        "canonicalization": "openerp-c14n-v1",
+        "id": "change_f9e08c9370394295a13b224ede15ad11",
+        "version": 1,
+        "scope": {
+          "entityId": "entity_synthetic_third",
+          "bookId": "book_synthetic_third"
+        },
+        "createdAt": "2026-09-24T14:33:11.120185Z",
+        "dependencies": [
+          {
+            "kind": "profile",
+            "resourceId": "book_synthetic_third",
+            "version": "1",
+            "reason": "Book currency and supported profile"
+          },
+          {
+            "kind": "writer_epoch",
+            "resourceId": "book_synthetic_third",
+            "version": "1",
+            "reason": "Single authoritative writer"
+          },
+          {
+            "kind": "period",
+            "resourceId": "period_synthetic_2026",
+            "version": "1",
+            "reason": "Posting dates and lock state"
+          },
+          {
+            "kind": "account",
+            "resourceId": "account_bank",
+            "version": "1",
+            "reason": "Exact account configuration"
+          },
+          {
+            "kind": "account",
+            "resourceId": "account_clearing",
+            "version": "1",
+            "reason": "Exact account configuration"
+          }
+        ],
+        "groups": [
+          {
+            "id": "group_7519ba767c3a41b9b85c5f97c1f37d30",
+            "dependsOnGroupIds": [],
+            "actions": [
+              {
+                "kind": "post_voucher",
+                "correctsVoucherId": null,
+                "eventId": "event_279a8fbcb9db459cac9ad5cf6e2b7021",
+                "postingPurpose": "adjustment",
+                "occurrenceKey": "manual_journal",
+                "fiscalYearId": "year_synthetic_2026",
+                "accountingPeriodId": "period_synthetic_2026",
+                "postingDate": "2026-09-01",
+                "series": "SYN",
+                "currency": "SEK",
+                "description": "SIE A:1",
+                "rationale": "Synthetic source voucher reviewed before financial posting",
+                "taxAssessment": "not_applicable",
+                "lines": [
+                  {
+                    "accountId": "account_bank",
+                    "debitMinor": "10000",
+                    "creditMinor": "0",
+                    "description": "SIE A:1",
+                    "lineId": "line_df3d837094934021826af5234d43a0b7"
+                  },
+                  {
+                    "accountId": "account_clearing",
+                    "debitMinor": "0",
+                    "creditMinor": "10000",
+                    "description": "SIE A:1",
+                    "lineId": "line_af6979cd97434d9ab157a640165a8ba7"
+                  }
+                ],
+                "evidenceRefs": [
+                  {
+                    "evidenceId": "evidence_b930da783f784a6c87a838110f995fd3",
+                    "sha256": "fccb03ccb1c4839fea6c28d1791d92fc858b8ff35c5e666f8f77756cfd62a715",
+                    "locator": "sie_sierun_60b0937a33364cfb9cc525d8ec8f22cf_1"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "planDigest": "sha256:a1e0ec112af8a386fbdf8e1c99f70c0d27f48afaf463186d35bc4368e53434c4"
+      }
+    },
+    {
+      "label": "proposal recovered",
+      "status": 200,
+      "body": {
+        "run": {
+          "id": "siefin_c18a55c7d3914b9ba83aad658c2149a2",
+          "sourceRunId": "sierun_60b0937a33364cfb9cc525d8ec8f22cf",
+          "fiscalYearId": "year_synthetic_2026",
+          "planDigest": "sha256:b48481f63539d0cbd7d60d15ec10834899ad37d9ca264d1fbca9c6adc13caa19",
+          "nextOrdinal": 1,
+          "fence": "1",
+          "status": "running",
+          "items": []
+        },
+        "nextProposal": {
+          "schemaVersion": "1",
+          "canonicalization": "openerp-c14n-v1",
+          "id": "change_f9e08c9370394295a13b224ede15ad11",
+          "version": 1,
+          "scope": {
+            "entityId": "entity_synthetic_third",
+            "bookId": "book_synthetic_third"
+          },
+          "createdAt": "2026-09-24T14:33:11.120185Z",
+          "dependencies": [
+            {
+              "kind": "profile",
+              "resourceId": "book_synthetic_third",
+              "version": "1",
+              "reason": "Book currency and supported profile"
+            },
+            {
+              "kind": "writer_epoch",
+              "resourceId": "book_synthetic_third",
+              "version": "1",
+              "reason": "Single authoritative writer"
+            },
+            {
+              "kind": "period",
+              "resourceId": "period_synthetic_2026",
+              "version": "1",
+              "reason": "Posting dates and lock state"
+            },
+            {
+              "kind": "account",
+              "resourceId": "account_bank",
+              "version": "1",
+              "reason": "Exact account configuration"
+            },
+            {
+              "kind": "account",
+              "resourceId": "account_clearing",
+              "version": "1",
+              "reason": "Exact account configuration"
+            }
+          ],
+          "groups": [
+            {
+              "id": "group_7519ba767c3a41b9b85c5f97c1f37d30",
+              "dependsOnGroupIds": [],
+              "actions": [
+                {
+                  "kind": "post_voucher",
+                  "correctsVoucherId": null,
+                  "eventId": "event_279a8fbcb9db459cac9ad5cf6e2b7021",
+                  "postingPurpose": "adjustment",
+                  "occurrenceKey": "manual_journal",
+                  "fiscalYearId": "year_synthetic_2026",
+                  "accountingPeriodId": "period_synthetic_2026",
+                  "postingDate": "2026-09-01",
+                  "series": "SYN",
+                  "currency": "SEK",
+                  "description": "SIE A:1",
+                  "rationale": "Synthetic source voucher reviewed before financial posting",
+                  "taxAssessment": "not_applicable",
+                  "lines": [
+                    {
+                      "accountId": "account_bank",
+                      "debitMinor": "10000",
+                      "creditMinor": "0",
+                      "description": "SIE A:1",
+                      "lineId": "line_df3d837094934021826af5234d43a0b7"
+                    },
+                    {
+                      "accountId": "account_clearing",
+                      "debitMinor": "0",
+                      "creditMinor": "10000",
+                      "description": "SIE A:1",
+                      "lineId": "line_af6979cd97434d9ab157a640165a8ba7"
+                    }
+                  ],
+                  "evidenceRefs": [
+                    {
+                      "evidenceId": "evidence_b930da783f784a6c87a838110f995fd3",
+                      "sha256": "fccb03ccb1c4839fea6c28d1791d92fc858b8ff35c5e666f8f77756cfd62a715",
+                      "locator": "sie_sierun_60b0937a33364cfb9cc525d8ec8f22cf_1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "planDigest": "sha256:a1e0ec112af8a386fbdf8e1c99f70c0d27f48afaf463186d35bc4368e53434c4"
+        }
+      }
+    },
+    {
+      "label": "financial approval",
+      "status": 200,
+      "body": {
+        "id": "approval_4d12e1078a8a4da1a867440403953c56",
+        "changeSetId": "change_f9e08c9370394295a13b224ede15ad11",
+        "planDigest": "sha256:a1e0ec112af8a386fbdf8e1c99f70c0d27f48afaf463186d35bc4368e53434c4",
+        "actorId": "actor_operator_third",
+        "expiresAt": "2026-09-24T15:33:11.159791Z"
+      }
+    },
+    {
+      "label": "financial run pause",
+      "status": 200,
+      "body": {
+        "id": "siefin_c18a55c7d3914b9ba83aad658c2149a2",
+        "nextOrdinal": 1,
+        "fence": "2",
+        "status": "paused"
+      }
+    },
+    {
+      "label": "paused direct execute refused",
+      "status": 409,
+      "body": {
+        "_tag": "AccountingError",
+        "code": "StaleDependency",
+        "message": "Post this source voucher through its current financial import run."
+      }
+    },
+    {
+      "label": "financial run resume",
+      "status": 200,
+      "body": {
+        "id": "siefin_c18a55c7d3914b9ba83aad658c2149a2",
+        "nextOrdinal": 1,
+        "fence": "3",
+        "status": "running"
+      }
+    },
+    {
+      "label": "owned financial post",
+      "status": 200,
+      "body": {
+        "id": "siefin_c18a55c7d3914b9ba83aad658c2149a2",
+        "nextOrdinal": 2,
+        "fence": "3",
+        "status": "posted",
+        "items": [
+          {
+            "ordinal": 1,
+            "sourceReference": "A:1",
+            "sourceDigest": "sha256:4684f743130c155028d7f74a4774449d306089fdefd69bc4b0d2df51e7871a5d",
+            "ledgerReceipt": {
+              "id": "receipt_cba40b085eee45a5bf6b4856ec825abc",
+              "changeSetId": "change_f9e08c9370394295a13b224ede15ad11",
+              "voucherId": "voucher_7b6c55ce345d42828a3dbac35feba3f5",
+              "planDigest": "sha256:a1e0ec112af8a386fbdf8e1c99f70c0d27f48afaf463186d35bc4368e53434c4",
+              "sequence": "1",
+              "voucherNumber": "1",
+              "committedAt": "2026-09-24T14:33:11.216594Z"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "label": "financial post replay",
+      "status": 200,
+      "body": {
+        "id": "siefin_c18a55c7d3914b9ba83aad658c2149a2",
+        "nextOrdinal": 2,
+        "fence": "3",
+        "status": "posted",
+        "items": [
+          {
+            "ordinal": 1,
+            "sourceReference": "A:1",
+            "sourceDigest": "sha256:4684f743130c155028d7f74a4774449d306089fdefd69bc4b0d2df51e7871a5d",
+            "ledgerReceipt": {
+              "id": "receipt_cba40b085eee45a5bf6b4856ec825abc",
+              "changeSetId": "change_f9e08c9370394295a13b224ede15ad11",
+              "voucherId": "voucher_7b6c55ce345d42828a3dbac35feba3f5",
+              "planDigest": "sha256:a1e0ec112af8a386fbdf8e1c99f70c0d27f48afaf463186d35bc4368e53434c4",
+              "sequence": "1",
+              "voucherNumber": "1",
+              "committedAt": "2026-09-24T14:33:11.216594Z"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "label": "closing comparison",
+      "status": 200,
+      "body": {
+        "scope": {
+          "entityId": "entity_synthetic_third",
+          "bookId": "book_synthetic_third"
+        },
+        "sourceRunId": "sierun_60b0937a33364cfb9cc525d8ec8f22cf",
+        "sourcePlanId": "sieplan_35893a077c4d46f384db2e3ec44f4a75",
+        "fiscalYearId": "year_synthetic_2026",
+        "asOf": "2026-12-31",
+        "bookSequence": "1",
+        "postingComplete": true,
+        "balanced": true,
+        "items": [
+          {
+            "accountId": "account_bank",
+            "code": "1930",
+            "expectedMinor": "10000",
+            "actualMinor": "10000",
+            "differenceMinor": "0"
+          },
+          {
+            "accountId": "account_clearing",
+            "code": "2999",
+            "expectedMinor": "-10000",
+            "actualMinor": "-10000",
+            "differenceMinor": "0"
+          }
+        ]
+      }
+    }
+  ],
+  "completed": true
+}

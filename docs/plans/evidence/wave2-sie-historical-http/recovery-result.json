@@ -1,0 +1,244 @@
+[
+  {
+    "label": "recover opening basis",
+    "status": 200,
+    "body": {
+      "scope": {
+        "entityId": "entity_synthetic_other",
+        "bookId": "book_synthetic_other"
+      },
+      "years": [
+        {
+          "id": "year_synthetic_2026",
+          "startsOn": "2026-01-01",
+          "endsOn": "2026-12-31",
+          "basis": {
+            "fiscalYearId": "year_synthetic_2026",
+            "mode": "opening_set",
+            "cutoverOn": "2026-09-01",
+            "sourcePlanId": "sieplan_5a19a181a4114ba4abc94c5ce7709e9f",
+            "sourceDigest": "sha256:307dfbd37314db2e7a9f811315011c7a0e7faa797c75000ca6b2bf4132c713b9",
+            "changeSetId": "change_af45f199488e4ab4a68930824a636064",
+            "controls": [
+              {
+                "accountId": "account_bank",
+                "signedMinor": "10000",
+                "basis": "Synthetic independent cutover bank control"
+              },
+              {
+                "accountId": "account_clearing",
+                "signedMinor": "-10000",
+                "basis": "Synthetic independent cutover clearing control"
+              }
+            ],
+            "rationale": "Synthetic opening reviewed without reconstructing old movements",
+            "actorId": "actor_operator_other",
+            "selectedAt": "2026-09-24T14:32:41.981477Z",
+            "voucherId": null
+          }
+        }
+      ]
+    }
+  },
+  {
+    "label": "recover replacement proposal",
+    "status": 200,
+    "body": {
+      "schemaVersion": "1",
+      "canonicalization": "openerp-c14n-v1",
+      "id": "change_af45f199488e4ab4a68930824a636064",
+      "version": 1,
+      "scope": {
+        "entityId": "entity_synthetic_other",
+        "bookId": "book_synthetic_other"
+      },
+      "createdAt": "2026-09-24T14:32:42.043034Z",
+      "dependencies": [
+        {
+          "kind": "profile",
+          "resourceId": "book_synthetic_other",
+          "version": "1",
+          "reason": "Book currency and supported profile"
+        },
+        {
+          "kind": "writer_epoch",
+          "resourceId": "book_synthetic_other",
+          "version": "1",
+          "reason": "Single authoritative writer"
+        },
+        {
+          "kind": "period",
+          "resourceId": "period_synthetic_2026",
+          "version": "1",
+          "reason": "Posting dates and lock state"
+        },
+        {
+          "kind": "account",
+          "resourceId": "account_bank",
+          "version": "1",
+          "reason": "Exact account configuration"
+        },
+        {
+          "kind": "account",
+          "resourceId": "account_clearing",
+          "version": "1",
+          "reason": "Exact account configuration"
+        }
+      ],
+      "groups": [
+        {
+          "id": "group_05c9c5aa6d154bcc8241e38eff76dad5",
+          "dependsOnGroupIds": [],
+          "actions": [
+            {
+              "kind": "post_voucher",
+              "correctsVoucherId": null,
+              "eventId": "event_cac33c939c8f480498b76c088b23cd21",
+              "postingPurpose": "adjustment",
+              "occurrenceKey": "manual_journal",
+              "fiscalYearId": "year_synthetic_2026",
+              "accountingPeriodId": "period_synthetic_2026",
+              "postingDate": "2026-09-01",
+              "series": "SYN",
+              "currency": "SEK",
+              "description": "Reviewed historical opening",
+              "rationale": "Synthetic refresh preserves independent opening controls",
+              "taxAssessment": "not_applicable",
+              "lines": [
+                {
+                  "accountId": "account_bank",
+                  "debitMinor": "10000",
+                  "creditMinor": "0",
+                  "description": "Reviewed historical opening",
+                  "lineId": "line_f0bfeb06005b42429792f2229872d061"
+                },
+                {
+                  "accountId": "account_clearing",
+                  "debitMinor": "0",
+                  "creditMinor": "10000",
+                  "description": "Reviewed historical opening",
+                  "lineId": "line_acb5c63edf264ee2ab503bb41a389cbd"
+                }
+              ],
+              "evidenceRefs": [
+                {
+                  "evidenceId": "evidence_21917e5e30f64de9be0e2ab3649fb0bd",
+                  "sha256": "ad7dc38c4fe5b0a0f81bb4ddd240482c3fe018eabf5d16d666856715b5d830b6",
+                  "locator": "opening_year_synthetic_2026"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "planDigest": "sha256:f87c566a3549ca320ebdc46116284fa8c5595c8046ee0b5fff47a9437d230ece"
+    }
+  },
+  {
+    "label": "cross-book source inventory denied",
+    "status": 404,
+    "body": {
+      "_tag": "AccountingError",
+      "code": "NotFound",
+      "message": "Original source occurrence was not found."
+    }
+  },
+  {
+    "label": "cross-book opening post denied",
+    "status": 403,
+    "body": {
+      "_tag": "AccountingError",
+      "code": "Forbidden",
+      "message": "This credential does not have the required book authority."
+    }
+  },
+  {
+    "label": "replacement approval",
+    "status": 200,
+    "body": {
+      "id": "approval_b7390adfbfc346a894dfc9e54903157f",
+      "changeSetId": "change_af45f199488e4ab4a68930824a636064",
+      "planDigest": "sha256:f87c566a3549ca320ebdc46116284fa8c5595c8046ee0b5fff47a9437d230ece",
+      "actorId": "actor_operator_other",
+      "expiresAt": "2026-09-24T15:36:15.433393Z"
+    }
+  },
+  {
+    "label": "reviewed replacement post",
+    "status": 200,
+    "body": {
+      "fiscalYearId": "year_synthetic_2026",
+      "mode": "opening_set",
+      "cutoverOn": "2026-09-01",
+      "sourcePlanId": "sieplan_5a19a181a4114ba4abc94c5ce7709e9f",
+      "sourceDigest": "sha256:307dfbd37314db2e7a9f811315011c7a0e7faa797c75000ca6b2bf4132c713b9",
+      "changeSetId": "change_af45f199488e4ab4a68930824a636064",
+      "controls": [
+        {
+          "accountId": "account_bank",
+          "signedMinor": "10000",
+          "basis": "Synthetic independent cutover bank control"
+        },
+        {
+          "accountId": "account_clearing",
+          "signedMinor": "-10000",
+          "basis": "Synthetic independent cutover clearing control"
+        }
+      ],
+      "rationale": "Synthetic opening reviewed without reconstructing old movements",
+      "actorId": "actor_operator_other",
+      "selectedAt": "2026-09-24T14:32:41.981477Z",
+      "voucherId": "voucher_b056ffa198fa48e69c70b022bd22947d",
+      "ledgerReceipt": {
+        "id": "receipt_6326cf1e3ce2450fb1869ed4114cf26a",
+        "changeSetId": "change_af45f199488e4ab4a68930824a636064",
+        "voucherId": "voucher_b056ffa198fa48e69c70b022bd22947d",
+        "planDigest": "sha256:f87c566a3549ca320ebdc46116284fa8c5595c8046ee0b5fff47a9437d230ece",
+        "sequence": "1",
+        "voucherNumber": "1",
+        "committedAt": "2026-09-24T14:36:15.458092Z"
+      }
+    }
+  },
+  {
+    "label": "recover posted opening",
+    "status": 200,
+    "body": {
+      "scope": {
+        "entityId": "entity_synthetic_other",
+        "bookId": "book_synthetic_other"
+      },
+      "years": [
+        {
+          "id": "year_synthetic_2026",
+          "startsOn": "2026-01-01",
+          "endsOn": "2026-12-31",
+          "basis": {
+            "fiscalYearId": "year_synthetic_2026",
+            "mode": "opening_set",
+            "cutoverOn": "2026-09-01",
+            "sourcePlanId": "sieplan_5a19a181a4114ba4abc94c5ce7709e9f",
+            "sourceDigest": "sha256:307dfbd37314db2e7a9f811315011c7a0e7faa797c75000ca6b2bf4132c713b9",
+            "changeSetId": "change_af45f199488e4ab4a68930824a636064",
+            "controls": [
+              {
+                "accountId": "account_bank",
+                "signedMinor": "10000",
+                "basis": "Synthetic independent cutover bank control"
+              },
+              {
+                "accountId": "account_clearing",
+                "signedMinor": "-10000",
+                "basis": "Synthetic independent cutover clearing control"
+              }
+            ],
+            "rationale": "Synthetic opening reviewed without reconstructing old movements",
+            "actorId": "actor_operator_other",
+            "selectedAt": "2026-09-24T14:32:41.981477Z",
+            "voucherId": "voucher_b056ffa198fa48e69c70b022bd22947d"
+          }
+        }
+      ]
+    }
+  }
+]
