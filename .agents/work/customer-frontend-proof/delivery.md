@@ -260,3 +260,72 @@ Layout/polish decisions in this scope:
 | Flatten history | Nested revision disclosures and record-navigation chevrons | Visible revision selectors and ordinary record buttons with dedicated URLs |
 
 Considered and rejected: turning the full expense treatment list into radio cards would crowd the review column; long source/treatment lists remain selects. Adding animation to every selection would add repeated visual noise; selected borders/backgrounds provide immediate feedback. Changing the global palette or typography was outside this pass.
+
+## Application-wide layout and workflow pass — 23 September 2026
+
+This checkpoint applies the same task-first review beyond tax. It is an implementation and observation record, not whole-application acceptance. Mode: full desktop review, React/TanStack with the existing owned StyleX components and tokens. No new dependencies or tests. Shared checkout changes were committed by another task during the pass; this task did not commit, stage, push or deploy.
+
+### Coverage
+
+| Surface | Inspected and changed | Observed / still open |
+| --- | --- | --- |
+| Overview and banking | Prior browser evidence and current composition reviewed; retain named accounts, balance dates, matching context | Previous checkpoint observations still apply. Current multi-entry matching, reversal, coverage and contextual recovery require continued integrated work; no new banking acceptance claimed |
+| Work queue | Visible status/type choices; controls grouped in one compact toolbar; saved-view control hidden when empty | Real populated 56-item queue and zero-result expense view rendered and clicked; selected type in URL. Assignment and complete queue-to-record return remain open |
+| Sales and contacts | Ordinary record-opening controls, alphabetic contact list, loaded-record search, visible contact types, compact editor | Saved synthetic contact, reopened after reload. Invoice register/editor retain prior observations; full payment/correction and integrated acceptance remain open |
+| Purchases and documents | Record-opening controls, compact upload, supplier-context contact defaults; loaded-record invoice status filters | Document list rendered; purchase contact dialog starts with Supplier selected. Full document-to-result journey and supplier invoice preparation remain open |
+| Books | Account search and visible status choices; removed duplicate sidebar children; voucher/report return | Search for 1930 finds Business account. Report contribution opens A1/A2 and returns to its report/account. Correction journey remains open |
+| Reports | Searchable grouped library, saved report periods, compact report creation, URL-addressed account sheet | Created a balanced saved report with five vouchers. General ledger now shows transactions and running balances, not a balance-only table. Report → account → voucher → explicit return and reload observed |
+| Closing | Named checks with direct resolution actions; completed checks grouped; ten-area period review editor; bank account choices by name | Saved an explicit synthetic inventory with bank review required and nine areas unknown; completeness not asserted. Closing remained open with unresolved checks. Lock/reopen remains outside this observation |
+| Assets and deferrals | Separate Schedules/Reconciliation views; list/detail/editor separation; decimal amounts; grouped assessment/accounts/dates; automatic retained entered evidence; direct record URL | Saved synthetic 1,200 SEK schedule with zero recognized, one unprepared occurrence; detail and reload observed. Reconciliation basis, lifetime amendments and disposal still need a customer composition pass |
+| Exchange rates | Saved rates/conversions first; focused create/detail; visible rate usability | Register composition inspected. Source/rate review and conversion editors still require identifier-free selection, clearer exact-rate entry and a full save/reload journey |
+| Company directory/settings | Accurate work-count coverage; visible language choices; linked periods and chart rather than duplicate account table | Directory and settings visually inspected; no preference or membership changes during this check |
+| Firm clients/team | Visible client views; role/state choices; no single-item firm menu; firm creation moved into header; client filters in URL | Existing client handoff dialog and team inspected. Search → company → browser Back preserves Northstar filter. No permission mutations. Full handoff/revocation and multi-page client-day acceptance remain open |
+| Advanced tools | Named lazy-loaded destinations instead of mounting all forms; owner tabs; short recurring direction choices | Catalog and owner entry visually inspected. Owner source/allocation, recurring, correction, snapshot and deep recovery editors retain form/identifier burden and require further work |
+| Authentication/intake | Existing access and intake ownership preserved; source inspected in the current/recent passes | No fresh sign-in, invitation, account-admission or intake mutation walkthrough in this checkpoint |
+
+### Review categories
+
+| Category | Evidence inspected | Result |
+| --- | --- | --- |
+| Typography | Real Swedish desktop pages, numeric tables, compact dialogs, report/account and schedule detail | Existing type system retained. Internal minor units removed from the new schedule editor/detail and general ledger; deeper specialist tables still need review |
+| Surfaces | Main lists, headers, selected controls, sheets, dialogs, empty states and settings | Shared controls distinguish navigation from expansion; records precede optional setup; selected filters have a persistent border distinct from hover |
+| Animations | Existing owned tabs/buttons/sheets; new high-frequency filter/navigation controls | No new animation added. Frame-by-frame/10% motion inspection not performed because motion behavior was not changed |
+| Icons | Record-opening chevrons, report/tool row icons, back/create actions | Owned Lucide/currentColor patterns retained; no replacement icon system |
+| Performance | Route lazy ownership, scoped TanStack Query, cursor loading, production build | Tools load selected domains. Report and contact queries preserve cursors. Runtime profiling and large multi-firm volume are not verified |
+
+### Findings and implementation
+
+| Severity | Location | Before | After | Why |
+| --- | --- | --- | --- | --- |
+| MEDIUM | `packages/ui/src/components/accounting-page.tsx:300`; document/statement/register/invoice/contact/review-pack record buttons | Record navigation used an expansion affordance | RecordOpen uses a right chevron and ordinary button behavior; actual inline expanders remain | Controls communicate their action |
+| MEDIUM | `packages/ui/src/components/accounting-page.tsx:308`; work, contacts, purchase invoices, firm portfolio, chart; contact/team/recurring/owner fields | Short choices hidden in menus or visually ambiguous against hover | Visible choices with stable selected treatment; long, variable account/member lists remain selects | Recognition and selection clarity |
+| MEDIUM | `apps/web/src/routes/entities.$entityId.books.$bookId.work.tsx:25`; saved-work-views | Controls consumed separate full-width rows; empty saved-view menu | Grouped toolbar, status/type/utility row, conditional saved views | Put work closer to the top and group related controls |
+| MEDIUM | `apps/web/src/components/commerce/counterparties.tsx:56`; commerce/invoices | Filtering only the current loaded page; wrong role default when creating from purchases | Cursor pages accumulate; scope/load-more explicit; alphabetical contact list; context-derived customer/supplier default | Predictable finding and creation |
+| MEDIUM | `apps/web/src/components/report-workspace.tsx:141`; finance-area; reports route | Report form before saved work, duplicate navigation, no durable account context | Report library and saved-period register; compact creation; account selection in URL | Saved work first and preserved context |
+| HIGH, resolved in observed path | `apps/web/src/components/general-ledger.tsx:16`; trial-balance; books route | General ledger destination only showed totals; report contributions lacked a clear return | Saved transaction history with voucher/date/description/debit/credit/running balance; voucher links return to the same report/account | Match the promise of the destination and explain amounts |
+| MEDIUM | `apps/web/src/components/closing/workspace.tsx:27`; closing/panel | Raw checks, blocked preparation and source inventory spread across technical forms | Named pending checks with direct actions, focused period-scope and preparation dialogs | Blockers lead to their resolution |
+| MEDIUM | `apps/web/src/components/closing/inventory-editor.tsx:22` | All area decisions and raw account references in a long form | One area at a time with explicit status/date/reason; visible area progress and named bank accounts; retained entered assessment | Group decisions and preserve their evidence without inventing completeness |
+| MEDIUM | `apps/web/src/components/subledgers/workspace.tsx:7`; subledgers/schedules | Stacked plan/control workspaces, raw-key list, detail below everything | Separate task views, named schedule list, dedicated addressable detail, decimal summary and dates | Separate distinct tasks and lead with the business record |
+| MEDIUM | `apps/web/src/components/subledgers/schedule-form.tsx:19` | Source key/evidence ID and integer units preceded the asset; save below long form | Grouped asset/assessment/decimal amounts/accounts and dated occurrences, automatic entered evidence, optional exact reference and sticky save | Keep implementation mechanics out of ordinary entry |
+| MEDIUM | exchange-rates/panel; subledger-controls/panel | All creation forms mixed with saved records | Saved records first, focused creation and detail, rate usability visible | Primary work is discoverable without opening every form; deep editors remain open findings |
+| MEDIUM | tools route; owner-register; recurring-preparation; corrections; case-snapshots; book-readiness | General tools page mounted every specialist workspace | Named selected destinations, owner tabs and explicit short choices | Reduce simultaneous choices; specialist editor depth is not considered finished |
+| MEDIUM | `apps/web/src/components/firms/portfolio.tsx:29`; firms/index; firms route | Portfolio filters vanished on return; create-firm utility occupied a separate row | Filters/page in URL, working view restored, firm utility in header | Preserve the accountant's working context |
+| LOW | settings route; company-directory; book-navigation | Duplicated account table/language headings/navigation and understated count scope | Linked chart/periods, single language group, accurate scope copy, one Books tab set | Remove repetition and misleading labels |
+
+Considered and rejected: replacing all account/member lists with radio cards would overwhelm dense workspaces; long lists remain selects. Adding transitions to each work filter would slow repeated scanning; changes remain immediate. Reusing live account balances as historical report detail would lose the report cutoff; the ledger uses the saved report API. Creating evidence as though it were an uploaded original would misstate provenance; entered assessments explicitly say what was entered and preserve optional original references.
+
+### Observations and artifacts
+
+Real local desktop browser, Swedish, natural 1600 × 900 viewport; web 3107 and API 18790 with the normal local observation proxy. No remote delivery, bank payment, production identity change or financial closing occurred.
+
+- Trial/ledger snapshot: `report_d7bfceb6b77f425da0639b2cb72ebccb`, 2026-01-01–2026-12-31, five vouchers, debit/credit `380000` minor each. Account 1930 has two movements of 400 and 550 SEK and running balances of 400 and 950 SEK. Browser Retry recovered after the shared local API rebuilt; an errored ledger does not display a successful transaction table.
+- Period inventory: `closing_inventory_b5bbd46146d64074af7c116cb3c111c1`, bank account `account_bank`, ten explicitly recorded assessments. Nine unknown areas remain unknown. Source completeness and closing acceptance are not inferred.
+- Contact: `counterparty_360aadc576d24e0698a7e0777abd409c`, Studio Juniper · UI demo, reference UI-REVIEW-0923. Saved from Sales and reopened after reload. Purchases new-contact default was observed without saving another record.
+- Schedule: `schedule_a6319e1e715c4163b59a14c05e4d473e`, Software periodisation · UI demo, `120000` cost, zero residual/recognized, one unprepared 2026-09-30 occurrence. Explicit debit 6540/credit 2999; no posting was prepared or approved. Direct URL reload retained the same detail.
+- Firm: Northstar search persisted through company entry and browser Back, at `/firms?firm=firm_a15959e5b9e04443b2debc387923ea75&tab=clients&q=Northstar`. Current team and client handoff were inspected without changing permissions.
+
+Repeatable read-only artifact: `bun .cache/customer-frontend/surface-review-observation.ts`, output `surface-review-observation.json`, validates report/ledger/closing/schedule/contact API contracts. Captures in `.cache/customer-frontend`: `period-scope-editor.png`, `closing-checklist-reviewed.png`, `report-return-account.png`, `general-ledger-transactions.png`, `schedule-editor.png`, `schedule-saved-detail.png`, `firm-filtered-return.png`. These supplement, rather than replace, interaction observations.
+
+Verification: `bun run lint`, `bun run check-types`, `bun run build`, and staged/unstaged `git diff --check` passed. Logs: `surfaces-final-lint.log`, `surfaces-final-types.log`, `surfaces-final-build.log`. No new test files. Narrow widths, pseudo-localization, RTL, 200% zoom, full performance profiling and all specialist mutation/error states are **Not verified** in this desktop-focused pass.
+
+**Verdict: Needs changes.** Reviewed core paths improved and the misleading general-ledger destination is corrected. The advanced owner/source/allocation, recurring/correction, rate conversion and reconciliation-basis forms still need the same record-first treatment and real browser save/return evidence. This checkpoint does not approve uninspected states or close the integrated journey ledger. Next work should start with these concrete forms and the still-incomplete purchase flow, not repeat the visual-system design or prioritize obscure concurrency scenarios.

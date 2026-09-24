@@ -80,6 +80,18 @@ The owned [workspace](../packages/ui/src/components/workspace.tsx), [data grid](
 
 The customer composition now includes addressable journeys, a shared attention list, focused source review and audience-appropriate starting views. Production activation depends on actual identity inputs and acceptance evidence. Invoice registers are not invoice issuance or delivery; statement imports are not bank feeds; technical locks are not statutory year-end; source tax review is not a VAT return.
 
+## Cross-surface workflow review
+
+The 23 September desktop pass extends the task-first composition across the application. Short status/type choices are visible; record navigation differs from inline expansion; contact and invoice lists disclose loaded scope; routine editors open in focused dialogs. Work filters share a compact toolbar. Books has account search, and settings links to its chart and period work instead of repeating a long table.
+
+Reports now start with a searchable library and saved periods. A saved general ledger shows account transactions with voucher numbers, posting dates, debits, credits and running balances. Account selection and report-to-voucher return preserve the saved report in the URL. The reporting cutoff and entered-source coverage remain explicit.
+
+Period review names unresolved areas and leads directly to their controls. A ten-area assessment retains the user's explicit status, review date, rationale and bank-account selection; unknown obligations remain unknown. Asset/deferral schedules separate editing, saved detail and reconciliation. Amounts use currency units; the ordinary editor retains entered assessment evidence automatically and leaves exact pre-existing source references optional. This does not turn an entered assessment into a verified original or post an accounting entry.
+
+Firm filters and pagination survive client drill-in and return. The directory and team use named people and businesses; the account-access and production-admission boundaries are unchanged. Advanced tools now expose named destinations. Their deeper owner allocation, correction, recurring, exchange-rate and reconciliation-basis forms still need further customer workflow work; a catalog does not make those journeys complete.
+
+The [cross-surface review record](../.agents/work/customer-frontend-proof/delivery.md) distinguishes inspected layouts, saved/reloaded browser operations and remaining work. Every journey above remains governed by its acceptance row; no whole-application acceptance is claimed.
+
 ## One workspace, three starting views
 
 | Audience | Default entry | First screen | Main actions | Details available |

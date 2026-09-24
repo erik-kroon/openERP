@@ -343,7 +343,6 @@ REST GET and read-only MCP capability scan50 retained event identities before fi
 effective classifications. Bound book/account cursors advance by the last examined event;
 empty result pages may still continue, and resolved anchors remain valid. No control artifact,
 receipt or financial state is created. This is not a frozen inventory or completeness claim.
-Backend/contracts/jurisdiction type checks and targeted lint pass. The current web type check
-is blocked by separate invoice UI pagination edits (`after`, `pageParam`, `Pager`, `setAfter` in
-`apps/web/src/components/commerce/invoices.tsx`); those files were not changed by this slice.
-SQL and runtime behavior remain unverified.
+Backend/contracts/jurisdiction type checks and targeted lint pass. The initial web check
+encountered separate invoice UI pagination edits; the follow-up shared web check passed without
+changes to those files by this slice. SQL and runtime behavior remain unverified.

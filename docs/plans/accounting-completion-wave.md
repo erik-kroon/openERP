@@ -491,5 +491,15 @@ real retained anchors and book/account-bound cursors prevent skipped sparse-wind
 Membership is live, not frozen; callers follow non-null next even for empty items and restart
 for new arrivals. No saved artifact or financial transition is introduced. Root and focused
 peer source review found no blocker. Backend/contracts/jurisdiction type checks and lint pass.
-Web checking currently encounters unrelated invoice UI pagination errors in `invoices.tsx`;
-no web files were modified. No SQL/runtime/provider/test execution was performed.
+The initial web check encountered unrelated invoice UI pagination edits; the follow-up shared
+web check passed without changes to those files by this slice. No SQL/runtime/provider/test
+execution was performed.
+
+Forward6900 adds unaccepted supplier-invoice draft create/revise/get/list/history and three
+read-only MCP capabilities. It reuses exact customer line calculations through a private role
+parameter while keeping supplier storage and sales/issue resources separate. Original source
+number/evidence, asserted identities, nullable tax and mismatches are preserved; recognition
+elsewhere is not assessed. No acceptance, posting, numbering, VAT, capacity or provider effect
+is introduced. Backend/contracts/jurisdiction and web type checks pass, and targeted lint is
+clean. Customer-branch source normalization reconstructs1200 byte-for-byte. No SQL/runtime/
+financial execution proof is claimed.

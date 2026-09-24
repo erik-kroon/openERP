@@ -156,3 +156,22 @@ role loss does not erase the consumed approval or grant new authority. Root and 
 source review found no blocker. No TypeScript changed after the last shared static checkpoint;
 SQL compilation/application and runtime behavior remain unverified. See
 [owner register](../../apps/api/OWNER-REGISTER.md).
+
+## Bounded supplier-document drafts
+
+Forward6900 adds operator create/revise and scoped get/list/history for unaccepted supplier
+invoice drafts. Supplier/buyer identities, the original supplier number, document dates and
+source evidence remain explicit assertions. A shared private calculator preserves the existing
+customer calculation and error behavior while applying supplier counterpart selection. Exact
+line discounts/charges, nullable tax, quantity/price comparisons and source-total differences
+are retained without rounding, tax inference or balancing plugs.
+
+Supplier heads and immutable revisions are separate from customer sales and issue resources.
+The complete bounded profile supports200 drafts/book,50 revisions/draft and50 lines/revision,
+with64KiB input and128KiB revision limits. It creates no invoice number, acceptance, ledger/open
+item, source-capacity claim, VAT fact, delivery or payment instruction. Recognition elsewhere is
+explicitly not assessed. See [supplier drafts](../../apps/api/SUPPLIER-INVOICE-DRAFTS.md).
+
+Shared API/MCP composition is integrated. Backend/contracts/jurisdiction and web type checks
+pass; targeted lint reports zero warnings/errors. SQL compilation/application, runtime and
+financial correctness remain unverified; no UI or test changes were added.
