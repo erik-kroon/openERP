@@ -47,12 +47,6 @@
     "dependenciesCurrent": false,
     "application": null
   },
-  "futureClockUiOnly": {
-    "planId": "allocation_7961c8766afe43889767d72012f4d955",
-    "approvalExpiresAt": "2026-09-24T16:15:30.194186Z",
-    "clockOffsetMs": 7200000,
-    "backendExpiryNotVerified": true
-  },
   "paymentHistoryTotal": 30,
   "screenshotsSha256": {
     "sales1-issued.png": "ef9ed21e97594ff93310a1d06379153d1c8bfa2e779f74494fa64a94dce8515e",
@@ -64,6 +58,33 @@
     "sales1-storage-corrupt-recovery.png": "0ddd18965f3e579576f194cfead1bd7038d3cd1dcf5248766e63fb82c9b9eeac",
     "sales1-payment-mobile-320.png": "324fae79f14a5140f0c0420e112d748d1ee930390b96805a265d67b639036a69",
     "sales1-clock-expired-ui.png": "3dbb97a8d4c94bd64dc835864d75c21c461380e696366e8dcc416a767419e9b7",
-    "sales1-dual-tab-conflict.png": "9dab082a03844c72ee9a24398cd2efeaa83594e389c143cbc05b6012bc83d7e8"
+    "sales1-dual-tab-conflict.png": "9dab082a03844c72ee9a24398cd2efeaa83594e389c143cbc05b6012bc83d7e8",
+    "sales1-real-expired-ui.png": "8080d4b4f1707c0c480a11c29cdc02239ba80246942c9e583c6cea75cb3fbfd3",
+    "sales1-real-expiry-reapproved.png": "fd7900bbd59979999383c86f57c31979308bae3299985935a8f0e05dd2286b7a"
+  },
+  "realTimeApprovalExpiry": {
+    "planId": "allocation_488227d2832744f99410777bc0f765bb",
+    "expiredApprovalId": "allocation_approval_1de1cf57a0834a53a2a02ea278e298da",
+    "expiredAt": "2026-09-24T16:31:21.001021Z",
+    "checkedAt": "2026-09-24T16:31:23.546Z",
+    "dependenciesCurrent": true,
+    "applyWithIdempotencyKey": {
+      "httpStatus": 403,
+      "code": "ApprovalRequired"
+    },
+    "browserExpiredVisible": true,
+    "browserConfirmCount": 0,
+    "reapprovedApprovalId": "allocation_approval_ed967f0c0b9744d097624aad3b29dd6a",
+    "browserConfirmAfterReapprovalCount": 1,
+    "expiredApprovalAfterReapproval": {
+      "httpStatus": 403,
+      "code": "ApprovalRequired"
+    },
+    "applicationAfter": null
+  },
+  "simulatedClockUiOnly": {
+    "planId": "allocation_7961c8766afe43889767d72012f4d955",
+    "approvalExpiresAt": "2026-09-24T16:15:30.194186Z",
+    "clockOffsetMs": 7200000
   }
 }
