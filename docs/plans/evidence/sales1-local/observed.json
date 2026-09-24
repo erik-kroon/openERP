@@ -1,0 +1,69 @@
+{
+  "scope": {
+    "entityId": "entity_sales1_demo",
+    "bookId": "book_sales1_demo",
+    "synthetic": true
+  },
+  "primaryInvoice": {
+    "id": "invoice_d0e78f648a75414ebfe4e061e729f9fc",
+    "documentNumber": "SYN-1",
+    "amountMinor": "95000",
+    "recordedAllocatedMinor": "2700",
+    "outstandingMinor": "92300",
+    "status": "partially_allocated"
+  },
+  "secondInvoice": {
+    "id": "invoice_6dee2fde138b49998cde5deffc1c5e01",
+    "documentNumber": "SYN-2",
+    "amountMinor": "60000",
+    "recordedAllocatedMinor": "0",
+    "outstandingMinor": "60000",
+    "status": "open"
+  },
+  "sharedPayment": {
+    "voucherId": "voucher_241ebe365ae84251a92c6512e6242146",
+    "availableAfterUndoMinor": "500"
+  },
+  "splitMatch": {
+    "planId": "allocation_8a6e990ff13440a0995edebfe01ac42c",
+    "receiptId": "allocation_receipt_2ecf3bda20314b4cac237208795e121a",
+    "legs": [
+      {
+        "invoiceId": "invoice_d0e78f648a75414ebfe4e061e729f9fc",
+        "amountMinor": "200"
+      },
+      {
+        "invoiceId": "invoice_6dee2fde138b49998cde5deffc1c5e01",
+        "amountMinor": "300"
+      }
+    ],
+    "undoReviewId": "unallocation_367b174a00ee467890bbc6a36edb2e71",
+    "undoExecutedAt": "2026-09-24T15:24:17.626070Z",
+    "ledgerChanged": false,
+    "paymentInitiated": false
+  },
+  "staleApprovedMatch": {
+    "planId": "allocation_9d5474ba5d8448739cb8626249a2a3ea",
+    "dependenciesCurrent": false,
+    "application": null
+  },
+  "futureClockUiOnly": {
+    "planId": "allocation_7961c8766afe43889767d72012f4d955",
+    "approvalExpiresAt": "2026-09-24T16:15:30.194186Z",
+    "clockOffsetMs": 7200000,
+    "backendExpiryNotVerified": true
+  },
+  "paymentHistoryTotal": 30,
+  "screenshotsSha256": {
+    "sales1-issued.png": "ef9ed21e97594ff93310a1d06379153d1c8bfa2e779f74494fa64a94dce8515e",
+    "sales1-payment-out-of-range.png": "2b923cc043644251a3d3c23a7cda33c2bb7eb49434bd487fa2f637f92ec69f85",
+    "sales1-history-page-two.png": "ab0cc61cc2d87f3fa0ae6f19bf83c51c45ab6f4040bc574d796c2437ee4a507a",
+    "sales1-stale-approved-match.png": "45e0a77f6251cb04e376a27eb3a4ff9bca37bda0c93de819f38290d8c3a17a4e",
+    "sales1-split-undo-review.png": "a52cef673d0f8b391bd1a81337b2241cc3f68bca54a0287e42f1d3baeeecc52d",
+    "sales1-split-undo-done.png": "5327c4aef6776f5541e6082c45f916fe8a8e1144d15327df1b911823394e1f17",
+    "sales1-storage-corrupt-recovery.png": "0ddd18965f3e579576f194cfead1bd7038d3cd1dcf5248766e63fb82c9b9eeac",
+    "sales1-payment-mobile-320.png": "324fae79f14a5140f0c0420e112d748d1ee930390b96805a265d67b639036a69",
+    "sales1-clock-expired-ui.png": "3dbb97a8d4c94bd64dc835864d75c21c461380e696366e8dcc416a767419e9b7",
+    "sales1-dual-tab-conflict.png": "9dab082a03844c72ee9a24398cd2efeaa83594e389c143cbc05b6012bc83d7e8"
+  }
+}
