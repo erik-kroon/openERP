@@ -1,0 +1,403 @@
+{
+  "revision": "f7a85df494efae15e5c08f059d9716c80df1f13b",
+  "observedDate": "2026-09-24",
+  "surface": "local Wrangler Worker HTTP + disposable PostgreSQL 17 restricted openerp_app role",
+  "failureModes": [
+    "A token scoped to book A reads book B when URL or supplied body book is B.",
+    "A same idempotency key replays or binds a book-B result rather than book-A result.",
+    "An issue/policy/PDF/delivery identifier or digest from B resolves under book A without a book predicate.",
+    "A supplier candidate, eligibility, export, or recovery reference from B is read or mutated by book A.",
+    "A company setup candidate, review, activation, or derived profile uses a B ID under book A.",
+    "A bank connector credential/page/cursor/statement identifier from B is visible, ingestible or acknowledged with book A token.",
+    "Cross-tenant reads pass via an unscoped nested ID despite a scoped top-level route.",
+    "A mutation commits a foreign-book side effect even if transport returns an error."
+  ],
+  "observations": [
+    {
+      "probe": "a create consent",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "b create consent",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A reads B consent in A book",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A reads B book with valid A token",
+      "http": 403,
+      "code": "Forbidden"
+    },
+    {
+      "probe": "A revokes B consent in A book",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A ingests into B consent in A book",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A reads B batch surrogate",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A B-book consent replay key",
+      "http": 409,
+      "code": "StaleDependency"
+    },
+    {
+      "probe": "A B-book batch key recovery",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "B creates batch uncertain",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A reads B batch id",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A recovers B batch key",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "B recovers own batch key",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "a save company same key",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "a replay own company key",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "b save company same key",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "b replay own company key",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A get B company",
+      "http": 403,
+      "code": "Forbidden"
+    },
+    {
+      "probe": "A save B company",
+      "http": 403,
+      "code": "Forbidden"
+    },
+    {
+      "probe": "a setup unchanged",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "b setup unchanged",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A create company",
+      "http": 403,
+      "code": "Forbidden"
+    },
+    {
+      "probe": "a supplier eligibility empty",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "b supplier eligibility empty",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "B reads fixture preview",
+      "http": 500,
+      "code": "InternalError"
+    },
+    {
+      "probe": "A reads B preview id",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A exports B preview id",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A B-book reads preview",
+      "http": 403,
+      "code": "Forbidden"
+    },
+    {
+      "probe": "b reads valid-shape B preview",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "a reads valid-shape B preview",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "b legal policy B id",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "a legal policy B id",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "a legal policy history",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "b legal policy history",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "B reads actual legal issue",
+      "http": 404,
+      "code": null
+    },
+    {
+      "probe": "A reads B legal issue",
+      "http": 404,
+      "code": null
+    },
+    {
+      "probe": "A captures B issue",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A reads B issue PDF history",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "B reads own issue PDF history",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "B renders actual legal PDF",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A gets B PDF id",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A resumes B PDF id",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A gets B PDF delivery history",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A prepares B PDF delivery",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "B gets B PDF id",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "B prepares local delivery intent (no send)",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A gets B delivery request",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A approves B delivery",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A gets B PDF delivery history after B intent",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "B gets B delivery request",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A own issue wrong B digest",
+      "http": 409,
+      "code": "StaleDependency"
+    },
+    {
+      "probe": "A own issue same B key",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "B own PDF replay",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A own PDF replay",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A own PDF wrong B sha",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A own delivery with B key",
+      "http": 409,
+      "code": "IdempotencyConflict"
+    },
+    {
+      "probe": "B own delivery replay",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A own delivery replay",
+      "http": 409,
+      "code": "IdempotencyConflict"
+    },
+    {
+      "probe": "A prepares own delivery distinct key",
+      "http": 409,
+      "code": "IdempotencyConflict"
+    },
+    {
+      "probe": "a same bank key distinct scoped consent",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "b same bank key distinct scoped consent",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A own PDF foreign B capture digest",
+      "http": 409,
+      "code": "StaleDependency"
+    },
+    {
+      "probe": "A own delivery with B key distinct destination",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A own delivery replay",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "B own delivery replay again",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "B actual legal issue",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A actual B issue id",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "A B book issue URL",
+      "http": 403,
+      "code": "Forbidden"
+    },
+    {
+      "probe": "B independent reviewer approves handoff locally",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A starts B attempt",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "B starts local unknown attempt",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A reconciles B attempt",
+      "http": 404,
+      "code": "NotFound"
+    },
+    {
+      "probe": "B delivery state after A denied",
+      "http": 200,
+      "code": null
+    },
+    {
+      "probe": "A delivery state own",
+      "http": 200,
+      "code": null
+    }
+  ],
+  "finalBCounts": {
+    "ar_legal_issues": 1,
+    "ar_legal_pdf_captures": 1,
+    "ar_legal_pdf_artifacts": 1,
+    "ar_legal_delivery_requests": 1,
+    "ar_legal_delivery_approvals": 1,
+    "ar_legal_delivery_attempts": 1,
+    "bank_connector_consents": 2,
+    "bank_connector_batches": 1,
+    "supplier_payment_batch_previews": 2,
+    "supplier_payment_batch_exports": 0,
+    "company_setups": 1
+  },
+  "pdfSha256SameAcrossBooks": true,
+  "pdfCaptureDigestsDifferent": true,
+  "noProviderTraffic": true
+}
