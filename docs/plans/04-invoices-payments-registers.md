@@ -21,6 +21,8 @@ The scope includes customers/suppliers, evidence-backed sales/supplier invoices,
 | Allocation             | Payment/credit/open-item leg, exact amount in relevant currencies, conversion basis, ordinal, source/destination capacities and reversal link.                                                                                      |
 | Register control       | Immutable snapshot of open items, recognition/allocation effects, GL cutoff and reconciliation differences.                                                                                                                         |
 
+Article catalog defaults are book-scoped and revisioned. An article code names a stable record; each edit creates an immutable revision with description, unit, minor-unit price and tax description. A sales draft selects a revision and copies its defaults into the draft line; later catalog changes must not change that snapshot or an issued invoice. A missing price or tax description is explicit, not a zero-tax assertion. Webshop order intake is outside this slice and remains open.
+
 Supplier invoice-number duplicate detection is scoped to the identified supplier and entity with source context. It can flag ambiguity; it must not destroy distinct legitimate documents or merge different suppliers. Once issued/accepted, economic document content is immutable; revisions of a draft are editable until sealed, then supersede rather than mutate a reviewed revision.
 
 ## Calculation and recognition

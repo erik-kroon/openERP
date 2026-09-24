@@ -118,7 +118,7 @@ Each row preserves the requested scope and names its requirement owner. A link m
 
 | ID | Required scope | Plan owner |
 | --- | --- | --- |
-| AGT-1 | MCP/API coverage: Operation parity, authentication, authorization, and recovery. | [Owner](../operations.md) |
+| AGT-1 | MCP/API coverage: Operation parity, authentication, authorization, and recovery. | [Owner](../operations.md); [source inventory](agt01-api-mcp-parity.md) |
 | AGT-2 | AI assistance and document extraction: OCR, classification, suggestions, and mandatory human review. | [Owner](../operations.md) |
 | INT-1 | External delivery: Peppol/e-invoicing, email, payment, signing, and filing integrations with outcome recovery. | [Owner](07-restore-operations-cutover.md) |
 | INT-2 | Extension framework: Extension contracts, permissions, configuration, and lifecycle. | [Owner](capability-backlog.md#extensions) |
