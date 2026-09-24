@@ -46,3 +46,11 @@ Owned isolated PostgreSQL: `/tmp/openerp-company-setup.3fGsrr/pgdata`, port 5632
 - Browser confirmed history route renders upload limits, retained-file section and return link. Navigation initially timed out but same live tab subsequently rendered successfully; no process restarted. Upload/preview execution still needs actual browser proof.
 - Remaining intake: durable preview inventory (current URL preserves selected preview, but source inventory does not recover prior SIE previews), mapping/controls/plan/run/financial integration, opening/open-item workflow. Do not call this full migration support.
 - Next action: implement authenticated SIE preview inventory for a retained occurrence, then use it in the source screen so reload/recovery does not create unnecessary new previews. Existing SQL limits each occurrence to 50 immutable previews.
+
+## Saved inspection recovery (2026-09-24)
+
+- Added complete bounded SIE preview inventory through migration 8200, Drizzle statement, shared contract and authenticated GET endpoint. History UI lists saved inspections and opens their persistent URLs; capture refreshes the inventory and caches its exact response.
+- Contract, API and web type checks all passed on the current worktree. Targeted lint passed. Earlier legal-union errors are no longer present in the latest type-check run.
+- Prior scratch database directory no longer exists. Created fresh isolated PostgreSQL at `/tmp/openerp-sie-inventory.VF9ZG4/pgdata`, port 56339, and applied every migration successfully. Database runtime proof: entry function execute allowed, direct preview table select denied, invalid token rejected as Unauthorized. Evidence logs in that scratch directory. This is not full authenticated inventory or browser upload proof.
+- Full goal still open: historical mapping/run integration, opening/open-items, real profile seeding/admission, banking connector UI and operation-scoped readiness.
+- The new disposable PostgreSQL process was stopped cleanly after verification; its data directory remains for restart. No local review server is claimed live now.
