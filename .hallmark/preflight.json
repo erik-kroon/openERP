@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-24",
+  "framework": "React 19, TanStack Start",
+  "styling": "StyleX and packages/ui tokens",
+  "fonts": "Inter, Georgia for record headings, SFMono-Regular/Menlo",
+  "palette": "existing light/dark theme with blue accent",
+  "motion": "existing UI transitions; no added motion library",
+  "scope": "company setup journey",
+  "audience": "founders and accountants",
+  "useCase": "create a company and continue setup",
+  "tone": "calm, utilitarian",
+  "sources": [
+    "packages/ui/src/styles/globals.css",
+    "packages/ui/src/theme/tokens.stylex.ts",
+    "apps/web/package.json"
+  ]
+}
