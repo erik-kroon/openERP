@@ -175,3 +175,11 @@ explicitly not assessed. See [supplier drafts](../../apps/api/SUPPLIER-INVOICE-D
 Shared API/MCP composition is integrated. Backend/contracts/jurisdiction and web type checks
 pass; targeted lint reports zero warnings/errors. SQL compilation/application, runtime and
 financial correctness remain unverified; no UI or test changes were added.
+
+## Wave 2 bounded commerce source integration
+
+The [supplier acceptance/payment/credit handoff](../../apps/api/SUPPLIER-ACCEPTANCE-PAYMENTS.md) records synthetic AP-1, unpaid-residual zero-tax AP-2 and offline PAY-1 source slices. Supplier draft saves never book. Acceptance posts through the kernel; credit effects retain original invoices and applied payment legs. A pain.001 export is not bank acceptance or invoice payment. Eligible/excluded whole-register discovery, VAT-bearing credits, paid-principal refunds, verified bank schemes and provider outcomes remain unsupported.
+
+The [customer policy/PDF/delivery handoff](../../apps/api/INVOICE-PDF.md) records an unactivated AR-1 candidate/review, synthetic historical PDF bytes and local-only AR-2 delivery simulation. SYN history remains synthetic. There is no real-company invoice issuance, statutory credit policy, external email/Peppol attempt or provider recovery. D-04/D-08/D-10 still gate those outcomes.
+
+Shared REST/MCP read wiring and static type/lint checks passed for the combined current tree. The [isolated migration smoke](evidence/wave2-local-migration-smoke.md) applied/replayed SQL definitions, but did not exercise accounting behavior, concurrent capacity, rendered browser paths, XML/PDF compatibility or delivery. These packets do not close COM-02–05 acceptance.

@@ -186,3 +186,9 @@ private object locator, request payload or current-availability claim is returne
 independent source review found no blocker; native type checks and targeted lint passed.
 SQL application/execution and response-loss recovery remain runtime-unverified. See
 [source intake](../../apps/api/SOURCE-INTAKE.md).
+
+## Wave 2 bounded source breadth
+
+The [bank connector handoff](../../apps/api/BANK-CONNECTOR.md) retains operator-delivered raw records, attested consent/account mapping, cursor/revision overlap and retry identities behind source intake; existing file import remains usable. It cannot fetch from a live provider or prove provider consent while D-10 remains open.
+
+The [SIE historical source handoff](../../apps/api/SIE-HISTORICAL-IMPORT.md) retains bounded SIE4 parsing, encoding/record diagnostics, reviewed account and independent-control plans, and resumable fenced synthetic staging. Staging is not financial import. Actual source selection (D-06), OpeningSet authority and prior-history versus opening basis, and historical open-item recognition/settlement contracts are missing. No financial opening, prior payment/match or corrected voucher is created. The [isolated migration smoke](evidence/wave2-local-migration-smoke.md) proves schema application/replay only, not IMP-02/03/06 behavior or reconciliation.
