@@ -30,7 +30,7 @@ If a mapping changes after filing, identify affected snapshots by mapping/fact l
 
 The VAT-01 expense foundation is implemented in forward migration0710, the `expense-tax` contract/API module and a domain-local review UI. It retains separate immutable source observations and operator review facts, exact source/review discrepancies, and immutable contribution/exclusion snapshots. Every actual-company contribution remains excluded: no production legal profile, effective interval or rounding policy is activated. Only the explicit `synthetic-expense-tax` version1 profile may demonstrate caller-supplied rational rates and deduction fractions with exact-division refusal.
 
-Snapshots include all bounded retained components, including unknown, stale, foreign, unsupported and outside-interval exclusions. They are accountant review artifacts, not VAT returns, ledger-control reconciliations or source-completeness certificates. See [implementation and integration boundaries](../../apps/api/EXPENSE-TAX.md) and the [pre-implementation risk/acceptance record](../../apps/api/EXPENSE-TAX-RISKS.md). Shared composition and native/runtime validation remain root-owned; source presence does not complete VAT-01's legal or proof gates. Existing asset schedules are unchanged.
+Snapshots include all bounded retained components, including unknown, stale, foreign, unsupported and outside-interval exclusions. They are accountant review artifacts, not VAT returns, ledger-control reconciliations or source-completeness certificates. See [implementation and integration boundaries](../../apps/api/docs/EXPENSE-TAX.md) and the [pre-implementation risk/acceptance record](../../apps/api/docs/EXPENSE-TAX-RISKS.md). Shared composition and native/runtime validation remain root-owned; source presence does not complete VAT-01's legal or proof gates. Existing asset schedules are unchanged.
 
 ## Payroll and declarations
 
@@ -64,7 +64,7 @@ Post an installment and its schedule/register link in one transaction. Disposal 
 
 ### Bounded carrying basis and declared-account controls (implemented source)
 
-[Subledger controls](../../apps/api/SUBLEDGER-CONTROLS.md) adds forward1500: immutable acquisition/imported carrying bases linked to existing posted lines, and exact declared-account GL snapshots. Gross cost, prior accumulated recognition and remaining carrying amount are retained separately. Missing/reversed bases, occurrence gaps, all ledger contributions and offsetting unexplained rows remain visible. A clean selected-account difference is not complete source coverage or legal depreciation approval.
+[Subledger controls](../../apps/api/docs/SUBLEDGER-CONTROLS.md) adds forward1500: immutable acquisition/imported carrying bases linked to existing posted lines, and exact declared-account GL snapshots. Gross cost, prior accumulated recognition and remaining carrying amount are retained separately. Missing/reversed bases, occurrence gaps, all ledger contributions and offsetting unexplained rows remain visible. A clean selected-account difference is not complete source coverage or legal depreciation approval.
 
 Forward1510 binds the whole control dependency into closing and accountant-review-v3 artifacts. Missing bases and unavailable complete controls remain mandatory blockers; new bases or report inventories stale earlier approval scopes without rewriting their bytes. API/MCP/routed UI composition is connected in source. Both migrations remain unapplied and runtime-unverified. Forward1800 now captures linked basis authority on native preparations and checks it during shared validation and physical posting. Known generic occurrence and correction-lineage replacements cannot borrow that authority; genuine full reversals remain separate. Existing standalone synthetic schedules keep their interpretation. This source integration and its routed schedule UI remain runtime-unverified.
 
@@ -80,7 +80,7 @@ The FX review UI shows source amount/currency, carrying amount, selected rate/so
 
 ### Manual exchange-rate review subset (implemented source; runtime unverified)
 
-[Manual exchange-rate reviews](../../apps/api/EXCHANGE-RATE-REVIEWS.md) adds forward1900:
+[Manual exchange-rate reviews](../../apps/api/docs/EXCHANGE-RATE-REVIEWS.md) adds forward1900:
 operator-reviewed directional rational rates, immutable evidence-backed revisions and exact
 nonnegative conversion review artifacts. New capture requires the exact current revision and
 matching effective date. Source scale is explicit; book scale comes from metadata. The named
@@ -130,7 +130,7 @@ Payroll, assets and VAT can progress independently after their foundations; none
   estimates as described below. Forward6100 extends that command with explicit future
   installment-count changes; forward4200 adds a separate no-proceeds disposal profile.
   Impairment and legal lifetime/method policy remain separate work. See
-  [the date-amendment boundary](../../apps/api/SUBLEDGER-SCHEDULE-AMENDMENTS.md).
+  [the date-amendment boundary](../../apps/api/docs/SUBLEDGER-SCHEDULE-AMENDMENTS.md).
 - **VAT-04 subset:** forward `3300-vat-draft-amendments.sql` compares exact later
   same-period synthetic drafts and retains an evidenced operator review of their
   relationship. It preserves fact revisions, assessment/exclusion lineage and exact
@@ -138,7 +138,7 @@ Payroll, assets and VAT can progress independently after their foundations; none
   the exact impact digest and current replacement basis. Successful exact-key replay
   and historical reads preserve both original drafts and the saved review. This is an
   internal amendment, never a filed return or new tax calculation. See
-  [VAT amendments](../../apps/api/VAT-AMENDMENTS.md).
+  [VAT amendments](../../apps/api/docs/VAT-AMENDMENTS.md).
 
 Both slices are connected to their existing API groups. Authorized read/compare
 operations remain available through shared MCP capabilities; human amendment review
@@ -153,7 +153,7 @@ withdrawn observation, while active corrected facts can reuse its source/line cl
 Sealing refuses an included withdrawn fact. Saved v1/v2 drafts and amendment comparisons
 remain readable without recalculation. Existing closing/review dependency digests stale
 through the changed VAT basis; no legal or filing readiness is gained. See
-[withdrawal boundaries](../../apps/api/VAT-FACT-WITHDRAWALS.md). This migration also remains
+[withdrawal boundaries](../../apps/api/docs/VAT-FACT-WITHDRAWALS.md). This migration also remains
 unapplied and runtime-unverified.
 
 ### Tax-account statement controls and closing dependency
@@ -162,13 +162,13 @@ Forward3800 retains operator-reviewed synthetic tax-account statements and stabl
 identities with exact signed opening/movement/closing conservation. Saved control artifacts
 include complete selected-account ledger history and expose gaps, overlaps, unknown
 classifications and unmatched rows. They do not recognize taxable activity or claim complete
-reconciliation. [Tax-account scope](../../apps/api/TAX-ACCOUNT.md) records the actual bounds.
+reconciliation. [Tax-account scope](../../apps/api/docs/TAX-ACCOUNT.md) records the actual bounds.
 
 Forward3950 includes statement/control inventories in the existing VAT dependency owner,
 without changing VAT fact/draft count meanings. Known tax-account records block an
 inapplicable tax-family claim and stale closing/accountant dependencies. Zero differences
 cannot satisfy unavailable tax coverage. Historical artifacts stay readable. See
-[closing integration](../../apps/api/TAX-ACCOUNT-CLOSING-DEPENDENCIES.md).
+[closing integration](../../apps/api/docs/TAX-ACCOUNT-CLOSING-DEPENDENCIES.md).
 
 ### Explicit remaining-basis schedule estimates
 
@@ -183,7 +183,7 @@ kernel and physical guards. Later reversals block further recognition until revi
 normal installment posting preserves peer captures.4000 itself does not change count or
 add disposal. The narrower additional6100 count-change and4200 disposal profiles are described
 below. Zero-value cessation and real legal depreciation policy remain unsupported. See
-[estimate boundary](../../apps/api/SUBLEDGER-ESTIMATE-AMENDMENTS.md).
+[estimate boundary](../../apps/api/docs/SUBLEDGER-ESTIMATE-AMENDMENTS.md).
 
 These migrations remain unapplied and runtime-unverified. Source review is not proof of
 SQL compilation, concurrent execution, financial outcomes or actual-company readiness.
@@ -202,7 +202,7 @@ items plus complete source/GL controls. V1 bytes stay unchanged. Match history a
 state participate in control/closing/accountant currentness through the connected tax-account
 dependency owner. This does not create payments, taxable facts or journals; aggregate or
 item agreement still does not establish full source coverage or financial-close readiness.
-See [matching scope](../../apps/api/TAX-ACCOUNT-MATCHING.md). Migration4100 remains unapplied
+See [matching scope](../../apps/api/docs/TAX-ACCOUNT-MATCHING.md). Migration4100 remains unapplied
 and runtime-unverified.
 
 ### Synthetic no-proceeds disposal
@@ -218,7 +218,7 @@ commit together; generic execution or known correction lineage cannot bypass the
 Disposed schedules preserve history, refuse future recognition/amendment, and participate
 in actual control and closing dependencies. Full disposal correction, nonzero proceeds
 and real legal/tax treatment remain unsupported. See
-[disposal boundaries](../../apps/api/SUBLEDGER-DISPOSALS.md). This financial source path
+[disposal boundaries](../../apps/api/docs/SUBLEDGER-DISPOSALS.md). This financial source path
 has not been executed or accepted through runtime/concurrency proof.
 
 ### Expense-source withdrawal and linked VAT exclusion
@@ -230,7 +230,7 @@ line identities or release accounting capacity. The current expense basis carrie
 withdrawal identity; retained source counts remain truthful and active review counts are
 separate. Linked VAT observations also expose withdrawal, refuse new revision admission
 and are excluded by the new v3 calculator. Saved v1/v2/v3 drafts remain readable and
-comparable. See [withdrawal boundaries](../../apps/api/EXPENSE-TAX-WITHDRAWALS.md).
+comparable. See [withdrawal boundaries](../../apps/api/docs/EXPENSE-TAX-WITHDRAWALS.md).
 4500 is source-integrated. Independent review found a missing SQL sealer exclusion;
 the owner fixed it and a fresh-source recheck confirmed that withdrawn expense links
 require exclusion, null contribution and the explicit blocker. No remaining blocker was
@@ -243,7 +243,7 @@ consumer for conversion reviews. Existing invoice/allocation capacity represents
 book-currency amount, not paired foreign obligation and book carrying amounts. FX-02/03
 therefore remains deferred pending the explicit monetary-item/capacity and effect-policy
 choices recorded in [open decisions](../open-decisions.md#foreign-currency-financial-ownership-remains-open).
-The [financial FX feasibility review](../../apps/api/FX-FINANCIAL-FEASIBILITY.md)
+The [financial FX feasibility review](../../apps/api/docs/FX-FINANCIAL-FEASIBILITY.md)
 records exact source owners and the missing decisions. This is not a new FX architecture
 decision and does not change existing commerce meaning. No speculative financial register,
 settlement posting or valuation artifact was added.
@@ -255,7 +255,7 @@ that exact fact identity. Included and excluded captured assessments, revision/d
 engine/interval and retained amendment changes stay version-specific; the reader does not
 recalculate them or infer a legal amendment obligation. Complete500-draft/500-amendment
 inventories and an8MiB whole-response bound refuse rather than truncate. Existing fact
-history/withdrawal fields remain. See [VAT fact lineage](../../apps/api/VAT-FACT-LINEAGE.md).
+history/withdrawal fields remain. See [VAT fact lineage](../../apps/api/docs/VAT-FACT-LINEAGE.md).
 The source is integrated. Independent source review found no actionable blocker in exact
 membership, saved-version compatibility, disclosure and complete-read bounds. Backend and
 web type checks passed. Runtime proof remains open.
@@ -268,7 +268,7 @@ have a continuation. The cursor binds scope, source and captured ceiling; scan p
 explicit. Saved v1/v2 assessments/revision/review/withdrawal identities are copied without
 live recalculation. Previously absent withdrawal metadata stays absent. Unfiltered requests
 keep0710 summaries and cursors. See
-[expense snapshot membership](../../apps/api/EXPENSE-SNAPSHOT-MEMBERSHIP.md).
+[expense snapshot membership](../../apps/api/docs/EXPENSE-SNAPSHOT-MEMBERSHIP.md).
 Source is integrated and backend type checks pass. Independent source review found no
 actionable blocker in sparse paging, cursor isolation or historical assessment semantics.
 Runtime proof remains open.
@@ -282,8 +282,8 @@ factual links outside immutable bodies, not a conflict finding, role classificat
 new capacity rule. Private matching/eligibility, posting-basis, control/dependency and
 correction owners remain unchanged. Tax matching keeps its original active/usable values;
 its new detail schema is limited to the public getter so saved control/list decoding stays
-unchanged. See [schedule references](../../apps/api/SUBLEDGER-TAX-MATCH-REFERENCES.md)
-and [tax-match disclosure](../../apps/api/TAX-ACCOUNT-SUBLEDGER-DISCLOSURE.md).
+unchanged. See [schedule references](../../apps/api/docs/SUBLEDGER-TAX-MATCH-REFERENCES.md)
+and [tax-match disclosure](../../apps/api/docs/TAX-ACCOUNT-SUBLEDGER-DISCLOSURE.md).
 No universal account-role exclusivity policy was selected. Both source paths are
 integrated; source/static review is separate from unperformed runtime verification.
 
@@ -307,11 +307,11 @@ Root and two independent source reviews found no blocker. Backend/scripts/contra
 jurisdiction and web type checks passed; targeted contract lint reported zero warnings/errors.
 No tests, SQL compilation/application, runtime, concurrency or actual-company validation were
 performed. Fully posted reopening, zero cessation, impairment, proceeds and automatic/legal
-lifetime policy remain unsupported. See the [complete contract and handoff](../../apps/api/SUBLEDGER-ESTIMATE-AMENDMENTS.md).
+lifetime policy remain unsupported. See the [complete contract and handoff](../../apps/api/docs/SUBLEDGER-ESTIMATE-AMENDMENTS.md).
 
 ### Interim impairment remains a contract decision
 
-The [impairment feasibility review](../../apps/api/SUBLEDGER-IMPAIRMENT-FEASIBILITY.md)
+The [impairment feasibility review](../../apps/api/docs/SUBLEDGER-IMPAIRMENT-FEASIBILITY.md)
 identifies an actual posting/control gap, but existing recognition and terminal disposal
 roles do not select an interim impairment credit role. Credit/loss account eligibility,
 atomic future reallocation versus an explicit recognition block, and correction/repetition
@@ -336,7 +336,7 @@ coverage or financial-close readiness is inferred.
 
 The one-shot inventory is bounded at1000/book. Backend/web type checks and targeted lint passed;
 SQL compilation/application and runtime behavior remain unverified. See
-[classification resolution](../../apps/api/TAX-ACCOUNT-CLASSIFICATION.md).
+[classification resolution](../../apps/api/docs/TAX-ACCOUNT-CLASSIFICATION.md).
 
 Forward6800 adds a live unresolved-event worklist for the classification command. A scoped
 REST GET and read-only MCP capability scan50 retained event identities before filtering their

@@ -48,7 +48,7 @@ Source review found and corrected an invoice aggregate escape through a differen
 
 Asset controls link existing posted lines; they do not create acquisitions or authorize future schedule posting. Original cost, accumulated recognition and carrying value are conserved separately. Every declared-account GL contribution and unexplained row remains visible, including offsetting differences. Missing/reversed bases and due occurrence gaps remain explicit. Whole-source coverage and financial-close readiness remain false. Forward1510 preserves the latest VAT dependencies and active-bank hooks while making new bases or report inventories stale older closing/review scopes. Historical bytes are not rewritten.
 
-Implementation notes: [bank unmatch](../../apps/api/BANK-MATCH-REVERSALS.md), [synthetic invoice issue](../../apps/api/INVOICE-ISSUANCE.md), and [subledger controls](../../apps/api/SUBLEDGER-CONTROLS.md). The source handoff is retained in `.agents/work/domain-implementation-2026-09-23/`. No tests, lint/type/build commands, browser sessions, database execution or migration application were performed for this wave. All new behavior remains runtime-unverified; legal profiles, external delivery and complete accounting readiness remain open.
+Implementation notes: [bank unmatch](../../apps/api/docs/BANK-MATCH-REVERSALS.md), [synthetic invoice issue](../../apps/api/docs/INVOICE-ISSUANCE.md), and [subledger controls](../../apps/api/docs/SUBLEDGER-CONTROLS.md). The source handoff is retained in `.agents/work/domain-implementation-2026-09-23/`. No tests, lint/type/build commands, browser sessions, database execution or migration application were performed for this wave. All new behavior remains runtime-unverified; legal profiles, external delivery and complete accounting readiness remain open.
 
 ## Continuous implementation follow-up
 
@@ -182,7 +182,7 @@ rows/diagnostics and historical review/admission summaries. Approval bearer iden
 and command material are deliberately absent from review/admission summaries. Reads
 return retained bytes, not a reconstruction from current state; bounded complete input
 is required. Source review found no concrete blocker. This migration is unapplied and
-runtime-unverified; see [source-review artifacts](../../apps/api/SOURCE-REVIEW-ARTIFACTS.md).
+runtime-unverified; see [source-review artifacts](../../apps/api/docs/SOURCE-REVIEW-ARTIFACTS.md).
 
 The ongoing3800 tax-account integration found a closing dependency gap: represented
 tax-account sources must block a tax-family inapplicability claim. Forward3950 is being
@@ -247,7 +247,7 @@ v2 residual consumption or bounded dependency propagation. Runtime proof remains
 
 VAT settlement4400 was deliberately not implemented: saved net VAT and existing journal
 purposes do not establish the required accounting-effect role, signed comparison or
-single-obligation identity. [The decision record](../../apps/api/VAT-SETTLEMENT-FEASIBILITY.md)
+single-obligation identity. [The decision record](../../apps/api/docs/VAT-SETTLEMENT-FEASIBILITY.md)
 identifies those missing semantics without treating an equal amount or tax-account payment
 as settlement evidence. No4400 migration or settlement endpoint exists. Work continues on
 expense-source withdrawal4500 and saved-report comparison4600 instead of inventing this policy.
@@ -439,7 +439,7 @@ complete old/new suffix validation and exact conservation in the physical revisi
 Preparation state follows pinned evidence/ordinal/key identity; ordinal attempt counters still
 span every generation. Existing posting/dependency guards and all-history retired-key fences
 remain unchanged. No automatic/legal lifetime, zero cessation or fully posted reopening was
-added. See [the estimate handoff](../../apps/api/SUBLEDGER-ESTIMATE-AMENDMENTS.md).
+added. See [the estimate handoff](../../apps/api/docs/SUBLEDGER-ESTIMATE-AMENDMENTS.md).
 
 Root and both independent6100 source reviews found no concrete blocker. API/scripts,
 contracts, Swedish-jurisdiction and direct web type checks passed; targeted subledger-contract

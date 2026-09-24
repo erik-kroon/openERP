@@ -23,7 +23,7 @@ When closing a decision, record the chosen behavior, rejected alternative, evide
 
 ## VAT settlement effect contract remains open
 
-The [settlement feasibility review](../apps/api/VAT-SETTLEMENT-FEASIBILITY.md) found a
+The [settlement feasibility review](../apps/api/docs/VAT-SETTLEMENT-FEASIBILITY.md) found a
 contract gap before implementing the planned return-to-settlement link. D-03/D-08 work
 must explicitly choose the synthetic accounting-effect role, its signed mapping from
 saved `box49.exactMinor`, required account-role evidence and a single reviewed obligation
@@ -34,7 +34,7 @@ independent backend work continue without inventing these facts or activating a 
 
 ## Foreign-currency financial ownership remains open
 
-The [financial FX feasibility review](../apps/api/FX-FINANCIAL-FEASIBILITY.md) confirms
+The [financial FX feasibility review](../apps/api/docs/FX-FINANCIAL-FEASIBILITY.md) confirms
 that FX-01 rate/conversion review does not establish FX-02/03 financial semantics. Current
 commerce invoices and allocations own a single book-currency amount; attaching a rate
 review cannot reinterpret that retained amount as a foreign-denominated obligation.
@@ -74,5 +74,5 @@ cost. Controls and disposal must consume the owned effect and its selected accou
 These are financial contract choices, not permission to infer actual-company facts or activate
 legal treatment. No impairment posting profile or migration has been selected.
 
-See the [source feasibility review](../apps/api/SUBLEDGER-IMPAIRMENT-FEASIBILITY.md) for the
+See the [source feasibility review](../apps/api/docs/SUBLEDGER-IMPAIRMENT-FEASIBILITY.md) for the
 concrete carrying-value witness, alternative credit-role equations and required consumers.

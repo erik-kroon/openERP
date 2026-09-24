@@ -98,7 +98,7 @@ IMP-06 and later cutover consume actual D-04/D-06 material. Synthetic acceptance
 
 ## Retained interpretation review artifact slice
 
-The [source review artifact handoff](../../apps/api/SOURCE-REVIEW-ARTIFACTS.md) extends IMP-01
+The [source review artifact handoff](../../apps/api/docs/SOURCE-REVIEW-ARTIFACTS.md) extends IMP-01
 with a persisted exact-byte interpretation export. It binds the selected immutable preview and
 all its rows/diagnostics to the original occurrence/content hash, plus historical review and
 admission summaries without approval bearer material. Scoped capture/get/list support recovery;
@@ -108,7 +108,7 @@ this does not establish full source coverage or import/posting authority.
 
 ## Bounded reconciliation signoff slice
 
-The [bank signoff handoff](../../apps/api/BANK-RECONCILIATION-SIGNOFFS.md) adds a prepared,
+The [bank signoff handoff](../../apps/api/docs/BANK-RECONCILIATION-SIGNOFFS.md) adds a prepared,
 operator-signed review of one declared bank account using existing source coverage and capacity
 reconciliation reports. It pins inventory/source/allocation/ledger/report digests, requires retained
 review evidence, and returns immutable signed JSON with separate stale-state reads. Unknown bank
@@ -119,7 +119,7 @@ in source; shared integration and runtime/concurrency evidence remain root gates
 
 ## Whole declared bank-inventory signoff slice
 
-The [whole-inventory signoff handoff](../../apps/api/BANK-INVENTORY-SIGNOFFS.md) extends IMP-05
+The [whole-inventory signoff handoff](../../apps/api/docs/BANK-INVENTORY-SIGNOFFS.md) extends IMP-05
 from3500 selected-account signoff to a complete explicit set of already-signed account plans for
 the latest evidenced required bank inventory and one exact period/cutoff. It rejects missing,
 extra, duplicate, stale or unsigned members and all known source-coverage gaps.4300 retains full
@@ -131,7 +131,7 @@ verification remain root gates. No existing3500, matching, ledger or closing aut
 
 ## Current bounded source-intake packet
 
-The [source-intake handoff](../../apps/api/SOURCE-INTAKE.md) implements a first IMP-01/IMP-02 path in source: immutable bytes/occurrences, explicit bounded UTF-8 CSV mapping, retained diagnostics, operator review and atomic observation admission through the existing bank authority. The first slice is limited to 64 KiB/200 data records and the current synthetic admission profile; it is not a SIE/provider migration, bulk-import engine or actual-company activation. Integration and real runtime/browser/failure observations remain root gates. The handoff contains exact operations, limits, ownership maps and the manual evidence recipe. It does not establish completed IMP-03–IMP-06 acceptance.
+The [source-intake handoff](../../apps/api/docs/SOURCE-INTAKE.md) implements a first IMP-01/IMP-02 path in source: immutable bytes/occurrences, explicit bounded UTF-8 CSV mapping, retained diagnostics, operator review and atomic observation admission through the existing bank authority. The first slice is limited to 64 KiB/200 data records and the current synthetic admission profile; it is not a SIE/provider migration, bulk-import engine or actual-company activation. Integration and real runtime/browser/failure observations remain root gates. The handoff contains exact operations, limits, ownership maps and the manual evidence recipe. It does not establish completed IMP-03–IMP-06 acceptance.
 
 Forward migration3200 and the source-intake REST/MCP contracts add explicit immutable reparse supersession for unadmitted previews. A new interpretation retains the same original bytes, links both preview digests and records a rationale; earlier diagnostics/reviews remain recoverable. Superseded previews cannot receive a fresh approval or admission. The revision-history read exposes lineage, diagnostic counts, latest own reviews and any durable admission without reading object storage. Already admitted statements and matches remain unchanged. Integration and static validation do not establish runtime or concurrency proof; the handoff records the pending observations. This does not implement admitted-source replacement, full required-source inventory or a provider connector.
 
@@ -143,7 +143,7 @@ original bytes or exposing private object descriptors/approval tokens. `original
 remains `not_checked`; an object-store outage cannot hide these committed database references.
 The existing original download retains its availability/integrity failures. No migration,
 artifact, list API or import authority was added, and the current UI remains unchanged. See
-[SOURCE-INTAKE.md](../../apps/api/SOURCE-INTAKE.md#metadata-only-occurrence-recovery-failure-contract-before-implementation).
+[SOURCE-INTAKE.md](../../apps/api/docs/SOURCE-INTAKE.md#metadata-only-occurrence-recovery-failure-contract-before-implementation).
 Source/static checks and shared integration remain distinct from pending runtime evidence.
 
 ### Bank admission respects existing tax-account reservations
@@ -156,7 +156,7 @@ Candidate discovery keeps each reserved line and its original numeric remaining 
 but marks it ineligible with `tax_account_reserved`; existing EN/SV blocker copy explains
 that restriction. Reconciliation, signoff and unmatch calculations do not lose those lines
 or their residual differences. No global role policy or capacity-version format is added.
-See [bank admission](../../apps/api/BANK-TAX-RESERVATION-ADMISSION.md).
+See [bank admission](../../apps/api/docs/BANK-TAX-RESERVATION-ADMISSION.md).
 Source is integrated; independent review and current static checks are tracked in the
 [active wave](accounting-completion-wave.md). Runtime behavior remains unverified.
 
@@ -169,7 +169,7 @@ The check uses the same exact two-way mapping rule as parsing/import, not a whol
 inventory. Unrelated mappings do not stale the preview through this predicate. Original-key
 recovery, admitted history, supersession and previously captured bytes stay unchanged.
 Independent source review found no actionable blocker; SQL/runtime behavior remains unverified.
-See [source intake](../../apps/api/SOURCE-INTAKE.md).
+See [source intake](../../apps/api/docs/SOURCE-INTAKE.md).
 
 ### Source-retention recovery by request key
 
@@ -185,10 +185,10 @@ an in-flight command failed or permission to use a new key. No approval/admissio
 private object locator, request payload or current-availability claim is returned. Root and
 independent source review found no blocker; native type checks and targeted lint passed.
 SQL application/execution and response-loss recovery remain runtime-unverified. See
-[source intake](../../apps/api/SOURCE-INTAKE.md).
+[source intake](../../apps/api/docs/SOURCE-INTAKE.md).
 
 ## Wave 2 bounded source breadth
 
-The [bank connector handoff](../../apps/api/BANK-CONNECTOR.md) retains operator-delivered raw records, attested consent/account mapping, cursor/revision overlap and retry identities behind source intake; existing file import remains usable. It cannot fetch from a live provider or prove provider consent while D-10 remains open.
+The [bank connector handoff](../../apps/api/docs/BANK-CONNECTOR.md) retains operator-delivered raw records, attested consent/account mapping, cursor/revision overlap and retry identities behind source intake; existing file import remains usable. It cannot fetch from a live provider or prove provider consent while D-10 remains open.
 
-The [SIE historical source handoff](../../apps/api/SIE-HISTORICAL-IMPORT.md) retains bounded SIE4 parsing, encoding/record diagnostics, reviewed account and independent-control plans, and resumable fenced synthetic staging. Staging is not financial import. Actual source selection (D-06), OpeningSet authority and prior-history versus opening basis, and historical open-item recognition/settlement contracts are missing. No financial opening, prior payment/match or corrected voucher is created. The [isolated migration smoke](evidence/wave2-local-migration-smoke.md) proves schema application/replay only, not IMP-02/03/06 behavior or reconciliation.
+The [SIE historical source handoff](../../apps/api/docs/SIE-HISTORICAL-IMPORT.md) retains bounded SIE4 parsing, encoding/record diagnostics, reviewed account and independent-control plans, and resumable fenced synthetic staging. Staging is not financial import. Actual source selection (D-06), OpeningSet authority and prior-history versus opening basis, and historical open-item recognition/settlement contracts are missing. No financial opening, prior payment/match or corrected voucher is created. The [isolated migration smoke](evidence/wave2-local-migration-smoke.md) proves schema application/replay only, not IMP-02/03/06 behavior or reconciliation.

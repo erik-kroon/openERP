@@ -70,7 +70,7 @@ END-03 can proceed early and serves VAT/FX without waiting for year-end. END-01 
 
 ## Bounded first-year review package
 
-The END-03 source slice in [ACCOUNTANT-REVIEW.md](../../apps/api/ACCOUNTANT-REVIEW.md) adds retained accountant-review packs over current internal trial-balance snapshots. It materializes exact balances, voucher/receipt/evidence lineage, original retained evidence and separate missing/excluded coverage. JSON and CSV bytes are retained with hashes; old packs survive later changes and reopen.
+The END-03 source slice in [ACCOUNTANT-REVIEW.md](../../apps/api/docs/ACCOUNTANT-REVIEW.md) adds retained accountant-review packs over current internal trial-balance snapshots. It materializes exact balances, voucher/receipt/evidence lineage, original retained evidence and separate missing/excluded coverage. JSON and CSV bytes are retained with hashes; old packs survive later changes and reopen.
 
 This is synthetic review tooling, not company activation or full END-03 acceptance. Opening explanations remain unverified, owner-funding and expense-tax source/review controls are captured while legal treatment and complete openings remain unverified, and first year never implies zero opening or zero VAT. No Visma compatibility, result transfer, annual-report/SIE/iXBRL generation or filing is claimed. Root integration, native/runtime observations and the concurrency/browser/independent-correctness gates remain separate from source delivery.
 
@@ -84,7 +84,7 @@ Historical bank-only plans/receipts keep their interpretation and remain readabl
 reopen proposals still permit repair. Current non-bank providers lack complete source/control
 coverage, so declaring those families required conservatively blocks this technical scope.
 This is not a financial close or legal applicability review. See the pre-change acceptance
-cases and integration contract in [CLOSING.md](../../apps/api/CLOSING.md#end-01-family-inventory-scope-and-acceptance-before0930).
+cases and integration contract in [CLOSING.md](../../apps/api/docs/CLOSING.md#end-01-family-inventory-scope-and-acceptance-before0930).
 Owned-file static checks do not complete END-01's runtime/concurrency/browser gates.
 
 ## Snapshot-bound general ledger account view
@@ -123,7 +123,7 @@ keeps that report's frozen date and sequence basis; it never recalculates the re
 ## Diagnostic saved-report comparison
 
 Forward4600 adds a read-only END-03 comparison of two existing immutable trial-balance snapshots
-in one book. The [focused handoff](../../apps/api/REPORT-COMPARISONS.md) defines full source
+in one book. The [focused handoff](../../apps/api/docs/REPORT-COMPARISONS.md) defines full source
 identity/digests, frozen account labels, exact signed right-minus-left opening/movement/closing
 differences and explicit null missing sides. Stable pair-bound cursors page the entire account
 union; complete bounded source totals never silently become page totals. Currency/scale mismatch
@@ -143,7 +143,7 @@ optional immutable execution identities and50-item period/real-anchor-bound C-or
 It performs no live provider/readiness calculation, exposes no approval bearer material and
 confers no current approvability. Discovery is live; restart it for later arrivals. Existing
 known-ID reads remain the owner of full saved basis and separate currentness. See
-[CLOSING.md](../../apps/api/CLOSING.md#closing-proposal-discovery-4800-failure-contract-before-implementation).
+[CLOSING.md](../../apps/api/docs/CLOSING.md#closing-proposal-discovery-4800-failure-contract-before-implementation).
 This is bounded END-01/END-03 recovery, not another artifact or financial authority. Source/static
 checks, shared integration and database/runtime evidence remain distinct gates.
 
@@ -154,7 +154,7 @@ included contribution. Opening and movement rows use the same pinned cutoff and 
 Out-of-context, missing and out-of-range anchors refuse instead of silently skipping data.
 The earlier two-part cursor cannot prove context; callers omit `after` to start from the first
 page. Saved reports remain readable and unchanged. General-ledger, comparison and report-line
-cursors are unaffected. See [explanation cursors](../../apps/api/REPORT-EXPLANATION-CURSORS.md).
+cursors are unaffected. See [explanation cursors](../../apps/api/docs/REPORT-EXPLANATION-CURSORS.md).
 This is implemented source; independent review and static checks are recorded in the active
 wave. SQL execution remains unverified.
 
@@ -170,4 +170,4 @@ This closes a REST/MCP continuation mismatch. The current web client already sep
 pack/section queries; no ordinary tab-switching reproduction or UI repair is claimed. Root
 and independent source reviews found no blocker. Native backend/web types and targeted lint
 passed; no SQL compilation/application, browser or runtime execution was performed. See
-[accountant review](../../apps/api/ACCOUNTANT-REVIEW.md).
+[accountant review](../../apps/api/docs/ACCOUNTANT-REVIEW.md).

@@ -72,3 +72,21 @@ Owned isolated PostgreSQL: `/tmp/openerp-company-setup.3fGsrr/pgdata`, port 5632
 - Real browser proof on fresh synthetic source: account mappings and independent balances entered; unadded item draft blocked sealing; added item without control produced backend missing-control rejection; adding matching independent total allowed sealing; reload displayed exact source identity, signed amounts, date, unknown payment state, missing detail and independent control basis. Source source_1fdf3798610643c98e9844dc563cd52f, preview siepreview_d428c7e2d856416586ae64831f592027, plan sieplan_4a07c42df6b1487188e697e165504f22.
 - Web types, targeted lint and diff whitespace check passed. No automated tests added. Runtime still same API50216/web56341/PG56339. Browser reviewTab still points to this newly sealed plan.
 - Next dependency: historical-register admission UI and by-plan recovery. Existing POST /sie-plans/:id/historical-items requires a staged run; GET only accepts admission ID, so add an authorized by-plan read to recover it without exposing internal IDs. Current saved items are in the plan, not yet historical-register admission. Financial basis/cutover and real-company profile registry remain incomplete.
+
+### Historical-register recovery by plan
+
+Added GET `/sie-plans/:id/historical-items`, backed by migration 8320 and the restricted SQL function. Existing plans without admission return JSON null; nonexistent plans return NotFound after authorization. The staging screen reads this endpoint, checks the source-plan ID and digest, and displays saved register item count without implying ledger posting. Refresh reloads both staging and admission.
+
+Verification: repository `bun run check-types` passed (including its build steps), targeted Oxlint and diff whitespace checks passed. Migration applied to the owned PostgreSQL instance on port 56339. Runtime-role calls verified null for the known unadmitted plan, NotFound for a missing plan, and Unauthorized for an invalid token. Saved-admission recovery and browser rendering remain to verify; admission creation UI remains to implement. No tests added.
+
+### Open-item register save control
+
+Added `historical-intake/admission.tsx` using TanStack Form. The staged-run consumer shows it only after successful admission recovery returns null and staging is complete. It requires a rationale and an explicit open-items-only scope confirmation, sends unknown chronology with empty payment/match arrays, and states that the register is immutable and has no ledger posting effect. Uncertain writes lock editing and retry the exact original mutation variables/key. Successful saves populate the scoped recovery cache.
+
+Web check-types/build passed and targeted lint passed. Browser submission and reload recovery remain to exercise against the updated API. This implements only the explicit no-payment-history branch; supplied payment/match editing remains unfinished, as do broader goal requirements.
+
+### Browser proof: staged open-item register and reload
+
+Using the owned synthetic review company and plan `sieplan_4a07c42df6b1487188e697e165504f22`, the browser started staging, staged its one voucher, rejected save without scope confirmation, then saved the one-item register after explicit confirmation. A full reload recovered “Historical register saved: 1. No financial posting effect.” and removed the creation form. Fixed the invalid-submission message to use TanStack Form submissionAttempts rather than isSubmitted; visibly verified the feedback before saving.
+
+The old review API was serving pre-change routes (404 on recovery). Restarted only owned review servers: API session 86896 at http://127.0.0.1:52167; web session 18833 remains http://127.0.0.1:56341. Database unchanged at 56339. Retained preview staging and admission succeeded after restart. Original R2 byte persistence across restart has not been independently checked. Targeted lint and whitespace checks passed; no tests added. Payment/match entry, financial cutover, profile seeding, bank onboarding and broader readiness remain open.

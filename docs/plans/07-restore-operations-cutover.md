@@ -97,7 +97,7 @@ authority, not a new operations CLI/domain or provider integration. It stops onl
 of that identity; committed preparation and run/audit/receipt history remain intact. A previously
 claimed or replay-dispatched Workflow may still run, but the job's terminal database gate refuses
 further advancement. No remote termination, zero-dispatch claim, automatic replacement or writer
-promotion is implied. See [AUTOMATION.md](../../apps/api/AUTOMATION.md#forward5100-stop-one-admitted-preparation-job).
+promotion is implied. See [AUTOMATION.md](../../apps/api/docs/AUTOMATION.md#forward5100-stop-one-admitted-preparation-job).
 Source/static implementation is distinct from pending OPS-03 runtime/concurrency evidence.
 
 ### Saved intent is not a committed evidence link

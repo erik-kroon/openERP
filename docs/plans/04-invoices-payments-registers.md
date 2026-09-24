@@ -76,19 +76,19 @@ COM-03 first supports same-currency conservation. Cross-currency acceptance addi
 
 ## Bounded register-control snapshot slice
 
-The [register-report handoff](../../apps/api/REGISTER-REPORTS.md) describes an implemented-source COM-06 subset over existing synthetic registered recognition and applied payment legs. It freezes current-known invoice revisions, due-date ageing, economic-date allocation identities and all journal contributions for declared commerce control accounts. Nonzero unexplained contributions remain differences even if they offset. Capture is bounded and fails rather than truncates; saved reports can be rediscovered and downloaded.
+The [register-report handoff](../../apps/api/docs/REGISTER-REPORTS.md) describes an implemented-source COM-06 subset over existing synthetic registered recognition and applied payment legs. It freezes current-known invoice revisions, due-date ageing, economic-date allocation identities and all journal contributions for declared commerce control accounts. Nonzero unexplained contributions remain differences even if they offset. Capture is bounded and fails rather than truncates; saved reports can be rediscovered and downloaded.
 
 This is not historical invoice admission, reconstruction of facts known on a past date, company source completeness, native invoice issue, delivery or payment initiation. `coverage: not_established` remains explicit. Shared integration and real runtime/browser/independent-arithmetic evidence remain gates; the source alone does not complete COM-06 acceptance.
 
 ## Bounded native customer commercial drafts
 
-The [invoice-draft handoff](../../apps/api/INVOICE-DRAFTS.md) implements a COM-01 subset: operator-scoped unissued drafts, retained asserted seller/customer identities and counterpart revisions, exact explicit line amounts with discounts/charges, unknown tax propagation, source/calculated comparisons, and immutable revisions guarded by expected revision/digest. Complete bounded read/history/list paths and a local edit/reopen/recovery UI are included in source.
+The [invoice-draft handoff](../../apps/api/docs/INVOICE-DRAFTS.md) implements a COM-01 subset: operator-scoped unissued drafts, retained asserted seller/customer identities and counterpart revisions, exact explicit line amounts with discounts/charges, unknown tax propagation, source/calculated comparisons, and immutable revisions guarded by expected revision/digest. Complete bounded read/history/list paths and a local edit/reopen/recovery UI are included in source.
 
 This does not establish legally active VAT/rounding profiles, verified legal identity, supplier-document duplicate handling or source-occurrence admission. Saving a draft neither issues a number nor writes the ledger/open-item register. The bounded synthetic issue subset below adds sealing, issue/recognition approval and atomic effects. Legal profiles, rendering and authorized delivery remain COM-02/COM-05 dependencies. The user stopped tests and validation runs during this packet; no runtime, browser or financial verification claim is made here.
 
 ## Bounded synthetic issue and recognition
 
-The [invoice-issuance handoff](../../apps/api/INVOICE-ISSUANCE.md) records forward1400 and its shared API/read-capability/UI integration. A current operator reviews an exact draft revision and explicit accounts, approves, then atomically commits kernel recognition, an internal SYN number, customer registration and an immutable issue receipt. Owned retained evidence cannot be posted separately merely by changing its event key. Issued draft heads are frozen; live issue history, not old draft flags, controls the selected-record editor.
+The [invoice-issuance handoff](../../apps/api/docs/INVOICE-ISSUANCE.md) records forward1400 and its shared API/read-capability/UI integration. A current operator reviews an exact draft revision and explicit accounts, approves, then atomically commits kernel recognition, an internal SYN number, customer registration and an immutable issue receipt. Owned retained evidence cannot be posted separately merely by changing its event key. Issued draft heads are frozen; live issue history, not old draft flags, controls the selected-record editor.
 
 This supports only the explicit synthetic profile and evidenced zero asserted tax. `issued` and `recognized` are true on the committed synthetic receipt; `legalInvoice` and `delivered` remain false. It does not establish legal identity/numbering, activate VAT, send an invoice or support issue corrections. The forward migration remains unapplied and runtime-unverified. COM-02 and COM-05 acceptance remain open.
 
@@ -129,7 +129,7 @@ and allocation preparation/approval, not only at the final insert. Invoice payme
 exclude the exact reserved book/voucher/line before evaluating capacity. An unusable match
 still reserves its line until explicit unmatch. Existing arithmetic, saved history, replay,
 unallocation and the physical fence remain unchanged; no account-role policy is added.
-See [commerce admission](../../apps/api/COMMERCE-TAX-RESERVATION-ADMISSION.md).
+See [commerce admission](../../apps/api/docs/COMMERCE-TAX-RESERVATION-ADMISSION.md).
 Independent source review found no actionable blocker. SQL execution and concurrent behavior
 remain unverified.
 
@@ -144,7 +144,7 @@ replay, grants, schemas and UI are unchanged.
 
 Root and independent source review found no blocker. Shared backend/web type checks and
 targeted lint passed. The SQL is unapplied and runtime-unverified. See
-[commerce](../../apps/api/COMMERCE.md).
+[commerce](../../apps/api/docs/COMMERCE.md).
 
 ### Consumed owner-allocation approval recovery
 
@@ -155,7 +155,7 @@ account partitions, capacity, replay and write guards are unchanged. Historical 
 role loss does not erase the consumed approval or grant new authority. Root and independent
 source review found no blocker. No TypeScript changed after the last shared static checkpoint;
 SQL compilation/application and runtime behavior remain unverified. See
-[owner register](../../apps/api/OWNER-REGISTER.md).
+[owner register](../../apps/api/docs/OWNER-REGISTER.md).
 
 ## Bounded supplier-document drafts
 
@@ -170,7 +170,7 @@ Supplier heads and immutable revisions are separate from customer sales and issu
 The complete bounded profile supports200 drafts/book,50 revisions/draft and50 lines/revision,
 with64KiB input and128KiB revision limits. It creates no invoice number, acceptance, ledger/open
 item, source-capacity claim, VAT fact, delivery or payment instruction. Recognition elsewhere is
-explicitly not assessed. See [supplier drafts](../../apps/api/SUPPLIER-INVOICE-DRAFTS.md).
+explicitly not assessed. See [supplier drafts](../../apps/api/docs/SUPPLIER-INVOICE-DRAFTS.md).
 
 Shared API/MCP composition is integrated. Backend/contracts/jurisdiction and web type checks
 pass; targeted lint reports zero warnings/errors. SQL compilation/application, runtime and
@@ -178,8 +178,8 @@ financial correctness remain unverified; no UI or test changes were added.
 
 ## Wave 2 bounded commerce source integration
 
-The [supplier acceptance/payment/credit handoff](../../apps/api/SUPPLIER-ACCEPTANCE-PAYMENTS.md) records synthetic AP-1, unpaid-residual zero-tax AP-2 and offline PAY-1 source slices. Supplier draft saves never book. Acceptance posts through the kernel; credit effects retain original invoices and applied payment legs. A pain.001 export is not bank acceptance or invoice payment. Eligible/excluded whole-register discovery, VAT-bearing credits, paid-principal refunds, verified bank schemes and provider outcomes remain unsupported.
+The [supplier acceptance/payment/credit handoff](../../apps/api/docs/SUPPLIER-ACCEPTANCE-PAYMENTS.md) records synthetic AP-1, unpaid-residual zero-tax AP-2 and offline PAY-1 source slices. Supplier draft saves never book. Acceptance posts through the kernel; credit effects retain original invoices and applied payment legs. A pain.001 export is not bank acceptance or invoice payment. Eligible/excluded whole-register discovery, VAT-bearing credits, paid-principal refunds, verified bank schemes and provider outcomes remain unsupported.
 
-The [customer policy/PDF/delivery handoff](../../apps/api/INVOICE-PDF.md) records an unactivated AR-1 candidate/review, synthetic historical PDF bytes and local-only AR-2 delivery simulation. SYN history remains synthetic. There is no real-company invoice issuance, statutory credit policy, external email/Peppol attempt or provider recovery. D-04/D-08/D-10 still gate those outcomes.
+The [customer policy/PDF/delivery handoff](../../apps/api/docs/INVOICE-PDF.md) records an unactivated AR-1 candidate/review, synthetic historical PDF bytes and local-only AR-2 delivery simulation. SYN history remains synthetic. There is no real-company invoice issuance, statutory credit policy, external email/Peppol attempt or provider recovery. D-04/D-08/D-10 still gate those outcomes.
 
 Shared REST/MCP read wiring and static type/lint checks passed for the combined current tree. The [isolated migration smoke](evidence/wave2-local-migration-smoke.md) applied/replayed SQL definitions, but did not exercise accounting behavior, concurrent capacity, rendered browser paths, XML/PDF compatibility or delivery. These packets do not close COM-02–05 acceptance.
