@@ -241,8 +241,8 @@ found in that bounded source review. Runtime proof remains open.
 Source inspection of1900/2300 and current commerce owners found no selected financial
 consumer for conversion reviews. Existing invoice/allocation capacity represents one
 book-currency amount, not paired foreign obligation and book carrying amounts. FX-02/03
-therefore remains deferred pending the explicit monetary-item/capacity and effect-policy
-choices recorded in [open decisions](../open-decisions.md#foreign-currency-financial-ownership-remains-open).
+was deferred at that checkpoint pending explicit monetary-item/capacity and effect-policy
+choices. [ADR 0008](../adr/0008-financial-fx-vat-impairment.md) now adopts those choices; implementation and proof remain open.
 The [financial FX feasibility review](../../apps/api/docs/FX-FINANCIAL-FEASIBILITY.md)
 records exact source owners and the missing decisions. This is not a new FX architecture
 decision and does not change existing commerce meaning. No speculative financial register,
@@ -346,3 +346,20 @@ receipt or financial state is created. This is not a frozen inventory or complet
 Backend/contracts/jurisdiction type checks and targeted lint pass. The initial web check
 encountered separate invoice UI pagination edits; the follow-up shared web check passed without
 changes to those files by this slice. SQL and runtime behavior remain unverified.
+
+## Adopted financial-contract delivery
+
+[ADR 0008](../adr/0008-financial-fx-vat-impairment.md) owns the adopted semantics and supersedes earlier open-design statements for these selected profiles. The [retained proposal](evidence/financial-contract-proposal.md) supplies detailed examples and acceptance scenarios. Existing packet IDs and engineering dependencies remain unchanged; these are bounded stages within them, not a second backlog.
+
+| Stage / canonical packets | Owner and complete outcome | Observable exit / follow-up |
+| --- | --- | --- |
+| VAT reclassification — VAT-03 | VAT/SQL owner: obligation identity, prepare/approve/execute/read, period contribution roles, control reclassification and receipt recovery. | Positive/negative/zero nets, new-key duplicate refusal, same-key recovery after sequence advance and symmetric taxable-role exclusions; no half journal/obligation effect. Then assessment links and VAT-04 delta amendments. |
+| FX recognition/full settlement — FX-02 | Commerce/FX owner: synthetic foreign receivable recognition, paired capacity, book-currency cash settlement, controls and latest-unconsumed correction. | Both balances reach zero; journal/register/receipt commit together; lost response recovers; old invoice interpretation remains unchanged. Then payables, partial settlement and separately evidenced fees. |
+| FX remeasurement — FX-03 | Commerce/FX owner after financial capacity: incremental valuation and report/control consequences. | Valuation plus later settlement recognizes only incremental remaining FX; original units stay unchanged; backdated/consumed corrections refuse until supported. No automatic next-period reversal. |
+| Impairment — AST-03 | Subledger owner: impairment journal/effect plus complete revised suffix, reads, occurrence guards, controls, closing, disposal and immediate owned correction. | The ADR witness yields carrying 600/future 550 and correct disposal; stale plans refuse; failure commits neither half; prior snapshots stay unchanged. Consumed-history and economic reversals remain explicit follow-up scope. |
+| Payroll foundation → calculations — PAY-01/PAY-02 | Payroll owner: qualify existing 9050 records, privacy/revision semantics and required typed inputs; build the chosen dated calculation profile. | Scoped history/recovery and independently expected selected calculations; no assumption that an employee record means payroll is calculated, paid or declared. |
+| Actual-company VAT — VAT-01/VAT-02 | VAT/jurisdiction owner: implement and qualify real contribution/calculation/reporting policy before enabling actual-company totals. | Actual supported and unsupported cases, lineage and independent controls; adding company details or removing migration 4500's refusal alone cannot pass. |
+
+Parallel domain work is possible after reconciling shared interfaces, with one integrator owning shared posting-purpose, correction, contract-export and migration composition. Reserve forward migration IDs from the live tree. Impairment must coordinate with any AST-02 schedule work; FX must coordinate with commerce capacity work. Do not overwrite existing applied migrations or bypass generic correction fences.
+
+Before each implementation, inspect the effective function/trigger chain and enumerate the acceptance failures in the proposal. Use existing authorized checks; new tests/fixtures retain D-09 authorization. Retain repeatable fixed-revision evidence for executed financial outcomes. This planning task changes no runtime code, tests or migrations and claims no new runtime result.

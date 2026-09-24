@@ -21,29 +21,20 @@ The repository settles the Effect major, application names, shared schemas and s
 
 When closing a decision, record the chosen behavior, rejected alternative, evidence and affected verification scenarios. Do not mark a question resolved merely because an example file contains a value.
 
-## VAT settlement effect contract remains open
+## Adopted financial contracts; delivery gates remain open
 
-The [settlement feasibility review](../apps/api/docs/VAT-SETTLEMENT-FEASIBILITY.md) found a
-contract gap before implementing the planned return-to-settlement link. D-03/D-08 work
-must explicitly choose the synthetic accounting-effect role, its signed mapping from
-saved `box49.exactMinor`, required account-role evidence and a single reviewed obligation
-identity. Existing adjustment/reversal purposes and a matching tax-account amount do not
-resolve these choices. A bank payment or tax-account deposit is not VAT settlement proof.
-No4400 settlement migration or endpoint was added. Tax-account matching and other
-independent backend work continue without inventing these facts or activating a legal profile.
+[ADR 0008](adr/0008-financial-fx-vat-impairment.md) adopts the FX, VAT and impairment contracts after the user's confirmation on 2026-09-24. Their ownership, signs and atomic lifecycle decisions are no longer unspecified blockers. The earlier feasibility reviews remain historical context, not current instructions to defer the adopted scope.
 
-## Foreign-currency financial ownership remains open
+| Record | Class / owner | Selected decision and next action | Remaining gate / independent work |
+| --- | --- | --- | --- |
+| FX-02-carrying-owner | Design adopted; commerce/FX owner | Implement commerce-owned original units and carrying value, then full synthetic receivable settlement and owned correction. | Code and runtime proof open; D-03/D-04/D-08 qualify compatibility/company policy. Existing rate reviews and book-currency workflows continue. |
+| VAT-03-effect | Design adopted; VAT/tax-account owner | Implement obligation-owned control reclassification with signed roles, exact lineage and receipt recovery; stage assessment/amendment separately. | Code and proof open; actual-company VAT still needs a real calculation profile plus D-04/D-08, and D-10 for connected outcomes. Tax-account matching can continue independently. |
+| AST-03-impairment | Design adopted; subledger owner | Implement distinct impairment contra and complete future suffix atomically, including controls, disposal and bounded correction. | Code and proof open; broader asset classes, consumed-history corrections and economic reversal qualification remain scoped follow-up work. Ordinary schedules continue. |
+| PAY-01-foundation | Source present; payroll owner | Qualify migration 9050 and typed employment/work/opening inputs, then implement the selected PAY-02 calculation profile. | Runtime proof and input adequacy remain open; company rules and actual records remain D-04/D-08 gates. Do not restart from “no employee records.” |
+| Provider exercise | External input/proof; integration/operator owner | Obtain documented provider behavior and authorized sandbox access; import/replay/recover a deliberately interrupted sync. | D-10 access/consent and actual outcome evidence; adapter work against documented behavior remains available. |
+| Company readiness | Facts/implementation/proof; company and domain owners | Establish profile/applicability, process real material and independently reconcile the period. | D-04/D-06/D-08 plus implemented workflows; configuration alone cannot close readiness. |
 
-The [financial FX feasibility review](../apps/api/docs/FX-FINANCIAL-FEASIBILITY.md) confirms
-that FX-01 rate/conversion review does not establish FX-02/03 financial semantics. Current
-commerce invoices and allocations own a single book-currency amount; attaching a rate
-review cannot reinterpret that retained amount as a foreign-denominated obligation.
-Before financial FX implementation, select the foreign monetary-item identity, paired
-original/book-currency capacity owner and explicit recognition/settlement effect mapping.
-Partial carrying release, final residuals, fees, rate selection and remeasurement/reversal
-policy also need explicit choices when those cases enter scope. These are contract/domain
-review decisions in addition to actual-company legal activation. No financial FX migration
-or endpoint was added. Existing manual rate reviews and independent backend work continue.
+Track design adoption, implementation, runtime verification, company applicability and external outcome separately. No new financial implementation, legal activation or provider acceptance is claimed by this decision update. The [delivery plan](plans/05-vat-payroll-assets-fx.md#adopted-financial-contract-delivery) turns each adopted contract into bounded work and proof requirements.
 
 ## Cross-register line references do not establish role exclusivity
 
@@ -56,23 +47,6 @@ exact related records for review, but this does not change matching/posting elig
 assess role compatibility. A future exclusivity policy requires an explicit contract choice
 and both-direction admission plus existing-record handling; no such policy is selected here.
 
-## Interim impairment posting contract
+## Historical feasibility evidence
 
-AST-03 partial impairment is not defined by the existing acquisition, recognition or terminal
-no-proceeds disposal roles. Before implementation, explicitly select:
-
-1. The credited role: existing accumulated recognition, a separate impairment contra account,
-   or specified gross basis lines. Also define the operator-supplied loss account and eligibility.
-2. Whether the financial effect and a reviewed positive future reallocation commit atomically,
-   or recognition becomes explicitly blocked until a separate estimate is approved.
-3. The supported correction/reversal policy, consumed-history guards and repeated-effect bound.
-
-Original carrying cost `C = G - O` must stay immutable. With ordinary recognition `R`, effective
-impairment `I`, future installments `F` and residual `S`, the selected profile must enforce
-`R + I + F + S = C`. Impairment cannot be hidden in ordinary recognition or a changed original
-cost. Controls and disposal must consume the owned effect and its selected account roles.
-These are financial contract choices, not permission to infer actual-company facts or activate
-legal treatment. No impairment posting profile or migration has been selected.
-
-See the [source feasibility review](../apps/api/docs/SUBLEDGER-IMPAIRMENT-FEASIBILITY.md) for the
-concrete carrying-value witness, alternative credit-role equations and required consumers.
+The [FX](../apps/api/docs/FX-FINANCIAL-FEASIBILITY.md), [VAT settlement](../apps/api/docs/VAT-SETTLEMENT-FEASIBILITY.md) and [impairment](../apps/api/docs/SUBLEDGER-IMPAIRMENT-FEASIBILITY.md) reviews explain why implementation was deferred. ADR 0008 supersedes their unresolved choices for the selected first profiles. Their source findings must still be reconciled against the live migration chain before implementation; adoption does not establish that any new financial operation exists.

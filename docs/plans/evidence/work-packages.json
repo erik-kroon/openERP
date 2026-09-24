@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-24T17:10:34.673626+00:00",
-  "headObservedAtValidation": "053372ecfb463283f0a5fb7652e27516352730eb",
+  "generatedAt": "2026-09-24T20:20:09.316512+00:00",
+  "headObservedAtValidation": "77588c6ec9f555e886e146bd39c8f41f3223b631",
   "authority": "Derived from domain packet tables and the conditional-gate table; not an implementation/proof status report.",
   "packetCount": 53,
   "packets": [
@@ -318,7 +318,7 @@
       "id": "COM-01",
       "owner": "Commerce and open-item registers",
       "source": "docs/plans/04-invoices-payments-registers.md",
-      "sourceLine": 68,
+      "sourceLine": 70,
       "deliverable": "Party and invoice revisions, evidence, exact line/totals model and duplicate diagnostics.",
       "dependsOn": [
         "IMP-01",
@@ -335,7 +335,7 @@
       "id": "COM-02",
       "owner": "Commerce and open-item registers",
       "source": "docs/plans/04-invoices-payments-registers.md",
-      "sourceLine": 69,
+      "sourceLine": 71,
       "deliverable": "Issue/acceptance and accrual/cash-method recognition profiles with transactional numbers and links.",
       "dependsOn": [
         "COM-01",
@@ -353,7 +353,7 @@
       "id": "COM-03",
       "owner": "Commerce and open-item registers",
       "source": "docs/plans/04-invoices-payments-registers.md",
-      "sourceLine": 70,
+      "sourceLine": 72,
       "deliverable": "Payment events, partial/many-to-many allocations, residual capacity and refunds.",
       "dependsOn": [
         "COM-02"
@@ -369,7 +369,7 @@
       "id": "COM-04",
       "owner": "Commerce and open-item registers",
       "source": "docs/plans/04-invoices-payments-registers.md",
-      "sourceLine": 71,
+      "sourceLine": 73,
       "deliverable": "Credits, owner-paid expenses/reimbursements and domain-specific corrections.",
       "dependsOn": [
         "COM-03",
@@ -386,7 +386,7 @@
       "id": "COM-05",
       "owner": "Commerce and open-item registers",
       "source": "docs/plans/04-invoices-payments-registers.md",
-      "sourceLine": 72,
+      "sourceLine": 74,
       "deliverable": "Invoice/payment artifacts and separately authorized external delivery.",
       "dependsOn": [
         "COM-02",
@@ -403,7 +403,7 @@
       "id": "COM-06",
       "owner": "Commerce and open-item registers",
       "source": "docs/plans/04-invoices-payments-registers.md",
-      "sourceLine": 73,
+      "sourceLine": 75,
       "deliverable": "Historical open-item admission, ageing and register↔GL control snapshots/workbench.",
       "dependsOn": [
         "COM-03",

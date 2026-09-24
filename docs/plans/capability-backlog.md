@@ -173,7 +173,7 @@ Resolve each supplemental section's contract gates, then slice implementation ar
 
 REL-1 joins the applicable capabilities into the ordinary UI → API → database → recovery → reporting journeys described in [acceptance](09-acceptance.md) and [frontend acceptance](../frontend.md#acceptance-and-verification). Preserve repeatable evidence with revision, environment, inputs, actions, durable identities, expected/observed totals, artifacts and limitations. Existing local SALES-1 or PUR-1 observations do not close an entire capability row. New test changes still require the repository's explicit authorization; this documentation update adds no tests.
 
-VAT settlement, financial FX and impairment retain the unresolved contracts in [open decisions](../open-decisions.md). Applicable legal rules, company facts and provider outcomes remain separate release gates. None is settled by inclusion in this backlog.
+VAT settlement, financial FX and impairment use the adopted contracts in [ADR 0008](../adr/0008-financial-fx-vat-impairment.md). Their implementation/proof work and applicable legal rules, company facts and provider outcomes remain separately tracked in [open decisions](../open-decisions.md). Adoption does not complete any capability.
 
 ## Repository comparison reconciliation
 
@@ -187,7 +187,7 @@ The user supplied a product-domain comparison and consolidated assignment list o
 | AP-INTAKE | PUR-1 + DOC-2 + AGT-2; the [supplier inbox](#supplier-inbox-and-extraction) adds the missing channel/review contract. |
 | COLLECTIONS | Alias of SALES-3, not another assignment. |
 | CRM-MASTER | COM-01; [party master data](#party-master-data) adds bounded accounting-party operations, not general CRM. |
-| TAXACCT-1 | VAT-03 owns tax-account events, matching and settlement; retain the broader source/connection scope and the open settlement contract. |
+| TAXACCT-1 | VAT-03 owns tax-account events, matching and settlement; retain the broader source/connection scope and implement the adopted ADR 0008 settlement contract. |
 | CLOSE-3 | END-02; financial year-end remains distinct from END-01 technical closing. |
 | REP-1 / REP-2 / REP-3 | END-03, with statutory outputs in END-05/END-06. |
 | Supplied PAY-04: payslips/payments | PAY-4 capability under canonical PAY-03 plus the expense/payroll handoff requirements above. Do not rename canonical PAY-04, which owns AGI/KU declarations. |

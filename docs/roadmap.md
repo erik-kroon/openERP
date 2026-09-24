@@ -50,3 +50,9 @@ A [local SEB statement preview](plans/seb-statement-preview.md) is available at 
 Follow the repository's existing formatter, lint, type and build commands without weakening rules. Write approved E2E scenarios before their implementation; do not add unit tests afterward. Retain repeatable verification artifacts as described in [verification](verification.md).
 
 At each exit, update this document with requirement/scenario IDs, code commit, environment, results and unresolved limitations. Keep receipts/logs/screenshots at stable linked locations when they prove a material claim. Apply the actual implementation task's authorization to commits, publication and external actions; a planning document does not grant additional authority.
+
+## Adopted financial contracts and corrected source baseline
+
+On 2026-09-24 the user adopted [ADR 0008](adr/0008-financial-fx-vat-impairment.md) as the working design for commerce-owned financial FX, VAT reclassification/assessment separation and atomic impairment/schedule revision. These decisions close the named design questions only. Follow the [delivery stages](plans/05-vat-payroll-assets-fx.md#adopted-financial-contract-delivery); no financial implementation or runtime proof was added by this update.
+
+Payroll input records already exist under migration 9050 and [PAY-01 documentation](../apps/api/docs/PAYROLL-FOUNDATION.md); qualify and extend them rather than restart employee records. Conversely, actual-company VAT requires real calculation/profile implementation: migration 4500 still forbids supported actual-review totals and keeps legal/readiness flags false. Company configuration alone does not unlock that path. Earlier dated checkpoints remain historical evidence.

@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-24T17:10:34.673626+00:00",
-  "headObservedAtValidation": "053372ecfb463283f0a5fb7652e27516352730eb",
+  "checkedAt": "2026-09-24T20:20:09.316512+00:00",
+  "headObservedAtValidation": "77588c6ec9f555e886e146bd39c8f41f3223b631",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,8 +9,8 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 314,
-    "documentsChecked": 27,
+    "localLinksAndAnchorsChecked": 349,
+    "documentsChecked": 30,
     "coverage": {
       "R": [
         "R-01",
@@ -102,7 +102,7 @@
     },
     {
       "path": "docs/adr/README.md",
-      "sha256": "1aa08e8f24823972a4cfb5d24df91f8463bf6256549b487b784267a156e086e6"
+      "sha256": "54daaf7a0844f4077f821005d175792dd606f41900f83390fc75326e4a769832"
     },
     {
       "path": "docs/architecture.md",
@@ -118,7 +118,7 @@
     },
     {
       "path": "docs/open-decisions.md",
-      "sha256": "a1665321d6e73453432c16b3aee9f83c87dedd161de13176e6112839854cd3e3"
+      "sha256": "16abb30af6e3da25302deedc0af9149083062c2f6a9c40db7dc60c3ff38f332b"
     },
     {
       "path": "docs/operations.md",
@@ -142,11 +142,11 @@
     },
     {
       "path": "docs/plans/04-invoices-payments-registers.md",
-      "sha256": "dd6eda1563618c484a4d38a185b0b6c5442ca246d9e67540370a42deb94d855a"
+      "sha256": "9afd522496e6707e2596dbd73227dd72cc85b4a0100e1a92e1376cd4945f23d9"
     },
     {
       "path": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sha256": "286db31ae645c61442ceded695cf2e0bd7278c881e01c31be9867517b2c982e4"
+      "sha256": "6eb2eb951d2ce8e41f287f994cca5dadf8c754d504957005d7410ecaf9e4c770"
     },
     {
       "path": "docs/plans/06-year-end-reports-filing.md",
@@ -158,7 +158,7 @@
     },
     {
       "path": "docs/plans/08-delivery.md",
-      "sha256": "f4fd3891c1e5198e4acc69984e537efa7949ad3d79e319f07cee2ebebd021efa"
+      "sha256": "ad4ca326b3fdac47e5393a229abb8a42d0307268b8fc35bb5e1bfebc5630829e"
     },
     {
       "path": "docs/plans/09-acceptance.md",
@@ -177,12 +177,24 @@
       "sha256": "8cbee0bc81bb1af6c4e629fcb48b6195bf1f3fada3e253c46d808f3224d43354"
     },
     {
+      "path": "docs/plans/agent-preparation-proposal.md",
+      "sha256": "2564ddc0473c4e5d8f2f23d8a08f588f0702173f284ae1437b5564f48652d878"
+    },
+    {
+      "path": "docs/plans/agt01-api-mcp-parity.md",
+      "sha256": "7b306abd6a2792c558fb83f0b7d63a2ae3e67c651d1254a9e96413bdaa58f35c"
+    },
+    {
       "path": "docs/plans/capability-backlog.md",
-      "sha256": "f3738098ce9e0f8b7063ecef1ddfbe3b9862a05a85d539d462afb3ef6829cf07"
+      "sha256": "d79a7aa5589e51e53977c0e3d63723c8a6472cf12208d862cbc6dc6466bfef3c"
     },
     {
       "path": "docs/plans/check-plan.py",
       "sha256": "4d39b0193545588516b130cf0842b658465d06c6bfa08357e52af5af64f765ea"
+    },
+    {
+      "path": "docs/plans/document-classifier-proposal.md",
+      "sha256": "a9d59e8f9aa0e2f66de93cdfa8acc463fe6c5d0ed75ec9dbc19cdb0f29dbd3c0"
     },
     {
       "path": "docs/plans/evidence/planning-baseline.json",
@@ -190,7 +202,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "a9098e0f883c0382d081c385c61ee61c229c39d79099cf8afe4a7e3ec5201c18"
+      "sha256": "2c9e0b38c43c7f8358867a1d057c82686a37fb0c3324882386081375ff89b74c"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -202,7 +214,7 @@
     },
     {
       "path": "docs/roadmap.md",
-      "sha256": "d214354b629ead83cc2bf611d557f10c4260e286a4f6cfae299f7d9b6ea886fb"
+      "sha256": "c99362ee666713192577bf4f1132c35b5e0c54785821330aa685a3e0c208e7ba"
     },
     {
       "path": "docs/verification.md",

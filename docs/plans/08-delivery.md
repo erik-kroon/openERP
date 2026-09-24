@@ -4,6 +4,8 @@ This is the implementation map for the existing P0–P7 roadmap. Packet IDs, del
 
 The [repository comparison reconciliation](capability-backlog.md#repository-comparison-reconciliation) maps the supplied assignment aliases and payroll/FX ID conflicts to these owners. Supplemental inbox, party, recurring-sales and deadline scope follows the dependencies stated there; it does not create a competing packet sequence.
 
+The [adopted financial-contract stages](05-vat-payroll-assets-fx.md#adopted-financial-contract-delivery) turn FX, VAT reclassification and impairment decisions into implementation and proof work. Payroll builds on the existing 9050 foundation. Provider and company gates remain separate from these selected design choices.
+
 ## Ready order
 
 | Wave                               | Packets / outcomes                                                                                                              | Exit and next consumer                                                                                                   |
