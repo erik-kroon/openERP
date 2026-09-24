@@ -1,0 +1,289 @@
+{
+  "revision": "909383615209d0a17fae81ea88d5e6ff03f50d45",
+  "migrationThrough": "8900-sie-public-export-preview.sql",
+  "environment": "fresh isolated PostgreSQL 17, restricted openerp_app, Wrangler Worker with local R2, synthetic book/operator only",
+  "scope": "local public original bytes; format compatibility only, not tenant migration, full-year financial cutover or SIE certification",
+  "preflightFailureModes": [
+    "original SHA/byte mismatch",
+    "R2 retention/retrieval mismatch",
+    "restricted Worker role unavailable",
+    "PC8/#FORMAT mismatch",
+    "indentation/brace/syntax errors",
+    "4000-record/500-voucher/1MiB normalized JSON cap",
+    "preview persistence or idempotent replay drift",
+    "multi-year reviewed partition and independent financial controls absent"
+  ],
+  "restrictedRole": {
+    "name": "openerp_app",
+    "superuser": false,
+    "createdb": false,
+    "createrole": false,
+    "bypassrls": false
+  },
+  "samples": [
+    {
+      "sample": 0,
+      "sourceSha256": "fc66a49c9e913c818c6e564c59cd639fe4e0e608f1ccff6a00fe90db675e39c3",
+      "sourceBytes": 101380,
+      "retain": {
+        "status": 200,
+        "responseBytes": 657,
+        "retainedHashMatches": true,
+        "retainedByteCountMatches": true,
+        "id": "source_abf6d95debd549939cb16e7ab69b4033",
+        "errorCode": null
+      },
+      "preview": {
+        "status": 200,
+        "responseBytes": 775847,
+        "responseSha256": "42b2d2bbab2a25378f3b1498aa3be78433e852d54b4fd311a19f73e52e2ce1fd",
+        "ready": true,
+        "records": 3490,
+        "vouchers": 295,
+        "transactions": 1330,
+        "controls": 223,
+        "diagnostics": [],
+        "digest": "sha256:a32f1112d048d82eeb6f63826a6b8a6147ca414eb13aa0324a3013b83e44d797",
+        "sourceHashMatches": true,
+        "errorCode": null
+      },
+      "previewReplay": {
+        "status": 200,
+        "responseBytes": 775847,
+        "responseSha256": "42b2d2bbab2a25378f3b1498aa3be78433e852d54b4fd311a19f73e52e2ce1fd",
+        "samePreviewId": true,
+        "sameDigest": true,
+        "sameBodyHash": true,
+        "errorCode": null
+      },
+      "inventory": {
+        "status": 200,
+        "responseBytes": 301,
+        "items": 1,
+        "itemMatches": true,
+        "ready": true
+      },
+      "getPreview": {
+        "status": 200,
+        "responseBytes": 775847,
+        "responseSha256": "42b2d2bbab2a25378f3b1498aa3be78433e852d54b4fd311a19f73e52e2ce1fd",
+        "sameDigest": true,
+        "recordCount": 3490,
+        "voucherCount": 295
+      },
+      "getOriginal": {
+        "status": 200,
+        "responseBytes": 135923,
+        "hashMatches": true,
+        "byteCountMatches": true
+      },
+      "retainReplay": {
+        "status": 200,
+        "responseBytes": 657,
+        "sameOccurrenceId": true,
+        "hashMatches": true
+      }
+    },
+    {
+      "sample": 1,
+      "sourceSha256": "a7c357dba021a4710a5262178a2c70f2619486af2ec609e1c1535a5460d16c2d",
+      "sourceBytes": 32438,
+      "retain": {
+        "status": 200,
+        "responseBytes": 649,
+        "retainedHashMatches": true,
+        "retainedByteCountMatches": true,
+        "id": "source_ca84190e4b0c4452a8bca470e4b6c604",
+        "errorCode": null
+      },
+      "preview": {
+        "status": 200,
+        "responseBytes": 204050,
+        "responseSha256": "5a3fcaa3965342fcd0d7919990b5baa083370841eff0308d0ef0c968c6ec82d2",
+        "ready": true,
+        "records": 1205,
+        "vouchers": 1,
+        "transactions": 4,
+        "controls": 0,
+        "diagnostics": [],
+        "digest": "sha256:8d18740766b3f8ff186cc5ebf015e6cad41680e1c65cc89b2ea3180b58347e3a",
+        "sourceHashMatches": true,
+        "errorCode": null
+      },
+      "previewReplay": {
+        "status": 200,
+        "responseBytes": 204050,
+        "responseSha256": "5a3fcaa3965342fcd0d7919990b5baa083370841eff0308d0ef0c968c6ec82d2",
+        "samePreviewId": true,
+        "sameDigest": true,
+        "sameBodyHash": true,
+        "errorCode": null
+      },
+      "inventory": {
+        "status": 200,
+        "responseBytes": 301,
+        "items": 1,
+        "itemMatches": true,
+        "ready": true
+      },
+      "getPreview": {
+        "status": 200,
+        "responseBytes": 204050,
+        "responseSha256": "5a3fcaa3965342fcd0d7919990b5baa083370841eff0308d0ef0c968c6ec82d2",
+        "sameDigest": true,
+        "recordCount": 1205,
+        "voucherCount": 1
+      },
+      "getOriginal": {
+        "status": 200,
+        "responseBytes": 43991,
+        "hashMatches": true,
+        "byteCountMatches": true
+      },
+      "retainReplay": {
+        "status": 200,
+        "responseBytes": 649,
+        "sameOccurrenceId": true,
+        "hashMatches": true
+      }
+    },
+    {
+      "sample": 2,
+      "sourceSha256": "3f51f5aabd3a7bf62f77838d12f535523a687a29185b77d746c07bc420dc643b",
+      "sourceBytes": 3554,
+      "retain": {
+        "status": 200,
+        "responseBytes": 670,
+        "retainedHashMatches": true,
+        "retainedByteCountMatches": true,
+        "id": "source_e6cbdecb460043e1a981e18d2e807060",
+        "errorCode": null
+      },
+      "preview": {
+        "status": 200,
+        "responseBytes": 31019,
+        "responseSha256": "04f3f1d59428506212e62e75183af6d17a8a586636ddbda1ca40328ddb8e8215",
+        "ready": true,
+        "records": 124,
+        "vouchers": 13,
+        "transactions": 91,
+        "controls": 0,
+        "diagnostics": [],
+        "digest": "sha256:3e00f010cbbc85e7f107a0695fc1cbf7794e0c659b0312a30df02aa91f7a7e93",
+        "sourceHashMatches": true,
+        "errorCode": null
+      },
+      "previewReplay": {
+        "status": 200,
+        "responseBytes": 31019,
+        "responseSha256": "04f3f1d59428506212e62e75183af6d17a8a586636ddbda1ca40328ddb8e8215",
+        "samePreviewId": true,
+        "sameDigest": true,
+        "sameBodyHash": true,
+        "errorCode": null
+      },
+      "inventory": {
+        "status": 200,
+        "responseBytes": 301,
+        "items": 1,
+        "itemMatches": true,
+        "ready": true
+      },
+      "getPreview": {
+        "status": 200,
+        "responseBytes": 31019,
+        "responseSha256": "04f3f1d59428506212e62e75183af6d17a8a586636ddbda1ca40328ddb8e8215",
+        "sameDigest": true,
+        "recordCount": 124,
+        "voucherCount": 13
+      },
+      "getOriginal": {
+        "status": 200,
+        "responseBytes": 5500,
+        "hashMatches": true,
+        "byteCountMatches": true
+      },
+      "retainReplay": {
+        "status": 200,
+        "responseBytes": 670,
+        "sameOccurrenceId": true,
+        "hashMatches": true
+      }
+    },
+    {
+      "sample": 3,
+      "sourceSha256": "7abecebbf2b721cb462e4ffe3115ba4924fec2726142e04bc1f73c09e8433175",
+      "sourceBytes": 2472,
+      "retain": {
+        "status": 200,
+        "responseBytes": 649,
+        "retainedHashMatches": true,
+        "retainedByteCountMatches": true,
+        "id": "source_39d84fa5557f4d1e92ea2f2bdb7bdb95",
+        "errorCode": null
+      },
+      "preview": {
+        "status": 200,
+        "responseBytes": 15879,
+        "responseSha256": "1b54af3b38e573e0cbb67650e4a9e5cb1efdecbafe23b0d58e120572059122ac",
+        "ready": false,
+        "records": 70,
+        "vouchers": 6,
+        "transactions": 19,
+        "controls": 0,
+        "diagnostics": [
+          [
+            "syntax",
+            92,
+            2470
+          ],
+          [
+            "brace",
+            91,
+            2472
+          ]
+        ],
+        "digest": "sha256:44b1d3d7aa894a95275d473e7d36a8b5761413c85392965a1d1e7a7c452f0e63",
+        "sourceHashMatches": true,
+        "errorCode": null
+      },
+      "previewReplay": {
+        "status": 200,
+        "responseBytes": 15879,
+        "responseSha256": "1b54af3b38e573e0cbb67650e4a9e5cb1efdecbafe23b0d58e120572059122ac",
+        "samePreviewId": true,
+        "sameDigest": true,
+        "sameBodyHash": true,
+        "errorCode": null
+      },
+      "inventory": {
+        "status": 200,
+        "responseBytes": 302,
+        "items": 1,
+        "itemMatches": true,
+        "ready": false
+      },
+      "getPreview": {
+        "status": 200,
+        "responseBytes": 15879,
+        "responseSha256": "1b54af3b38e573e0cbb67650e4a9e5cb1efdecbafe23b0d58e120572059122ac",
+        "sameDigest": true,
+        "recordCount": 70,
+        "voucherCount": 6
+      },
+      "getOriginal": {
+        "status": 200,
+        "responseBytes": 4035,
+        "hashMatches": true,
+        "byteCountMatches": true
+      },
+      "retainReplay": {
+        "status": 200,
+        "responseBytes": 649,
+        "sameOccurrenceId": true,
+        "hashMatches": true
+      }
+    }
+  ],
+  "noFinancialAdmissionAttempted": true
+}

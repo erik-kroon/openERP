@@ -1,0 +1,265 @@
+{
+  "revision": "b23a98f87524d955f4222ac7e3da47003e4d8cc6",
+  "migrationThrough": "8740-supplier-draft-source-history.sql",
+  "environment": "fresh PostgreSQL 17, local Wrangler Worker restricted openerp_app, synthetic book/operator only",
+  "scope": "public byte files, local-only; not tenant migration or conformance",
+  "failureModesPredicted": [
+    "source-hash mismatch",
+    "retention/R2 or request-size rejection",
+    "PC8/#FORMAT mismatch",
+    "unsupported or malformed records/braces/dates",
+    "preview 2000-record/200-voucher/1MiB-JSON cap",
+    "multi-year partition and independent-control gate"
+  ],
+  "receipts": [
+    {
+      "sample": 0,
+      "sha256": "fc66a49c9e913c818c6e564c59cd639fe4e0e608f1ccff6a00fe90db675e39c3",
+      "bytes": 101380,
+      "retain": {
+        "status": 200,
+        "responseBytes": 657,
+        "occurrenceId": "source_bee2c0841317416680288deea1824aa7",
+        "errorTag": null
+      },
+      "preview": {
+        "status": 422,
+        "responseBytes": 123,
+        "ready": null,
+        "records": 0,
+        "vouchers": 0,
+        "transactions": 0,
+        "controls": 0,
+        "diagnostics": [],
+        "digest": null,
+        "errorTag": "UnsupportedProfile"
+      },
+      "inventory": {
+        "sample": 0,
+        "status": 200,
+        "responseBytes": 135,
+        "items": 0,
+        "ready": []
+      },
+      "planPrecondition": {
+        "status": 400,
+        "responseBytes": 0,
+        "errorCode": null,
+        "responseSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "note": "occurrence ID is not a preview ID (preview rejected); empty controls only; no plan admitted"
+      },
+      "financialPrecondition": {
+        "status": 409,
+        "responseBytes": 124,
+        "errorCode": "StaleDependency",
+        "responseSha256": "25cd6a228b59d1d6678fc0ac93de27706b283e10ca31dcfbdc405c12d98b9716",
+        "note": "occurrence ID is not a run ID; no plan/run exists; no financial admission attempted"
+      }
+    },
+    {
+      "sample": 1,
+      "sha256": "a7c357dba021a4710a5262178a2c70f2619486af2ec609e1c1535a5460d16c2d",
+      "bytes": 32438,
+      "retain": {
+        "status": 200,
+        "responseBytes": 649,
+        "occurrenceId": "source_9f085de285a54107be2ddc317fd6c953",
+        "errorTag": null
+      },
+      "preview": {
+        "status": 200,
+        "responseBytes": 204050,
+        "ready": true,
+        "records": 1205,
+        "vouchers": 1,
+        "transactions": 4,
+        "controls": 0,
+        "diagnostics": [],
+        "digest": "sha256:87b6be7d61170d2fc86145c533949681cac9ae72e799fd1b32b4ffa54ababf21",
+        "errorTag": null
+      },
+      "getPreview": {
+        "status": 200,
+        "responseBytes": 204050,
+        "responseSha256": "e52c9d54f0a279d7075bf5558bb3b97eadb15f1810f0f638b6f7ed01b2a8b822",
+        "ready": true,
+        "digest": "sha256:87b6be7d61170d2fc86145c533949681cac9ae72e799fd1b32b4ffa54ababf21",
+        "records": 1205,
+        "vouchers": 1,
+        "controls": 0
+      },
+      "inventory": {
+        "sample": 1,
+        "status": 200,
+        "responseBytes": 301,
+        "items": 1,
+        "ready": [
+          [
+            1,
+            true
+          ]
+        ]
+      }
+    },
+    {
+      "sample": 2,
+      "sha256": "3f51f5aabd3a7bf62f77838d12f535523a687a29185b77d746c07bc420dc643b",
+      "bytes": 3554,
+      "retain": {
+        "status": 200,
+        "responseBytes": 670,
+        "occurrenceId": "source_fbdb4022c15b4c53b29a54cddddfa412",
+        "errorTag": null
+      },
+      "preview": {
+        "status": 200,
+        "responseBytes": 31019,
+        "ready": true,
+        "records": 124,
+        "vouchers": 13,
+        "transactions": 91,
+        "controls": 0,
+        "diagnostics": [],
+        "digest": "sha256:371abeb096d3dc1161b362353be42d0fd677436b77b3fed1d0deb4fec5c575ce",
+        "errorTag": null
+      },
+      "getPreview": {
+        "status": 200,
+        "responseBytes": 31019,
+        "responseSha256": "6df25d346c7643d1b8266eff905e7209a71a84b6f8750e40c90bc048a3cd9c29",
+        "ready": true,
+        "digest": "sha256:371abeb096d3dc1161b362353be42d0fd677436b77b3fed1d0deb4fec5c575ce",
+        "records": 124,
+        "vouchers": 13,
+        "controls": 0
+      },
+      "inventory": {
+        "sample": 2,
+        "status": 200,
+        "responseBytes": 301,
+        "items": 1,
+        "ready": [
+          [
+            1,
+            true
+          ]
+        ]
+      }
+    },
+    {
+      "sample": 3,
+      "sha256": "7abecebbf2b721cb462e4ffe3115ba4924fec2726142e04bc1f73c09e8433175",
+      "bytes": 2472,
+      "retain": {
+        "status": 200,
+        "responseBytes": 649,
+        "occurrenceId": "source_2cc26f50dc4742089f5d4e85d212a797"
+      },
+      "preview": {
+        "status": 200,
+        "responseBytes": 15879,
+        "ready": false,
+        "records": 70,
+        "vouchers": 6,
+        "transactions": 19,
+        "controls": 0,
+        "diagnostics": [
+          [
+            "syntax",
+            92,
+            2470
+          ],
+          [
+            "brace",
+            91,
+            2472
+          ]
+        ],
+        "digest": "sha256:7f096b8a7c78a376bce5be8a69f969c8e2b25e845bdda86ebc77056e3c5d0a2c"
+      },
+      "getPreview": {
+        "status": 200,
+        "responseBytes": 15879,
+        "responseSha256": "6b15aa8d308878e58550d0c4e7fd6b2bd94d4771d7fc55e28bc98a745b8cd596",
+        "ready": false,
+        "digest": "sha256:7f096b8a7c78a376bce5be8a69f969c8e2b25e845bdda86ebc77056e3c5d0a2c",
+        "records": 70,
+        "vouchers": 6,
+        "controls": 0
+      },
+      "inventory": {
+        "sample": 3,
+        "status": 200,
+        "responseBytes": 302,
+        "items": 1,
+        "ready": [
+          [
+            1,
+            false
+          ]
+        ]
+      }
+    }
+  ],
+  "supplementalNativeParserOfficial": {
+    "records": 2160,
+    "vouchers": 295,
+    "controls": 223,
+    "normalizedBytes": 562742,
+    "diagnosticCountByCode": {
+      "syntax": 1330
+    },
+    "firstDiagnostic": [
+      "syntax",
+      1868,
+      43099
+    ],
+    "limitation": "not HTTP response: preview capacity rejects before persistence; input has three-space-indented #TRANS records"
+  },
+  "inventory": [
+    {
+      "sample": 0,
+      "status": 200,
+      "responseBytes": 135,
+      "items": 0,
+      "ready": []
+    },
+    {
+      "sample": 1,
+      "status": 200,
+      "responseBytes": 301,
+      "items": 1,
+      "ready": [
+        [
+          1,
+          true
+        ]
+      ]
+    },
+    {
+      "sample": 2,
+      "status": 200,
+      "responseBytes": 301,
+      "items": 1,
+      "ready": [
+        [
+          1,
+          true
+        ]
+      ]
+    },
+    {
+      "sample": 3,
+      "status": 200,
+      "responseBytes": 302,
+      "items": 1,
+      "ready": [
+        [
+          1,
+          false
+        ]
+      ]
+    }
+  ],
+  "role": "openerp_app superuser=false createdb=false createrole=false bypassrls=false"
+}
