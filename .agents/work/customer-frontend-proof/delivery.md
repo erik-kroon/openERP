@@ -6,6 +6,12 @@ Status: active. The acceptance ledger in `docs/frontend.md` remains incomplete. 
 
 The priority is unfinished customer screens and ordinary daily work. Banking and Home/To do now have an implemented first pass, recorded in the checkpoint below. Continue with contextual bank report/undo and the source-to-purchase workflow, then Books/Reports/period and Firm. Keep remaining Sales acceptance gaps visible; do not let unusual local-edit or recovery cases prevent progress on the core application.
 
+## Bank account report continuation — 24 September 2026
+
+The selected bank account now prepares its reconciliation report using the account and dates already shown in the workspace. The report ID is retained in the account URL, and the reopened report checks its account, period and book before displaying data. A failed report read hides stale report content; an uncertain creation response retains the same request key for explicit retry. The older general banking screen no longer owns the account page's report action.
+
+This is implemented and type checked, but **not browser verified**: the previous local preview was not running when this continuation inspected it. BANK-1 remains open. Contextual bank-match undo, report save/reload in the real browser, multi-entry matching and the full account journey still need observation. The next work should put undo beside the saved match with the existing reversal owner and then resume the source-to-purchase path. No test files were added.
+
 ## Sales baseline
 
 Build a unified customer invoice register with server-owned lifecycle state, URL search/status/sort/page, contextual record inspection, document-shaped editing and record-scoped review. Reuse the existing immutable draft and issuance operations. Do not infer legal issuance, delivery or payment from a rendered preview.
