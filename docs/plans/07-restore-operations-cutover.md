@@ -2,6 +2,8 @@
 
 Owner: operational tooling/runtime adapters and the integrator for deployment/authority. Phase: foundations begin at P0/P1; full release/cutover at P7. Retain the existing [local recovery tooling](../operations/local-recovery.md) as an explicitly synthetic, fresh-destination exercise. Its checksum/table comparison is not yet complete application recovery or production archive evidence.
 
+**Replacement authority:** [ADR 0010](../adr/0010-application-owned-accounting-replacement.md) supersedes the old-schema/function-only release instructions for the unreleased accounting replacement. The current recovery source and dated evidence remain useful observations; the target uses the clean three-file baseline, application-owned operations and the effect-mq closure from [ADR 0009](../adr/0009-effect-mq-background-jobs.md), with no compatibility path.
+
 ## Operating model and boundaries
 
 Deploy one authoritative PostgreSQL book with immutable object manifests, the Effect application and durable delivery workers. Worker and Bun compositions use the same domain operations. Select actual database/object/archive providers, geography, access/retention settings, recovery objectives and operator responsibility through D-07. These are deployment facts with a concrete readiness checklist, not missing core architecture.
@@ -42,7 +44,7 @@ Use deployment-specific measured limits for concurrency, request/object sizes, t
 
 ## Deployment and schema changes
 
-Keep immutable applied migrations/checksums. Validate a clean install and upgrade from a populated previous supported schema under the real runtime role. Introduce additive schema and adapters first where an actual coexistence window exists; backfill with durable checkpoints and independent counts; switch consumers after validation; remove obsolete access only after the compatibility window closes. Do not keep a parallel ledger as a migration convenience.
+Keep the current migration history immutable for reference. For the application-owned replacement, validate the clean three-file baseline, rerun, effective grants, checksum-drift refusal and refusal of the old installation. Do not introduce a populated old-schema adapter, dual writer or compatibility window for this unreleased reset. After the replacement is released, normal forward migrations and separately authorized data procedures apply to future deployments. Do not keep a parallel ledger as a migration convenience.
 
 A release manifest binds code, contracts, migrations, rules, validators and deployment configuration to its acceptance artifact. Destructive transforms require a reviewed recoverable procedure and separately authorized operation. Application rollback is allowed only to a version compatible with the current schema/receipts; otherwise use a forward fix. A stale client/worker must fail explicitly against a changed schema or writer epoch, not bypass new invariants.
 
@@ -70,7 +72,7 @@ The runbook covers unavailable database, uncertain commit, corrupted/missing obj
 | OPS-01 | Complete storage/archive inventory and consistent DB/object/key backup contract over current tooling. | FND-03, IMP-01         | E-21: missing referenced object/required relation fails completeness; original bytes recoverable.                                                              |
 | OPS-02 | Quarantined full application restore, privilege/configuration reconstruction and measured recovery.   | OPS-01, FND-04         | E-20/E-21: read-only app and evidence/report reconstruction; no automatic writer/provider activation.                                                          |
 | OPS-03 | Durable delivery/attempt state, bounded leases, fencing and provider-uncertainty recovery.            | PST-05                 | E-08/E-17/E-19: active worker not reclaimed; retry converges; unknown outcome does not resubmit blindly.                                                       |
-| OPS-04 | Release manifest, populated upgrades, observability, credential/permission and incident runbooks.     | FND-04, OPS-01         | E-01/E-20: exact release proof, safe upgrade/forward recovery and redacted useful diagnostics.                                                                 |
+| OPS-04 | Release manifest, clean-baseline/forward-migration gates, observability, credential/permission and incident runbooks. | FND-04, OPS-01 | E-01/E-20: exact release proof, safe rerun/forward recovery and redacted useful diagnostics. |
 | OPS-05 | Read-only actual-source cutover preflight and enforceable freeze rehearsal.                           | IMP-06, OPS-02, OPS-03 | E-21: actual old-client write/egress refusal; final delta and pending external work accounted for.                                                             |
 | OPS-06 | Reviewed promotion/rollback-boundary protocol and actual company cutover.                             | OPS-05, OPS-04         | E-21: one writer, fresh epoch, preserved receipts and independently reconciled post-switch controls; applicable company gates and explicit authority required. |
 | OPS-07 | Recurring restore/retention/recovery drills and operational acceptance review.                        | OPS-06                 | Measured accepted recovery objectives and coverage remain current; failures open incidents rather than silent green status.                                    |
@@ -91,14 +93,7 @@ OPS-02 application recovery, OPS-03 provider attempt history or promotion author
 
 ## Exact preparation-job containment
 
-Forward5100 provides database-authoritative stop of a retained preparation job ID even when
-Workflow/executor bindings are unavailable. This uses the existing preparation API/runtime
-authority, not a new operations CLI/domain or provider integration. It stops only future chunks
-of that identity; committed preparation and run/audit/receipt history remain intact. A previously
-claimed or replay-dispatched Workflow may still run, but the job's terminal database gate refuses
-further advancement. No remote termination, zero-dispatch claim, automatic replacement or writer
-promotion is implied. See [AUTOMATION.md](../../apps/api/docs/AUTOMATION.md#forward5100-stop-one-admitted-preparation-job).
-Source/static implementation is distinct from pending OPS-03 runtime/concurrency evidence.
+Forward5100 provides database-authoritative stop of a retained preparation job ID when Workflow/executor bindings are unavailable. The current source uses the existing preparation API/runtime authority. At the application-owned cutover, the same database stop contract is called by the shared application operation and effect-mq handler; it stops only future chunks of that identity. Committed preparation and run/audit/receipt history remain intact. A previously claimed or replay-dispatched worker may still run, but the job's terminal application fence refuses further advancement. No remote termination, zero-dispatch claim, automatic replacement or writer promotion is implied. See [AUTOMATION.md](../../apps/api/docs/AUTOMATION.md#forward5100-stop-one-admitted-preparation-job). Source/static implementation is distinct from pending OPS-03 runtime/concurrency evidence.
 
 ### Saved intent is not a committed evidence link
 

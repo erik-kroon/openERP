@@ -1,6 +1,6 @@
 # Dependency-ordered delivery
 
-This is the implementation map for the existing P0–P7 roadmap. Packet IDs, deliverables, dependencies and acceptance are defined in their owning area documents and indexed in [work-packages.json](evidence/work-packages.json). That index is derived from the tables; it is not a second manually maintained backlog. Packet completion requires its observable result, not just a merged migration or a UI stub.
+This is the implementation map for the existing P0–P7 roadmap. Packet IDs, deliverables, dependencies and acceptance are defined in their owning area documents and indexed in [work-packages.json](evidence/work-packages.json). That index is derived from the tables; it is not a second manually maintained backlog. Packet completion requires its observable result, not just a merged migration or a UI stub. The application-owned replacement in [ADR 0010](../adr/0010-application-owned-accounting-replacement.md) changes implementation ownership, the clean baseline and the durable runner without changing the domain packet IDs or financial requirements.
 
 The [repository comparison reconciliation](capability-backlog.md#repository-comparison-reconciliation) maps the supplied assignment aliases and payroll/FX ID conflicts to these owners. Supplemental inbox, party, recurring-sales and deadline scope follows the dependencies stated there; it does not create a competing packet sequence.
 
@@ -38,7 +38,7 @@ The tax bridge is calculated from a frozen **pre-close** year snapshot, then its
 
 ## Ownership and integration
 
-Use the existing repository/domain ownership. Each domain owns contracts, backend operations, persistence transitions and its local UI. Shared composition has one integrator: contract exports/API groups/capability registry, admission/authentication, database dispatcher, web routing/query glue, translations and deployment wiring. No two owners independently redefine amount, actor, receipt or allocation semantics.
+Use the existing repository/domain ownership. Each domain owns contracts, named application operations, transaction-passing persistence and its local UI. Shared composition has one integrator: contract exports/API groups/capability registry, admission/authentication, the transaction and database boundary, web routing/query glue, translations, the effect-mq runner and deployment wiring. No two owners independently redefine amount, actor, receipt or allocation semantics.
 
 The current `.agents/work/domain-ownership.md` documents reserved migration ranges and ongoing work. Inspect its current integration state before implementation, but do not treat its historical session names as new tasks created by this plan. Migration sequence numbers are allocation namespaces, not dependency proofs. Integrate only a dependency-complete prefix and never rewrite applied history.
 
@@ -50,7 +50,7 @@ Start each packet with the current source and retained artifacts. Classify its a
 
 | Existing material                              | How to use it                                                                                                                                      |
 | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Synthetic core, recovery and correction drafts | Complete the selected contract and fault cases; preserve receipts, supported routes and digest versions.                                           |
+| Synthetic core, recovery and correction drafts | Complete the selected contract and fault cases; preserve receipts, supported routes and financial meaning, then replace the old implementation path.                                           |
 | Bank/source capacity and case views            | Extend source occurrence/coverage and preserve existing exact-match identities; do not create a second matching authority.                         |
 | Trial-balance snapshots and explanations       | Add explicit opening/profile/coverage semantics; retain old snapshot interpretation.                                                               |
 | Recurring preparation                          | Preserve prepare-only authority; add durable group execution/mandates only under explicit policy and proof.                                        |
@@ -69,4 +69,4 @@ Avoid calendar estimates until the core fault/recovery checkpoint and actual-sou
 
 A changed business requirement or newly discovered source family updates its owning area, the packet dependencies, applicable rule/approval gate and acceptance evidence together. A new implementation convenience does not silently expand the supported profile. Resolve technical tradeoffs locally when they preserve the contract; record a new ADR only when changing ownership, invariants, public semantics or operational authority.
 
-The [FND-01 reconciliation](fnd01-reconciliation.md) is complete for its pinned checkpoint, with a concrete compatibility/upgrade record and current verification limits. The next frontier is FND-02/FND-03/FND-04. Compare subsequent implementation changes against that record before assigning its evidence to another revision. Packet progression does not itself authorize deployment, provider action, test additions or production migration.
+The [FND-01 reconciliation](fnd01-reconciliation.md) is complete for its pinned pre-replacement checkpoint and remains historical input. The next frontier is FND-02/FND-03/FND-04, with the clean-baseline and no-compatibility decisions in [ADR 0010](../adr/0010-application-owned-accounting-replacement.md). Compare subsequent implementation changes against both records before assigning its evidence to another revision. Packet progression does not itself authorize deployment, provider action, test additions or production migration.

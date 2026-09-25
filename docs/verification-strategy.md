@@ -10,7 +10,7 @@ Drive public requests through the real API Worker and PostgreSQL. Give the Worke
 
 Own a disposable database/cluster, fresh actors/books and bounded process/port lifetimes. Refuse unexpected or pre-existing targets. Concurrent workers need separate databases unless isolation is proved. Readiness checks database/migration access as well as HTTP health. Reused servers must match the revision and configuration. Teardown removes only run-owned resources, including after setup failure.
 
-Use production migration/provisioning commands. Check fresh install, rerun, rejection of changed applied migrations and populated upgrade. Preserve old values, identities, seals, approvals and receipts. Inspect effective grants and attempt forbidden table/function access under the runtime login.
+Use production migration/provisioning commands. For the current pre-cutover source, check fresh install, rerun and rejection of changed applied migrations. For the application-owned replacement, check the clean three-file baseline, rerun, checksum-drift rejection and refusal of the old installation; after release, verify normal forward migrations separately. Preserve historical evidence and financial meaning, but do not require an old-schema upgrade or old-digest interpreter. Inspect effective grants and attempt forbidden table/function access under the runtime login.
 
 Label runtime evidence precisely:
 
@@ -28,7 +28,7 @@ Write failure outcomes before implementation. Use small synthetic fixtures with 
 
 For a fresh-book posting of `12500` minor units, expect two lines, bank/clearing balances `12500`/`-12500`, sequence and series number `1`, one receipt, one outbox event and one consumed approval. Observe through a fresh request and connection. Retry preserves those counts; reversal retains the original and returns balances to zero. This is arithmetic proof, not a tax example.
 
-Also cover `9007199254740993`, the `10^38 - 1` line boundary, overflow and aggregates beyond a line's bound. Distinguish lexical admission from SQL integrality/range checks. Reject numeric JSON money, fractions, exponent forms, negative zero, invalid dates and unsupported precision. Specify canonicalization bytes/hashes independently, including key/array order, Unicode and duplicate keys. Old seals remain interpretable.
+Also cover `9007199254740993`, the `10^38 - 1` line boundary, overflow and aggregates beyond a line's bound. Distinguish lexical admission from SQL integrality/range checks. Reject numeric JSON money, fractions, exponent forms, negative zero, invalid dates and unsupported precision. Specify the clean-baseline canonicalization bytes/hashes independently, including key/array order, Unicode and duplicate keys. Historical seals and evidence remain available as dated records; they are not an old-digest compatibility interpreter in the replacement.
 
 Anchor fixture time explicitly. Browser clock overrides do not change database approval expiry. Format corpora retain raw-byte hashes, encoding, feature coverage and expected semantics, including Swedish characters and correction records. Roundtrips can share bugs; use independent facts and pinned validators with known exclusions. Demonstrate that a deliberately wrong expectation fails, without weakening product validation.
 
@@ -51,7 +51,7 @@ Record revision plus dirty-input, lockfile, migration, contract, rule and valida
 | Gate                     | Required evidence                                                                                           |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------- |
 | Every product change     | Strict static checks, relevant real Worker/PostgreSQL cases, core browser journeys and nonempty collection. |
-| Migration change         | Fresh/rerun and populated upgrade; retained effects and restricted grants.                                  |
+| Migration change         | Clean-baseline fresh/rerun, checksum-drift refusal and effective grants for this reset; forward-migration proof after release. |
 | Runtime/packaging change | Built routing, assets, service binding and financial journey.                                               |
 | Capability release       | Applicable corpus, races, reports, restore and operational cases at fixed versions.                         |
 | External capability      | Authorized environment, exact integration stage and provider receipts.                                      |

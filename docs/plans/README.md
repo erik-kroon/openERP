@@ -2,7 +2,7 @@
 
 Status: **fully specified working plan; implementation and acceptance remain separate**. Prepared 2026-09-22 at the user's request. “Fully specified” means every listed area has a bounded scope, owning records, operations and authority, state/failure behavior, integration points, delivery packets and observable acceptance criteria. It does not mean every company fact, legal rule, provider contract or operational deployment is already known.
 
-The [application-owned accounting replacement plan](application-owned-accounting.md) proposes a new TypeScript/Effect ownership boundary and a clean database baseline, based on the user's confirmation that there are no users or deployed data to preserve. It is a planning artifact, not implemented behavior. Its implementation includes reconciling the SQL ownership and old-schema preservation requirements below.
+The [application-owned accounting replacement plan](application-owned-accounting.md) is governed by [ADR 0010](../adr/0010-application-owned-accounting-replacement.md), which selects application-owned accounting, the clean three-file baseline, the live caller inventory, no compatibility path and the required transaction/identity/lock/failure contract. The user selected effect-mq on a Bun worker for background jobs in [ADR 0009](../adr/0009-effect-mq-background-jobs.md); implementation remains pending. The broader plan is a planning artifact, not implemented behavior. Its implementation removes the old SQL ownership and old-schema preservation requirements for this unreleased reset while retaining real company/provider applicability gates.
 
 This plan extends the maintained [roadmap](../roadmap.md), [domain invariants](../domain.md), [operations](../operations.md) and [verification scenarios](../verification.md). The detailed rules below are selected design decisions, not claims that all current code implements them. [ADR 0004](../adr/0004-complete-accounting-delivery-contract.md) records the consequential choices and alternatives.
 
@@ -32,7 +32,7 @@ The checkout has advanced beyond the early baseline in the research dossier. HEA
 
 Observed source includes the synthetic posting lifecycle, bank statements/matches, case context, trial-balance snapshots/explanations, recurring preparation and readiness. Concurrent files add recovery discovery, correction bundles, reviewed bank allocations, schedules, technical closing and local backup/restore tooling. Existing E2E files and result artifacts also exist. This planning task did not run those suites or promote their results into a whole-phase acceptance claim. No production-ready flag is inferred from a file's presence.
 
-The implementation packets therefore start with **reconcile and complete the existing slice**, not “build everything from zero.” Existing routes, receipts, immutable migration history and synthetic evidence are preserved. Applied migrations are never rewritten to conform to the plan.
+The implementation packets therefore start with **reconcile and complete the existing slice**, not “build everything from zero.” Existing routes, public contract IDs, receipts, dated evidence and historical source remain useful requirements and records, but the superseded migration chain is not a compatibility target. The clean replacement installs only the three reviewed baseline files; future releases use forward migrations.
 
 ## Product boundary
 

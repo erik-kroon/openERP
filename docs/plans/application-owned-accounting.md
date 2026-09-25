@@ -1,6 +1,6 @@
 # Application-owned accounting replacement
 
-Status: proposed implementation plan, 2026-09-25. Requested as a one-shot plan; no application, database, or test changes have been made by this planning task.
+Status: proposed implementation plan, 2026-09-25. [ADR 0010](../adr/0010-application-owned-accounting-replacement.md) records the selected application-owned boundary, clean three-file baseline, caller cutover, no-compatibility rule and live replacement inventory. The user selected effect-mq for background jobs in [ADR 0009](../adr/0009-effect-mq-background-jobs.md). No application, database, or test changes have been made by this planning task.
 
 ## Outcome and scope
 
@@ -37,7 +37,7 @@ Concurrent work observed at capture: `apps/api/src/db/statements/commerce-fx.ts`
 flowchart TD
   WEB[Web application] --> HTTP[HTTP transport]
   CLIENT[MCP client] --> MCP[MCP transport]
-  JOB[Worker jobs and Bun commands] --> APP
+  JOB[effect-mq Bun worker and Bun commands] --> APP
   HTTP --> APP[Effect application operations]
   MCP --> APP
   APP --> DOMAIN[Pure domain and jurisdiction rules]
@@ -156,9 +156,9 @@ Reads use parameterized queries and explicit response decoding. Single statement
 
 Use Hyperdrive's existing transaction pooling for the hosted runtime, with query caching disabled. Every explicit transaction remains on one backend connection until completion. Keep Worker clients request-scoped; do not put a live Worker connection in a global singleton. Any Bun pooling must lease a client to the complete transaction and release it through the same scoped lifecycle. Pool and job concurrency must be bounded against the actual database connection budget; raising `max_connections` is not the default scaling mechanism. [Hyperdrive pooling](https://developers.cloudflare.com/hyperdrive/concepts/connection-pooling/)
 
-Configure finite lock, statement, idle-in-transaction and whole-operation deadlines. Preserve the existing connection and statement limits as a starting point, then calibrate shorter financial lock/transaction budgets with the measured workload. Use transaction-local settings where overrides are needed. No session-level tenant context, session advisory locks, or `LISTEN/NOTIFY` dependency is introduced. A timeout around commit still follows the uncertain-outcome contract. [PostgreSQL client settings](https://www.postgresql.org/docs/17/runtime-config-client.html)
+Configure finite lock, statement, idle-in-transaction and whole-operation deadlines. Preserve the existing connection and statement limits as a starting point, then calibrate shorter financial lock/transaction budgets with the measured workload. Use transaction-local settings where overrides are needed. Financial transactions use no session-level tenant context and no session advisory locks. The separate effect-mq Bun runner may use a session-preserving PostgreSQL listener for queue delivery; that listener is not part of API or financial transaction state. A timeout around commit still follows the uncertain-outcome contract. [PostgreSQL client settings](https://www.postgresql.org/docs/17/runtime-config-client.html)
 
-Use `FOR UPDATE SKIP LOCKED` only for bounded job/outbox claim batches, followed by a durable lease/fencing token and a short commit. Run the external step after releasing the claim transaction. Do not use `SKIP LOCKED` to skip a contended financial record and report an incomplete accounting operation as successful.
+Let effect-mq own job claiming and lease renewal. Use `FOR UPDATE SKIP LOCKED` for our bounded domain-outbox dispatch batches, followed by a durable lease/fencing token and a short commit. Run the external step after releasing the claim transaction. Do not use `SKIP LOCKED` to skip a contended financial record and report an incomplete accounting operation as successful.
 
 Keep relational identity, money, dates, states and links in typed columns. Use JSONB for sealed plan bodies, input manifests and genuinely structured payloads. Use `date` for accounting dates, `timestamptz` for instants, and explicit nullability/state checks. Preserve opaque ID semantics without a wholesale ID-format rewrite or a dependency on PostgreSQL features newer than the repository's PostgreSQL 17 proof target. Financial references use restrictive deletion rules, not cascading deletion of posted history.
 
@@ -166,9 +166,32 @@ Design indexes with actual queries: scoped keys and foreign-key lookup paths, `(
 
 Use representative data and `EXPLAIN (ANALYZE, BUFFERS)` in the disposable environment to assess hot reads and batch writes. `ANALYZE` executes the statement, so never apply it casually to a live mutation. Keep autovacuum enabled; inspect long transactions, lock waits, active/idle connections and dead tuples. Do not add partitioning, replicas, sharding, denormalized balances or broad index sets without a measured need. The postgres skill supplies planning guidance, not evidence that any selected query is fast.
 
-## Domain slices and complete caller coverage
+### Selected background jobs: effect-mq
 
-Each row includes preparation, execution, corrections/reversals where currently implemented, reads, recovery, and caller rewiring. The inventory must classify every reachable operation; these groups are ownership boundaries, not new deployments.
+Use [TeamWarp/effect-mq](https://github.com/TeamWarp/effect-mq) with its PostgreSQL store and a persistent Bun worker, as selected by the user in [ADR 0009](../adr/0009-effect-mq-background-jobs.md). Keep the HTTP/MCP API on its current Worker/Bun compositions. effect-mq owns background execution; accounting operations, receipts and business authorization remain application responsibilities. The design choice is accepted; installation and runtime verification belong to implementation.
+
+Source assessment: repository revision `b5898fbae56fe926c28768a5a8ff9ad74f1e57a0`, package `0.7.0`. Its peer ranges include our Effect 4 and Drizzle 1 releases. Upstream develops against Effect/SQL `4.0.0-rc.111` and exactly our Drizzle build `1.0.0-rc.5-169397b`; we use Effect/SQL `4.0.0-rc.112`. That is a close fit, not verified runtime compatibility. [Package manifest](https://github.com/TeamWarp/effect-mq/blob/b5898fbae56fe926c28768a5a8ff9ad74f1e57a0/packages/effect-mq/package.json), [development versions](https://github.com/TeamWarp/effect-mq/blob/b5898fbae56fe926c28768a5a8ff9ad74f1e57a0/package.json).
+
+The library provides typed job definitions, durable retries, attempt history, token-guarded claims, stalled recovery, schedules and concurrency controls. Use it for existing background preparation, document rendering, source processing, connector synchronization and report preparation as those operations are integrated. Its delivery is at least once. Queue deduplication lasts only while the relevant job record exists, so keep permanent economic identities and financial receipts in our own domain records. [Package documentation](https://github.com/TeamWarp/effect-mq/blob/b5898fbae56fe926c28768a5a8ff9ad74f1e57a0/packages/effect-mq/README.md).
+
+Run a long-lived Bun process in both hosted and self-host installations. The Postgres store unconditionally starts a scoped `LISTEN` subscription, with polling fallback; the inspected options expose no switch to disable the listener. Give the runner a bounded PostgreSQL pool with a direct or session-preserving connection path for notifications. The API retains Hyperdrive; it commits outbox records without loading the queue worker or its listener. Replace the current Cloudflare preparation Workflow and its Cron dispatcher at the completed cutover. Do not add Cloudflare Queues or a second generic job scheduler. The actual hosting provider remains an operational choice under D-07; it does not block implementing or proving the Bun runner locally. [Store implementation](https://github.com/TeamWarp/effect-mq/blob/b5898fbae56fe926c28768a5a8ff9ad74f1e57a0/packages/effect-mq/src/drizzle-postgres/DrizzleJobStore.ts), [worker lifecycle](https://github.com/TeamWarp/effect-mq/blob/b5898fbae56fe926c28768a5a8ff9ad74f1e57a0/docs/guide/workers.md).
+
+Use the existing transactional outbox as the integration boundary:
+
+```text
+financial transaction → durable outbox row → retryable dispatcher
+  → effect-mq job → handler → authorized application operation
+```
+
+Commit the outbox with the domain effect. Enqueue using a deterministic identity derived from the outbox event, then acknowledge dispatch; a crash between enqueue and acknowledgment can safely replay. Handlers still check current scope/authority and use the original business command identity. Queue completion, cancellation and retention cannot rewrite financial truth. The library's flow outbox is for its parent/child job protocol; it does not replace our domain outbox. Do not assume an enqueue joins our Drizzle transaction merely because both use the same driver.
+
+Implementation verification requires a published-package compile/run against our pinned dependencies, restart/claim-loss/cancellation and duplicate-delivery E2E cases, outbox crash-window recovery, and checks that schema-encoded errors/logs do not persist credentials or raw database causes. Scope all payloads and queue administration to authorized books. Pin the queue schema factories, include their required tables/indexes in our existing SQL baseline, and verify schema agreement without adding a second migration ledger. Queue tables are mutated through the library API. [Postgres integration documentation](https://github.com/TeamWarp/effect-mq/blob/b5898fbae56fe926c28768a5a8ff9ad74f1e57a0/docs/storage/postgres.md).
+
+effect-mq owns queue claims, heartbeats, retries and attempt history. Retain only domain progress, cancellation/fencing semantics and receipts that enforce business requirements. Use direct job definitions calling named application operations, without a generic multi-provider queue abstraction. Verify one real preparation job through the new runner before porting the other handlers in step 5. Test changes remain subject to the existing authorization rule.
+
+[ADR 0010](../adr/0010-application-owned-accounting-replacement.md) contains the compact live replacement inventory. It assigns every plan slice and the cross-cutting posting, correction and durable-work families to retain, rewrite or delete, and names the real HTTP/MCP, web, Worker/Bun, script and recovery caller families. That inventory is a cutover obligation, not a claim that the current source has moved.
+
+## Domain slices and complete caller coverage
 
 | Slice | Source families to account for | Primary target |
 | --- | --- | --- |
@@ -209,7 +232,7 @@ One replacement branch and one final cutover; checkpoints provide working slices
 | 2. Establish the transaction and identity foundation | Reuse the installed driver; provide it at operation scope; introduce explicit transaction-passing persistence; port credential/session/membership checks and book admission; implement sanitized query/commit errors and exact codecs. | Workerd and Bun prove one connection per transaction, rollback on failure/interruption, current authority checks, independent book scope, and cleanup. No nested connection acquisition. |
 | 3. Deliver the complete posting slice | Build the ledger baseline subset, exact domain posting model, canonical sealing, approval/consumption, counters, receipt and outbox. Rewire prepare/approve/execute/read/recover and ordinary correction through HTTP/MCP/web. | Fresh-book posting, concurrency, uncertain-response recovery and correction pass through the real application; independent observations show one complete effect or none. |
 | 4. Port domain slices with their consumers | Complete identity/setup and evidence; sales/purchases; banking/settlements and FX; subledgers/owners; VAT/tax account/payroll foundation; reports/closing. Finish each area's corrections, reads and recovery before marking it done. Reuse existing pure VAT/SIE functions. | Each area passes its inventory's observable financial and access cases, including register/ledger atomicity. No endpoint in a completed area calls procedural business SQL. |
-| 5. Complete durable work and operational entry points | Port job leases/fencing, outbox and delivery state, source/document pipelines, calendar feeds, scheduled dispatch, self-host commands and operational controls. Adjust startup/provisioning and backup/restore manifests to the new schema. | Restarted or duplicate jobs converge; stale claims cannot commit; rendering/providers happen outside transactions; Bun and Worker call the same domain operations. Backup and restore of the new baseline preserve observed effects. |
+| 5. Complete durable work and operational entry points | Integrate the pinned effect-mq PostgreSQL store and persistent Bun runner; deliver outbox dispatch and a real preparation job first. Port remaining background handlers, domain progress/fencing, delivery state, source/document pipelines, calendar feeds, schedules, self-host commands and controls. Replace the Cloudflare preparation Workflow/Cron path and update startup/provisioning and restore manifests. | Restarted or duplicate jobs converge; stale claims cannot commit; rendering/providers happen outside transactions; Bun jobs and API callers share application operations. Queue listeners never run in the API Worker. New-baseline restore and post-restore dispatch preserve observed effects. |
 | 6. Finish the baseline and remove superseded paths | Consolidate schema/integrity/grants; remove old migrations, SQL workflow functions, operation-name/string-array dispatch, wrappers, grants, obsolete imports and old authority documentation. Update all internal callers together. | A fresh install contains only the classified integrity functions; catalog and source audits find no business-function calls or duplicate policy implementation. Every inventory row is closed. |
 | 7. Run integrated acceptance | Run strict checks, the authorized real E2E lanes, browser journeys, self-host parity and transaction timing/query observations. Retain the evidence packet below. | All applicable financial, security, recovery, runtime and caller criteria pass at the same recorded source revision. Missing or skipped required cases remain incomplete. |
 
@@ -268,12 +291,12 @@ For runtime performance, record query count, transaction duration, lock-wait dur
 
 ## Documentation and cleanup ownership
 
-At implementation start, record the selected boundary in a new ADR and update these authorities together:
+At implementation start, use [ADR 0010](../adr/0010-application-owned-accounting-replacement.md) as the selected boundary and update these authorities together:
 
 - `AGENTS.md`, `apps/api/README.md`, and `.agents/skills/effect-ts/references/database-access.md` / `business-operations.md`: replace function-only write rules with application transactions and the defined integrity boundary.
 - `docs/architecture.md`, `docs/architecture-followup.md`, `docs/domain.md`, and `docs/plans/00-shared-contracts.md`: transaction, authorization, dependency and module ownership.
 - ADRs 0001/0002/0004/0007/0008: mark the superseded implementation/compatibility portions and link the new decision; retain valid financial requirements and historical context.
-- `docs/plans/README.md`, delivery/acceptance plans, `docs/open-decisions.md`, `docs/roadmap.md`, local development, verification and self-host/operations documentation: remove old-schema preservation gates for this reset; describe the new baseline and retain real company/provider applicability gates.
+- `docs/adr/README.md`, `docs/plans/README.md`, delivery/acceptance plans, `docs/open-decisions.md`, `docs/roadmap.md`, local development, verification and self-host/operations documentation: remove old-schema preservation gates for this reset; describe the new baseline and retain real company/provider applicability gates.
 - `apps/api/tests/README.md` and affected tests/fixtures/manifests, when authorized: correct permission/migration assumptions and name actual coverage limitations.
 
 This planning task leaves current implementation instructions intact. Its proposed boundary supersedes them only as part of the authorized implementation change; it does not represent the current code as already migrated.

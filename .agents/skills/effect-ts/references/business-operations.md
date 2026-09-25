@@ -2,7 +2,7 @@
 
 Use these rules when building company/book access, financial mutations, retryable commands, or background work. They adapt the four Sellfinity lessons to OpenERP. They are implementation guidance, not a claim that a capability exists or has been verified.
 
-The maintained [domain model](../../../../docs/domain.md), [operation contract](../../../../docs/operations.md), and [posting decision](../../../../docs/adr/0002-exact-posting-and-approval.md) own accounting meaning. Reuse their contracts and existing code; this reference does not create a second model or require a generic framework.
+The maintained [domain model](../../../../docs/domain.md), [operation contract](../../../../docs/operations.md), and [posting decision](../../../../docs/adr/0002-exact-posting-and-approval.md) own accounting meaning. Reuse their contracts and existing code; this reference does not create a second model or require a generic framework. The [application-owned replacement decision](../../../../docs/adr/0010-application-owned-accounting-replacement.md) owns the current trust boundary and caller cutover. It keeps the financial requirements but removes the old feature-function dispatcher and compatibility path. PostgreSQL owns only the reviewed DDL, constraints, grants and narrow integrity layer; application operations own authorization, policy, calculations and scoped writes. Financial transactions use no session-level tenant context or advisory locks. Durable handlers call the same application operations through the selected effect-mq Bun path in [ADR 0009](../../../../docs/adr/0009-effect-mq-background-jobs.md), which owns queue claims, retries and leases rather than accounting truth.
 
 ## Keep each company's data separate
 
