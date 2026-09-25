@@ -2,6 +2,8 @@
 
 Status: **fully specified working plan; implementation and acceptance remain separate**. Prepared 2026-09-22 at the user's request. “Fully specified” means every listed area has a bounded scope, owning records, operations and authority, state/failure behavior, integration points, delivery packets and observable acceptance criteria. It does not mean every company fact, legal rule, provider contract or operational deployment is already known.
 
+The [application-owned accounting replacement plan](application-owned-accounting.md) proposes a new TypeScript/Effect ownership boundary and a clean database baseline, based on the user's confirmation that there are no users or deployed data to preserve. It is a planning artifact, not implemented behavior. Its implementation includes reconciling the SQL ownership and old-schema preservation requirements below.
+
 This plan extends the maintained [roadmap](../roadmap.md), [domain invariants](../domain.md), [operations](../operations.md) and [verification scenarios](../verification.md). The detailed rules below are selected design decisions, not claims that all current code implements them. [ADR 0004](../adr/0004-complete-accounting-delivery-contract.md) records the consequential choices and alternatives.
 
 ## Coverage
