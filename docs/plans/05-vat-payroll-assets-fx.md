@@ -347,6 +347,14 @@ Backend/contracts/jurisdiction type checks and targeted lint pass. The initial w
 encountered separate invoice UI pagination edits; the follow-up shared web check passed without
 changes to those files by this slice. SQL and runtime behavior remain unverified.
 
+### Synthetic VAT control reclassification slice (source present; runtime unverified)
+
+Forward `9120-vat-control-reclassifications.sql`, `9130-vat-reclassification-dependencies.sql` and the later tax-account compatibility guard `9170-vat-tax-account-claim-guard.sql` add the synthetic-only `vat_control_reclassification_v1` path. A saved v3 SEK scale-2 synthetic draft resolves to one synthetic reporting obligation and prepares an exact account-role-bound plan. The plan reverses only evidenced output/input VAT-control contribution lines, posts the signed settlement-control line when the exact net is nonzero, and records an explicit no-effect result for an all-zero basis. Reported kronor and residuals remain visible but are not posted or treated as an assessment.
+
+The SQL path pins the draft, current relevant facts, source voucher/line state, reviewed account roles, period and dependency digest without using the whole-book sequence as its reclassification currentness authority. Approval is operator-only; execution can use a current operator approval, commits the journal/effect/receipt atomically, prevents a new-key duplicate per obligation, and recovers the original command by idempotency key. Generic correction, taxable-source admission and tax-account matching cannot consume the owned effect or its source lines. VAT dependencies now retain bounded reclassification and amendment inventories for closing/accountant review. The shared contracts, HTTP handlers, read-only MCP capabilities and Tax workspace are source-integrated in `packages/contracts/src/vat-returns.ts`, `apps/api/src/transport/http/routes/vat-returns.ts`, `apps/api/src/application/capabilities.ts` and `apps/web/src/components/vat-returns/reclassification-panel.tsx`.
+
+This slice is not runtime proof, legal VAT support, assessment, payment, filing, amendment or a complete tax-account control. SQL application, PostgreSQL/Workerd execution, browser interaction, positive/negative/zero/stale/duplicate/recovery scenarios and real-company evidence remain open. Assessment and VAT-04 amendment deltas are separate follow-up work.
+
 ## Adopted financial-contract delivery
 
 [ADR 0008](../adr/0008-financial-fx-vat-impairment.md) owns the adopted semantics and supersedes earlier open-design statements for these selected profiles. The [retained proposal](evidence/financial-contract-proposal.md) supplies detailed examples and acceptance scenarios. Existing packet IDs and engineering dependencies remain unchanged; these are bounded stages within them, not a second backlog.
