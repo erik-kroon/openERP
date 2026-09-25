@@ -1,0 +1,58 @@
+{
+  "observedAt": "2026-09-25T16:17:18.536Z",
+  "commit": "6fd2b18",
+  "database": "disposable PostgreSQL 17.11",
+  "migration": {
+    "freshInstall": "all migrations through 9300-effect-mq.sql applied",
+    "includedUncommitted": "9180 FX syntax fix and 9210 supporting slices from shared checkout"
+  },
+  "checks": {
+    "apiTypecheck": "passed",
+    "targetedLint": "passed",
+    "infraTypecheck": "passed",
+    "apiDryRunBuild": "passed",
+    "admission": {
+      "status": 200,
+      "state": "ready"
+    },
+    "delivery": {
+      "jobState": "completed",
+      "checkpoint": 1,
+      "runState": "completed",
+      "queueState": "completed",
+      "queueAttempts": 1,
+      "auditEntries": 1
+    },
+    "apiRecovery": {
+      "status": 200,
+      "state": "completed",
+      "checkpoint": 1
+    },
+    "idempotentReplay": {
+      "sameJobId": true,
+      "domainJobs": 1,
+      "queueJobs": 1,
+      "auditEntries": 1
+    },
+    "authorityRevokedAfterAdmission": {
+      "jobState": "stopped",
+      "reason": "Submitting authority expired or was revoked.",
+      "queueState": "completed",
+      "queueAttempts": 1,
+      "runAuditEntries": 0
+    },
+    "runnerConnectionsAfterShutdown": 0
+  },
+  "limits": [
+    "Synthetic zero-observation runs; observation preparation and financial posting were not exercised.",
+    "Hosted Bun process deployment, claim loss, cancellation, queue pruning and restore recovery remain unverified.",
+    "The full migration proof included unrelated uncommitted accounting changes, which were preserved and not committed with the queue slice."
+  ],
+  "reproduce": [
+    "Initialize PostgreSQL 17 and run apps/api/scripts/migrate.ts on a disposable database.",
+    "Provision examples/synthetic-book.json, then a dedicated agent credential and a ready synthetic recurring preparation run.",
+    "Call the background POST with an operator Bearer token and Idempotency-Key; start apps/api/scripts/preparation-runner.ts with restricted DATABASE_URL and agent token; GET the job and inspect effect_mq_jobs, effect_mq_job_attempts and preparation_run_audit.",
+    "Replay the POST with the same key and compare job, queue and audit counts.",
+    "Admit a second run while the runner is stopped, revoke the submitter credential, restart the runner and verify the job stops before preparing any observation."
+  ]
+}
