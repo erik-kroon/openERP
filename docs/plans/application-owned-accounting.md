@@ -1,6 +1,6 @@
 # Application-owned accounting replacement
 
-Status: proposed implementation plan, 2026-09-25. [ADR 0010](../adr/0010-application-owned-accounting-replacement.md) records the selected application-owned boundary, clean three-file baseline, caller cutover, no-compatibility rule and live replacement inventory. The user selected effect-mq for background jobs in [ADR 0009](../adr/0009-effect-mq-background-jobs.md). No application, database, or test changes have been made by this planning task.
+Status: implementation in progress, 2026-09-26. [ADR 0010](../adr/0010-application-owned-accounting-replacement.md) records the selected application-owned boundary, clean three-file baseline, caller cutover, no-compatibility rule and live replacement inventory. The user selected effect-mq for background jobs in [ADR 0009](../adr/0009-effect-mq-background-jobs.md). [Initial repairs](evidence/application-owned-review-repairs.md), [follow-up verification](evidence/application-owned-review-followup.md) and [baseline cutover evidence](evidence/application-owned-baseline-cutover.md) record implementation and observed results. The dispatch registry and superseded migration chain are removed; fresh baseline, rerun, drift refusal, catalog and grant checks pass. The 28 placeholder operations, retained SQL policy-guard review and broader release gates remain open.
 
 ## Outcome and scope
 
@@ -20,8 +20,8 @@ Inspection started at revision `bb628452196a55ceef7516f76fc3cd6471ae4d91`, with 
 
 | Finding | Consequence |
 | --- | --- |
-| [Capabilities](../../apps/api/src/application/capabilities.ts) mostly bind a name and string parameters to a SQL operation. Some [HTTP handlers](../../apps/api/src/transport/http/routes/accounting.ts) call SQL directly. | Rewire every caller to application operations, including operator-only operations that are absent from MCP. |
-| [query.ts](../../apps/api/src/db/query.ts) provides a new database layer inside each `query()` invocation. | Putting several existing calls inside an Effect does not create one transaction. Replace this resource boundary before moving writes. |
+| [Capabilities](../../apps/api/src/application/capabilities/index.ts) mostly bind a name and string parameters to a SQL operation. Some [HTTP handlers](../../apps/api/src/transport/http/routes/accounting.ts) call SQL directly. | Rewire every caller to application operations, including operator-only operations that are absent from MCP. |
+| The former `db/query.ts` provided a new database layer inside each `query()` invocation. It has since been deleted. | Putting several calls inside an Effect does not create one transaction. The replacement passes the caller's transaction explicitly. |
 | [connection.ts](../../apps/api/src/db/connection.ts) already provides the installed native Effect Drizzle database. [The migrator](../../apps/api/scripts/migrate.ts) already uses `db.transaction((tx) => Effect.gen(...))`. | Reuse the existing driver and transaction support. Runtime behavior still needs proof through workerd and Bun. |
 | [schema.ts](../../apps/api/src/db/schema.ts) maps only maintenance tables. | Complete typed mappings for application-owned tables; do not treat the current file as the full database schema. |
 | [Authentication](../../apps/api/src/transport/http/auth.ts) returns a bearer/session token and relies on SQL to recheck identity and authority. | Moving posting alone would remove the effective authorization boundary. Port admission and its concurrency behavior first. |
