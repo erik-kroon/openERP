@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-26T19:03:48.101455+00:00",
-  "headObservedAtValidation": "5b2c0bb986e7bf5c90f993a68987b24ef389c5b6",
+  "checkedAt": "2026-09-26T21:25:16.234639+00:00",
+  "headObservedAtValidation": "010ca2ba8f3623d1727de43f00f5c7ae4303fa0b",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -226,7 +226,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "0c88ebf0e8acc1c893d7f7583c5e4aea1afde1c29f6025a361c390887566fff8"
+      "sha256": "2a155664a32418bdeaa528ab51a558c4d83e4fc8d4dfc0f2e828f060e8aa6eba"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
