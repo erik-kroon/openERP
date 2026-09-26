@@ -17,14 +17,39 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 |---|---|---|---|---|
 | NEXT-01 | Owner-aware case review | P0 | implemented | none |
 | NEXT-02 | Capability-specific company admission | P0 | implemented | none |
+| NEXT-11 | Separate complete-book SIE4E export | P0 | implemented | none |
 | NEXT-13 | Semantic P&L and balance-sheet snapshots | P0 | implemented | none |
-| NEXT-03 … NEXT-25 (22 packets) | — | — | not started | none |
+| NEXT-03 … NEXT-25 (21 packets) | — | — | not started | none |
 
-NEXT-01 is complete. NEXT-02 and NEXT-13 are merged. The remaining 22 packets
-are untouched, so no dependency edge in the packet graph is yet satisfied by
-merged source except those NEXT-01, NEXT-02 and NEXT-13 themselves unblock.
+NEXT-01 is complete. NEXT-02, NEXT-11 and NEXT-13 are merged. The remaining 21
+first-wave packets are untouched, so the only dependency edges satisfied by
+merged source are those NEXT-01, NEXT-02, NEXT-11 and NEXT-13 themselves
+unblock.
 
 ## What was implemented
+
+### NEXT-11 — Separate complete-book SIE4E export
+
+A distinct application-owned export, not a second movement-transfer path. One
+book-scoped transaction captures the complete book and retains the account,
+balance and journal-line membership. Exact bytes are then rendered and
+re-parsed by the *existing* inbound SIE parser outside every transaction, and
+a short second transaction binds the verified object manifest to the exact
+model and renderer. The retained `openerp-sie4i-v1` transaction transfer is
+preserved byte-for-byte.
+
+**It refuses rather than approximates.** A book that declares any dimension
+effective as-of the capture refuses with `UnsupportedProfile` naming the
+dimension and the missing assignment owner; a dimension-free book emits
+`#TRANS … {}` and carries an explicit limitation that emptiness means *nothing
+is assigned*, not that an assignment was reviewed. No 4E record matrix was
+invented: the locally retained source is the SIE 4C edition 2025-08-06, whose
+review distinguishes 4E but does not qualify it, so that same edition checksum
+is pinned on the capture and only the record families that can be stated are
+emitted, declared in `emittedRecords.recordProfile`. Account codes are bounded
+to exactly four digits, a nominal account with a non-zero captured opening
+refuses rather than lose it silently, and a first fiscal year with no prior
+vouchers and no opening set refuses rather than infer a zero opening.
 
 ### NEXT-01 — Owner-aware case review
 
@@ -98,12 +123,33 @@ These are real and unresolved. None is cosmetic.
   owner exists and no posting proposal references a family, so a retroactive
   fact correction records a `company_activation_impact` per affected
   activation instead of a case link.
-- **`docs/plans/evidence/planning-integrity.json` is stale for this file.** The
-  document-integrity checker records a file list and per-file hashes. Adding
-  this note changes that set. The checker was deliberately not run, because
-  `docs/` had concurrent uncommitted edits at merge time and regenerating would
-  have clobbered them. Run `python3 docs/plans/check-plan.py` and reconcile
-  `docs/plans/README.md` in a separate change.
+- **`docs/plans/evidence/planning-integrity.json` was stale for this file.** The
+  document-integrity checker records a file list and per-file hashes, so adding
+  this note changed that set. It was deliberately not run at the earlier merge,
+  because `docs/` had concurrent uncommitted edits and regenerating would have
+  clobbered them. **Now reconciled:** `python3 docs/plans/check-plan.py` has
+  been run against this change and reports `passed_document_integrity_only`
+  with 39 documents and 624 local links and anchors checked, regenerating
+  `docs/plans/evidence/planning-integrity.json` and `work-packages.json`. That
+  result is a document-integrity result only; it is not a product test.
+- **A third migration, also never parsed by PostgreSQL.** `0007-next-11.sql` is
+  written against the reviewed 0001–0003 baseline and has never been applied.
+  It declares no function, reuses the baseline `immutable_row` guard, and
+  carries its own `SELECT, INSERT` runtime grants, but its DDL, CHECK
+  expressions, foreign-key targets and trigger wiring are unverified SQL. Note
+  the sequence now has a deliberate gap: `0006` is reserved for NEXT-03, which
+  is still in flight.
+- **NEXT-11 depends on a dimension-assignment owner that does not exist.** The
+  baseline has `dimensions` and `dimension_values` but no journal-line dimension
+  assignment table at all, so a dimension-bearing book cannot be exported. The
+  packet did not take over that owner and did not substitute an empty
+  assignment for a reviewed one. NEXT-14 is unmapped in the dependency graph.
+- **The 4E record profile is a declared subset, not a qualified matrix.** A
+  reader that needs the full 4E mandatory record set still has to qualify it.
+  `emittedRecords.recordProfile` is the honest statement of what was emitted.
+- **NEXT-11 touched a ninth shared registration file.** Beyond the eight the
+  coordinator tracked, `jurisdictions/se/package.json` needed a new export
+  path for the pure module. That file is now verified on every merge.
 
 ## Verification limits
 
@@ -124,6 +170,11 @@ during this work. Therefore:
   against the exported pure function. That is **arithmetic evidence only** —
   not a transaction, not concurrency, not a database — and it is not retained
   as a test, because `AGENTS.md` forbids adding tests without explicit approval.
+- NEXT-11's unobserved surface is the same in kind: no database, no renderer
+  invocation, no re-parse, no HTTP call and no browser session. In particular
+  the "exact bytes are re-parsed by the existing inbound SIE parser" step has
+  never executed, and no SIE destination or statutory acceptance is
+  established or implied.
 - No Swedish tax, VAT, payroll or statutory compliance claim is made or
   supported by any of this work.
 

@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-26T13:36:15.769043+00:00",
-  "headObservedAtValidation": "0776524bb4a6c8f5c32efcedde2ef35f123b9581",
+  "checkedAt": "2026-09-26T14:59:58.526080+00:00",
+  "headObservedAtValidation": "95cebe95b13ab87b7db6915ce168d9a5d72e05f0",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,7 +9,7 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 623,
+    "localLinksAndAnchorsChecked": 624,
     "documentsChecked": 39,
     "coverage": {
       "R": [
@@ -174,7 +174,7 @@
     },
     {
       "path": "docs/plans/12-next-implementation-dossier.md",
-      "sha256": "4118790a5cf9c4b9918dc6179a57caafa42fcae0d4cf5753856d4265358667ab"
+      "sha256": "0db0a2becb794810d3a092a0ede8fdb4e204b6b8abb176af7061e270e9915923"
     },
     {
       "path": "docs/plans/13-reference-derived-defects.md",
@@ -226,7 +226,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "1dce563fb083b672855f16827c0945ee413440353bf2a0385f039db9a84ee1f4"
+      "sha256": "b6aaeaae79c998ca70f24330c0a38a686435ac15801df55f473e0eef7884f117"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -234,7 +234,7 @@
     },
     {
       "path": "docs/plans/next-packet-progress.md",
-      "sha256": "72ef3e6e13ddf171cbaafbd49938794e191d09e233bc0712ddc00e204c9cd183"
+      "sha256": "047156f77f6c1b233ad6ad71f6f1b54329eff2896babbae8659cf9529f072a49"
     },
     {
       "path": "docs/plans/seb-statement-preview.md",
