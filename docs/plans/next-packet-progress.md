@@ -23,10 +23,12 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-49 | Rule-change impact and evidence-backed obligation fulfillment | P0 | implemented | none |
 | NEXT-03 | Domestic purchasing with owned tax recognition | P0 | implemented | none |
 | NEXT-26 | Supplier extraction jobs and field-level reviewed merge | P0 | implemented | none |
-| NEXT-04 … NEXT-25 (18 packets) | — | — | not started | none |
+| NEXT-15 | Legal customer credit notes | P1 | implemented | none |
+| NEXT-04 … NEXT-25 (17 packets) | — | — | not started | none |
 
-NEXT-01 is complete. NEXT-02, NEXT-03, NEXT-11, NEXT-13, NEXT-20, NEXT-26 and
-NEXT-49 are merged. The remaining 18 first-wave packets are untouched.
+NEXT-01 is complete. NEXT-02, NEXT-03, NEXT-11, NEXT-13, NEXT-15, NEXT-20,
+NEXT-26 and NEXT-49 are merged. The remaining 17 first-wave packets are
+untouched. NEXT-30 and NEXT-46 now have their NEXT-15 prerequisite satisfied.
 
 Dependency edges now satisfied by merged source: NEXT-04, NEXT-06, NEXT-07,
 NEXT-16, NEXT-31, NEXT-33, NEXT-38 and NEXT-46 name NEXT-03; NEXT-22 and NEXT-45
@@ -268,6 +270,49 @@ Reported gaps, recorded rather than smoothed over:
 - All six packet vectors are **implemented, not proven**, and no extraction
   provider was called and no real supplier document processed.
 
+### NEXT-15 — Legal customer credit notes
+
+A legal customer credit note is its own document identity, number series and
+journal group: original-line credit capacity, receivable reduction, signed
+negative tax effects and the reviewed artifact.
+
+**The shared owners were extended, not bypassed.**
+`VoucherPostingAction` in `@open-erp/domain` gains a
+`LegalCustomerCreditPostingAction` variant discriminated by a new
+`postingPurpose` literal, leaving the synthetic and legal-AR variants
+untouched. The legal credit number is treated as **document identity allocated
+inside the issuing transaction**, deliberately not as a journal field or a
+digest input that would have to be fixed before approval. Posting admission
+gains a `legal_credit` owner kind: a credit purpose presented by any other
+owner is refused with `UnsupportedProfile`, and a review-id mismatch is a
+`StaleDependency`. The legal-purpose gate became an explicit list of purposes
+rather than a widened single-purpose test.
+
+Deliberate omissions, reported by the worker and recorded here:
+
+- **No web UI.** The packet mentions distinguishing issued-but-artifact-pending,
+  but no route exists and UI is not the named deliverable. The state is carried
+  explicitly as `artifactState: "issued_artifact_pending"` in the receipt and
+  history.
+- **No credit-note renderer.** The outbox intent records
+  `requiredRendererVersion: "openerp-se-credit-note-v1"`; no renderer implements
+  it and no relay drains the outbox. No released consumer exists for
+  `voucher.posted.v1` either.
+- **No MCP capabilities for prepare/approve/execute**, matching the released
+  `ar-legal-issue` owner, which registers reads only.
+- **No VAT return integration, because NEXT-04 is not released.** Each
+  correction records the exact negative components a qualified adjustment
+  policy would consume, bound to the original recognition component and the
+  qualified tax period, with `vatReturnOwner: not_released`. **No VAT return is
+  computed and no statutory credit support is claimed.**
+
+The 25% rate and the half-up minor rounding are **carried as reviewed inputs
+read back from the activated policy and profile, never as defaults** here, and
+a different rate or rounding method is a different profile. The live-invoice
+projection was extended because it did not previously know about customer
+credits. The extended `liveInvoice` SQL and the bigint parameter casts have
+never been parsed by PostgreSQL.
+
 ### NEXT-01 — Owner-aware case review
 
 A captured case summary records correction-bundle membership at capture time
@@ -376,6 +421,16 @@ These are real and unresolved. None is cosmetic.
 - **NEXT-20 left `apps/web/src/components/payroll-foundation.tsx` untouched.**
   The frozen calculation is reachable only through its API. No interface
   surface was added, so nothing here is a completed product path.
+- **A concurrent agent, not this programme, owns four dirty files in the main
+  worktree**: `apps/api/scripts/preparation-runner.ts`,
+  `apps/api/src/application/purchases/extraction.ts`,
+  `apps/api/src/application/purchases/extraction-engine.ts` and
+  `packages/contracts/src/supplier-extraction.ts`, plus a new untracked
+  `apps/api/src/adapters/storage/filesystem-objects.ts`. Those edits were not
+  made here and have deliberately not been committed or reverted. They are the
+  sole cause of the `bun run lint` failure recorded below, and they also mean
+  `bun run check` cannot be run here without `oxfmt --write` reformatting
+  another agent's in-progress work. `oxfmt --check` was used instead.
 - **`DeadlineInput` changed shape, breaking existing obligation clients.**
   `jurisdiction`, `statutoryBasis` and `requiredEnvironment` are now required
   and `DeadlineActivity.reference` is gone, with no compatibility runtime. Any
@@ -419,6 +474,13 @@ during this work. Therefore:
   established or implied.
 - No Swedish tax, VAT, payroll or statutory compliance claim is made or
   supported by any of this work.
+- **Gate state at the NEXT-15 merge.** `bun run check-types` and `bun run build`
+  exit 0 and `oxfmt --check` is clean for every merged file. `bun run lint` exits
+  1, and **all five reported errors are in the concurrent agent's files listed
+  above** — three `require-readable-spacing` and one
+  `no-conditional-empty-object-spread` in its modified files, and one
+  `no-type-assertions` in its untracked new file. No lint error is attributable
+  to any merged packet, and none was suppressed, disabled or worked around.
 
 Closing these gaps requires a real PostgreSQL instance, the 0001–0005
 migrations applied under maintenance credentials, an operator-scoped book with
