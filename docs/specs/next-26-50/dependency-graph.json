@@ -1,0 +1,264 @@
+{
+  "nodes": {
+    "NEXT-01": [],
+    "NEXT-02": [],
+    "NEXT-03": [
+      "NEXT-02"
+    ],
+    "NEXT-04": [
+      "NEXT-02",
+      "NEXT-03"
+    ],
+    "NEXT-05": [
+      "NEXT-03",
+      "NEXT-04",
+      "NEXT-17"
+    ],
+    "NEXT-06": [
+      "NEXT-02",
+      "NEXT-03"
+    ],
+    "NEXT-07": [
+      "NEXT-03",
+      "NEXT-08"
+    ],
+    "NEXT-08": [],
+    "NEXT-09": [],
+    "NEXT-10": [
+      "NEXT-09"
+    ],
+    "NEXT-11": [
+      "NEXT-02",
+      "NEXT-13",
+      "NEXT-14"
+    ],
+    "NEXT-12": [
+      "NEXT-02"
+    ],
+    "NEXT-13": [
+      "NEXT-02"
+    ],
+    "NEXT-14": [
+      "NEXT-13"
+    ],
+    "NEXT-15": [
+      "NEXT-02",
+      "NEXT-04"
+    ],
+    "NEXT-16": [
+      "NEXT-01",
+      "NEXT-03",
+      "NEXT-06"
+    ],
+    "NEXT-17": [
+      "NEXT-02",
+      "NEXT-03"
+    ],
+    "NEXT-18": [
+      "NEXT-17"
+    ],
+    "NEXT-19": [
+      "NEXT-04",
+      "NEXT-15"
+    ],
+    "NEXT-20": [
+      "NEXT-02"
+    ],
+    "NEXT-21": [
+      "NEXT-20"
+    ],
+    "NEXT-22": [
+      "NEXT-13"
+    ],
+    "NEXT-23": [
+      "NEXT-04",
+      "NEXT-05",
+      "NEXT-06",
+      "NEXT-07",
+      "NEXT-12",
+      "NEXT-13",
+      "NEXT-18",
+      "NEXT-19",
+      "NEXT-21",
+      "NEXT-22"
+    ],
+    "NEXT-24": [
+      "NEXT-13",
+      "NEXT-23"
+    ],
+    "NEXT-25": [
+      "NEXT-02",
+      "NEXT-03",
+      "NEXT-04",
+      "NEXT-05",
+      "NEXT-06",
+      "NEXT-11",
+      "NEXT-12",
+      "NEXT-13",
+      "NEXT-16",
+      "NEXT-21",
+      "NEXT-23",
+      "NEXT-24"
+    ],
+    "NEXT-26": [
+      "NEXT-03"
+    ],
+    "NEXT-27": [
+      "NEXT-02"
+    ],
+    "NEXT-28": [
+      "NEXT-15",
+      "NEXT-30"
+    ],
+    "NEXT-29": [
+      "NEXT-02",
+      "NEXT-15"
+    ],
+    "NEXT-30": [
+      "NEXT-04",
+      "NEXT-15"
+    ],
+    "NEXT-31": [
+      "NEXT-03",
+      "NEXT-13"
+    ],
+    "NEXT-32": [
+      "NEXT-02",
+      "NEXT-06",
+      "NEXT-13"
+    ],
+    "NEXT-33": [
+      "NEXT-03",
+      "NEXT-21"
+    ],
+    "NEXT-34": [
+      "NEXT-20",
+      "NEXT-21",
+      "NEXT-33"
+    ],
+    "NEXT-35": [
+      "NEXT-20",
+      "NEXT-21"
+    ],
+    "NEXT-36": [
+      "NEXT-21",
+      "NEXT-35"
+    ],
+    "NEXT-37": [
+      "NEXT-04"
+    ],
+    "NEXT-38": [
+      "NEXT-03",
+      "NEXT-04",
+      "NEXT-23"
+    ],
+    "NEXT-39": [
+      "NEXT-30",
+      "NEXT-40"
+    ],
+    "NEXT-40": [
+      "NEXT-17",
+      "NEXT-18"
+    ],
+    "NEXT-41": [
+      "NEXT-18",
+      "NEXT-23",
+      "NEXT-40"
+    ],
+    "NEXT-42": [
+      "NEXT-13",
+      "NEXT-19"
+    ],
+    "NEXT-43": [
+      "NEXT-13",
+      "NEXT-14"
+    ],
+    "NEXT-44": [
+      "NEXT-11",
+      "NEXT-12",
+      "NEXT-14"
+    ],
+    "NEXT-45": [
+      "NEXT-13",
+      "NEXT-39",
+      "NEXT-40"
+    ],
+    "NEXT-46": [
+      "NEXT-03",
+      "NEXT-15",
+      "NEXT-26"
+    ],
+    "NEXT-47": [
+      "NEXT-24"
+    ],
+    "NEXT-48": [
+      "NEXT-24",
+      "NEXT-47"
+    ],
+    "NEXT-49": [
+      "NEXT-02",
+      "NEXT-04",
+      "NEXT-21",
+      "NEXT-48"
+    ],
+    "NEXT-50": [
+      "NEXT-01",
+      "NEXT-16",
+      "NEXT-33",
+      "NEXT-49"
+    ]
+  },
+  "topological_order": [
+    "NEXT-01",
+    "NEXT-02",
+    "NEXT-08",
+    "NEXT-09",
+    "NEXT-03",
+    "NEXT-10",
+    "NEXT-12",
+    "NEXT-13",
+    "NEXT-20",
+    "NEXT-27",
+    "NEXT-04",
+    "NEXT-06",
+    "NEXT-07",
+    "NEXT-14",
+    "NEXT-17",
+    "NEXT-21",
+    "NEXT-22",
+    "NEXT-26",
+    "NEXT-31",
+    "NEXT-05",
+    "NEXT-11",
+    "NEXT-15",
+    "NEXT-16",
+    "NEXT-18",
+    "NEXT-32",
+    "NEXT-33",
+    "NEXT-35",
+    "NEXT-37",
+    "NEXT-43",
+    "NEXT-19",
+    "NEXT-29",
+    "NEXT-30",
+    "NEXT-34",
+    "NEXT-36",
+    "NEXT-40",
+    "NEXT-44",
+    "NEXT-46",
+    "NEXT-23",
+    "NEXT-28",
+    "NEXT-39",
+    "NEXT-42",
+    "NEXT-24",
+    "NEXT-38",
+    "NEXT-41",
+    "NEXT-45",
+    "NEXT-25",
+    "NEXT-47",
+    "NEXT-48",
+    "NEXT-49",
+    "NEXT-50"
+  ],
+  "meaning": "declared design dependencies including conditionals, not observed implementation status"
+}

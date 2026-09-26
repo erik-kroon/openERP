@@ -1,0 +1,462 @@
+{
+  "scope": "dossier structure and independent illustrative arithmetic only",
+  "application_test_suite_run": false,
+  "database_or_worker_executed": false,
+  "provider_executed": false,
+  "repository_modified": false,
+  "checks": [
+    {
+      "name": "exactly 25 distinct packet IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all 25 packet files exist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all packet application-ownership flags true",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source baseline and late observation separated",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "five original reservations retained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "migration owner separately reserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all declared packet source IDs resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "every packet names its new scope and existing owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "every packet has distinct new-scope text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "combined graph contains 50 distinct tasks",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "every declared dependency precedes its consumer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no first-wave node depends on second-wave node",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "master contains each packet heading exactly once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "master explicitly disclaims runtime proof",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all markdown code fences paired",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no em dashes in delivered markdown",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all local markdown links resolve",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "no imperative feature procedure creation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no font binaries in package",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "half-up positive tie",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "half-up negative tie",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "half-even odd tie",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "half-even even tie",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cumulative partial shares release exact full residual",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cumulative overcapacity refuses",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "anchored monthly dates do not drift",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "end-of-month anchor retains April30 and May31",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "recurrence identity ignores template revision",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "paid customer credit principal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "paid customer credit after partial refund",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "customer refund overcapacity refuses",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "customer paid credit accounting",
+      "passed": true,
+      "detail": "debit-positive exact integers: [40000, 10000, -25000, -25000]"
+    },
+    {
+      "name": "customer refund accounting",
+      "passed": true,
+      "detail": "debit-positive exact integers: [10000, -10000]"
+    },
+    {
+      "name": "cash surplus is explicit liability",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "prepayment reclassification creates no tax movement",
+      "passed": true,
+      "detail": "debit-positive exact integers: [90000, -90000]"
+    },
+    {
+      "name": "12 equal prepayment shares conserve cost",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "accrual under-estimate true-up",
+      "passed": true,
+      "detail": "debit-positive exact integers: [10000, 1000, 2750, -13750]"
+    },
+    {
+      "name": "accrual over-estimate true-up",
+      "passed": true,
+      "detail": "debit-positive exact integers: [10000, -1000, 2250, -11250]"
+    },
+    {
+      "name": "ACT365F interest example",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "loan repayment of recognized interest",
+      "passed": true,
+      "detail": "debit-positive exact integers: [1000000, 49315, -1049315]"
+    },
+    {
+      "name": "loan principal remaining",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mileage split uses explicit units",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mileage taxable excess",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "taxable award accrual",
+      "passed": true,
+      "detail": "debit-positive exact integers: [750, -750]"
+    },
+    {
+      "name": "variable pay exact half-hour input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "holiday liability target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "holiday liability delta rather than full target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "social provision consumption does not duplicate cost",
+      "passed": true,
+      "detail": "debit-positive exact integers: [500, 100, -600]"
+    },
+    {
+      "name": "gross payroll recovery preserves old cash",
+      "passed": true,
+      "detail": "debit-positive exact integers: [20000, -20000]"
+    },
+    {
+      "name": "gross payroll recovery residual",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gross recovery reporting identity rejects changed specification",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "positive VAT precision bridge",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "negative VAT precision bridge",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "VAT assessment signed control",
+      "passed": true,
+      "detail": "debit-positive exact integers: [12300, -12300]"
+    },
+    {
+      "name": "assessed discrepancy remains visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cash method paid and year-end VAT recognized once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cash method partial expense split",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cash method year-end residual expense",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "processor charge settles AR",
+      "passed": true,
+      "detail": "debit-positive exact integers: [122000, 3000, -125000]"
+    },
+    {
+      "name": "processor payout transit",
+      "passed": true,
+      "detail": "debit-positive exact integers: [122000, -122000]"
+    },
+    {
+      "name": "processor bank settlement",
+      "passed": true,
+      "detail": "debit-positive exact integers: [122000, -122000]"
+    },
+    {
+      "name": "processor net field equation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "native cash proportional carrying release",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "payable settled from foreign cash",
+      "passed": true,
+      "detail": "debit-positive exact integers: [45000, -44000, -1000]"
+    },
+    {
+      "name": "cash carrying after withdrawal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "foreign cash valuation bridge",
+      "passed": true,
+      "detail": "debit-positive exact integers: [3000, -3000]"
+    },
+    {
+      "name": "late FX December delta",
+      "passed": true,
+      "detail": "debit-positive exact integers: [5000, -5000]"
+    },
+    {
+      "name": "late FX January delta",
+      "passed": true,
+      "detail": "debit-positive exact integers: [-5000, 5000]"
+    },
+    {
+      "name": "late FX final control and cash unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "late FX gain allocation conserves lifetime gain",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "late FX two-settlement chain conserves economics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "impairment carrying input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "impairment reversal cap and target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "impairment reversal effects",
+      "passed": true,
+      "detail": "debit-positive exact integers: [150000, -150000]"
+    },
+    {
+      "name": "impairment carrying after reversal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "zero-carrying final disposal",
+      "passed": true,
+      "detail": "debit-positive exact integers: [200000, 800000, -1000000]"
+    },
+    {
+      "name": "retagging does not change totals",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "SIE same number scoped by source year",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical correction records not extra final movements",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cash-flow complete closing bridge",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "internal cash transfer eliminates to zero",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Peppol inclusive and remaining payable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "authentication event is not signature evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "upload result does not imply statutory fulfillment",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "sandbox receipt cannot fulfill production obligation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "wrong-scope receipt cannot fulfill obligation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "received status does not imply required registration",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unavailable context adapter not resolved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "absent context item without resolution needs review",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "explicit context resolution is distinguished",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "passed": 90,
+  "failed": 0,
+  "total": 90
+}

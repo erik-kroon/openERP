@@ -1,0 +1,969 @@
+{
+  "schema_version": 2,
+  "repository": "erik-kroon/openERP",
+  "baseline_commit": "422276ae5ed9d0ca146447d92bb3d27c99f8c48a",
+  "mode": "Complete replacement pseudocode dossier; no repository mutation",
+  "excluded_active_work": {
+    "WIP-VAT03": "VAT-03 qualification of 9120/9130, including migration, Worker/PostgreSQL and outcome/recovery cases. Do not reimplement or take over qualification. Historical migration numbers identify reserved scope only; consume its released application replacement, never restore the retired SQL workflow.",
+    "WIP-FX02-P1": "FX-02-P1 partial settlement extending 9140, including paired release, residuals, gain/loss and replay. Do not implement partial allocation in this wave. Historical migration numbers identify reserved scope only; consume its released application replacement, never restore the retired SQL workflow.",
+    "WIP-AST03-UI": "AST-03 impairment UI/control/disposal closure over 9150, including schedules.tsx and its control views. Do not take these consumers over. Historical migration numbers identify reserved scope only; consume its released application replacement, never restore the retired SQL workflow.",
+    "WIP-VAT04-A1": "VAT-04-A1 financial amendment delta owner. Do not build another target-minus-prior effect calculator or obligation owner. Historical migration numbers identify reserved scope only; consume its released application replacement, never restore the retired SQL workflow.",
+    "WIP-COM2-W1": "COM-2-W1 provider-neutral webshop intake and order/catalog identity. Do not create competing intake, catalog snapshots or order revisions. Historical migration numbers identify reserved scope only; consume its released application replacement, never restore the retired SQL workflow."
+  },
+  "source_change_permissions": "Read current user task and AGENTS.md. This specification grants no independent tests, reset, deployment, real-company financial or provider permissions.",
+  "solutions": [
+    {
+      "id": "NEXT-01",
+      "title": "Owner-aware case review",
+      "file": "packets/NEXT-01.md",
+      "priority": "P0",
+      "owner_lane": "F",
+      "source_ownership": "Application owner: cases/review-targets. Typed persistence owner: cases/review-targets. A read transaction captures the exact owner. It creates no journal or approval. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S05",
+        "S06"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 582,
+      "application_target": "apps/api/src/application/cases/review-targets.ts",
+      "persistence_target": "apps/api/src/db/cases/review-targets.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "1b828d4e43a17d35c09f455aef8670a26290f0c58d83923236dae84969ea003d",
+      "ownership_changes": [
+        "Current review ownership is resolved by an application read over one shared snapshot.",
+        "Ownership refusal moves to application execution."
+      ]
+    },
+    {
+      "id": "NEXT-02",
+      "title": "Capability-specific company admission",
+      "file": "packets/NEXT-02.md",
+      "priority": "P0",
+      "owner_lane": "A",
+      "source_ownership": "Application owner: company/profiles. Typed persistence owner: company/profiles. Activation, affected membership versions and receipt commit together without a journal. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S02",
+        "S03",
+        "S17",
+        "X04"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 713,
+      "application_target": "apps/api/src/application/company/profiles.ts",
+      "persistence_target": "apps/api/src/db/company/profiles.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "2ed85bfeaf7e98b905f83d417f1ca16b5c6fbac57b52ac65e233cdffd3e4d7c7",
+      "ownership_changes": [
+        "Remove the superseded legacy-schema adapter requirement.",
+        "Activation is an application-owned non-journal transaction."
+      ]
+    },
+    {
+      "id": "NEXT-03",
+      "title": "Domestic purchasing with owned tax recognition",
+      "file": "packets/NEXT-03.md",
+      "priority": "P0",
+      "owner_lane": "B",
+      "source_ownership": "Application owner: purchasing/recognition. Typed persistence owner: purchasing/recognition. Journal, payable, source recognition, tax facts and receipt share one tx. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-02"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S07",
+        "S08"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 922,
+      "application_target": "apps/api/src/application/purchasing/recognition.ts",
+      "persistence_target": "apps/api/src/db/purchasing/recognition.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "1ce3b825bdc533130e6fc0ee1fc0269affa4d6647c287613bb0e0f0ba6501e1c",
+      "ownership_changes": [
+        "Purchase journals, payables and tax facts are one application-owned DML group.",
+        "Separate reusable line credit math from unpaid-only counterpart selection.",
+        "Retained financial interpretation is preserved without a legacy-schema adapter.",
+        "Unpaid credits use their own complete application execution; paid credits reuse line math only."
+      ]
+    },
+    {
+      "id": "NEXT-04",
+      "title": "Actual domestic VAT return and controls",
+      "file": "packets/NEXT-04.md",
+      "priority": "P0",
+      "owner_lane": "B",
+      "source_ownership": "Application owner: tax/vat-returns. Typed persistence owner: tax/vat-returns. Consistent capture then pure calculation then immutable snapshot/receipt persistence. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-02",
+        "NEXT-03"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [
+        "WIP-VAT03",
+        "WIP-VAT04-A1"
+      ],
+      "source_refs": [
+        "S08",
+        "S03"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 1109,
+      "application_target": "apps/api/src/application/tax/vat-returns.ts",
+      "persistence_target": "apps/api/src/db/tax/vat-returns.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "e59282cec0f2aa001c134c80a6203b78d26cc347d33b1192b79290277c5350fa",
+      "ownership_changes": [
+        "Replace permanent legacy runtime retention with explicit semantic versions.",
+        "Retain meaningful snapshot history without preserving old dispatch.",
+        "Add complete capture/compile/seal service with same-transaction WIP reads."
+      ]
+    },
+    {
+      "id": "NEXT-05",
+      "title": "General-rule cross-border service purchases",
+      "file": "packets/NEXT-05.md",
+      "priority": "P0",
+      "owner_lane": "B",
+      "source_ownership": "Application owner: purchasing/service-purchases. Typed persistence owner: purchasing/service-purchases. Journal, original/book payable or owner liability and tax facts share one tx. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-03",
+        "NEXT-04"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-17",
+          "when": "actual unpaid foreign-denominated supplier obligations occur"
+        }
+      ],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S08",
+        "S03",
+        "X05",
+        "X06"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 777,
+      "application_target": "apps/api/src/application/purchasing/service-purchases.ts",
+      "persistence_target": "apps/api/src/db/purchasing/service-purchases.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "0586dd3519faafaf50e5d4ac64f6d7f4243349ba4d220fef93c1d55b62c48867",
+      "ownership_changes": [
+        "Cross-border recognition composes qualified purchase, FX/owner and tax writers on one tx."
+      ]
+    },
+    {
+      "id": "NEXT-06",
+      "title": "Owner-paid expenses, reimbursement and funding",
+      "file": "packets/NEXT-06.md",
+      "priority": "P0",
+      "owner_lane": "A",
+      "source_ownership": "Application owner: owners/operations. Typed persistence owner: owners/operations. Relevant journal, owner/commerce capacities and source usage commit together. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-02",
+        "NEXT-03"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S12",
+        "S07"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 794,
+      "application_target": "apps/api/src/application/owners/operations.ts",
+      "persistence_target": "apps/api/src/db/owners/operations.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "6b5222fe63bfd061abe14a0c1c259b81206a77f3988bba4cf33c37c73f9a66ab",
+      "ownership_changes": [
+        "Owner transfers, reimbursements and their counterparty effects share the caller tx."
+      ]
+    },
+    {
+      "id": "NEXT-07",
+      "title": "Supplier paid credits and refunds",
+      "file": "packets/NEXT-07.md",
+      "priority": "P1",
+      "owner_lane": "B",
+      "source_ownership": "Application owner: purchasing/credits-and-refunds. Typed persistence owner: purchasing/refunds. Paid credit and refund receipt each have one complete owned tx. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-03"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-08",
+          "when": "an exported payment reservation must first be resolved"
+        }
+      ],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S07",
+        "S09"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 762,
+      "application_target": "apps/api/src/application/purchasing/credits-and-refunds.ts",
+      "persistence_target": "apps/api/src/db/purchasing/refunds.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "2da3471ae0616a9faafbfd71168d8574f25be361bc75ed10d45f3bf3f9672c2d",
+      "ownership_changes": [
+        "Paid supplier credits keep payable release and refund increase atomic in application code.",
+        "Refund receipt and its source usage share one app tx without new tax recognition."
+      ]
+    },
+    {
+      "id": "NEXT-08",
+      "title": "Payment instruction resolution and replacement",
+      "file": "packets/NEXT-08.md",
+      "priority": "P1",
+      "owner_lane": "C",
+      "source_ownership": "Application owner: payments/resolutions. Typed persistence owner: payments/resolutions. Reservation release, dispatch fencing and receipt share a non-journal tx. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S09"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 758,
+      "application_target": "apps/api/src/application/payments/resolutions.ts",
+      "persistence_target": "apps/api/src/db/payments/resolutions.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "3099fa2d09a20a9f7fb2597cc73add151d330a1e8d6296963c39864b9738d819",
+      "ownership_changes": [
+        "Payment instruction release is a non-journal application transaction with domain dispatch fencing."
+      ]
+    },
+    {
+      "id": "NEXT-09",
+      "title": "Complete Plaid sync windows",
+      "file": "packets/NEXT-09.md",
+      "priority": "P1",
+      "owner_lane": "C",
+      "source_ownership": "Application owner: banking/sync. Typed persistence owner: banking/sync. Short claim/page/publication txs. Remote calls occur in the persistent Bun job outside them. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S10",
+        "S11",
+        "X01",
+        "X02",
+        "X03"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 926,
+      "application_target": "apps/api/src/application/banking/sync.ts",
+      "persistence_target": "apps/api/src/db/banking/sync.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "be09ca6fc52c27483318dfc0cacd6ece9f80c29d34b94aaa4f6e4a6e3c82643d",
+      "ownership_changes": [
+        "Use the selected persistent Bun job runtime rather than a Cloudflare workflow.",
+        "Window claim is application-owned.",
+        "Replace SQL publication transition with explicit application tx and outbox intent.",
+        "Remove obsolete schema compatibility while preserving meaningful external provider history.",
+        "Clarify transport lease versus domain publication fence."
+      ]
+    },
+    {
+      "id": "NEXT-10",
+      "title": "Provider revisions to reviewed bank observations",
+      "file": "packets/NEXT-10.md",
+      "priority": "P1",
+      "owner_lane": "C",
+      "source_ownership": "Application owner: banking/source-admission. Typed persistence owner: banking/source-admission. Source admission and provenance commit together; no automatic posting or matching. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-09"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S10",
+        "S11"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 796,
+      "application_target": "apps/api/src/application/banking/source-admission.ts",
+      "persistence_target": "apps/api/src/db/banking/source-admission.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "0c15f9dff072667211bc8eddcffc5a590fa2991f8db1c2817d18a8f39eaf0c5d",
+      "ownership_changes": [
+        "Provider normalization persists in an application transaction.",
+        "Bank admission composes the current intake app owner on one transaction."
+      ]
+    },
+    {
+      "id": "NEXT-11",
+      "title": "Separate complete-book SIE4E export",
+      "file": "packets/NEXT-11.md",
+      "priority": "P0",
+      "owner_lane": "D",
+      "source_ownership": "Application owner: reports/sie4e. Typed persistence owner: reports/sie4e. Capture is consistent; rendering/validation is external to financial tx; attachment is a short tx. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-02",
+        "NEXT-13"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-14",
+          "when": "dimension assignments occur in the selected book"
+        }
+      ],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S13",
+        "S14",
+        "S15",
+        "X07"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 983,
+      "application_target": "apps/api/src/application/reports/sie4e.ts",
+      "persistence_target": "apps/api/src/db/reports/sie4e.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "d55277b99289fa1df679278e71fdcfb221dd28387da340a7bbbf867f59edd09c",
+      "ownership_changes": [
+        "Provide application-owned export capture and queued artifact lifecycle."
+      ]
+    },
+    {
+      "id": "NEXT-12",
+      "title": "Historical open-item adoption",
+      "file": "packets/NEXT-12.md",
+      "priority": "P1",
+      "owner_lane": "D",
+      "source_ownership": "Application owner: imports/historical-items. Typed persistence owner: imports/historical-items. Live obligation adoption and pool assignment commit without new recognition. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-02"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S13"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 679,
+      "application_target": "apps/api/src/application/imports/historical-items.ts",
+      "persistence_target": "apps/api/src/db/imports/historical-items.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "7b7e0be99dccd1996ccf269085ad9161b7ba3b2e028d40cabaf13d4d6e1e06e1",
+      "ownership_changes": [
+        "Historical adoption uses one application tx and does not re-recognize opening balances."
+      ]
+    },
+    {
+      "id": "NEXT-13",
+      "title": "Semantic P&L and balance-sheet snapshots",
+      "file": "packets/NEXT-13.md",
+      "priority": "P0",
+      "owner_lane": "D",
+      "source_ownership": "Application owner: reports/statements. Typed persistence owner: reports/statements. Immutable snapshot membership and calculation persist through the reporting app owner. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-02"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S15",
+        "S20"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 932,
+      "application_target": "apps/api/src/application/reports/statements.ts",
+      "persistence_target": "apps/api/src/db/reports/statements.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "a815b5a5694e41efea9317704733c42dab08b3d8f30a7a6cce7d173d7364957b",
+      "ownership_changes": [
+        "Remove implication that a legacy runtime is required.",
+        "Add explicit capture/compile/persist statement service without SQL policy."
+      ]
+    },
+    {
+      "id": "NEXT-14",
+      "title": "Original dimension assignments",
+      "file": "packets/NEXT-14.md",
+      "priority": "P2",
+      "owner_lane": "F",
+      "source_ownership": "Application owner: dimensions/assignments. Typed persistence owner: dimensions/assignments. Original dimensions are inserted using the same tx as journal lines. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [],
+      "integrate_after": [
+        "NEXT-13"
+      ],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S16",
+        "S27",
+        "S14",
+        "S20"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 738,
+      "application_target": "apps/api/src/application/dimensions/assignments.ts",
+      "persistence_target": "apps/api/src/db/dimensions/assignments.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "fccb80d2a11f4046627286d2ea3487c4977184530da26818c86fb94ef864f34b",
+      "ownership_changes": [
+        "Move dimension policy to application admission.",
+        "Preserve unknown source classifications without a disposable-schema interpreter.",
+        "Replace SQL dimension workflow with app validation and narrow relational constraints.",
+        "Use source-unknown dimensions rather than legacy-runtime assumptions.",
+        "Define application journal/assignment composition on the caller transaction."
+      ]
+    },
+    {
+      "id": "NEXT-15",
+      "title": "Legal customer credit notes",
+      "file": "packets/NEXT-15.md",
+      "priority": "P1",
+      "owner_lane": "F",
+      "source_ownership": "Application owner: sales/credit-notes. Typed persistence owner: sales/credit-notes. Number, journal, AR reduction, tax facts, semantic document and outbox share one tx. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-02"
+      ],
+      "integrate_after": [
+        "NEXT-04"
+      ],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S17",
+        "S07",
+        "S03"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 647,
+      "application_target": "apps/api/src/application/sales/credit-notes.ts",
+      "persistence_target": "apps/api/src/db/sales/credit-notes.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "219dd313d08961efd291ff20b73ea25383d647ce3980f53955da82559dcfb4b6",
+      "ownership_changes": [
+        "Legal credit issuance is a single app tx followed by outbox-driven rendering."
+      ]
+    },
+    {
+      "id": "NEXT-16",
+      "title": "Evidence-aware period preparation",
+      "file": "packets/NEXT-16.md",
+      "priority": "P0",
+      "owner_lane": "A",
+      "source_ownership": "Application owner: automation/period-work. Typed persistence owner: automation/period-work. Public prepares/executes own their tx; separate run checkpoint recovery bridges calls. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-01",
+        "NEXT-03",
+        "NEXT-06"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S18",
+        "S05",
+        "S07"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 986,
+      "application_target": "apps/api/src/application/automation/period-work.ts",
+      "persistence_target": "apps/api/src/db/automation/period-work.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "470751aa83f3d551ce971be5aa7d53a56c8f907114c2445f48e500f235859570",
+      "ownership_changes": [
+        "Use effect-mq delivery with separate persisted business versions.",
+        "Separate public preparation transaction from durable run checkpoint recovery.",
+        "Batch approval uses one app tx with owner-private approval functions.",
+        "Apply clean-baseline scope to preparation compatibility.",
+        "Retain late-handler and acknowledgment-loss domain recovery with effect-mq."
+      ]
+    },
+    {
+      "id": "NEXT-17",
+      "title": "Payable FX and explicit fees",
+      "file": "packets/NEXT-17.md",
+      "priority": "P1",
+      "owner_lane": "E",
+      "source_ownership": "Application owner: commerce/fx-settlements. Typed persistence owner: commerce/fx-settlements. Journal and released WIP paired-capacity consumption share one tx. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-02"
+      ],
+      "integrate_after": [
+        "NEXT-03"
+      ],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [
+        "WIP-FX02-P1"
+      ],
+      "source_refs": [
+        "S03",
+        "S07"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 713,
+      "application_target": "apps/api/src/application/commerce/fx-settlements.ts",
+      "persistence_target": "apps/api/src/db/commerce/fx-settlements.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "b6bb9c70bb8861b0760e2fe970e0e5b97a4ff32c2267ef31edd4545723d5ab64",
+      "ownership_changes": [
+        "Foreign payable recognition is compiled into the purchase aggregate.",
+        "Consume the released WIP pure calculator, without copying its algorithm.",
+        "FX settlement consumes released WIP application ports with the same tx as journal and fees."
+      ]
+    },
+    {
+      "id": "NEXT-18",
+      "title": "Incremental open-item FX remeasurement",
+      "file": "packets/NEXT-18.md",
+      "priority": "P1",
+      "owner_lane": "E",
+      "source_ownership": "Application owner: commerce/fx-valuations. Typed persistence owner: commerce/fx-valuations. All selected carrying changes, journal and valuation receipt commit as one group. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-17"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [
+        "WIP-FX02-P1"
+      ],
+      "source_refs": [
+        "S03",
+        "S20"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 705,
+      "application_target": "apps/api/src/application/commerce/fx-valuations.ts",
+      "persistence_target": "apps/api/src/db/commerce/fx-valuations.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "8afc53c6501c5430db9238f5d0caa836be285e679177a99537f5f349c85d9557",
+      "ownership_changes": [
+        "Valuation membership and all carrying deltas commit as one application group."
+      ]
+    },
+    {
+      "id": "NEXT-19",
+      "title": "Disposal with proceeds",
+      "file": "packets/NEXT-19.md",
+      "priority": "P1",
+      "owner_lane": "E",
+      "source_ownership": "Application owner: subledgers/disposals. Typed persistence owner: subledgers/disposals. Disposal journal, asset/schedule retirement and proceeds usage share one tx. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [],
+      "integrate_after": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-04",
+          "when": "the disposal has a VAT-reporting consequence"
+        },
+        {
+          "task": "NEXT-15",
+          "when": "the chosen flow requires a supported legal invoice/credit interaction"
+        }
+      ],
+      "wait_for_handoff": [
+        "WIP-AST03-UI"
+      ],
+      "source_refs": [
+        "S03",
+        "S20"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 737,
+      "application_target": "apps/api/src/application/subledgers/disposals.ts",
+      "persistence_target": "apps/api/src/db/subledgers/disposals.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "d82e41f5ee47f7f486d2a230c525f24599dbbbda558ecf3018ec5fd8f351a476",
+      "ownership_changes": [
+        "Use transaction-passing asset basis capture.",
+        "Disposal uses the released asset app port and never independently commits a component."
+      ]
+    },
+    {
+      "id": "NEXT-20",
+      "title": "Frozen regular-payroll calculation",
+      "file": "packets/NEXT-20.md",
+      "priority": "P2",
+      "owner_lane": "E",
+      "source_ownership": "Application owner: payroll/calculations. Typed persistence owner: payroll/calculations. Private consistent capture and frozen calculation; no financial effect until run execution. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-02"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S19",
+        "S21",
+        "X08",
+        "X09"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 811,
+      "application_target": "apps/api/src/application/payroll/calculations.ts",
+      "persistence_target": "apps/api/src/db/payroll/calculations.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "a18fa41a55d6ac6813402f1a79b0100b7fa7379aab394aed3fdcb039740acc50",
+      "ownership_changes": [
+        "Pay-run capture, pure calculation and sealing live in Effect, not SQL payroll logic."
+      ]
+    },
+    {
+      "id": "NEXT-21",
+      "title": "Payroll posting, payslip and AGI artifact",
+      "file": "packets/NEXT-21.md",
+      "priority": "P2",
+      "owner_lane": "E",
+      "source_ownership": "Application owner: payroll/runs-and-declarations. Typed persistence owner: payroll/runs-and-declarations. Run/correction/payment groups commit atomically; documents render in Bun jobs. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-20"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S19",
+        "S20",
+        "S21",
+        "X10",
+        "X11",
+        "X12"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 1243,
+      "application_target": "apps/api/src/application/payroll/runs-and-declarations.ts",
+      "persistence_target": "apps/api/src/db/payroll/runs-and-declarations.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "ca527279ecc2de2395f11d552c51b264b20eda53af320558571599a8e7066ead",
+      "ownership_changes": [
+        "Payroll postings and contribution reservations share one app transaction; outbox replaces inline enqueue.",
+        "Unpaid payroll correction passes the same tx through reversal, replacement and payroll consequences.",
+        "Make salary payment/reporting admission atomic and route native artifacts through Bun jobs."
+      ]
+    },
+    {
+      "id": "NEXT-22",
+      "title": "Pre-close tax bridge and INK2/SRU",
+      "file": "packets/NEXT-22.md",
+      "priority": "P1",
+      "owner_lane": "D",
+      "source_ownership": "Application owner: tax/corporate. Typed persistence owner: tax/corporate. Tax-effect journal and owned year target share one tx; form artifacts are separate. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-13"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S20",
+        "S02",
+        "X13",
+        "X14"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 1020,
+      "application_target": "apps/api/src/application/tax/corporate.ts",
+      "persistence_target": "apps/api/src/db/tax/corporate.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "4c9c1629fb92c0789d6caced492c4a36b4174022fb53a0429b414e05e7288401",
+      "ownership_changes": [
+        "Add explicit application execution of tax delta and queued declaration artifact generation."
+      ]
+    },
+    {
+      "id": "NEXT-23",
+      "title": "Financial close and single-count carry-forward",
+      "file": "packets/NEXT-23.md",
+      "priority": "P1",
+      "owner_lane": "D",
+      "source_ownership": "Application owner: closing/financial-years. Typed persistence owner: closing/financial-years. Transfer, financial certificate, next opening, locks and receipt share one tx. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-13",
+        "NEXT-22"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-04",
+          "when": "the reviewed company/year inventory makes this treatment applicable"
+        },
+        {
+          "task": "NEXT-05",
+          "when": "the reviewed company/year inventory makes this treatment applicable"
+        },
+        {
+          "task": "NEXT-06",
+          "when": "the reviewed company/year inventory makes this treatment applicable"
+        },
+        {
+          "task": "NEXT-07",
+          "when": "the reviewed company/year inventory makes this treatment applicable"
+        },
+        {
+          "task": "NEXT-12",
+          "when": "the reviewed company/year inventory makes this treatment applicable"
+        },
+        {
+          "task": "NEXT-18",
+          "when": "the reviewed company/year inventory makes this treatment applicable"
+        },
+        {
+          "task": "NEXT-19",
+          "when": "the reviewed company/year inventory makes this treatment applicable"
+        },
+        {
+          "task": "NEXT-21",
+          "when": "the reviewed company/year inventory makes this treatment applicable"
+        }
+      ],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S20",
+        "S13",
+        "S15",
+        "S03"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 987,
+      "application_target": "apps/api/src/application/closing/financial-years.ts",
+      "persistence_target": "apps/api/src/db/closing/financial-years.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "0b8edd388d26d24c1a4d25ad6faec0d5ab01ca565941cb9d00f973bf471e868b",
+      "ownership_changes": [
+        "Period policy belongs in the application without introducing context bypasses.",
+        "Financial finalization performs journal, opening, certificate and lock DML in one app tx.",
+        "Reopen is a separate application-owned transaction preserving downstream history."
+      ]
+    },
+    {
+      "id": "NEXT-24",
+      "title": "K2 annual-report semantic model and iXBRL",
+      "file": "packets/NEXT-24.md",
+      "priority": "P1",
+      "owner_lane": "D",
+      "source_ownership": "Application owner: reports/annual. Typed persistence owner: reports/annual. Final semantic approval/receipt and render intent are atomic; native validation runs later. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [
+        "NEXT-13",
+        "NEXT-23"
+      ],
+      "integrate_after": [],
+      "conditional_dependencies": [],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S20",
+        "X04"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 1090,
+      "application_target": "apps/api/src/application/reports/annual.ts",
+      "persistence_target": "apps/api/src/db/reports/annual.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "734185297576e801091f1751d581921132dc3552cfc68917146b1ed70c56f943",
+      "ownership_changes": [
+        "Add application finalization plus explicit persistent-Bun native validation and attachment."
+      ]
+    },
+    {
+      "id": "NEXT-25",
+      "title": "Fixed-revision company rehearsal and restore",
+      "file": "packets/NEXT-25.md",
+      "priority": "P0",
+      "owner_lane": "ROOT",
+      "source_ownership": "Application owner: operations/rehearsal. Typed persistence owner: operations/recovery. Exercise the actual application boundary; native backup uses a consistent snapshot and external quarantine. Shared source/baseline/capability changes are root-integrated. Reconcile current paths and the five reserved workstream handoffs first.",
+      "depends_on": [],
+      "integrate_after": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-02",
+          "when": "required by the selected real-company rehearsal scope"
+        },
+        {
+          "task": "NEXT-03",
+          "when": "required by the selected real-company rehearsal scope"
+        },
+        {
+          "task": "NEXT-04",
+          "when": "required by the selected real-company rehearsal scope"
+        },
+        {
+          "task": "NEXT-05",
+          "when": "required by the selected real-company rehearsal scope"
+        },
+        {
+          "task": "NEXT-06",
+          "when": "required by the selected real-company rehearsal scope"
+        },
+        {
+          "task": "NEXT-11",
+          "when": "required by the selected real-company rehearsal scope"
+        },
+        {
+          "task": "NEXT-12",
+          "when": "required by the selected real-company rehearsal scope"
+        },
+        {
+          "task": "NEXT-13",
+          "when": "required by the selected real-company rehearsal scope"
+        },
+        {
+          "task": "NEXT-16",
+          "when": "required by the selected real-company rehearsal scope"
+        },
+        {
+          "task": "NEXT-21",
+          "when": "required by the selected real-company rehearsal scope"
+        },
+        {
+          "task": "NEXT-23",
+          "when": "required by the selected real-company rehearsal scope"
+        },
+        {
+          "task": "NEXT-24",
+          "when": "required by the selected real-company rehearsal scope"
+        }
+      ],
+      "wait_for_handoff": [],
+      "source_refs": [
+        "S01",
+        "S02",
+        "S04",
+        "S20",
+        "S23"
+      ],
+      "pseudocode_status": "v2 application-owned pseudocode; not compiled or runtime-verified",
+      "word_count": 1141,
+      "application_target": "apps/api/src/application/operations/rehearsal.ts",
+      "persistence_target": "apps/api/src/db/operations/recovery.ts",
+      "path_status": "proposed responsibility targets; use existing equivalent owners",
+      "supersedes_original_packet_sha256": "6a689ced4affc6ce9329ef324fe80766c27badf346af582accfbbe3dd32409f5",
+      "ownership_changes": [
+        "Acceptance inventories application owners plus narrow integrity rather than old feature functions.",
+        "Rehearse the accepted clean baseline, not the retired procedural migration chain.",
+        "Backups include app-owned interpretation.",
+        "Include application and queue recovery inventories.",
+        "Fence new persistent job runtime during restore.",
+        "Require application transaction and effect-mq failure observations instead of SQL workflow proof."
+      ]
+    }
+  ],
+  "dependency_order_including_conditional_edges": [
+    "NEXT-01",
+    "NEXT-02",
+    "NEXT-08",
+    "NEXT-09",
+    "NEXT-03",
+    "NEXT-10",
+    "NEXT-12",
+    "NEXT-13",
+    "NEXT-20",
+    "NEXT-04",
+    "NEXT-06",
+    "NEXT-07",
+    "NEXT-14",
+    "NEXT-17",
+    "NEXT-21",
+    "NEXT-22",
+    "NEXT-05",
+    "NEXT-11",
+    "NEXT-15",
+    "NEXT-16",
+    "NEXT-18",
+    "NEXT-19",
+    "NEXT-23",
+    "NEXT-24",
+    "NEXT-25"
+  ],
+  "official_sources": {
+    "X01": {
+      "url": "https://plaid.com/docs/errors/transactions/",
+      "title": "Plaid Transactions errors",
+      "scope": "Pagination mutation requires restarting the affected window from its original cursor. Other error classes are not automatically the same recovery."
+    },
+    "X02": {
+      "url": "https://plaid.com/docs/transactions/sync-migration/",
+      "title": "Plaid Transactions Sync migration",
+      "scope": "Complete-window retrieval and added/modified/removed processing inform staged publication. This dossier makes no live Plaid request."
+    },
+    "X03": {
+      "url": "https://plaid.com/docs/api/products/transactions/",
+      "title": "Plaid Transactions API",
+      "scope": "Provider update identity, cursor fields, pending relationships and amount semantics must follow the selected response contract. Exact HTTP bytes remain evidence, not proof of complete bank coverage."
+    },
+    "X04": {
+      "url": "https://www.bfn.se/vilken-version-av-k-regelverken-ska-jag-tillampa/",
+      "title": "BFN framework-version applicability",
+      "scope": "Select the accounting framework by the actual fiscal-year applicability rules and exceptions. A current calendar date is not a universal rule-version selector."
+    },
+    "X05": {
+      "url": "https://www.skatteverket.se/foretag/moms/kopavarorochtjanster/inkopfranandraeulander/kopatjansterfranandraeulander.4.361dc8c15312eff6fd1d011.html",
+      "title": "Skatteverket: services from another EU country",
+      "scope": "General-rule business service purchases can require basis in box 21, output VAT in the applicable box and separately eligible input deduction. Do not apply this merely from a foreign supplier name."
+    },
+    "X06": {
+      "url": "https://www.skatteverket.se/foretag/moms/kopavarorochtjanster/inkopfranlanderutanforeu/kopatjansterfranlanderutanforeu.4.361dc8c15312eff6fd33a46.html",
+      "title": "Skatteverket: services from outside the EU",
+      "scope": "The corresponding qualified general-rule service-purchase basis is distinguished through box 22. Exceptions, tax-point conversion and deduction remain explicit."
+    },
+    "X07": {
+      "url": "https://sie.se/format/",
+      "title": "SIE Group format family",
+      "scope": "Voucher transfer and transaction export with the preceding balance information are distinct format purposes. Exact record grammar/versions still require their own qualified specification."
+    },
+    "X08": {
+      "url": "https://www.skatteverket.se/specialversionerforprogramforetagmfl.4.319dc1451507f2f99e86ee.html",
+      "title": "Skatteverket machine-readable tax tables",
+      "scope": "Payroll must use the exact dated table/column/formula or an applicable individual decision. No complete table data set was downloaded or qualified here."
+    },
+    "X09": {
+      "url": "https://www.skatteverket.se/arbetsgivaravgifter",
+      "title": "Skatteverket employer contributions",
+      "scope": "Rates, eligibility and thresholds are effective-dated inputs. The payroll examples in this dossier are synthetic, not actual Swedish contribution rates."
+    },
+    "X10": {
+      "url": "https://www4.skatteverket.se/rattsligvagledning/edition/2026.7/325040.html",
+      "title": "Skatteverket cash-principle guidance",
+      "scope": "Search-supported guidance on paid/provided compensation, cross-checked with AGI item guidance. Direct retrieval of this legal-guidance page failed; no broader legal interpretation is attributed to it."
+    },
+    "X11": {
+      "url": "https://www.skatteverket.se/agbeskrivning",
+      "title": "Skatteverket AGI fields and individual identity",
+      "scope": "The reporting identity includes employer, period, payee and specification number. Preserve the same identity for a replacement instead of creating another individual item. The technical portal also surfaced inconsistent 1.1.18.x labels, so exact XSD bytes must be pinned independently."
+    },
+    "X12": {
+      "url": "https://www.skatteverket.se/foretag/arbetsgivare/lamnaarbetsgivardeklaration/rattaenarbetsgivardeklaration.4.2cf1b5cd163796a5c8b6698.html",
+      "title": "Skatteverket AGI corrections",
+      "scope": "Reported withholding cannot ordinarily be lowered as a routine amendment. The initial profile refuses that change without a separately qualified exception and keeps authority outcomes distinct."
+    },
+    "X13": {
+      "url": "https://www.skatteverket.se/foretag/etjansterochblanketter/allaetjanster/tjanster/filoverforing/informationomsruuppgifter.4.3dfca4f410f4fc63c86800020896.html",
+      "title": "Skatteverket SRU file transfer",
+      "scope": "Search-supported identification of INFO.SRU and BLANKETTER.SRU. Direct page retrieval was unsuccessful. No exact field-code map, encoding or current grammar bundle is certified here."
+    },
+    "X14": {
+      "url": "https://www.skatteverket.se/4.39f16f103821c58f680006188.html",
+      "title": "Skatteverket Inkomstdeklaration 2",
+      "scope": "INK2, INK2R and INK2S are distinct parts of the corporate declaration. The calculation and mapped form values must reconcile; obtaining a form is not proof that an exported SRU file is accepted."
+    }
+  },
+  "edition": "application-owned Effect / v2",
+  "original_packet_baseline_commit": "bb628452196a55ceef7516f76fc3cd6471ae4d91",
+  "baseline_meaning": "Architecture context supplied in prior source review/amendment; not a fresh repository inspection in this rewrite",
+  "application_owner": "Effect application operations",
+  "persistence_owner": "tx-passing typed SQL/DML; PostgreSQL narrow integrity only",
+  "job_runtime": "effect-mq in a separate persistent Bun process"
+}

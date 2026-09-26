@@ -1,0 +1,63 @@
+{
+  "observedAt": "2026-09-26T12:27:58.926393+00:00",
+  "headObserved": "ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb",
+  "result": "vendored_documents_verified_against_their_own_records",
+  "scope": "Import and integrity observation of two externally supplied design dossiers. No application, database, worker, queue, browser or provider workflow was executed.",
+  "vendoredTrees": {
+    "docs/specs/next-01-25": {
+      "checksumFile": "SHA256SUMS.txt",
+      "filesCovered": 37,
+      "filesOk": 37,
+      "mismatches": [],
+      "checker": "checks/check_design.py",
+      "checkerExitCode": 0,
+      "checkerReported": {
+        "kind": "pseudocode dossier self-check",
+        "repository_code_executed": false,
+        "sql_or_worker_runtime_executed": false,
+        "provider_calls_or_actual_company_data_used": false,
+        "qualified_statutory_dataset_verified": false,
+        "assertions": 7465,
+        "passed": true,
+        "solution_packets": 25,
+        "core_pseudocode_word_count": 25490,
+        "master_word_count": 29412
+      }
+    },
+    "docs/specs/next-26-50": {
+      "checksumFile": "SHA256SUMS.txt",
+      "filesCovered": 41,
+      "filesOk": 41,
+      "mismatches": [],
+      "checker": "checks/validate.py",
+      "checkerExitCode": 0,
+      "checkerReported": {
+        "scope": "dossier structure and independent illustrative arithmetic only",
+        "application_test_suite_run": false,
+        "database_or_worker_executed": false,
+        "provider_executed": false,
+        "repository_modified": false,
+        "passed": 90,
+        "failed": 0,
+        "total": 90
+      }
+    }
+  },
+  "pinnedRevisions": {
+    "reviewed": {
+      "5ac3433e3e75ef7fc0229cbe00107003b63aa32d": true,
+      "4671a2fbaea88bcab613f28b6d34a209b040ab06": true,
+      "422276ae5ed9d0ca146447d92bb3d27c99f8c48a": true,
+      "bb628452196a55ceef7516f76fc3cd6471ae4d91": true
+    },
+    "note": "All pinned revisions are ancestors of the observed head, so statements of absence in the dossiers describe those revisions and not the current checkout."
+  },
+  "applicationCodeExecuted": false,
+  "packetsImplemented": 0,
+  "limitations": [
+    "Both archives' checkers are document and arithmetic checks over their own content; they cannot establish implementation correctness.",
+    "The first wave names an attached ownership amendment and the earlier SQL-era packet archive as inputs; neither was supplied, so claims traceable only to them are unchecked.",
+    "No statutory rate, table, provider contract or credential was qualified; nothing here activates a legal or provider profile.",
+    "No repository test, data reset, deployment, provider call, payment or filing was performed or authorized."
+  ]
+}

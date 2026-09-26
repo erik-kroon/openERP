@@ -1,0 +1,179 @@
+{
+  "status": "illustrative exact expected amounts; not current statutory rates or application fixtures",
+  "money_format": "minor-unit integers represented as strings; explicit synthetic policy where a rate is used",
+  "examples": [
+    {
+      "packet": "NEXT-30",
+      "case": "paid_customer_credit",
+      "input": {
+        "originalGross": "125000",
+        "paid": "100000",
+        "newCredit": "50000"
+      },
+      "expected": {
+        "receivableReduction": "25000",
+        "customerCreditLiabilityIncrease": "25000"
+      }
+    },
+    {
+      "packet": "NEXT-31",
+      "case": "accrual_trueup",
+      "input": {
+        "accrued": "10000",
+        "actualCost": "11000",
+        "deductibleTax": "2750"
+      },
+      "expected": {
+        "accrualDebit": "10000",
+        "additionalExpense": "1000",
+        "inputTax": "2750",
+        "supplierPayableCredit": "13750"
+      }
+    },
+    {
+      "packet": "NEXT-32",
+      "case": "simple_interest_synthetic",
+      "input": {
+        "principal": "10000000",
+        "rateNumerator": "6",
+        "rateDenominator": "100",
+        "days": "30",
+        "dayCount": "ACT/365F"
+      },
+      "expected": {
+        "interestHalfUp": "49315"
+      }
+    },
+    {
+      "packet": "NEXT-34",
+      "case": "mileage_synthetic",
+      "input": {
+        "meters": "15000",
+        "metersPerUnit": "1000",
+        "entitlementPerUnit": "300",
+        "exemptionPerUnit": "250"
+      },
+      "expected": {
+        "entitlement": "4500",
+        "exempt": "3750",
+        "taxable": "750"
+      }
+    },
+    {
+      "packet": "NEXT-37",
+      "case": "exact_reported_assessed",
+      "input": {
+        "exactNet": "12349",
+        "reportedNet": "12300",
+        "assessedCharge": "12300"
+      },
+      "expected": {
+        "settlementRoundingDebit": "49",
+        "roundingCredit": "49",
+        "finalSettlementBalance": "0"
+      }
+    },
+    {
+      "packet": "NEXT-38",
+      "case": "cash_method_yearend",
+      "input": {
+        "gross": "125000",
+        "net": "100000",
+        "tax": "25000",
+        "cashPaidBeforeYearend": "50000"
+      },
+      "expected": {
+        "taxAtPayment": "10000",
+        "taxAtYearend": "15000",
+        "taxOnNextYearSettlement": "0"
+      }
+    },
+    {
+      "packet": "NEXT-39",
+      "case": "processor_charge",
+      "input": {
+        "gross": "125000",
+        "fee": "3000"
+      },
+      "expected": {
+        "processorDebit": "122000",
+        "feeDebit": "3000",
+        "receivableCredit": "125000"
+      }
+    },
+    {
+      "packet": "NEXT-40",
+      "case": "foreign_cash_settlement",
+      "input": {
+        "cashNativeBefore": "10000",
+        "cashBookBefore": "110000",
+        "nativePayment": "4000",
+        "payableRelease": "45000"
+      },
+      "expected": {
+        "cashBookRelease": "44000",
+        "realizedGain": "1000"
+      }
+    },
+    {
+      "packet": "NEXT-41",
+      "case": "late_valuation",
+      "input": {
+        "originalCarrying": "110000",
+        "correctedPriorYearTarget": "115000",
+        "laterCash": "116000"
+      },
+      "expected": {
+        "priorYearValuationGain": "5000",
+        "laterRealizedGain": "1000",
+        "cashCorrection": "0",
+        "finalReceivableCorrection": "0"
+      }
+    },
+    {
+      "packet": "NEXT-42",
+      "case": "economic_impairment_reversal",
+      "input": {
+        "gross": "1000000",
+        "ordinary": "200000",
+        "impairment": "300000",
+        "withoutImpairmentCap": "700000",
+        "reviewedTarget": "650000"
+      },
+      "expected": {
+        "reversal": "150000",
+        "remainingImpairment": "150000",
+        "newCarrying": "650000"
+      }
+    },
+    {
+      "packet": "NEXT-43",
+      "case": "analytical_retag",
+      "input": {
+        "originalA": "100",
+        "originalB": "200",
+        "unassigned": "50"
+      },
+      "expected": {
+        "reviewedA": "0",
+        "reviewedB": "300",
+        "unassigned": "50",
+        "unfilteredTotal": "350"
+      }
+    },
+    {
+      "packet": "NEXT-45",
+      "case": "cash_flow_bridge",
+      "input": {
+        "opening": "100000",
+        "operating": "120000",
+        "investing": "-50000",
+        "financing": "40000",
+        "exchange": "2000"
+      },
+      "expected": {
+        "closing": "212000"
+      }
+    }
+  ]
+}

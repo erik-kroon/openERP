@@ -36,6 +36,12 @@ When closing a decision, record the chosen behavior, rejected alternative, evide
 
 Track design adoption, implementation, runtime verification, company applicability and external outcome separately. No new financial implementation, legal activation or provider acceptance is claimed by this decision update. The [delivery plan](plans/05-vat-payroll-assets-fx.md#adopted-financial-contract-delivery) turns each adopted contract into bounded work and proof requirements.
 
+## External inputs named by the NEXT dossiers add no new decision
+
+The [NEXT dossier plan](plans/12-next-implementation-dossier.md) indexes fifty implementation packets, each of which lists the qualified data it cannot invent: statutory rates and tax tables, reporting-box semantics and period cadence, employer-contribution parameter sets, mileage and per-diem amounts, declaration schema versions, e-invoicing and access-point specifications, document-signing protocols, filing service specifications, extraction provider and model identities, and provider credentials. Every one of those is an instance of an existing row, so none is recorded again here: company identity, method and applicability facts remain **D-04**, dated rule, table, format and schema parameters remain **D-08**, provider accounts, consent, sandbox and authorization remain **D-10**, and any new or changed test or fixture remains **D-09**.
+
+Three consequences follow for the packets themselves. A missing qualified input blocks the affected claim of support, not the implementation of the pure calculation and internal state machine, and it prohibits a real-company or provider acceptance statement. Where a packet depends on a company fact that has not been established — the cash method, a loan agreement, employment terms, lending, ROT/RUT — the case stays an explicit conditional edge rather than an assumed population. And the six requirements the maintained index does not own are unresolved product-scope questions recorded in the dossier plan, not new decision rows.
+
 ## Cross-register line references do not establish role exclusivity
 
 Source inspection found that a retained subledger carrying-basis line and a tax-account

@@ -1,0 +1,1080 @@
+{
+  "schema_version": 1,
+  "edition": "NEXT-26..50 application-owned wave",
+  "repository": "erik-kroon/openERP",
+  "pinned_commit": "5ac3433e3e75ef7fc0229cbe00107003b63aa32d",
+  "mode": "proposed pseudocode solutions; no repository mutation",
+  "range": [
+    26,
+    50
+  ],
+  "first_wave_artifact": "openerp-next-25-effect.zip",
+  "first_wave_status": "dependency contracts, not assumed implemented",
+  "reserved_work": {
+    "WIP-VAT03": "Existing VAT control reclassification and its qualification. Consume the released application owner, do not repeat the former 9120/9130 qualification assignment.",
+    "WIP-FX02-P1": "Existing paired FX partial settlement. Consume the released pure release calculation and internal tx mutation, do not recreate the former 9140 algorithm.",
+    "WIP-AST03-UI": "Existing impairment UI/control/disposal closure. Consume the final asset basis and released tx ports after owner handoff.",
+    "WIP-VAT04-A1": "Existing obligation-owned VAT amendment financial delta. No second target-minus-prior owner.",
+    "WIP-COM2-W1": "Webshop intake, raw order identity, catalog snapshots and order authority. No packet takes this over.",
+    "APPLICATION-REPLACEMENT": "Existing SQL-to-Effect migration, placeholder-operation closure and baseline proof. All new packets require released owning slices."
+  },
+  "solutions": [
+    {
+      "id": "NEXT-26",
+      "title": "Supplier extraction jobs and field-level reviewed merge",
+      "priority": "P0",
+      "lane": "INTAKE",
+      "depends_on": [],
+      "integration_after": [
+        "APP-SLICE-READY(purchases/inbox)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-03",
+          "when": "a reviewed draft is subsequently accepted and posted"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "R08"
+      ],
+      "existing_owner": "apps/api/src/application/purchases/inbox.ts; application/purchases/drafts.ts; existing source-retention adapters and supplier-inbox contracts.",
+      "new_scope": "The current inbox can record extraction attempts and bind a reviewed draft. Add the actual bounded extraction lifecycle and safe reprocessing, not another inbox, matcher or purchase engine.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-26.md",
+      "word_count": 702,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-26.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "25c99590d3b8fc0e0ebc52e15e2f10ed106f40015b8de5d4e36dbc674cda61c8",
+      "full_packet_word_count": 832
+    },
+    {
+      "id": "NEXT-27",
+      "title": "Reviewed party identity resolution without balance merging",
+      "priority": "P1",
+      "lane": "COMMERCE",
+      "depends_on": [],
+      "integration_after": [
+        "APP-SLICE-READY(commerce/crm-master)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-02",
+          "when": "legal identity facts or payment-role qualification are needed"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "R05"
+      ],
+      "existing_owner": "apps/api/src/application/commerce/crm-master.ts and commerce/register.ts; existing party revisions, invoice snapshots and payee verification.",
+      "new_scope": "Extend the existing directory and annotations with reviewed duplicate identity resolution. Do not build general CRM or silently merge financial capacity.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-27.md",
+      "word_count": 607,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-27.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "89cb8505ce0552c623994b24dc93df7e0931da660e499581eba4c7f2da95fcc4",
+      "full_packet_word_count": 733
+    },
+    {
+      "id": "NEXT-28",
+      "title": "Authorized collection reminders and dispatch recovery",
+      "priority": "P1",
+      "lane": "DELIVERY",
+      "depends_on": [],
+      "integration_after": [
+        "APP-SLICE-READY(commerce/collections)",
+        "APP-SLICE-READY(durable-delivery)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-15",
+          "when": "the selected invoice has credit-note adjustments"
+        },
+        {
+          "task": "NEXT-30",
+          "when": "customer-credit balances affect the reminder amount"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "R04"
+      ],
+      "existing_owner": "apps/api/src/application/commerce/collections.ts and existing invoice-delivery/legal-delivery adapters; existing dispute and statement records.",
+      "new_scope": "The inspected reminder action explicitly records sendAuthorized=false. Add exact-message approval, dispatch admission and outcome recovery without recreating statements or disputes.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-28.md",
+      "word_count": 626,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-28.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "a4691db56b97ba7c18dacbf39c6274777af9e0f97a01a8a74d634c4479954ba3",
+      "full_packet_word_count": 755
+    },
+    {
+      "id": "NEXT-29",
+      "title": "Recurring invoice occurrences without duplicate billing",
+      "priority": "P1",
+      "lane": "COMMERCE",
+      "depends_on": [
+        "NEXT-02"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(commerce/invoice-lifecycle)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-15",
+          "when": "an issued recurring invoice needs a credit"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "R09"
+      ],
+      "existing_owner": "Existing commerce invoice drafts, legal issuance and application preparation/job owners. Add recurrence beside them without editing webshop intake or order conversion.",
+      "new_scope": "NEXT-16 prepares accounting from existing evidence. This packet owns recurring COMMERCIAL invoice occurrences and billing coverage, not recurring manual journals.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-29.md",
+      "word_count": 600,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-29.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "92f08f5a1c9e26475a1493741700ee4861716c465a69c6e6e43ef27be0d8b85c",
+      "full_packet_word_count": 725
+    },
+    {
+      "id": "NEXT-30",
+      "title": "Customer unapplied cash, paid credits and refunds",
+      "priority": "P1",
+      "lane": "COMMERCE",
+      "depends_on": [
+        "NEXT-15"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(commerce/register)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-04",
+          "when": "credit notes affect a supported VAT return"
+        }
+      ],
+      "source_refs": [
+        "R09",
+        "P15",
+        "P07"
+      ],
+      "existing_owner": "Existing customer invoice, payment allocation and legal-credit owners. Add customer-credit liability effects and refund operations through their shared transaction boundary.",
+      "new_scope": "NEXT-15 stops at unpaid customer credit principal; NEXT-07 handles suppliers. Add the customer-side surplus and paid-credit lifecycle without changing those original meanings.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-30.md",
+      "word_count": 624,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-30.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "63b5b9fee0a11a6b1532f9abf8ef1409d2519befc6c9a39cd1509506616d370c",
+      "full_packet_word_count": 752
+    },
+    {
+      "id": "NEXT-31",
+      "title": "Invoice-linked prepayments and accrued-cost true-up",
+      "priority": "P1",
+      "lane": "SCHEDULES",
+      "depends_on": [
+        "NEXT-03",
+        "NEXT-13"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(subledger/schedules)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "WIP-AST03-UI",
+          "when": "the released schedule/control implementation is shared with the asset owner"
+        }
+      ],
+      "source_refs": [
+        "R09",
+        "R10"
+      ],
+      "existing_owner": "Existing subledger schedules/occurrence effects and purchase recognition. Reuse application/subledger/schedules.ts and controls.ts, with separate expense-deferral semantics.",
+      "new_scope": "Prior packets use existing schedule mechanics but do not specify complete invoice-to-deferral admission and accrued-cost invoice resolution. This adds those relationships without another scheduling engine.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-31.md",
+      "word_count": 668,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-31.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "a51bb35df3bd4b86efc3347fa46bbbda5bacb4ff5c7a08c7fe732edec9ab13d0",
+      "full_packet_word_count": 795
+    },
+    {
+      "id": "NEXT-32",
+      "title": "Loan principal, interest accrual and repayment allocation",
+      "priority": "P2",
+      "lane": "TREASURY",
+      "depends_on": [
+        "NEXT-02"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(subledger/owners)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-06",
+          "when": "shareholder funding already recognized supplies the opening loan basis"
+        },
+        {
+          "task": "NEXT-13",
+          "when": "publishing reconciled loan controls"
+        }
+      ],
+      "source_refs": [
+        "R09",
+        "P06"
+      ],
+      "existing_owner": "Existing owner-funding principal records and general ledger/schedule owners. Add a loan-specific effect owner without turning capital contributions into loans.",
+      "new_scope": "NEXT-06 recognizes funding and loan principal. This proposed product extension supplies the later accrued-interest and repayment lifecycle; it is not presented as a newly discovered source defect.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-32.md",
+      "word_count": 610,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-32.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "de4865713199c4e817c06b2a3df24cfddc64c4a1e98f509b3bdef64f8a0bfd17",
+      "full_packet_word_count": 748
+    },
+    {
+      "id": "NEXT-33",
+      "title": "Employee expense claims with one financial handoff",
+      "priority": "P1",
+      "lane": "PAYROLL",
+      "depends_on": [
+        "NEXT-03"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(purchases)",
+        "APP-SLICE-READY(payroll-foundation)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-21",
+          "when": "the approved payout route is payroll rather than a payable payment"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "R10",
+        "P06"
+      ],
+      "existing_owner": "Existing source evidence, purchase classification and employee foundation. Reuse liability/allocation mechanics without giving every employee owner-register administration.",
+      "new_scope": "NEXT-06 concerns owners. Add employee claim submission/review and an exclusive payroll or direct-payment handoff, not another purchase recognition for the same receipt.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-33.md",
+      "word_count": 604,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-33.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "0298175aa77ee12bfd2245184c4f917b4913e663bedf47cd5b29a88ba879f5e7",
+      "full_packet_word_count": 734
+    },
+    {
+      "id": "NEXT-34",
+      "title": "Mileage reimbursement with exact tax and payout partition",
+      "priority": "P2",
+      "lane": "PAYROLL",
+      "depends_on": [
+        "NEXT-33"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(payroll-foundation)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-20",
+          "when": "the selected entitlement includes taxable compensation"
+        },
+        {
+          "task": "NEXT-21",
+          "when": "payout/reporting uses payroll"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "R10"
+      ],
+      "existing_owner": "Employee claim and payroll handoff owners. Add trip evidence and qualified rate calculation without altering receipt matching or inventing a universal mileage rate.",
+      "new_scope": "The first wave does not calculate trips. This adds distance-based reimbursement with distinct entitlement, tax-free limit and taxable excess.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-34.md",
+      "word_count": 606,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-34.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "067214d883d1dcdf8498549519cf0b604267a185077316ba36bcef31168f4939",
+      "full_packet_word_count": 737
+    },
+    {
+      "id": "NEXT-35",
+      "title": "Variable pay, absence and holiday-liability reconciliation",
+      "priority": "P2",
+      "lane": "PAYROLL",
+      "depends_on": [
+        "NEXT-20"
+      ],
+      "integration_after": [
+        "NEXT-21"
+      ],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R10",
+        "P20",
+        "P21"
+      ],
+      "existing_owner": "Existing payroll employment/work facts and frozen regular-pay calculator. Add one explicitly selected variable/hourly/absence profile and a holiday-liability rollforward.",
+      "new_scope": "Extend the first wave beyond fixed salary. Do not replace its tax-table selection, employee directory or pay-run posting authority.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-35.md",
+      "word_count": 593,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-35.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "8c1b45f435ab1e662ddf7beb57a7c561e331308d8ceff32043ce7f045ab8e090",
+      "full_packet_word_count": 705
+    },
+    {
+      "id": "NEXT-36",
+      "title": "Paid payroll recovery and retroactive compensation",
+      "priority": "P1",
+      "lane": "PAYROLL",
+      "depends_on": [
+        "NEXT-21"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(payroll)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-35",
+          "when": "the correction includes variable, absence or holiday components"
+        }
+      ],
+      "source_refs": [
+        "R10",
+        "P21",
+        "X04"
+      ],
+      "existing_owner": "Existing pay-run, employee payable, reporting identity and payment evidence owners. Add consumed-history adjustment records without rewriting paid runs.",
+      "new_scope": "NEXT-21 only specifies bounded unpaid-run correction. This packet distinguishes later compensation, future-pay adjustment and a gross repayment claim after actual payment.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-36.md",
+      "word_count": 637,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-36.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "14cb54a6291eef5414c6f254278e35ce7f3023fae610d3cd90926c5ee8054645",
+      "full_packet_word_count": 762
+    },
+    {
+      "id": "NEXT-37",
+      "title": "VAT assessment ownership and exact-to-assessed bridge",
+      "priority": "P0",
+      "lane": "TAX",
+      "depends_on": [
+        "NEXT-04"
+      ],
+      "integration_after": [
+        "WIP-VAT03",
+        "WIP-VAT04-A1",
+        "APP-SLICE-READY(tax-account)"
+      ],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R10",
+        "R11",
+        "P04"
+      ],
+      "existing_owner": "Existing VAT obligations, released reclassification/amendment effects and tax-account statement/match owners.",
+      "new_scope": "Add the evidenced authority-assessment lifecycle. Do not reimplement or requalify the reserved reclassification or target-minus-prior amendment operations.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-37.md",
+      "word_count": 663,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-37.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "47c0c007b2239ada46fc4dbc166ba7060822f44b74e4acbb362425dacb4499cf",
+      "full_packet_word_count": 767
+    },
+    {
+      "id": "NEXT-38",
+      "title": "Cash-method recognition and unpaid year-end cutover",
+      "priority": "P0",
+      "lane": "TAX",
+      "depends_on": [
+        "NEXT-03",
+        "NEXT-04"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(commerce/register)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-23",
+          "when": "the reviewed unpaid population is consumed by financial year-end"
+        }
+      ],
+      "source_refs": [
+        "R09",
+        "R10",
+        "X03"
+      ],
+      "existing_owner": "Commerce invoice/open-item and tax-fact owners, with a cash-method profile beside the existing accrual profile.",
+      "new_scope": "NEXT-03/04 start with accrual. Add paid recognition and once-only year-end unpaid recognition, not another invoice or VAT ledger.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-38.md",
+      "word_count": 665,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-38.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "cc0b3b934efeb1007faa6f37f2195df8b911339911d1394846ed7d19e5c425c0",
+      "full_packet_word_count": 785
+    },
+    {
+      "id": "NEXT-39",
+      "title": "Processor balance and payout clearing, Stripe first",
+      "priority": "P1",
+      "lane": "TREASURY",
+      "depends_on": [
+        "NEXT-30"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(source-intake)",
+        "APP-SLICE-READY(commerce/register)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-40",
+          "when": "processor balances use a non-book currency"
+        },
+        {
+          "task": "WIP-COM2-W1",
+          "when": "read-only order provenance is required; do not modify its intake"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "R09",
+        "X01",
+        "X02"
+      ],
+      "existing_owner": "Source retention, customer settlement/refund owners and bank reconciliation. Add a selected Stripe balance-transaction adapter and processor control ledger projection.",
+      "new_scope": "Plaid packets cover bank feeds and webshop WIP covers orders. Neither specifies processor gross/fees/refunds/payout clearing. This packet owns that financial reconciliation, not sales-order intake.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-39.md",
+      "word_count": 619,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-39.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "54a8ec1bfba2e628ee3075ece1868433c431766a3ea398cd1b11ad92909deafd",
+      "full_packet_word_count": 760
+    },
+    {
+      "id": "NEXT-40",
+      "title": "Foreign-currency cash holdings and transfers",
+      "priority": "P1",
+      "lane": "TREASURY",
+      "depends_on": [
+        "NEXT-17",
+        "NEXT-18"
+      ],
+      "integration_after": [
+        "WIP-FX02-P1",
+        "APP-SLICE-READY(banking)"
+      ],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R09",
+        "R10",
+        "R11",
+        "P17",
+        "P18"
+      ],
+      "existing_owner": "Bank/processor cash account owner with existing FX pure arithmetic and commerce obligation settlement.",
+      "new_scope": "First-wave FX owns receivables/payables. Add native-currency CASH balances and their book carrying values, not a duplicate invoice FX register.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-40.md",
+      "word_count": 593,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-40.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "2b67b107c1e1a858874cbc993f564b6d24f6dc9945f03d6b1f748e99d1d473ff",
+      "full_packet_word_count": 703
+    },
+    {
+      "id": "NEXT-41",
+      "title": "Late FX valuation and consumed-chain correction",
+      "priority": "P1",
+      "lane": "TREASURY",
+      "depends_on": [
+        "NEXT-18"
+      ],
+      "integration_after": [
+        "WIP-FX02-P1",
+        "APP-SLICE-READY(commerce-fx)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-40",
+          "when": "the affected chain includes native foreign-cash holdings"
+        },
+        {
+          "task": "NEXT-23",
+          "when": "affected financial periods require approved reopening"
+        }
+      ],
+      "source_refs": [
+        "R10",
+        "R11",
+        "P18"
+      ],
+      "existing_owner": "The existing commerce monetary-item and FX correction owner. Add a bounded chain-adjustment operation using its own balances and recorded events.",
+      "new_scope": "NEXT-18 refuses late revaluation after settlement consumed the old basis. Solve that explicit limitation with a complete approved delta, not reversal of real cash or another writable FX register.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-41.md",
+      "word_count": 681,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-41.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "e714d3cf2ce91f6cf774c2cf08d726076fb1bc0043333175054393826bc4d064",
+      "full_packet_word_count": 823
+    },
+    {
+      "id": "NEXT-42",
+      "title": "Economic impairment reversal and zero-carrying assets",
+      "priority": "P1",
+      "lane": "SCHEDULES",
+      "depends_on": [],
+      "integration_after": [
+        "WIP-AST03-UI",
+        "APP-SLICE-READY(subledger)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-19",
+          "when": "checking disposal/proceeds consumers"
+        },
+        {
+          "task": "NEXT-13",
+          "when": "presenting the resulting financial controls"
+        }
+      ],
+      "source_refs": [
+        "R10",
+        "R11"
+      ],
+      "existing_owner": "Existing asset, impairment and schedule owners after their reserved UI/control closure.",
+      "new_scope": "The adopted first profile requires positive remaining carrying and only a bounded immediate error correction. Add later economic reversal with a qualified cap and an explicit zero-carrying-but-owned state.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-42.md",
+      "word_count": 590,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-42.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "7ecbdc91e32661e30d2a176d7f3df4aed2d8648f345c2baf367f3fcd7517e1b4",
+      "full_packet_word_count": 724
+    },
+    {
+      "id": "NEXT-43",
+      "title": "Reviewed dimension restatement without editing journals",
+      "priority": "P1",
+      "lane": "REPORTING",
+      "depends_on": [
+        "NEXT-14",
+        "NEXT-13"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(dimensions)"
+      ],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R03",
+        "P14"
+      ],
+      "existing_owner": "Existing original dimension assignments, report snapshots and contribution identities. Add classification history beside them.",
+      "new_scope": "NEXT-14 deliberately excludes posted retagging. Add the explicitly planned original-versus-reviewed analytical view without changing financial amounts, original tags or old exports.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-43.md",
+      "word_count": 580,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-43.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "20f114c35c931da237b3fe29e8e011116eac7b56a06cc8f3ad0a66fa6af453ce",
+      "full_packet_word_count": 690
+    },
+    {
+      "id": "NEXT-44",
+      "title": "Multi-year SIE partition and dimension-preserving import",
+      "priority": "P1",
+      "lane": "REPORTING",
+      "depends_on": [
+        "NEXT-12",
+        "NEXT-14"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(historical-migration)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-11",
+          "when": "independent roundtrip export is part of acceptance"
+        }
+      ],
+      "source_refs": [
+        "R09",
+        "R10",
+        "P11",
+        "P12",
+        "X09"
+      ],
+      "existing_owner": "Existing bounded SIE parser, retained source staging, historical basis and financial run owners.",
+      "new_scope": "Extend the single-year/dimension-restricted import boundary. Do not rebuild byte retention, opening selection, financial admission or the historical open-item bridge.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-44.md",
+      "word_count": 638,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-44.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "8048410a138e29ee3b153da8d334655dc161cc9e7a15b4be505cac762a9075d3",
+      "full_packet_word_count": 758
+    },
+    {
+      "id": "NEXT-45",
+      "title": "Direct cash-flow statement with a full reconciliation bridge",
+      "priority": "P1",
+      "lane": "REPORTING",
+      "depends_on": [
+        "NEXT-13"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(reports)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-40",
+          "when": "the selected cash perimeter contains foreign-currency holdings"
+        },
+        {
+          "task": "NEXT-39",
+          "when": "processor/transit positions belong to the selected cash perimeter"
+        }
+      ],
+      "source_refs": [
+        "R09",
+        "R10",
+        "P13"
+      ],
+      "existing_owner": "Existing semantic report snapshots, original financial contributions and owned cash/settlement links.",
+      "new_scope": "NEXT-13 produces P&L and balance sheet. Add historical actual cash-flow classification and closing-cash reconciliation, not a forecast or dashboard estimate.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-45.md",
+      "word_count": 552,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-45.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "5edbd3df26898b1a0b284e79f8af8f3798dffc1cb2941d834b8264fd41d27676",
+      "full_packet_word_count": 679
+    },
+    {
+      "id": "NEXT-46",
+      "title": "Peppol invoice and credit exchange through a selected access point",
+      "priority": "P1",
+      "lane": "DELIVERY",
+      "depends_on": [
+        "NEXT-03",
+        "NEXT-15"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(invoice-delivery)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-26",
+          "when": "inbound documents enter the assisted supplier-review workflow"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "R09",
+        "X05"
+      ],
+      "existing_owner": "Existing semantic invoice/credit models, retained artifacts, supplier intake and authorized external-delivery owner. Add a selected access-point adapter, not a Peppol network implementation.",
+      "new_scope": "First-wave packets issue documents and generate local reports. This adds a concrete structured e-invoice/credit format and transport boundary, with inbound review distinct from posting.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-46.md",
+      "word_count": 623,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-46.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "23d911369ba07a2fe31b9a065e565afff9e4c1e83447923295f1199c9780b3eb",
+      "full_packet_word_count": 759
+    },
+    {
+      "id": "NEXT-47",
+      "title": "Document signatures bound to exact content and purpose",
+      "priority": "P1",
+      "lane": "DELIVERY",
+      "depends_on": [
+        "NEXT-24"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(artifacts)"
+      ],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R03",
+        "R10",
+        "P24",
+        "X06"
+      ],
+      "existing_owner": "Existing artifact, identity and external-attempt owners. Add document-signature intent and a selected BankID/signing adapter.",
+      "new_scope": "The first wave generates K2/iXBRL content but does not prove document signing. Add purpose-bound signature evidence without treating ordinary login or accounting approval as document signature.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-47.md",
+      "word_count": 649,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-47.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "73b1ca9ae941e55c7c4a84e7145af1c6b422674a26bd28ccc830a8178e845afc",
+      "full_packet_word_count": 767
+    },
+    {
+      "id": "NEXT-48",
+      "title": "Bolagsverket submission and authority-outcome lifecycle",
+      "priority": "P1",
+      "lane": "DELIVERY",
+      "depends_on": [
+        "NEXT-24",
+        "NEXT-47"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(external-delivery)"
+      ],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R03",
+        "P24",
+        "X07",
+        "X08"
+      ],
+      "existing_owner": "Existing annual-report semantic models/artifacts, signature records and external attempts. Implement one selected Bolagsverket profile through the provider adapter.",
+      "new_scope": "NEXT-24 ends at local generation/validation. Add the actual filing lifecycle while keeping original signatures, adopted copy certification, upload and registration distinct.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-48.md",
+      "word_count": 667,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-48.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "539c3c338326b503aa93b153169b35a6effa6ca89bcd77b82c8e458befd5b1ed",
+      "full_packet_word_count": 782
+    },
+    {
+      "id": "NEXT-49",
+      "title": "Rule-change impact and evidence-backed obligation fulfillment",
+      "priority": "P0",
+      "lane": "REPORTING",
+      "depends_on": [
+        "NEXT-02"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(closing/deadlines)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-04",
+          "when": "VAT calculations are impacted"
+        },
+        {
+          "task": "NEXT-21",
+          "when": "payroll declarations are impacted"
+        },
+        {
+          "task": "NEXT-48",
+          "when": "annual-report authority outcomes fulfill deadlines"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "R06",
+        "P02"
+      ],
+      "existing_owner": "Existing rule releases, retained plan/report dependencies and closing/deadlines.ts manual obligations/calendar feeds.",
+      "new_scope": "Do not rebuild deadlines or rule activation. Add exact affected-record analysis and require meaningful fulfillment evidence instead of treating any nonempty reference string as proof.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-49.md",
+      "word_count": 601,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-49.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "c114d552933ae0a155887d08fb58372fe1c6e0cb77501c8f6c838d578f192e2c",
+      "full_packet_word_count": 730
+    },
+    {
+      "id": "NEXT-50",
+      "title": "Agent book context, deltas and cross-domain unresolved-work index",
+      "priority": "P0",
+      "lane": "AGENT",
+      "depends_on": [
+        "NEXT-01",
+        "NEXT-16"
+      ],
+      "integration_after": [
+        "APP-SLICE-READY(capabilities)"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-49",
+          "when": "including qualified deadline/impact outcomes"
+        },
+        {
+          "task": "NEXT-33",
+          "when": "including employee claim summaries under separate permissions"
+        }
+      ],
+      "source_refs": [
+        "R02",
+        "R03",
+        "R07",
+        "P01",
+        "P16"
+      ],
+      "existing_owner": "Existing shared capability registry, case snapshots, period preparation runs and domain report/read owners.",
+      "new_scope": "NEXT-16 prepares a period and NEXT-01 routes a case. Add a compact cross-domain orientation and delta interface so an agent does not rebuild the full book context every turn.",
+      "status": "proposed application-owned pseudocode; not implemented or runtime-verified",
+      "file": "packets/NEXT-50.md",
+      "word_count": 681,
+      "application_owned": true,
+      "transaction_contract": "00-COMMON.md sections 4-6",
+      "worker_input": [
+        "00-COMMON.md",
+        "01-RULE-AND-PROVIDER-DATA.md",
+        "packets/NEXT-50.md",
+        "SOURCES.md"
+      ],
+      "prior_wave_is_not_assumed_complete": true,
+      "packet_sha256": "c683fdfde498a014a28452e5a81d16da3336c51f21fd32cd2a72fbda0209ce64",
+      "full_packet_word_count": 843
+    }
+  ],
+  "review_date": "2026-09-26",
+  "validation_order_including_declared_conditional_edges": [
+    "NEXT-01",
+    "NEXT-02",
+    "NEXT-08",
+    "NEXT-09",
+    "NEXT-03",
+    "NEXT-10",
+    "NEXT-12",
+    "NEXT-13",
+    "NEXT-20",
+    "NEXT-27",
+    "NEXT-04",
+    "NEXT-06",
+    "NEXT-07",
+    "NEXT-14",
+    "NEXT-17",
+    "NEXT-21",
+    "NEXT-22",
+    "NEXT-26",
+    "NEXT-31",
+    "NEXT-05",
+    "NEXT-11",
+    "NEXT-15",
+    "NEXT-16",
+    "NEXT-18",
+    "NEXT-32",
+    "NEXT-33",
+    "NEXT-35",
+    "NEXT-37",
+    "NEXT-43",
+    "NEXT-19",
+    "NEXT-29",
+    "NEXT-30",
+    "NEXT-34",
+    "NEXT-36",
+    "NEXT-40",
+    "NEXT-44",
+    "NEXT-46",
+    "NEXT-23",
+    "NEXT-28",
+    "NEXT-39",
+    "NEXT-42",
+    "NEXT-24",
+    "NEXT-38",
+    "NEXT-41",
+    "NEXT-45",
+    "NEXT-25",
+    "NEXT-47",
+    "NEXT-48",
+    "NEXT-49",
+    "NEXT-50"
+  ],
+  "dependency_note": "Conditional edges apply only to the selected case. Integration-after is a contract handoff, not a blanket requirement to finish every company/legal profile. This conservative graph is acyclic.",
+  "late_head_observation": {
+    "commit": "4671a2fbaea88bcab613f28b6d34a209b040ab06",
+    "scope": "branch/commit message only, not full intervening diff",
+    "reported_change": "NEXT-01 current-owner resolver",
+    "runtime_proof": "unobserved per commit message"
+  },
+  "design_examples": "design-examples.json",
+  "checks": "checks/results.json",
+  "coordinator_handoff": "COORDINATOR-HANDOFF.md",
+  "master": "MASTER-PSEUDOCODE.md"
+}

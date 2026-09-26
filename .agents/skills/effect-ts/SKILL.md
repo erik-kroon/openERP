@@ -46,6 +46,15 @@ TanStack Query owns remote state in the web app, with a QueryClient created per 
 
 For company/book access, financial mutations, retryable commands, or background jobs, read [Business operation rules](references/business-operations.md). It applies the Sellfinity lessons on company separation, safe retries, restart recovery, and exact money to OpenERP's accounting boundaries.
 
+## Find the implementation design for assigned work
+
+Requirements, invariants and delivery contracts live in `docs/`. When the assigned work is a `NEXT-nn` packet, the implementation-level design is the [NEXT dossier plan](../../docs/plans/12-next-implementation-dossier.md) plus the vendored packet under `docs/specs/`. Treat it as a contract to bind to real code, not a framework to reproduce:
+
+- Reconcile the packet's named paths, `App`/`Db`/`Domain` symbols and existing owner against the actual checkout. The pinned review behind the packet is older than the tree, so a statement that something was missing is a statement about that revision.
+- Resolve the packet's `APP-SLICE-READY(area)` prerequisite before coding. A missing port is a prerequisite to report, not a second owner to build, and the reserved VAT, FX, asset, amendment and webshop-intake owners stay reserved.
+- Keep one financial transaction per group: pass the caller's transaction into every nested journal, tax, register, approval-use and receipt write, and never open a second transaction from inside a financial group.
+- Keep exact money exact, and satisfy the packet's vectors and replay/stale-approval cases as obligations. The packets add no test and grant no deployment, provider, payment or filing authority; `AGENTS.md` and the open decisions still govern.
+
 ## Read only the relevant patterns
 
 | Work | Local reference | Effect Solutions topic |

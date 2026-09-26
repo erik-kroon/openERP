@@ -1,0 +1,174 @@
+{
+  "repo": {
+    "R01": {
+      "path": "GitHub main branch",
+      "url": "https://api.github.com/repos/erik-kroon/openERP/branches/main",
+      "observed": "Branch resolved to 5ac3433e3e75ef7fc0229cbe00107003b63aa32d; capture is a pinned review, not a live-state promise.",
+      "citation": "turn134file0:L2"
+    },
+    "R02": {
+      "path": "docs/plans/application-owned-accounting.md",
+      "url": "https://github.com/erik-kroon/openERP/blob/5ac3433e3e75ef7fc0229cbe00107003b63aa32d/docs/plans/application-owned-accounting.md",
+      "observed": "Requested lines 1-250 and 250-480. Selected returned plan/status and failure matrix: application-owned replacement, clean baseline, incomplete domain ports and proof. Not all runtime paths were executed or reviewed.",
+      "citation": "turn137file0:L2; turn142file0:L2"
+    },
+    "R03": {
+      "path": "docs/plans/capability-backlog.md",
+      "url": "https://github.com/erik-kroon/openERP/blob/5ac3433e3e75ef7fc0229cbe00107003b63aa32d/docs/plans/capability-backlog.md",
+      "observed": "Coverage index plus supplemental sections; requested full content and lines 140-310. Collections, retagging, employee expenses, recurring invoices, provider exchanges, rule/deadline impacts and agent context are requirements, not completion claims.",
+      "citation": "turn136file0:L2; turn139file0:L2"
+    },
+    "R04": {
+      "path": "apps/api/src/application/commerce/collections.ts",
+      "url": "https://github.com/erik-kroon/openERP/blob/5ac3433e3e75ef7fc0229cbe00107003b63aa32d/apps/api/src/application/commerce/collections.ts",
+      "observed": "Inspected returned code for disputes/actions/history/worklist and reminder preparation. sendAuthorized is false in the recorded action. The full application delivery graph was not exercised.",
+      "citation": "turn141file0:L2"
+    },
+    "R05": {
+      "path": "apps/api/src/application/commerce/crm-master.ts",
+      "url": "https://github.com/erik-kroon/openERP/blob/5ac3433e3e75ef7fc0229cbe00107003b63aa32d/apps/api/src/application/commerce/crm-master.ts",
+      "observed": "Directory/export and contact/alias/registry-provenance annotations. A complete reviewed identity-resolution lifecycle was not established by this module review.",
+      "citation": "turn145file0:L2"
+    },
+    "R06": {
+      "path": "apps/api/src/application/closing/deadlines.ts",
+      "url": "https://github.com/erik-kroon/openERP/blob/5ac3433e3e75ef7fc0229cbe00107003b63aa32d/apps/api/src/application/closing/deadlines.ts",
+      "observed": "Manual obligation revision, activity, feed and revocation operations. record_outcome accepts a bounded reference string in the inspected operation; it does not itself validate a typed authority receipt.",
+      "citation": "turn146file0:L2"
+    },
+    "R07": {
+      "path": "apps/api/src/application/capabilities/commerce-invoices.ts",
+      "url": "https://github.com/erik-kroon/openERP/blob/5ac3433e3e75ef7fc0229cbe00107003b63aa32d/apps/api/src/application/capabilities/commerce-invoices.ts",
+      "observed": "Lines 1-130 map existing purchase/invoice/party operations into shared capability dispatch. Used as path/ownership evidence, not functional acceptance.",
+      "citation": "turn147file0:L2"
+    },
+    "R08": {
+      "path": "apps/api/src/application/purchases/inbox.ts",
+      "url": "https://github.com/erik-kroon/openERP/blob/5ac3433e3e75ef7fc0229cbe00107003b63aa32d/apps/api/src/application/purchases/inbox.ts",
+      "observed": "Inbox registration, recorded extraction attempts and reviewed draft binding through createSupplierInvoiceDraftInTransaction. A provider extraction job was not established by the inspected code.",
+      "citation": "turn148file0:L2"
+    },
+    "R09": {
+      "path": "docs/plans/04-invoices-payments-registers.md",
+      "url": "https://github.com/erik-kroon/openERP/blob/5ac3433e3e75ef7fc0229cbe00107003b63aa32d/docs/plans/04-invoices-payments-registers.md",
+      "observed": "Lines 1-135: commercial versus financial state, accrual/cash method, year-end unpaid invoices, advances/overpayments, source identities, payment capacities and reports. Historical migration prose is not a fresh runtime observation.",
+      "citation": "turn151file0:L2"
+    },
+    "R10": {
+      "path": "docs/plans/05-vat-payroll-assets-fx.md",
+      "url": "https://github.com/erik-kroon/openERP/blob/5ac3433e3e75ef7fc0229cbe00107003b63aa32d/docs/plans/05-vat-payroll-assets-fx.md",
+      "observed": "Requested lines 1-190: tax/payroll/asset/FX requirements and selected historical context. Automatic FX reversal wording in old prose is superseded by R11 incremental valuation.",
+      "citation": "turn149file0:L2"
+    },
+    "R11": {
+      "path": "docs/adr/0008-financial-fx-vat-impairment.md",
+      "url": "https://github.com/erik-kroon/openERP/blob/5ac3433e3e75ef7fc0229cbe00107003b63aa32d/docs/adr/0008-financial-fx-vat-impairment.md",
+      "observed": "Lines 1-150 requested. Adopted paired FX carrying, VAT role separation and impairment equations, explicitly reconciled with application ownership under ADR 0010.",
+      "citation": "turn152file0:L2"
+    },
+    "R12": {
+      "path": "apps/api/src/application/capabilities/subledger-owners.ts",
+      "url": "https://github.com/erik-kroon/openERP/blob/5ac3433e3e75ef7fc0229cbe00107003b63aa32d/apps/api/src/application/capabilities/subledger-owners.ts",
+      "observed": "Lines 1-100 identify existing schedule, control and owner-register operations. Used for paths, not proof of supported new asset states.",
+      "citation": "turn150file0:L2"
+    },
+    "R13": {
+      "path": "Application/commerce directory inventories",
+      "url": "https://github.com/erik-kroon/openERP/tree/5ac3433e3e75ef7fc0229cbe00107003b63aa32d/apps/api/src/application",
+      "observed": "Connector directory/tree results establish present source paths. A filename is not evidence that every requested scenario is implemented.",
+      "citation": "turn138file0:L2; turn140file0:L2; turn144file0:L2"
+    },
+    "R14": {
+      "path": "Supplied NEXT-01..25 application-owned v2 dossier",
+      "url": null,
+      "observed": "Input artifact openerp-next-25-effect.zip plus its shared contract and solution index. Used to preserve task identity, exclusions and distinct feature scope. It remains proposed pseudocode, not deployed source.",
+      "citation": "turn135file0:L9-L55; turn135file1:L67-L450"
+    },
+    "R15": {
+      "path": "Late main-branch observation",
+      "url": "https://github.com/erik-kroon/openERP/commit/4671a2fbaea88bcab613f28b6d34a209b040ab06",
+      "observed": "NEXT-01 current owner resolver reported in commit; static evidence reported, runtime unobserved. Full intervening diff not reviewed.",
+      "citation": "turn153file0:L2"
+    }
+  },
+  "external": {
+    "X01": {
+      "title": "Stripe Balance Transaction object",
+      "url": "https://docs.stripe.com/api/balance_transactions/object",
+      "observed": "Gross, fee and net in smallest currency units, with net=amount-fee. Source object/type identity needs an explicit accounting mapping.",
+      "status": "Official page read; no provider access or certified adapter.",
+      "citation": "turn677627view0"
+    },
+    "X02": {
+      "title": "Stripe Balance Transaction list",
+      "url": "https://docs.stripe.com/api/balance_transactions/list",
+      "observed": "The payout filter is for automatic Stripe payouts. Manual payouts cannot assume that membership query.",
+      "status": "Official page read.",
+      "citation": "turn815906view4"
+    },
+    "X03": {
+      "title": "Skatteverket cash bookkeeping guidance",
+      "url": "https://www.skatteverket.se/foretag/drivaforetag/startaochregistrera/fordigsomvillstartaforetag.4.6e8a1495181dad540842251.html",
+      "observed": "Cash bookkeeping recognizes during-year payments and unpaid invoices at year-end. Qualified tax timing and method selection are still required for each supported case.",
+      "status": "Official page opened; no complete VAT method release qualified.",
+      "citation": "turn730025view0"
+    },
+    "X04": {
+      "title": "Skatteverket employer declaration corrections",
+      "url": "https://www.skatteverket.se/foretag/arbetsgivare/lamnaarbetsgivardeklaration/rattaenarbetsgivardeklaration.4.2cf1b5cd163796a5c8b6698.html",
+      "observed": "Future-pay adjustment and gross recovery differ. Gross recovery can lead to original-period compensation correction when claimed; prior withholding normally stays. Replacements preserve item specification identity. Tax-account changes depend on authority reassessment.",
+      "status": "Official page read, notably correction and recovery sections. No general recovery/offset legal entitlement is inferred.",
+      "citation": "turn815906view3"
+    },
+    "X05": {
+      "title": "Peppol BIS Billing 3.0",
+      "url": "https://docs.peppol.eu/poacc/billing/3.0/",
+      "also": [
+        "https://docs.peppol.eu/poacc/billing/3.0/bis/"
+      ],
+      "observed": "Index identifies May 2026 release; BIS text supplies structured invoice/credit and monetary relationships.",
+      "status": "Official index and BIS page opened. Exact XSD/Schematron/code-list bundles were not downloaded or qualified.",
+      "citation": "turn815906view2; turn730025view2"
+    },
+    "X06": {
+      "title": "BankID autostart and signing entry point",
+      "url": "https://developers.bankid.com/getting-started/autostart",
+      "also": [
+        "https://developers.bankid.com/api-references/auth--sign/sign",
+        "https://developers.bankid.com/support"
+      ],
+      "observed": "App return is not completion evidence; collect is needed. Access requires appropriate provider arrangements/certificates.",
+      "status": "Autostart/support text available; signing API page returned minimal client-rendered text. No exact signing API schema or signature-verifier qualification is claimed.",
+      "citation": "turn677627search0; turn677627search2; turn815906view0"
+    },
+    "X07": {
+      "title": "Bolagsverket digital annual-report workflow",
+      "url": "https://bolagsverket.se/sjalvservice/etjanster/lamnainarsredovisningendigitalt.1663.html",
+      "also": [
+        "https://bolagsverket.se/sjalvservice/etjanster/lamnainarsredovisningendigitalt/saharlamnarduinarsredovisningendigitalt.1667.html",
+        "https://bolagsverket.se/sjalvservice/etjanster/lamnainarsredovisningendigitalt/vanligafragoromattlamnainarsredovisningendigitalt.1671.html",
+        "https://bolagsverket.se/sjalvservice/etjanster/lamnainarsredovisningendigitalt/forutsattningarforattlamnainarsredovisningendigitalt.1665.html"
+      ],
+      "observed": "Original signing, company adoption, upload of a faithful copy, authority certification/submission and receipt/registration are distinct. A general representative cannot simply replace the eligible certifier.",
+      "status": "Official search-rendered pages provided relevant text. Direct opening returned a minimal/challenge response. No actual filing performed.",
+      "citation": "turn730025search0; turn730025search1; turn730025search2; turn730025search3"
+    },
+    "X08": {
+      "title": "Bolagsverket current service specifications entry point",
+      "url": "https://bolagsverket.se/apierochoppnadata/lamnaforetagsinformation/digitalinlamningavarsredovisningochrevisionsberattelse/gallandeservicespecifikationerfordigitalinlamningavarsredovisning.5938.html",
+      "observed": "Provides versioned filing, information, event and checksum services. The packet requires the actual selected service contracts rather than invented routes/statuses.",
+      "status": "Official search result inspected; exact linked OpenAPI/specification bundles not acquired or exercised.",
+      "citation": "turn730025search4"
+    },
+    "X09": {
+      "title": "SIE Group format family",
+      "url": "https://sie.se/format/",
+      "observed": "Balance/transaction export and voucher transfer are different format purposes. Exact year/dimension/omission grammar must be qualified against the chosen specification.",
+      "status": "Official format page opened; this work does not certify a new parser or exporter.",
+      "citation": "turn730025view1"
+    }
+  },
+  "pinned_commit": "5ac3433e3e75ef7fc0229cbe00107003b63aa32d",
+  "review_date": "2026-09-26",
+  "review_type": "targeted source/requirements plus design synthesis"
+}

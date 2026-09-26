@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-26T12:11:42.384490+00:00",
-  "headObservedAtValidation": "8bff9fadbcacf9d369758b967971469548834365",
+  "checkedAt": "2026-09-26T12:30:40.017538+00:00",
+  "headObservedAtValidation": "ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,8 +9,8 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 472,
-    "documentsChecked": 34,
+    "localLinksAndAnchorsChecked": 559,
+    "documentsChecked": 35,
     "coverage": {
       "R": [
         "R-01",
@@ -90,7 +90,7 @@
   "files": [
     {
       "path": "docs/README.md",
-      "sha256": "a461721f7788599e83cd3559c0d397b057561a28a7170792cb136dba9ae5605f"
+      "sha256": "d641f17378d38033314e463cf3897461a7c3b5c8e0545bcaa87a872f96a79c87"
     },
     {
       "path": "docs/adr/0002-exact-posting-and-approval.md",
@@ -102,7 +102,7 @@
     },
     {
       "path": "docs/adr/README.md",
-      "sha256": "b38e77a06b7893926c4d43240dfe934fba53ef2d5138625b4f55174d4b1e3a55"
+      "sha256": "ce1d773dfa27ca15346f0a726a115e0a79205313d906f07c01de27402eda1fb5"
     },
     {
       "path": "docs/architecture.md",
@@ -118,7 +118,7 @@
     },
     {
       "path": "docs/open-decisions.md",
-      "sha256": "aa04572d1ae3fa8445a7d5f05cec641f67049a9014b0d1fd6a075bd62eba2bfc"
+      "sha256": "afeb3a824bc6a42e03b7e222e6603a89380c9353ed5f6f102909b9f0c2e11a78"
     },
     {
       "path": "docs/operations.md",
@@ -173,8 +173,12 @@
       "sha256": "7e8b5d60d0563ffdcd28e70762b1b3088182d47135ad1d5589fde963dbe9d2e8"
     },
     {
+      "path": "docs/plans/12-next-implementation-dossier.md",
+      "sha256": "4118790a5cf9c4b9918dc6179a57caafa42fcae0d4cf5753856d4265358667ab"
+    },
+    {
       "path": "docs/plans/README.md",
-      "sha256": "01c32a4fd2feb5ae2817fbeba802f038c9c5c2c7e4f61c0c56e27bbeeca78438"
+      "sha256": "b9db1db3ef67601d76bc28c5b5a935f68d6027eebc23ae84908f2dfd64b9e40c"
     },
     {
       "path": "docs/plans/accounting-completion-wave.md",
@@ -210,7 +214,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "d26bc683a71d15ac7aaa6ea194f1179118942246308f26fc6eb46cfbbe59e23d"
+      "sha256": "303e5c36729911838b5cfde9255c3062a763334f88ab96c72d772f07102d0299"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -230,7 +234,7 @@
     },
     {
       "path": "docs/roadmap.md",
-      "sha256": "039fa828a84c184fc53b833917fb318bbe3f8ce0a283fd57f1c8f4f2b21aadd3"
+      "sha256": "71fe945a7628955fb7996a526409cacc5cf0eaf069f547e7a72d14b9df9c2e58"
     },
     {
       "path": "docs/verification.md",
