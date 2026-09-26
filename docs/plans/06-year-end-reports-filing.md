@@ -171,3 +171,29 @@ pack/section queries; no ordinary tab-switching reproduction or UI repair is cla
 and independent source reviews found no blocker. Native backend/web types and targeted lint
 passed; no SQL compilation/application, browser or runtime execution was performed. See
 [accountant review](../../apps/api/docs/ACCOUNTANT-REVIEW.md).
+
+## Semantic statement snapshot slice
+
+`apps/api/docs/REPORT-STATEMENTS.md` records the source slice that derives a semantic
+profit-and-loss and balance-sheet snapshot from retained ledger facts. A pure module in
+`packages/domain/src/statements.ts` owns opening representation, reviewed mapping selection,
+mechanical-transfer exclusion, the virtual untransferred result, the subtotal graph, diagnostics
+and the balance identity; the application owns capture, sealing and paging; PostgreSQL stores only
+the sealed header, row membership and contribution membership.
+
+The accounting rules in this plan are retained. A role reaches a statement only through a reviewed
+mapping, a role has exactly one leaf destination, a subtotal is a calculation rather than a further
+contribution, and report exclusion uses an owned transfer receipt rather than a suspicious account
+number. The balance-sheet virtual result is fiscal-year to date, not the requested
+profit-and-loss slice, and a first year does not imply a zero opening.
+
+Two dependencies remain open rather than assumed. This release implements no result-transfer
+posting operation, so nothing is excluded from profit and loss and an entry that imitates a transfer
+stays visible as a diagnostic. The company profile contract is not part of this release, so a
+mapping release records its effective fiscal rules as `pending_company_profile` and every snapshot
+reports `companyProfile: pending`, `external: not_established`, `statutory: false` and
+`financialClose: false`.
+
+This is implemented source without observed runtime evidence. No database, migration application,
+HTTP or MCP request, browser session or concurrent capture was exercised. It is not END-02 financial
+close, an approved result transfer, a reviewed opening set, a tax bridge or a statutory statement.
