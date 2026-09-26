@@ -50,3 +50,5 @@ and both-direction admission plus existing-record handling; no such policy is se
 ## Historical feasibility evidence
 
 The [FX](../apps/api/docs/FX-FINANCIAL-FEASIBILITY.md), [VAT settlement](../apps/api/docs/VAT-SETTLEMENT-FEASIBILITY.md) and [impairment](../apps/api/docs/SUBLEDGER-IMPAIRMENT-FEASIBILITY.md) reviews explain why implementation was deferred. ADR 0008 supersedes their unresolved choices for the selected first profiles. Their source findings must still be reconciled against the live migration chain before implementation; adoption does not establish that any new financial operation exists.
+
+The [2026-09-26 replacement completion](plans/evidence/application-owned-replacement-complete.md) supplies local evidence for D-02 and D-03: current admission/rollback/replay, scoped grants, the fresh baseline and canonical byte/hash vectors. These observations do not waive the company/profile, external provider, custody or hosted deployment gates above.

@@ -1,6 +1,6 @@
 # Application-owned accounting replacement
 
-Status: implementation in progress, 2026-09-26. [ADR 0010](../adr/0010-application-owned-accounting-replacement.md) records the selected application-owned boundary, clean three-file baseline, caller cutover, no-compatibility rule and live replacement inventory. The user selected effect-mq for background jobs in [ADR 0009](../adr/0009-effect-mq-background-jobs.md). [Initial repairs](evidence/application-owned-review-repairs.md), [follow-up verification](evidence/application-owned-review-followup.md) and [baseline cutover evidence](evidence/application-owned-baseline-cutover.md) record implementation and observed results. The dispatch registry and superseded migration chain are removed; fresh baseline, rerun, drift refusal, catalog and grant checks pass. The 28 placeholder operations, retained SQL policy-guard review and broader release gates remain open.
+Status: implementation complete; local acceptance recorded 2026-09-26 in [completion evidence](evidence/application-owned-replacement-complete.md). All remaining domain placeholders and missed commerce/purchase operations are ported, application admission replaces SQL policy guards, and the final three-file baseline retains 17 integrity/canonicalization functions. [ADR 0010](../adr/0010-application-owned-accounting-replacement.md) owns the boundary; [ADR 0009](../adr/0009-effect-mq-background-jobs.md) owns durable delivery. Earlier repair and baseline records remain dated history.
 
 ## Outcome and scope
 
@@ -12,11 +12,11 @@ Retain the current product capabilities and financial requirements. Preserve use
 
 Keep the installed Bun, Effect 4, Drizzle Effect PostgreSQL adapter, PostgreSQL, Better Auth, Cloudflare Worker, TanStack Query, and StyleX stack. Do not introduce microservices, an event-sourcing framework, a generic workflow engine, a repository framework, or another migration tool.
 
-This is an ownership and maintainability change. Runtime throughput improvements remain a measured hypothesis.
+This is an ownership and maintainability change. No throughput improvement is claimed; a comparative benchmark remains separate performance work.
 
 ## Source findings that determine the plan
 
-Inspection started at revision `bb628452196a55ceef7516f76fc3cd6471ae4d91`, with existing uncommitted FX work. A lexical scan saw 186 SQL migration files, 37,709 SQL lines, and 703 distinct declared function names. These are historical source counts, not a live catalog: migrations also rename and replace functions. Reconcile the actual checkout again before implementation.
+Inspection started at revision `bb628452196a55ceef7516f76fc3cd6471ae4d91`, with existing uncommitted FX work. A lexical scan saw 186 SQL migration files, 37,709 SQL lines, and 703 distinct declared function names. These are historical source counts, not the final catalog. The completion evidence records the final baseline and intentionally removed policy functions.
 
 | Finding | Consequence |
 | --- | --- |
@@ -189,7 +189,7 @@ Implementation verification requires a published-package compile/run against our
 
 effect-mq owns queue claims, heartbeats, retries and attempt history. Retain only domain progress, cancellation/fencing semantics and receipts that enforce business requirements. Use direct job definitions calling named application operations, without a generic multi-provider queue abstraction. Verify one real preparation job through the new runner before porting the other handlers in step 5. Test changes remain subject to the existing authorization rule.
 
-[ADR 0010](../adr/0010-application-owned-accounting-replacement.md) contains the compact live replacement inventory. It assigns every plan slice and the cross-cutting posting, correction and durable-work families to retain, rewrite or delete, and names the real HTTP/MCP, web, Worker/Bun, script and recovery caller families. That inventory is a cutover obligation, not a claim that the current source has moved.
+[ADR 0010](../adr/0010-application-owned-accounting-replacement.md) contains the compact live replacement inventory. It assigns every plan slice and the cross-cutting posting, correction and durable-work families to retain, rewrite or delete, and names the real HTTP/MCP, web, Worker/Bun, script and recovery caller families. That inventory is closed by application owners and the source audit in the completion evidence.
 
 ## Domain slices and complete caller coverage
 
@@ -242,7 +242,7 @@ The riskiest dependency is step 2, followed immediately by real posting in step 
 
 Write the observable failure cases and independent expected outcomes before implementation. Reuse the current Vitest/Vite+/Playwright and disposable PostgreSQL setup. Prefer E2E as the sole behavioral test mechanism. Do not add unit tests after writing code, replace the database with mocks, or wrap all requests in an outer test transaction.
 
-The present request authorizes planning only. Existing tests can be run as-is; additions or edits to E2E tests, fixtures and helpers require explicit authorization under `AGENTS.md`. This table defines the proposed test scope without creating those files or claiming that the old authorization covers this redesign.
+The user subsequently authorized implementation, review, completion and a local commit. The existing E2E suite and disposable real-runtime journeys provide the evidence below. No new tracked tests were added in this completion pass; changes to the test suite still require explicit authorization under `AGENTS.md`.
 
 | Failure to expose | Required observable result |
 | --- | --- |
@@ -267,9 +267,9 @@ The present request authorizes planning only. Existing tests can be run as-is; a
 | Background replay, cancellation or old claims overwrite newer work. | Bounded jobs survive restart; only the current claim can advance state; committed accounting is undone only by an explicit correction. |
 | Aggregate SQL or paging produces inconsistent reports. | A captured cutoff produces stable pages and reconciles to independent ledger/register totals; incomplete coverage is explicit. |
 
-The existing persistence test asserting that the runtime cannot update a book counter encodes the old architecture. Replace that assertion with the new grant/integrity cases when authorized, while preserving its rollback, immutable-history and migration-rerun checks. Do not delete tests merely because they expose a financial regression.
+The current persistence suite checks scoped runtime DML, protected posting history, late-fault rollback and migration rerun/checksum refusal. The former function-only grant assumption is superseded by ADR 0010; financial integrity assertions remain required.
 
-Proposed execution commands from the repository root, once implementation and any required test edits are authorized:
+Repeatable verification commands from the repository root:
 
 ```bash
 bun run lint
@@ -299,12 +299,12 @@ At implementation start, use [ADR 0010](../adr/0010-application-owned-accounting
 - `docs/adr/README.md`, `docs/plans/README.md`, delivery/acceptance plans, `docs/open-decisions.md`, `docs/roadmap.md`, local development, verification and self-host/operations documentation: remove old-schema preservation gates for this reset; describe the new baseline and retain real company/provider applicability gates.
 - `apps/api/tests/README.md` and affected tests/fixtures/manifests, when authorized: correct permission/migration assumptions and name actual coverage limitations.
 
-This planning task leaves current implementation instructions intact. Its proposed boundary supersedes them only as part of the authorized implementation change; it does not represent the current code as already migrated.
+Repository instructions, API boundaries, baseline references and maintained operational runbooks now describe the application-owned implementation. Dated SQL handoffs remain labeled as historical.
 
 ## Completion and limitations
 
 Completion requires all inventory capabilities and internal callers to use application-owned behavior; one clean install path; no procedural business SQL or fallback dispatch; no lost domain effects; passing authorized financial/access/recovery evidence; and consistent instructions/docs. The SQL allowlist is justified by integrity responsibility, not an arbitrary line-count target.
 
-Source inspection establishes the current coupling and available transaction API. This task has not executed the application, proved the new trust boundary, benchmarked either design, or validated any company's accounting. The plan can be implemented without company production data or provider credentials; synthetic correctness and external/company acceptance remain separate claims.
+The completion evidence records execution through workerd, the Bun self-host app, browser, MCP and the effect-mq runner, together with baseline/grant and quarantined restore checks. It does not claim a throughput benchmark or validate any company's accounting. Synthetic correctness and external/company acceptance remain separate claims.
 
 Platform references: [PostgreSQL transactions](https://www.postgresql.org/docs/current/tutorial-transactions.html) explain multi-statement atomicity. [PostgreSQL row security](https://www.postgresql.org/docs/current/ddl-rowsecurity.html) explains its distinct protection and role-bypass limits. [Hyperdrive connection pooling](https://developers.cloudflare.com/hyperdrive/concepts/connection-pooling/) informs transaction/connection scoping; it does not substitute for exercising the installed adapter.

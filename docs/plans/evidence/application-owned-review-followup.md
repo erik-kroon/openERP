@@ -1,5 +1,7 @@
 # Application-owned replacement: follow-up review
 
+Historical checkpoint. Its open replacement items are superseded by the later [completion record](application-owned-replacement-complete.md); the observations below remain unchanged.
+
 2026-09-26. Review and repair of the work following the [first repair pass](application-owned-review-repairs.md). This is local evidence for specific paths, not acceptance of the complete replacement. The checkout was dirty and changed concurrently during this pass; file hashes accompany the local artifacts.
 
 ## Repairs

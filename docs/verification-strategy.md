@@ -10,7 +10,7 @@ Drive public requests through the real API Worker and PostgreSQL. Give the Worke
 
 Own a disposable database/cluster, fresh actors/books and bounded process/port lifetimes. Refuse unexpected or pre-existing targets. Concurrent workers need separate databases unless isolation is proved. Readiness checks database/migration access as well as HTTP health. Reused servers must match the revision and configuration. Teardown removes only run-owned resources, including after setup failure.
 
-Use production migration/provisioning commands. For the current pre-cutover source, check fresh install, rerun and rejection of changed applied migrations. For the application-owned replacement, check the clean three-file baseline, rerun, checksum-drift rejection and refusal of the old installation; after release, verify normal forward migrations separately. Preserve historical evidence and financial meaning, but do not require an old-schema upgrade or old-digest interpreter. Inspect effective grants and attempt forbidden table/function access under the runtime login.
+Use production migration/provisioning commands. For the application-owned baseline, check the clean three-file baseline, rerun, checksum-drift rejection and refusal of the old installation; after release, verify normal forward migrations separately. Preserve historical evidence and financial meaning, but do not require an old-schema upgrade or old-digest interpreter. Inspect effective grants and attempt forbidden table/function access under the runtime login.
 
 Label runtime evidence precisely:
 

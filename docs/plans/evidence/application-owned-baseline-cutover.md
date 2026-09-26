@@ -1,5 +1,7 @@
 # Application-owned baseline cutover
 
+Historical checkpoint. Its open replacement items are superseded by the later [completion record](application-owned-replacement-complete.md); the observations below remain unchanged.
+
 2026-09-26. This completes the three-file baseline cutover following the [application review](application-owned-review-followup.md). It does not close the remaining domain ports or every gate in [ADR 0010](../../adr/0010-application-owned-accounting-replacement.md).
 
 ## Result and repairs

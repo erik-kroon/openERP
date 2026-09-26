@@ -28,7 +28,7 @@ P0/P1 and parts of later phases have initial implementation or active drafts; co
 
 [FND-01](plans/fnd01-reconciliation.md) is complete as a source/contract reconciliation at `90db69b4`. Its [inventory](plans/evidence/fnd01-inventory.json) maps the pre-replacement REST/MCP/database registrations and applied migration definitions. The [verification record](plans/evidence/fnd01-verification.json) reports passing types/lint/format and 19 of 20 existing E2E checks; browser sign-in was refused and cleanup masked the original failure. This is not a completed P0/P1 exit, and the evidence does not cover later concurrent adapter/UI changes or the application-owned replacement.
 
-[ADR 0010](adr/0010-application-owned-accounting-replacement.md) is the next implementation decision boundary. The current checkout still uses the pre-replacement SQL dispatch and Cloudflare preparation path; the target is application-owned operations, a clean three-file baseline and the effect-mq Bun worker from [ADR 0009](adr/0009-effect-mq-background-jobs.md). No runtime proof is claimed for that cutover.
+[ADR 0010](adr/0010-application-owned-accounting-replacement.md) is implemented. Application-owned operations, the clean three-file baseline and the effect-mq Bun worker replace SQL feature dispatch and Cloudflare preparation. The [completion record](plans/evidence/application-owned-replacement-complete.md) records the final domain, boundary, browser/runtime, queue and restore observations. This closes the replacement work without promoting unrelated company or hosted-provider gates.
 
 Continue from FND-02/FND-03/FND-04 in the [shared plan](plans/00-shared-contracts.md). Reconcile current implementation and evidence before changing financial code:
 

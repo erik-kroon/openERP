@@ -1,0 +1,447 @@
+{
+  "version": 1,
+  "recordedAt": "2026-09-26T11:13:55.021692+00:00",
+  "status": "replacement-complete-local-verification",
+  "baseCommit": "5ac3433e3e75ef7fc0229cbe00107003b63aa32d",
+  "excludedConcurrentEdits": [
+    "apps/api/src/application/capabilities/runs-cases.ts",
+    "apps/api/src/application/cases.ts",
+    "apps/api/src/db/cases.ts",
+    "apps/api/src/transport/http/routes/cases.ts",
+    "apps/web/src/components/case-context.tsx",
+    "apps/web/src/components/case-snapshots.tsx",
+    "apps/web/src/components/corrections/corrections-panel.tsx",
+    "apps/web/src/lib/book-context.ts",
+    "packages/contracts/src/cases.ts"
+  ],
+  "source": {
+    "files": 670,
+    "sha256": "65ff9e2b901e919cdafbe1612956e016eb05a834783cf1f335742d011f8087a2",
+    "algorithm": "SHA-256 of sorted UTF-8 lines: <file SHA-256>  <repository-relative path>\\n",
+    "paths": [
+      "apps/api/src/",
+      "apps/api/scripts/",
+      "apps/api/migrations/",
+      "apps/web/src/",
+      "packages/contracts/",
+      "packages/domain/",
+      "jurisdictions/se/",
+      "packages/ui/",
+      "packages/config/",
+      "infra/alchemy/"
+    ],
+    "extraFiles": [
+      "package.json",
+      "bun.lock",
+      "apps/api/package.json",
+      "apps/api/tsconfig.json",
+      "apps/web/package.json",
+      "apps/web/tsconfig.json",
+      "apps/web/vite.config.ts",
+      "vite.config.ts",
+      ".oxlintrc.json",
+      ".oxlintrc.type-aware.json"
+    ],
+    "inventory": "test-results/replacement-final/source-hashes.json"
+  },
+  "runtime": {
+    "bun": "1.4.0",
+    "node": "v26.4.0",
+    "postgres": "PostgreSQL 17.11 (Homebrew)",
+    "worker": "real workerd",
+    "browser": "Playwright Chromium",
+    "durableWorker": "separate Bun/effect-mq 0.7.0"
+  },
+  "checks": [
+    {
+      "command": "bun run check-types",
+      "exitCode": 0,
+      "log": "test-results/replacement-final/check-types-final.log"
+    },
+    {
+      "command": "bun run lint",
+      "exitCode": 0,
+      "log": "test-results/replacement-final/lint-final.log"
+    },
+    {
+      "command": "bun run format:check",
+      "exitCode": 0,
+      "log": "test-results/replacement-final/format-check-final.log"
+    },
+    {
+      "command": "bun run build",
+      "exitCode": 0,
+      "log": "test-results/replacement-final/build-final.log"
+    },
+    {
+      "command": "bun run test:e2e",
+      "exitCode": 0,
+      "log": "test-results/replacement-final/e2e-final.log"
+    }
+  ],
+  "e2e": {
+    "numTotalTestSuites": 4,
+    "numPassedTestSuites": 4,
+    "numFailedTestSuites": 0,
+    "numTotalTests": 23,
+    "numPassedTests": 23,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numTodoTests": 0,
+    "success": true
+  },
+  "baseline": {
+    "hashes": {
+      "0001-schema.sql": "5dcc8f6673f11a14046c9694a8d60a24cf7b2f895ca856501cb3b5793c0c1bd2",
+      "0002-integrity.sql": "420a345ae723cc66e24e8d771778e13508debf1338c14f164dbf81cf64c32e79",
+      "0003-roles.sql": "8a89d39f6baad6862143c7c13de1199f3cc8900ab7ec68375c7e0c175d45cef7"
+    },
+    "retainedFunctions": [
+      "ar_legal_freeze_draft",
+      "ar_legal_freeze_register",
+      "book_versions",
+      "bump_version",
+      "canonical",
+      "check_calendar",
+      "commerce_freeze_identity",
+      "digest",
+      "dimension_identity_guard",
+      "fail",
+      "freeze_preparation_inputs",
+      "guard_journal_ordinal",
+      "immutable_row",
+      "invoice_issue_guard_draft",
+      "posting_guard_approval_consumption",
+      "supplier_acceptance_guard_draft",
+      "voucher_expected_line_count"
+    ],
+    "runtimeCallable": [
+      "canonical",
+      "digest"
+    ],
+    "removedPolicyFunctions": 88,
+    "manualRefusals": {
+      "schema": "42501",
+      "truncate": "42501",
+      "trigger": "42501",
+      "history": "42501",
+      "privateHelper": "42501",
+      "accountProvision": "42501"
+    },
+    "rerun": true,
+    "checksumDrift": true,
+    "oldInstallationRejected": true,
+    "defaultFunctionAcl": true,
+    "publicExecute": [],
+    "artifactScope": "Manual catalog/grant/restore checks precede a comment-only clarification in 0001-schema.sql. The final 23-test fresh-install E2E run uses all three hashes above."
+  },
+  "review": {
+    "mode": "self-review",
+    "subagents": false,
+    "newTrackedTests": false,
+    "remainingReplacementPlaceholders": 0,
+    "completedPlaceholderOperations": 28,
+    "additionalCommercePurchasePorts": 23,
+    "dispatcherRemoved": true,
+    "statementRegistryRemoved": true,
+    "supersededMigrationFilesRemoved": 198
+  },
+  "journeys": {
+    "sales": {
+      "result": "passed",
+      "artifact": "test-results/replacement-final/sales-proof.json"
+    },
+    "purchases": {
+      "result": "passed",
+      "artifact": "test-results/replacement-final/purchases-proof.json"
+    },
+    "cancellation": {
+      "result": "passed",
+      "artifact": "test-results/replacement-final/cancellation-proof.json"
+    },
+    "assets": {
+      "result": "passed",
+      "artifact": "test-results/replacement-final/assets-proof.json"
+    },
+    "historical": {
+      "result": "passed",
+      "artifact": "test-results/replacement-final/historical-proof.json"
+    },
+    "opening": {
+      "result": "passed",
+      "artifact": "test-results/replacement-final/opening-proof.json"
+    },
+    "legal": {
+      "result": "passed",
+      "artifact": "test-results/replacement-final/legal-proof.json"
+    },
+    "queue": {
+      "result": "passed",
+      "artifact": "test-results/replacement-final/queue-proof.json"
+    },
+    "browser": {
+      "result": "passed",
+      "artifact": "test-results/replacement-final/browser-proof.json"
+    }
+  },
+  "canonicalVectors": [
+    {
+      "value": null,
+      "canonical": "null",
+      "digest": "sha256:74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    {
+      "value": true,
+      "canonical": "true",
+      "digest": "sha256:b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+    },
+    {
+      "value": "1220",
+      "canonical": "\"1220\"",
+      "digest": "sha256:6f7ec02cd0e2531a22146fa4d5352363611431866f9f87e1059f074e8a2eabee"
+    },
+    {
+      "value": "Å\n\"",
+      "canonical": "\"Å\\n\\\"\"",
+      "digest": "sha256:95bb7f0b19b7e9eb5935782976e9807edb34551895134f3989bf72558170857f"
+    },
+    {
+      "value": 9007199254740991,
+      "canonical": "9007199254740991",
+      "digest": "sha256:f40b423c2dd95ff2b2f027e22208f438cf7242862e5e746860e697308c9add26"
+    },
+    {
+      "value": {
+        "z": "9007199254740993",
+        "a": [
+          null,
+          "å",
+          false
+        ]
+      },
+      "canonical": "{\"a\":[null,\"å\",false],\"z\":\"9007199254740993\"}",
+      "digest": "sha256:570eb6c94235277bdf3d63bbd0af8af466bf87a83fa22d8ed526fb5b6ed967a1"
+    },
+    {
+      "value": {
+        "b": 2,
+        "a": 1
+      },
+      "canonical": "{\"a\":1,\"b\":2}",
+      "digest": "sha256:43258cff783fe7036d8a43033f830adfc60ec037382473548ac742b888292777"
+    }
+  ],
+  "queueRecoveryNegative": {
+    "at": "2026-09-26T11:01:18.516Z",
+    "unknownSequence": "refused",
+    "cyclingSequence": "refused",
+    "unownedSequence": "refused",
+    "original": [
+      {
+        "name": "effect_mq_flow_outbox_id_seq",
+        "table": "effect_mq_flow_outbox",
+        "column": "id",
+        "lastValue": "1",
+        "isCalled": false
+      },
+      {
+        "name": "effect_mq_jobs_seq_seq",
+        "table": "effect_mq_jobs",
+        "column": "seq",
+        "lastValue": "1",
+        "isCalled": true
+      }
+    ]
+  },
+  "browser": {
+    "at": "2026-09-26T11:05:37.148Z",
+    "runtime": "Bun self-host",
+    "session": "Better Auth signed cookie",
+    "journey": "create evidence, prepare 1234/1234, review, approve, execute, restart Bun, direct navigation, reload, retained receipt",
+    "bookId": "book_5748991693e8",
+    "fact": {
+      "vouchers": "1",
+      "receipts": "1",
+      "balance": "0"
+    },
+    "missingAsset": 404,
+    "pageErrors": []
+  },
+  "restore": {
+    "tables": 266,
+    "controls": {
+      "evidenceCount": "15",
+      "evidenceBytes": "11069",
+      "jsonEvidenceReferences": "481",
+      "voucherCount": "11",
+      "executionReceiptCount": "11",
+      "commandReceiptCount": "131",
+      "reportCount": "0",
+      "ledgerDebitMinor": "8984",
+      "ledgerCreditMinor": "8984",
+      "inlineEvidenceClosure": "matched",
+      "receiptLinks": "matched",
+      "historicalReportControls": "matched",
+      "externalObjects": "retained-originals-matched"
+    },
+    "durableWork": {
+      "outboxRows": "11",
+      "undeliveredOutbox": "11",
+      "undeliveredWithAttempts": "0",
+      "outboxAttemptCount": "0",
+      "preparationRuns": "2",
+      "unfinishedRuns": "1",
+      "preparationJobs": "2",
+      "readyJobs": "0",
+      "blockedOrStoppedJobs": "1",
+      "savedRequests": "4",
+      "requestsWithoutOutcome": "0"
+    },
+    "objectCount": "2",
+    "tableFingerprints": "matched",
+    "migrationFiles": "matched",
+    "inventoryVerification": "matched",
+    "quarantine": {
+      "datallowconn": false,
+      "datconnlimit": 0
+    },
+    "resumeAllowed": false,
+    "providerPromotion": "not-performed"
+  },
+  "cleanup": {
+    "closed": true,
+    "at": "2026-09-26T11:07:36.364Z"
+  },
+  "limits": [
+    "No comparative throughput benchmark.",
+    "No company/statutory-profile activation or external provider acceptance.",
+    "No hosted Hyperdrive/network qualification or writer/provider promotion.",
+    "Restricted read-only application recovery and external key/archive custody remain separate gates."
+  ],
+  "artifacts": {
+    "test-results/replacement-final/sales-proof.json": {
+      "sha256": "96f4989f30d094941918ea81fc498f7a516555d7b7575bce9930c6fd9743cb50",
+      "bytes": 14112
+    },
+    "test-results/replacement-final/purchases-proof.json": {
+      "sha256": "200caeb7745a6093023156971e2a5f816b5333dc73eeab121ad16708395bbdfc",
+      "bytes": 28073
+    },
+    "test-results/replacement-final/cancellation-proof.json": {
+      "sha256": "3535f62bfecd4840ab05ca20acba204bd0299736ba10054a2bc52a8129578fdb",
+      "bytes": 24063
+    },
+    "test-results/replacement-final/assets-proof.json": {
+      "sha256": "56f79d51d34442e09374632b05ab88a929a35329714be9a38410fd330b1b2359",
+      "bytes": 66884
+    },
+    "test-results/replacement-final/historical-proof.json": {
+      "sha256": "7313d14b8021aa9e2a5285f8598b590ae72090a42af972eae9eab88404aeed7f",
+      "bytes": 17805
+    },
+    "test-results/replacement-final/opening-proof.json": {
+      "sha256": "f206ed8caa1feeb2a800b0fd64f8474e59c503a3bc36fadc5efbbcb21eb6f737",
+      "bytes": 8915
+    },
+    "test-results/replacement-final/legal-proof.json": {
+      "sha256": "60e522a14273022f89a03256e2b4553b6cd1f5a0a4f86830fa36ab52b17008e1",
+      "bytes": 71650
+    },
+    "test-results/replacement-final/queue-proof.json": {
+      "sha256": "99dd6b993d4179aad969b9c94c2b8c62f0b3fe1ef2743539ea49edf4742f199e",
+      "bytes": 4724
+    },
+    "test-results/replacement-final/browser-proof.json": {
+      "sha256": "236f5f90babe39dc03b72aae3aa3fe829e867a459c2655a4e21a2f5d7708bb6b",
+      "bytes": 399
+    },
+    "test-results/replacement-final/baseline-proof.json": {
+      "sha256": "927ac73722441ac4f4f0dd1be2e5cf3723b2d1f9500c116ee92b632ba666e7ac",
+      "bytes": 3677
+    },
+    "test-results/replacement-final/restore-proof.json": {
+      "sha256": "830e4cc497d6d4556e5710073467856ad2313788f2af4794f2acbb9519872402",
+      "bytes": 5101
+    },
+    "test-results/replacement-final/canonical-proof.json": {
+      "sha256": "0e8211e534ded323e4127ff6a8afcff5d0ef404d05c301a978fd8024bb866ff1",
+      "bytes": 1367
+    },
+    "test-results/replacement-final/queue-recovery-negative.json": {
+      "sha256": "f5e3e6708152197324198c0d3cd7de6f76c3bc94745701de1f6cef083ebd5b09",
+      "bytes": 479
+    },
+    "test-results/replacement-final/source-audit.json": {
+      "sha256": "ecb8ba680b72e446fd68a92fa517e5ff7a9a351fc9202cbf624a989eb90df184",
+      "bytes": 4709
+    },
+    "test-results/replacement-final/source-hashes.json": {
+      "sha256": "39830248ef2478b14ef42dad966f1ecd7d1dd1be1b030585775be1817c8f7644",
+      "bytes": 78955
+    },
+    "test-results/replacement-final/http.ndjson": {
+      "sha256": "9bf192d252f9812bc8c7731d1b1c5e66fa2661a5c7d3b0a7af297fa83835e977",
+      "bytes": 1144360
+    },
+    "test-results/replacement-final/browser-posted.png": {
+      "sha256": "58348645e77e0bf10cd50050124ad82be233298dbc295b3929625c1e5e8f8dee",
+      "bytes": 112658
+    },
+    "test-results/replacement-final/browser-recovered.png": {
+      "sha256": "2a05796245d6116690327e2d2a61448265758d967c545a6bf394d54da65f5576",
+      "bytes": 112376
+    },
+    "test-results/replacement-final/runtime-cleanup.json": {
+      "sha256": "cb9c28748dc856976dd08e35b45d8dd3d3846782c35c93fc63e110e7592d6ba6",
+      "bytes": 47
+    },
+    "test-results/replacement-final/check-types-final.log": {
+      "sha256": "e3d613ee0775f24635e0270c816fb1719eada5d5f299b54c42b8c260846c2d0e",
+      "bytes": 42636
+    },
+    "test-results/replacement-final/lint-final.log": {
+      "sha256": "18c60f900b7d51c12d1d61bfd24b98b59b5034116915eb8cde30b00b3f5fed35",
+      "bytes": 211
+    },
+    "test-results/replacement-final/format-check-final.log": {
+      "sha256": "22e2d88925fbe41d22d0e0b9ba1b902917c126e324b691b6d7fe2ea0259857b1",
+      "bytes": 305
+    },
+    "test-results/replacement-final/build-final.log": {
+      "sha256": "da80402326a3fc0fafb6feeffaf484181bebc139f4a5aea218222d08008f7bc9",
+      "bytes": 39156
+    },
+    "test-results/replacement-final/e2e-final.log": {
+      "sha256": "bf8f1f5e07d3fe491997169ab2c05ac5e0c0bf339f8de5fccb850f911e69b46d",
+      "bytes": 2292
+    },
+    "test-results/e2e/results.json": {
+      "sha256": "4952e6839bd3f1717e79e5cec6568f4c464c707c578fbdfe8b9cc2384247577a",
+      "bytes": 7356
+    },
+    "test-results/e2e/manifest.json": {
+      "sha256": "cbf6c2469b928a4b7ca17e90efdba71107dac727961edb0dce282957aeaca493",
+      "bytes": 868
+    },
+    "test-results/e2e/migrations.log": {
+      "sha256": "bf877b9e1a78612fbf934a894b43acfea3196136fba3d1e4cc2d8ebac4ef4974",
+      "bytes": 77
+    },
+    "test-results/e2e/exact-money.json": {
+      "sha256": "0fe004ecc1fcc5eebec7de9c3c76ac6bb642447d0ded9e3787291bbacb1a32cd",
+      "bytes": 693
+    },
+    "test-results/e2e/atomic-rollback-and-retry.json": {
+      "sha256": "0bf332c196acf1a65b31ea4371d123e783169c71c58ecea0c806008dbbee98dc",
+      "bytes": 649
+    },
+    "test-results/e2e/retry.json": {
+      "sha256": "581469f3619606625f9e96a9c62e3013f21485c8916de688a7f27167d0f9a53e",
+      "bytes": 649
+    },
+    "test-results/e2e/reversal.json": {
+      "sha256": "60416da8b8202f1b300b9a2852259d4f7625f96f2ad432551cbe4a4948fd47c0",
+      "bytes": 648
+    }
+  }
+}
