@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-26T13:03:09.536763+00:00",
-  "headObservedAtValidation": "13cc47898937d5a1c5cb620e452467383f6f67c0",
+  "checkedAt": "2026-09-26T13:36:15.769043+00:00",
+  "headObservedAtValidation": "0776524bb4a6c8f5c32efcedde2ef35f123b9581",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,8 +9,8 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 608,
-    "documentsChecked": 38,
+    "localLinksAndAnchorsChecked": 623,
+    "documentsChecked": 39,
     "coverage": {
       "R": [
         "R-01",
@@ -90,7 +90,7 @@
   "files": [
     {
       "path": "docs/README.md",
-      "sha256": "f3bb4ed48eb90fd3b5f4ee96bb8fc56140e9fbfad9d2561421334b8aa73cc907"
+      "sha256": "617ef2bb8dc9dc0f5a940dd7a5700fc2959fec6ba20eb321134aeac720130bad"
     },
     {
       "path": "docs/adr/0002-exact-posting-and-approval.md",
@@ -170,7 +170,7 @@
     },
     {
       "path": "docs/plans/11-parity-backlog.md",
-      "sha256": "33bc21c530a84270fc4057f9e44b898807feafeec371887ed157e33260eb6caa"
+      "sha256": "5756afd49e802a980fb55a62ee45f37fe556630a9a918af1ceb479d430586889"
     },
     {
       "path": "docs/plans/12-next-implementation-dossier.md",
@@ -181,12 +181,16 @@
       "sha256": "585ddc30e602b1659de8c28bb6de472fdd75d1a1666d18f56dc9a2096b950537"
     },
     {
+      "path": "docs/plans/14-parity-ledger.md",
+      "sha256": "fe59fe000cf35c6f396a8982e47d5871e23c0795e610cb20861eb22aacfcd349"
+    },
+    {
       "path": "docs/plans/14-plan-review-adoption.md",
       "sha256": "c102bb6111a0f66636eb02c915558ce5a64895e76a057741409184a35da4e1c4"
     },
     {
       "path": "docs/plans/README.md",
-      "sha256": "8f81333ea47d092f5f4253479b0726d3c50c7de05f74c27338d39d2b09a1e920"
+      "sha256": "54d3c824f1850959cfb91e5b49003d3ad1ca7dec33bb57d4da97d3f201039b8c"
     },
     {
       "path": "docs/plans/accounting-completion-wave.md",
@@ -222,7 +226,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "5a113d0ad89d4321c9875bb87937c41b80b32781fa26d36c8a11fa9cc9d24ae0"
+      "sha256": "1dce563fb083b672855f16827c0945ee413440353bf2a0385f039db9a84ee1f4"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",

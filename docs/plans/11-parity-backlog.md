@@ -735,7 +735,21 @@ Every referenced account must still be mapped before admission. The suggestions 
 
 Class **A** for the ordering and thresholds, **B** for what each tier is allowed to decide. Thresholds are policy and must be recorded as such, with the observed false-positive rate as the thing that moves them.
 
+**Two rules below are load-bearing and were added after the reference recorded being wrong this way.** A free-text number is matched only when it is **digit-delimited on both sides** — a number merely *mentioned* inside a longer one is not a reference. And a reference-only match never earns top confidence: top confidence requires a **corroborating amount that settles the document**. In the reference, all 31 production auto-links on an "arrival number mentioned" rule were substring hits — the digits `14` inside `(1814)` — each paying one supplier's amount onto another supplier's invoice.
+
 ```text
+wholeNumberOnly(text):   // a mentioned number counts only when delimited
+  pattern := '(^|[^0-9])' + candidateNumber + '($|[^0-9])'
+  // "Levbet Tele2 Sverige AB (1814)" mentions 14 inside 1814 -> NOT a match
+  // a 2-character first token is still eligible: two-letter tokens are
+  // initialisms banks keep verbatim (SJ, 3M, DB)
+
+tier 1 (auto):  reference match AND a settling amount, same currency
+tier 2 (auto):  exact amount + a matching giro or clearing identifier
+tier 3 (auto):  exact amount inside a window around the document dates
+tier 4 (suggest): fuzzy amount + counterparty text
+// reference-only, without a settling amount, sits at or below the suggestion
+// floor -- it is never auto-applied.
 passes, in order:
   payment reference / OCR exact, against the document's own reference
   exact amount plus a matching giro or clearing identifier
@@ -891,14 +905,32 @@ A document whose printed total differs from the sum of its lines is formally def
 Class **B** for the policy, **A** for the mechanics.
 
 ```text
-policy: enabled by default; a per-document override beats the company setting
+policy: DISABLED by default for a supplier invoice, whatever the company setting
+        // CORRECTED 2026-09-26. This rule previously read "enabled by default; a
+        // per-document override beats the company setting" — the opposite of the
+        // reference's final position, reached as a founder decision after a support
+        // case. A company preference cannot establish what a supplier billed. The
+        // user enables rounding when the SOURCE invoice shows it, and an explicit
+        // source row always wins.
 roundingDelta = the displayed document total - the raw computed total
   // per document, not per line, and not distributed across lines
 amountToPay   = displayed total - any reduction shown on the document
 
+the rule lives inside the ONE line builder, not in its callers
+  // four commit doors and two previews each remembering a rounding rule is how one
+  // of them gets missed; a single builder is the only arrangement that holds.
+the rounding account is a named constant pinned to the chart by a build check
+  // a literal in an importer with nothing tying it to the chart is how an account
+  // number that is not in the chart shipped and rounded to a non-existent account.
+
 settlement: a sub-unit difference between the allocation and the outstanding
             balance is settled in full when within the declared bound, and the
             residual is booked to the rounding clearing account
+  // the BOUND IS NOT A TAX TOLERANCE. Only a zero-rated, book-currency row on
+  // the rounding account, within the declared unit band, is excluded from a
+  // reverse-charge base. Nothing else is.
+  // the boundary is asserted on BOTH sides: a shortfall of exactly one unit stays
+  // a real partial payment, and an excess of exactly one unit is the overshoot case.
 ```
 
 The residual must land on a real account. A difference absorbed silently leaves the cash account permanently off by a fraction that no later transaction will explain.
@@ -1006,6 +1038,15 @@ LOUD REFUSAL before any journal read:
   balanceSheet := rows(period, "post_closing")     // result account carries the year
   incomeStmt   := rows(period, "pre_closing")      // profit and loss still open
 
+# IMPLEMENTATION PREREQUISITE, not yet satisfied at the time of writing:
+#   `periods` carries only `locked boolean`. There is no isClosed, no
+#   closedExternally, and no resultTransferVoucherId column. R26 is therefore
+#   NOT IMPLEMENTABLE AS WRITTEN until the period record can express a close,
+#   an external close, and the transfer voucher. PRY-86 owns that prerequisite.
+#   A period closed without a closing voucher is a real case, not an edge: the
+#   reference's first proxy for it ("any non-imported voucher") wrongly excluded
+#   a migrated first year and left that year with no closing path at all.
+
 # Worked: revenue 1 000 000, costs 600 000, result transfer debits every P&L
 #         account and credits the result account, all inside the same period.
 #   post_closing  P&L -> revenue 1 000 000, costs 600 000, net 400 000
@@ -1021,6 +1062,14 @@ Class **A**. Two rules that are invisible until they have already produced a wro
 planResultTransfer(book, period):
   accounts = resultClosingAccounts(entityType)   # 2099->2098, or 2069->2068, or none
   if accounts.priorYearCarry is absent: return NO_ACTION
+
+  # The SOURCE SET is bounded to BAS classes 3-8. Class 9 interna poster are
+  # NOT transferred by a bokslut, and the same predicate answers "does this
+  # period have any lines on result accounts?" -- which is what makes an
+  # externally-closed period detectable.
+  sourceLines = postedLines(period) where accountClass in 3..8
+  if sourceLines is empty: return NO_ACTION
+  # A sole trader closes straight into retained equity and transfers nothing.
 
   # CRITICAL: the result is read as at the PERIOD START.
   # Reading the period's closing balance reclassifies current-year result-account
