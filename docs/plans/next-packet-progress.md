@@ -21,12 +21,20 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-13 | Semantic P&L and balance-sheet snapshots | P0 | implemented | none |
 | NEXT-20 | Frozen regular-payroll calculation | P2 | implemented | none |
 | NEXT-49 | Rule-change impact and evidence-backed obligation fulfillment | P0 | implemented | none |
-| NEXT-03 … NEXT-25 (20 packets) | — | — | not started | none |
+| NEXT-03 | Domestic purchasing with owned tax recognition | P0 | implemented | none |
+| NEXT-26 | Supplier extraction jobs and field-level reviewed merge | P0 | implemented | none |
+| NEXT-04 … NEXT-25 (18 packets) | — | — | not started | none |
 
-NEXT-01 is complete. NEXT-02, NEXT-11, NEXT-13, NEXT-20 and NEXT-49 are merged.
-The remaining 20 first-wave packets are untouched, so the only dependency edges
-satisfied by merged source are those NEXT-01, NEXT-02, NEXT-11, NEXT-13, NEXT-20
-and NEXT-49 themselves unblock.
+NEXT-01 is complete. NEXT-02, NEXT-03, NEXT-11, NEXT-13, NEXT-20, NEXT-26 and
+NEXT-49 are merged. The remaining 18 first-wave packets are untouched.
+
+Dependency edges now satisfied by merged source: NEXT-04, NEXT-06, NEXT-07,
+NEXT-16, NEXT-31, NEXT-33, NEXT-38 and NEXT-46 name NEXT-03; NEXT-22 and NEXT-45
+name NEXT-13; NEXT-43 and NEXT-44 name NEXT-13; NEXT-37 and NEXT-38 gain from
+NEXT-04 once it lands. NEXT-05 needs NEXT-03 and NEXT-04. NEXT-30 and NEXT-46
+still need NEXT-15. Six packets remain decision-gated and unimplemented by
+choice: NEXT-32, NEXT-40, NEXT-41, NEXT-42, NEXT-45 and NEXT-36. NEXT-25 is
+deferred to the end of the programme.
 
 ## What was implemented
 
@@ -162,6 +170,103 @@ Other reported gaps, recorded rather than smoothed over:
   deprecated; existing rows survive as reported notes through the projection.
 - `0010-next-49.sql` depends on `rule_releases` and therefore inherits the
   unverified status of `0004-next-02.sql`, which has never been applied.
+
+### NEXT-03 — Domestic purchasing with owned tax recognition
+
+Purchase journal, payable, source recognition and tax facts as one transaction
+group, with mutable original-line capacities that a later supplier credit
+consumes. The pure calculation lives in `@open-erp/domain/purchasing`:
+`compileDomesticPurchase` returns the exact signed journal group, the payable,
+the per-line deductible decision and one tax component per source line, while
+`compilePurchaseCreditLines` and `compileUnpaidPurchaseCredit` release the
+deduction a recognition actually recorded. Rate, deduction fraction, rounding
+mode, acceptance policy, tolerance and deduction basis are **reviewed inputs;
+there is no default rate.** The migration declares no function and no tax
+calculation, and no floating or approximate numeric type appears in it or in
+the application code.
+
+Three ownership decisions are worth recording because each declined to invent
+an authority:
+
+- **The purchase tax components are deliberately not written into the existing
+  `vat_fact_components` / `vat_fact_revisions`.** Those belong to the VAT
+  return owner's manual, evidence-backed admission. This packet publishes its
+  own signed components in `purchase_tax_facts`.
+- **The existing VAT `recordFact` owner was extended, not replaced.** An
+  independent admission of components an owned purchase recognition already
+  published is refused with `AlreadyPosted` rather than deduplicated, so one
+  economic event cannot be recognized twice. The only read added to that owner
+  is `purchase_recognitions`. NEXT-04's VAT-return authority is untouched.
+- **The packet's `resolveProfile(basis, domesticPurchase, …)` names a family
+  that does not exist.** NEXT-02's families are `posting_eligibility`, `vat`,
+  `payroll` and `statements`. The packet's `domesticPurchase` is bound to
+  NEXT-02's `vat` family on the tax point date, and an unadmitted family is
+  retained as its exact gaps. No `domestic_purchase` family was added, because
+  that would be a second admission authority over the same facts.
+
+Two conflicts in the packet's own design were resolved rather than papered
+over. `TaxFact.identity = (recognitionId, sourceLineId, componentRole)`
+collides with "append a negative TaxFact adjusting the original component" when
+the adjustment shares the original recognition id; a recognized credit
+therefore gets **its own recognition row** (`event_owner = 'supplier_credit'`
+with `original_recognition_id` back to the purchase), which is why
+`purchase_recognitions` has nullable `draft_id`/`draft_revision` with a CHECK
+tying nullability to the owner, and a unique
+`(book_id, payable_id, event_owner)` rather than `(book_id, payable_id)`.
+
+The packet's named ports — `PurchaseDomain`, `RecognitionDb`, `JournalApp`,
+`CommandDb`, `BookDb`, `ApprovalApp` — do not exist. The real owners are
+`posting.ts` (`prepareJournalInTransaction`, `approveChangeInTransaction`,
+`executeChangeInTransaction`, `replay`, `saveCommand`, `digest`) and
+`purchases/shared.ts` (`withBook` → `withAdmittedPrincipal`, which already
+locks credential/session/membership and then the book writer row). Those are
+called directly instead of creating packet-named wrappers. The packet's paths
+were likewise bound to the real `purchases/` owners with no rename.
+
+### NEXT-26 — Supplier extraction jobs and field-level reviewed merge
+
+A bounded extraction lifecycle with safe reprocessing and a field-level
+reviewed merge, plus the durable path through the existing preparation queue
+and effect-mq runner. Extraction produces **suggestions and source locators
+only**; the reviewed draft stays with the existing supplier draft owner, and an
+accepted economic document is never revised there. The built-in engine reads
+**text media only** (`text/csv`, `text/plain`, `application/json`,
+`application/xml`); there is no released PDF text-layer or vision adapter in
+the checkout, so a PDF or image original is honestly refused with a retained
+`media_type_not_supported` diagnostic and the request retained. Inventing a
+provider call or a PDF parser would have been a fabricated dependency.
+
+Reported gaps, recorded rather than smoothed over:
+
+- `FieldDecision` had no owner at all — no table, no operation, no contract. It
+  was built as new; the reviewed draft stayed with the existing draft owner.
+- `ExtractionRequest` had no owner. `supplier_inbox` has no lifecycle columns
+  and its `UPDATE` is granted on exactly three columns, so the baseline grant
+  was **not widened**; basis and state were split into separate tables the way
+  `0004-next-02.sql` does.
+- `ExtractionAttempt` did not exist as a distinct type. The real export is
+  `supplier_extraction_attempts.body` carrying `RecordSupplierExtraction` with
+  `confidence: Schema.Finite` — a model confidence number. **No confidence
+  value was invented**; the extended attempt carries result and source
+  locators, and confidence is unused by the engine path.
+- `reviseSupplierInvoiceDraft` had no internal transaction function although the
+  packet requires "the existing internal tx function" for both create and
+  revise. It was extracted as a pure de-indent rather than calling the public
+  operation from inside a lock.
+- **The outbox table is not usable as extraction intent** — its foreign key is
+  `execution_receipts`, and a non-financial extraction has no financial receipt.
+  The request and state rows are the intent instead.
+- Naming deviation: the two new MCP tools take `occurrenceId` where the
+  released `supplier_inbox_get` takes `id`. They could not share a name and
+  still typecheck. The released tool was **not** changed.
+- The correction case is a descriptor, not a financial effect.
+  `SupplierExtractionCorrectionCase` names `requiredOwner: "correction_review"`.
+  Applying it belongs to `application/posting-corrections.ts`, which is the
+  reserved `APPLICATION-REPLACEMENT` owner, and was not touched.
+- `readSealedDraft(tx, book, id, "supplier")` is the released accepted-draft
+  signal and was used rather than inventing an acceptance predicate.
+- All six packet vectors are **implemented, not proven**, and no extraction
+  provider was called and no real supplier document processed.
 
 ### NEXT-01 — Owner-aware case review
 
