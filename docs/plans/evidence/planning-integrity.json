@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-26T12:30:40.017538+00:00",
-  "headObservedAtValidation": "ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb",
+  "checkedAt": "2026-09-26T12:48:32.327428+00:00",
+  "headObservedAtValidation": "be0eb8a0b2b82130d9efea7d76d1c6621b870a10",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,8 +9,8 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 559,
-    "documentsChecked": 35,
+    "localLinksAndAnchorsChecked": 593,
+    "documentsChecked": 37,
     "coverage": {
       "R": [
         "R-01",
@@ -90,7 +90,7 @@
   "files": [
     {
       "path": "docs/README.md",
-      "sha256": "d641f17378d38033314e463cf3897461a7c3b5c8e0545bcaa87a872f96a79c87"
+      "sha256": "f3bb4ed48eb90fd3b5f4ee96bb8fc56140e9fbfad9d2561421334b8aa73cc907"
     },
     {
       "path": "docs/adr/0002-exact-posting-and-approval.md",
@@ -102,7 +102,7 @@
     },
     {
       "path": "docs/adr/README.md",
-      "sha256": "ce1d773dfa27ca15346f0a726a115e0a79205313d906f07c01de27402eda1fb5"
+      "sha256": "9f4904f4c328909849890fc9f62e7134dd3716dbe1e6148b812986aa470ca2c8"
     },
     {
       "path": "docs/architecture.md",
@@ -150,7 +150,7 @@
     },
     {
       "path": "docs/plans/06-year-end-reports-filing.md",
-      "sha256": "bbb28b985236c0555e3fd24bacbc36ed22da3cfd909fc71378c5cff451a11d76"
+      "sha256": "d5fb92f84d550c4b600a1b6423ed6357baa264ecb3bdf8421919547965751bcb"
     },
     {
       "path": "docs/plans/07-restore-operations-cutover.md",
@@ -170,15 +170,19 @@
     },
     {
       "path": "docs/plans/11-parity-backlog.md",
-      "sha256": "7e8b5d60d0563ffdcd28e70762b1b3088182d47135ad1d5589fde963dbe9d2e8"
+      "sha256": "33bc21c530a84270fc4057f9e44b898807feafeec371887ed157e33260eb6caa"
     },
     {
       "path": "docs/plans/12-next-implementation-dossier.md",
       "sha256": "4118790a5cf9c4b9918dc6179a57caafa42fcae0d4cf5753856d4265358667ab"
     },
     {
+      "path": "docs/plans/13-reference-derived-defects.md",
+      "sha256": "585ddc30e602b1659de8c28bb6de472fdd75d1a1666d18f56dc9a2096b950537"
+    },
+    {
       "path": "docs/plans/README.md",
-      "sha256": "b9db1db3ef67601d76bc28c5b5a935f68d6027eebc23ae84908f2dfd64b9e40c"
+      "sha256": "8746b0d61fb090b5398d6803b8b502c5b097e79f283be34d3eecc247bd3305cd"
     },
     {
       "path": "docs/plans/accounting-completion-wave.md",
@@ -214,11 +218,15 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "303e5c36729911838b5cfde9255c3062a763334f88ab96c72d772f07102d0299"
+      "sha256": "c1b94b8a5f03214f8abbd6a1bb466f4f9701fb7e021384cae072aef1060fd406"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
       "sha256": "3a35a125a3f9e8260f04214bd348024b65f1b694dac0086f7adb2d2298f5a38b"
+    },
+    {
+      "path": "docs/plans/next-packet-progress.md",
+      "sha256": "72ef3e6e13ddf171cbaafbd49938794e191d09e233bc0712ddc00e204c9cd183"
     },
     {
       "path": "docs/plans/seb-statement-preview.md",
