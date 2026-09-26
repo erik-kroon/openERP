@@ -20,12 +20,13 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-11 | Separate complete-book SIE4E export | P0 | implemented | none |
 | NEXT-13 | Semantic P&L and balance-sheet snapshots | P0 | implemented | none |
 | NEXT-20 | Frozen regular-payroll calculation | P2 | implemented | none |
+| NEXT-49 | Rule-change impact and evidence-backed obligation fulfillment | P0 | implemented | none |
 | NEXT-03 … NEXT-25 (20 packets) | — | — | not started | none |
 
-NEXT-01 is complete. NEXT-02, NEXT-11, NEXT-13 and NEXT-20 are merged. The
-remaining 20 first-wave packets are untouched, so the only dependency edges
-satisfied by merged source are those NEXT-01, NEXT-02, NEXT-11, NEXT-13 and
-NEXT-20 themselves unblock.
+NEXT-01 is complete. NEXT-02, NEXT-11, NEXT-13, NEXT-20 and NEXT-49 are merged.
+The remaining 20 first-wave packets are untouched, so the only dependency edges
+satisfied by merged source are those NEXT-01, NEXT-02, NEXT-11, NEXT-13, NEXT-20
+and NEXT-49 themselves unblock.
 
 ## What was implemented
 
@@ -100,6 +101,67 @@ rather than smoothed over:
 - No reviewed `rule_releases` row carrying a payroll section ships, so
   `payroll_prepare_calculation` refuses with `UnsupportedProfile` until a
   reviewed release exists. That is designed behaviour, matching NEXT-02.
+
+### NEXT-49 — Rule-change impact and evidence-backed obligation fulfillment
+
+A frozen rule-change impact snapshot records each affected target with its
+execution state, classification and recorded decision. Obligation fulfillment
+links an obligation to a verifiable link operation with an amendment path, and
+the receipt is a **typed same-scope prepared/submitted/accepted outcome** — not
+a nonempty reference string standing in for a real one. The packet's
+capabilities extend the existing `closing` capability group rather than
+creating a parallel owner. The packet's own model carries no amounts: it holds
+digests, checksums, effective dates and evidence references, and its SQL
+declares no floating or approximate numeric type.
+
+**`DeadlineInput` is a breaking change and this is the most consequential
+consequence of the packet.** `jurisdiction`, `statutoryBasis` and
+`requiredEnvironment` are now required, and `DeadlineActivity` lost its
+`reference` field. This is required by the rule that a statutory input is a
+qualified input and never a default, and there is deliberately no compatibility
+runtime. But it **invalidates any pre-existing obligation row and any existing
+`saveDeadline` client**. No database has ever applied the migration, so the
+retained-data consequence is unobserved rather than measured.
+
+Other reported gaps, recorded rather than smoothed over:
+
+- **NEXT-48's authority-outcome owner does not exist.** There is no
+  annual-report, filing or Bolagsverket module anywhere in the tree. The
+  `authority_outcome` fulfillment variant therefore carries no owner field and
+  its resolver returns
+  `pending: no_authority_outcome_owner_is_released_to_confirm_this_receipt`.
+  **An accepted obligation cannot be satisfied today.** A provider-accepted
+  outcome from legal delivery is deliberately not treated as authority
+  acceptance.
+- The packet's `RuleChangeNotice.oldReleaseId` reference universe is narrower
+  than the packet implies. "Query actual retained dependency references"
+  resolves in this tree to exactly two real columns:
+  `company_activations.rule_release_id` and
+  `deadline_obligations.statutory_basis->>'ruleReference'`. `change_sets.plan`
+  records a rule release only inside a `CompanyActivationPlan` witness, not as
+  a queryable dependency. The two real ones were selected and the migration
+  header says so, rather than inventing a wider set.
+- **NEXT-04 and NEXT-21 are not wired in as producers.**
+  `application/vat-returns.ts` and `application/payroll-foundation.ts` exist but
+  are not producers of retained rule-release references, so nothing selects them
+  as impact targets and nothing resolves their artifacts as fulfillment
+  references.
+- Refusal messages are generic where the packet wants precision. `failure(code)`
+  in `application/failures.ts` takes no message, so "selection exceeds the
+  partition bound" surfaces as the fixed `InvalidJournal` text. The precise count
+  is retained in `totalTargets` and returned in the body, not in the error.
+  Fixing this needs the shared `failures.ts` owner, which was not taken over.
+- There is no owner-side artifact picker. The operator pastes the retained
+  sha256; there is no released picker owner and inventing one would fabricate a
+  record.
+- `decideTarget` does not create the successor obligation. The amend decision
+  stores the reviewer-supplied `ProposedSuccessor` basis and the successor is
+  created by an explicit `saveObligation` carrying the amendment, so no due date
+  is ever computed inside the decision.
+- There is no `record_outcome` compatibility path. The wire field is gone, not
+  deprecated; existing rows survive as reported notes through the projection.
+- `0010-next-49.sql` depends on `rule_releases` and therefore inherits the
+  unverified status of `0004-next-02.sql`, which has never been applied.
 
 ### NEXT-01 — Owner-aware case review
 
@@ -209,6 +271,19 @@ These are real and unresolved. None is cosmetic.
 - **NEXT-20 left `apps/web/src/components/payroll-foundation.tsx` untouched.**
   The frozen calculation is reachable only through its API. No interface
   surface was added, so nothing here is a completed product path.
+- **`DeadlineInput` changed shape, breaking existing obligation clients.**
+  `jurisdiction`, `statutoryBasis` and `requiredEnvironment` are now required
+  and `DeadlineActivity.reference` is gone, with no compatibility runtime. Any
+  pre-existing obligation row or `saveDeadline` client is invalidated. This is
+  intended — a statutory input is a qualified input, never a default — but it
+  is a live consequence, not a cosmetic one, and no database has applied
+  `0010-next-49.sql` to measure it.
+- **`0010-next-49.sql` is a fourth migration never parsed by PostgreSQL**, and
+  it additionally depends on `rule_releases` from the never-applied
+  `0004-next-02.sql`, so it inherits that unverified status.
+- **An accepted obligation cannot be satisfied today.** The `authority_outcome`
+  fulfillment variant has no owner because NEXT-48's authority-outcome module
+  does not exist, so its resolver returns `pending` with a named reason.
 - **NEXT-11 touched a ninth shared registration file.** Beyond the eight the
   coordinator tracked, `jurisdictions/se/package.json` needed a new export
   path for the pure module. That file is now verified on every merge.
