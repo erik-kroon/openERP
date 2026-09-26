@@ -1,0 +1,193 @@
+{
+  "scope": "generated dossier structure and independent illustrative counterexamples",
+  "application_or_repo_tests_run": false,
+  "repo_check_plan_run": false,
+  "full_upstream_reference_audit": false,
+  "full_statutory_profile_qualified": false,
+  "full_core_release_graph_verified": false,
+  "total": 36,
+  "passed": 36,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "85 unique original finding identities",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Original and revised prerequisite fields remain distinct",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Every finding has a canonical owner and scope",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Missing reference pin is not fabricated",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Every finding status stays unverified",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "All proposed supplemental dependencies exist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Supplemental graph is acyclic",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No claim of checking full 53-core release graph",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "25 unique rule IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "All 25 rule headings exist once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "All 85 revised table rows exist once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Finding source references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Markdown code fences paired",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Local document links resolve",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "R6 equal covers are ambiguous",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R6 truncation can hide a solution",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R11 unavailable does not pass with or without override",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R11 incomplete is not no conflict",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "PRY35 full source reconciles",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "PRY35 suppressing a genuine row cannot retain reconciled total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "PRY25 balanced skipped entry can conceal missing economics",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R2 written weight selector has insufficient weights",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R10 same raw integer does not ensure same value",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R10 absolute equality hides direction",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R9 first-day removal plus deduction overstates illustrative loss",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R21 complete document graph",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R21 simple tax/prepaid counterexample",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R23 VAT recognized once across payment/year-end/later settlement",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R23 net coverage conserved",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R16 consideration not double-reduced",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R19 stated fiscal duration conflicts with fixed12",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R24 zero net still has balanced nonzero effects",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R7 latest eligible is not assumed last provider element",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R7 overage cached observation ineligible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R20 amendment status cannot reuse original receipt identity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "R25 unreadable and absent are distinct",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

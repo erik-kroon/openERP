@@ -1,0 +1,166 @@
+{
+  "reviewed_repo": "erik-kroon/openERP",
+  "reviewed_commit": "ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb",
+  "review_date": "2026-09-26",
+  "repository_sources": {
+    "P01": {
+      "path": "docs/plans/11-parity-backlog.md",
+      "lines": "1-79",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/11-parity-backlog.md",
+      "use": "Planning scope, A/B/C, folder dispositions and provider gating"
+    },
+    "P02": {
+      "path": "docs/plans/11-parity-backlog.md",
+      "lines": "80-107",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/11-parity-backlog.md",
+      "use": "PRY-01 through PRY-20"
+    },
+    "P03": {
+      "path": "docs/plans/11-parity-backlog.md",
+      "lines": "174-200",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/11-parity-backlog.md",
+      "use": "Pay-run absence claim and PRY-59 through PRY-74"
+    },
+    "P04": {
+      "path": "docs/plans/11-parity-backlog.md",
+      "lines": "108-173",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/11-parity-backlog.md",
+      "use": "PRY-21 through PRY-58"
+    },
+    "P05": {
+      "path": "docs/plans/11-parity-backlog.md",
+      "lines": "201-246",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/11-parity-backlog.md",
+      "use": "PRY-75 through PRY-85 and scope gates"
+    },
+    "P06": {
+      "path": "docs/plans/11-parity-backlog.md",
+      "lines": "247-425",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/11-parity-backlog.md",
+      "use": "R1 through initial R6"
+    },
+    "P07": {
+      "path": "docs/plans/11-parity-backlog.md",
+      "lines": "426-565",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/11-parity-backlog.md",
+      "use": "R6-R11, start R12"
+    },
+    "P08": {
+      "path": "docs/plans/11-parity-backlog.md",
+      "lines": "566-710",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/11-parity-backlog.md",
+      "use": "R12-R19"
+    },
+    "P09": {
+      "path": "docs/plans/11-parity-backlog.md",
+      "lines": "711-854",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/11-parity-backlog.md",
+      "use": "R19-R25 and checker scope"
+    },
+    "P10": {
+      "path": "docs/adr/0011-reference-parity-backlog.md",
+      "lines": "entire added file in commit diff",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/adr/0011-reference-parity-backlog.md",
+      "use": "Accepted decision under review; not activated by this review"
+    },
+    "C01": {
+      "path": "AGENTS.md",
+      "lines": "entire file",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/AGENTS.md",
+      "use": "Application ownership, tx passing, jobs, UI and test permissions"
+    },
+    "C02": {
+      "path": "docs/plans/README.md",
+      "lines": "1-170",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/README.md",
+      "use": "53-packet baseline, 101 edges, core/product scope and replacement evidence pointer"
+    },
+    "C03": {
+      "path": "docs/plans/05-vat-payroll-assets-fx.md",
+      "lines": "1-150 returned range",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/05-vat-payroll-assets-fx.md",
+      "use": "PayRunRevision, PayRunPosting, PAY-01..04 and other core domain definitions; later historical tail not fully returned"
+    },
+    "C04": {
+      "path": "docs/plans/07-restore-operations-cutover.md",
+      "lines": "1-125",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/07-restore-operations-cutover.md",
+      "use": "OPS-03 provider uncertainty, delivery and operational ownership; includes labelled historical implementation notes"
+    },
+    "C05": {
+      "path": "apps/api/docs/BANK-CONNECTOR.md",
+      "lines": "1-95",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/apps/api/docs/BANK-CONNECTOR.md",
+      "use": "Current bank-connector owner plus expressly labelled historical details; not a claim of live provider acceptance"
+    },
+    "C06": {
+      "path": "docs/plans/evidence/application-owned-replacement-complete.md",
+      "lines": "1-100",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/evidence/application-owned-replacement-complete.md",
+      "use": "Repository-reported implementation and local verification; not rerun here"
+    },
+    "C07": {
+      "path": "docs/plans/03-imports-matching-reconciliation.md",
+      "lines": "80-150",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/03-imports-matching-reconciliation.md",
+      "use": "Existing IMP-01..06 ownership and independent controls"
+    },
+    "C08": {
+      "path": "docs/plans/04-invoices-payments-registers.md",
+      "lines": "1-120",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/04-invoices-payments-registers.md",
+      "use": "Cash-method unpaid year-end, credits and payment/recognition ownership"
+    },
+    "C09": {
+      "path": "Git tree 68880b7ce62b66c790cb81ccf06ba75c62b2aef1",
+      "lines": "complete root listing, truncated=false",
+      "url": "https://api.github.com/repos/erik-kroon/openERP/git/trees/68880b7ce62b66c790cb81ccf06ba75c62b2aef1",
+      "use": "No references directory in the reviewed root; attempted references/accounted/lib returned404"
+    },
+    "C10": {
+      "path": "docs/plans/06-year-end-reports-filing.md",
+      "lines": "1-125",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/06-year-end-reports-filing.md",
+      "use": "END-01..07, complete groups, artifacts and currentness"
+    },
+    "C11": {
+      "path": "docs/plans/evidence/work-packages.json",
+      "lines": "1-90",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/docs/plans/evidence/work-packages.json",
+      "use": "Generated core count and opening packet metadata; full 53-node graph not independently reconstructed here"
+    },
+    "C12": {
+      "path": "apps/api/src/application/banking/allocations.ts",
+      "lines": "1-180",
+      "url": "https://github.com/erik-kroon/openERP/blob/ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb/apps/api/src/application/banking/allocations.ts",
+      "use": "Current allocation owner, exact grouping, per-leg capture and source admission import; not full execute audit"
+    }
+  },
+  "official_sources": {
+    "E01": {
+      "title": "Forsakringskassan: sick pay",
+      "url": "https://www.forsakringskassan.se/arbetsgivare/sjukdom-och-skada/sjuklon",
+      "scope": "Narrow support for entitlement/waiting-deduction distinction and schedule/agreement exceptions. Not a complete payroll policy qualification."
+    },
+    "E02": {
+      "title": "Forsakringskassan: karens deduction",
+      "url": "https://www.forsakringskassan.se/arbetsgivare/sjukdom-och-skada/karensavdrag",
+      "scope": "20% of average weekly sick pay and collective-agreement relevance; applies only in its stated context."
+    },
+    "E03": {
+      "title": "Peppol BIS Billing rule set, May 2026",
+      "url": "https://docs.peppol.eu/poacc/billing/3.0/rules/ubl-tc434/",
+      "scope": "BR-CO-13/15/16 and related monetary rules. Individual BR-CO-16 also opened; full schema/taxonomy bundles not qualified."
+    },
+    "E04": {
+      "title": "Skatteverket: starting a business and bookkeeping methods",
+      "url": "https://www.skatteverket.se/foretag/drivaforetag/startaochregistrera/fordigsomvillstartaforetag.4.6e8a1495181dad540842251.html",
+      "scope": "Narrow cash-method/year-end distinction. No company eligibility, complete tax period rule or actual source data verified."
+    }
+  },
+  "final_main_observation": {
+    "commit": "ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb",
+    "same_as_review_target": true,
+    "method": "connected GitHub branch read after document preparation"
+  }
+}

@@ -1,0 +1,459 @@
+{
+  "scope": "Document structure and illustrative arithmetic checks only. No repository, application, database, browser or provider tests ran.",
+  "source_revision": "ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb",
+  "checks": [
+    {
+      "name": "schedule dates-only conserves120000 with12 occurrences",
+      "result": "pass"
+    },
+    {
+      "name": "lifetime estimate changes count not total",
+      "result": "pass"
+    },
+    {
+      "name": "competing credit single winner residual",
+      "result": "pass"
+    },
+    {
+      "name": "historical source balances and payment controls",
+      "result": "pass"
+    },
+    {
+      "name": "impairment future conserves carrying",
+      "result": "pass"
+    },
+    {
+      "name": "source E gap list has12 ids",
+      "result": "pass"
+    },
+    {
+      "name": "source table totals68 not59",
+      "result": "pass"
+    },
+    {
+      "name": "array order changes independent digest",
+      "result": "pass"
+    },
+    {
+      "name": "literal canonical JSON preserves data e8f4a052",
+      "result": "pass"
+    },
+    {
+      "name": "literal canonical JSON preserves data 52d129b7",
+      "result": "pass"
+    },
+    {
+      "name": "literal canonical JSON preserves data 99c481ba",
+      "result": "pass"
+    },
+    {
+      "name": "CORRECTED-WORKFLOW-CASES.md contains no em dash",
+      "result": "pass"
+    },
+    {
+      "name": "REVISED-TEST-PLAN.md contains no em dash",
+      "result": "pass"
+    },
+    {
+      "name": "REVISED-TEST-PLAN.md reference R04",
+      "result": "pass"
+    },
+    {
+      "name": "REVISED-TEST-PLAN.md reference R13",
+      "result": "pass"
+    },
+    {
+      "name": "REVISED-TEST-PLAN.md reference W03",
+      "result": "pass"
+    },
+    {
+      "name": "REVISED-TEST-PLAN.md reference W04",
+      "result": "pass"
+    },
+    {
+      "name": "REVISED-TEST-PLAN.md reference W02",
+      "result": "pass"
+    },
+    {
+      "name": "REVISED-TEST-PLAN.md reference W01",
+      "result": "pass"
+    },
+    {
+      "name": "REVISED-TEST-PLAN.md reference R07",
+      "result": "pass"
+    },
+    {
+      "name": "REVISED-TEST-PLAN.md reference R16",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md contains no em dash",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R01",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R03",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R07",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R01",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R03",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R05",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R02",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R04",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R05",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R06",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R01",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R10",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R01",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R09",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R01",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R09",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R01",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R08",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R10",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R11",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R12",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R17",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R01",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R08",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R01",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R01",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R06",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R10",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R13",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R02",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R13",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference W01",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R01",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference W02",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R01",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R02",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R04",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R13",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference W03",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference W04",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R01",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R02",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R02",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R03",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R05",
+      "result": "pass"
+    },
+    {
+      "name": "REVIEW.md reference R02",
+      "result": "pass"
+    },
+    {
+      "name": "README.md contains no em dash",
+      "result": "pass"
+    },
+    {
+      "name": "README.md local link REVIEW.md",
+      "result": "pass"
+    },
+    {
+      "name": "README.md local link REVISED-TEST-PLAN.md",
+      "result": "pass"
+    },
+    {
+      "name": "README.md local link CORRECTED-WORKFLOW-CASES.md",
+      "result": "pass"
+    },
+    {
+      "name": "README.md local link COORDINATOR-HANDOFF.md",
+      "result": "pass"
+    },
+    {
+      "name": "README.md local link ORACLE-EXAMPLES.json",
+      "result": "pass"
+    },
+    {
+      "name": "README.md local link SOURCES.md",
+      "result": "pass"
+    },
+    {
+      "name": "README.md local link CHECKS.json",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md contains no em dash",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R00",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R01",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R02",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R03",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R04",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R05",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R06",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R07",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R08",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R09",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R10",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R11",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R12",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R13",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R14",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R15",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R16",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R17",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference R18",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference W01",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference W02",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference W03",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference W04",
+      "result": "pass"
+    },
+    {
+      "name": "SOURCES.md reference W05",
+      "result": "pass"
+    },
+    {
+      "name": "COORDINATOR-HANDOFF.md contains no em dash",
+      "result": "pass"
+    },
+    {
+      "name": "18 unique review findings",
+      "result": "pass"
+    },
+    {
+      "name": "five workflow families retained",
+      "result": "pass"
+    }
+  ],
+  "files": [
+    {
+      "path": "COORDINATOR-HANDOFF.md",
+      "bytes": 5239,
+      "sha256": "78093dac73d62742ce703ad4c161e375f779d46849700d0f2249b8e56c4efac9"
+    },
+    {
+      "path": "CORRECTED-WORKFLOW-CASES.md",
+      "bytes": 22121,
+      "sha256": "a3c9f3ac87a6a361833b1a5d4bf1b30aad86c2a048cf9f4018234a0e6ecd0a32"
+    },
+    {
+      "path": "ORACLE-EXAMPLES.json",
+      "bytes": 3624,
+      "sha256": "b752d39f1aa11a7f612d633c9aef8201ccaaabaefe6400642479ef675f643605"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1413,
+      "sha256": "a4789053f8232135308875807dad72544984447c17bc833e71b9a3ab6a2d0f5c"
+    },
+    {
+      "path": "REVIEW.md",
+      "bytes": 17911,
+      "sha256": "00e86c935876c91a82a03c7d80f19c571ed34e44793a6db86f6ffc29207fd1a9"
+    },
+    {
+      "path": "REVISED-TEST-PLAN.md",
+      "bytes": 25613,
+      "sha256": "a23748c048ddbb6680ef4a5d3d0e27b680c78946ad5d7295acbad3a0f8d938ad"
+    },
+    {
+      "path": "SOURCES.md",
+      "bytes": 6898,
+      "sha256": "e7a60553f5bb2317019ace922818c2146c267da098adc28bee04dfa0244497b7"
+    }
+  ]
+}

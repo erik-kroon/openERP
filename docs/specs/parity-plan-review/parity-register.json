@@ -1,0 +1,2888 @@
+{
+  "schema_version": 1,
+  "authority": "Proposed review replacement, not adopted code or a measured implementation inventory",
+  "reviewed_commit": "ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb",
+  "core_count_reported_by_repo": 53,
+  "reference_finding_count": 85,
+  "core_graph_mutated": false,
+  "full_core_plus_release_graph_verified": false,
+  "reference_upstream_revision_verified": false,
+  "findings": [
+    {
+      "id": "PRY-01",
+      "title": "Provider credential and consent lifecycle",
+      "owner_area": "OPS",
+      "canonical_core_owners": [
+        "OPS-03",
+        "OPS-04",
+        "FND-02"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [],
+      "classification": "A mechanism; B provider lifecycle; C authority applicability",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Reuse current provider/consent scope. Add only missing credential storage and rotation behavior for the first selected authenticated adapter. Serialize refresh before the external refresh call, not only a late compare-and-swap. Preserve unknown outcomes and credential revocation. No general vault prerequisite for anonymous parsers/public feeds.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-02",
+      "title": "Provider call policy and error mapping",
+      "owner_area": "OPS",
+      "canonical_core_owners": [
+        "OPS-03"
+      ],
+      "original_prerequisites": [
+        "PRY-01"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A execution/budget mechanisms; B provider error and retry semantics",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Reuse Effect runtime and effect-mq delivery. Split transport budget from provider-specific rate/retry/idempotency rules. An error taxonomy must retain provider evidence and distinguish unavailable, insufficient entitlement, expired authority and terminal rejection. PRY-01 is required only for calls needing its credentials.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-03",
+      "title": "Read-only source-accounting adapters",
+      "owner_area": "OPS",
+      "canonical_core_owners": [
+        "IMP-02",
+        "IMP-06",
+        "OPS-03"
+      ],
+      "original_prerequisites": [
+        "PRY-01",
+        "PRY-02",
+        "PRY-05"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-02",
+        "PRY-05"
+      ],
+      "classification": "A mapping mechanics; B protocol/data/licence facts; C permitted source use",
+      "priority": "P1",
+      "disposition": "split-profile",
+      "revised_scope": "Keep six candidate providers as individually scoped PRY-03/<provider> slices under this ID. Select the actually required provider first. Pin endpoints, pagination, document/credit identity, source-company scope and not-booked semantics. Preserve conflicts; first-seen ordering is not authority to overwrite a source record. Credential provisioning is a live-execution gate.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-04",
+      "title": "Resumable source migration orchestration",
+      "owner_area": "OPS",
+      "canonical_core_owners": [
+        "IMP-03",
+        "OPS-03"
+      ],
+      "original_prerequisites": [
+        "PRY-01",
+        "PRY-02"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-02"
+      ],
+      "classification": "A checkpoints and identity; B provider completeness",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Extend the existing import/job owner with per-resource and per-part manifests, cursor evidence and hydration gaps. effect-mq owns queue retry/lease machinery; the application owns migration progress/fences/receipts. Do not create another job framework or make completed mean every unknown provider resource was discovered.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-05",
+      "title": "Scoped source-voucher references",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-02",
+        "COM-06"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [],
+      "classification": "A parsing; B provider syntax and source-state meanings",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Return Parsed, NotBooked, Unreadable or Ambiguous with original text. Resolve a parsed series/number only within provider connection, source company, source fiscal year and import identity. A bare series/number is a candidate, never a globally unique join key. Do not invent the missing series or year.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-06",
+      "title": "Skattekonto connection and revisions",
+      "owner_area": "VAT",
+      "canonical_core_owners": [
+        "VAT-03",
+        "OPS-03"
+      ],
+      "original_prerequisites": [
+        "PRY-01",
+        "PRY-02",
+        "PRY-19"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-02",
+        "PRY-19"
+      ],
+      "classification": "B provider/date meanings; C access and attribution",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Use the existing tax-account event/match owner. Keep source feed/file occurrences distinct and reconcile their economic overlap with evidence. Reject blanket pending-over-booked precedence. Preserve assessed, filed and paid states; link revisions by supported provider semantics, not equal amount or list order.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-07",
+      "title": "Skattekonto file interpretation",
+      "owner_area": "VAT",
+      "canonical_core_owners": [
+        "IMP-01",
+        "VAT-03"
+      ],
+      "original_prerequisites": [
+        "PRY-24"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-23"
+      ],
+      "classification": "A parser mechanics; B source layouts and control semantics",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Implement encountered statement formats with exact raw preservation, balance markers and diagnostic locators. Account-mapping suggestions are not a prerequisite to parsing a tax statement. Unreadable monetary rows and unexplained continuity differences block financial admission while originals remain retained.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-08",
+      "title": "Bank-file formats and detection",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-01",
+        "IMP-02"
+      ],
+      "original_prerequisites": [
+        "PRY-23"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-23"
+      ],
+      "classification": "A decoding/parsing mechanics; B layouts/currencies; reviewed heuristic policy",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Use a bounded format registry for actually encountered exports. Detector output includes ambiguity and evidence. Explicit format selection is honored with diagnostics, not silently replaced because a heuristic scores another format higher. Preserve source multiplicity, per-row currency and independent balance controls.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-09",
+      "title": "Nordic bank-feed profile",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-01",
+        "OPS-03"
+      ],
+      "original_prerequisites": [
+        "PRY-01",
+        "PRY-02"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-02"
+      ],
+      "classification": "B provider contract; C consent/application eligibility",
+      "priority": "P1",
+      "disposition": "profile-extension",
+      "revised_scope": "Reuse current bank connector consent, source retention and cursor machinery. Add one verified Swedish/Nordic supported provider contract. Actual coverage and live consent remain provider acceptance gates, not an excuse to recreate the existing connector.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-10",
+      "title": "Reference-rate source and selection policy",
+      "owner_area": "FX",
+      "canonical_core_owners": [
+        "FX-01"
+      ],
+      "original_prerequisites": [
+        "PRY-01",
+        "PRY-02"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-02",
+        "PRY-20"
+      ],
+      "classification": "A ordering/selection; B source publication and rate-date rules; C permitted valuation use",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Retain directional pair, requested/observation dates, scale, source, evidence and policy. Choose the latest eligible date explicitly, never the last response element. Apply the same maximum age and permitted-use criteria to live and cached observations. Anonymous feeds do not require a credential vault.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-11",
+      "title": "VAT-identity validation evidence",
+      "owner_area": "VAT",
+      "canonical_core_owners": [
+        "VAT-01",
+        "FND-03"
+      ],
+      "original_prerequisites": [
+        "PRY-02"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-02"
+      ],
+      "classification": "A parsing; B country/service response meanings; C supply eligibility",
+      "priority": "P1",
+      "disposition": "profile-extension",
+      "revised_scope": "Keep format-valid, registry-valid, registry-invalid and unavailable separate. A successful VAT lookup is evidence for a specific identity/time; it does not independently decide reverse charge, place of supply or every domestic/non-EU treatment. Country tables and applicability are reviewed releases.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-12",
+      "title": "Peppol semantic format and validation",
+      "owner_area": "COM",
+      "canonical_core_owners": [
+        "COM-05",
+        "END-06"
+      ],
+      "original_prerequisites": [
+        "PRY-02"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A serialization; B BIS/schema/rounding; C applicable document/tax profile",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Generate from the existing immutable legal document model. Separate line allowances from document allowances and implement the complete net/tax/prepaid/rounding equation. Validate semantic and machine output. Offline format development has no provider-call dependency. Inbound bytes precede interpretation and do not automatically authorize posting.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-13",
+      "title": "Peppol access-point delivery",
+      "owner_area": "OPS",
+      "canonical_core_owners": [
+        "OPS-03",
+        "COM-05"
+      ],
+      "original_prerequisites": [
+        "PRY-12",
+        "PRY-01"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-12",
+        "PRY-02"
+      ],
+      "classification": "B protocol/idempotency/outcomes; C sender authority",
+      "priority": "P2",
+      "disposition": "profile-extension",
+      "revised_scope": "Add one selected access point with verified participants, stable message identity, authenticated callbacks and unknown-outcome recovery. The shared format owns XML; this adapter owns delivery observations. Require credentials only at the connected-execution gate.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-14",
+      "title": "Email delivery profile",
+      "owner_area": "OPS",
+      "canonical_core_owners": [
+        "OPS-03",
+        "COM-05",
+        "PAY-03"
+      ],
+      "original_prerequisites": [
+        "PRY-01",
+        "PRY-02"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-02"
+      ],
+      "classification": "A attempt/recipient tracking; B provider behavior; product policy for reply-to",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Reuse the existing outbox/delivery attempts and exact-byte artifacts. Qualify per-recipient outcomes, retry retention and privacy. Reply-to and recipient limits are explicit product policy, not universal accounting authority. Do not equate API accepted with delivered/read/paid.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-15",
+      "title": "Signing-provider profile",
+      "owner_area": "OPS",
+      "canonical_core_owners": [
+        "END-07",
+        "FND-02"
+      ],
+      "original_prerequisites": [
+        "PRY-01",
+        "PRY-14"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-02"
+      ],
+      "classification": "B signing and verifier contracts; C signer/document authority",
+      "priority": "P2",
+      "disposition": "extend-owner",
+      "revised_scope": "Keep authentication, document signature and government certification distinct. Bind exact content/purpose and validate actual provider evidence. Email is optional delivery of an invitation, not a foundational dependency for signing. No guessed API version or inference from a successful login.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-16",
+      "title": "Check-digit, giro and OCR primitives",
+      "owner_area": "FND",
+      "canonical_core_owners": [
+        "FND-01",
+        "COM-05"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [],
+      "classification": "A check-digit arithmetic; B accepted formats and ranges",
+      "priority": "P0",
+      "disposition": "refine-helper",
+      "revised_scope": "One exact checksum implementation with independently specified vectors. Format lengths and account/reference families need their qualified specifications. OCR generation returns an explicit refusal on invalid input, never the unchanged input disguised as a generated success. Valid syntax is not account existence or payment authority.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-17",
+      "title": "Clearing and account checksum hints",
+      "owner_area": "FND",
+      "canonical_core_owners": [
+        "FND-03",
+        "COM-05"
+      ],
+      "original_prerequisites": [
+        "PRY-16"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-16"
+      ],
+      "classification": "A modulus arithmetic; B bank-range registry and variants",
+      "priority": "P1",
+      "disposition": "refine-helper",
+      "revised_scope": "Keep Unknown, Invalid and FormatValid distinct. Move bank-specific ranges/exceptions into a versioned reference table. Correct the R2 weight alignment before reuse. Checks are scoped format evidence; they do not prove the account exists or waive payee verification.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-18",
+      "title": "Domestic payment-file profile",
+      "owner_area": "COM",
+      "canonical_core_owners": [
+        "COM-05",
+        "PAY-03"
+      ],
+      "original_prerequisites": [
+        "PRY-16",
+        "PRY-17"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-16",
+        "PRY-17"
+      ],
+      "classification": "A exact encoding/width checks; B bank profile; C instruction authority",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Extend the existing payment-file owner with one supported bank dialect. Validate encoded byte widths and required party fields without truncation. Document raw account values and normalized representation. Zero instructions may be omitted, but exported, accepted and settled remain separate.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-19",
+      "title": "Taxpayer identifiers and declarations",
+      "owner_area": "FND",
+      "canonical_core_owners": [
+        "FND-03",
+        "PAY-01",
+        "VAT-03"
+      ],
+      "original_prerequisites": [
+        "PRY-16"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-16"
+      ],
+      "classification": "A string/checksum mechanics; B representation/range/date formats; C identity/age meaning",
+      "priority": "P1",
+      "disposition": "refine-helper",
+      "revised_scope": "Separate parse, format, identity evidence and declaration-specific rendering. A 12-digit string is not automatically a verified entity. Century, coordination-number and birth-date interpretation need explicit effective rules and facts. Minimize exposure without a new enterprise security project.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-20",
+      "title": "Currency/unit registry",
+      "owner_area": "FND",
+      "canonical_core_owners": [
+        "FND-01",
+        "FX-01"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [],
+      "classification": "A typed values; B currency metadata; product activation policy",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Reuse existing money and scale types. Currency, scale and validity belong in exact amount comparison. Deactivation blocks new unsupported use, never makes old postings unreadable. Registry ingestion cannot redefine the scale of already retained values.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P02",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-21",
+      "title": "SIE record interpretation and diagnostics",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-01",
+        "IMP-02"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [],
+      "classification": "A parser mechanics; B format semantics",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Retain unknown raw records and diagnostic locators. Separate readable input from admissible accounting. Unknown financially consequential tags, dimensions and control records block affected admission until interpreted. Define one severity model plus explicit blocking stages, not an INFO default for unknown meaning.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-22",
+      "title": "SIE accounting and fiscal validation",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-02"
+      ],
+      "original_prerequisites": [
+        "PRY-21"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-21"
+      ],
+      "classification": "A balance/identity checks; B format and permitted fiscal-span rules",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Validate exact complete vouchers and scoped source IDs, including uniquely identified blank-number records. Qualification defines comma decimal and reversal-record semantics. An unexplained nonzero imbalance is not tolerated into the ledger. Distinguish a valid balance-only file from a parser that lost all voucher blocks.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-23",
+      "title": "Encoding diagnosis and chosen decode",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-01"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [],
+      "classification": "A byte decoding; B declared format behavior; reviewed detection policy",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Treat header, BOM, valid byte patterns and semantic controls as evidence. Do not always ignore declarations or always trust them. Return ambiguity when several decodes remain plausible; retain bytes and selected decoder/version. Replacement-character absence alone cannot establish correct names, amounts or identifiers.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-24",
+      "title": "Reviewed account mapping suggestions",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-02",
+        "FND-03"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [],
+      "classification": "A candidate ranking; B BAS/source charts; C financial role eligibility",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Suggest exact-code/name/role candidates with ambiguity, evidence and versioned chart input. A number match is not proof of the same role. Preserve existing reviewed mappings. Show target account creations or label changes separately and obtain explicit review before applying them.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-25",
+      "title": "Controlled chart adoption without reconciliation plugs",
+      "owner_area": "IMP/VAT",
+      "canonical_core_owners": [
+        "IMP-02",
+        "VAT-01"
+      ],
+      "original_prerequisites": [
+        "PRY-24"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-24",
+        "PRY-22"
+      ],
+      "classification": "A mapping application; B chart metadata; C tax treatment",
+      "priority": "P0",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Remove the balancing voucher for skipped/unmappable source history. Retain rejected records, missing mappings and unrecognized controls; block complete financial admission. A real source-supported correction or deliberately selected reduced-history opening is a separate reviewed accounting decision. Never silently rename a live account or infer tax treatment from source labels.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-26",
+      "title": "SIE breadth and explicit corrective replacement",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-02",
+        "IMP-03",
+        "COR-02"
+      ],
+      "original_prerequisites": [
+        "PRY-21",
+        "PRY-22"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-21",
+        "PRY-22"
+      ],
+      "classification": "A grouping/history; B format; C correction applicability",
+      "priority": "P1",
+      "disposition": "split-owner-refinement",
+      "revised_scope": "Split under this stable ID into multi-year partition, dimension preservation and import correction. Each reuses existing imports/correction ownership. Posted imports are not undone by deleting records or merging previews. Compensation must account for downstream settlements, taxes and reports; preserve original source/native identities.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-27",
+      "title": "Workbook ingestion",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-01"
+      ],
+      "original_prerequisites": [
+        "PRY-23"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A container/worksheet parsing; B supported workbook formats",
+      "priority": "P1",
+      "disposition": "new-profile-candidate",
+      "revised_scope": "XLSX/XLS/ODS are structured container/binary formats, not alternate single-byte SIE decodings. Use suitable bounded parsers with formula-versus-cached-value policy, selected sheet/header evidence and exact cell locators. The selected workbook interpretation precedes register mapping; no mandatory SIE decoder dependency.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-28",
+      "title": "Source article and party registers",
+      "owner_area": "COM",
+      "canonical_core_owners": [
+        "COM-01",
+        "COM-06",
+        "IMP-02"
+      ],
+      "original_prerequisites": [
+        "PRY-27",
+        "PRY-11"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-27"
+      ],
+      "classification": "A columns/source identities; B source schemas; C legal/business classification",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Add the actual source register profiles. Column scores propose mappings, not identity or tax decisions. Identifier format suggests legal classification but does not prove it; registry unavailable is not invalid. Preserve duplicates/aliases and original source IDs. VIES is a conditional check, not a prerequisite for every domestic register.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-29",
+      "title": "Opening basis and downstream impact",
+      "owner_area": "IMP/END",
+      "canonical_core_owners": [
+        "IMP-02",
+        "END-02"
+      ],
+      "original_prerequisites": [
+        "PRY-27"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A exact conservation; B source layout; C permissible fiscal correction",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Reuse OpeningSet and approved cascade owners. Separate source adapters from the opening algorithm. Never add full history and the same opening twice. Corrections produce an explicit affected-year manifest and new approved bases; closed/signed/filed consumers require their supported correction path, not silent edits.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-30",
+      "title": "Source chart enrichment",
+      "owner_area": "IMP/VAT",
+      "canonical_core_owners": [
+        "IMP-02",
+        "VAT-01",
+        "FND-03"
+      ],
+      "original_prerequisites": [
+        "PRY-27",
+        "PRY-24"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-24"
+      ],
+      "classification": "A source mapping; B source tax/chart codes; C treatment applicability",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Treat vendor detection as a proposal with provenance and disagreement handling. Preserve source code and target role mapping independently. Financial/tax eligibility comes from reviewed treatment, not a blanket account-number or vendor-code rule. Enrichment is optional for paths whose required facts already exist.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-31",
+      "title": "Source underlag linking",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-01",
+        "IMP-02"
+      ],
+      "original_prerequisites": [
+        "PRY-05"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-05"
+      ],
+      "classification": "A parse/link mechanics; B filename profiles; product confirmation policy",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Use original source-company/year/series/number and import context. Filename output is a candidate with ambiguity, not authority to select a voucher. Retain every file and per-file result. Attach to posted history only through the existing evidence-link capability; no financial repost or numbering change.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-32",
+      "title": "Full-book SIE export",
+      "owner_area": "END",
+      "canonical_core_owners": [
+        "END-06"
+      ],
+      "original_prerequisites": [
+        "PRY-26"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A serialization; B selected SIE profile",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Extend the existing export owner from transfer to full selected-book format using frozen native journals, a single opening basis and qualified object metadata. Full multi-year import undo is not a prerequisite to native export. Block unsupported dimensions, compare independently and retain exact bytes. Export is not whole-archive restore.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-33",
+      "title": "Bounded covering-set suggestions",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-04"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [
+        "PRY-41"
+      ],
+      "classification": "A exact search; product candidate/ranking policy",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Reuse existing allocation execution. Search current eligible remaining capacities with typed currency/scale and sign. Return unique-within-scope, ambiguous, no-match-within-scope, incomplete or unavailable. Surface pool/size limits and equal-ranked alternatives. Deterministic first choice is not proof of uniqueness or permission to post.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-34",
+      "title": "Explained residuals and reconciliation decomposition",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-04",
+        "IMP-05",
+        "PST-01"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [
+        "PRY-41"
+      ],
+      "classification": "A exact residual math; B/C rounding/fee/FX treatment",
+      "priority": "P0",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Compute unmatched source/ledger contributions separately. A small residual becomes a financial proposal only with an evidenced fee, rate, rounding or other qualified cause. Never book a plug solely to make controls green. Bind amount/currency/direction/evidence and execute through the existing appropriate posting/settlement owner.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-35",
+      "title": "Source-row review disposition",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-01",
+        "IMP-05"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [],
+      "classification": "A review state; C accounting exclusion justification",
+      "priority": "P0",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Replace the legal-escape-hatch wording. Suppress suggestions or mark a proven duplicate/overlap with immutable reason and linked canonical observation. Do not remove a genuine bank movement from the independently attested statement balance. Unresolved classification remains visible and affects readiness. Closed-period evidence changes still trigger impact.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-36",
+      "title": "Optional automated reconciliation sweep",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-04",
+        "PST-02",
+        "OPS-03"
+      ],
+      "original_prerequisites": [
+        "PRY-33",
+        "PRY-40"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-33",
+        "PRY-40",
+        "PRY-39"
+      ],
+      "classification": "A scheduling; product/authority policy; B provider scope",
+      "priority": "P2",
+      "disposition": "defer-automation",
+      "revised_scope": "Start with suggestion-only bounded sweeps. Unattended application requires a separately approved mandate, calibrated policy, complete source/capacity checks and ambiguity refusal. Reuse effect-mq and existing domain single-flight/currentness records; do not create another queue or let a confidence score authorize a financial change.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-37",
+      "title": "Other material account and currency controls",
+      "owner_area": "IMP/END",
+      "canonical_core_owners": [
+        "IMP-05",
+        "END-01"
+      ],
+      "original_prerequisites": [
+        "PRY-08",
+        "PRY-34"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-41"
+      ],
+      "classification": "A reconciliation mechanics; B source/specification; C applicable control scope",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Extend domain-provided complete controls and their independent evidence. A signer assertion is identified as such, not automatically outside truth. Native-currency positions and book carrying reconcile separately. Bank-file format support is conditional, not a prerequisite for payroll/asset/owner controls.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-38",
+      "title": "Reconciled-through signoff and controlled waiver",
+      "owner_area": "IMP/END",
+      "canonical_core_owners": [
+        "IMP-05",
+        "END-01"
+      ],
+      "original_prerequisites": [
+        "PRY-34"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-34"
+      ],
+      "classification": "A snapshot/history; C allowed waiver authority",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Refine existing signoff scope with explicit through-date and exact source/control basis. A waiver explains a known permissible difference but cannot erase missing mandatory evidence or unsupported treatment. Reopening/superseding creates new history; historical signoffs are never rewritten as if they did not exist.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-39",
+      "title": "Current already-explained check",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-04",
+        "PST-01"
+      ],
+      "original_prerequisites": [
+        "PRY-33"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-33"
+      ],
+      "classification": "A identity/currentness; product and authorization policy",
+      "priority": "P0",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Replace R11 immediately: detector failure always blocks the guarded financial action and produces a repairable unavailable result. Bind explicit reviewed conflict resolution to complete detected IDs, versions, amounts, units, source revisions and policy. Override cannot bypass unique economic effects or source-capacity conservation.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-40",
+      "title": "Matching policy and ambiguity",
+      "owner_area": "IMP",
+      "canonical_core_owners": [
+        "IMP-04",
+        "PST-02"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [
+        "PRY-41"
+      ],
+      "classification": "A ordering mechanism; reviewed product policy and empirical calibration",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Make match passes explainable and currency-safe. Multiple equally valid candidates are ambiguous even when one sorts first. Thresholds are versioned policy with measured validation, not safe constants. Auto-apply needs a mandate and current checks; suggested matches can be built without enabling automation.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-41",
+      "title": "Typed comparable amounts",
+      "owner_area": "IMP/FX",
+      "canonical_core_owners": [
+        "FND-01",
+        "FX-01",
+        "IMP-04"
+      ],
+      "original_prerequisites": [
+        "PRY-10"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-20"
+      ],
+      "classification": "A exact normalization; B valuation semantics; product eligibility",
+      "priority": "P0",
+      "disposition": "refine-helper",
+      "revised_scope": "Compare amount+currency+scale+direction. Cross-currency comparison requires compatible retained valuation purpose/date/source and an explicit common unit. Never discard sign or use an arbitrary stored conversion merely because it exists. A network rate feed is not needed to compare values with already qualified retained conversions.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-42",
+      "title": "Bank-origin preparation using native accounting owners",
+      "owner_area": "IMP/COM",
+      "canonical_core_owners": [
+        "PST-01",
+        "COM-02",
+        "COM-03"
+      ],
+      "original_prerequisites": [
+        "PRY-39",
+        "PRY-40"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-39"
+      ],
+      "classification": "A routing; B/C selected financial treatment",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "The ordinary accounting intent already exists in core scope. Implement the missing entry point: known invoice leads to settlement; new evidenced purchase leads to purchase recognition; transfers/fees use their own owner. Preserve existing receipt matches. Matching score cannot decide tax/account treatment or create a second purchase.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-43",
+      "title": "Receipt and bank evidence association",
+      "owner_area": "IMP/VAT",
+      "canonical_core_owners": [
+        "IMP-01",
+        "IMP-04",
+        "VAT-01"
+      ],
+      "original_prerequisites": [
+        "PRY-41"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-41"
+      ],
+      "classification": "A comparison/ranking; product date-window policy",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Preserve already accepted user matches. For new unresolved associations retain source/document identity, plausible date-window evidence and ambiguity. Evidence linking is not itself invoice recognition, VAT entitlement or payment allocation. Do not rescan the whole receipt corpus as the main project.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-44",
+      "title": "Conditional ROT/RUT workflow",
+      "owner_area": "COM/VAT",
+      "canonical_core_owners": [
+        "COM-02",
+        "VAT-01",
+        "COM-03",
+        "END-06"
+      ],
+      "original_prerequisites": [
+        "PRY-19",
+        "PRY-47"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-19",
+        "PRY-47"
+      ],
+      "classification": "A split arithmetic; B scheme data; C entitlement/claim/recovery rights",
+      "priority": "P2",
+      "disposition": "conditional-profile",
+      "revised_scope": "Define G as full invoice consideration and D as qualified reduction; customer share G-D and separately tracked claimed/conditional authority share D sum to G. Separate claim eligibility, recognition, submitted amount, rejection and enforceable customer recovery. Do not double-subtract D or infer annual headroom from this book alone.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-45",
+      "title": "Legal customer credits and related deferral impact",
+      "owner_area": "COM",
+      "canonical_core_owners": [
+        "COM-04",
+        "COM-05"
+      ],
+      "original_prerequisites": [
+        "PRY-48"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-48"
+      ],
+      "classification": "A conserved line releases; B document rules; C credit treatment",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Refine the existing credit owner with exact legal document requirements and original line discounts/tax references. Credit only the affected commercial and schedule coverage. A partial credit does not blindly cancel the entire original deferral or restore order capacity. Paid excess uses an owned customer-credit liability.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-46",
+      "title": "Recurring commercial invoice occurrences",
+      "owner_area": "COM",
+      "canonical_core_owners": [
+        "COM-01",
+        "COM-02"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [],
+      "classification": "A calendar/identity; product schedule policy; B tax dates",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Reuse invoice draft and issue owners. Stable agreement/cycle identity excludes template revision. Calculate dates from the original anchor to avoid short-month drift. Preserve service coverage, pauses and issued history. Draft generation is not legal issue or delivery authority.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-47",
+      "title": "Additional supply/tax treatment profiles",
+      "owner_area": "COM/VAT",
+      "canonical_core_owners": [
+        "VAT-01",
+        "COM-02"
+      ],
+      "original_prerequisites": [
+        "PRY-11",
+        "PRY-55"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-55"
+      ],
+      "classification": "A calculations; B rates/notices; C place-of-supply and eligibility",
+      "priority": "P0",
+      "disposition": "split-profile",
+      "revised_scope": "Split by actual supply class, origin/destination, party evidence and tax point. Domestic reverse charge and non-EU service treatment are not universally conditional on an EU VIES identity. Registry evidence is one fact in specific profiles. Each treatment declares basis/output/deduction/notices and refusal cases.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-48",
+      "title": "Legal issue validation and self-billed sales",
+      "owner_area": "COM",
+      "canonical_core_owners": [
+        "COM-02",
+        "COM-05"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [],
+      "classification": "A validation structure; B document schemas; C mandatory/applicable content",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Refine the existing legal issuer with a per-document/profile requirement matrix. Payment-account or registration fields are mandatory only where the selected rule requires them. Separate self-billed source acceptance from native issuance; preserve external number and reviewed self-billing agreement without consuming the wrong native series.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-49",
+      "title": "Interest, reminder charge and dunning",
+      "owner_area": "COM",
+      "canonical_core_owners": [
+        "COM-03",
+        "COM-05",
+        "OPS-03"
+      ],
+      "original_prerequisites": [
+        "PRY-10",
+        "PRY-14"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-14"
+      ],
+      "classification": "A accrual/dispatch mechanics; B rates/dates; C entitlement and notices",
+      "priority": "P2",
+      "disposition": "conditional-profile",
+      "revised_scope": "Separate a legally permitted interest/fee claim from sending reminders. An FX rate feed is not an interest reference-rate dependency. Version effective rates/day-count/entitlement and explicit receivable effects. Recheck live debt and holds before dispatch; provider timeout does not permit a new blind send.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-50",
+      "title": "Cash-method recognition coverage",
+      "owner_area": "COM/END",
+      "canonical_core_owners": [
+        "COM-02",
+        "VAT-01",
+        "END-02"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [],
+      "classification": "A coverage conservation; B rules; C method/tax-point applicability",
+      "priority": "P0",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Replace R23 with disjoint per-line recognized/unrecognized coverage. Actual payments recognize their unrecognized portions. Qualified year-end unpaid invoices create AP/AR and tax recognition; later payment settles those positions without repetition. A single invoice-has-voucher flag cannot represent partial payment or year-end recognition.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-51",
+      "title": "Document money, units and selected posting roles",
+      "owner_area": "COM",
+      "canonical_core_owners": [
+        "COM-01",
+        "COM-02",
+        "COM-03"
+      ],
+      "original_prerequisites": [
+        "PRY-12"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A exact totals/units; B code lists/rounding; C posting-role eligibility",
+      "priority": "P1",
+      "disposition": "split-owner-refinement",
+      "revised_scope": "Separate document rounding, legitimate settlement adjustment, unit codes and allowed line account roles. Offline document arithmetic does not depend on Peppol. Do not ban every financial/cost account by prefix where a qualified credit, disposal or special sale needs another role. No automatic write-off merely because a difference is sub-unit.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-52",
+      "title": "Invoice-linked revenue deferral",
+      "owner_area": "COM/AST",
+      "canonical_core_owners": [
+        "COM-02",
+        "AST-01",
+        "AST-02"
+      ],
+      "original_prerequisites": [
+        "PRY-45"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A schedule conservation; B recognition policy; C service coverage",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Use the existing schedule owner with exact net revenue coverage and service dates. Deferring revenue does not independently move the VAT tax point. A credit/cancellation must update only its affected future or corrected recognition; link PRY-45 when credit scenarios are supported, not as a prerequisite for the first invoice-deferral compiler.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-53",
+      "title": "Delivered bytes and customer statements",
+      "owner_area": "COM/OPS",
+      "canonical_core_owners": [
+        "COM-05",
+        "END-06",
+        "OPS-01"
+      ],
+      "original_prerequisites": [
+        "PRY-14"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A artifact/version mechanics; B retention/delivery semantics",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Extend the existing immutable artifact and issue/delivery owner. Render before sending, retain exact bytes and serve that artifact afterward. Customer statement links are scoped/revocable and as-of. Artifact generation/retention can exist before an email adapter; delivery consumes it, not the reverse.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-54",
+      "title": "Financial rate witnesses on invoice workflows",
+      "owner_area": "COM/FX",
+      "canonical_core_owners": [
+        "COM-02",
+        "FX-01",
+        "FX-02"
+      ],
+      "original_prerequisites": [
+        "PRY-10",
+        "PRY-20"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-20"
+      ],
+      "classification": "A resolver orchestration; B rate-date policy; C financial recognition use",
+      "priority": "P0",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Separate original-document retention, accounting recognition rate, tax-point conversion, actual settlement consideration and reporting valuation. Missing a posting rate blocks affected financial execution, not source retention or an honest incomplete draft. Validate manual rate evidence and qualified bounds without silently replacing it.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-55",
+      "title": "Complete supported VAT box graph",
+      "owner_area": "VAT",
+      "canonical_core_owners": [
+        "VAT-02",
+        "END-06"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [],
+      "classification": "A sum/DAG mechanics; B box schema and rounding; C treatment inclusion",
+      "priority": "P0",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Replace R15 with a qualified acyclic calculation graph. Tax bases, output tax, deductible input and net payable have distinct names. Required unknown components block complete output; legitimate known zeros stay zero. Cross-check ledger role vectors without deriving tax meaning from account numbers alone.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-56",
+      "title": "Tax treatment and account-role metadata",
+      "owner_area": "VAT",
+      "canonical_core_owners": [
+        "VAT-01",
+        "FND-03"
+      ],
+      "original_prerequisites": [
+        "PRY-25"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A discriminated model; B rates/mappings; C treatment eligibility",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Build on existing TaxFact/profile definitions. Model supply/place/tax point/deduction independently from suggested account metadata. Chart import is optional enrichment, not a prerequisite for a native treatment. Unsupported/unknown cases never fall back to domestic ordinary VAT.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-57",
+      "title": "Reporting cadence and immutable filing revisions",
+      "owner_area": "VAT",
+      "canonical_core_owners": [
+        "VAT-02",
+        "VAT-04",
+        "END-07"
+      ],
+      "original_prerequisites": [
+        "PRY-82"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A revision/identity; B periods/deadlines; C registration/applicability",
+      "priority": "P1",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Suggest the next relevant ended period but allow explicitly authorized historical/backlog/amendment work. Keep original submitted artifacts and per-attempt receipts immutable. Unmarking is an appended correction of a reported observation, not erasure of a real filing. Deadline derivation improves scheduling but is not needed to retain an existing filing.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-58",
+      "title": "Supplier tax plausibility and VAT-number formatting",
+      "owner_area": "VAT",
+      "canonical_core_owners": [
+        "VAT-01",
+        "COM-01"
+      ],
+      "original_prerequisites": [
+        "PRY-47",
+        "PRY-16"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-16"
+      ],
+      "classification": "A syntax/plausibility mechanics; B permitted rates/formats; C entitlement",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Use the selected treatment and exact source rounding rather than rigid amount ratios. Foreign zero tax can be a valid case, not automatically fraud or domestic input. Build own VAT-number representation only from evidenced entity and registration; formatting a number does not register the company.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P04",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-59",
+      "title": "Frozen pay-run aggregate",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-02",
+        "PAY-03"
+      ],
+      "original_prerequisites": [
+        "PRY-61"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A immutable run mechanics; B calculation inputs; C authority",
+      "priority": "P0",
+      "disposition": "already-planned-refinement",
+      "revised_scope": "Correct the no-plan claim: PayRunRevision and PayRunPosting already exist in the maintained design. Specify the missing executable aggregate under PAY-03. Keep calculation/approval, posting, actual payment and declaration status orthogonal. The record/approval contract does not wait for every statutory parameter or require paid before booked.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-60",
+      "title": "Selected payroll calculation profiles",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-02"
+      ],
+      "original_prerequisites": [
+        "PRY-59",
+        "PRY-61",
+        "PRY-62",
+        "PRY-63"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-59",
+        "PRY-61",
+        "PRY-62",
+        "PRY-63"
+      ],
+      "classification": "A arithmetic; B formula/order/rates; C entitlement cases",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Choose one complete supported pay profile first. Formula conventions, rounding stages and tax bases are versioned policy, not just input constants. Separate pure calculation from actual payment and fiscal reporting. Keep independent expected answers and explicit unsupported salary/absence/benefit cases.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-61",
+      "title": "Dated payroll parameter releases",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-01",
+        "FND-03"
+      ],
+      "original_prerequisites": [
+        "D-08"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "B statutory data/formulas; C applicability",
+      "priority": "P1",
+      "disposition": "split-profile",
+      "revised_scope": "Use modular release sets for the selected payroll profile instead of a prerequisite containing every pension, benefit, allowance and industry rule. Capture source bytes, effective dates, role, units, calculation version and reviewer. Unavailable mandatory values block only affected cases; no unsupported-year fallback.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-62",
+      "title": "Withholding table and decision selection",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-02",
+        "PAY-01"
+      ],
+      "original_prerequisites": [
+        "PRY-61",
+        "PRY-19"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-61",
+        "PRY-19"
+      ],
+      "classification": "A table lookup; B table/release/formula; C employee selection",
+      "priority": "P1",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Retain exact applicable table/column or individual decision with evidence. Prior-year data is not an automatic dated fallback. Municipality alone does not establish every relevant tax-table fact. Allow draft source capture while missing withholding evidence blocks the actual calculation.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-63",
+      "title": "Contribution and declaration control computation",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-02",
+        "PAY-04"
+      ],
+      "original_prerequisites": [
+        "PRY-61"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-61"
+      ],
+      "classification": "A arithmetic implementation; B normative grouping/rounding; C eligibility",
+      "priority": "P1",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Re-qualify the exact period/person/category/rate aggregation rules; R8 is not class-A authority and unproved approximations are not acceptable. Retain exact accrued estimates, declared control amounts, assessed liabilities and actual payment as distinct reconciled values. A payroll net-pay file is not the employer-contribution total.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-64",
+      "title": "Holiday entitlement and financial rollforward",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-02",
+        "PAY-03"
+      ],
+      "original_prerequisites": [
+        "PRY-59",
+        "PRY-66"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-59",
+        "PRY-66"
+      ],
+      "classification": "A ledger/rollforward; B entitlement/valuation; C expiry/payout rights",
+      "priority": "P2",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Use dated employee/agreement policy and an independent entitlement/money rollforward. Do not decree that every expired saved day automatically requires cash payout. A reconciled target may create a reviewed accrual adjustment; unexplained GL differences cannot be distributed or plugged. Preserve already paid/accrued cost ownership.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-65",
+      "title": "Absence and sick-pay periods",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-02",
+        "PAY-03"
+      ],
+      "original_prerequisites": [
+        "PRY-59",
+        "PRY-66"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-59",
+        "PRY-66"
+      ],
+      "classification": "A interval handling; B period/formula/rounding; C eligibility and agreement",
+      "priority": "P1",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Quarantine R9. Compute supported sick-pay entitlement for eligible actual work first and apply the qualified waiting deduction once to that entitlement. Do not remove the first sick-pay day and add the deduction again. Freeze inputs; allow new revisions with stale-plan impact rather than forever blocking legitimate absence corrections.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-66",
+      "title": "Work schedule and variable premium basis",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-01",
+        "PAY-02"
+      ],
+      "original_prerequisites": [
+        "PRY-59"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A interval splitting; B agreement calendar/divisors; C employment applicability",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "The existing Employment/WorkInput owner supplies typed normalized work segments independent of a finished pay-run engine. Qualify schedule/divisor/shift overlap rules and avoid daily defaults. Feed frozen inputs into PRY-59/60; do not create a pay-run-before-input dependency cycle.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-67",
+      "title": "Benefits and employee copayments",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-02",
+        "PAY-03"
+      ],
+      "original_prerequisites": [
+        "PRY-61"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-61"
+      ],
+      "classification": "A component arithmetic; B valuation/date rules; C benefit treatment",
+      "priority": "P2",
+      "disposition": "extend-owner",
+      "revised_scope": "Separate cash earnings, taxable benefit bases, contribution bases and previously recognized cost. A benefit may affect tax without adding salary cash or a second expense. Copayment effects need their exact statutory/accounting relationship; a generic deduction is not automatically benefit relief.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-68",
+      "title": "Payroll input and historical-output controls",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-01",
+        "PAY-03"
+      ],
+      "original_prerequisites": [
+        "PRY-59"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-59"
+      ],
+      "classification": "A snapshot/identity; B component classification; C input rights",
+      "priority": "P1",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Capture each issued payslip with its own YTD basis; do not refresh an old payslip from current aggregates to make it look original. New approvals may select current input revisions. Prior reads do not permanently freeze employee records; changed facts create new versions and invalidate dependent unexecuted plans.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-69",
+      "title": "Additional withholding treatments",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-02"
+      ],
+      "original_prerequisites": [
+        "PRY-61",
+        "PRY-62"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-61",
+        "PRY-62"
+      ],
+      "classification": "A parameter validation; B decision formats/formulas; C applicability",
+      "priority": "P2",
+      "disposition": "conditional-profile",
+      "revised_scope": "Implement separate supported individual-decision, side-income, one-off and tax-status profiles with required effective facts. Percentage-and-date validity alone does not qualify every decision shape. Preserve actual withheld amounts and amendments under their own legal restrictions.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-70",
+      "title": "Pension exchange, per diem and mileage",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-02",
+        "PAY-03"
+      ],
+      "original_prerequisites": [
+        "PRY-61"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-61"
+      ],
+      "classification": "A exact computations; B rates/tier formulas; C entitlement/eligibility",
+      "priority": "P2",
+      "disposition": "split-profile",
+      "revised_scope": "Split into PRY-70/pension, /per-diem and /mileage profiles. Use explicit mutually applicable tier selection rather than blindly multiplying both duration reductions. Distinguish reimbursement entitlement from tax-free ceiling and taxable excess. Every source component has one financial/payout owner.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-71",
+      "title": "Annual employee-disclosure basis",
+      "owner_area": "PAY/END",
+      "canonical_core_owners": [
+        "END-05",
+        "PAY-01"
+      ],
+      "original_prerequisites": [
+        "PRY-59"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A weighted integration; B disclosure method/rounding; C included population",
+      "priority": "P1",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Use the qualified framework definition and actual fiscal interval. Replace the hardcoded /12 while claiming fiscal-year weighting. Exact partial periods and changing employment degree must be representable. Payroll existence is not a prerequisite to an evidenced zero/non-applicable disclosure. Overrides retain rationale, not fabricated staff data.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-72",
+      "title": "AGI period/person versions and outcomes",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-04",
+        "END-07"
+      ],
+      "original_prerequisites": [
+        "PRY-59",
+        "PRY-63",
+        "PRY-65",
+        "PRY-19"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-59",
+        "PRY-63",
+        "PRY-19"
+      ],
+      "classification": "A artifact/attempt identity; B schema and reporting rules; C paid/benefit inclusion",
+      "priority": "P1",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Resolve R20 contradiction: retain a stable obligation/item identity including entity, reporting period, payee and specification key, then immutable document revisions and separate submission attempts/receipts for each. Actual paid/provided facts determine the supported period. Absence support is conditional for cases using those fields, not a blocker for every ordinary AGI file.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-73",
+      "title": "Identify the intended annual payroll output",
+      "owner_area": "PAY/END",
+      "canonical_core_owners": [
+        "PAY-04",
+        "END-05"
+      ],
+      "original_prerequisites": [
+        "PRY-72"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "Unclassified until exact artifact/recipient defined",
+      "priority": "P2",
+      "disposition": "clarify-before-dispatch",
+      "revised_scope": "The annual-report underlag/own schema/penalty wording conflates different possible outputs. Name the exact authority, form/schema and legal family first: KU variant, company annual-report supporting schedule, or another report. Map to existing owner afterward. Do not build a generic annual employee declaration from this description.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-74",
+      "title": "Payroll payment artifacts",
+      "owner_area": "PAY",
+      "canonical_core_owners": [
+        "PAY-03",
+        "COM-05"
+      ],
+      "original_prerequisites": [
+        "PRY-18",
+        "PRY-59"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-18",
+        "PRY-59"
+      ],
+      "classification": "A exact serialization/zero instruction filter; B bank dialect; C pay/withholding authority",
+      "priority": "P1",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Payment instructions use approved net obligations and selected bank dialect. Omit zero-net instructions only; zero net does not erase gross salary, withholding, benefits or employer liabilities. A withholding change requires a supported decision, recalculation and fresh approval, not a payment-file-only override.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P03",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-75",
+      "title": "Page-aware document reading",
+      "owner_area": "OPS",
+      "canonical_core_owners": [
+        "IMP-01"
+      ],
+      "original_prerequisites": [
+        "PRY-02"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A reading/conversion mechanisms; B file formats/provider schema; product extraction policy",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Read native text/structured content first. Route only pages requiring other processing to a supported adapter. Retain immutable originals and source locators; model use and credentials are conditional. Local text extraction does not wait for a global provider budget implementation.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P05",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-76",
+      "title": "Adaptive extraction and per-field review",
+      "owner_area": "OPS",
+      "canonical_core_owners": [
+        "IMP-01",
+        "COM-01",
+        "VAT-01"
+      ],
+      "original_prerequisites": [
+        "PRY-75"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-75"
+      ],
+      "classification": "A merge mechanics; empirical/product strategy; B output contracts; C field meaning",
+      "priority": "P1",
+      "disposition": "replace-dangerous-recipe",
+      "revised_scope": "Do not mandate two model reads for every page. Use validated structured/native extraction first and independently evaluate extra readings on uncertain/high-risk fields. Agreement is not proof of statistical independence. Missing, unreadable, disputed and not-applicable are separate states. Source locators may be XML/cell/text/page references; valid negative credit fields need type-specific checks.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P05",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-77",
+      "title": "Document type/provenance and extraction jobs",
+      "owner_area": "OPS",
+      "canonical_core_owners": [
+        "IMP-01",
+        "OPS-03"
+      ],
+      "original_prerequisites": [
+        "PRY-75"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-75"
+      ],
+      "classification": "A provenance/workflow; product taxonomy; B provider/schema",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Reuse effect-mq plus application outbox/progress/cancellation; no new queue implementation. Store exact engine/prompt/schema/source version, raw result and reviewed field decisions. Other is a retained classification outcome, not authorization to invent a financial treatment or overwrite an accepted record.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P05",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-78",
+      "title": "Searchable document content",
+      "owner_area": "OPS",
+      "canonical_core_owners": [
+        "IMP-01",
+        "OPS-01"
+      ],
+      "original_prerequisites": [
+        "PRY-75"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-75"
+      ],
+      "classification": "A indexing/query mechanisms; product search/ranking policy",
+      "priority": "P2",
+      "disposition": "extend-owner",
+      "revised_scope": "Add derived, scope-authorized page/text search with source locators. Show explicitly when a strict AND query is broadened to OR; preserve the original query and rank. Search index content is rebuildable and nonauthoritative. No direct exposure of payroll documents through general book search.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P05",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-79",
+      "title": "Unlinked evidence and verified uploads",
+      "owner_area": "OPS",
+      "canonical_core_owners": [
+        "IMP-01",
+        "OPS-01"
+      ],
+      "original_prerequisites": [
+        "PRY-75"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A upload/inventory; B retention/file profiles; C record sufficiency",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Use existing object finalization and source inventory. Retain original uploaded bytes, verify server-side hash/size, then attach typed metadata. A downscaled browser image is a derivative, not an unquestioned substitute for the original. Unlinked evidence can be supporting or not yet classified; treat its disposition explicitly rather than declaring all unlinked files legally deficient.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P05",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-80",
+      "title": "Machine and human handling provenance",
+      "owner_area": "OPS",
+      "canonical_core_owners": [
+        "IMP-01",
+        "PST-01",
+        "OPS-03"
+      ],
+      "original_prerequisites": [
+        "PRY-76"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A immutable provenance; product/privacy policy",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Reuse common operation/source receipts to record what interpretation changed, the actor/model/release and its input basis. Do not make a full extraction engine a prerequisite for provenance on existing automated writers. History must distinguish a suggestion from an accepted fact and a failed attempt from completed accounting.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P05",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-81",
+      "title": "Qualified calendars",
+      "owner_area": "END",
+      "canonical_core_owners": [
+        "END-07",
+        "FND-03"
+      ],
+      "original_prerequisites": [],
+      "proposed_implementation_dependencies": [],
+      "classification": "A date arithmetic; B holiday/banking calendars; C due-date applicability",
+      "priority": "P1",
+      "disposition": "refine-helper",
+      "revised_scope": "Separate public holiday, bank working day, employee work schedule and statutory deadline calendars. Easter/date arithmetic can be pure; observed holidays and adjustment rules remain dated data. One next-banking-day rule does not apply to every declaration or employee absence calculation.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P05",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-82",
+      "title": "Statutory obligation derivation",
+      "owner_area": "END",
+      "canonical_core_owners": [
+        "END-07",
+        "FND-03"
+      ],
+      "original_prerequisites": [
+        "PRY-81"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-81"
+      ],
+      "classification": "A derivation framework; B due rules; C applicable obligations",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Generate required periods and obligations from reviewed registration/company facts plus the correct calendar/policy. Preserve notice-derived deadlines and non-shifting cases. A rule change creates an impact revision; it does not silently replace previously filed evidence or decide that every company uses every deadline family.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P05",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-83",
+      "title": "Deadline attention and horizon refresh",
+      "owner_area": "END",
+      "canonical_core_owners": [
+        "END-07",
+        "OPS-03"
+      ],
+      "original_prerequisites": [
+        "PRY-82"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-82"
+      ],
+      "classification": "A scheduling/history; product attention policy",
+      "priority": "P1",
+      "disposition": "extend-owner",
+      "revised_scope": "Reuse existing obligations and jobs. Keep stable obligation IDs, explicit horizon/cancellation and basis revision. Due-soon thresholds are product policy, not legal constants. A dismissed reminder remains distinct from fulfilled, and regeneration may not delete historical obligations.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P05",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-84",
+      "title": "Calendar feed profile",
+      "owner_area": "END",
+      "canonical_core_owners": [
+        "END-07"
+      ],
+      "original_prerequisites": [
+        "PRY-83"
+      ],
+      "proposed_implementation_dependencies": [],
+      "classification": "A rendering; B calendar protocol; product rate/expiry/alarm policy",
+      "priority": "P2",
+      "disposition": "extend-owner",
+      "revised_scope": "Extend existing feed identity/revocation rather than another calendar service. Verify UID, revision/sequence, escaping, timezone/date semantics and status mappings against the actual contract. Support existing manually evidenced obligations before statutory derivation. Expired tokens revoke future reads, not already downloaded copies.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P05",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    },
+    {
+      "id": "PRY-85",
+      "title": "Honest total coverage",
+      "owner_area": "FX/END",
+      "canonical_core_owners": [
+        "END-03",
+        "FX-01",
+        "COM-06"
+      ],
+      "original_prerequisites": [
+        "PRY-10",
+        "PRY-54"
+      ],
+      "proposed_implementation_dependencies": [
+        "PRY-20"
+      ],
+      "classification": "A exact totals/coverage; B retained conversion semantics",
+      "priority": "P0",
+      "disposition": "extend-owner",
+      "revised_scope": "Aggregate only comparable values using preserved units and qualified conversion witnesses. Return included/excluded counts, native subtotals and specific unvalued records. A partial total is not a reconciled register. This behavior works without any live rate feed; missing values must never become silent zero or an automatic network fetch.",
+      "implementation_status": "not determined by this plan review",
+      "reference_evidence": {
+        "reference_system": "accounted, as named in the reviewed plan",
+        "repository": null,
+        "commit": null,
+        "path": null,
+        "symbol_or_range": null,
+        "status": "missing reproducible upstream citation"
+      },
+      "readiness": "refinement proposed; dispatch needs exact target delta, source or independent specification, and acceptance cases",
+      "plan_source_ref": "P05",
+      "target_evidence_basis": "Canonical core requirement ownership read in C02-C10; exact implementing symbols and qualification must be established for this slice.",
+      "rule_input_gate": "A components need independent correctness evidence; B/C components need qualified specification and applicability. A missing upstream citation prevents a verified-parity claim, not needed independent core development.",
+      "scope_status": "Proposed revised finding; not an instruction to create a second owner."
+    }
+  ],
+  "proposed_supplemental_order": [
+    "PRY-01",
+    "PRY-02",
+    "PRY-05",
+    "PRY-12",
+    "PRY-16",
+    "PRY-20",
+    "PRY-21",
+    "PRY-23",
+    "PRY-24",
+    "PRY-27",
+    "PRY-29",
+    "PRY-32",
+    "PRY-35",
+    "PRY-46",
+    "PRY-48",
+    "PRY-50",
+    "PRY-51",
+    "PRY-52",
+    "PRY-53",
+    "PRY-55",
+    "PRY-56",
+    "PRY-57",
+    "PRY-59",
+    "PRY-61",
+    "PRY-66",
+    "PRY-71",
+    "PRY-73",
+    "PRY-75",
+    "PRY-79",
+    "PRY-80",
+    "PRY-81",
+    "PRY-84",
+    "PRY-03",
+    "PRY-04",
+    "PRY-07",
+    "PRY-08",
+    "PRY-09",
+    "PRY-10",
+    "PRY-11",
+    "PRY-13",
+    "PRY-14",
+    "PRY-15",
+    "PRY-17",
+    "PRY-19",
+    "PRY-22",
+    "PRY-28",
+    "PRY-30",
+    "PRY-31",
+    "PRY-41",
+    "PRY-45",
+    "PRY-47",
+    "PRY-54",
+    "PRY-58",
+    "PRY-63",
+    "PRY-64",
+    "PRY-65",
+    "PRY-67",
+    "PRY-68",
+    "PRY-70",
+    "PRY-76",
+    "PRY-77",
+    "PRY-78",
+    "PRY-82",
+    "PRY-85",
+    "PRY-06",
+    "PRY-18",
+    "PRY-25",
+    "PRY-26",
+    "PRY-33",
+    "PRY-34",
+    "PRY-37",
+    "PRY-40",
+    "PRY-43",
+    "PRY-44",
+    "PRY-49",
+    "PRY-62",
+    "PRY-72",
+    "PRY-83",
+    "PRY-38",
+    "PRY-39",
+    "PRY-60",
+    "PRY-69",
+    "PRY-74",
+    "PRY-36",
+    "PRY-42"
+  ],
+  "priority_meaning": {
+    "P0": "repair or directly useful current accounting journey when applicable",
+    "P1": "complete the selected product workflow",
+    "P2": "conditional breadth or later automation"
+  },
+  "stage_gates": [
+    "contract",
+    "implementation",
+    "qualified_rule_or_format",
+    "connected_execution",
+    "actual_company_release"
+  ],
+  "relation_meaning": "Canonical-owner links refine scope; they are not precedence edges. Proposed dependencies are review decisions, not a declaration that every target is absent."
+}

@@ -1,0 +1,252 @@
+[
+  {
+    "id": "R1",
+    "title": "Check digits and generated references",
+    "recipe_disposition": "qualify_and_refine",
+    "normative_rederivation_required": false,
+    "source": "P06",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R2",
+    "title": "Clearing rules and modulus-11 alignment",
+    "recipe_disposition": "replace_before_dispatch",
+    "normative_rederivation_required": false,
+    "source": "P06",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R3",
+    "title": "Taxpayer representation",
+    "recipe_disposition": "qualify_and_refine",
+    "normative_rederivation_required": true,
+    "source": "P06",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R4",
+    "title": "Scoped source-voucher identity",
+    "recipe_disposition": "qualify_and_refine",
+    "normative_rederivation_required": false,
+    "source": "P06",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R5",
+    "title": "Filename candidates and incomplete parser",
+    "recipe_disposition": "qualify_and_refine",
+    "normative_rederivation_required": false,
+    "source": "P06",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R6",
+    "title": "Exact cover and ambiguity",
+    "recipe_disposition": "replace_before_dispatch",
+    "normative_rederivation_required": false,
+    "source": "P07",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R7",
+    "title": "Rate retrieval and cache eligibility",
+    "recipe_disposition": "qualify_and_refine",
+    "normative_rederivation_required": false,
+    "source": "P07",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R8",
+    "title": "Normative contribution aggregation",
+    "recipe_disposition": "qualify_and_refine",
+    "normative_rederivation_required": true,
+    "source": "P07",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R9",
+    "title": "Sick pay and waiting deduction",
+    "recipe_disposition": "replace_before_dispatch",
+    "normative_rederivation_required": true,
+    "source": "P07",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R10",
+    "title": "Typed comparability and residuals",
+    "recipe_disposition": "qualify_and_refine",
+    "normative_rederivation_required": false,
+    "source": "P07",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R11",
+    "title": "Required detector failure",
+    "recipe_disposition": "replace_before_dispatch",
+    "normative_rederivation_required": false,
+    "source": "P07",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R12",
+    "title": "Diagnostics versus financial admission",
+    "recipe_disposition": "replace_before_dispatch",
+    "normative_rederivation_required": false,
+    "source": "P08",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R13",
+    "title": "Account-mapping suggestions",
+    "recipe_disposition": "qualify_and_refine",
+    "normative_rederivation_required": false,
+    "source": "P08",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R14",
+    "title": "Matching scores versus authority",
+    "recipe_disposition": "qualify_and_refine",
+    "normative_rederivation_required": false,
+    "source": "P08",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R15",
+    "title": "VAT box dependency graph",
+    "recipe_disposition": "replace_before_dispatch",
+    "normative_rederivation_required": false,
+    "source": "P08",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R16",
+    "title": "ROT/RUT consideration split",
+    "recipe_disposition": "replace_before_dispatch",
+    "normative_rederivation_required": true,
+    "source": "P08",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R17",
+    "title": "Holiday entitlement and financial rollforward",
+    "recipe_disposition": "qualify_and_refine",
+    "normative_rederivation_required": true,
+    "source": "P08",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R18",
+    "title": "Per-diem duration bands",
+    "recipe_disposition": "qualify_and_refine",
+    "normative_rederivation_required": true,
+    "source": "P08",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R19",
+    "title": "Fiscal employee-average basis",
+    "recipe_disposition": "replace_before_dispatch",
+    "normative_rederivation_required": true,
+    "source": "P08",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R20",
+    "title": "Reporting revision and attempt identity",
+    "recipe_disposition": "replace_before_dispatch",
+    "normative_rederivation_required": true,
+    "source": "P09",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R21",
+    "title": "Peppol monetary graph",
+    "recipe_disposition": "replace_before_dispatch",
+    "normative_rederivation_required": true,
+    "source": "P09",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R22",
+    "title": "Document and settlement rounding",
+    "recipe_disposition": "qualify_and_refine",
+    "normative_rederivation_required": false,
+    "source": "P09",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R23",
+    "title": "Cash-method recognition coverage",
+    "recipe_disposition": "replace_before_dispatch",
+    "normative_rederivation_required": true,
+    "source": "P09",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R24",
+    "title": "Zero payment versus accounting effects",
+    "recipe_disposition": "replace_before_dispatch",
+    "normative_rederivation_required": true,
+    "source": "P09",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  },
+  {
+    "id": "R25",
+    "title": "Adaptive extraction and field states",
+    "recipe_disposition": "qualify_and_refine",
+    "normative_rederivation_required": false,
+    "source": "P09",
+    "target_contract": "RULE-CORRECTIONS.md",
+    "upstream_implementation_verified": false,
+    "production_correctness_verified": false
+  }
+]

@@ -1,13 +1,27 @@
 # Vendored implementation dossiers
 
-Status: **vendored design material, not implementation status**. Added 2026-09-26. These two trees are byte-identical copies of externally supplied NEXT-packet dossiers. They are kept outside the maintained plan namespace so that no maintained requirement, roadmap claim or acceptance count inherits their status. The maintained bridge is [the NEXT dossier plan](../plans/12-next-implementation-dossier.md); the decision to vendor them this way is [ADR 0012](../adr/0012-next-implementation-dossier.md).
+Status: **vendored design material, not implementation status**. Added 2026-09-26. The NEXT trees are byte-identical copies of externally supplied NEXT-packet dossiers. The two review trees are byte-identical copies of externally supplied review packages for plans this repository already maintains. All four are kept outside the maintained plan namespace so that no maintained requirement, roadmap claim or acceptance count inherits their status. The maintained bridges are [the NEXT dossier plan](../plans/12-next-implementation-dossier.md) and [the plan review adoption record](../plans/14-plan-review-adoption.md); the decision to vendor the NEXT dossiers this way is [ADR 0012](../adr/0012-next-implementation-dossier.md).
+
+## NEXT packet dossiers
 
 | Tree | Packets | Pinned review | Archive self-check | Re-verified on import |
 | --- | --- | --- | --- | --- |
 | [`next-01-25/`](next-01-25/README.md) | NEXT-01 … NEXT-25, application-owned Effect edition v2 | architecture context `422276ae5ed9d0ca146447d92bb3d27c99f8c48a`; inherited task/source baseline `bb628452196a55ceef7516f76fc3cd6471ae4d91` | `checks/check_design.py`: 7,465 assertions, 0 failures | `shasum -a 256 -c SHA256SUMS.txt` — 37 of 37 files OK; checker re-run passed |
-| [`next-26-50/`](next-26-50/README.md) | NEXT-26 … NEXT-50, second wave | repository review pinned to `5ac3433e3e75ef7fc0229cbe00107003b63aa32d`, review date 2026-09-26, plus the limited late observation `4671a2fbaea88bcab613f28b6d34a209b040ab06` | `checks/validate.py`: 90 of 90 named design checks passed | `shasum -a 256 -c SHA256SUMS.txt` — 41 of 41 files OK; checker re-run passed |
+| [`next-26-50/`](next-26-50/README.md) | NEXT-26 … NEXT-50, second wave | repository review pinned to `5ac3433e3e75ef7fc0229cbe00107003b63aa32d`, review date 2026-09-26, plus the limited late observation `4671a2fbaea88bcab613b28b967971469548834365` | `checks/validate.py`: 90 of 90 named design checks passed | `shasum -a 256 -c SHA256SUMS.txt` — 41 of 41 files OK; checker re-run passed |
 
 The recorded import observation, including the commands and their limits, is [next-dossier-verification.md](../plans/evidence/next-dossier-verification.md).
+
+## Plan review packages
+
+These review plans this repository already maintains and propose **replacements that have not been adopted**. The maintained plans, and ADR 0011, are unmodified.
+
+| Tree | Reviews | Reviewed commit | Archive self-check | Re-verified on import |
+| --- | --- | --- | --- | --- |
+| [`parity-plan-review/`](parity-plan-review/README.md) | the [reference parity backlog](../plans/11-parity-backlog.md) and [ADR 0011](../adr/0011-reference-parity-backlog.md) | `ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb` | `checks/check_review.py`: 36 of 36 passed | supplied `SHA256SUMS.txt` — all files OK; checker re-run passed |
+| [`testing-plan-review/`](testing-plan-review/README.md) | the [test suite design](../plans/test-suite-design.md) and [pseudologic](../plans/test-suite-pseudologic.md) | `8bff9fadbcacf9d369758b967971469548834365`, read at `ac9e1a91` | none supplied; `CHECKS.json` records illustrative arithmetic only | manifest **computed on import** — 8 of 8 files OK |
+
+The testing archive ships no checksum manifest and no `checks/` directory, so its `SHA256SUMS.txt` was generated during import. Do not read it as archive-supplied provenance. Adoption of either replacement is an open maintainer decision recorded in [14-plan-review-adoption.md](../plans/14-plan-review-adoption.md).
+
 
 ## What each tree contains
 
@@ -29,11 +43,13 @@ The recorded import observation, including the commands and their limits, is [ne
 ```bash
 cd docs/specs/next-01-25 && shasum -a 256 -c SHA256SUMS.txt && python3 checks/check_design.py
 cd docs/specs/next-26-50 && shasum -a 256 -c SHA256SUMS.txt && python3 checks/validate.py
+cd docs/specs/parity-plan-review && shasum -a 256 -c SHA256SUMS.txt && python3 checks/check_review.py
+cd docs/specs/testing-plan-review && shasum -a 256 -c SHA256SUMS.txt
 ```
 
-Both checkers are document and arithmetic checks. They import no application source, compile no TypeScript, run no SQL, Worker, queue or provider call, and use no company data. They cannot establish that any packet is implemented or correct.
+All checkers are document and arithmetic checks. They import no application source, compile no TypeScript, run no SQL, Worker, queue or provider call, and use no company data. They cannot establish that any packet is implemented or correct.
 
-Do not edit a file inside either tree. A packet that no longer matches its recorded checksum is no longer the reviewed artifact; record a change as a new dated plan revision instead. The provenance notes maintained by this repository live in [the dossier plan](../plans/12-next-implementation-dossier.md) and the [ADR](../adr/0012-next-implementation-dossier.md), not inside the vendored trees.
+Do not edit a file inside any vendored tree. A packet that no longer matches its recorded checksum is no longer the reviewed artifact; record a change as a new dated plan revision instead. The provenance notes maintained by this repository live in [the dossier plan](../plans/12-next-implementation-dossier.md), the [plan review adoption record](../plans/14-plan-review-adoption.md) and the [ADR](../adr/0012-next-implementation-dossier.md), not inside the vendored trees.
 
 ## How an implementing agent uses a packet
 

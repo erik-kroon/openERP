@@ -1,0 +1,141 @@
+{
+  "description": "Independent illustrative design values. Not an application test result or statutory rule release.",
+  "canonicalization": [
+    {
+      "inputJson": "{\"b\":\"9007199254740993\",\"a\":\"Å\"}",
+      "expectedCanonicalUtf8": "{\"a\":\"Å\",\"b\":\"9007199254740993\"}",
+      "expectedHex": "7b2261223a22c385222c2262223a2239303037313939323534373430393933227d",
+      "expectedSha256": "e8f4a0529398f4b0dbedeb6dcab7897785056e73b86104583678ef4fad5ba1ce",
+      "status": "illustrative conformance vector; production implementation not executed"
+    },
+    {
+      "inputJson": "{\"legs\":[\"1\",\"2\"],\"amount\":\"12500\"}",
+      "expectedCanonicalUtf8": "{\"amount\":\"12500\",\"legs\":[\"1\",\"2\"]}",
+      "expectedHex": "7b22616d6f756e74223a223132353030222c226c656773223a5b2231222c2232225d7d",
+      "expectedSha256": "52d129b7cda81d6cffb80584388b6efbccec97f164e0699cd0ef39f3bf486987",
+      "status": "illustrative conformance vector; production implementation not executed"
+    },
+    {
+      "inputJson": "{\"legs\":[\"2\",\"1\"],\"amount\":\"12500\"}",
+      "expectedCanonicalUtf8": "{\"amount\":\"12500\",\"legs\":[\"2\",\"1\"]}",
+      "expectedHex": "7b22616d6f756e74223a223132353030222c226c656773223a5b2232222c2231225d7d",
+      "expectedSha256": "99c481ba711dc9b4956dae87e9d1a31557ed2ebc1a59e2d0eea310c5b1de9ab8",
+      "status": "illustrative conformance vector; production implementation not executed"
+    }
+  ],
+  "schedule_dates_only": {
+    "costMinor": "120000",
+    "postedPrefix": [
+      "10000",
+      "10000",
+      "10000",
+      "10000"
+    ],
+    "futureSuffix": [
+      "10000",
+      "10000",
+      "10000",
+      "10000",
+      "10000",
+      "10000",
+      "10000",
+      "10000"
+    ],
+    "expectedRecognizedMinor": "40000",
+    "expectedFutureMinor": "80000",
+    "expectedAllocatedMinor": "120000",
+    "expectedCount": 12
+  },
+  "schedule_lifetime": {
+    "costMinor": "120000",
+    "postedPrefix": [
+      "10000",
+      "10000",
+      "10000",
+      "10000"
+    ],
+    "replacementSuffix": [
+      "20000",
+      "20000",
+      "20000",
+      "20000"
+    ],
+    "expectedCount": 8,
+    "expectedAllocatedMinor": "120000"
+  },
+  "credit_capacity": {
+    "invoiceGrossMinor": "12500",
+    "alternativeCreditGrossMinor": [
+      "7000",
+      "7000"
+    ],
+    "expectedWinnerCount": 1,
+    "expectedRemainingMinor": "5500"
+  },
+  "historical": {
+    "items": [
+      {
+        "originalMinor": "100000",
+        "outstandingMinor": "40000"
+      },
+      {
+        "originalMinor": "50000",
+        "outstandingMinor": "30000"
+      }
+    ],
+    "paymentsMinor": [
+      "60000",
+      "20000"
+    ],
+    "matchesMinor": [
+      "60000",
+      "20000"
+    ],
+    "expectedPaymentControlMinor": "80000",
+    "expectedMatchControlMinor": "80000",
+    "expectedLedgerDeltaMinor": "0"
+  },
+  "impairment": {
+    "carryingBeforeMinor": "100000",
+    "impairmentMinor": "5000",
+    "residualMinor": "0",
+    "futureMinor": "95000",
+    "futureInstallments": [
+      "7917",
+      "7917",
+      "7917",
+      "7917",
+      "7917",
+      "7917",
+      "7917",
+      "7917",
+      "7916",
+      "7916",
+      "7916",
+      "7916"
+    ]
+  },
+  "counts_in_source_prose": {
+    "zero_coverage_ids": [
+      "E-05",
+      "E-07",
+      "E-10",
+      "E-12",
+      "E-13",
+      "E-14",
+      "E-15",
+      "E-16",
+      "E-17",
+      "E-18",
+      "E-19",
+      "E-21"
+    ],
+    "listCount": 12,
+    "tableH": 17,
+    "tableR": 42,
+    "tableX": 9,
+    "tableArithmeticTotal": 68,
+    "claimedProseCases": 59,
+    "actualExecutableCaseCount": "not established from prose"
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-26T12:48:32.327428+00:00",
-  "headObservedAtValidation": "be0eb8a0b2b82130d9efea7d76d1c6621b870a10",
+  "checkedAt": "2026-09-26T13:03:09.536763+00:00",
+  "headObservedAtValidation": "13cc47898937d5a1c5cb620e452467383f6f67c0",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,8 +9,8 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 593,
-    "documentsChecked": 37,
+    "localLinksAndAnchorsChecked": 608,
+    "documentsChecked": 38,
     "coverage": {
       "R": [
         "R-01",
@@ -181,8 +181,12 @@
       "sha256": "585ddc30e602b1659de8c28bb6de472fdd75d1a1666d18f56dc9a2096b950537"
     },
     {
+      "path": "docs/plans/14-plan-review-adoption.md",
+      "sha256": "c102bb6111a0f66636eb02c915558ce5a64895e76a057741409184a35da4e1c4"
+    },
+    {
       "path": "docs/plans/README.md",
-      "sha256": "8746b0d61fb090b5398d6803b8b502c5b097e79f283be34d3eecc247bd3305cd"
+      "sha256": "8f81333ea47d092f5f4253479b0726d3c50c7de05f74c27338d39d2b09a1e920"
     },
     {
       "path": "docs/plans/accounting-completion-wave.md",
@@ -218,7 +222,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "c1b94b8a5f03214f8abbd6a1bb466f4f9701fb7e021384cae072aef1060fd406"
+      "sha256": "5a113d0ad89d4321c9875bb87937c41b80b32781fa26d36c8a11fa9cc9d24ae0"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
