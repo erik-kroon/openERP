@@ -26,6 +26,8 @@ The backlog contains **53 work packages** with 101 mandatory dependency edges, p
 
 The [capability backlog and coverage map](capability-backlog.md) maps every item in the supplied SALES/PUR/BANK and related list to its existing owner and adds explicit collections, sales operations, dimensions, expense/payroll handoffs and extension requirements. The [comparison reconciliation](capability-backlog.md#repository-comparison-reconciliation) additionally covers supplier OCR/email intake, party master data, recurring sales, conditional ROT/RUT and deadlines/calendar, and resolves assignment aliases. These supplemental requirements are outside the 53-packet accounting index; they are planned scope, not completed implementation or acceptance.
 
+The [reference parity backlog](11-parity-backlog.md) is a second supplemental layer, added 2026-09-26 from a folder-level comparison against the reference implementation. It records, per reference folder, what is owned, what is supplemental and what was unowned; assigns the unowned findings `PRY-nn` work packets with an owner, a prerequisite and an adoption class; and preserves the internal logic worth keeping as specifications. It deliberately does not extend the 53-packet index, the dependency DAG or the completion denominator, and it activates no rule, rate, provider or legal profile. The classification and placement decision is [ADR 0011](../adr/0011-reference-parity-backlog.md).
+
 ## Current source baseline
 
 The checkout has advanced beyond the early baseline in the research dossier. HEAD at planning capture was `1965622afa65285fa8e9013ccdd98a47ebe86dfb`, with concurrent changes. The [planning manifest](evidence/planning-baseline.json) records source hashes and the existing dirty state.

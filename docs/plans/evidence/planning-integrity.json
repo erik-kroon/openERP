@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-24T20:20:09.316512+00:00",
-  "headObservedAtValidation": "77588c6ec9f555e886e146bd39c8f41f3223b631",
+  "checkedAt": "2026-09-26T12:11:42.384490+00:00",
+  "headObservedAtValidation": "8bff9fadbcacf9d369758b967971469548834365",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,8 +9,8 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 349,
-    "documentsChecked": 30,
+    "localLinksAndAnchorsChecked": 472,
+    "documentsChecked": 34,
     "coverage": {
       "R": [
         "R-01",
@@ -90,23 +90,23 @@
   "files": [
     {
       "path": "docs/README.md",
-      "sha256": "731e174dc187dfc047e0858a59b20b8c3c1dedffb70463118eeacc84e326cbf9"
+      "sha256": "a461721f7788599e83cd3559c0d397b057561a28a7170792cb136dba9ae5605f"
     },
     {
       "path": "docs/adr/0002-exact-posting-and-approval.md",
-      "sha256": "26ae3de736d8b46fcf116391c36e55fbec380fb1c52021d617e254e7b02cf73f"
+      "sha256": "02ecc97a24786cfbd3e13cd30e2806d91b776ecd7dcd0e185e1d3ab7364b3fba"
     },
     {
       "path": "docs/adr/0004-complete-accounting-delivery-contract.md",
-      "sha256": "42ea9bb5d9e88821bf0c2e6ee698214f4a4015ed9413f30a115a763f8019fcb3"
+      "sha256": "999fce63f9d76d2f9537543cc2fd3caac412e59ddaa6ebc6f78cc5682525d2a3"
     },
     {
       "path": "docs/adr/README.md",
-      "sha256": "54daaf7a0844f4077f821005d175792dd606f41900f83390fc75326e4a769832"
+      "sha256": "b38e77a06b7893926c4d43240dfe934fba53ef2d5138625b4f55174d4b1e3a55"
     },
     {
       "path": "docs/architecture.md",
-      "sha256": "cd275e8943436abd7b08a2c0614632958c3543e191b6b9d88b1e57195afce6d3"
+      "sha256": "232e3dcf1cec298fd0960d565b27645059021c9db7d736fbd2e55ad80ee5725b"
     },
     {
       "path": "docs/compliance.md",
@@ -114,23 +114,23 @@
     },
     {
       "path": "docs/domain.md",
-      "sha256": "0a4ed7ca1a5a0e419c5586d0c7e68c944e83186186889f13ea17e9196b63e254"
+      "sha256": "44885c833e301aaf0237096680c5c2ea2b6a8da7c847dcb4319120ad2a63808b"
     },
     {
       "path": "docs/open-decisions.md",
-      "sha256": "16abb30af6e3da25302deedc0af9149083062c2f6a9c40db7dc60c3ff38f332b"
+      "sha256": "aa04572d1ae3fa8445a7d5f05cec641f67049a9014b0d1fd6a075bd62eba2bfc"
     },
     {
       "path": "docs/operations.md",
-      "sha256": "2e6b4dfdc3c0acff2c5b2a16db318d9ed139eef0daba4c7399a61573a21ab0f0"
+      "sha256": "4849cfce759b9a95fa92e2f6aa73f1f4e425d39993f4c8f27ee0bc1770d21275"
     },
     {
       "path": "docs/plans/00-shared-contracts.md",
-      "sha256": "854cb2bfc9f07c571c83843d5beb031dc0fe146d6014dad87686d3938f23afb5"
+      "sha256": "6c645a92dd2a487f7c9efd6eb7422ad882fa163186dfdd3d99449fec526a1a7a"
     },
     {
       "path": "docs/plans/01-posting-approval-receipts.md",
-      "sha256": "6152abc69c73abfad0592d4af76952617042038c6b93bb16b5476b1b226b4b9c"
+      "sha256": "2c8ce42298bc9af648005d23513e649bd041ca0af975275bb835d41f6d7732fe"
     },
     {
       "path": "docs/plans/02-corrections.md",
@@ -146,7 +146,7 @@
     },
     {
       "path": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sha256": "6eb2eb951d2ce8e41f287f994cca5dadf8c754d504957005d7410ecaf9e4c770"
+      "sha256": "1f4ced30a4f7e434996270266ceecb5379ebe5f7a00ed8a326dd55b79fb834a1"
     },
     {
       "path": "docs/plans/06-year-end-reports-filing.md",
@@ -154,23 +154,27 @@
     },
     {
       "path": "docs/plans/07-restore-operations-cutover.md",
-      "sha256": "581f0c6e5b6ae8a79aec2506bed88eefe1c5c434102e91af0b9c7a53cf97e79b"
+      "sha256": "cf4a10139c244234dc77a06eba5fc1769d6df27cd4cda49dce06278972ebbae1"
     },
     {
       "path": "docs/plans/08-delivery.md",
-      "sha256": "ad4ca326b3fdac47e5393a229abb8a42d0307268b8fc35bb5e1bfebc5630829e"
+      "sha256": "eb7753d46feee44b91ca584d448ce2a3b49f7e46902be2ade93dbfb05f5c2618"
     },
     {
       "path": "docs/plans/09-acceptance.md",
-      "sha256": "865eaf3d578e83623af50ec409f60b65fa3115512a2e3a8ea73b20c60e17ceef"
+      "sha256": "15079fc8b3ed147fd811b4539cd46fe6de420f1ebce26b64ae50569d592ddb74"
     },
     {
       "path": "docs/plans/10-external-inputs.md",
-      "sha256": "077352b644167105902f704a54b141a096d40b625814ac5fa6343e60b69b5164"
+      "sha256": "112d07bac70d37641d3d964bf5954c5266e5f90828fea1146d962ca3fe424da9"
+    },
+    {
+      "path": "docs/plans/11-parity-backlog.md",
+      "sha256": "7e8b5d60d0563ffdcd28e70762b1b3088182d47135ad1d5589fde963dbe9d2e8"
     },
     {
       "path": "docs/plans/README.md",
-      "sha256": "cd91d326e5245902b223651ef531fe3f03901d982c58415b38f4ae51d5f8e649"
+      "sha256": "01c32a4fd2feb5ae2817fbeba802f038c9c5c2c7e4f61c0c56e27bbeeca78438"
     },
     {
       "path": "docs/plans/accounting-completion-wave.md",
@@ -178,11 +182,15 @@
     },
     {
       "path": "docs/plans/agent-preparation-proposal.md",
-      "sha256": "2564ddc0473c4e5d8f2f23d8a08f588f0702173f284ae1437b5564f48652d878"
+      "sha256": "cfdd3573802fd47ce33773b84b51fda5ed6e56381be759128ae84517e1ea4dee"
     },
     {
       "path": "docs/plans/agt01-api-mcp-parity.md",
-      "sha256": "7b306abd6a2792c558fb83f0b7d63a2ae3e67c651d1254a9e96413bdaa58f35c"
+      "sha256": "c13e668be8dd95e084894046a5a7a2338c2aa5462bcb63ddcf3143972d586b31"
+    },
+    {
+      "path": "docs/plans/application-owned-accounting.md",
+      "sha256": "17184c10ac66e64eda90e9c23a313b6a4a12e3f54bb0b5bf809ab9b144eb33b2"
     },
     {
       "path": "docs/plans/capability-backlog.md",
@@ -202,7 +210,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "2c9e0b38c43c7f8358867a1d057c82686a37fb0c3324882386081375ff89b74c"
+      "sha256": "d26bc683a71d15ac7aaa6ea194f1179118942246308f26fc6eb46cfbbe59e23d"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -213,12 +221,20 @@
       "sha256": "2777b43dba6e9a8975461ab1d29bfab7437dde5223e0646294512987788ad36c"
     },
     {
+      "path": "docs/plans/test-suite-design.md",
+      "sha256": "d0608804e5ebbbe142dbb7b7da642dc436230fc0d9cb497b77e39feda2856d98"
+    },
+    {
+      "path": "docs/plans/test-suite-pseudologic.md",
+      "sha256": "45f164022ad212032625fbb609cf180e84029702d1fe8740829933365ac2f267"
+    },
+    {
       "path": "docs/roadmap.md",
-      "sha256": "c99362ee666713192577bf4f1132c35b5e0c54785821330aa685a3e0c208e7ba"
+      "sha256": "039fa828a84c184fc53b833917fb318bbe3f8ce0a283fd57f1c8f4f2b21aadd3"
     },
     {
       "path": "docs/verification.md",
-      "sha256": "63926d700595e02316f0dad67fe7c4b9712b5352b894762ea9217b1d7c8cd163"
+      "sha256": "26a277534db23e2c2a3a41d7ebd6285aab2c2eb23c9e67c91022b4ff499cc127"
     }
   ]
 }

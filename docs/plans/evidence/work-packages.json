@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-24T20:20:09.316512+00:00",
-  "headObservedAtValidation": "77588c6ec9f555e886e146bd39c8f41f3223b631",
+  "generatedAt": "2026-09-26T12:11:42.384490+00:00",
+  "headObservedAtValidation": "8bff9fadbcacf9d369758b967971469548834365",
   "authority": "Derived from domain packet tables and the conditional-gate table; not an implementation/proof status report.",
   "packetCount": 53,
   "packets": [
@@ -53,7 +53,7 @@
       "dependsOn": [
         "FND-01"
       ],
-      "acceptance": "E-20: real Worker/PostgreSQL/Bun paths, cleanup and populated upgrade evidence; test changes within authorization.",
+      "acceptance": "E-20: real Worker/PostgreSQL/Bun paths, cleanup, clean-baseline rerun and effective-grant evidence; future forward migration evidence after release; test changes within authorization.",
       "scenarioIds": [
         "E-20"
       ],
@@ -63,7 +63,7 @@
       "id": "PST-01",
       "owner": "Posting and approval",
       "source": "docs/plans/01-posting-approval-receipts.md",
-      "sourceLine": 75,
+      "sourceLine": 77,
       "deliverable": "Complete sealed plan/admission and immutable evidence inspection over current journal APIs.",
       "dependsOn": [
         "FND-01",
@@ -80,7 +80,7 @@
       "id": "PST-02",
       "owner": "Posting and approval",
       "source": "docs/plans/01-posting-approval-receipts.md",
-      "sourceLine": 76,
+      "sourceLine": 78,
       "deliverable": "Trusted approval/revocation and permission-expiry lifecycle with review UI.",
       "dependsOn": [
         "PST-01",
@@ -97,7 +97,7 @@
       "id": "PST-03",
       "owner": "Posting and approval",
       "source": "docs/plans/01-posting-approval-receipts.md",
-      "sourceLine": 77,
+      "sourceLine": 79,
       "deliverable": "Atomic posting, durable receipt, uncertainty recovery and reload discovery.",
       "dependsOn": [
         "PST-02",
@@ -115,7 +115,7 @@
       "id": "PST-04",
       "owner": "Posting and approval",
       "source": "docs/plans/01-posting-approval-receipts.md",
-      "sourceLine": 78,
+      "sourceLine": 80,
       "deliverable": "Shared REST/MCP/browser behavior and precise errors/capability metadata.",
       "dependsOn": [
         "PST-03"
@@ -130,7 +130,7 @@
       "id": "PST-05",
       "owner": "Posting and approval",
       "source": "docs/plans/01-posting-approval-receipts.md",
-      "sourceLine": 79,
+      "sourceLine": 81,
       "deliverable": "Transactional outbox and bounded durable runs; recurring preparation and explicitly scoped mandate consumption where enabled.",
       "dependsOn": [
         "PST-03"
@@ -779,7 +779,7 @@
       "id": "OPS-01",
       "owner": "Operational tooling and deployment integrator",
       "source": "docs/plans/07-restore-operations-cutover.md",
-      "sourceLine": 70,
+      "sourceLine": 72,
       "deliverable": "Complete storage/archive inventory and consistent DB/object/key backup contract over current tooling.",
       "dependsOn": [
         "FND-03",
@@ -795,7 +795,7 @@
       "id": "OPS-02",
       "owner": "Operational tooling and deployment integrator",
       "source": "docs/plans/07-restore-operations-cutover.md",
-      "sourceLine": 71,
+      "sourceLine": 73,
       "deliverable": "Quarantined full application restore, privilege/configuration reconstruction and measured recovery.",
       "dependsOn": [
         "OPS-01",
@@ -812,7 +812,7 @@
       "id": "OPS-03",
       "owner": "Operational tooling and deployment integrator",
       "source": "docs/plans/07-restore-operations-cutover.md",
-      "sourceLine": 72,
+      "sourceLine": 74,
       "deliverable": "Durable delivery/attempt state, bounded leases, fencing and provider-uncertainty recovery.",
       "dependsOn": [
         "PST-05"
@@ -829,13 +829,13 @@
       "id": "OPS-04",
       "owner": "Operational tooling and deployment integrator",
       "source": "docs/plans/07-restore-operations-cutover.md",
-      "sourceLine": 73,
-      "deliverable": "Release manifest, populated upgrades, observability, credential/permission and incident runbooks.",
+      "sourceLine": 75,
+      "deliverable": "Release manifest, clean-baseline/forward-migration gates, observability, credential/permission and incident runbooks.",
       "dependsOn": [
         "FND-04",
         "OPS-01"
       ],
-      "acceptance": "E-01/E-20: exact release proof, safe upgrade/forward recovery and redacted useful diagnostics.",
+      "acceptance": "E-01/E-20: exact release proof, safe rerun/forward recovery and redacted useful diagnostics.",
       "scenarioIds": [
         "E-01",
         "E-20"
@@ -846,7 +846,7 @@
       "id": "OPS-05",
       "owner": "Operational tooling and deployment integrator",
       "source": "docs/plans/07-restore-operations-cutover.md",
-      "sourceLine": 74,
+      "sourceLine": 76,
       "deliverable": "Read-only actual-source cutover preflight and enforceable freeze rehearsal.",
       "dependsOn": [
         "IMP-06",
@@ -863,7 +863,7 @@
       "id": "OPS-06",
       "owner": "Operational tooling and deployment integrator",
       "source": "docs/plans/07-restore-operations-cutover.md",
-      "sourceLine": 75,
+      "sourceLine": 77,
       "deliverable": "Reviewed promotion/rollback-boundary protocol and actual company cutover.",
       "dependsOn": [
         "OPS-05",
@@ -879,7 +879,7 @@
       "id": "OPS-07",
       "owner": "Operational tooling and deployment integrator",
       "source": "docs/plans/07-restore-operations-cutover.md",
-      "sourceLine": 76,
+      "sourceLine": 78,
       "deliverable": "Recurring restore/retention/recovery drills and operational acceptance review.",
       "dependsOn": [
         "OPS-06"
