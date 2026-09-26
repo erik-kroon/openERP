@@ -19,12 +19,13 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-02 | Capability-specific company admission | P0 | implemented | none |
 | NEXT-11 | Separate complete-book SIE4E export | P0 | implemented | none |
 | NEXT-13 | Semantic P&L and balance-sheet snapshots | P0 | implemented | none |
-| NEXT-03 … NEXT-25 (21 packets) | — | — | not started | none |
+| NEXT-20 | Frozen regular-payroll calculation | P2 | implemented | none |
+| NEXT-03 … NEXT-25 (20 packets) | — | — | not started | none |
 
-NEXT-01 is complete. NEXT-02, NEXT-11 and NEXT-13 are merged. The remaining 21
-first-wave packets are untouched, so the only dependency edges satisfied by
-merged source are those NEXT-01, NEXT-02, NEXT-11 and NEXT-13 themselves
-unblock.
+NEXT-01 is complete. NEXT-02, NEXT-11, NEXT-13 and NEXT-20 are merged. The
+remaining 20 first-wave packets are untouched, so the only dependency edges
+satisfied by merged source are those NEXT-01, NEXT-02, NEXT-11, NEXT-13 and
+NEXT-20 themselves unblock.
 
 ## What was implemented
 
@@ -50,6 +51,55 @@ emitted, declared in `emittedRecords.recordProfile`. Account codes are bounded
 to exactly four digits, a nominal account with a non-zero captured opening
 refuses rather than lose it silently, and a first fiscal year with no prior
 vouchers and no opening set refuses rather than infer a zero opening.
+
+### NEXT-20 — Frozen regular-payroll calculation
+
+A frozen regular-payroll calculation with **no financial effect until a run
+executes**. It posts no journal, pays no salary, makes no declaration and
+reserves no monthly contribution capacity. A missing, ambiguous, unreviewed or
+inapplicable release refuses with `UnsupportedProfile`; no payroll,
+contribution or statutory rate is defaulted anywhere.
+
+Eight gaps were reported by the implementing worker and are recorded here
+rather than smoothed over:
+
+- The reviewed account-role vocabulary moved out of
+  `contracts/company-profiles.ts` into a `contracts/roles.ts` leaf, and the
+  rule-release body gained an **optional** payroll section, so every family
+  section can name a role without importing another family's contract module.
+  This keeps exactly one rule-release authority rather than adding a second
+  payroll release table. Rule-release selection still filters on the release
+  row's own `family` column, so a payroll-only release **cannot** satisfy
+  another family's admission and NEXT-02's `missing_rule_release` refusal is
+  unchanged.
+- `RoleKind` has no payroll literal. Salary expense and liability have no role
+  kind, so `DeductionComponent.destinationRole` can only name the existing six.
+  NEXT-21 owns posting and must extend it; no unused literal was added.
+- The packet's `EmploymentForCalculation` **cannot be read from the existing
+  9050 contract**, whose body is three free-text strings. The typed
+  calculation inputs are therefore taken as the command's reviewed input with
+  every evidence reference bound by retained evidence. Gross, hours, net and
+  payable are all computed; a caller supplies qualified source facts, never a
+  calculated amount. There is no independent second review of the input,
+  because the packet defines no approval step for prepare.
+- The 9107 `opening.obligation` is free text and is bound by requiring the
+  employer-contribution obligation selection's reference to equal it, refusing
+  otherwise. That is string equality between two independently captured
+  values, and it is the strongest available binding without changing the
+  9050/9107 contract, which was not changed.
+- `roundingByComponentAndReportingLevel` is only partly implemented.
+  Per-component rounding and per-profile contribution/accrual rounding exist;
+  **reporting-level (AGI) rounding is NEXT-21's and is absent**. The
+  calculator version must change before another level is added.
+- Committed run reservations are not observable, because that execution owner
+  is NEXT-21 and does not exist. The marginal is evaluated over
+  `openingBaseMinor + priorFrozenBaseMinor` only. This is recorded in the basis
+  field comments; it is a real gap, not a silent zero.
+- The payroll family activation is recorded but **not required**.
+  `companyActivationId` may be null. NEXT-21's posting may need it non-null.
+- No reviewed `rule_releases` row carrying a payroll section ships, so
+  `payroll_prepare_calculation` refuses with `UnsupportedProfile` until a
+  reviewed release exists. That is designed behaviour, matching NEXT-02.
 
 ### NEXT-01 — Owner-aware case review
 
@@ -147,6 +197,18 @@ These are real and unresolved. None is cosmetic.
 - **The 4E record profile is a declared subset, not a qualified matrix.** A
   reader that needs the full 4E mandatory record set still has to qualify it.
   `emittedRecords.recordProfile` is the honest statement of what was emitted.
+- **`0008-next-20.sql` has never been parsed by PostgreSQL.** Like 0004, 0005
+  and 0007 it is written against the reviewed 0001–0003 baseline and never
+  applied. It declares no function and carries its own `SELECT, INSERT` grants,
+  but its DDL, CHECK expressions, foreign-key targets and `immutable_row` wiring
+  are unverified SQL.
+- **NEXT-20's four packet vectors were evaluated in a throwaway `bun` process**
+  against the exported pure calculator. That is **arithmetic evidence only** —
+  not a transaction, not concurrency, not a database — and it is not retained
+  as a test, because `AGENTS.md` forbids adding tests without explicit approval.
+- **NEXT-20 left `apps/web/src/components/payroll-foundation.tsx` untouched.**
+  The frozen calculation is reachable only through its API. No interface
+  surface was added, so nothing here is a completed product path.
 - **NEXT-11 touched a ninth shared registration file.** Beyond the eight the
   coordinator tracked, `jurisdictions/se/package.json` needed a new export
   path for the pure module. That file is now verified on every merge.
