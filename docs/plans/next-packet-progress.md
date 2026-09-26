@@ -24,11 +24,19 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-03 | Domestic purchasing with owned tax recognition | P0 | implemented | none |
 | NEXT-26 | Supplier extraction jobs and field-level reviewed merge | P0 | implemented | none |
 | NEXT-15 | Legal customer credit notes | P1 | implemented | none |
-| NEXT-04 … NEXT-25 (17 packets) | — | — | not started | none |
+| NEXT-06 | Owner-paid expenses, reimbursement and funding | P0 | implemented | none |
+| NEXT-14 | Original dimension assignments | P2 | implemented | none |
+| NEXT-04, NEXT-05 … NEXT-25 (15 packets) | — | — | not started | none |
 
-NEXT-01 is complete. NEXT-02, NEXT-03, NEXT-11, NEXT-13, NEXT-15, NEXT-20,
-NEXT-26 and NEXT-49 are merged. The remaining 17 first-wave packets are
-untouched. NEXT-30 and NEXT-46 now have their NEXT-15 prerequisite satisfied.
+NEXT-01 is complete. NEXT-02, NEXT-03, NEXT-06, NEXT-11, NEXT-13, NEXT-14,
+NEXT-15, NEXT-20, NEXT-26 and NEXT-49 are merged. The remaining 15 first-wave
+packets are untouched.
+
+Newly unblocked by these merges: NEXT-16 (NEXT-01, NEXT-03, NEXT-06 all merged)
+and NEXT-43, NEXT-44 (NEXT-14 plus NEXT-13). NEXT-30 and NEXT-46 have their
+NEXT-15 prerequisite satisfied. NEXT-05 and NEXT-04 remain blocked only on each
+other, and NEXT-04 is the largest remaining unlock: it opens NEXT-05, NEXT-23,
+NEXT-37 and NEXT-38.
 
 Dependency edges now satisfied by merged source: NEXT-04, NEXT-06, NEXT-07,
 NEXT-16, NEXT-31, NEXT-33, NEXT-38 and NEXT-46 name NEXT-03; NEXT-22 and NEXT-45
@@ -313,6 +321,66 @@ projection was extended because it did not previously know about customer
 credits. The extended `liveInvoice` SQL and the bigint parameter casts have
 never been parsed by PostgreSQL.
 
+### NEXT-14 — Original dimension assignments
+
+Original dimension assignments are resolved and sealed **before the proposal is
+hashed**, so approval covers exactly the assignment set execution will retain,
+and they are written in the same transaction as the journal lines they belong
+to. Execution re-resolves the sealed set against the current catalogue, so an
+archive, an effective-date change or a new requirement between approval and
+execution refuses with `changed_since_preparation` instead of re-classifying an
+approved posting.
+
+**The obligation is driven by the book's own dimension catalogue, not by the
+caller's policy**, which is what closes the obvious bypass: a dimension
+effective on the posting date with no entry in the submitted policy refuses
+`incomplete_policy`, so omitting `dimensionPolicy` cannot be used to post
+unclassified lines. A `required` or `fixed` dimension must carry its value
+explicitly, and a reviewed default is resolved during preparation and then
+retained explicitly rather than inserted silently at execution or at historical
+import. An exact reversal repeats the referenced original line's retained bytes
+and needs no policy.
+
+**The SIE4E gap is narrowed, not closed.** NEXT-11 refused every
+dimension-bearing book because no assignment owner existed. That owner now
+exists, but the type-4 renderer release still emits no object records, so a
+non-empty object map is a representation loss and the export refuses on that
+ground rather than emitting an empty object group beside real assignments.
+
+Unresolved, reported by the worker:
+
+- **The two reserved owners that insert journal lines directly do not call the
+  released port.** VAT-03 reclassification and FX-02 write lines without going
+  through `resolveAssignmentsInTransaction`, so a posting made through them
+  carries no sealed assignment. They are reserved and were not taken over.
+- **The historical import paths carry no dimension policy.**
+- No SIE object-record profile exists.
+- `dimensionAssignmentReport` reports the **original** assignment only; a
+  reclassified report mode does not exist, and classification history is still
+  unimplemented.
+- `readOriginalAssignmentsInWindow` is book-scoped and single-window, **not
+  partitioned by source year**, so NEXT-44's multi-year SIE partition has no
+  read to build on yet.
+
+### NEXT-06 — Owner-paid expenses, reimbursement and funding
+
+Owner-paid expense, reimbursement and funding effects in one transaction group,
+reusing the recognition NEXT-03 already owns rather than re-deriving source
+recognition. The pure calculation is `@open-erp/domain/owner-funding`.
+
+**A capital contribution cannot become a loan.**
+`shareholder_loan`, `conditional_contribution` and `unconditional_contribution`
+are distinct legal forms mapped one-to-one onto their classifications, and an
+`unresolved` funding classification produces **evidence only and never a
+financial plan**. A funding inflow also requires two distinct accounts.
+Migration `0016-next-06.sql` declares no function, no policy and no calculator,
+and introduces no floating or approximate numeric type.
+
+Per-diem, mileage and reimbursement amounts are qualified inputs under
+D-04/D-08; a missing one is an explicit refusal, never a default. NEXT-16 names
+this packet alongside NEXT-01 and NEXT-03 and is now unblocked; NEXT-23, NEXT-32
+and NEXT-34 name it conditionally and remain unimplemented or decision-gated.
+
 ### NEXT-01 — Owner-aware case review
 
 A captured case summary records correction-bundle membership at capture time
@@ -358,6 +426,14 @@ cursor case returns a next cursor while unscanned members remain.
 ## Integration debt carried by these merges
 
 These are real and unresolved. None is cosmetic.
+
+**Note on the "never applied by PostgreSQL" statements below.** They were written
+before a concurrent agent found that `0010-next-49.sql` could not parse at all
+and corrected the chain, and they should be read subject to
+[Defects a concurrent agent found](#defects-a-concurrent-agent-found-in-merged-packets-and-what-it-fixed).
+Where a bullet says a migration has never been applied, the honest current
+statement is that its application is **not this programme's evidence** and was
+not reproduced here.
 
 - **Two migrations, never parsed by PostgreSQL.** `0004-next-02.sql` and
   `0005-next-13.sql` were written against the reviewed 0001–0003 baseline but
@@ -448,16 +524,84 @@ These are real and unresolved. None is cosmetic.
   coordinator tracked, `jurisdictions/se/package.json` needed a new export
   path for the pure module. That file is now verified on every merge.
 
+## Defects a concurrent agent found in merged packets, and what it fixed
+
+Recorded because it changes what may honestly be claimed about this work. These
+were found in packets this programme merged, by an agent working separately, and
+fixed in commits `d816c80` and `4d624c4`.
+
+**NEXT-49 was worse than "unobserved".** Three defects, each independently
+enough to make the packet non-functional:
+
+- **`0010-next-49.sql` did not parse.** `NOT` applied to a parenthesized `jsonb`
+  extraction is not a comparison, and an operator expression in an index column
+  list must be parenthesized. Two parse errors stopped the whole chain *before*
+  `0010`, so no database had ever applied it.
+- **Every write refused.** The database access helpers answered `canInsert
+  false` for exactly the tables the operation writes, while the application
+  guard treats that `false` as a refusal — so the required write tables were the
+  only ones denied. The migrations did grant `INSERT`; the privilege predicate
+  simply never asked for it. **This is precisely the "documented function that
+  refuses every case" that the packet rules forbid calling complete.**
+- **The digest call was the wrong kind.** Notice, decision and fulfillment
+  bodies were hashed with a versioned canonical-document digest requiring
+  version and canonicalization metadata the bodies do not carry, so every call
+  failed before hashing. The tables verify `openerp.digest(body - 'digest')`, so
+  the ordinary supported JSON digest is what the stored bytes are hashed with.
+
+**NEXT-20 could not function either:**
+
+- It could not decode its own rule release. The shared `RuleRelease` owns one
+  nested payroll payload, and payroll decoded the raw row as if the payroll
+  fields were at its root, so a release valid under the declared shared schema
+  failed to decode and **every calculation was refused**.
+- **Monetary bounds were compared as strings**, so `"900"` sorted above
+  `"1000"` and an inverted contribution band or withholding row passed its own
+  check. They are compared as exact integers now.
+- **A rounding helper divided a minor-unit amount by its declared scale and
+  kept the minor name**: 3 000 000 minor units at scale 2 came back as 30 000, a
+  hundredfold understatement of gross, reimbursement, deduction, payable and
+  every fixed or table withholding amount.
+- **Private payroll access was weaker on the read path than the write path.**
+  The grant check ran only after a saved-command replay could already return a
+  record, and get and list performed none at all, so **book membership alone was
+  enough to read frozen payroll calculations**. Ordinary identical-command
+  recovery still works for an authorized caller.
+
+### What this changes about the verification story
+
+- The earlier claim that the NEXT migrations had **never been parsed** by
+  PostgreSQL is superseded. `0010-next-49.sql` could not parse at all, which is
+  a stronger failure than never having been run. A concurrent agent reports the
+  corrected `0001`–`0011` chain **applies to a fresh PostgreSQL 17**. That
+  observation is **not** ours and has not been independently reproduced here, and
+  it says nothing about grant matrices, transaction and rollback behaviour, lock
+  ordering under contention, replay and duplicate refusal, approval expiry and
+  revocation, or any HTTP/MCP surface.
+- Two defects in this programme's own merges (`f15c1df`, `5b2c0bb`) were
+  cross-packet contract conflicts that only surfaced when two branches met:
+  NEXT-15's credit-note line type omitted the assignment field NEXT-14 reads, and
+  NEXT-06's wire restatement dropped the `taxFactId` a later credit's adjustment
+  names. Each typechecked in isolation because each branch predated the other.
+  Both are now fixed, and both were caught only by typecheck, never by review.
+- **A gap in how these merges were reviewed, stated plainly.** Each migration was
+  checked for the *absence* of functions and for the *presence* of a `GRANT`
+  statement. None was ever parsed by a database, and no read path was traced for
+  a privilege predicate that could return a denial. Those two checks missed
+  exactly the defects above. Migration files in this programme should be parsed
+  before they are called reviewed.
+
 ## Verification limits
 
-No database, Worker, provider credential or real company data was available
-during this work. Therefore:
+No database, Worker, provider credential or real company data was available to
+this programme. A concurrent agent worked against a real PostgreSQL 17 and
+reports the corrected `0001`-`0011` chain applies; that is recorded above as
+their observation, not as ours. Therefore:
 
 - `bun run check`, `bun run lint`, `bun run check-types` and `bun run build` all
   pass on the merged tree. That is **source- and type-level evidence only**. A
   typecheck is not a substitute for observing a transaction.
-- **Unobserved:** every migration applying cleanly to a fresh database; grant
-  matrices matching the runtime role; transaction and rollback behaviour; lock
+- **Unobserved by this programme:** grant matrices matching the runtime role; transaction and rollback behaviour; lock
   ordering under contention; same-key replay, same-key recovery and
   different-key duplicate conflicts; approval expiry and revocation; the
   idempotency conflict path; the empty-filtered-page cursor case; anchor
