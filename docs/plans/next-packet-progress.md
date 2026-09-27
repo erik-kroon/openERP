@@ -1,10 +1,11 @@
 # NEXT packet implementation progress
 
-This records implementation state for the application-owned v2 work packets
-NEXT-01 through NEXT-25. It separates **implemented source** from **verified
-behaviour**, because at the time of writing nothing in this effort has been
-observed at runtime. See [Verification limits](#verification-limits) before
-relying on any row here.
+This records selected application-owned NEXT packets by stable packet ID. It
+separates **implemented source**, integration and qualification gates from
+**verified behaviour**. Local core E2E runs exercise startup, migrations and
+selected posting invariants; they do not establish every packet's financial
+journey. See [Verification limits](#verification-limits) and the current
+[repair record](evidence/latest-landed-review-repairs.md) before relying on a row.
 
 The packet set is a design specification, not authority. It does not grant
 database, deployment, real-company or provider permission, and it does not
@@ -13,40 +14,39 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 
 ## Status
 
-| Packet                                  | Title                                                         | Priority | Source      | Runtime proof |
-| --------------------------------------- | ------------------------------------------------------------- | -------- | ----------- | ------------- |
-| NEXT-01                                 | Owner-aware case review                                       | P0       | implemented | none          |
-| NEXT-02                                 | Capability-specific company admission                         | P0       | implemented | none          |
-| NEXT-11                                 | Separate complete-book SIE4E export                           | P0       | implemented | none          |
-| NEXT-13                                 | Semantic P&L and balance-sheet snapshots                      | P0       | implemented | none          |
-| NEXT-20                                 | Frozen regular-payroll calculation                            | P2       | implemented | none          |
-| NEXT-49                                 | Rule-change impact and evidence-backed obligation fulfillment | P0       | implemented | none          |
-| NEXT-03                                 | Domestic purchasing with owned tax recognition                | P0       | implemented | none          |
-| NEXT-26                                 | Supplier extraction jobs and field-level reviewed merge       | P0       | implemented | none          |
-| NEXT-15                                 | Legal customer credit notes                                   | P1       | implemented | none          |
-| NEXT-06                                 | Owner-paid expenses, reimbursement and funding                | P0       | implemented | none          |
-| NEXT-14                                 | Original dimension assignments                                | P2       | implemented | none          |
-| NEXT-16                                 | Evidence-aware period preparation                             | P0       | implemented | partial       |
-| NEXT-04, NEXT-05 … NEXT-25 (13 packets) | —                                                             | —        | not started | none          |
+| Packet | Title | Priority | Source | Runtime proof |
+|---|---|---|---|---|
+| NEXT-01 | Owner-aware case review | P0 | implemented | none |
+| NEXT-02 | Capability-specific company admission | P0 | implemented | none |
+| NEXT-11 | Separate complete-book SIE4E export | P0 | implemented | none |
+| NEXT-13 | Semantic P&L and balance-sheet snapshots | P0 | implemented | none |
+| NEXT-20 | Frozen regular-payroll calculation | P2 | implemented | none |
+| NEXT-49 | Rule-change impact and evidence-backed obligation fulfillment | P0 | implemented | none |
+| NEXT-03 | Domestic purchasing with owned tax recognition | P0 | implemented | none |
+| NEXT-26 | Supplier extraction jobs and field-level reviewed merge | P0 | implemented | none |
+| NEXT-15 | Legal customer credit notes | P1 | implemented | none |
+| NEXT-06 | Owner-paid expenses, reimbursement and funding | P0 | implemented | none |
+| NEXT-14 | Original dimension assignments | P2 | implemented | none |
+| NEXT-04 | Actual domestic VAT return and controls | P0 | integrated in `082c418`, with subsequent capture/rounding/control repairs | fresh migration and core Worker suite; qualified VAT journey unobserved |
+| NEXT-22 | Pre-close tax bridge and INK2/SRU | P1 | source integrated from `next/NEXT-22`; reviewed corporate-tax release still required | fresh migration and core Worker suite; tax bridge/approval/declaration journey unobserved |
+| NEXT-29 | Recurring commercial invoice occurrences | P1 | integrated through `0eaad64`, with schema/materialization/interval repairs | core Worker suite; successive recurring issue journey unobserved |
+| NEXT-16 | Evidence-aware period preparation | P0 | implemented in `next/NEXT-16b`; local integration pending | changed-file lint/types and 23 existing core E2E tests pass; period-work journey proof remains open |
+| NEXT-17 | Payable FX and explicit fees | P1 | source integrated from `next/NEXT-17`; bounded synthetic fee-settlement profile | worker-reported constraint probes; financial application journey unobserved |
 
-NEXT-01 is complete. NEXT-02, NEXT-03, NEXT-06, NEXT-11, NEXT-13, NEXT-14,
-NEXT-15, NEXT-16, NEXT-20, NEXT-26 and NEXT-49 are merged. The remaining 13
-first-wave packets are untouched.
+The rows above do not classify every other packet as untouched. Resolve its
+current branch, owning source and release gates before starting work. A source
+merge is not itself a released cross-owner financial contract.
 
-Newly unblocked by these merges: NEXT-43 and NEXT-44 (NEXT-14 plus NEXT-13).
-NEXT-30 and NEXT-46 have their NEXT-15 prerequisite satisfied. NEXT-05 and
-NEXT-04 remain blocked only on each other, and NEXT-04 is the largest remaining
-unlock: it opens NEXT-05, NEXT-23, NEXT-37 and NEXT-38. NEXT-16, which this file
-now records as merged, named NEXT-01, NEXT-03 and NEXT-06 and no longer waits on
-any of them.
+Source dependency edges are now present for NEXT-05 (NEXT-03 and NEXT-04),
+NEXT-16 (NEXT-01, NEXT-03 and NEXT-06), NEXT-23 (NEXT-13 and NEXT-22),
+NEXT-43/44 (NEXT-13 and NEXT-14), and NEXT-30/46's NEXT-15 dependency.
+Each consumer must still resolve its qualification, owner-port and runtime
+obligations. NEXT-25 remains the final fixed-revision company rehearsal, not a
+substitute for completing those dependencies.
 
-Dependency edges now satisfied by merged source: NEXT-04, NEXT-06, NEXT-07,
-NEXT-31, NEXT-33, NEXT-38 and NEXT-46 name NEXT-03; NEXT-22 and NEXT-45 name
-NEXT-13; NEXT-43 and NEXT-44 name NEXT-13; NEXT-37 and NEXT-38 gain from NEXT-04
-once it lands. NEXT-05 needs NEXT-03 and NEXT-04. NEXT-30 and NEXT-46 still need
-NEXT-15. Six packets remain decision-gated and unimplemented by choice: NEXT-32,
-NEXT-40, NEXT-41, NEXT-42, NEXT-45 and NEXT-36. NEXT-25 is deferred to the end of
-the programme.
+The current repair record links individual review findings to source changes and
+actual checks. Its passing existing-suite result covers only those cases;
+reviewed tax content, real-company facts and external acceptance remain open.
 
 ## What was implemented
 
@@ -373,9 +373,8 @@ approval manifest for one human gesture. This owner posts nothing itself.
 **The release resolves to four real owners, and no fifth.** `routeWork` dispatches
 only to `purchases.recognition`, `purchases.credits`, `owner.operations` and
 `commerce.invoice`, each a real named operation whose prepare and execute are
-called. `ownerForTarget` returns nothing for `ReviewCase` and
-`OwnedCorrectionReview`, because naming an owner for them would claim this run can
-post a review or a correction, which it cannot. The `owner.settlement` route is
+called. Review cases do not dispatch; a supported domestic supplier credit routes
+to `purchases.credits`. The `owner.settlement` route is
 **not** dispatched: no operation in this repository posts a company-bank payment
 against a recognized supplier obligation, so `purchases.settlement` and
 `banking.settlement` were removed from the domain's settlement-owner vocabulary
@@ -409,22 +408,20 @@ message cannot reopen a committed one. A cancellation that lands while the owner
 is preparing keeps the prepared plan as retained evidence and stops the stale
 handler publishing it.
 
-**No agent approves anything.** `approvePeriodWorkBatch` is operator-only, so an
-ordinary agent or API credential cannot reach it, and every approval comes from
-the released `approveChangeInTransaction` inside the approving transaction —
-never a fabricated identifier. It deliberately does **not** mint each owner's own
-approval: those owners expose approval only as public operations that open their
-own transaction, and calling one from inside the batch transaction would nest a
-second financial transaction. Each member's own approval therefore stays with its
-owner and is what that owner's execute consumes; `executePeriodWorkBatch` requires
-both and marks a stale member as needing a new review while leaving the other
-independent members runnable.
+**No agent approves anything.** The batch calls the supplier-acceptance,
+supplier-credit, owner-operation and invoice-issue approval ports inside one
+transaction. Each port enforces its owner's approval rules and creates the actual
+approval its execution consumes. A failed member rolls back the whole gesture.
+The capability is not agent-callable. Execution marks a stale member as needing a
+new review while leaving independent members runnable.
 
 **The batch cannot claim a different owner than the child recorded.** A member's
 owner, plan, plan digest and owning review must equal the values the child stored
-when it was advanced. A private guard refuses the insert otherwise, and one child
-cannot be a member of two batches, so one gesture cannot cover a duplicate
-economic effect. A child still waiting on a predecessor is refused at batch time
+when it was advanced. A private guard refuses the insert otherwise. Membership is
+unique within a batch; approval checks the current child and execution checks its
+current batch inside the owning financial transaction. This permits a new review
+after a stale batch without letting an old batch execute the replacement. A child
+still waiting on a predecessor is refused at batch time
 rather than smuggled in.
 
 **Progress is honest and is not a reconciliation claim.** `countChildStates` keeps
@@ -435,10 +432,13 @@ inventory can say otherwise.
 
 Deliberate omissions, reported by the worker and recorded here:
 
-- **No HTTP route or MCP capability.** The advance is reached through the
-  effect-mq runner and the batch operations are called from application code. A
-  transport surface is not this packet's deliverable and no released owner here
-  advertises one.
+- **Transport and runtime:** authenticated HTTP routes expose manifest preparation,
+  progress, bounded advance, cancellation, batch preparation, approval and execution.
+  Capability dispatch exposes the corresponding operations except cancellation,
+  which is HTTP-only. Authority-bearing capabilities are not agent-callable.
+  Execution uses `afterOrdinal` / `nextOrdinal`; its command key binds the exact
+  batch, digest and page. The effect-mq key includes the retained checkpoint so
+  later bounded passes are not deduplicated against an earlier completed pass.
 - **No rule-activation owner.** The rules in force at the cutoff are sealed into
   the manifest with the selection, and each rule names the review that qualified
   it. A later rule change produces a new manifest rather than re-deciding a frozen
@@ -461,14 +461,105 @@ child is accepted, while a member naming a different owner and a member naming a
 tampered plan digest are both refused with `Forbidden` — the allowlisted `P0001`
 code `db/transaction.ts` already translates into a typed failure. The runtime role
 holds `SELECT, INSERT` on all five tables and a column-limited `UPDATE` on the
-child checkpoint. **No application Effect was run**, so routing, prepare
-dispatch, the three-transaction advance, replay, concurrency and every
-stale-dependency branch remain unobserved.
+  child checkpoint. These are historical constraint observations, not a complete
+  period-work journey. The current batch-member index is unique within a batch.
+
+Integration verification on 2026-09-27: changed-file lint and TypeScript checks
+passed. The existing real PostgreSQL/workerd suite passed all 23 tests; reports
+are at `test-results/e2e/results.json` and `test-results/e2e/junit.xml` in the
+NEXT-16b worktree. That run applies the migration chain and exercises core posting,
+admission, persistence and MCP. It does not exercise the period-work financial
+journey, cancellation race, queue restart or owner-specific batch approvals. No
+new tests or fixtures were added. The earlier compiler stall was caused by a
+duplicate `TableAccess` export in the DB module; removing it restored checks.
 
 A pre-existing merge defect was repaired on this branch:
 `packages/domain/package.json` listed `./period-work` without a trailing comma
 before main's `./recurrence` entry, which made the manifest invalid JSON and
 broke resolution of the whole domain package.
+### NEXT-17 — Payable FX and explicit fees
+
+A supplier foreign-currency obligation and its explicit-fee settlement, through
+the **existing** commerce FX owner. Migration `0012-next-17.sql` adds one table,
+three columns and a `direction` discriminator; it adds no register, no second
+balance and no calculation.
+
+**One paired-release capacity, not a payable register.** The original-unit and
+book-carrying release is the released WIP-FX02-P1 calculation, unchanged — the
+same numerator, denominator, half-up rule and residual the partial settlement
+profile already uses. `readItemState` derives the remaining amounts from every
+active settlement row of *any* profile, so an explicit-fee leg consumes the same
+capacity a partial leg consumes and the existing unique index
+`(book_id, item_id, leg_ordinal)` still orders the legs. A correction restores
+both amounts from the retained history rather than from a mutable counter.
+
+**A payable is a genuine obligation, not a relabelled receivable.** The
+discriminated `synthetic_supplier_foreign_payable_v1` recognition debits the
+expense role and credits the payable control from a qualified rate observation.
+A book-currency number is never relabelled as foreign units: the profile still
+requires `originalCurrency != book.currency` and refuses otherwise.
+
+**One journal carries K, every fee and every cash leg.** The packet's three
+vectors are the obligations, and the compiler produces exactly them:
+
+| Vector | Journal | `cash_source_minor` | `realized_gain_minor` |
+|---|---|---|---|
+| payable b110000 K112000 F1000 | AP+110000, FX loss+2000, fee+1000, cash−113000 | −113000 | −2000 |
+| payable b110000 K108000 F1000 | AP+110000, fee+1000, cash−109000, FX gain+2000 | −109000 | +2000 |
+| receivable b110000 K112000 F1000 | cash+111000, fee+1000, AR−110000, FX gain−2000 | +111000 | +2000 |
+
+The signed cash carries the settlement's own sign: a receipt is `K − F`, a
+payment is `−(K + F)`. An earlier revision of this migration stored the payment
+as the *magnitude* `K + F`, which contradicted the sealed `signedCashMinor` the
+application writes and would have made every supplier settlement uninsertable.
+The direction-aware `CASE` in the profile check is what the compiler's own
+`formula` string states.
+
+**Source rights are common, not settlement-local.** A fee or bank observation is
+consumed by at most one financial operation, enforced at prepare and again inside
+the posting transaction. The shared `readLineOwners` projection gained the
+`commerce_fx_settlement_sources` join, so a line this settlement posted cannot
+also be admitted as a bank match. This matters because a settlement posts up to
+twenty cash legs while its `cash_line_id` names only the first; without the join
+the remaining legs were unowned and doubly matchable. A correction releases the
+right by its own existence — `readActiveSourceIdentities` excludes any settlement
+that has a correction — so nothing is deleted, rewritten or flagged. A reversed
+explicit-fee settlement is still listed in `MonetaryItem.feeSettlements`, so
+`feeCorrections` states which of them were reversed; without it a reader cannot
+tell that a source right is consumable again.
+
+**Refusals are structural, not defaulted.** A fee posts to one reviewed expense
+account that is neither a bank account, nor a retained control account, nor an
+account the item already binds. Fee tax, foreign cash, hedges and multilateral
+netting have no reviewed owner here. A zero gross consideration, a zero fee total
+and a cash total that disagrees with the signed cash equation are all refused
+before any line is written. The two released receivable settlement profiles
+refuse a supplier item with `UnsupportedProfile` rather than posting a receipt
+shape for a payment.
+
+Runtime evidence, on a real PostgreSQL 17.11 with the whole `0001`–`0018` chain
+applied in filename order: all three packet vectors insert with the values in the
+table above, and the pre-fix magnitude is refused by
+`commerce_fx_settlements_profile_check`. The corrected ownership read returns
+`fx` for the first cash line, the second cash source line and the fee line, and
+nothing for an unrelated line on the same voucher. Inserting a correction row
+empties the consumed set while both source rows remain. `openerp_runtime` holds
+`SELECT, INSERT` on the new table and no `UPDATE` or `DELETE`. **The application
+Effect was not run**: no operation, HTTP request or Worker was invoked, so
+concurrency, replay and every stale-dependency branch remain unobserved.
+
+Deliberate omissions, reported by the worker and recorded here:
+
+- **No web UI.** The packet names no route, and the released commerce FX
+  operations expose no UI today.
+- **No MCP capabilities for the new operations**, matching the released
+  `commerce/fx` owner.
+- **No VAT return integration.** The settlement posts a
+  `not_applicable` tax assessment. `D-04`/`D-08` still gate any real-company
+  rate, and the packet's `K` is a caller-evidenced amount, never a computed
+  default.
+- **The evidence baseline S03/S07 is not re-derived here.** `K` stays an input
+  with a required evidence reference, exactly as the packet specifies.
 
 ### NEXT-06 — Owner-paid expenses, reimbursement and funding
 
@@ -488,6 +579,172 @@ Per-diem, mileage and reimbursement amounts are qualified inputs under
 D-04/D-08; a missing one is an explicit refusal, never a default. NEXT-16 names
 this packet alongside NEXT-01 and NEXT-03 and is now unblocked; NEXT-23, NEXT-32
 and NEXT-34 name it conditionally and remain unimplemented or decision-gated.
+
+### NEXT-22 — Pre-close corporate income-tax bridge and INK2/SRU
+
+A sealed pre-close bridge, one approved current-tax effect and one INK2/SRU
+declaration lineage, in three records that never share a transaction or a table.
+See [CORPORATE-TAX.md](../../apps/api/docs/CORPORATE-TAX.md) for the full
+description; the load-bearing points are these.
+
+**The tax journal cannot move the number the tax is calculated from.** The
+pre-tax figure is the retained statement result plus the booked current
+income-tax effect added back exactly once, so recognising a tax effect never
+changes the pre-tax population it was derived from. The retained figure is the
+statement snapshot's own untransferred fiscal-year result line; the snapshot does
+not retain the transferred movement, and no amount is invented for it.
+
+**Only the delta is posted.** `delta = sealedYearTarget - alreadyRecognized`. A
+zero delta is an approved no-effect receipt with no voucher and no consumed
+voucher number, not a zero voucher. Preliminary tax paid to a tax account is
+never subtracted from the target to make a return agree.
+
+**A duplicate adjustment over one economic component is refused** unless the
+reviewed release explicitly establishes the two adjustments as distinct and
+non-overlapping. A negative taxable result never becomes a negative cash
+receivable: the offset is bounded by the reviewed allowance and the base is
+clamped at zero.
+
+**The effect is validated, never self-approved.** `tax_execute_effect` requires a
+separate operator's current approval of the sealed plan digest through the shared
+change-set approval endpoint and refuses when the approver is the executing
+operator. The preserved draft created its own approval inside the same call and
+then compared that fresh random identity with the caller-supplied one, so the
+operation could never succeed; it also removed the only four-eyes separation the
+packet asks for. It now validates through the shared
+`readExecutionApprovalInTransaction`, and the whole basis is re-resolved inside
+the executing transaction before anything posts.
+
+**The engine and the exported form start from one result.** Which current-tax
+figure the form adds back depends on where its declared accounting result came
+from: the calculated current tax for a projected after-tax result, the booked
+effect inside the retained population for a ledger result. The preserved draft
+always used the booked effect, so a projected form could not reconcile. The
+declaration now requires the add-back source it actually needs and blocks
+otherwise.
+
+**Two further defects in the preserved draft, both found by running the packet's
+own vector.** The independent SRU re-parse failed the info file by construction,
+because it demanded field values from a file that carries none and then reported
+a comparison it could not make; the info file now gets the structural check only
+and reports zero compared totals. The record scanner also rejected a per-form
+terminator, so no rendered blanket letter could ever be re-parsed.
+
+**No reviewed value is a default.** No rate, rounding policy, loss profile,
+journal series, form version, form identifier, field code, record marker, header,
+separator, encoding, terminator, filename or size bound is a literal in the
+code. The preserved draft hardcoded `#BLANKETT`, `#UPPGIFT` and a `#` info prefix
+while claiming no record name was a default; all three are now reviewed bundle
+data. The selected profile is the ordinary limited company; NE and the
+comprehensive special regimes are refused, not approximated.
+
+**Deliberate deviation.** The packet sketches rendering the SRU files in an
+effect-mq Bun job outside the persisting transaction. This implementation renders
+and re-parses inline, which commits the semantic fields and the exact verified
+bytes together so a retained declaration can never exist without its files. The
+render is pure, bounded, in-memory work, so it adds no meaningful lock duration.
+See the doc for the full reasoning and what adopting the packet's shape would
+require.
+
+**Two more defects that only contract decoding would have caught.** The
+pre-tax overlay digested its retained income-tax membership by handing a bare
+array to `toJsonObject`, which accepts only JSON objects, so `captureBasis`
+failed on every capture including an empty component set. The membership is
+now enveloped under its own key, and the envelope is part of the digest. The
+SRU record markers were bounded by a pattern that rejected every letter and
+digit, which made the hash-led uppercase markers the file-transfer contract
+actually uses unrepresentable and every conforming release impossible. The
+bound is now the writer's own emittable set without the space, and a marker
+that conflicts with the bundle's separators is refused at render time instead.
+
+Both were invisible to the vector run, because that fixture called the pure
+functions with plain objects and never went through a contract schema. The
+lesson is specific and worth keeping: **arithmetic evidence is not wire-shape
+evidence.** A pure-function vector cannot see a decode failure.
+
+**A retained-witness regression this packet introduced and then removed.**
+`ProfileDates.taxPeriodOn` was made a required nullable field, but
+`ProfileDates` is embedded in every retained `ProfileWitness`, so every witness
+sealed before NEXT-22 — the VAT and purchase ones included — would have failed
+to decode. The field is now optional and `selectorDate` normalises a missing
+value to `null`, so a caller that names no fiscal tax period gets no
+corporate-tax family. That also removed five call sites that had been passing
+`taxPeriodOn` purely to satisfy the required field: `bookStatus`, payroll
+calculation, purchase recognition, the VAT return and the company-admission
+panel all had no business selecting a tax release on a date that is not a
+fiscal period end.
+
+**Two execution defects found in `executeEffect`.** The retained
+`groupReceiptId` was a freshly minted identity that was inserted only on the
+zero-delta path, so a nonzero recognition retained a receipt id that existed
+nowhere; it now reads back the group receipt the shared primitive committed.
+The zero-delta path also bypassed `validatePlan` entirely, so a plan nothing had
+checked could be consumed; it now validates its own sealed plan, asserts the
+plan carries no group, and only then writes its no-effect receipt.
+
+**The stale-population gap, closed.** Revalidation re-read an immutable
+snapshot and compared its digest, which proves the bytes did not change but
+not that the population behind them did not. A new or backdated non-tax posting
+after the snapshot leaves every retained byte identical, and the shared posting
+kernel does not catch it either, because a sealed plan records profile, writer
+epoch, period and account dependencies and no committed-sequence boundary. The
+bridge now asks the statement owner, at capture and again at execution, using its
+own released currentness read: a reopen covering the reported as-of date, or any
+voucher after the snapshot's cutoff other than this owner's own current-tax
+effects, refuses. That boundary is deliberately conservative — it refuses on a
+later posting that provably cannot touch the reported population — because
+refusing a proposal costs a fresh snapshot while posting an accrual derived
+from a moved population is not recoverable.
+
+The own-tax exclusion is what keeps the boundary from being self-defeating: the
+first tax effect is itself a voucher after the cutoff. Ownership is proved by a
+committed `corporate_tax_effect` row for the same book and reported fiscal year
+whose change set is the voucher's own, never by an event-key prefix — a key is a
+naming convention any posting path can choose, so a manual posting that merely
+named itself like tax would otherwise escape the guard. An earlier revision used
+the prefix and was wrong; the replacement is recorded in the owner document as
+the one NEXT-22 query never executed against a database.
+
+**A double-recognition path through the generic posting surface.** Extending
+`PostingOwner` with `corporate_income_tax` was not enough. The bridge seals an
+ordinary posting plan, so its change set is approvable through the shared
+endpoint, and the generic `changes_execute` would have posted that approved plan
+with no owner: no `corporate_tax_effects` row, no recorded year target, and the
+tax owner free to recognise the same amount again. A generic reversal would have
+bypassed the tax register too. `readOwnedSources` now projects
+`corporate_tax_bridges` as a `corporate_income_tax` source keyed on the bridge's
+change set, with a null `evidence_id` so it matches only that plan and its
+correction descendants and nothing else, and `readProtectedCorrections` reports
+any voucher a tax effect points at. The zero-delta path needs no pretending: its
+plan carries no group, so generic execution refuses on the plan shape and no
+voucher exists to reverse.
+
+**A defect in the statement owner's released currentness read, found by running
+it.** `readStatementLiveStatus` selected `closing_transitions.committed_at`.
+That table has no such column; the transition's time lives in its body as
+`committedAt`. The read therefore raised `column t.committed_at does not exist`
+on a real database, which means every statement row page read fails today and any
+consumer of that read cannot work at all. It is repaired here to
+`(t.body->>'committedAt')::timestamptz`, which is NEXT-13's file and NEXT-13's
+owner's to ratify. This is the second time in this programme that a query which
+looked obviously correct was only caught by executing it.
+
+**A migration defect that only a database could find.** The preserved
+`corporate_tax_declarations` constraint compared
+`body ->> 'fiscalYear'::text ->> 'id'::text` against `fiscal_year_id`. `->>`
+returns `text` and PostgreSQL has no `text ->> text` operator, so the whole
+`0001`–`0018` chain aborted at `0013-next-22.sql`. It now uses `->` for the
+intermediate step, as `0015-next-04.sql` does. The corrected chain applies clean
+on a fresh PostgreSQL 17, and this closes the gap this document records below:
+migrations had been checked for the absence of functions and the presence of a
+`GRANT`, never parsed. They should be.
+
+**External gate, stated plainly.** The reviewed Swedish corporate-tax rule release
+must be loaded into `openerp.rule_releases` before any capability in this group
+can succeed. No reviewed INK2 field map, SRU grammar, rate, rounding policy or
+journal series ships in this repository, and none was invented. Export is not
+filing: no transmission, destination acceptance, signature or statutory claim is
+made.
 
 ### NEXT-01 — Owner-aware case review
 
@@ -709,21 +966,10 @@ their observation, not as ours. Therefore:
 - `bun run check`, `bun run lint`, `bun run check-types` and `bun run build` all
   pass on the merged tree. That is **source- and type-level evidence only**. A
   typecheck is not a substitute for observing a transaction.
-- **NEXT-16's TypeScript check did not complete on the machine that wrote it.**
-  `oxfmt` and `oxlint` (including the anti-slop rules) are clean on every file it
-  changed, and every changed file parses. The `tsc --noEmit` stage for
-  `apps/api` and `apps/api/scripts` did not finish there, and the cause is
-  measured rather than guessed: the box has **8 logical cores at load average
-  18-20**, and four orphaned `tsc` processes belonging to another checkout at
-  `/Users/admin/openERP` were consuming about 30-40% CPU each. The runner
-  typechecks its projects concurrently, so each received a fraction of a core.
-  A static import-graph walk of all 9095 TypeScript files found **no cycle
-  involving `application/period-work.ts`**; the only application cycles are the
-  pre-existing `posting.ts` ↔ `posting-admission.ts` and `environment.ts` ↔
-  `retained-objects.ts` pairs that already ship on main. So this is CPU
-  starvation, not an import cycle and not a defect in this packet. **A TypeScript
-  check on an unloaded machine is still owed for this branch**, and it is the
-  first gate the integrator should run.
+- **NEXT-16's earlier compiler failure is resolved.** The original attribution to
+  CPU starvation was incorrect: a duplicate `TableAccess` export stalled the
+  Effect compiler plugin. The integration checks now pass; see the NEXT-16 entry
+  for current E2E evidence and its limits.
 - **NEXT-16 added database evidence, but only of constraints.** A disposable
   local PostgreSQL 17.11 applied the whole chain in filename order and the
   period-work constraints were exercised directly, with and without triggers
@@ -732,6 +978,15 @@ their observation, not as ours. Therefore:
   bound, the unique batch-per-child index and the runtime grants. It did **not**
   run one application Effect, so routing, prepare dispatch, the
   three-transaction advance, replay and concurrency remain unobserved.
+- **NEXT-17 added database evidence, but only of constraints.** A disposable
+  local PostgreSQL 17.11 applied the whole `0001`-`0018` chain in filename order
+  and the three packet vectors were inserted directly into
+  `openerp.commerce_fx_settlements` with the bodies the application builds, with
+  foreign-key triggers disabled so the fixture did not need a whole book. That
+  observed the CHECK expressions, the source table, the corrected ownership read
+  and the runtime grants. It did **not** run one application Effect, so
+  preparation, approval, execution, replay, concurrency and the Worker remain
+  unobserved.
 - **Unobserved by this programme:** grant matrices matching the runtime role; transaction and rollback behaviour; lock
   ordering under contention; same-key replay, same-key recovery and
   different-key duplicate conflicts; approval expiry and revocation; the
@@ -767,3 +1022,8 @@ at all — a reviewed `rule_releases` row for one family.
 The five reserved WIP assignments remain untouched and were not reimplemented,
 requalified or taken over: `WIP-VAT03`, `WIP-FX02-P1`, `WIP-AST03-UI`,
 `WIP-VAT04-A1`, `WIP-COM2-W1`. NEXT-02 and NEXT-13 consume none of them.
+NEXT-17 **uses** `WIP-FX02-P1` and does not duplicate it: the paired-release
+capacity, its half-up rule and its residual handling stay the released owner's,
+and the packet's instruction not to copy the WIP partial-release algorithm is
+met — the compiler adds K, F and the signed cash equation around the existing
+release rather than restating it.

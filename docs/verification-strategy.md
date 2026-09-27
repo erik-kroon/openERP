@@ -34,6 +34,16 @@ Reproduce the gates locally with `bun install --frozen-lockfile`, `bun run forma
 
 ## Expectations and fault control
 
+The isolated [Bend verification kit](../verification/bend/README.md) adds an
+offline model lane: exact arithmetic, ledger/allocation laws, qualified VAT
+monetary projection and bounded covering-set suggestions. Run
+`npm --prefix verification/bend run verify:local` to retain source hashes,
+command results and current-owner monetary comparisons. Its bundled development
+checker is not an official Bend compiler or independent safe-kernel result;
+`verify:release` requires those tools and fails when they are absent. This lane
+does not establish PRY-33 product integration, VAT eligibility, statutory
+applicability or application transaction behavior.
+
 Write failure outcomes before implementation. Use small synthetic fixtures with scenario/invariant IDs, provenance, exact expected values and profile/rule/schema versions. Do not compute expectations with the production calculator or backfill unit tests after implementation.
 
 For a fresh-book posting of `12500` minor units, expect two lines, bank/clearing balances `12500`/`-12500`, sequence and series number `1`, one receipt, one outbox event and one consumed approval. Observe through a fresh request and connection. Retry preserves those counts; reversal retains the original and returns balances to zero. This is arithmetic proof, not a tax example.
