@@ -1,10 +1,10 @@
 # Complete delivery design for the seven accounting areas
 
-Status: **fully specified working plan; implementation and acceptance remain separate**. Prepared 2026-09-22 at the user's request. “Fully specified” means every listed area has a bounded scope, owning records, operations and authority, state/failure behavior, integration points, delivery packets and observable acceptance criteria. It does not mean every company fact, legal rule, provider contract or operational deployment is already known.
+Status: working design for seven accounting areas. The packets define ownership, behavior, dependencies and acceptance. Implementation, company qualification and external acceptance remain separate.
 
-The [application-owned accounting replacement plan](application-owned-accounting.md) is governed by [ADR 0010](../adr/0010-application-owned-accounting-replacement.md), which selects application-owned accounting, the clean three-file baseline, the live caller inventory, no compatibility path and the required transaction/identity/lock/failure contract. The user selected effect-mq on a Bun worker for background jobs in [ADR 0009](../adr/0009-effect-mq-background-jobs.md); the local replacement is [implemented and verified](evidence/application-owned-replacement-complete.md). The broader accounting delivery plan still includes unfinished product/company work. The replacement removes the old SQL ownership and old-schema preservation requirements for this unreleased reset while retaining real company/provider applicability gates.
+Start with [Book Zero](15-book-zero-workflow-cash.md) for the customer outcome and [the comparison reconciliation](16-comparison-reconciliation.md) for the current work order. Use the domain packets below to implement each step.
 
-This plan extends the maintained [roadmap](../roadmap.md), [domain invariants](../domain.md), [operations](../operations.md) and [verification scenarios](../verification.md). The detailed rules below are selected design decisions, not claims that all current code implements them. [ADR 0004](../adr/0004-complete-accounting-delivery-contract.md) records the consequential choices and alternatives.
+[ADR 0010](../adr/0010-application-owned-accounting-replacement.md) owns the application/SQL boundary. [ADR 0009](../adr/0009-effect-mq-background-jobs.md) owns durable work through effect-mq on a separate Bun process. The [replacement evidence](evidence/application-owned-replacement-complete.md) records the local cutover checks. It does not establish company readiness.
 
 ## Coverage
 
@@ -20,21 +20,23 @@ This plan extends the maintained [roadmap](../roadmap.md), [domain invariants](.
 
 Read [shared contracts](00-shared-contracts.md) first, then the relevant domain. [Delivery order](08-delivery.md) connects the packets; [acceptance and traceability](09-acceptance.md) describes the proof required. [External inputs](10-external-inputs.md) gives an owner, gate and concrete deliverable for each fact we cannot invent.
 
-The backlog contains **53 work packages** with 101 mandatory dependency edges, plus separate company/profile release gates. The [generated index](evidence/work-packages.json) includes a valid implementation order. [FND-01 reconciliation](fnd01-reconciliation.md) is complete for its pinned checkpoint. Continue with FND-02/FND-03/FND-04, comparing later concurrent changes against that baseline; do not restart completed work from the historical source description.
+The [generated index](evidence/work-packages.json) contains **53 work packages** and their mandatory dependencies. Company release gates are separate. Read current code and evidence before starting a packet; its original description may predate landed work.
 
 ## Supplemental product capabilities
 
-The [capability backlog and coverage map](capability-backlog.md) maps every item in the supplied SALES/PUR/BANK and related list to its existing owner and adds explicit collections, sales operations, dimensions, expense/payroll handoffs and extension requirements. The [comparison reconciliation](capability-backlog.md#repository-comparison-reconciliation) additionally covers supplier OCR/email intake, party master data, recurring sales, conditional ROT/RUT and deadlines/calendar, and resolves assignment aliases. These supplemental requirements are outside the 53-packet accounting index; they are planned scope, not completed implementation or acceptance.
+These records map requirements to owners. They do not add to the 53-packet completion count or prove implementation.
 
-The [reference parity backlog](11-parity-backlog.md) is a second supplemental layer, added 2026-09-26 from a folder-level comparison against the reference implementation. It records, per reference folder, what is owned, what is supplemental and what was unowned; assigns the unowned findings `PRY-nn` work packets with an owner, a prerequisite and an adoption class; and preserves the internal logic worth keeping as specifications. It deliberately does not extend the 53-packet index, the dependency DAG or the completion denominator, and it activates no rule, rate, provider or legal profile. The classification and placement decision is [ADR 0011](../adr/0011-reference-parity-backlog.md).
+| Record | Purpose and use |
+| --- | --- |
+| [Capability backlog](capability-backlog.md) | SALES/PUR/BANK and related requirements, including intake, party data, recurrence and conditional ROT/RUT. |
+| [Reference parity backlog](11-parity-backlog.md) | PRY proposals, owners and adoption classes under [ADR 0011](../adr/0011-reference-parity-backlog.md). |
+| [Reference parity ledger](14-parity-ledger.md) | Coverage findings and unowned gaps. A coverage label is not runtime proof. |
+| [Reference-derived defects](13-reference-derived-defects.md) | Reported defects in existing behavior. Check current source before fixing them; [ADR 0013](../adr/0013-reference-derived-defects.md) governs placement. |
+| [NEXT dossier](12-next-implementation-dossier.md) | Design input mapped to existing owners under [ADR 0012](../adr/0012-next-implementation-dossier.md). NEXT identifiers are not migration numbers. |
+| [Plan review adoption](14-plan-review-adoption.md) | Unadopted corrections to parity and test plans. Read before using a PRY recipe or the proposed harness. |
+| [Accounted comparison reconciliation](16-comparison-reconciliation.md) | All FWD proposals mapped to current owners, Book Zero order and evidence limits. |
 
-The [reference parity ledger](14-parity-ledger.md) is the coverage record for all of the above: it inventories the reference area by area with a denominator, marks each examined area **parity**, **better**, **gap** or **not applicable**, and lists the shortfalls that have **no owner in any plan**. A ledger row is a finding, not a task; a deliverable is a packet in the parity backlog or a defect in the register.
-
-The [reference-derived defect register](13-reference-derived-defects.md) is the third layer, also added 2026-09-26. It is not new scope: each row is something already shipped that is wrong, internally contradictory or silently unsafe, with the current evidence line recorded so a reader can tell a present fact from a proposal. It is kept separate from the backlog by kind rather than severity, and every fix is a forward migration or forward packet — the reviewed three-file baseline is never edited, so its integrity hash keeps meaning what it says. That placement rule is [ADR 0013](../adr/0013-reference-derived-defects.md).
-
-The [NEXT dossier plan](12-next-implementation-dossier.md) is a third supplemental layer, added 2026-09-26 from two externally supplied implementation-level dossiers covering NEXT-01…50. It indexes all fifty packets with their priority, owner lane, prerequisites, released-slice prerequisites and conditional cases; records the reserved owners and cross-owner contracts; maps each packet to the maintained packet or capability that owns the requirement; and names six requirements the index does not yet own, each with the decision it needs. The packets are implementation design for requirements this plan already owns, kept as checksummed vendored material under [`docs/specs`](../specs/README.md) so that no requirement, edge or completion count inherits their status. They are not added to the 53-packet index, and `NEXT-nn` is a work namespace whose identifiers are never migration numbers. The placement decision is [ADR 0012](../adr/0012-next-implementation-dossier.md).
-
-The [plan review adoption record](14-plan-review-adoption.md) is a fourth supplemental layer, also added 2026-09-26. Two externally produced reviews of plans this repository already maintains — the reference parity backlog and the test suite design/pseudologic — are vendored under [`docs/specs`](../specs/README.md) with their proposed replacements. **No replacement has been adopted**: the parity backlog, ADR 0011 and both test-plan documents are unmodified. The reviews are retained because they find real defects in the current plan text, including recipes that would treat a failed detector as permission to proceed, balance away skipped source history, or let bank movements vanish from independent controls, and a critical testing finding whose harness would reject the intended application-owned database boundary. Read it before dispatching any `PRY-nn` packet or implementing the test harness. The record also names the open maintainer decisions, including the no-unit-test policy that a revised test plan would require.
+Keep external design sources under [their provenance rules](../specs/README.md). Apply forward changes to released databases; do not rewrite the reviewed baseline.
 
 ## Book Zero customer outcome
 
@@ -44,11 +46,9 @@ Existing accounting plans retain imports, posting, commerce, tax/payroll, year-e
 
 ## Current source baseline
 
-The checkout has advanced beyond the early baseline in the research dossier. HEAD at planning capture was `1965622afa65285fa8e9013ccdd98a47ebe86dfb`, with concurrent changes. The [planning manifest](evidence/planning-baseline.json) records source hashes and the existing dirty state.
+Use [NEXT progress](next-packet-progress.md), [landed repairs](evidence/latest-landed-review-repairs.md) and the [comparison baseline](16-comparison-reconciliation.md#source-and-method) for dated implementation observations. The [original planning manifest](evidence/planning-baseline.json) is historical evidence, not today's work queue.
 
-Observed source includes the synthetic posting lifecycle, bank statements/matches, case context, trial-balance snapshots/explanations, recurring preparation and readiness. Concurrent files add recovery discovery, correction bundles, reviewed bank allocations, schedules, technical closing and local backup/restore tooling. Existing E2E files and result artifacts also exist. This planning task did not run those suites or promote their results into a whole-phase acceptance claim. No production-ready flag is inferred from a file's presence.
-
-The implementation packets therefore start with **reconcile and complete the existing slice**, not “build everything from zero.” Existing routes, public contract IDs, receipts, dated evidence and historical source remain useful requirements and records, but the superseded migration chain is not a compatibility target. The clean replacement installs only the three reviewed baseline files; future releases use forward migrations.
+Preserve public contracts, immutable receipts and dated evidence. Compare the relevant source changes before reusing an older result. A green core suite does not qualify every feature that imports the same kernel.
 
 ## Product boundary
 

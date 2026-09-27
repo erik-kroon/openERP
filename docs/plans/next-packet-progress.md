@@ -960,64 +960,32 @@ false` for exactly the tables the operation writes, while the application
 
 ## Verification limits
 
-No database, Worker, provider credential or real company data was available to
-this programme. A concurrent agent worked against a real PostgreSQL 17 and
-reports the corrected `0001`-`0011` chain applies; that is recorded above as
-their observation, not as ours. Therefore:
+The integration at `6f3e27f` passed the changed-file full gate and all 23 existing
+PostgreSQL/workerd E2E tests. The suite covers core admission, posting, persistence
+and MCP. It includes replay, revocation and rollback cases. It does not cover every
+NEXT feature journey. See the NEXT-16 entry for the integration checks and report
+paths, and the [landed repair record](evidence/latest-landed-review-repairs.md) for
+owner-specific limits.
 
-- `bun run check`, `bun run lint`, `bun run check-types` and `bun run build` all
-  pass on the merged tree. That is **source- and type-level evidence only**. A
-  typecheck is not a substitute for observing a transaction.
-- **NEXT-16's earlier compiler failure is resolved.** The original attribution to
-  CPU starvation was incorrect: a duplicate `TableAccess` export stalled the
-  Effect compiler plugin. The integration checks now pass; see the NEXT-16 entry
-  for current E2E evidence and its limits.
-- **NEXT-16 added database evidence, but only of constraints.** A disposable
-  local PostgreSQL 17.11 applied the whole chain in filename order and the
-  period-work constraints were exercised directly, with and without triggers
-  enabled, on a real `entities` → `books` → `change_sets` → `approvals` object
-  graph. That observed the CHECK expressions, the batch-member guard, the ordinal
-  bound, the unique batch-per-child index and the runtime grants. It did **not**
-  run one application Effect, so routing, prepare dispatch, the
-  three-transaction advance, replay and concurrency remain unobserved.
-- **NEXT-17 added database evidence, but only of constraints.** A disposable
-  local PostgreSQL 17.11 applied the whole `0001`-`0018` chain in filename order
-  and the three packet vectors were inserted directly into
-  `openerp.commerce_fx_settlements` with the bodies the application builds, with
-  foreign-key triggers disabled so the fixture did not need a whole book. That
-  observed the CHECK expressions, the source table, the corrected ownership read
-  and the runtime grants. It did **not** run one application Effect, so
-  preparation, approval, execution, replay, concurrency and the Worker remain
-  unobserved.
-- **Unobserved by this programme:** grant matrices matching the runtime role; transaction and rollback behaviour; lock
-  ordering under contention; same-key replay, same-key recovery and
-  different-key duplicate conflicts; approval expiry and revocation; the
-  idempotency conflict path; the empty-filtered-page cursor case; anchor
-  validity; stale-dependency branches; and every HTTP and MCP surface end to
-  end. No browser session, no `tools/call` and no Worker invocation was made.
-- NEXT-13's four packet vectors were evaluated in a throwaway `bun` process
-  against the exported pure function. That is **arithmetic evidence only** —
-  not a transaction, not concurrency, not a database — and it is not retained
-  as a test, because `AGENTS.md` forbids adding tests without explicit approval.
-- NEXT-11's unobserved surface is the same in kind: no database, no renderer
-  invocation, no re-parse, no HTTP call and no browser session. In particular
-  the "exact bytes are re-parsed by the existing inbound SIE parser" step has
-  never executed, and no SIE destination or statutory acceptance is
-  established or implied.
-- No Swedish tax, VAT, payroll or statutory compliance claim is made or
-  supported by any of this work.
-- **Gate state at the NEXT-15 merge.** `bun run check-types` and `bun run build`
-  exit 0 and `oxfmt --check` is clean for every merged file. `bun run lint` exits
-  1, and **all five reported errors are in the concurrent agent's files listed
-  above** — three `require-readable-spacing` and one
-  `no-conditional-empty-object-spread` in its modified files, and one
-  `no-type-assertions` in its untracked new file. No lint error is attributable
-  to any merged packet, and none was suppressed, disabled or worked around.
+| Evidence | What it establishes | What remains open |
+| --- | --- | --- |
+| Lint, types and build | Source consistency at the checked revision. | Runtime behavior and accounting correctness. |
+| Existing core E2E suite | The exercised Worker/PostgreSQL operations, migration application and rerun. | Complete period-work, recurring invoice, owner-discharge and credit journeys. |
+| Earlier NEXT-16/17 SQL probes | The constraints and grants those probes exercised. | Owner preparation, approval and execution through the real feature callers. Some probes disabled foreign-key triggers; they are not full journey proof. |
+| NEXT-13 arithmetic probes | Selected pure-function vectors. | Retained reproducible report, transaction and concurrency evidence. |
+| [Bend qualification](../../verification/bend/authority/docs/QUALIFICATION.md) | Recorded synthetic VAT monetary and host observations for the qualified candidate. | Deployment approval, company VAT completeness and external filing acceptance. |
+| NEXT-11 source implementation | Capture, rendering and comparison logic exists. | An observed complete export and independent recipient import for the selected profile. |
 
-Closing these gaps requires a real PostgreSQL instance, the 0001–0005
-migrations applied under maintenance credentials, an operator-scoped book with
-accounts and retained evidence, and — for NEXT-02's activation flow to succeed
-at all — a reviewed `rule_releases` row for one family.
+Earlier statements that no database or Worker checks ran are superseded by the
+integration evidence above. The NEXT-16 compiler stall was resolved by removing a
+duplicate `TableAccess` export. Old lint failures are historical results, not
+current blockers.
+
+For new evidence, pin the code, migration chain, environment and inputs. Use the
+current migration set, not an old numbered subset. Record commands, independent
+expected results, receipts and limits. Company facts and reviewed rule releases
+must come from their owners. New tests require explicit approval. No result here
+establishes whole-company or statutory readiness.
 
 ## Reserved work
 

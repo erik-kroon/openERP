@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-27T11:44:28.034614+00:00",
-  "headObservedAtValidation": "09fdb19837bb1535b1b4c060e68a0b237858b0a5",
+  "checkedAt": "2026-09-27T12:34:46.513705+00:00",
+  "headObservedAtValidation": "d014634ba9ae944d2e08802f9da7e5b9ebd03d58",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,8 +9,8 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 677,
-    "documentsChecked": 40,
+    "localLinksAndAnchorsChecked": 710,
+    "documentsChecked": 41,
     "coverage": {
       "R": [
         "R-01",
@@ -90,7 +90,7 @@
   "files": [
     {
       "path": "docs/README.md",
-      "sha256": "08b3bbc4643ebf1eaa57984b4854e063617aad5950ae675bb8253596b1a995c3"
+      "sha256": "4f09079e26f75f43926a66c80510e60d7c938a41b5eb829d3e3b14bbe3cc7b01"
     },
     {
       "path": "docs/adr/0002-exact-posting-and-approval.md",
@@ -154,7 +154,7 @@
     },
     {
       "path": "docs/plans/07-restore-operations-cutover.md",
-      "sha256": "cf4a10139c244234dc77a06eba5fc1769d6df27cd4cda49dce06278972ebbae1"
+      "sha256": "9a57f5bed2547cf645bad9f864e8617b86f39eb8e4ba5764edaa6dfd5d2efa33"
     },
     {
       "path": "docs/plans/08-delivery.md",
@@ -190,11 +190,15 @@
     },
     {
       "path": "docs/plans/15-book-zero-workflow-cash.md",
-      "sha256": "fe4c68539989a0dbcb9b447a71382c3c700636ac9713300c00ccfa9d835d9ff0"
+      "sha256": "d31eb72c1d12c1ee528eeddd220521f57f83ad165377e1e9985a333633fd1843"
+    },
+    {
+      "path": "docs/plans/16-comparison-reconciliation.md",
+      "sha256": "e4da069446ea4504f6949d3cb1b02b5c4596fc5be8690e649830e9df0f5a05fb"
     },
     {
       "path": "docs/plans/README.md",
-      "sha256": "a258cb258a61e21f85115fb855d467ea35fc17ac04d5ea43ae1b96a37d956e55"
+      "sha256": "0c62993825771ab0529053378b4c38cdc5e2c048a5710b82627b99671230907d"
     },
     {
       "path": "docs/plans/accounting-completion-wave.md",
@@ -230,7 +234,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "f4bf6ea3d417a621dca441ea02dafe88f7e373617faa4a946a414cf217463c60"
+      "sha256": "1c37769882aba1aed51c3e148459db222a421a032e4e483ea871ade39246c8aa"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -238,7 +242,7 @@
     },
     {
       "path": "docs/plans/next-packet-progress.md",
-      "sha256": "38eac4a0b20ec0a921495a361fdd2496f3bf0f42a2684ab9a18e56a617983155"
+      "sha256": "dba33dd27411de5e981d0598b3b91f6a82ab4ab51ecc73b71a377b10fa39574a"
     },
     {
       "path": "docs/plans/seb-statement-preview.md",

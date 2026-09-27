@@ -2,6 +2,8 @@
 
 Status: working product requirements integrated on 2026-09-27 from the supplied [Book Zero PRD v1](../specs/book-zero-v1/PRD_openERP_Book_Zero_Workflow_Drastic_Cash_v1.md). This is a documentation update, not implementation or acceptance. The user identified this file as the openERP input; the archive's broader Drastic Financial Platform end-state is context and is not adopted as openERP scope here.
 
+The [Accounted comparison reconciliation](16-comparison-reconciliation.md) maps the later FWD proposals to these outcomes and existing work owners. It records current gaps and superseded findings without adding another packet index.
+
 ## Outcome and scope
 
 Deliver three connected outcomes: an independently reviewed Drastic accounting period (**Book Zero**), ordinary work that the owner can finish through the product, and a read-only, explainable payment forecast (**Drastic Cash**). Extend the period to the first financial year, then prove a new period and a separately approved transition from the old system. Work qualifies when it is needed for the actual company, a priority customer journey or a correct Cash explanation.

@@ -81,7 +81,9 @@ OPS-06's END-07 gate applies when connected statutory fulfillment is required fo
 
 ## Current local recovery implementation boundary
 
-The [v2 recovery package](../operations/recovery-package-handoff.md) adds snapshot schema/role/migration inventory, inline evidence and declared supplementary/configuration closure, source-release capture, retained diagnostics and fenced reconstruction controls. It is implemented but not runtime-verified. Current normal application admission uses row locks and Better Auth mutable state; [restricted application recovery](../operations/application-recovery.md) remains a root-owned security decision. OPS-01/02/04 acceptance remains open; this package does not activate remote archive, production retention or cutover.
+The [v2 recovery package](../operations/recovery-package-handoff.md) captures schema, roles, migrations, evidence, source release and declared configuration. The [local recovery record](../operations/local-recovery.md) reports a passing application-owned replacement rehearsal, including receipts, originals and effect-mq state. This supersedes the earlier blanket “not runtime-verified” status.
+
+[Restricted application recovery](../operations/application-recovery.md), key custody and hosted recovery remain open. Normal admission takes row locks and Better Auth uses mutable state; a SQL restore does not prove restricted application access. OPS-01/02/04 acceptance, remote archive, production retention and cutover still need their specific evidence.
 
 The [durable work extension](../operations/durable-work-recovery.md) now captures and
 compares bounded outbox counters, preparation run/job checkpoints and saved request outcome
