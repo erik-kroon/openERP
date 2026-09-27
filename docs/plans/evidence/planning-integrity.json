@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-27T19:47:46.990233+00:00",
-  "headObservedAtValidation": "0965a661c30505f343162fcf2ba9b91a0c3d8ce4",
+  "checkedAt": "2026-09-27T20:03:28.927211+00:00",
+  "headObservedAtValidation": "a99c4dda4902adda16ff1d85fa78af030a8397c5",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,7 +9,7 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 716,
+    "localLinksAndAnchorsChecked": 717,
     "documentsChecked": 41,
     "coverage": {
       "R": [
@@ -194,7 +194,7 @@
     },
     {
       "path": "docs/plans/16-comparison-reconciliation.md",
-      "sha256": "c372098682eb375406a47a657e39aa14b9fba9387da12168b32889d41ee86261"
+      "sha256": "e3d3f6e8076f74195f6b141e177f251653d162b0334f6a743109d45e14b75710"
     },
     {
       "path": "docs/plans/README.md",
@@ -234,7 +234,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "c68e607e7f8a6ce1ca1010dbc74342df97283461797993fbba6e3bfb2e841bf3"
+      "sha256": "b0931be7a8c314c7c20f1b281895e53b3156792b7727597e37fb7efee30a23ee"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
