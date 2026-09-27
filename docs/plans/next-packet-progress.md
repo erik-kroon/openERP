@@ -30,7 +30,7 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-04 | Actual domestic VAT return and controls | P0 | integrated in `082c418`, with subsequent capture/rounding/control repairs | fresh migration and core Worker suite; qualified VAT journey unobserved |
 | NEXT-22 | Pre-close tax bridge and INK2/SRU | P1 | source integrated from `next/NEXT-22`; reviewed corporate-tax release still required | fresh migration and core Worker suite; tax bridge/approval/declaration journey unobserved |
 | NEXT-29 | Recurring commercial invoice occurrences | P1 | integrated through `0eaad64`, with schema/materialization/interval repairs | core Worker suite; successive recurring issue journey unobserved |
-| NEXT-16 | Evidence-aware period preparation | P0 | implemented in `next/NEXT-16b`; local integration pending | changed-file lint/types and 23 existing core E2E tests pass; period-work journey proof remains open |
+| NEXT-16 | Evidence-aware period preparation | P0 | implemented; see integration evidence below | changed-file lint/types and 23 existing core E2E tests pass; period-work journey proof remains open |
 | NEXT-17 | Payable FX and explicit fees | P1 | source integrated from `next/NEXT-17`; bounded synthetic fee-settlement profile | worker-reported constraint probes; financial application journey unobserved |
 
 The rows above do not classify every other packet as untouched. Resolve its
@@ -464,8 +464,10 @@ holds `SELECT, INSERT` on all five tables and a column-limited `UPDATE` on the
   child checkpoint. These are historical constraint observations, not a complete
   period-work journey. The current batch-member index is unique within a batch.
 
-Integration verification on 2026-09-27: changed-file lint and TypeScript checks
-passed. The existing real PostgreSQL/workerd suite passed all 23 tests; reports
+Integration verification on 2026-09-27: frozen installation, changed-file
+type-aware lint and TypeScript checks, workspace types/build, lint and formatting
+passed. After incorporating main's `494e8ab`, the changed-file full gate and the
+existing real PostgreSQL/workerd suite passed again (23 tests); reports
 are at `test-results/e2e/results.json` and `test-results/e2e/junit.xml` in the
 NEXT-16b worktree. That run applies the migration chain and exercises core posting,
 admission, persistence and MCP. It does not exercise the period-work financial
