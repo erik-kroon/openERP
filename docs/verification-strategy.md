@@ -79,6 +79,13 @@ Cover Swedish/English money/date presentation, keyboard/focus recovery, narrow l
 
 Each successful or failed run retains a readable result, source/environment manifest, machine-readable assertions, sanitized requests/receipts/ledger observations, setup/runtime/cleanup logs and relevant browser/export artifacts. Preserve a run before another overwrites it. Link approval → receipt → voucher → evidence.
 
+The current runner preserves previous local runs under `test-results/e2e-history`.
+Its manifest hashes tracked and untracked files in declared source roots, including
+new tests. Teardown compares that inventory with startup and fails on a difference.
+Require a successful command, nonempty passing results and stable source integrity
+together. See [the suite evidence contract](../apps/api/tests/README.md#run-evidence)
+for exclusions; a hash is an identity check, not deployment or company acceptance.
+
 Record revision plus dirty-input, lockfile, migration, contract, rule and validator hashes; runtime/database/browser versions; locale/timezone/time anchor/seed; selected, collected and executed cases; expected/observed values; failures, omissions and retries; exact replay commands and working directories. Capture evidence before teardown and report cleanup failure separately. Exclude credentials, session files and company data; traces may contain headers and forms.
 
 | Gate                     | Required evidence                                                                                           |

@@ -43,7 +43,7 @@ The archive remains outside the workspace. Its patch, fixtures and tools are not
 | FWD-13 — Coherent work UI | **Partial.** The work route already uses `AttentionList`, `SavedWorkViews` and `PostingRecoveryPanel`. NEXT-16 now supplies bounded batch APIs. | FE-01–FE-04/FE-06 with PST-02/PST-03/PST-05; WF-01–WF-08; L2/G2 | Complete the priority source-to-review-to-receipt journey in the existing UI. Prove book context, return navigation, partial results, recovery and accessibility. |
 | FWD-14 — Payroll/AGI | **Conditional, partial.** Foundation and frozen payroll calculation exist. The calculation owner explicitly does not post, pay or declare. | PAY packets; BZ-10 and applicable Cash contributions | Establish applicability first. Qualify each required execution/declaration step or an explicit external-payroll handoff. A calculation is not a payroll release. |
 | FWD-15 — Restore and archive | **Partial.** Recovery tooling and a local replacement rehearsal exist. Restricted application recovery, custody and production promotion remain open. | OPS-01/OPS-02/OPS-04–OPS-07; BZ-13/BZ-14, NFR-06; L6/G6 | Rehearse the selected deployment's DB, object, key and pending-delivery recovery in quarantine. Preserve one authorized writer and dispatch owner. |
-| FWD-16 — Journey proof | **Partial; evidence model exists.** Book Zero already specifies gate records. Bend now has retained synthetic host-qualification evidence as well as offline checks. | FND-04 and existing verification records; all G gates | Extend the existing evidence record for each journey. Do not create a second proof ledger. Preserve the distinction between synthetic host qualification, deployment approval and company acceptance. |
+| FWD-16 — Journey proof | **Proof infrastructure implemented and exercised.** The existing runner binds tracked/untracked inputs, checks source stability and preserves prior runs. Journey records and release limits remain in this plan and the verification strategy. | FND-04 and existing verification records; all G gates | Add each later journey's actual evidence. Infrastructure completion does not close unexecuted company or external gates. |
 | FWD-17 — Caller authority | **Catalog policy implemented and E2E-verified.** Every write is classified; unclassified writes and human-only operations are withheld. Current owner admission still governs every caller. | FND-02/PST-04; AI-04, NFR-02 | Keep the live inventory and owner checks current. Family-specific financial and job-race proof stays with its owning packet. See [MCP authority](../../apps/api/docs/MCP.md#exposure-policy-and-callers). |
 | FWD-18 — Capture size | **Conditional qualification.** Register capture has explicit record/byte bounds; VAT capture also refuses excess populations. NEXT-16 execution has a cursor, which does not solve report completeness. | FND-04 and each capture owner; BZ-03/BZ-11, NFR-04 | Measure the selected source population. Change only a bound that blocks the selected profile. Pin membership, cutoff, count and final digest across pages. |
 
@@ -130,3 +130,29 @@ The MCP catalog now requires explicit write classification. Reads retain their d
 The new E2E case passed through the real MCP endpoint. It observed catalog exclusions with both agent and operator tokens, rejected forged owner arguments and another book, committed and replayed an approved journal, rejected changed input, and refused a revoked agent before dispatch. An authorized operator recovered the existing receipt. The full PostgreSQL/workerd suite passed all 25 tests; fast and full changed-file checks also passed.
 
 `test-results/e2e/mcp-authority-journey.json` retains every current capability's classification and exposure, the live catalog and financial receipts. The [MCP caller map](../../apps/api/docs/MCP.md#exposure-policy-and-callers) records web/REST, MCP, Bun and operator-script boundaries. This is not a claim that every owner-specific financial journey or background race has been exercised.
+
+### FWD-16 — Failure contract before implementation
+
+The existing E2E manifest records HEAD, a tracked diff hash, lockfile and migrations. `git diff HEAD` omits new untracked source and test files. A passing result can therefore lack the identity of code it actually ran. The next run also deletes the prior artifact directory.
+
+Extend the existing manifest and runner, not a second proof system. Capture tracked and untracked inputs in declared source roots before startup. Record deleted tracked inputs, reject symlinks, and fail if the source inventory changes before teardown. Preserve the previous local run before starting another. The E2E check must verify hashes for the actual test, API and contract files while calling the real Worker. A missing, changed or unrecorded input cannot count as fixed-revision proof. Company and external gates remain open.
+
+### FWD-16 — Delivered evidence contract
+
+The existing runner now captures declared repository inputs before startup, including new untracked files. Its manifest stores per-file hashes and a combined inventory hash. Teardown compares a second inventory and fails if it differs. Previous local runs move into `test-results/e2e-history` instead of being deleted. The [suite evidence contract](../../apps/api/tests/README.md#run-evidence) defines what to inspect and what the inventory excludes.
+
+The new real-Worker E2E case first failed because the old manifest lacked source identity. After implementation it passed, including this test file while it was still untracked. The full suite passed all 26 tests. The observed startup and teardown inventory hashes agreed. Prior-run directories were retained. Symlink refusal and deleted-file representation are source-inspected behavior; this run did not inject those failures or change code during execution.
+
+Use the existing Book Zero gates as the release record:
+
+| Gate | Current result | Evidence or missing prerequisite |
+| --- | --- | --- |
+| G0 — Company scope | Blocked | FWD-02 needs originals, first period and reviewer; D-04/D-06/D-08 remain open. |
+| G1 — Reviewed first period | Open | Synthetic reference and core posting journeys pass. The full company period, credits/VAT coverage and independent controls are not yet observed. |
+| G2 — Daily work | Partial technical evidence | FWD-06 and FWD-17 retain HTTP/MCP receipts. Browser workflow, accessibility and complete period-work recovery remain open. |
+| G3 — Cash | Open | No Cash forecast qualification is claimed by these packets. |
+| G4/G5 — Year handoff and new period | Open | Require the actual period/year basis and independent reviewer acceptance. |
+| G6 — Cutover | Open | Local recovery evidence does not establish deployed object/key recovery or authorize writer/provider promotion. |
+| G7 — External pilot | Open | Requires the verified profile, permitted data and operating acceptance. |
+
+Bend's retained synthetic qualification remains a separate evidence lane. Neither these E2E results nor documentation checks activate a legal rule, deploy a candidate, file a return or qualify a real company.
