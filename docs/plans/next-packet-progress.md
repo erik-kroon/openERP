@@ -13,38 +13,40 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 
 ## Status
 
-| Packet | Title | Priority | Source | Runtime proof |
-|---|---|---|---|---|
-| NEXT-01 | Owner-aware case review | P0 | implemented | none |
-| NEXT-02 | Capability-specific company admission | P0 | implemented | none |
-| NEXT-11 | Separate complete-book SIE4E export | P0 | implemented | none |
-| NEXT-13 | Semantic P&L and balance-sheet snapshots | P0 | implemented | none |
-| NEXT-20 | Frozen regular-payroll calculation | P2 | implemented | none |
-| NEXT-49 | Rule-change impact and evidence-backed obligation fulfillment | P0 | implemented | none |
-| NEXT-03 | Domestic purchasing with owned tax recognition | P0 | implemented | none |
-| NEXT-26 | Supplier extraction jobs and field-level reviewed merge | P0 | implemented | none |
-| NEXT-15 | Legal customer credit notes | P1 | implemented | none |
-| NEXT-06 | Owner-paid expenses, reimbursement and funding | P0 | implemented | none |
-| NEXT-14 | Original dimension assignments | P2 | implemented | none |
-| NEXT-04, NEXT-05 … NEXT-25 (15 packets) | — | — | not started | none |
+| Packet                                  | Title                                                         | Priority | Source      | Runtime proof |
+| --------------------------------------- | ------------------------------------------------------------- | -------- | ----------- | ------------- |
+| NEXT-01                                 | Owner-aware case review                                       | P0       | implemented | none          |
+| NEXT-02                                 | Capability-specific company admission                         | P0       | implemented | none          |
+| NEXT-11                                 | Separate complete-book SIE4E export                           | P0       | implemented | none          |
+| NEXT-13                                 | Semantic P&L and balance-sheet snapshots                      | P0       | implemented | none          |
+| NEXT-20                                 | Frozen regular-payroll calculation                            | P2       | implemented | none          |
+| NEXT-49                                 | Rule-change impact and evidence-backed obligation fulfillment | P0       | implemented | none          |
+| NEXT-03                                 | Domestic purchasing with owned tax recognition                | P0       | implemented | none          |
+| NEXT-26                                 | Supplier extraction jobs and field-level reviewed merge       | P0       | implemented | none          |
+| NEXT-15                                 | Legal customer credit notes                                   | P1       | implemented | none          |
+| NEXT-06                                 | Owner-paid expenses, reimbursement and funding                | P0       | implemented | none          |
+| NEXT-14                                 | Original dimension assignments                                | P2       | implemented | none          |
+| NEXT-16                                 | Evidence-aware period preparation                             | P0       | implemented | partial       |
+| NEXT-04, NEXT-05 … NEXT-25 (13 packets) | —                                                             | —        | not started | none          |
 
 NEXT-01 is complete. NEXT-02, NEXT-03, NEXT-06, NEXT-11, NEXT-13, NEXT-14,
-NEXT-15, NEXT-20, NEXT-26 and NEXT-49 are merged. The remaining 15 first-wave
-packets are untouched.
+NEXT-15, NEXT-16, NEXT-20, NEXT-26 and NEXT-49 are merged. The remaining 13
+first-wave packets are untouched.
 
-Newly unblocked by these merges: NEXT-16 (NEXT-01, NEXT-03, NEXT-06 all merged)
-and NEXT-43, NEXT-44 (NEXT-14 plus NEXT-13). NEXT-30 and NEXT-46 have their
-NEXT-15 prerequisite satisfied. NEXT-05 and NEXT-04 remain blocked only on each
-other, and NEXT-04 is the largest remaining unlock: it opens NEXT-05, NEXT-23,
-NEXT-37 and NEXT-38.
+Newly unblocked by these merges: NEXT-43 and NEXT-44 (NEXT-14 plus NEXT-13).
+NEXT-30 and NEXT-46 have their NEXT-15 prerequisite satisfied. NEXT-05 and
+NEXT-04 remain blocked only on each other, and NEXT-04 is the largest remaining
+unlock: it opens NEXT-05, NEXT-23, NEXT-37 and NEXT-38. NEXT-16, which this file
+now records as merged, named NEXT-01, NEXT-03 and NEXT-06 and no longer waits on
+any of them.
 
 Dependency edges now satisfied by merged source: NEXT-04, NEXT-06, NEXT-07,
-NEXT-16, NEXT-31, NEXT-33, NEXT-38 and NEXT-46 name NEXT-03; NEXT-22 and NEXT-45
-name NEXT-13; NEXT-43 and NEXT-44 name NEXT-13; NEXT-37 and NEXT-38 gain from
-NEXT-04 once it lands. NEXT-05 needs NEXT-03 and NEXT-04. NEXT-30 and NEXT-46
-still need NEXT-15. Six packets remain decision-gated and unimplemented by
-choice: NEXT-32, NEXT-40, NEXT-41, NEXT-42, NEXT-45 and NEXT-36. NEXT-25 is
-deferred to the end of the programme.
+NEXT-31, NEXT-33, NEXT-38 and NEXT-46 name NEXT-03; NEXT-22 and NEXT-45 name
+NEXT-13; NEXT-43 and NEXT-44 name NEXT-13; NEXT-37 and NEXT-38 gain from NEXT-04
+once it lands. NEXT-05 needs NEXT-03 and NEXT-04. NEXT-30 and NEXT-46 still need
+NEXT-15. Six packets remain decision-gated and unimplemented by choice: NEXT-32,
+NEXT-40, NEXT-41, NEXT-42, NEXT-45 and NEXT-36. NEXT-25 is deferred to the end of
+the programme.
 
 ## What was implemented
 
@@ -53,7 +55,7 @@ deferred to the end of the programme.
 A distinct application-owned export, not a second movement-transfer path. One
 book-scoped transaction captures the complete book and retains the account,
 balance and journal-line membership. Exact bytes are then rendered and
-re-parsed by the *existing* inbound SIE parser outside every transaction, and
+re-parsed by the _existing_ inbound SIE parser outside every transaction, and
 a short second transaction binds the verified object manifest to the exact
 model and renderer. The retained `openerp-sie4i-v1` transaction transfer is
 preserved byte-for-byte.
@@ -61,8 +63,8 @@ preserved byte-for-byte.
 **It refuses rather than approximates.** A book that declares any dimension
 effective as-of the capture refuses with `UnsupportedProfile` naming the
 dimension and the missing assignment owner; a dimension-free book emits
-`#TRANS … {}` and carries an explicit limitation that emptiness means *nothing
-is assigned*, not that an assignment was reviewed. No 4E record matrix was
+`#TRANS … {}` and carries an explicit limitation that emptiness means _nothing
+is assigned_, not that an assignment was reviewed. No 4E record matrix was
 invented: the locally retained source is the SIE 4C edition 2025-08-06, whose
 review distinguishes 4E but does not qualify it, so that same edition checksum
 is pinned on the capture and only the record families that can be stated are
@@ -362,6 +364,112 @@ Unresolved, reported by the worker:
   partitioned by source year**, so NEXT-44's multi-year SIE partition has no
   read to build on yet.
 
+### NEXT-16 — Evidence-aware period preparation
+
+A frozen selection, deterministic routing to the operations that already own each
+economic effect, a resumable advance with real checkpoint fencing, and a fixed
+approval manifest for one human gesture. This owner posts nothing itself.
+
+**The release resolves to four real owners, and no fifth.** `routeWork` dispatches
+only to `purchases.recognition`, `purchases.credits`, `owner.operations` and
+`commerce.invoice`, each a real named operation whose prepare and execute are
+called. `ownerForTarget` returns nothing for `ReviewCase` and
+`OwnedCorrectionReview`, because naming an owner for them would claim this run can
+post a review or a correction, which it cannot. The `owner.settlement` route is
+**not** dispatched: no operation in this repository posts a company-bank payment
+against a recognized supplier obligation, so `purchases.settlement` and
+`banking.settlement` were removed from the domain's settlement-owner vocabulary
+and the child becomes a review case naming `company_bank_settlement_owner_not_released`.
+The database refuses `purchases.settlement` as a routed owner too. Building that
+owner is future work, not a second register invented here.
+
+**A period child carries no financial inputs, so a reviewed command is sealed with
+the selection.** `WorkChild.prepareInput` is the exact owner command, reviewed
+when the operator sealed the manifest. This is the only way the run can call a
+real owner without inventing an account, a date, a rate or an amount. A child
+without one is recorded as needing review with
+`missing_prepare_input_for_owner:<owner>` and nothing is dispatched. An AI may
+propose those inputs; it may not supply them.
+
+**The advance runs the owning prepare operation between transactions.** Each child
+is claimed in one short transaction, the owner's public prepare is called with
+**no transaction held by this owner**, and the plan reference is checkpointed in a
+second short transaction. Nesting a prepare inside a held transaction would open a
+second financial transaction, which the repository forbids. The command key is
+derived from the run, the child and the frozen source revision, so a crash between
+prepare and checkpoint is repaired by recovering the same command rather than
+minting a second plan. A changed source revision is a different command and
+therefore a new preparation, not a silent reuse of an approved plan.
+
+**The fences are columns, compared in the UPDATE's `WHERE` clause.**
+`advanceChild` takes the observed `revision` and `cancelVersion` separately from
+the new values and returns the updated rows; a handler that captured stale
+progress updates zero rows. A terminal child never moves again, so a redelivered
+message cannot reopen a committed one. A cancellation that lands while the owner
+is preparing keeps the prepared plan as retained evidence and stops the stale
+handler publishing it.
+
+**No agent approves anything.** `approvePeriodWorkBatch` is operator-only, so an
+ordinary agent or API credential cannot reach it, and every approval comes from
+the released `approveChangeInTransaction` inside the approving transaction —
+never a fabricated identifier. It deliberately does **not** mint each owner's own
+approval: those owners expose approval only as public operations that open their
+own transaction, and calling one from inside the batch transaction would nest a
+second financial transaction. Each member's own approval therefore stays with its
+owner and is what that owner's execute consumes; `executePeriodWorkBatch` requires
+both and marks a stale member as needing a new review while leaving the other
+independent members runnable.
+
+**The batch cannot claim a different owner than the child recorded.** A member's
+owner, plan, plan digest and owning review must equal the values the child stored
+when it was advanced. A private guard refuses the insert otherwise, and one child
+cannot be a member of two batches, so one gesture cannot cover a duplicate
+economic effect. A child still waiting on a predecessor is refused at batch time
+rather than smuggled in.
+
+**Progress is honest and is not a reconciliation claim.** `countChildStates` keeps
+pending, waiting, needs-review, prepared, recovered, committed and refused
+distinct, and `reconciled` is always `false`. A run whose children were all
+visited is still not a reconciled period, and only the separate source and control
+inventory can say otherwise.
+
+Deliberate omissions, reported by the worker and recorded here:
+
+- **No HTTP route or MCP capability.** The advance is reached through the
+  effect-mq runner and the batch operations are called from application code. A
+  transport surface is not this packet's deliverable and no released owner here
+  advertises one.
+- **No rule-activation owner.** The rules in force at the cutoff are sealed into
+  the manifest with the selection, and each rule names the review that qualified
+  it. A later rule change produces a new manifest rather than re-deciding a frozen
+  child. A separate rule-activation authority is not invented.
+- **No source capture.** The children and the rules are handed in from one
+  consistent capture, because a selection and a capture must not be two different
+  snapshots.
+- **`commerce.invoice` and `purchases.credits` are dispatchable but have no
+  period-shaped prepare input yet**, so in practice they route to review until a
+  manifest seals a command for them.
+
+Runtime evidence, on a real PostgreSQL 17.11 with the whole `0001`-`0018` chain
+applied in filename order: a cutoff before the interval it covers is refused; a
+routed owner without its owning review is refused, in every partial combination;
+a `needs_review` child without named missing facts, a `refused` child without a
+reason and a `committed` child without a receipt are each refused; a routed owner
+of `purchases.settlement` is refused. The 200th batch member is accepted, which the
+previous `ordinal < 200` bound wrongly refused. A member that agrees with its
+child is accepted, while a member naming a different owner and a member naming a
+tampered plan digest are both refused with `Forbidden` — the allowlisted `P0001`
+code `db/transaction.ts` already translates into a typed failure. The runtime role
+holds `SELECT, INSERT` on all five tables and a column-limited `UPDATE` on the
+child checkpoint. **No application Effect was run**, so routing, prepare
+dispatch, the three-transaction advance, replay, concurrency and every
+stale-dependency branch remain unobserved.
+
+A pre-existing merge defect was repaired on this branch:
+`packages/domain/package.json` listed `./period-work` without a trailing comma
+before main's `./recurrence` entry, which made the manifest invalid JSON and
+broke resolution of the whole domain package.
+
 ### NEXT-06 — Owner-paid expenses, reimbursement and funding
 
 Owner-paid expense, reimbursement and funding effects in one transaction group,
@@ -535,10 +643,10 @@ enough to make the packet non-functional:
 
 - **`0010-next-49.sql` did not parse.** `NOT` applied to a parenthesized `jsonb`
   extraction is not a comparison, and an operator expression in an index column
-  list must be parenthesized. Two parse errors stopped the whole chain *before*
+  list must be parenthesized. Two parse errors stopped the whole chain _before_
   `0010`, so no database had ever applied it.
 - **Every write refused.** The database access helpers answered `canInsert
-  false` for exactly the tables the operation writes, while the application
+false` for exactly the tables the operation writes, while the application
   guard treats that `false` as a refusal — so the required write tables were the
   only ones denied. The migrations did grant `INSERT`; the privilege predicate
   simply never asked for it. **This is precisely the "documented function that
@@ -585,7 +693,7 @@ enough to make the packet non-functional:
   names. Each typechecked in isolation because each branch predated the other.
   Both are now fixed, and both were caught only by typecheck, never by review.
 - **A gap in how these merges were reviewed, stated plainly.** Each migration was
-  checked for the *absence* of functions and for the *presence* of a `GRANT`
+  checked for the _absence_ of functions and for the _presence_ of a `GRANT`
   statement. None was ever parsed by a database, and no read path was traced for
   a privilege predicate that could return a denial. Those two checks missed
   exactly the defects above. Migration files in this programme should be parsed
@@ -601,6 +709,29 @@ their observation, not as ours. Therefore:
 - `bun run check`, `bun run lint`, `bun run check-types` and `bun run build` all
   pass on the merged tree. That is **source- and type-level evidence only**. A
   typecheck is not a substitute for observing a transaction.
+- **NEXT-16's TypeScript check did not complete on the machine that wrote it.**
+  `oxfmt` and `oxlint` (including the anti-slop rules) are clean on every file it
+  changed, and every changed file parses. The `tsc --noEmit` stage for
+  `apps/api` and `apps/api/scripts` did not finish there, and the cause is
+  measured rather than guessed: the box has **8 logical cores at load average
+  18-20**, and four orphaned `tsc` processes belonging to another checkout at
+  `/Users/admin/openERP` were consuming about 30-40% CPU each. The runner
+  typechecks its projects concurrently, so each received a fraction of a core.
+  A static import-graph walk of all 9095 TypeScript files found **no cycle
+  involving `application/period-work.ts`**; the only application cycles are the
+  pre-existing `posting.ts` ↔ `posting-admission.ts` and `environment.ts` ↔
+  `retained-objects.ts` pairs that already ship on main. So this is CPU
+  starvation, not an import cycle and not a defect in this packet. **A TypeScript
+  check on an unloaded machine is still owed for this branch**, and it is the
+  first gate the integrator should run.
+- **NEXT-16 added database evidence, but only of constraints.** A disposable
+  local PostgreSQL 17.11 applied the whole chain in filename order and the
+  period-work constraints were exercised directly, with and without triggers
+  enabled, on a real `entities` → `books` → `change_sets` → `approvals` object
+  graph. That observed the CHECK expressions, the batch-member guard, the ordinal
+  bound, the unique batch-per-child index and the runtime grants. It did **not**
+  run one application Effect, so routing, prepare dispatch, the
+  three-transaction advance, replay and concurrency remain unobserved.
 - **Unobserved by this programme:** grant matrices matching the runtime role; transaction and rollback behaviour; lock
   ordering under contention; same-key replay, same-key recovery and
   different-key duplicate conflicts; approval expiry and revocation; the
