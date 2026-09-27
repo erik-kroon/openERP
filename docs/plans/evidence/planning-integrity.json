@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-27T19:13:54.982035+00:00",
-  "headObservedAtValidation": "f99c78d44f7a5d5095f9d7ebc976b4f1e0fe4347",
+  "checkedAt": "2026-09-27T20:44:42.645015+00:00",
+  "headObservedAtValidation": "d7d5ec568ba4312e4305e81e841ed5f5bdae904c",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,7 +9,7 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 716,
+    "localLinksAndAnchorsChecked": 718,
     "documentsChecked": 41,
     "coverage": {
       "R": [
@@ -194,7 +194,7 @@
     },
     {
       "path": "docs/plans/16-comparison-reconciliation.md",
-      "sha256": "2ae50278aad0313bd454c4b0eccb3065b7a38b4c1c428e226572b70385e7cc78"
+      "sha256": "74a28d9c51f0bb718cc9d7c059d7c05b02d7db206d4296c1d45159bae5b55ade"
     },
     {
       "path": "docs/plans/README.md",
@@ -234,7 +234,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "bbef44ee835ce08087f468191ace1dc7ef65af6fdc14030b6658c847b0d10c46"
+      "sha256": "bb2a7dbecc2ab798c849ceb13530806c6487c6719606e1a96128cf9bd9bbc532"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -242,7 +242,7 @@
     },
     {
       "path": "docs/plans/next-packet-progress.md",
-      "sha256": "dba33dd27411de5e981d0598b3b91f6a82ab4ab51ecc73b71a377b10fa39574a"
+      "sha256": "f7c2dfc060b7122629cda74b2f99238792e94655127b98a7715dfde0d5b5283a"
     },
     {
       "path": "docs/plans/seb-statement-preview.md",

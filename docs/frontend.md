@@ -44,6 +44,14 @@ Prioritize the unfinished screens and ordinary daily workflows below. Finish a c
 
 For each journey, select its concrete list, detail, editor and result states before changing code. Review page hierarchy, density, alignment, action placement and progressive disclosure against the accepted design. Preserve the existing fonts, colors, styling system and accounting authority. Match supported interactions without presenting unavailable domain operations as working.
 
+### Queue, document and VAT integration — 2026-09-27
+
+The [current interface journey evidence](evidence/interface-journey-2026-09-27/README.md) records a fresh application-owned runtime pass. The journal and supplier paths now preserve queue search, status, period, cursor and prepared-selection context. Supplier journal items open the supplier's owning review. Both paths expose their exact posted voucher, return to the same review, and restore the queue. Supplier review selection and posted results survive reload; a sealed supplier draft remains readable while revision writes stay refused. Original-document reads have explicit retry behavior.
+
+Period VAT is now reachable from a period-filtered queue. The screen reads the actual VAT owner's saved calculations and separates calculation support, source coverage, control reconciliation and period verification. It shows credit and owner-purchase population counts, exclusions, exact/reported/residual box amounts, control differences, original evidence and voucher return links. Preparation retains the exact request for recovery. Missing historical producer counts remain unknown. No filing, assessment or payment state is inferred.
+
+Verified locally: journal and supplier review/approval/posting/result/return, supplier result after reload, selected-period VAT inventory and preparation entry, owner-work return context, desktop result layout and narrow queue/result layout. The existing credit/VAT E2E scenario covers the accounting producers and recovery. Actual VAT populated-result visual inspection, production company qualification, 200% zoom, RTL and pseudo-localization remain unverified. These observations close the tested daily path, not the whole frontend acceptance ledger.
+
 ### Invoice and record interaction direction
 
 Use a document-shaped invoice editor: seller and customer blocks, dates, compact editable line items, payment terms and an immediately visible amount summary. Editing and preview share the same entered facts. Optional tax/source detail belongs beside the affected field or behind a clearly labelled disclosure. Do not make the ordinary invoice editor a sequence of unrelated accounting forms. Keep save state and the next available action visible, preserve edits after a failed save, and never claim an autosave until it has persisted.

@@ -37,6 +37,8 @@ The 4I mandatory identification records are `#FLAGGA`, `#PROGRAM`, `#FORMAT`, `#
 
 ## Existing consumer and next implementation slice
 
+This section records the original 4I design. Current application ownership and the later 4E profile are maintained in [SIE exports](../../apps/api/docs/SIE.md).
+
 `accountant_review_packs` and `accountant_review_rows` already retain a bounded immutable ledger basis. Journal rows retain exact amounts, voucher/line IDs, posting dates, fiscal-year/period IDs, series/numbers and receipt/evidence lineage. `part=movement` identifies the report interval; `opening` and `excluded_after_end` must not be silently mixed into an interval transaction export. The pack basis pins currency and scale. Reuse those rows rather than query live vouchers during each download.
 
 A useful first slice is explicitly labelled **SIE 4I transaction transfer**, not 4E/full bookkeeping export. It needs:
@@ -58,3 +60,9 @@ A useful first slice is explicitly labelled **SIE 4I transaction transfer**, not
 - The official service at [sietest.sie.se](https://sietest.sie.se/) is documented in section 3.1. No file was uploaded in this review. External upload, independent validator evidence and any claim of SIE Group approval require their own gates. Section 3.2 distinguishes member-declared program approval from ordinary implementation.
 
 New E2E/fixture work still requires D-09 approval. D-04 supplies legal/company/year/opening facts; D-08 supplies the supported profile and independent vectors. Do not mark END-06 complete from this research or from a future encoder alone.
+
+## FWD-09 object-profile review
+
+Rechecked against the same pinned edition on 2026-09-27. Section 6, pages 11–12, marks `#DIM`, `#OBJEKT`, `#OIB`, `#OUB` and `#PSALDO` optional for 4E. Sections 8.17 and the `#OBJEKT` definition require separate dimension numbers and object codes: numbers 1–19 carry standard meanings or are reserved; numbers 20 and above are freely usable. Object codes are string fields and may retain leading zeroes.
+
+The selected v2 profile maps native dimension codes to numbers starting at 20, emits original transaction assignments and retains the map beside the bytes. It omits optional object balances and refuses dimension-bearing openings. This review qualifies that bounded representation for implementation; it does not establish recipient acceptance or expand the selected-book export into prior-year coverage.

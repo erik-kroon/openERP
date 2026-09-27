@@ -343,11 +343,11 @@ retained explicitly rather than inserted silently at execution or at historical
 import. An exact reversal repeats the referenced original line's retained bytes
 and needs no policy.
 
-**The SIE4E gap is narrowed, not closed.** NEXT-11 refused every
-dimension-bearing book because no assignment owner existed. That owner now
-exists, but the type-4 renderer release still emits no object records, so a
-non-empty object map is a representation loss and the export refuses on that
-ground rather than emitting an empty object group beside real assignments.
+**The SIE4E gap is narrowed, not closed.** FWD-09 adds a versioned original
+transaction-object profile and native round-trip checks through the existing
+assignment owner. Dimensional openings, conflicting labels and unsupported
+text still refuse. [SIE exports](../../apps/api/docs/SIE.md) records the current
+profile and its proof limits; recipient acceptance remains open.
 
 Unresolved, reported by the worker:
 
@@ -356,7 +356,7 @@ Unresolved, reported by the worker:
   through `resolveAssignmentsInTransaction`, so a posting made through them
   carries no sealed assignment. They are reserved and were not taken over.
 - **The historical import paths carry no dimension policy.**
-- No SIE object-record profile exists.
+- Dimensional opening balances and recipient acceptance remain open.
 - `dimensionAssignmentReport` reports the **original** assignment only; a
   reclassified report mode does not exist, and classification history is still
   unimplemented.
