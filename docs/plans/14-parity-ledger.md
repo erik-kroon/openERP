@@ -2,7 +2,7 @@
 
 Status: **a coverage record, not a completion claim.** Prepared 2026-09-26 from an exhaustive folder-by-folder comparison of the `accounted` reference against this repository. Every reference area was inventoried with a denominator and examined; every extracted capability carries one of four verdicts. This document claims no implementation, test, runtime, company-readiness or external-acceptance status, and it activates no rule, rate, provider or legal profile.
 
-It is the answer to one question: **for every part of the reference, are we at parity, better, or short — and if short, is the shortfall owned?**
+It records where reference requirements have an owner, where the comparison proposes a stronger design, and where a gap remains. Actual parity additionally requires a named implementation and matching observed behavior; plan ownership alone cannot establish it.
 
 Read with the [parity backlog](11-parity-backlog.md), which owns the deliverables, and the [defect register](13-reference-derived-defects.md), which owns what is already shipped but wrong. Placement rules are in [ADR 0011](../adr/0011-reference-parity-backlog.md) and [ADR 0013](../adr/0013-reference-derived-defects.md).
 
@@ -10,20 +10,22 @@ Read with the [parity backlog](11-parity-backlog.md), which owns the deliverable
 
 | Verdict | Meaning |
 | --- | --- |
-| **PARITY** | We implement it, or a plan owns it, equivalently. |
-| **BETTER** | We do it at least as well. Where it matters, the row says why. |
-| **GAP** | Neither implemented nor planned. Every row names the owner, or says **unowned** — and **unowned** is the actionable category. |
+| **COVERED** | A matching requirement has a plan owner or candidate implementation. This says nothing by itself about implemented behavior or runtime equivalence. |
+| **DESIGN ADVANTAGE** | The comparison identified a potentially stronger mechanism. Source integration and observed behavior must be established separately before claiming the product is better. |
+| **GAP** | A requirement or its proof is missing in the dated comparison. Ownership, implementation and verification are independent; a planned but unverified capability can still have a proof gap. |
 | **N/A** | Presentation, plumbing or architecture that does not transfer. Grouped, with size, so the denominator is auditable. |
 
 A **short** is not a criticism of the plan. Most shortfalls are a capability the plans already carry with the *rule content* unnamed, and the whole point of this ledger is to hand that content to whoever implements it.
 
 ## Coverage
 
+The counts below preserve the dated comparison's denominator. They are not a live capability inventory. Explicit repair notes supersede old absence claims; all other rows need current owner/source/evidence reconciliation before they can be used as delivery status.
+
 Denominators are non-test, non-build-output files unless stated. Every row was read, not inferred from filenames.
 
 | Reference area | Files | LOC | Examined | Verdict mix |
 | --- | --- | --- | --- | --- |
-| `src/lib/` (14 originally named folders) | 1,196 | 288,501 | all | 47 PARITY · 69 BETTER · 181 GAP · 42 N/A across the whole reference |
+| `src/lib/` (14 originally named folders) | 1,196 | 288,501 | all | 47 COVERED · 69 DESIGN ADVANTAGE · 181 GAP · 42 N/A across the dated reference comparison |
 | `src/lib/` (26 further directories) | ~290 | ~55,000 | all | see [lib stragglers](#lib-stragglers) |
 | `src/app/` (701 route handlers, 909 methods) | 907 | 155,897 | all inventoried; ~62 logic-bearing read in full | see [route layer](#route-layer) |
 | `src/extensions/` | 273 | 101,012 | all | see [extensions](#extensions) |
@@ -41,10 +43,10 @@ Denominators are non-test, non-build-output files unless stated. Every row was r
 
 ## The four headline results
 
-1. **We are genuinely ahead in the parts that decide whether figures are right.** 69 BETTER verdicts, concentrated in money representation, immutability, idempotency, tenant scoping, lock ordering, refusal discipline and the approve/prepare/execute split. The reference's own 999-migration chain needed layered triggers plus four session escape hatches to approximate our grant-level append-only.
-2. **The largest single shortfall is not a feature, it is proof.** 4 test files and 18 cases against the reference's 2,361 test files. Roughly 47 of the 58 test-pinned shortfalls are things our schema and triggers **already implement and nothing verifies**. This is the cheapest large gap to close and the most embarrassing to leave.
-3. **There is a whole capability area with no owner at all: data protection.** A records-of-processing register, a DPIA screening discipline, a data-subject-request runbook, a data-classification inventory and an authorization decision record. Repo-wide, our maintained docs contain **zero** hits for GDPR, records of processing, lawful basis or data-subject concepts. Plan 07 owns backup and retention; the data-protection subset has no owner.
-4. **We have no clock.** The reference runs 43 scheduled jobs — retention enforcement, evidence re-verification, bank and tax-authority sync, accounting operations, webhook dispatch — and we have no scheduled trigger anywhere in `infra/alchemy` or the runtime. Every capability the backlog assigns to a schedule is currently unrunnable, including the bank and tax-account feeds.
+1. **The comparison proposes stronger designs for selected invariants.** Its 69 design-advantage classifications concern money representation, immutability, idempotency, tenant scoping, lock ordering, refusal discipline and the approve/prepare/execute split. They are not evidence that every caller implements those designs correctly; the [landed-review repair record](evidence/latest-landed-review-repairs.md) records concrete counterexamples and repair limits.
+2. **Proof remains a separate delivery obligation.** The original comparison identified 58 test-pinned shortfalls, many in mechanisms it considered implemented. Those classifications need per-scenario verification. Current existing-suite results are recorded with their exact source/environment manifest under `test-results/e2e`, not inferred from a count of planned tests.
+3. **The dated comparison identified unowned data-protection work.** Its records-of-processing, impact-screening, data-subject-request, classification and authorization-record findings require explicit owner assignment; backup and retention plans alone do not prove those deliverables exist.
+4. **Scheduled execution needs its own proof.** The comparison found no deployed trigger for the backlog's scheduled capabilities. Verify each current scheduler/runner registration and execution artifact rather than treating a planned cadence as a working job.
 
 ## Verdicts by area
 
@@ -56,8 +58,8 @@ The 26 `src/lib` directories not named in the original brief.
 
 | Verdict | Count | Notes |
 | --- | --- | --- |
-| PARITY | 11 | mail, events, rules, export, firm cockpit, articles, customers, suppliers, supplier invoices, expenses, mileage — every rule already sits inside an owned packet, several line for line |
-| BETTER | 4 | mail: sign-loss becomes a typed refusal; authority: segregation of duties is an identity binding, not a scope heuristic; notifications: delivery intent is claimed deterministically before send; firm: portfolio summaries carry no mutation authority |
+| COVERED | 11 | mail, events, rules, export, firm cockpit, articles, customers, suppliers, supplier invoices, expenses, mileage — every rule already sits inside an owned packet, several line for line |
+| DESIGN ADVANTAGE | 4 | mail: sign-loss becomes a typed refusal; authority: segregation of duties is an identity binding, not a scope heuristic; notifications: delivery intent is claimed deterministically before send; firm: portfolio summaries carry no mutation authority |
 | GAP | 1 | The reusable posting-pattern catalogue, plus one cross-module rule cluster: no legal-form-conditioned treatment binding exists |
 | N/A | 19 | ~12,200 LOC of proxy, entitlement gating, hooks, white-label branding, support, browser, analytics, observability, trusted-host, agent panel, sandbox, navigation, dashboard, lists, UI state, theme, rate limits, XML escape |
 
@@ -65,8 +67,8 @@ The 26 `src/lib` directories not named in the original brief.
 
 | Verdict | Count | Notes |
 | --- | --- | --- |
-| PARITY | 9 | Filing lifecycles, declaration submit/recovery, taxpayer identity, delivery truth vs send acknowledgement, mail-parse strictness, VAT completeness single-owner, card mirror, POS intake |
-| BETTER | 6 | Approval unreachable from the agent surface; receipts permanent rather than a 24-hour cache; one completeness gate by construction; exact money makes relabelling impossible; fail closed on scope rather than park; canonical admission rejects duplicate keys and invalid scalars before sealing |
+| COVERED | 9 | Filing lifecycles, declaration submit/recovery, taxpayer identity, delivery truth vs send acknowledgement, mail-parse strictness, VAT completeness single-owner, card mirror, POS intake |
+| DESIGN ADVANTAGE | 6 | Approval unreachable from the agent surface; receipts permanent rather than a 24-hour cache; one completeness gate by construction; exact money makes relabelling impossible; fail closed on scope rather than park; canonical admission rejects duplicate keys and invalid scalars before sealing |
 | GAP | 34 | Concentrated in: the tool-catalog scale problem, the per-tool authority map, filing-specific settlement and period resolvers, intake channel ownership, card-mirror and lookback rules, processor fee mechanics, and the extension manifest |
 | N/A | 6 | Widgets, prompt library, calendar and push extensions, example branding |
 
@@ -78,8 +80,8 @@ The 26 `src/lib` directories not named in the original brief.
 
 | Verdict | Count | Notes |
 | --- | --- | --- |
-| PARITY | 5 | VAT-period completeness, failed sub-aggregate surfacing, foreign-amount partial totals, projection minimisation |
-| BETTER | 24 | The majority. Our authority is locked in the same transaction; refusals are codes not message matching; write authority is a two-actor protocol not a flag; concurrency races are closed by lock construction rather than detected and repaired; a failed commit cannot burn a number; cross-tenant links are structurally impossible; dry-run cannot drift from commit because prepare **is** the preview |
+| COVERED | 5 | VAT-period completeness, failed sub-aggregate surfacing, foreign-amount partial totals, projection minimisation |
+| DESIGN ADVANTAGE | 24 | The comparison favored transaction-scoped authority, typed refusals, separate approval, lock ordering, rollback-safe counters, scoped keys and a single prepare/preview owner. Each affected caller still needs source and runtime proof. |
 | GAP | 27 | 11 already named in a plan; 15 need an owner. The heaviest: the number of per-capability scopes, credential issuance, the SSRF-guarded webhook surface, cash-method booking-basis sequencing and its refusals, and the payment-side duplicate guard |
 | N/A | 3 | Scope echoing, a one-off repair endpoint, storage-proxy mechanics |
 
@@ -91,7 +93,7 @@ Read the reference's constraints, unique indexes and accounting-critical trigger
 
 | Verdict | Count | Notes |
 | --- | --- | --- |
-| BETTER | 13 | The reference needs 999 migrations, layered triggers and four session escape hatches to approximate our grant-level append-only, exact minor-units domain, one-sided line shape, permanent idempotency receipt, content-addressed sealing, encoded lock ordering, immutable book monetary units and single typed refusal channel |
+| DESIGN ADVANTAGE | 13 | The comparison favored grant-level append-only, exact minor units, one-sided lines, durable receipts, content-addressed sealing, lock ordering and immutable monetary units over the reference's layered mechanisms. |
 | GAP | 6 | Locked-period write refusal, month-boundary period shape, voucher-date-in-period, credit aggregate cap, bank-anchor settlement/sign, and the one live defect: a balance guarantee whose second code path has no trigger attached |
 | REJECT | ~130 row-level policies | Our book-scoped composite keys make cross-book reads structurally impossible without them, which is the better mechanism and was a deliberate choice |
 | N/A | 5 | Retention expiry (our absolute immutability dominates a seven-year floor); insert-shape and writer-role triggers (platform-specific bypasses); session escape hatches; retained-annotation path |
@@ -102,8 +104,8 @@ The reference's integration surface, read against ours.
 
 | Verdict | Count | Notes |
 | --- | --- | --- |
-| PARITY | 11 | Exact money; same-key replay under concurrency; late-fault rollback; migration rerun and checksum drift; counters unconsumed on refusal; runtime-role append-only; reversal preserves the original; agent admission; cross-book scoping; credential revocation |
-| BETTER | 9 | A zero-value line is refused structurally and needed a data repair there; bigint versus numeric; digest-bound idempotency; approval expiry is not absorbing; grant-level append-only proven with the real runtime login; wire-level numeric and duplicate-key admission; full row-count receipts |
+| COVERED | 11 | Exact money; same-key replay under concurrency; late-fault rollback; migration rerun and checksum drift; counters unconsumed on refusal; runtime-role append-only; reversal preserves the original; agent admission; cross-book scoping; credential revocation |
+| DESIGN ADVANTAGE | 9 | A zero-value line is refused structurally and needed a data repair there; bigint versus numeric; digest-bound idempotency; approval expiry is not absorbing; grant-level append-only proven with the real runtime login; wire-level numeric and duplicate-key admission; full row-count receipts |
 | GAP | 58 | **~47 are implemented and unverified.** Our schema and triggers already carry the credit cap trigger target, FX residual, VAT totals and drill-down, tax-account settlement shape, closing detach, allocation bands, payroll opening locks, asset depreciation atomicity and report basis. The remaining ~11 are neither implemented nor tested |
 | N/A | 6 | Storage-bucket policies, identity erasure classification, the null-guard pattern they needed, migration reset, company-level rather than book-level twin healing |
 
@@ -113,9 +115,9 @@ The reference's integration surface, read against ours.
 
 | Verdict | Count | Notes |
 | --- | --- | --- |
-| PARITY | 11 | Connector delegation, object-store credential, deployment variables, unset-means-nobody gates, retention rule text, backup-to-restore coupling, key custody, quarantine guards, release evidence |
-| BETTER | 12 | Database and session secret separation; no browser-visible database credential; column-scoped runtime role; setup-time refusal; startup validation; zero-baseline lint; rounding designed out; no third-party telemetry; credential hygiene |
-| GAP | 47 | Headline: no clock; no backup/restore with a privilege-manifest diff; no yearly immutable-backup run; no container hardening; no shipped response headers; no supply-chain gates; no CI database gates; no security-disclosure policy; and the five data-protection artefacts, which have no owner in any plan |
+| COVERED | 11 | Connector delegation, object-store credential, deployment variables, unset-means-nobody gates, retention rule text, backup-to-restore coupling, key custody, quarantine guards, release evidence |
+| DESIGN ADVANTAGE | 12 | Database and session secret separation; no browser-visible database credential; column-scoped runtime role; setup-time refusal; startup validation; zero-baseline lint; explicit rounding policy; no third-party telemetry; credential hygiene |
+| GAP | 47 | Dated gap inventory: scheduling, restore/privilege proof, immutable backups, container hardening, response headers, supply-chain gates, CI database gates, disclosure policy and data-protection records. The CI portion has since changed; see the explicit update below rather than repeating the old absence claim. |
 | N/A | 4 | Model-inference credentials, analytics credentials, a counsel-facing data-use clause, machine compliance config |
 
 The credential inventory is worth keeping as a standalone artifact: roughly 150 variables in their example environment against about 25 in ours, and **every one of theirs is either a capability or a credential**. Ours is smaller mostly because we have not built the external integrations.
@@ -126,16 +128,16 @@ All 762 entries of the reference's decision record, read whole.
 
 | Verdict | Count | Notes |
 | --- | --- | --- |
-| BETTER | 14 | Rounding, falsy-zero defaults, document immutability, no posted/reversed split, attested-negative facts, contra-account treatment, per-account tax role binding, party-merge discipline, untrusted-source discipline, text storability, no fabricated balances, report basis stored in the snapshot, charset admission, ratchet-and-flip lint |
+| DESIGN ADVANTAGE | 14 | Rounding, falsy-zero defaults, document immutability, no posted/reversed split, attested-negative facts, contra-account treatment, per-account tax role binding, party-merge discipline, untrusted-source discipline, text storability, no fabricated balances, report basis stored in the snapshot, charset admission, ratchet-and-flip lint |
 | GAP | 14 | 4 substantive and 10 narrow. The substantive ones: voucher-gap explanations, the rounding default (**which contradicted one of our own preserved rules — see the correction in `R22`**), the class 3–8 transfer bound, and the externally-closed period case |
-| PARITY | 0 new | Every accounting rule the reference decided that we match is already inside a preserved rule, a packet, a defect row or a domain document. This sweep found no accounting rule that is neither implemented nor planned |
+| COVERED | 0 new | The original sweep assigned these rules to preserved rules, packets, defect rows or domain documents. That assignment is coverage, not proof of implementation or parity. |
 | N/A | 4 | Their series-letter preset, which they themselves superseded; a contracted vendor's code treated as a rule; and the date library, which our own defect register rules out deliberately |
 
 **The highest-value output of this area is the incident record**, because that is what makes a rule survive. The reference documents being wrong in ways that generalise: an epsilon nudge that silently degenerated, a raw double sum that filed a rounded figure one unit low, a substring number match that misdirected 31 payments, a keyword-scrape cleanup that flipped the sign of a stored amount, a scheduler threshold that slid an hour every day, a guard whose predicate was a proxy for the thing it protected and therefore excluded a real case, a wire type that lied in one direction and failed loudly in the other, and a bundler constant-fold that disabled a feature in production. Our preserved rules currently carry the **rule** and drop the **reason**, and the reference's own invariants guide says a rule without a recorded reason gets re-litigated within a quarter.
 
 ## Unowned shortfalls
 
-Every row is absent from our code **and** from every plan. These need a home before implementation; that decision is not made here.
+The original sweep classified these rows as unowned. Confirm current code and plans before using that dated absence claim. Updated rows separate implemented source from the proof still needed.
 
 ### Data protection — no owner at all
 
@@ -153,8 +155,8 @@ Every row is absent from our code **and** from every plan. These need a home bef
 | --- | --- | --- |
 | **Eight schema ratchets**: every company-scoped table triaged into disjoint buckets; no phantom columns; every emitted processing-event type registered **and** every registered type accepted; the operation-type list closed but complete; foreign-key indexes leading with the FK column; no client-reachable delete under **any** policy name; null-safe tenant guards; the ratchet detector itself tested | 400+ tables, 232 triggers, 70 grants, and **zero** ratchets. A new table silently escapes backup, erasure and export | GAP — unowned |
 | Recovery-work verification for the durable queue: claim fencing, terminal rows never swept, concurrent-loser codes | Every concurrent loser is a double-payment path | GAP — unowned |
-| No PostgreSQL service in CI: no apply-all-migrations gate, no merge-base upgrade gate, no coverage gate requiring a case per trigger | Our DDL is the enforcement layer and nothing verifies it | GAP — unowned |
-| `package.json` `check`/`lint`/`format` reference `apps/web/tests`, which does not exist | A command naming a path that is not there | GAP — small, unowned |
+| Fresh migration, upgrade and trigger coverage | CI now runs the existing suite against a harness-owned PostgreSQL 17 cluster, with fresh application, rerun and checksum refusal. Populated merge-base upgrade and exhaustive trigger coverage remain separate gaps. | PARTIAL — CI/source repaired; hosted result and broader coverage require their own evidence |
+| Stale `apps/web/tests` script paths | Those nonexistent paths have been removed from the current root commands. No browser suite is thereby supplied. | SOURCE REPAIRED — browser proof remains separate |
 
 ### Accounting rules with no owner
 
@@ -183,9 +185,9 @@ Every row is absent from our code **and** from every plan. These need a home bef
 | Scheduled-job threshold derivation: a threshold must be strictly less than the period and computed from the **actual fire time**, or it slides every day | GAP — narrow, unowned |
 | Migration hazard: before replacing an existing database function, check the other open branches for the same function name; each is green alone and the loss appears only when branches combine | GAP — one clause, unowned |
 
-## Already-better, recorded so it is not regressed
+## Design choices to preserve and verify
 
-The comparison's most useful output for a product that intends to be better is the list of places where the reference is worse, because that list is what stops a later reader porting its approach.
+These are the mechanisms favored by the dated comparison, not whole-product superiority claims. Preserve their intended invariants while checking actual callers and recording runtime evidence.
 
 - **Money.** Exact integer minor units end to end, with a one-sided line shape that makes a zero line and a both-sides line structurally impossible. The reference needed a not-valid constraint plus an approved data repair, and its constraint still accepts a zero line because the engine refuses those instead.
 - **Rounding.** A decimal-string exponent shift there, because a fixed epsilon degenerates above two units as the double gap doubles per power of two. Ours never reaches that problem.
