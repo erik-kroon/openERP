@@ -17,7 +17,7 @@ checks only; no tests or fixtures are added by this repair pass.
 | LR-08: negative integral floor | VAT now reuses the purchasing owner's sign-aware `roundRational`. | Changed-file full gate and existing E2E pass; no dedicated VAT-rounding regression case is added. |
 | LR-09: owner-paid payable residual | Source repaired: live invoices and fixed-cutoff register reports share the owner-discharge summary, include its amount and version, and validate its payable posting. Owner operations no longer subtract it locally a second time and refuse exported-payment conflicts. Register lines retain explicit owner-discharge provenance. | Full changed-file gate and existing E2E pass. The suite does not exercise the owner-discharge/ordinary-settlement competition or the affected report query. |
 | LR-10: zero-tax credit lines | Source repaired: zero tax retains its semantic correction and a null posting-line reference; only nonzero VAT lines are emitted. Forward migration `0020-zero-tax-credit-lines.sql` checks that correspondence and retains nonnull FKs. The correction writer also supplies the `creditId` required by its existing body constraint. | Full changed-file gate and existing E2E pass, including migration/rerun. The suite does not issue this small customer credit. Same-original-period qualification and missing renderer remain explicit limits. |
-| LR-11: fulfillment reverification | Pending. | Preserve command replay and append new evidence observations explicitly. |
+| LR-11: fulfillment reverification | Source repaired: an explicit operator-only reverification command checks the obligation revision and prior observation digest, rereads authoritative owner evidence, and appends a numbered observation with its evidence digest. Same-key replay retains its original result. Effective outcome reads reject superseded, wrong-revision or wrong-reference observations. The deadline write-access query now actually checks required insert privileges. | Full product lint/types and existing E2E pass, including migration `0021`. The suite does not exercise a changing provider outcome; unknown environment evidence still remains pending. |
 | LR-12: stale progress/parity claims | Source repaired: current packet rows distinguish NEXT-04/22/29 integration from feature proof and NEXT-16/17 work in progress. The reference ledger classifies coverage/design advantages, never plan ownership as verified parity. | Documentation reconciled to the integration commits and existing-suite artifacts; broader packet readiness is not inferred. |
 
 The CI repair also corrected the previously unapplicable `0015-next-04.sql`
@@ -43,6 +43,15 @@ need a separately reviewed policy. This repair does not infer either. Issuance
 uses the same overlap check, while schedule amendments retain their stricter
 frozen-history comparison. Existing zero-length coverage refuses further
 billing rather than silently disappearing from capacity checks.
+
+Fulfillment callers use
+`POST /v1/entities/:entityId/books/:bookId/deadlines/:id/fulfillments/reverify`
+with an idempotency header and the retained `reference`,
+`expectedObligationRevision` and `expectedFulfillmentDigest`. A changed latest
+observation refuses as stale instead of silently replacing the caller's reviewed
+state. Ordinary linking recovers the latest retained observation; it is not a
+fresh verification. Neither path treats a caller's environment string as owner
+attestation. Prior immutable observations and command receipts remain intact.
 
 Reproduce current gates with `bun install --frozen-lockfile`,
 `bun run check:changed:full <base-ref>` and `bun run test:e2e`. Core E2E success
