@@ -343,11 +343,11 @@ retained explicitly rather than inserted silently at execution or at historical
 import. An exact reversal repeats the referenced original line's retained bytes
 and needs no policy.
 
-**The SIE4E gap is narrowed, not closed.** FWD-09 adds a versioned original
-transaction-object profile and native round-trip checks through the existing
-assignment owner. Dimensional openings, conflicting labels and unsupported
-text still refuse. [SIE exports](../../apps/api/docs/SIE.md) records the current
-profile and its proof limits; recipient acceptance remains open.
+**The local SIE4E dimension profile is verified.** FWD-09 now retains original
+opening and movement assignments, emits object opening/closing balances and
+checks both native-history and opening-set bases. Conflicting labels and
+unsupported text still refuse. [SIE exports](../../apps/api/docs/SIE.md) records
+the profile and native proof; the user deferred recipient acceptance.
 
 Unresolved, reported by the worker:
 
@@ -356,7 +356,7 @@ Unresolved, reported by the worker:
   through `resolveAssignmentsInTransaction`, so a posting made through them
   carries no sealed assignment. They are reserved and were not taken over.
 - **The historical import paths carry no dimension policy.**
-- Dimensional opening balances and recipient acceptance remain open.
+- Recipient acceptance remains open; local dimensional-opening export is verified.
 - `dimensionAssignmentReport` reports the **original** assignment only; a
   reclassified report mode does not exist, and classification history is still
   unimplemented.
