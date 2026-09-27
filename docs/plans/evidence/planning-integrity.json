@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-26T21:25:16.234639+00:00",
-  "headObservedAtValidation": "010ca2ba8f3623d1727de43f00f5c7ae4303fa0b",
+  "checkedAt": "2026-09-27T11:44:28.034614+00:00",
+  "headObservedAtValidation": "09fdb19837bb1535b1b4c060e68a0b237858b0a5",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,8 +9,8 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 625,
-    "documentsChecked": 39,
+    "localLinksAndAnchorsChecked": 677,
+    "documentsChecked": 40,
     "coverage": {
       "R": [
         "R-01",
@@ -90,7 +90,7 @@
   "files": [
     {
       "path": "docs/README.md",
-      "sha256": "617ef2bb8dc9dc0f5a940dd7a5700fc2959fec6ba20eb321134aeac720130bad"
+      "sha256": "08b3bbc4643ebf1eaa57984b4854e063617aad5950ae675bb8253596b1a995c3"
     },
     {
       "path": "docs/adr/0002-exact-posting-and-approval.md",
@@ -106,7 +106,7 @@
     },
     {
       "path": "docs/architecture.md",
-      "sha256": "232e3dcf1cec298fd0960d565b27645059021c9db7d736fbd2e55ad80ee5725b"
+      "sha256": "a316e8c1dcded5036f6bb9e47b7e4e1b45bd4f6e634a3cfd9e9ef2538bae582a"
     },
     {
       "path": "docs/compliance.md",
@@ -114,15 +114,15 @@
     },
     {
       "path": "docs/domain.md",
-      "sha256": "44885c833e301aaf0237096680c5c2ea2b6a8da7c847dcb4319120ad2a63808b"
+      "sha256": "5fad3370a95ae82bb93a6c242369150bfac3543b2c1d359392c53fe9e024d012"
     },
     {
       "path": "docs/open-decisions.md",
-      "sha256": "afeb3a824bc6a42e03b7e222e6603a89380c9353ed5f6f102909b9f0c2e11a78"
+      "sha256": "67d1e3d739c33f7e4bc017c55421e6eb6422a155945293bef2959edfb751f8d8"
     },
     {
       "path": "docs/operations.md",
-      "sha256": "4849cfce759b9a95fa92e2f6aa73f1f4e425d39993f4c8f27ee0bc1770d21275"
+      "sha256": "a2927719e38852e02cda3fd26348812b9f189361764d975d70656f90fa048ea6"
     },
     {
       "path": "docs/plans/00-shared-contracts.md",
@@ -182,15 +182,19 @@
     },
     {
       "path": "docs/plans/14-parity-ledger.md",
-      "sha256": "fe59fe000cf35c6f396a8982e47d5871e23c0795e610cb20861eb22aacfcd349"
+      "sha256": "f74ce2ae0b375f737c30eacc24ed95b8f4e36ade6f28026066062b71240b9bbb"
     },
     {
       "path": "docs/plans/14-plan-review-adoption.md",
       "sha256": "c102bb6111a0f66636eb02c915558ce5a64895e76a057741409184a35da4e1c4"
     },
     {
+      "path": "docs/plans/15-book-zero-workflow-cash.md",
+      "sha256": "fe4c68539989a0dbcb9b447a71382c3c700636ac9713300c00ccfa9d835d9ff0"
+    },
+    {
       "path": "docs/plans/README.md",
-      "sha256": "54d3c824f1850959cfb91e5b49003d3ad1ca7dec33bb57d4da97d3f201039b8c"
+      "sha256": "a258cb258a61e21f85115fb855d467ea35fc17ac04d5ea43ae1b96a37d956e55"
     },
     {
       "path": "docs/plans/accounting-completion-wave.md",
@@ -226,7 +230,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "2a155664a32418bdeaa528ab51a558c4d83e4fc8d4dfc0f2e828f060e8aa6eba"
+      "sha256": "f4bf6ea3d417a621dca441ea02dafe88f7e373617faa4a946a414cf217463c60"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -234,7 +238,7 @@
     },
     {
       "path": "docs/plans/next-packet-progress.md",
-      "sha256": "a788811707b0ccdfe45f4549ad8b65e015d8fae9368a90b6503e094cdffd13be"
+      "sha256": "38eac4a0b20ec0a921495a361fdd2496f3bf0f42a2684ab9a18e56a617983155"
     },
     {
       "path": "docs/plans/seb-statement-preview.md",
@@ -250,11 +254,11 @@
     },
     {
       "path": "docs/roadmap.md",
-      "sha256": "71fe945a7628955fb7996a526409cacc5cf0eaf069f547e7a72d14b9df9c2e58"
+      "sha256": "55e4ffc4c1062dae5859109cbdcec8c24825705b08a9bf312e7828c7940dd885"
     },
     {
       "path": "docs/verification.md",
-      "sha256": "26a277534db23e2c2a3a41d7ebd6285aab2c2eb23c9e67c91022b4ff499cc127"
+      "sha256": "cace84d4a6908b75fc51b8c917074f10483456c8f4ccb5a2deb6976d76dbcc1e"
     }
   ]
 }

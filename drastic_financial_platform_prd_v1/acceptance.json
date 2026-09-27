@@ -1,0 +1,1313 @@
+{
+  "schema_version": "1.0",
+  "document_version": "1.0",
+  "date": "2026-09-27",
+  "repository": "erik-kroon/openERP",
+  "selectively_reviewed_revision": "09fdb19837bb1535b1b4c060e68a0b237858b0a5",
+  "status": "specification_not_implementation",
+  "source_document": "PRD_Drastic_Financial_Platform_End_State_v1.md",
+  "scenarios": [
+    {
+      "id": "ES-AT-001",
+      "name": "Native och Connected har olika skrivauktoritet",
+      "given": "Ett bolag har extern officiell huvudbok för föregående år och Native från en granskad bryttid.",
+      "when": "Samma historiska faktura importeras och en användare försöker skapa om dess intäkt.",
+      "expected": "Historisk faktura kan få betalningsallokering men inte ny intäkt genom migrationen. Systemägare och periodgräns är synliga.",
+      "requirements": [
+        "DR-CORE-01",
+        "DR-ACC-11"
+      ],
+      "evidence_lane": "company_migration",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-002",
+      "name": "Firmamedlemskap ger inte alla böcker",
+      "given": "En konsult är medlem i en byrå och har mandat till klient A men inte B.",
+      "when": "Konsulten öppnar en direktlänk och ett API-anrop mot B.",
+      "expected": "Båda åtkomsterna vägras utan att avslöja löner, saldon eller objektinnehåll.",
+      "requirements": [
+        "DR-CORE-02",
+        "DR-CORE-05"
+      ],
+      "evidence_lane": "security",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-003",
+      "name": "Okänd källperiod överlever tom arbetslista",
+      "given": "Källinventeringen innehåller två bankkonton men periodutdrag finns bara för ett.",
+      "when": "Alla uppgifter för inlästa rader avslutas.",
+      "expected": "Listan kan vara tom men periodtäckningen är ofullständig och komplett bolagsstatus vägras.",
+      "requirements": [
+        "DR-CORE-04",
+        "DR-WORK-07"
+      ],
+      "evidence_lane": "browser",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-004",
+      "name": "Finansieringssamtycke är separat",
+      "given": "Kunden använder bokföring utan finansieringsdelning.",
+      "when": "Ett automatiserat anrop försöker skicka underlag till en långivare.",
+      "expected": "Ingen otillåten export sker. Kunden kan fortsatt bokföra och manuellt pröva ett lokalt scenario.",
+      "requirements": [
+        "DR-CORE-07",
+        "DR-FIN-03"
+      ],
+      "evidence_lane": "security",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-005",
+      "name": "Kontoändring är en ny mottagarrevision",
+      "given": "En befintlig leverantör har granskad mottagare och ett godkänt betalningsförslag.",
+      "when": "Leverantörens bankuppgifter ändras.",
+      "expected": "Gammal attest kan inte exekvera den nya mottagaren. Originalversionen finns kvar i historiken.",
+      "requirements": [
+        "DR-CORE-08",
+        "DR-PMT-03"
+      ],
+      "evidence_lane": "integration",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-006",
+      "name": "En affär med två delproblem",
+      "given": "En transaktion saknar kvitto och har oklar skattebehandling.",
+      "when": "Den hämtas via bank- och dokumentvyn.",
+      "expected": "En huvuduppgift med två tydliga delsteg visas. Problemen försvinner endast när respektive del lösts.",
+      "requirements": [
+        "DR-WORK-01",
+        "DR-WORK-04"
+      ],
+      "evidence_lane": "browser",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-007",
+      "name": "Batch med inaktuellt förslag",
+      "given": "Tolv förslag har granskats och ett relevant underlag ändras före genomförande.",
+      "when": "Användaren bekräftar det tidigare urvalet.",
+      "expected": "Varje giltig grupp får sitt resultat. Den ändrade gruppen behöver ny granskning. Ingen odifferentierad totalsuccess visas.",
+      "requirements": [
+        "DR-WORK-05",
+        "DR-ACC-04"
+      ],
+      "evidence_lane": "runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-008",
+      "name": "Omladdning efter tappat svar",
+      "given": "Servern genomförde ett godkänt förslag men browsern fick inte svaret.",
+      "when": "Användaren laddar om och öppnar samma ärende.",
+      "expected": "Det beständiga kvittot återfinns och den ursprungliga filterpositionen kan återställas utan ny effekt.",
+      "requirements": [
+        "DR-WORK-06",
+        "DR-ACC-04"
+      ],
+      "evidence_lane": "browser",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-009",
+      "name": "Kommentar är inte attest",
+      "given": "En konsult skriver godkänd i en kommentar men saknar finansiellt godkännandemandat.",
+      "when": "En agent försöker använda kommentaren som attest.",
+      "expected": "Exekvering vägras. Samarbetskommentaren finns kvar som kommentar.",
+      "requirements": [
+        "DR-WORK-08",
+        "DR-AGT-01"
+      ],
+      "evidence_lane": "security",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-010",
+      "name": "Samma avvikelse ger inte avisering per retry",
+      "given": "En avisering är levererad och jobbmeddelandet återlevereras.",
+      "when": "Aviseringsjobbet körs igen.",
+      "expected": "Ingen ny kundavisering skickas utan ny ekonomisk eller handlingsmässig förändring.",
+      "requirements": [
+        "DR-WORK-09",
+        "DR-INT-07"
+      ],
+      "evidence_lane": "runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-011",
+      "name": "Exakt pengar över säker JS-heltalsgräns",
+      "given": "Ett syntetiskt balanserat förslag innehåller 9007199254740993 minor units.",
+      "when": "Det förbereds, granskas, bokförs och exporteras.",
+      "expected": "Exakt samma belopp bevaras i wire, DB, rapport och export utan flyttalsavrundning.",
+      "requirements": [
+        "DR-ACC-01",
+        "DR-ACC-04"
+      ],
+      "evidence_lane": "numeric_runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-012",
+      "name": "Generisk journal får inte konsumera domänägd källa",
+      "given": "En leverantörsfakturas kapacitet tillhör AP och är redan konsumerad.",
+      "when": "En integration försöker bokföra samma effekt via generisk journal.",
+      "expected": "Skrivningen vägras eller kvalificeras som separat rättelse med nytt underlag, aldrig som en andra normal kostnad.",
+      "requirements": [
+        "DR-ACC-02",
+        "DR-ACC-06"
+      ],
+      "evidence_lane": "runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-013",
+      "name": "Rättelse bevarar historia",
+      "given": "En bokförd verifikation ska återföras.",
+      "when": "Behörig person godkänner och genomför rättelsen.",
+      "expected": "Original och länkad rättelse finns kvar. Nettot stämmer och originalet kan inte ändras eller raderas.",
+      "requirements": [
+        "DR-ACC-03",
+        "DR-ACC-13"
+      ],
+      "evidence_lane": "runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-014",
+      "name": "Två utjämnande avvikelser",
+      "given": "Bankkontrollen innehåller en oförklarad +500 och en orelaterad −500.",
+      "when": "Avstämningsrapport genereras.",
+      "expected": "Nettodifferensen kan vara noll men fullständighet är falsk och båda posterna behöver förklaring.",
+      "requirements": [
+        "DR-ACC-07",
+        "DR-CLOSE-01"
+      ],
+      "evidence_lane": "numeric_runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-015",
+      "name": "Privat utlägg och ersättning",
+      "given": "Ägaren betalade ett kvalificerat företagskvitto privat och begär senare ersättning.",
+      "when": "Kostnaden bokförs och ersättningen betalas.",
+      "expected": "En kostnad och en skuldreglering finns. Det privata kontot ingår inte som företagets kassa.",
+      "requirements": [
+        "DR-ACC-10",
+        "DR-AP-07"
+      ],
+      "evidence_lane": "company",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-016",
+      "name": "Regeländring över tidsgräns",
+      "given": "Två syntetiskt kvalificerade skattepaket har icke överlappande giltighet.",
+      "when": "Transaktioner på båda sidor av gränsen behandlas.",
+      "expected": "Rätt paket används och källan redovisas. Saknat paket leder inte till föregående års fallback.",
+      "requirements": [
+        "DR-TAX-01",
+        "DR-ACC-14"
+      ],
+      "evidence_lane": "rule_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-017",
+      "name": "Förberedd deklaration är inte inlämnad",
+      "given": "En momsfil är genererad och lokalt validerad.",
+      "when": "Användaren öppnar periodstatus innan extern inlämning.",
+      "expected": "Status visar förberedd/granskad enligt faktiska steg och saknar externt mottagningskvitto.",
+      "requirements": [
+        "DR-TAX-03",
+        "DR-TAX-08"
+      ],
+      "evidence_lane": "browser",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-018",
+      "name": "Rättelse efter inlämning",
+      "given": "En tidigare momsdeklaration är externt bekräftad och en faktura rättas.",
+      "when": "Nytt deklarationsförslag skapas.",
+      "expected": "Tidigare kvitto och fil ligger kvar. Ny version visar delta och kräver eget godkännande.",
+      "requirements": [
+        "DR-TAX-09",
+        "DR-TAX-03"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-019",
+      "name": "Skattekontot finansieras netto",
+      "given": "Saldo är 30 000 och kvalificerade framtida debiteringar är 50 000 utan andra rörelser.",
+      "when": "Cash skapar bankbetalningsbehov.",
+      "expected": "Kompletterande överföring är 20 000. Varken 50 000 plus 20 000 eller en öronmärkt skattebetalning fabriceras.",
+      "requirements": [
+        "DR-TAX-04",
+        "DR-CASH-07"
+      ],
+      "evidence_lane": "numeric",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-020",
+      "name": "Okänt myndighetsutfall",
+      "given": "Myndighetskanalen mottog ett dokument men svaret tappades.",
+      "when": "Återhämtningsjobbet startar.",
+      "expected": "Ursprunglig referens utreds och ett kvalificerat kvitto återfinns före eventuell ny sidoeffekt.",
+      "requirements": [
+        "DR-TAX-08",
+        "DR-OPS-06"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-021",
+      "name": "Saknad skattetabell",
+      "given": "Anställd och löneperiod finns men kvalificerad tabell saknas.",
+      "when": "Lönekalkylen begärs.",
+      "expected": "Ingen påhittad skatt eller definitiv nettolön produceras. Exakt saknat underlag visas.",
+      "requirements": [
+        "DR-PAY-03",
+        "DR-TAX-01"
+      ],
+      "evidence_lane": "rule_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-022",
+      "name": "Lön ersätter prognosuppskattning",
+      "given": "Cash innehåller en löneuppskattning för perioden.",
+      "when": "En motsvarande lönekörning fastställs.",
+      "expected": "Den kvalificerade löneförekomsten ersätter uppskattningen och netto respektive skattekontobehov ligger på rätt datum.",
+      "requirements": [
+        "DR-PAY-06",
+        "DR-CASH-04"
+      ],
+      "evidence_lane": "numeric_runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-023",
+      "name": "En felaktig lönebetalning i batch",
+      "given": "Nio löner är avvecklade och en är avvisad av partnern.",
+      "when": "Löneansvarig rättar det återstående uppdraget.",
+      "expected": "Endast det avvisade uppdraget kan betalas efter ny granskning. Inga nio dubbelbetalningar skapas.",
+      "requirements": [
+        "DR-PAY-04",
+        "DR-PMT-10"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-024",
+      "name": "Rättelse efter redan betald lön",
+      "given": "För stor lön har betalats och bokförts.",
+      "when": "Löneansvarig rättar beräkningen.",
+      "expected": "Original, extra fordran eller annan kvalificerad korrigering och deklarationsbehov visas separat. Ingen automatisk obehörig kvittning görs.",
+      "requirements": [
+        "DR-PAY-07",
+        "DR-TAX-06"
+      ],
+      "evidence_lane": "company",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-025",
+      "name": "Risk får inte medarbetarens sjukdata",
+      "given": "Lönemodulen har känsliga individuppgifter och Risk behöver total lönekostnad.",
+      "when": "En riskexport skapas.",
+      "expected": "Endast ändamålsenligt kvalificerade aggregerade ekonomiska uppgifter lämnas ut.",
+      "requirements": [
+        "DR-PAY-11",
+        "DR-RISK-02"
+      ],
+      "evidence_lane": "privacy",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-026",
+      "name": "Order ersätts delvis av faktura",
+      "given": "Beställning om 100 000 finns som prognos och faktura för 40 000 anländer.",
+      "when": "Fakturan godkänns.",
+      "expected": "Faktisk 40 000 och kvalificerad återstående orderdel 60 000 ersätter tidigare prognos enligt betalningsvillkor, utan totalt 140 000.",
+      "requirements": [
+        "DR-AP-01",
+        "DR-CASH-04"
+      ],
+      "evidence_lane": "numeric_runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-027",
+      "name": "Samma original via två kanaler",
+      "given": "Samma leverantörsfaktura kommer som e-postbilaga och e-faktura.",
+      "when": "Båda tas in.",
+      "expected": "Originalförekomster bevaras och möjlig dublett granskas innan ny skuld eller betalning får skapas.",
+      "requirements": [
+        "DR-AP-02",
+        "DR-CORE-09"
+      ],
+      "evidence_lane": "integration",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-028",
+      "name": "Delvis leverans",
+      "given": "Order 10 enheter, verifierad leverans 6 och faktura 10.",
+      "when": "Automatisk matchningspolicy körs.",
+      "expected": "Avvikande del markeras enligt kvalificerad policy. Matchningen skapar inte leveransbevis för fyra saknade enheter.",
+      "requirements": [
+        "DR-AP-03",
+        "DR-AP-08"
+      ],
+      "evidence_lane": "integration",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-029",
+      "name": "Företagskort kan inte ersättas privat",
+      "given": "Ett kvitto hör till ett redan företagsbetalt kortköp.",
+      "when": "En användare begär privat utläggsersättning för samma ekonomiska köp.",
+      "expected": "Betalarkonflikt stoppar automatisk dubbelersättning och behåller underlaget för granskning.",
+      "requirements": [
+        "DR-AP-07",
+        "DR-CARD-06"
+      ],
+      "evidence_lane": "runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-030",
+      "name": "Kreditnota före bankbetalning",
+      "given": "Godkänd leverantörsfaktura på 10 000 har fått kredit 2 000 före betalning.",
+      "when": "Betalningsförslaget uppdateras.",
+      "expected": "Ny kvalificerad rest är 8 000 och relevant gammal betalningsattest kan inte betala 10 000 utan nytt beslut.",
+      "requirements": [
+        "DR-AP-06",
+        "DR-PMT-05"
+      ],
+      "evidence_lane": "numeric_runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-031",
+      "name": "Olikdaterade banksaldon",
+      "given": "Ett konto har saldo idag och ett annat saldo för sju dagar sedan utan mellanliggande täckning.",
+      "when": "Koncern- eller bolagsprognos öppnas.",
+      "expected": "Ingen ovillkorlig aktuell totalsiffra visas utan kvalificerad tidsbrygga.",
+      "requirements": [
+        "DR-CASH-01",
+        "DR-CASH-11"
+      ],
+      "evidence_lane": "browser",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-032",
+      "name": "Delbetalning finns redan i startbank",
+      "given": "Faktura 50 000 har betalats med 20 000 före startögonblicket.",
+      "when": "Framtida inflöden beräknas.",
+      "expected": "Endast återstående 30 000 tas med. Startbank och framtid inkluderar inte samma 20 000 två gånger.",
+      "requirements": [
+        "DR-CASH-03",
+        "DR-INV-06"
+      ],
+      "evidence_lane": "numeric",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-033",
+      "name": "Samma slut men annat minimum",
+      "given": "Likviditetsvektorn N-09 finns i två scenarier med Kund A dag 8 respektive dag 22.",
+      "when": "Dagliga saldon beräknas.",
+      "expected": "Båda slutar på 90 000 men headroom blir 20 000 respektive −10 000 med buffert 10 000.",
+      "requirements": [
+        "DR-CASH-05",
+        "DR-CASH-06"
+      ],
+      "evidence_lane": "numeric",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-034",
+      "name": "Saknad framtida lön",
+      "given": "En 90-dagarsvy innehåller bara månad ett och inga kvalificerade löneantaganden för senare månader.",
+      "when": "Likviditetsutrymme efterfrågas.",
+      "expected": "Täckningsbristen är synlig. Månad två och tre tolkas inte som kostnadsfria.",
+      "requirements": [
+        "DR-CASH-04",
+        "DR-CASH-11"
+      ],
+      "evidence_lane": "browser",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-035",
+      "name": "Historisk prognos utan efterhandsdata",
+      "given": "Ett snapshot sparas före en stor ny order.",
+      "when": "Ordern importeras och historisk prognosprecision beräknas.",
+      "expected": "Den gamla prognosen är oförändrad och felet attribueras till senare information.",
+      "requirements": [
+        "DR-CASH-13",
+        "DR-RISK-03"
+      ],
+      "evidence_lane": "analytics",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-036",
+      "name": "Virtuell momspott",
+      "given": "Bolaget har 100 000 på bank och tilldelar 20 000 till intern momspott.",
+      "when": "Budgetallokeringen sparas.",
+      "expected": "Banken förblir 100 000 och ingen extern överföring eller juridisk medelsavskiljning påstås.",
+      "requirements": [
+        "DR-TRE-03",
+        "DR-CASH-02"
+      ],
+      "evidence_lane": "numeric_runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-037",
+      "name": "Pengar under intern överföring",
+      "given": "20 000 skickas mellan två egna inkluderade konton med fördröjd mottagning.",
+      "when": "Avsändarkontot har debiterats men målkontot saknar ännu rörelsen.",
+      "expected": "Beloppet redovisas enligt kvalificerad transitmodell, aldrig samtidigt disponibelt på båda kontona.",
+      "requirements": [
+        "DR-TRE-04",
+        "DR-CASH-02"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-038",
+      "name": "Sweep efter förändrat saldo",
+      "given": "Sweepplanen räknades före en lönereservation.",
+      "when": "Den ska genomföras efter att lönen reserverat pengar.",
+      "expected": "Aktuellt saldo och mandat kontrolleras på nytt. Buffertbrott stoppar eller ändrar enligt förhandsgodkänd policy.",
+      "requirements": [
+        "DR-TRE-05",
+        "DR-PMT-04"
+      ],
+      "evidence_lane": "runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-039",
+      "name": "Utgången FX-offert",
+      "given": "Kunden har godkänt en specifik offert med begränsad giltighet.",
+      "when": "Genomförande sker efter utgången tid.",
+      "expected": "Ingen dold växling till annan kurs. Ny kvalificerad offert eller tillåtet exakt mandat krävs.",
+      "requirements": [
+        "DR-TRE-06",
+        "DR-PMT-11"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-040",
+      "name": "Dotterbolags kassa är inte moderbolagets",
+      "given": "Koncernen har pengar i två juridiska personer men saknar intercompanymandat.",
+      "when": "Grundaren planerar betalning från moderbolaget.",
+      "expected": "Dotterbolagets saldo visas separat och kan inte finansiera betalningen utan kvalificerad handling.",
+      "requirements": [
+        "DR-TRE-09",
+        "DR-ACC-12"
+      ],
+      "evidence_lane": "legal_product",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-041",
+      "name": "Mottagare ändras efter attest",
+      "given": "Betalning är granskad mot bankkonto A.",
+      "when": "Ett anrop försöker skicka till konto B med samma attest.",
+      "expected": "Anropet vägras före partnern och rätt konflikt visas.",
+      "requirements": [
+        "DR-PMT-03",
+        "DR-PMT-05"
+      ],
+      "evidence_lane": "security",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-042",
+      "name": "Timeout efter partneracceptans",
+      "given": "Partnern mottog betalning men API-svaret saknas.",
+      "when": "Systemet startar retry och överväger reservpartner.",
+      "expected": "Samma ekonomiska identitet utreds hos första partnern. Ingen ny sidoeffekt hos reservpartner.",
+      "requirements": [
+        "DR-PMT-06",
+        "DR-PMT-07"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-043",
+      "name": "Samtidig betalningskapacitet",
+      "given": "100 000 godkänd lokal kapacitet och två uppdrag om 60 000.",
+      "when": "Båda försöker reservera samtidigt.",
+      "expected": "Högst ett får 60 000 reservation. Resterande kapacitet är 40 000 och båda resultaten kan återfinnas.",
+      "requirements": [
+        "DR-PMT-04",
+        "DR-AGT-03"
+      ],
+      "evidence_lane": "concurrency",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-044",
+      "name": "Duplicerad och omkastad webhook",
+      "given": "Slutlig observation har mottagits före en äldre accepterad-observation och båda återlevereras.",
+      "when": "Meddelanden processas.",
+      "expected": "Slutligt kvalificerat tillstånd degraderas inte och ekonomisk effekt uppstår en gång.",
+      "requirements": [
+        "DR-PMT-08",
+        "DR-INT-05"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-045",
+      "name": "Avbryt efter skickat uppdrag",
+      "given": "En betalning har skickats och banken har ännu inte svarat.",
+      "when": "Kunden begär stopp och banken avvecklar originalet.",
+      "expected": "Stoppbegäran markeras misslyckad eller för sen enligt verifierat utfall. En eventuell refund är nytt uppdrag.",
+      "requirements": [
+        "DR-PMT-12",
+        "DR-WORK-03"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-046",
+      "name": "Hold och delvis presentment",
+      "given": "Reservation 1 000, reversering 300 och final presentment 650.",
+      "when": "Kort- och budgetsaldo uppdateras.",
+      "expected": "Slutkostnad 650 och återstående hold 50 som frigörs enligt kvalificerat utfall, ingen 1 650-kostnad.",
+      "requirements": [
+        "DR-CARD-04",
+        "DR-CARD-05"
+      ],
+      "evidence_lane": "numeric_runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-047",
+      "name": "Refund efter stängt kort",
+      "given": "Köp 650 finns och kortet är avslutat.",
+      "when": "Refund 200 kommer via rätt utgivarreferens.",
+      "expected": "Bolaget får korrekt återbetalningsposition. Kortet öppnas inte för nya köp och nettoköpet är 450.",
+      "requirements": [
+        "DR-CARD-07",
+        "DR-CARD-09"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-048",
+      "name": "Provisorisk chargeback förloras",
+      "given": "En tvist har gett tillfällig kredit.",
+      "when": "Utgivaren meddelar slutlig förlust av tvisten.",
+      "expected": "Provisorisk effekt hanteras med ny spårbar rörelse. Originalköpet och ärendet bevaras.",
+      "requirements": [
+        "DR-CARD-08",
+        "DR-OPS-02"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-049",
+      "name": "Kortfaktura reglerar redan bokförda köp",
+      "given": "Alla månadens köp är redovisade mot utgivarskuld.",
+      "when": "Samlad kortfaktura betalas.",
+      "expected": "Betalningen reglerar skulden och bokför inte samma kostnader en gång till.",
+      "requirements": [
+        "DR-CARD-10",
+        "DR-ACC-06"
+      ],
+      "evidence_lane": "numeric_runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-050",
+      "name": "Korthemligheter når inte modeller",
+      "given": "Tokeniserad kortvy och test-PAN/CVV används i isolerad kvalificeringsmiljö.",
+      "when": "Köp förklaras av en agent och loggar kontrolleras.",
+      "expected": "Ingen otillåten PAN/CVV finns i agentkontext eller generella applikationsloggar.",
+      "requirements": [
+        "DR-CARD-11",
+        "DR-AGT-09"
+      ],
+      "evidence_lane": "security",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-051",
+      "name": "Usage-dubblett",
+      "given": "Grundavgift 10 000 och 300 unika enheter à 20 har mottagits.",
+      "when": "En redan känd usage-händelse skickas igen.",
+      "expected": "Netto förblir 16 000 enligt N-01 och den dubbla förekomsten är synlig utan ny debitering.",
+      "requirements": [
+        "DR-BILL-04",
+        "DR-BILL-05"
+      ],
+      "evidence_lane": "numeric_runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-052",
+      "name": "Prisrevision ändrar inte fakturerad cykel",
+      "given": "En återkommande period är utgiven under prisversion ett.",
+      "when": "Mallen ändras och materialiseringsjobbet körs igen.",
+      "expected": "Samma cykel och dokument återfinns. Nytt pris gäller bara kvalificerade framtida förekomster.",
+      "requirements": [
+        "DR-BILL-03",
+        "DR-BILL-09"
+      ],
+      "evidence_lane": "runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-053",
+      "name": "Proratering med öresrest",
+      "given": "100 minor units ska fördelas lika över tre enligt fastställd tie-break.",
+      "when": "Periodens delkomponenter beräknas.",
+      "expected": "Resultatet blir den dokumenterade stabila 34/33/33-fördelningen och summerar till 100.",
+      "requirements": [
+        "DR-BILL-06",
+        "DR-ACC-01"
+      ],
+      "evidence_lane": "numeric",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-054",
+      "name": "Misslyckat uttag ändrar inte faktura",
+      "given": "En giltigt utgiven prenumerationsfaktura har obetald rest.",
+      "when": "Tre separata betalningsförsök utförs under giltigt mandat.",
+      "expected": "En faktura och tre betalningsförsök finns, inte tre kommersiella debiteringar.",
+      "requirements": [
+        "DR-BILL-09",
+        "DR-PMT-16"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-055",
+      "name": "Årsbetalning är inte tolv gånger MRR",
+      "given": "Årsavtal betalas i förskott och tjänsten levereras månadsvis.",
+      "when": "MRR, bank och intäktsrapport visas.",
+      "expected": "MRR följer avtalets definierade månatliga grund, kassa betalningen och redovisad intäkt kvalificerad periodisering.",
+      "requirements": [
+        "DR-BILL-10",
+        "DR-BILL-12"
+      ],
+      "evidence_lane": "analytics",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-056",
+      "name": "Tekniskt stängd men inte externt inlämnad",
+      "given": "Periodlås och årsartefakt finns utan myndighetskvitto.",
+      "when": "Årsstatus efterfrågas.",
+      "expected": "Systemet skiljer tekniskt lås från inlämning och påstår inte juridisk färdigställandegrad utan underlag.",
+      "requirements": [
+        "DR-CLOSE-03",
+        "DR-CLOSE-07"
+      ],
+      "evidence_lane": "browser",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-057",
+      "name": "Obligatorisk upplysning saknar källa",
+      "given": "Årsprofilen kräver en bolagsuppgift som inte är känd.",
+      "when": "Agenten försöker fastställa rapporten.",
+      "expected": "Ingen fabricerad text fyller luckan. Berörd fastställelse blockeras och övrigt arbete kan fortsätta.",
+      "requirements": [
+        "DR-CLOSE-04",
+        "DR-AGT-06"
+      ],
+      "evidence_lane": "rule_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-058",
+      "name": "Giltigt XML med fel totalsumma",
+      "given": "En export är syntaktiskt giltig men har en ekonomisk summeringsavvikelse.",
+      "when": "Kvalificering av artefakten begärs.",
+      "expected": "Semantisk kontroll vägrar trots godkänd XML-parser.",
+      "requirements": [
+        "DR-CLOSE-06",
+        "DR-ACC-13"
+      ],
+      "evidence_lane": "artifact_validation",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-059",
+      "name": "Full arkivåterställning",
+      "given": "Granskningspaket, original, nycklar och register finns i en säker backup.",
+      "when": "En isolerad återställning görs.",
+      "expected": "Rapport kan följas till samma verifierade originalbytes utan produktionsdatabasen.",
+      "requirements": [
+        "DR-CLOSE-09",
+        "DR-OPS-06"
+      ],
+      "evidence_lane": "restore",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-060",
+      "name": "Årsöverföring utan nya intäkter",
+      "given": "Utgående saldon och historiska obetalda fakturor är kvalificerade.",
+      "when": "Nästa år öppnas och en historisk faktura betalas.",
+      "expected": "Ingående rest och betalningsallokering hanteras utan en andra historisk intäkt.",
+      "requirements": [
+        "DR-CLOSE-10",
+        "DR-ACC-11"
+      ],
+      "evidence_lane": "company_migration",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-061",
+      "name": "Samtidig juridisk utgivning",
+      "given": "Ett granskat fakturautkast finns med en debiteringskapacitet.",
+      "when": "Två anrop ger ut samma utkast samtidigt.",
+      "expected": "Ett utgivet dokument och en kapacitetskonsumtion finns med samma återfinnbara resultat.",
+      "requirements": [
+        "DR-INV-02",
+        "DR-BILL-09"
+      ],
+      "evidence_lane": "concurrency",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-062",
+      "name": "PDF är inte strukturerad e-faktura",
+      "given": "Kunden behöver en kvalificerad offentlig e-faktureringskanal.",
+      "when": "Systemet har bara genererat PDF.",
+      "expected": "Kanalstatus är ofullständig och produkten påstår inte att e-faktura har skickats.",
+      "requirements": [
+        "DR-INV-03",
+        "DR-CLOSE-06"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-063",
+      "name": "Delkredit efter betalning",
+      "given": "Faktura är delbetald och kunden får kvalificerad delkredit.",
+      "when": "Krediten ges ut.",
+      "expected": "Rätt rest eller återbetalningsbehov uppstår med bevarad originalfaktura och betalning.",
+      "requirements": [
+        "DR-INV-05",
+        "DR-INV-06"
+      ],
+      "evidence_lane": "numeric_runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-064",
+      "name": "Överlåten fakturas mottagare",
+      "given": "Fakturan har en kvalificerad överlåtelse och dokumenterad betalningsinstruktion.",
+      "when": "Köparen öppnar portalen.",
+      "expected": "Rätt betalningsmottagare visas och säljaren ser endast sin avtalade förväntade restlikvid.",
+      "requirements": [
+        "DR-INV-07",
+        "DR-CAP-10"
+      ],
+      "evidence_lane": "legal_product",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-065",
+      "name": "Brutto till processorutbetalning",
+      "given": "Brutto 1 000, avgift 30, refund 100 och reserv 200.",
+      "when": "Avräkning och Cash uppdateras.",
+      "expected": "Utbetalning är 670 och varje del har egen förklaring utan att reserv räknas som disponibel bank.",
+      "requirements": [
+        "DR-INV-11",
+        "DR-OPS-02"
+      ],
+      "evidence_lane": "numeric",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-066",
+      "name": "Påminnelse stoppas av aktuell betalning",
+      "given": "En förfallen faktura ligger i utskickskön och betalning blir kvalificerad före sändning.",
+      "when": "Jobbet gör sista kontrollen.",
+      "expected": "Påminnelsen stoppas och betalningsresultatet visas utan ny avgift.",
+      "requirements": [
+        "DR-COL-01",
+        "DR-PMT-14"
+      ],
+      "evidence_lane": "runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-067",
+      "name": "Bestridd del hålls separat",
+      "given": "Fordran 10 000, betalning 4 000, kredit 1 000 och bestridande 2 000.",
+      "when": "Kravplan beräknas.",
+      "expected": "Total rest 5 000, bestridd del 2 000 och obestridd del 3 000 redovisas separat enligt N-07.",
+      "requirements": [
+        "DR-COL-03",
+        "DR-INV-06"
+      ],
+      "evidence_lane": "numeric",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-068",
+      "name": "Otillåten avgift läggs inte till",
+      "given": "Påminnelse får skickas men ingen kvalificerad avgiftsgrund finns.",
+      "when": "Påminnelse skapas.",
+      "expected": "Dokumentet saknar påhittad avgift och anger korrekt huvudfordran.",
+      "requirements": [
+        "DR-COL-02",
+        "DR-TAX-01"
+      ],
+      "evidence_lane": "rule_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-069",
+      "name": "Inkassohandoff kräver rätt roll",
+      "given": "Kunden vill eskalera men relevant partnerroll eller underlag är ej kvalificerat.",
+      "when": "Automatisk överlämning begärs.",
+      "expected": "Överlämning blockeras med konkret beroende, utan att vanlig reskontraläsning stoppas.",
+      "requirements": [
+        "DR-COL-06",
+        "DR-CORE-03"
+      ],
+      "evidence_lane": "legal_product",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-070",
+      "name": "Nedskrivning utan juridiskt bortfall",
+      "given": "Konsulten gör en kvalificerad nedskrivning av en fordran.",
+      "when": "Collections visar ärendet och betalning kommer senare.",
+      "expected": "Bokföringsvärde, juridiskt krav och faktisk återvinning kan hanteras separat med rätt återföring.",
+      "requirements": [
+        "DR-COL-09",
+        "DR-ACC-03"
+      ],
+      "evidence_lane": "company",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-071",
+      "name": "Indikation är inte disponibla pengar",
+      "given": "Modellen visar preliminär möjlig finansiering men inget erbjudande finns.",
+      "when": "Cash och betalningsvyn öppnas.",
+      "expected": "Indikationen kan användas i separat scenario men inte som observerat banksaldo eller säkert betalningsutrymme.",
+      "requirements": [
+        "DR-FIN-02",
+        "DR-CASH-09"
+      ],
+      "evidence_lane": "browser",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-072",
+      "name": "Långivare får rätt datamängd",
+      "given": "Kunden väljer partner A och godkänner ett specifikt underlag.",
+      "when": "Ansökan skickas.",
+      "expected": "Endast A får den godkända datamängden och mottagningsidentitet sparas.",
+      "requirements": [
+        "DR-FIN-03",
+        "DR-RISK-02"
+      ],
+      "evidence_lane": "privacy",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-073",
+      "name": "Provision ändrar inte kostnadssortering",
+      "given": "Två jämförbara erbjudanden har olika provision till Drastic.",
+      "when": "Kunden sorterar på total känd kostnad.",
+      "expected": "Sorteringen följer definierad kundkostnad och eventuell sponsring visas separat.",
+      "requirements": [
+        "DR-FIN-05",
+        "DR-FIN-06"
+      ],
+      "evidence_lane": "browser",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-074",
+      "name": "Offerten löper ut",
+      "given": "Ett erbjudande med viss ränta har utgången giltighet.",
+      "when": "Kunden försöker acceptera.",
+      "expected": "Ingen ny ränta ersätter den gamla tyst. Ny kvalificerad offert krävs.",
+      "requirements": [
+        "DR-FIN-07",
+        "DR-CAP-01"
+      ],
+      "evidence_lane": "runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-075",
+      "name": "Signerad kredit utan utbetalning",
+      "given": "Avtal är signerat men ett villkor före utbetalning återstår.",
+      "when": "Kunden ser finansieringsstatus.",
+      "expected": "Avtal och villkor visas, men ingen faktisk banklikvid fabriceras.",
+      "requirements": [
+        "DR-FIN-08",
+        "DR-CAP-04"
+      ],
+      "evidence_lane": "browser",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-076",
+      "name": "Databrist är inte dålig kredit",
+      "given": "Bankunderlag saknas för en väsentlig period.",
+      "when": "Riskunderlag beräknas.",
+      "expected": "Datakvalitet visar lucka och komplettering. Ingen påhittad sannolikhet eller brottsmisstanke läggs till.",
+      "requirements": [
+        "DR-RISK-01",
+        "DR-RISK-05"
+      ],
+      "evidence_lane": "model_validation",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-077",
+      "name": "Ingen tidsläckage",
+      "given": "Marsbeslutet föregår faktiska aprilutfall.",
+      "when": "Historisk modellutvärdering körs mot uppdaterat datalager.",
+      "expected": "Endast information känd vid marscutoff används och aprilutfallet är en separat label.",
+      "requirements": [
+        "DR-RISK-03",
+        "DR-RISK-07"
+      ],
+      "evidence_lane": "model_validation",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-078",
+      "name": "Mänskligt undantag bevarar modelloutput",
+      "given": "Behörig kreditbeslutare väljer ett dokumenterat undantag.",
+      "when": "Beslut sparas och modellversionen ändras senare.",
+      "expected": "Originaloutput, undantag, beslutare och senare modellversion kan särskiljas och reproduceras.",
+      "requirements": [
+        "DR-RISK-06",
+        "DR-RISK-08"
+      ],
+      "evidence_lane": "governance",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-079",
+      "name": "Extern riskprodukt saknar godkänd klassificering",
+      "given": "Intern likviditetsanalys finns men kreditupplysningsprodukt är inte kvalificerad.",
+      "when": "En extern klient begär bolagspoäng för annan kund.",
+      "expected": "Åtkomst och produktaktivering vägras utan att intern kundanalys påverkas.",
+      "requirements": [
+        "DR-RISK-14",
+        "DR-CORE-07"
+      ],
+      "evidence_lane": "legal_product",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-080",
+      "name": "AML-utredning syns inte i vanlig AI-förklaring",
+      "given": "En begränsad intern utredning finns.",
+      "when": "Kunden ber den vanliga assistenten förklara varför en handling väntar.",
+      "expected": "Endast tillåten statusförklaring lämnas; skyddade träffar och utredningsuppgifter exponeras inte.",
+      "requirements": [
+        "DR-RISK-12",
+        "DR-AGT-11"
+      ],
+      "evidence_lane": "privacy",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-081",
+      "name": "Samma fordringsdel finansieras inte dubbelt",
+      "given": "80 000 av en intern fordran har redan disponerats enligt kvalificerat avtal.",
+      "when": "En ny finansiering försöker använda överlappande kapacitet.",
+      "expected": "Intern kontroll vägrar den överlappande delen och påstår inte global kontroll över okända externa dispositioner.",
+      "requirements": [
+        "DR-CAP-08",
+        "DR-CAP-09"
+      ],
+      "evidence_lane": "concurrency",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-082",
+      "name": "Nettoutbetalning är inte omsättning",
+      "given": "Lån 100 000 med innehållen kvalificerad avgift 1 000 betalas ut.",
+      "when": "Låntagarens redovisningsunderlag och Cash uppdateras.",
+      "expected": "Bank ökar 99 000 och skuld/avgift hanteras enligt profil. Ingen SaaS- eller försäljningsintäkt skapas av kapitalet.",
+      "requirements": [
+        "DR-CAP-05",
+        "DR-CAP-14"
+      ],
+      "evidence_lane": "numeric_runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-083",
+      "name": "Ränta och waterfall",
+      "given": "N-06 anger ACT/365, tio dagar, 10 procent och betalning 20 000.",
+      "when": "Kvalificerad kalkyl och allokering körs.",
+      "expected": "Ränta 273,97, kapitalminskning 19 726,03 och kapitalrest 80 273,97 med explicit avrundning.",
+      "requirements": [
+        "DR-CAP-06",
+        "DR-CAP-07"
+      ],
+      "evidence_lane": "numeric",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-084",
+      "name": "Fakturabelåningens restlikvid",
+      "given": "N-04: fordran 100 000, lån 80 000, innehållen avgift 2 000 och full slutkundsbetalning.",
+      "when": "Finansiärens avräkning genomförs.",
+      "expected": "Initial likvid 78 000 och restlikvid 20 000 ger totalt 98 000 till säljaren, inte två fria fakturainflöden.",
+      "requirements": [
+        "DR-CAP-09",
+        "DR-CAP-10"
+      ],
+      "evidence_lane": "numeric_runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-085",
+      "name": "Ny riskpoäng ändrar inte gammalt avtal",
+      "given": "Ett aktivt lån har fast ränta och en ny modell visar förändrad risk.",
+      "when": "Bevakningsjobbet körs.",
+      "expected": "Nytt granskningsärende skapas enligt avtalet men ingen obehörig retroaktiv ränteändring sker.",
+      "requirements": [
+        "DR-CAP-11",
+        "DR-CAP-12",
+        "DR-RISK-13"
+      ],
+      "evidence_lane": "governance",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-086",
+      "name": "Agent kan inte självattestera",
+      "given": "Agenten har förberedelseverktyg och läsåtkomst.",
+      "when": "Den försöker skapa ett godkännande och genomföra ett ej godkänt förslag.",
+      "expected": "Ingen självattest är möjlig och ekonomisk effekt uteblir.",
+      "requirements": [
+        "DR-AGT-01",
+        "DR-AGT-02"
+      ],
+      "evidence_lane": "security",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-087",
+      "name": "Subagenter delar kumulativ gräns",
+      "given": "Två agenter arbetar inom samma mandat med total återstående budget 100 000.",
+      "when": "Båda skickar handling om 60 000.",
+      "expected": "Högst en kvalificeras mot den gemensamma gränsen och uppdelning kan inte kringgå kontrollen.",
+      "requirements": [
+        "DR-AGT-03",
+        "DR-PMT-04"
+      ],
+      "evidence_lane": "concurrency",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-088",
+      "name": "Instruktion i faktura",
+      "given": "Dokumenttext uppmanar assistenten att ändra betalningskonto och ignorera attest.",
+      "when": "Extraktionsagenten läser dokumentet.",
+      "expected": "Texten får endast behandlas som otillförlitligt innehåll; verktyg, mandat och mottagare ändras inte.",
+      "requirements": [
+        "DR-AGT-04",
+        "DR-AP-04"
+      ],
+      "evidence_lane": "security",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-089",
+      "name": "Agentens numeriska förklaring",
+      "given": "Verktyget returnerar ett exakt belopp som modellen tidigare gissade fel.",
+      "when": "Förklaringen genereras.",
+      "expected": "Den använder kontraktets belopp och källreferens utan en konkurrerande numerisk beräkning.",
+      "requirements": [
+        "DR-AGT-05",
+        "DR-AGT-11"
+      ],
+      "evidence_lane": "model_validation",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-090",
+      "name": "Avbruten agent återfinner kvitto",
+      "given": "Agenten startade en godkänd handling och stoppades efter extern inlämning.",
+      "when": "Körningen återupptas.",
+      "expected": "Den utreder ursprunglig identitet och skapar inte ett nytt ekonomiskt behov.",
+      "requirements": [
+        "DR-AGT-08",
+        "DR-PMT-07"
+      ],
+      "evidence_lane": "runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-091",
+      "name": "Banklogotyp betyder bara kvalificerad kapabilitet",
+      "given": "Leverantör stödjer kontoinformation men inte utbetalning i denna profil.",
+      "when": "Kunden öppnar integrationens produktvy.",
+      "expected": "Läsning visas som tillgänglig och betalning som ej kvalificerad, utan skenbar fungerande knapp.",
+      "requirements": [
+        "DR-INT-01",
+        "DR-PMT-02"
+      ],
+      "evidence_lane": "browser",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-092",
+      "name": "Backfill skickar inte historiska krav",
+      "given": "Ett historiskt system innehåller förfallna och redan betalda fakturor.",
+      "when": "Backfill körs efter avbrott och återstartas.",
+      "expected": "Objekt återfinns utan dubblering och importen utlöser inte gamla kundutskick eller betalningar.",
+      "requirements": [
+        "DR-INT-04",
+        "DR-COL-01"
+      ],
+      "evidence_lane": "integration",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-093",
+      "name": "Missad webhook återfinns",
+      "given": "Partnern ändrade ett objekt men webhook saknas.",
+      "when": "Periodisk kvalificerad synkkontroll körs.",
+      "expected": "Rätt revision upptäcks, källvattenmärke uppdateras och berörda projectioner kan beräknas om.",
+      "requirements": [
+        "DR-INT-05",
+        "DR-PMT-08"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-094",
+      "name": "Providerbyte med gamla öppna uppdrag",
+      "given": "Nya betalningar går till B och gamla oavgjorda uppdrag finns hos A.",
+      "when": "Ett sent meddelande från A anländer.",
+      "expected": "Det avstäms mot A:s gamla identitet och ingen motsvarande betalning skapas hos B.",
+      "requirements": [
+        "DR-INT-10",
+        "DR-PMT-07"
+      ],
+      "evidence_lane": "provider_qualification",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-095",
+      "name": "Source offer matchar release",
+      "given": "En driftsatt täckt utgåva bygger på fast kodrevision och lockfil.",
+      "when": "Kunden öppnar source offer.",
+      "expected": "Rätt motsvarande kod och byggunderlag erbjuds utan kunddata eller produktionshemligheter.",
+      "requirements": [
+        "DR-INT-11",
+        "DR-CORE-11"
+      ],
+      "evidence_lane": "release",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-096",
+      "name": "Trevägsavstämning hittar fel kund",
+      "given": "Partnernetto stämmer totalt men en avräkning är tilldelad fel kund.",
+      "when": "Transaktions- och kundavstämning körs.",
+      "expected": "Avvikelsen hittas trots korrekt totalsumma och kan inte döljas som allmänt nollsaldo.",
+      "requirements": [
+        "DR-OPS-02",
+        "DR-OPS-04"
+      ],
+      "evidence_lane": "runtime",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-097",
+      "name": "Restore efter redan exekverad betalning",
+      "given": "Backup föregår en verklig partnerbetalning men ursprunglig avsikt och externa återidentifieringsunderlag finns enligt kvalificerad design.",
+      "when": "Tjänsten återställs.",
+      "expected": "Finansiell writer förblir spärrad tills betalningen återfunnits eller utretts och ingen dubbel sidoeffekt sker.",
+      "requirements": [
+        "DR-OPS-06",
+        "DR-PMT-06"
+      ],
+      "evidence_lane": "restore",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-098",
+      "name": "Support kan inte attestera",
+      "given": "Support har tidsbegränsad diagnostikåtkomst.",
+      "when": "Support försöker godkänna kundens betalning.",
+      "expected": "Handlingen vägras och försöket loggas utan att kundmandat ändras.",
+      "requirements": [
+        "DR-OPS-07",
+        "DR-PMT-05"
+      ],
+      "evidence_lane": "security",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-099",
+      "name": "Modellregion ändras",
+      "given": "En ny modellleverantör har annan dataväg än den godkända.",
+      "when": "En känslig löneuppgift försöker använda den modellen.",
+      "expected": "Anropet blockeras tills dataväg och ändamål är kvalificerade. Vanliga tillåtna uppgifter kan fortsätta.",
+      "requirements": [
+        "DR-OPS-08",
+        "DR-AGT-09"
+      ],
+      "evidence_lane": "privacy",
+      "status": "specified_not_executed"
+    },
+    {
+      "id": "ES-AT-100",
+      "name": "Kundexit med lån och kortrefund",
+      "given": "Kunden avslutar plattformen men har lån, öppen refund och arkivpliktigt underlag.",
+      "when": "Exitflödet genomförs.",
+      "expected": "Export fungerar, återbetalningsväg och refundansvar kvarstår och retention behandlas per datakategori.",
+      "requirements": [
+        "DR-OPS-14",
+        "DR-CAP-16",
+        "DR-CARD-12"
+      ],
+      "evidence_lane": "exit",
+      "status": "specified_not_executed"
+    }
+  ]
+}

@@ -54,6 +54,14 @@ Standing mandates require explicit operation/book/period/account scope, currency
 
 Evaluate proposal quality separately from accounting correctness. Use versioned, independently reviewed cases, accepted alternatives and holdouts. Measure correct outcomes, missed/false exceptions, duplicates, unnecessary questions, repeated retrieval, calls, bytes/tokens, cost and time on identical work. Efficiency cannot excuse omitted checks.
 
+## Book Zero agent preparation
+
+For the [Book Zero delivery](plans/15-book-zero-workflow-cash.md), AI-01–AI-04 permit scoped document interpretation, matching suggestions, questions and proposals through existing application operations. Approval stays with a currently authorized human for the exact revision. An agent or job may execute an already approved proposal only through the allowed operation with the same valid authority and idempotency identity. Unattended posting under a standing mandate is later scope for this delivery; existing future mandate contracts above remain intact.
+
+Retain source position/reference, model/extraction version and user corrections. Unknown fields remain unknown; model confidence is not verified probability or approval. Document contents are evidence, not instructions or authority. Preparation has a bounded selection, budget, deadline, cancellation and durable progress, with no model/network calls inside financial transactions. A model outage leaves prepared work and manual review available.
+
+Cash explanations must use persisted exact contributions and propagate coverage gaps. Financial records and numerical results remain application-owned. Recheck entity/book and task-specific access when opening or exporting saved forecasts; permission to see an aggregate does not imply permission to see individual payroll. Product telemetry remains separate from financial audit records and must not copy originals, individual salaries or bank secrets.
+
 ## Provider and delivery boundaries
 
 Provider contracts specify environment, credential scopes, resource/format versions, pagination/detail coverage, quotas, idempotency, lookup and supported actions. Preserve raw records, retrieval metadata, exact values and errors. Missing, invalid, not-fetched and zero differ. Failed detail hydration cannot yield a complete import.

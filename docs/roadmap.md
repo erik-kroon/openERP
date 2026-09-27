@@ -10,6 +10,14 @@ An isolated local Worker/PostgreSQL observation exercised evidence retention, pr
 
 The [design coverage map](design-coverage.md) links requirements and detailed edge cases to their owning specifications and acceptance gates. The [verification strategy](verification-strategy.md) defines repeatable runtime evidence. [BANK-1 local synthetic evidence](plans/evidence/bank1-local.md) records multi-entry matching, whole-match reversal, saved-report scope and account/period behavior; it does not close the P2 actual-period gate.
 
+## Book Zero direction received 2026-09-27
+
+The [Book Zero delivery plan](plans/15-book-zero-workflow-cash.md) integrates the openERP-specific PRD from the supplied Drastic archive. The first priority is a reviewed Drastic period plus a complete daily workflow; read-only Cash consumes the same qualified sources and obligations. The original source is retained byte-identical under [vendored specifications](specs/README.md#book-zero-prd). The broader platform PRD is not included in this scope.
+
+L0–L2 organize profile/current-owner reconciliation, the first period and usable daily work across P0–P5 and frontend owners. L3/L4 add the Cash basis and daily forecast. L5 expands to full-year handoff and a new real period; L6 retains P7's independent transition decision; L7 is a bounded external pilot. G0–G7 distinguish scope, historical-period proof, daily-work proof, Cash, year handoff, new-period proof, cutover and pilot readiness. [The delivery/gate map](plans/15-book-zero-workflow-cash.md#delivery-and-independent-gates) states their dependencies without changing the existing packet index.
+
+Only documentation provenance, requirements/acceptance references, links and illustrative arithmetic are checked in this update; see the [document verification record](plans/evidence/book-zero-docs-verification.md). No new implementation, real-period assessment, application E2E, company qualification, external outcome or completed L/G/P gate is claimed. The PRD's company facts need original evidence, and its older inspection revision is not a current absence audit.
+
 ## Phases and exit gates
 
 P0/P1 and parts of later phases have initial implementation or active drafts; complete exit gates remain open. The [dependency-ordered backlog](plans/08-delivery.md) turns the seven areas into scoped packets with named acceptance criteria. A later row's position never permits omission of an obligation that applies to the company. Scope large commits around capabilities whose required consumers work together.

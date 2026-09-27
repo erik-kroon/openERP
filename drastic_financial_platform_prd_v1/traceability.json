@@ -1,0 +1,1585 @@
+{
+  "schema_version": "1.0",
+  "document_version": "1.0",
+  "date": "2026-09-27",
+  "repository": "erik-kroon/openERP",
+  "selectively_reviewed_revision": "09fdb19837bb1535b1b4c060e68a0b237858b0a5",
+  "status": "specification_not_implementation",
+  "source_document": "PRD_Drastic_Financial_Platform_End_State_v1.md",
+  "note": "Alla krav har inline-acceptans. additional_scenarios är ett kompletterande urval, inte ensam verifieringsomfattning.",
+  "traceability": [
+    {
+      "requirement_id": "DR-CORE-01",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-001"
+      ]
+    },
+    {
+      "requirement_id": "DR-CORE-02",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-002"
+      ]
+    },
+    {
+      "requirement_id": "DR-CORE-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-069"
+      ]
+    },
+    {
+      "requirement_id": "DR-CORE-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-003"
+      ]
+    },
+    {
+      "requirement_id": "DR-CORE-05",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-002"
+      ]
+    },
+    {
+      "requirement_id": "DR-CORE-06",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CORE-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-004",
+        "ES-AT-079"
+      ]
+    },
+    {
+      "requirement_id": "DR-CORE-08",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-005"
+      ]
+    },
+    {
+      "requirement_id": "DR-CORE-09",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-027"
+      ]
+    },
+    {
+      "requirement_id": "DR-CORE-10",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CORE-11",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-095"
+      ]
+    },
+    {
+      "requirement_id": "DR-CORE-12",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-WORK-01",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-006"
+      ]
+    },
+    {
+      "requirement_id": "DR-WORK-02",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-WORK-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-045"
+      ]
+    },
+    {
+      "requirement_id": "DR-WORK-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-006"
+      ]
+    },
+    {
+      "requirement_id": "DR-WORK-05",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-007"
+      ]
+    },
+    {
+      "requirement_id": "DR-WORK-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-008"
+      ]
+    },
+    {
+      "requirement_id": "DR-WORK-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-003"
+      ]
+    },
+    {
+      "requirement_id": "DR-WORK-08",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-009"
+      ]
+    },
+    {
+      "requirement_id": "DR-WORK-09",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-010"
+      ]
+    },
+    {
+      "requirement_id": "DR-WORK-10",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-ACC-01",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-011",
+        "ES-AT-053"
+      ]
+    },
+    {
+      "requirement_id": "DR-ACC-02",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-012"
+      ]
+    },
+    {
+      "requirement_id": "DR-ACC-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-013",
+        "ES-AT-070"
+      ]
+    },
+    {
+      "requirement_id": "DR-ACC-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-007",
+        "ES-AT-008",
+        "ES-AT-011"
+      ]
+    },
+    {
+      "requirement_id": "DR-ACC-05",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-ACC-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-012",
+        "ES-AT-049"
+      ]
+    },
+    {
+      "requirement_id": "DR-ACC-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-014"
+      ]
+    },
+    {
+      "requirement_id": "DR-ACC-08",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-ACC-09",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-ACC-10",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-015"
+      ]
+    },
+    {
+      "requirement_id": "DR-ACC-11",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-001",
+        "ES-AT-060"
+      ]
+    },
+    {
+      "requirement_id": "DR-ACC-12",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-040"
+      ]
+    },
+    {
+      "requirement_id": "DR-ACC-13",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-013",
+        "ES-AT-058"
+      ]
+    },
+    {
+      "requirement_id": "DR-ACC-14",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-016"
+      ]
+    },
+    {
+      "requirement_id": "DR-TAX-01",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-016",
+        "ES-AT-021",
+        "ES-AT-068"
+      ]
+    },
+    {
+      "requirement_id": "DR-TAX-02",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-TAX-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-017",
+        "ES-AT-018"
+      ]
+    },
+    {
+      "requirement_id": "DR-TAX-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-019"
+      ]
+    },
+    {
+      "requirement_id": "DR-TAX-05",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-TAX-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-024"
+      ]
+    },
+    {
+      "requirement_id": "DR-TAX-07",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-TAX-08",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-017",
+        "ES-AT-020"
+      ]
+    },
+    {
+      "requirement_id": "DR-TAX-09",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-018"
+      ]
+    },
+    {
+      "requirement_id": "DR-TAX-10",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-PAY-01",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-PAY-02",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-PAY-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-021"
+      ]
+    },
+    {
+      "requirement_id": "DR-PAY-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-023"
+      ]
+    },
+    {
+      "requirement_id": "DR-PAY-05",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-PAY-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-022"
+      ]
+    },
+    {
+      "requirement_id": "DR-PAY-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-024"
+      ]
+    },
+    {
+      "requirement_id": "DR-PAY-08",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-PAY-09",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-PAY-10",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-PAY-11",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-025"
+      ]
+    },
+    {
+      "requirement_id": "DR-AP-01",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-026"
+      ]
+    },
+    {
+      "requirement_id": "DR-AP-02",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-027"
+      ]
+    },
+    {
+      "requirement_id": "DR-AP-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-028"
+      ]
+    },
+    {
+      "requirement_id": "DR-AP-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-088"
+      ]
+    },
+    {
+      "requirement_id": "DR-AP-05",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-AP-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-030"
+      ]
+    },
+    {
+      "requirement_id": "DR-AP-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-015",
+        "ES-AT-029"
+      ]
+    },
+    {
+      "requirement_id": "DR-AP-08",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-028"
+      ]
+    },
+    {
+      "requirement_id": "DR-AP-09",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-AP-10",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CASH-01",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-031"
+      ]
+    },
+    {
+      "requirement_id": "DR-CASH-02",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-036",
+        "ES-AT-037"
+      ]
+    },
+    {
+      "requirement_id": "DR-CASH-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-032"
+      ]
+    },
+    {
+      "requirement_id": "DR-CASH-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-022",
+        "ES-AT-026",
+        "ES-AT-034"
+      ]
+    },
+    {
+      "requirement_id": "DR-CASH-05",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-033"
+      ]
+    },
+    {
+      "requirement_id": "DR-CASH-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-033"
+      ]
+    },
+    {
+      "requirement_id": "DR-CASH-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-019"
+      ]
+    },
+    {
+      "requirement_id": "DR-CASH-08",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CASH-09",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-071"
+      ]
+    },
+    {
+      "requirement_id": "DR-CASH-10",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CASH-11",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-031",
+        "ES-AT-034"
+      ]
+    },
+    {
+      "requirement_id": "DR-CASH-12",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CASH-13",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-035"
+      ]
+    },
+    {
+      "requirement_id": "DR-CASH-14",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-TRE-01",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-TRE-02",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-TRE-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-036"
+      ]
+    },
+    {
+      "requirement_id": "DR-TRE-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-037"
+      ]
+    },
+    {
+      "requirement_id": "DR-TRE-05",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-038"
+      ]
+    },
+    {
+      "requirement_id": "DR-TRE-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-039"
+      ]
+    },
+    {
+      "requirement_id": "DR-TRE-07",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-TRE-08",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-TRE-09",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-040"
+      ]
+    },
+    {
+      "requirement_id": "DR-TRE-10",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-TRE-11",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-PMT-01",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-PMT-02",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-091"
+      ]
+    },
+    {
+      "requirement_id": "DR-PMT-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-005",
+        "ES-AT-041"
+      ]
+    },
+    {
+      "requirement_id": "DR-PMT-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-038",
+        "ES-AT-043",
+        "ES-AT-087"
+      ]
+    },
+    {
+      "requirement_id": "DR-PMT-05",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-030",
+        "ES-AT-041",
+        "ES-AT-098"
+      ]
+    },
+    {
+      "requirement_id": "DR-PMT-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-042",
+        "ES-AT-097"
+      ]
+    },
+    {
+      "requirement_id": "DR-PMT-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-042",
+        "ES-AT-090",
+        "ES-AT-094"
+      ]
+    },
+    {
+      "requirement_id": "DR-PMT-08",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-044",
+        "ES-AT-093"
+      ]
+    },
+    {
+      "requirement_id": "DR-PMT-09",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-PMT-10",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-023"
+      ]
+    },
+    {
+      "requirement_id": "DR-PMT-11",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-039"
+      ]
+    },
+    {
+      "requirement_id": "DR-PMT-12",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-045"
+      ]
+    },
+    {
+      "requirement_id": "DR-PMT-13",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-PMT-14",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-066"
+      ]
+    },
+    {
+      "requirement_id": "DR-PMT-15",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-PMT-16",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-054"
+      ]
+    },
+    {
+      "requirement_id": "DR-CARD-01",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CARD-02",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CARD-03",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CARD-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-046"
+      ]
+    },
+    {
+      "requirement_id": "DR-CARD-05",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-046"
+      ]
+    },
+    {
+      "requirement_id": "DR-CARD-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-029"
+      ]
+    },
+    {
+      "requirement_id": "DR-CARD-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-047"
+      ]
+    },
+    {
+      "requirement_id": "DR-CARD-08",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-048"
+      ]
+    },
+    {
+      "requirement_id": "DR-CARD-09",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-047"
+      ]
+    },
+    {
+      "requirement_id": "DR-CARD-10",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-049"
+      ]
+    },
+    {
+      "requirement_id": "DR-CARD-11",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-050"
+      ]
+    },
+    {
+      "requirement_id": "DR-CARD-12",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-100"
+      ]
+    },
+    {
+      "requirement_id": "DR-BILL-01",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-BILL-02",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-BILL-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-052"
+      ]
+    },
+    {
+      "requirement_id": "DR-BILL-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-051"
+      ]
+    },
+    {
+      "requirement_id": "DR-BILL-05",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-051"
+      ]
+    },
+    {
+      "requirement_id": "DR-BILL-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-053"
+      ]
+    },
+    {
+      "requirement_id": "DR-BILL-07",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-BILL-08",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-BILL-09",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-052",
+        "ES-AT-054",
+        "ES-AT-061"
+      ]
+    },
+    {
+      "requirement_id": "DR-BILL-10",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-055"
+      ]
+    },
+    {
+      "requirement_id": "DR-BILL-11",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-BILL-12",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-055"
+      ]
+    },
+    {
+      "requirement_id": "DR-BILL-13",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CLOSE-01",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-014"
+      ]
+    },
+    {
+      "requirement_id": "DR-CLOSE-02",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CLOSE-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-056"
+      ]
+    },
+    {
+      "requirement_id": "DR-CLOSE-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-057"
+      ]
+    },
+    {
+      "requirement_id": "DR-CLOSE-05",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CLOSE-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-058",
+        "ES-AT-062"
+      ]
+    },
+    {
+      "requirement_id": "DR-CLOSE-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-056"
+      ]
+    },
+    {
+      "requirement_id": "DR-CLOSE-08",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CLOSE-09",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-059"
+      ]
+    },
+    {
+      "requirement_id": "DR-CLOSE-10",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-060"
+      ]
+    },
+    {
+      "requirement_id": "DR-INV-01",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-INV-02",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-061"
+      ]
+    },
+    {
+      "requirement_id": "DR-INV-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-062"
+      ]
+    },
+    {
+      "requirement_id": "DR-INV-04",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-INV-05",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-063"
+      ]
+    },
+    {
+      "requirement_id": "DR-INV-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-032",
+        "ES-AT-063",
+        "ES-AT-067"
+      ]
+    },
+    {
+      "requirement_id": "DR-INV-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-064"
+      ]
+    },
+    {
+      "requirement_id": "DR-INV-08",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-INV-09",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-INV-10",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-INV-11",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-065"
+      ]
+    },
+    {
+      "requirement_id": "DR-COL-01",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-066",
+        "ES-AT-092"
+      ]
+    },
+    {
+      "requirement_id": "DR-COL-02",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-068"
+      ]
+    },
+    {
+      "requirement_id": "DR-COL-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-067"
+      ]
+    },
+    {
+      "requirement_id": "DR-COL-04",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-COL-05",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-COL-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-069"
+      ]
+    },
+    {
+      "requirement_id": "DR-COL-07",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-COL-08",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-COL-09",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-070"
+      ]
+    },
+    {
+      "requirement_id": "DR-COL-10",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-FIN-01",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-FIN-02",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-071"
+      ]
+    },
+    {
+      "requirement_id": "DR-FIN-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-004",
+        "ES-AT-072"
+      ]
+    },
+    {
+      "requirement_id": "DR-FIN-04",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-FIN-05",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-073"
+      ]
+    },
+    {
+      "requirement_id": "DR-FIN-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-073"
+      ]
+    },
+    {
+      "requirement_id": "DR-FIN-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-074"
+      ]
+    },
+    {
+      "requirement_id": "DR-FIN-08",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-075"
+      ]
+    },
+    {
+      "requirement_id": "DR-FIN-09",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-FIN-10",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-RISK-01",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-076"
+      ]
+    },
+    {
+      "requirement_id": "DR-RISK-02",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-025",
+        "ES-AT-072"
+      ]
+    },
+    {
+      "requirement_id": "DR-RISK-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-035",
+        "ES-AT-077"
+      ]
+    },
+    {
+      "requirement_id": "DR-RISK-04",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-RISK-05",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-076"
+      ]
+    },
+    {
+      "requirement_id": "DR-RISK-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-078"
+      ]
+    },
+    {
+      "requirement_id": "DR-RISK-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-077"
+      ]
+    },
+    {
+      "requirement_id": "DR-RISK-08",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-078"
+      ]
+    },
+    {
+      "requirement_id": "DR-RISK-09",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-RISK-10",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-RISK-11",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-RISK-12",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-080"
+      ]
+    },
+    {
+      "requirement_id": "DR-RISK-13",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-085"
+      ]
+    },
+    {
+      "requirement_id": "DR-RISK-14",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-079"
+      ]
+    },
+    {
+      "requirement_id": "DR-RISK-15",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-RISK-16",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CAP-01",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-074"
+      ]
+    },
+    {
+      "requirement_id": "DR-CAP-02",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CAP-03",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CAP-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-075"
+      ]
+    },
+    {
+      "requirement_id": "DR-CAP-05",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-082"
+      ]
+    },
+    {
+      "requirement_id": "DR-CAP-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-083"
+      ]
+    },
+    {
+      "requirement_id": "DR-CAP-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-083"
+      ]
+    },
+    {
+      "requirement_id": "DR-CAP-08",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-081"
+      ]
+    },
+    {
+      "requirement_id": "DR-CAP-09",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-081",
+        "ES-AT-084"
+      ]
+    },
+    {
+      "requirement_id": "DR-CAP-10",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-064",
+        "ES-AT-084"
+      ]
+    },
+    {
+      "requirement_id": "DR-CAP-11",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-085"
+      ]
+    },
+    {
+      "requirement_id": "DR-CAP-12",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-085"
+      ]
+    },
+    {
+      "requirement_id": "DR-CAP-13",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CAP-14",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-082"
+      ]
+    },
+    {
+      "requirement_id": "DR-CAP-15",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-CAP-16",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-100"
+      ]
+    },
+    {
+      "requirement_id": "DR-AGT-01",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-009",
+        "ES-AT-086"
+      ]
+    },
+    {
+      "requirement_id": "DR-AGT-02",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-086"
+      ]
+    },
+    {
+      "requirement_id": "DR-AGT-03",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-043",
+        "ES-AT-087"
+      ]
+    },
+    {
+      "requirement_id": "DR-AGT-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-088"
+      ]
+    },
+    {
+      "requirement_id": "DR-AGT-05",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-089"
+      ]
+    },
+    {
+      "requirement_id": "DR-AGT-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-057"
+      ]
+    },
+    {
+      "requirement_id": "DR-AGT-07",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-AGT-08",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-090"
+      ]
+    },
+    {
+      "requirement_id": "DR-AGT-09",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-050",
+        "ES-AT-099"
+      ]
+    },
+    {
+      "requirement_id": "DR-AGT-10",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-AGT-11",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-080",
+        "ES-AT-089"
+      ]
+    },
+    {
+      "requirement_id": "DR-AGT-12",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-INT-01",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-091"
+      ]
+    },
+    {
+      "requirement_id": "DR-INT-02",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-INT-03",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-INT-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-092"
+      ]
+    },
+    {
+      "requirement_id": "DR-INT-05",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-044",
+        "ES-AT-093"
+      ]
+    },
+    {
+      "requirement_id": "DR-INT-06",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-INT-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-010"
+      ]
+    },
+    {
+      "requirement_id": "DR-INT-08",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-INT-09",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-INT-10",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-094"
+      ]
+    },
+    {
+      "requirement_id": "DR-INT-11",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-095"
+      ]
+    },
+    {
+      "requirement_id": "DR-OPS-01",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-OPS-02",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-048",
+        "ES-AT-065",
+        "ES-AT-096"
+      ]
+    },
+    {
+      "requirement_id": "DR-OPS-03",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-OPS-04",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-096"
+      ]
+    },
+    {
+      "requirement_id": "DR-OPS-05",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-OPS-06",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-020",
+        "ES-AT-059",
+        "ES-AT-097"
+      ]
+    },
+    {
+      "requirement_id": "DR-OPS-07",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-098"
+      ]
+    },
+    {
+      "requirement_id": "DR-OPS-08",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-099"
+      ]
+    },
+    {
+      "requirement_id": "DR-OPS-09",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-OPS-10",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-OPS-11",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-OPS-12",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-OPS-13",
+      "inline_acceptance": true,
+      "additional_scenarios": []
+    },
+    {
+      "requirement_id": "DR-OPS-14",
+      "inline_acceptance": true,
+      "additional_scenarios": [
+        "ES-AT-100"
+      ]
+    }
+  ]
+}

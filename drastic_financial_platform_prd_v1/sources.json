@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "document_version": "1.0",
+  "date": "2026-09-27",
+  "repository": "erik-kroon/openERP",
+  "selectively_reviewed_revision": "09fdb19837bb1535b1b4c060e68a0b237858b0a5",
+  "status": "specification_not_implementation",
+  "source_document": "PRD_Drastic_Financial_Platform_End_State_v1.md",
+  "sources": [
+    {
+      "id": "B00",
+      "title": "Föregående PRD: Book Zero, Workflow och Drastic Cash",
+      "kind": "user_artifact",
+      "path": "PRD_openERP_Book_Zero_Workflow_Drastic_Cash_v1.md",
+      "sha256": "6dee5e41e75373722a443f23b2aa6f3b3329dcad862b3c6284a07ac1aa263afd",
+      "supports": "Oförändrad första verifieringsomfattning och kravkontinuitet. Inte en ny runtimegranskning.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "R01",
+      "title": "openERP README vid granskad revision",
+      "kind": "repository_primary",
+      "url": "https://github.com/erik-kroon/openERP/blob/09fdb19837bb1535b1b4c060e68a0b237858b0a5/README.md",
+      "supports": "Beskriven utvecklingsfunktionalitet, teknisk grund och uttryckliga begränsningar i produktions-/myndighetsvalidering.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "R02",
+      "title": "openERP AGENTS.md vid granskad revision",
+      "kind": "repository_primary",
+      "url": "https://github.com/erik-kroon/openERP/blob/09fdb19837bb1535b1b4c060e68a0b237858b0a5/AGENTS.md",
+      "supports": "Applikationsägarskap, Effect/Drizzle, transaktionsgränser, UI-regler och separat auktorisation för teständringar.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "R03",
+      "title": "openERP LICENSING.md vid granskad revision",
+      "kind": "repository_primary",
+      "url": "https://github.com/erik-kroon/openERP/blob/09fdb19837bb1535b1b4c060e68a0b237858b0a5/LICENSING.md",
+      "supports": "Projektets AGPL-3.0-only-policy, källutgåva vid hosted drift och avgränsning mot kunddata.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E01",
+      "title": "Finansinspektionen: Viss finansiell verksamhet",
+      "kind": "external_primary",
+      "url": "https://www.fi.se/sv/betalningar/sok-tillstand/viss-finansiell-verksamhet/",
+      "supports": "Registrering för bland annat yrkesmässigt lämnande och förmedling av företagskredit samt factoring/leasing. Inte universellt finansiellt tillstånd.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E02",
+      "title": "Finansinspektionen: Betaltjänster",
+      "kind": "external_primary",
+      "url": "https://www.fi.se/sv/betalningar/sok-tillstand/betaltjanster/",
+      "supports": "Betaltjänsttillstånd, kontoinformationsregistrering och kvalificerad ombudsmodell.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E03",
+      "title": "Finansinspektionen: Elektroniska pengar",
+      "kind": "external_primary",
+      "url": "https://www.fi.se/sv/betalningar/sok-tillstand/elektroniska-pengar/",
+      "supports": "Separat ram för e-pengautgivning och varför faktisk värdebärande wallet behöver prövas.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E04",
+      "title": "Finansinspektionen: Inkasso",
+      "kind": "external_primary",
+      "url": "https://www.fi.se/sv/bank/sok-tillstand/inkasso/",
+      "supports": "Tillståndsram för indrivning åt andra eller vissa övertagna fordringar samt särskilda undantag som måste bedömas.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E05",
+      "title": "IMY: Ansöka om kreditupplysningstillstånd",
+      "kind": "external_primary",
+      "url": "https://www.imy.se/verksamhet/utfora-arenden/ansoka-om-kreditupplysningstillstand/",
+      "supports": "Separat tillståndsbedömning för kreditupplysningsverksamhet och framtida extern Risk-produkt.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E06",
+      "title": "IMY: Automatiserade beslut",
+      "kind": "external_primary",
+      "url": "https://www.imy.se/privatperson/dataskydd/dina-rattigheter/automatiserade-beslut/",
+      "supports": "Individers rättigheter vid helt automatiserade betydande beslut, med tillämpliga undantag och skydd.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E07",
+      "title": "EUR-Lex: AI Act, konsolidering 27 juli 2026",
+      "kind": "external_primary",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02024R1689-20260727",
+      "supports": "Versionsbunden AI-klassificering, kreditvärdighetsbedömning av fysiska personer och krav att kontrollera aktuella övergångsbestämmelser. Konsoliderad text är dokumentationshjälp; officiella rättsakter och faktisk tillämplighet styr.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E08",
+      "title": "Finansinspektionen: Om Dora",
+      "kind": "external_primary",
+      "url": "https://www.fi.se/sv/betalningar/it-risker-dora/om-dora/",
+      "supports": "Finansiell IKT-risk, motståndskraft och skillnaden mellan reglerad aktör och extern tjänsteleverantör.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E09",
+      "title": "Finansinspektionen: Penningtvätt och finansiering av terrorism",
+      "kind": "external_primary",
+      "url": "https://www.fi.se/sv/betalningar/penningtvatt2/",
+      "supports": "Behovet av kvalificerat ansvar och process för penningtvättsrisk inom berörd verksamhet.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E10",
+      "title": "Länsstyrelsen Stockholm: Redovisningskonsulter och skatterådgivare uppmärksammas på signaler om penningtvätt",
+      "kind": "external_primary",
+      "url": "https://www.lansstyrelsen.se/stockholm/om-oss/om-lansstyrelsen-stockholm/nyheter/nyheter---stockholm/2025-03-24-redovisningskonsulter-och-skatteradgivare-uppmarksammas-pa-signaler-om-penningtvatt.html",
+      "supports": "Redovisnings- och skatterådgivningstjänster behöver skiljas från ren programvara vid AML-rollbedömning.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E11",
+      "title": "PCI Security Standards Council: PCI DSS",
+      "kind": "external_primary",
+      "url": "https://www.pcisecuritystandards.org/standards/pci-dss/",
+      "supports": "Kortsäkerhet och behov av kvalificerad kortdatamiljö. Inget påstående om PCI-certifiering av Drastic.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E12",
+      "title": "Skatteverket: Skattekonto, betala och få tillbaka",
+      "kind": "external_primary",
+      "url": "https://www.skatteverket.se/foretag/skatterochavdrag/skattekontobetalaochfatillbaka.4.6a6688231259309ff1f800029122.html",
+      "supports": "Inbetalning till skattekonto kan inte öronmärkas som en viss enskild skatt eller avgift.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E13",
+      "title": "Bokföringsnämnden: Arkivering",
+      "kind": "external_primary",
+      "url": "https://www.bfn.se/fragor-och-svar/arkivering/",
+      "supports": "Generell sjuårsregel efter kalenderåret för räkenskapsårets slut samt behov att kvalificera förvaring och läsbarhet.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E14",
+      "title": "Bolagsverket: Digital inlämning av årsredovisning",
+      "kind": "external_primary",
+      "url": "https://bolagsverket.se/omoss/utvecklingavdigitalatjanster/digitalinlamningavarsredovisning.2255.html",
+      "supports": "Extern digital årsredovisningskanal som behöver kvalificeras med aktuella format, roller och kvitton.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E15",
+      "title": "Upphandlingsmyndigheten: Regler för e-handel och e-faktura",
+      "kind": "external_primary",
+      "url": "https://www.upphandlingsmyndigheten.se/digitalisering-och-e-handel/e-handel/regler-for-e-handel-och-e-faktura/",
+      "supports": "Kvalificerad offentlig e-fakturering och strukturerade format. Inte ett generellt krav på alla svenska B2B-fakturor.",
+      "checked_on": "2026-09-27"
+    },
+    {
+      "id": "E17",
+      "title": "IMY: Dataskyddsförordningen i fulltext",
+      "kind": "external_primary",
+      "url": "https://www.imy.se/verksamhet/dataskydd/det-har-galler-enligt-gdpr/introduktion-till-gdpr/dataskyddsforordningen-i-fulltext/",
+      "supports": "Rättslig grund, ändamål, uppgiftsminimering och relevanta rättigheter behöver bedömas för faktisk behandling.",
+      "checked_on": "2026-09-27"
+    }
+  ]
+}

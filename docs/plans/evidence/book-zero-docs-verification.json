@@ -1,0 +1,91 @@
+{
+  "result": "passed_document_checks_only",
+  "requirementsMapped": 49,
+  "casesMapped": 45,
+  "base": {
+    "closingMinor": 9000000,
+    "minimumMinor": 3000000,
+    "headroomMinor": 2000000
+  },
+  "delayed": {
+    "closingMinor": 9000000,
+    "minimumMinor": 0,
+    "headroomMinor": -1000000
+  },
+  "headObservedDuringIntegration": "09fdb19837bb1535b1b4c060e68a0b237858b0a5",
+  "archive": {
+    "name": "Drastic_Financial_Platform_PRD_v1.zip",
+    "sha256": "b884b83af6ea5d45441f40f740ad866386ea270d448c263d0e7f963f8b744c0b"
+  },
+  "source": {
+    "path": "PRD_openERP_Book_Zero_Workflow_Drastic_Cash_v1.md",
+    "bytes": 80645,
+    "sha256": "6dee5e41e75373722a443f23b2aa6f3b3329dcad862b3c6284a07ac1aa263afd"
+  },
+  "documentationChecks": {
+    "localLinksAndAnchors": 303,
+    "maintainedDocuments": 14,
+    "planningIntegrity": "passed",
+    "existingPacketGraph": "unchanged",
+    "gitDiffCheck": "passed"
+  },
+  "scope": "documentation_only_no_application_or_company_verification",
+  "files": [
+    {
+      "path": "docs/README.md",
+      "sha256": "08b3bbc4643ebf1eaa57984b4854e063617aad5950ae675bb8253596b1a995c3"
+    },
+    {
+      "path": "docs/product.md",
+      "sha256": "04da8837f6b7ec6c9b5d97315fdec6255ea66342d10eb6c833422a91d412217b"
+    },
+    {
+      "path": "docs/architecture.md",
+      "sha256": "a316e8c1dcded5036f6bb9e47b7e4e1b45bd4f6e634a3cfd9e9ef2538bae582a"
+    },
+    {
+      "path": "docs/domain.md",
+      "sha256": "5fad3370a95ae82bb93a6c242369150bfac3543b2c1d359392c53fe9e024d012"
+    },
+    {
+      "path": "docs/frontend.md",
+      "sha256": "cecba44188dae004bb68e76ef88dde35efbe6458d55b551d125b05a40cbfe7b6"
+    },
+    {
+      "path": "docs/operations.md",
+      "sha256": "a2927719e38852e02cda3fd26348812b9f189361764d975d70656f90fa048ea6"
+    },
+    {
+      "path": "docs/roadmap.md",
+      "sha256": "55e4ffc4c1062dae5859109cbdcec8c24825705b08a9bf312e7828c7940dd885"
+    },
+    {
+      "path": "docs/open-decisions.md",
+      "sha256": "67d1e3d739c33f7e4bc017c55421e6eb6422a155945293bef2959edfb751f8d8"
+    },
+    {
+      "path": "docs/design-coverage.md",
+      "sha256": "b8f5a229f2bd43d24e09932a09db51e5f9651169fa820046354806667624cb55"
+    },
+    {
+      "path": "docs/verification.md",
+      "sha256": "cace84d4a6908b75fc51b8c917074f10483456c8f4ccb5a2deb6976d76dbcc1e"
+    },
+    {
+      "path": "docs/plans/README.md",
+      "sha256": "a258cb258a61e21f85115fb855d467ea35fc17ac04d5ea43ae1b96a37d956e55"
+    },
+    {
+      "path": "docs/specs/README.md",
+      "sha256": "845cb1710f81c601084e45bcbcdc50d6cae810f3f723b7c700deda2ed94bc4ce"
+    },
+    {
+      "path": "docs/plans/15-book-zero-workflow-cash.md",
+      "sha256": "fe4c68539989a0dbcb9b447a71382c3c700636ac9713300c00ccfa9d835d9ff0"
+    },
+    {
+      "path": "docs/plans/evidence/book-zero-docs-verification.md",
+      "sha256": "df6694bed66f58571aa48496ad0737f35e33839fc638d770e209d8109c257e74"
+    }
+  ]
+}

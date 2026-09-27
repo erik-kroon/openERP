@@ -23,6 +23,18 @@ These review plans this repository already maintains and propose **replacements 
 The testing archive ships no checksum manifest and no `checks/` directory, so its `SHA256SUMS.txt` was generated during import. Do not read it as archive-supplied provenance. Adoption of either replacement is an open maintainer decision recorded in [14-plan-review-adoption.md](../plans/14-plan-review-adoption.md).
 
 
+## Book Zero PRD
+
+The openERP-specific [Book Zero, Workflow and Drastic Cash PRD v1](book-zero-v1/PRD_openERP_Book_Zero_Workflow_Drastic_Cash_v1.md), dated 2026-09-27, is imported from `Drastic_Financial_Platform_PRD_v1.zip`. Only that source document is vendored here. The broader platform PRD and its `DR-*`/`ES-AT-*` registers are not adopted as openERP scope.
+
+The document is byte-identical to the archive entry and matches the archive manifest's SHA-256. Its [SHA256SUMS.txt](book-zero-v1/SHA256SUMS.txt) was generated on import for convenient rechecking; it is not a second archive-supplied file. [Provenance and document checks](../plans/evidence/book-zero-docs-verification.md) record the archive/source identities and limits. Verify with:
+
+```bash
+cd docs/specs/book-zero-v1 && shasum -a 256 -c SHA256SUMS.txt
+```
+
+The source's selective repository review is pinned to `41410fd75e96361b7c2f407d456019500f39bfbe`; reconcile current code before interpreting its observations. Its proposed file paths, agent-facing instructions and legal/company statements are source material, not execution authority or newly verified facts. The user requested a documentation update. The maintained [Book Zero plan](../plans/15-book-zero-workflow-cash.md), [product scope](../product.md), [frontend](../frontend.md) and [verification plan](../verification.md) carry the relevant requirements without changing the original.
+
 ## What each tree contains
 
 | File | Role |

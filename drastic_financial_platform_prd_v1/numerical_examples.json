@@ -1,0 +1,184 @@
+{
+  "schema_version": "1.0",
+  "document_version": "1.0",
+  "date": "2026-09-27",
+  "repository": "erik-kroon/openERP",
+  "selectively_reviewed_revision": "09fdb19837bb1535b1b4c060e68a0b237858b0a5",
+  "status": "specification_not_implementation",
+  "source_document": "PRD_Drastic_Financial_Platform_End_State_v1.md",
+  "examples": [
+    {
+      "id": "N-01",
+      "name": "Billing",
+      "assumptions": "Syntetisk skattefaktor 0.25. Ingen rättslig kvalificering eller verklig skattesats prövad.",
+      "calculated": {
+        "net": "16000",
+        "synthetic_tax": "4000.00",
+        "gross_after_credit": "18750.00"
+      },
+      "expected": {
+        "net": "16000",
+        "synthetic_tax": "4000.00",
+        "gross_after_credit": "18750.00"
+      },
+      "document_arithmetic_check": "passed",
+      "application_status": "not_executed"
+    },
+    {
+      "id": "N-02",
+      "name": "Kort",
+      "assumptions": "Final presentment och dokumenterad holdfrigörelse antas.",
+      "calculated": {
+        "remaining_hold": "50",
+        "net_purchase": "450"
+      },
+      "expected": {
+        "remaining_hold": "50",
+        "net_purchase": "450"
+      },
+      "document_arithmetic_check": "passed",
+      "application_status": "not_executed"
+    },
+    {
+      "id": "N-03",
+      "name": "Processor",
+      "assumptions": "Reservens juridiska och redovisningsmässiga klassificering är separat.",
+      "calculated": {
+        "payout": "670",
+        "sum_components": "1000"
+      },
+      "expected": {
+        "payout": "670",
+        "sum_components": "1000"
+      },
+      "document_arithmetic_check": "passed",
+      "application_status": "not_executed"
+    },
+    {
+      "id": "N-04",
+      "name": "Fakturabelåning",
+      "assumptions": "Förenklat kvalificerat avtal utan andra räntor, krediter, tvister eller kostnader.",
+      "calculated": {
+        "initial": "78000",
+        "residual": "20000",
+        "seller_total": "98000"
+      },
+      "expected": {
+        "initial": "78000",
+        "residual": "20000",
+        "seller_total": "98000"
+      },
+      "document_arithmetic_check": "passed",
+      "application_status": "not_executed"
+    },
+    {
+      "id": "N-05",
+      "name": "Fakturaköp",
+      "assumptions": "Juridisk true-sale- och redovisningsbedömning antas inte genom aritmetiken.",
+      "calculated": {
+        "total_price": "98000"
+      },
+      "expected": {
+        "total_price": "98000"
+      },
+      "document_arithmetic_check": "passed",
+      "application_status": "not_executed"
+    },
+    {
+      "id": "N-06",
+      "name": "Låneränta",
+      "assumptions": "ACT/365, tio dagar, 10 procent, periodavrundning och ränta före kapital enligt uttryckligt exempelavtal.",
+      "calculated": {
+        "interest": "273.97",
+        "principal_payment": "19726.03",
+        "principal_remaining": "80273.97"
+      },
+      "expected": {
+        "interest": "273.97",
+        "principal_payment": "19726.03",
+        "principal_remaining": "80273.97"
+      },
+      "document_arithmetic_check": "passed",
+      "application_status": "not_executed"
+    },
+    {
+      "id": "N-07",
+      "name": "Rest och tvist",
+      "assumptions": "Bestridande ändrar inte i sig juridisk eller redovisad huvudfordran.",
+      "calculated": {
+        "outstanding": "5000",
+        "undisputed": "3000"
+      },
+      "expected": {
+        "outstanding": "5000",
+        "undisputed": "3000"
+      },
+      "document_arithmetic_check": "passed",
+      "application_status": "not_executed"
+    },
+    {
+      "id": "N-08",
+      "name": "Skattekonto",
+      "assumptions": "Inga andra rörelser eller begränsningar inom scenariots omfattning.",
+      "calculated": {
+        "top_up": "20000"
+      },
+      "expected": {
+        "top_up": "20000"
+      },
+      "document_arithmetic_check": "passed",
+      "application_status": "not_executed"
+    },
+    {
+      "id": "N-09",
+      "name": "Likviditetsminimum",
+      "assumptions": "Endast namngivna dagliga händelser ingår. Startbalans ingår i minimum.",
+      "calculated": {
+        "base_close": "90000",
+        "base_min": "30000",
+        "base_headroom": "20000",
+        "late_close": "90000",
+        "late_min": "0",
+        "late_headroom": "-10000"
+      },
+      "expected": {
+        "base_close": "90000",
+        "base_min": "30000",
+        "base_headroom": "20000",
+        "late_close": "90000",
+        "late_min": "0",
+        "late_headroom": "-10000"
+      },
+      "document_arithmetic_check": "passed",
+      "application_status": "not_executed"
+    },
+    {
+      "id": "N-10",
+      "name": "Limit",
+      "assumptions": "Aritmetik enbart. Atomisk samtidighetsvägran måste verifieras i faktisk implementation.",
+      "calculated": {
+        "remaining_after_one": "40000",
+        "requested_total": "120000"
+      },
+      "expected": {
+        "remaining_after_one": "40000",
+        "requested_total": "120000"
+      },
+      "document_arithmetic_check": "passed",
+      "application_status": "not_executed"
+    },
+    {
+      "id": "N-11",
+      "name": "Öresrest",
+      "assumptions": "Fast beslutad tie-break. Fördelningens rättsliga tillämplighet är separat.",
+      "calculated": {
+        "sum": "100"
+      },
+      "expected": {
+        "sum": "100"
+      },
+      "document_arithmetic_check": "passed",
+      "application_status": "not_executed"
+    }
+  ]
+}

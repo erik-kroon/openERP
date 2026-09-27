@@ -58,6 +58,20 @@ A journey may be **incomplete**, **implemented but unverified**, **verified**, o
 
 After a verified journey, advance to the next incomplete journey under the existing implementation request. A progress report is not whole-task completion. If execution is interrupted, retain the current finding, next action and still-valid evidence so continuation resumes implementation instead of restarting the plan. Declare frontend UX delivery complete only when every journey is verified and no required UI or recovery path remains unfinished. Production activation and broader release checks retain their separate gates; neither can substitute for this desktop UX acceptance.
 
+## Book Zero daily work and Cash
+
+The [Book Zero plan](plans/15-book-zero-workflow-cash.md) adds these working requirements to the existing journeys; it does not change their recorded implementation or proof status. WF-01–WF-08 extend FE-01–FE-04/FE-06. Cash adds a prospective journey and does not turn the current bank overview into a verified forecast.
+
+The home separates **Needs you**, **Prepared** and **Completed**, with a separately dated economic overview. Define each count and use the same server scope/filter as its detail list. One case with missing evidence and uncertain treatment remains one work item with two explained issues. Prioritize deadlines, blocked periods, missing evidence and review-ready work with a visible reason. Assignment, read state and snoozed reminders confer no authority and cannot clear an accounting blocker.
+
+Review keeps originals, interpreted facts, proposed treatment, exact effects and warnings in one journey. Preserve input after save failure and show dependency changes before renewed approval. The first batch contains at most **25 explicitly selected reviewed proposals**; its manifest binds identities, versions, digests and scope. Reject an already stale selection at approval creation, then revalidate each financial group at execution. Show 11 completed and 1 blocked as those separate results and recover using existing identities. Preserve each domain's atomic group rather than combining independent work into one transaction.
+
+Return navigation preserves company, book, period, filter and position. Reload/deep links find the same object; company switching and access revocation remove unauthorized content. Empty work, missing sources, a failed read and completed accounting remain distinct. Unknown mutation outcomes recover the original receipt through normal navigation.
+
+The Cash journey leads with observed balance and date, minimum projected balance and date, buffer-adjusted headroom and quality. Graph and table use the same saved results. The user can inspect every included/excluded contribution and undated item without a model, compare a delayed-payment scenario without editing the invoice, and reopen/export a snapshot subject to current access. Show actual horizon dates: 90 days and 13 weeks are different. Failed or incomplete reads do not become zero balances or unconditional spending advice.
+
+Exercise the priority source-to-period, missing-receipt, agent-proposal, batch, partial-payment, period-exception, Cash-explanation, delayed-customer and reviewer-handoff journeys with loading, empty, error, save, reload and return states where relevant. Keyboard, visible focus, narrow widths and real 200% zoom are required. The source's proposed performance profile is up to 5 bank accounts, 10,000 annual bank rows, 2,000 open invoices and 5,000 future payments: p95 targets are 2 seconds to a usable home or saved forecast and 5 seconds for normal recalculation. These are unmeasured goals, not capacity claims or permission to truncate records; longer work exposes a durable job and progress.
+
 ## Design basis
 
 Apply **better-layout**, **make-interfaces-feel-better** and **better-ui**, together with the repository's software-engineering guidance. Better-layout replaces taste at the user's request. Preserve StyleX, existing tokens, Inter/system fonts, Lucide, Base UI, TanStack Start/Router/Query and the owned table components. Do not introduce a second design system or animation dependency.

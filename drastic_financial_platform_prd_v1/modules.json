@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "document_version": "1.0",
+  "date": "2026-09-27",
+  "repository": "erik-kroon/openERP",
+  "selectively_reviewed_revision": "09fdb19837bb1535b1b4c060e68a0b237858b0a5",
+  "status": "specification_not_implementation",
+  "source_document": "PRD_Drastic_Financial_Platform_End_State_v1.md",
+  "modules": [
+    {
+      "code": "CORE",
+      "title": "6. Plattform, bolag och etablering",
+      "first_stage": "ES-1",
+      "purpose": "Ge varje kund en begriplig väg in utan att blanda juridisk identitet, bokföringsansvar och behörighet."
+    },
+    {
+      "code": "WORK",
+      "title": "7. Dagligt arbete och beslutsupplevelse",
+      "first_stage": "ES-1",
+      "purpose": "Göra plattformens bredd begriplig genom arbete som faktiskt går att avsluta."
+    },
+    {
+      "code": "ACC",
+      "title": "8. Accounting: openERP och redovisningskärnan",
+      "first_stage": "ES-1",
+      "purpose": "Vara en komplett redovisningsgrund inom kvalificerade bolagsprofiler och ett spårbart underlag för övriga produkter."
+    },
+    {
+      "code": "TAX",
+      "title": "9. Accounting: Tax och skyldigheter",
+      "first_stage": "ES-1 till ES-2",
+      "purpose": "Knyta skatteunderlag, deklaration, betalningsbehov och extern bekräftelse till samma spårbara skyldighet."
+    },
+    {
+      "code": "PAY",
+      "title": "10. Accounting: Payroll",
+      "first_stage": "ES-2",
+      "purpose": "Göra lönearbete, arbetsgivarkostnader och utbetalningar sammanhängande utan att blanda redovisning med personalbedömning."
+    },
+    {
+      "code": "AP",
+      "title": "11. Inköp, leverantörsskulder och utlägg",
+      "first_stage": "ES-1 till ES-2",
+      "purpose": "Göra hela utgiftskedjan hanterbar, från ett beslutat köp till en avstämd betalning."
+    },
+    {
+      "code": "CASH",
+      "title": "12. Money: Drastic Cash",
+      "first_stage": "ES-1",
+      "purpose": "Visa vad företaget kan förvänta sig att kunna betala, när marginalen blir lägst och varför."
+    },
+    {
+      "code": "TRE",
+      "title": "13. Money: Treasury",
+      "first_stage": "ES-3 till ES-5",
+      "purpose": "Orkestrera företagets faktiska likviditet och motpartsexponering inom godkända regler."
+    },
+    {
+      "code": "PMT",
+      "title": "14. Money: Payments",
+      "first_stage": "ES-3",
+      "purpose": "Genomföra rätt betalning till rätt mottagare med ett återfinnbart resultat även när nätverk och leverantörer fallerar."
+    },
+    {
+      "code": "CARD",
+      "title": "15. Money: Cards och kortutgifter",
+      "first_stage": "ES-3",
+      "purpose": "Ge företag kontrollerade kortköp med korrekt hantering från auktorisation till slutlig avräkning."
+    },
+    {
+      "code": "BILL",
+      "title": "16. Revenue: Billing och kommersiella avtal",
+      "first_stage": "ES-2",
+      "purpose": "Översätta avtal och faktisk leverans eller användning till rätt debitering utan att blanda faktura med intäktsredovisning."
+    },
+    {
+      "code": "CLOSE",
+      "title": "17. Accounting: Close, rapportering och årsarbete",
+      "first_stage": "ES-1 till ES-2",
+      "purpose": "Avsluta perioder och år med verifierbara kontroller, användbar överlämning och rätt externa kvitton."
+    },
+    {
+      "code": "INV",
+      "title": "18. Revenue: Invoicing och kundreskontra",
+      "first_stage": "ES-1 till ES-2",
+      "purpose": "Ge kunden en komplett fakturalivscykel där juridiskt dokument, leverans, fordran och betalning inte blandas ihop."
+    },
+    {
+      "code": "COL",
+      "title": "19. Revenue: Collections och kravhantering",
+      "first_stage": "ES-2 till ES-4",
+      "purpose": "Minska obetalda fordringar med korrekt kundkommunikation, tvistprocess och kvalificerad inkassohandoff."
+    },
+    {
+      "code": "FIN",
+      "title": "20. Revenue: Financing och kundens finansieringsresa",
+      "first_stage": "ES-4",
+      "purpose": "Göra finansiering begriplig och relevant när bolaget har ett faktiskt behov, utan att dölja kostnad eller ansvar."
+    },
+    {
+      "code": "RISK",
+      "title": "21. Drastic Risk: beslutsunderlag och riskstyrning",
+      "first_stage": "ES-1 för datakvalitet, ES-4 för kredit",
+      "purpose": "Ge förklarbara och ändamålsbundna beslutsunderlag utan att göra en universell poäng till ersättning för ekonomiskt eller juridiskt ansvar."
+    },
+    {
+      "code": "CAP",
+      "title": "22. Capital products och kreditförvaltning",
+      "first_stage": "ES-4 med partner, ES-6 valfritt eget risktagande",
+      "purpose": "Tillhandahålla finansieringsprodukter med full livscykel, tydlig fordringsägare och en ekonomi som håller efter finansieringskostnad och förluster."
+    },
+    {
+      "code": "AGT",
+      "title": "23. Agentoperativsystem och mänsklig kontroll",
+      "first_stage": "ES-1 till ES-5",
+      "purpose": "Låta agenter utföra mycket arbete med tydlig delegation och mätbar kvalitet, utan egna obegränsade finansiella befogenheter."
+    },
+    {
+      "code": "INT",
+      "title": "24. Integrationer, API och ekosystem",
+      "first_stage": "ES-1 till ES-5",
+      "purpose": "Ansluta externa system med tydliga ägare, säkra återförsök och en portabel produktkärna."
+    },
+    {
+      "code": "OPS",
+      "title": "25. Finansoperationer, drift och förtroende",
+      "first_stage": "ES-1 till ES-5",
+      "purpose": "Driva produkten så att pengar, ansvar och återställning fungerar även när den normala kundresan bryts."
+    }
+  ]
+}

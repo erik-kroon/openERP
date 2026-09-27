@@ -23,6 +23,20 @@ Each requirement has one owner below. This map records documentation coverage, n
 | Independent expectations, races, upgrades and artifacts | [Scenarios](verification.md), [strategy](verification-strategy.md), [failure cases](plans/09-acceptance.md#additional-failure-cases) | E-01–E-21                |
 | Official rules, formats and unresolved facts            | [Sources](sources/README.md), [external inputs](plans/10-external-inputs.md)                                                         | D-01–D-10                |
 
+## Book Zero coverage
+
+The [Book Zero map](plans/15-book-zero-workflow-cash.md#requirement-ownership) assigns all source requirements to the existing financial/UX/operations owners or the supplemental read-only Cash contract. It adds no packet to the accounting denominator and records no implementation completion.
+
+| Concern | Maintained owner | Source acceptance |
+| --- | --- | --- |
+| Real period, reconstruction versus migration, owner flows, full-year review and transition | Existing import/commerce/profile/year-end/operations plans, coordinated by [Book Zero](plans/15-book-zero-workflow-cash.md#book-zero-proof-and-handoff) | BZ-01–BZ-14; AT-01–AT-09, AT-18–AT-20 |
+| Daily work, bounded review and human-controlled preparation | [Frontend](frontend.md#book-zero-daily-work-and-cash), [operations](operations.md#book-zero-agent-preparation) | WF-01–WF-08; AI-01–AI-04; AT-10–AT-17 |
+| Opening/time basis, payment identity, tax/payroll contributions, scenarios and forecast quality | [Cash contract](plans/15-book-zero-workflow-cash.md#cash-basis-and-payment-identity), [domain](domain.md#forecasts-and-knowledge-boundaries), [architecture](architecture.md#book-zero-and-read-only-cash) | CASH-01–CASH-17; AT-21–AT-45 |
+| Exactness, scope/privacy, recovery, latency, accessibility and archive | Existing domain/frontend/operations owners | NFR-01–NFR-06 and relevant cases above |
+
+The [Book Zero acceptance map](verification.md#book-zero-acceptance) preserves the cases and numerical example as unexecuted obligations. Source company information remains under [existing D-gates](open-decisions.md#book-zero-company-and-review-inputs).
+
+
 The [ADRs](adr/README.md) record selected choices and alternatives. Executable schemas own wire names; existing approved digests remain interpretable. Alternative package layouts, example schemas and runner proposals are not additional contracts.
 
 The [initial runtime checkpoint](evidence/initial-runtime-checkpoint.md) retains exact results, migration hashes, failures and unexecuted cases. The [planning baseline](plans/evidence/planning-baseline.json) is a dated observation, not a live inventory. The [VAT research manifest](sources/sweden-vat-sources.json) retains source records and access limits. None establishes production or legal acceptance.

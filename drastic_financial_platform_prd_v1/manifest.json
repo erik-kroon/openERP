@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "document_version": "1.0",
+  "date": "2026-09-27",
+  "repository": "erik-kroon/openERP",
+  "selectively_reviewed_revision": "09fdb19837bb1535b1b4c060e68a0b237858b0a5",
+  "status": "specification_not_implementation",
+  "source_document": "PRD_Drastic_Financial_Platform_End_State_v1.md",
+  "files": [
+    {
+      "path": "ACCEPTANCE.md",
+      "bytes": 47437,
+      "sha256": "38a58c55333c626944a7614d08f79ef91402327ca0b5fe299755a70d931d8a15"
+    },
+    {
+      "path": "PRD_Drastic_Financial_Platform_End_State_v1.md",
+      "bytes": 237625,
+      "sha256": "9391891366bd2778ceb8cdb1d9ba35a4f145d826d93ca4e878cbaf8a15a9ec93"
+    },
+    {
+      "path": "PRD_openERP_Book_Zero_Workflow_Drastic_Cash_v1.md",
+      "bytes": 80645,
+      "sha256": "6dee5e41e75373722a443f23b2aa6f3b3329dcad862b3c6284a07ac1aa263afd"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2903,
+      "sha256": "04be14d72fcca87638b6a3ddb2f32e431d4bfa18a420ea5108446afaec9b54b0"
+    },
+    {
+      "path": "acceptance.json",
+      "bytes": 50788,
+      "sha256": "b16a6085b17fc4f7c2da9479eb4554b52940498694d4d6ab1e35c13e94038bd4"
+    },
+    {
+      "path": "document_validation.json",
+      "bytes": 1067,
+      "sha256": "4fbf8caaf93a2b2bbc7d2270a36549d9cfd83bd36310ed136b427a52051c6678"
+    },
+    {
+      "path": "modules.json",
+      "bytes": 5538,
+      "sha256": "de65c8ce383dba3a0e71edfff75728a78b45b73239364bc84481db7a1e79cddb"
+    },
+    {
+      "path": "numerical_examples.json",
+      "bytes": 5425,
+      "sha256": "a2fd3fe4d631de612725fd85409f8186aef4aa5c8924955e2768bb2764245a82"
+    },
+    {
+      "path": "requirements.json",
+      "bytes": 165286,
+      "sha256": "158521d4c3358dfa7eac3f285b63a93dc505380d40d2473f3d9e936d4311be0b"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 8416,
+      "sha256": "4ec3a370217c3a2030b8ad4c88a04e34caecb622ac6e51d7686c670dc361840e"
+    },
+    {
+      "path": "traceability.json",
+      "bytes": 33927,
+      "sha256": "089c80d661685f087e328f91719f6ea06581da740045aa9ae084cc50def98ab5"
+    }
+  ]
+}

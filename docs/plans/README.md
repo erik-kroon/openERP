@@ -36,6 +36,12 @@ The [NEXT dossier plan](12-next-implementation-dossier.md) is a third supplement
 
 The [plan review adoption record](14-plan-review-adoption.md) is a fourth supplemental layer, also added 2026-09-26. Two externally produced reviews of plans this repository already maintains — the reference parity backlog and the test suite design/pseudologic — are vendored under [`docs/specs`](../specs/README.md) with their proposed replacements. **No replacement has been adopted**: the parity backlog, ADR 0011 and both test-plan documents are unmodified. The reviews are retained because they find real defects in the current plan text, including recipes that would treat a failed detector as permission to proceed, balance away skipped source history, or let bank movements vanish from independent controls, and a critical testing finding whose harness would reject the intended application-owned database boundary. Read it before dispatching any `PRY-nn` packet or implementing the test harness. The record also names the open maintainer decisions, including the no-unit-test policy that a revised test plan would require.
 
+## Book Zero customer outcome
+
+The [Book Zero, daily work and Drastic Cash plan](15-book-zero-workflow-cash.md) integrates the openERP-specific PRD received 2026-09-27. It prioritizes a reviewed Drastic period and normal daily work, then a read-only daily payment forecast over the same authoritative sources. It maps source requirements and L0–L7/G0–G7 to current owners; those identifiers do not add packets or alter the 53-packet denominator.
+
+Existing accounting plans retain imports, posting, commerce, tax/payroll, year-end and cutover. The supplemental Cash contract owns prospective basis, contributions, quality and scenarios; NEXT-45 retains the historical cash-flow statement. The source is [preserved separately](../specs/README.md#book-zero-prd). Broader Drastic platform modules are not adopted by this documentation update, and all implementation/company/external proof remains separate.
+
 ## Current source baseline
 
 The checkout has advanced beyond the early baseline in the research dossier. HEAD at planning capture was `1965622afa65285fa8e9013ccdd98a47ebe86dfb`, with concurrent changes. The [planning manifest](evidence/planning-baseline.json) records source hashes and the existing dirty state.
