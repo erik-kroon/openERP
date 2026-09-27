@@ -507,6 +507,20 @@ named itself like tax would otherwise escape the guard. An earlier revision used
 the prefix and was wrong; the replacement is recorded in the owner document as
 the one NEXT-22 query never executed against a database.
 
+**A double-recognition path through the generic posting surface.** Extending
+`PostingOwner` with `corporate_income_tax` was not enough. The bridge seals an
+ordinary posting plan, so its change set is approvable through the shared
+endpoint, and the generic `changes_execute` would have posted that approved plan
+with no owner: no `corporate_tax_effects` row, no recorded year target, and the
+tax owner free to recognise the same amount again. A generic reversal would have
+bypassed the tax register too. `readOwnedSources` now projects
+`corporate_tax_bridges` as a `corporate_income_tax` source keyed on the bridge's
+change set, with a null `evidence_id` so it matches only that plan and its
+correction descendants and nothing else, and `readProtectedCorrections` reports
+any voucher a tax effect points at. The zero-delta path needs no pretending: its
+plan carries no group, so generic execution refuses on the plan shape and no
+voucher exists to reverse.
+
 **A defect in the statement owner's released currentness read, found by running
 it.** `readStatementLiveStatus` selected `closing_transitions.committed_at`.
 That table has no such column; the transition's time lives in its body as
