@@ -1,0 +1,14 @@
+{
+  "artifactRoot": "/Users/admin/openERP/.cache/interface-journey",
+  "sha256": {
+    "check-fast.log": "3f4a5c24fef53e31bede909cb2f34bd8473fa3617c4646be12390981a27a2aa3",
+    "check-full.log": "ec3e3a68ac795e181167ee9b4a4b413db1b6f137228bf59fb163b9b6b729e81d",
+    "build.log": "4c27b1ed18978e4202e09ffac8a4ede0e7fc8c93e39ec9ea83bd7081725f1cf6",
+    "credit-e2e-final.log": "9b5073d7c2e488bbf46021f0346b923ae1e6dc6f229ae63b2f33f452303cc42a",
+    "e2e-verified/manifest.json": "1bf864725e0ba6e57685cc8df734660b4fb2d894cc2849f544a5eee49a5795f6",
+    "e2e-verified/source-integrity.json": "ba9d413243856b6161fd0ab67bb870b415c87aaf317225be39f491d900cf55b1",
+    "e2e-verified/results.json": "d46b1af3b9a6f8c0da7a4c68d4f8237afd5bc4648e6517e9d046475c07ab7f07",
+    "e2e-verified/owned-vat-journey.json": "6db6ea1beccb9a2e080f8b91eed9298d5b3ef946a41a6b1174176fb0419e2c7c",
+    "e2e-verified/credit-document-journey.json": "5b2c88295bafd61a588006a4515670f2c00538033d06d4724b96f7b44d2567c4"
+  }
+}
