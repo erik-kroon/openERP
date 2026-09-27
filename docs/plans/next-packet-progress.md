@@ -32,6 +32,7 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-29 | Recurring commercial invoice occurrences | P1 | integrated through `0eaad64`, with schema/materialization/interval repairs | core Worker suite; successive recurring issue journey unobserved |
 | NEXT-16 | Evidence-aware period preparation | P0 | implemented; see integration evidence below | changed-file lint/types and 23 existing core E2E tests pass; period-work journey proof remains open |
 | NEXT-17 | Payable FX and explicit fees | P1 | source integrated from `next/NEXT-17`; bounded synthetic fee-settlement profile | worker-reported constraint probes; financial application journey unobserved |
+| NEXT-07 | Supplier paid credits and refunds | P1 | leaf implemented: `@open-erp/domain/supplier-refunds` paid-position derivation, paid-credit compiler over NEXT-03 line releases, and refund-receipt preparation; application posting/refund persistence remain with the purchase/credit owners | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
 
 The rows above do not classify every other packet as untouched. Resolve its
 current branch, owning source and release gates before starting work. A source
