@@ -31,7 +31,7 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-22 | Pre-close tax bridge and INK2/SRU | P1 | source integrated from `next/NEXT-22`; reviewed corporate-tax release still required | fresh migration and core Worker suite; tax bridge/approval/declaration journey unobserved |
 | NEXT-29 | Recurring commercial invoice occurrences | P1 | integrated through `0eaad64`, with schema/materialization/interval repairs | core Worker suite; successive recurring issue journey unobserved |
 | NEXT-16 | Evidence-aware period preparation | P0 | in progress in `next/NEXT-16b`; original `next/NEXT-16` has no unique work to integrate | no feature-path proof |
-| NEXT-17 | Payable FX and explicit fees | P1 | in progress in `next/NEXT-17` | no feature-path proof |
+| NEXT-17 | Payable FX and explicit fees | P1 | source integrated from `next/NEXT-17`; bounded synthetic fee-settlement profile | worker-reported constraint probes; financial application journey unobserved |
 
 The rows above do not classify every other packet as untouched. Resolve its
 current branch, owning source and release gates before starting work. A source
@@ -363,6 +363,90 @@ Unresolved, reported by the worker:
 - `readOriginalAssignmentsInWindow` is book-scoped and single-window, **not
   partitioned by source year**, so NEXT-44's multi-year SIE partition has no
   read to build on yet.
+
+### NEXT-17 — Payable FX and explicit fees
+
+A supplier foreign-currency obligation and its explicit-fee settlement, through
+the **existing** commerce FX owner. Migration `0012-next-17.sql` adds one table,
+three columns and a `direction` discriminator; it adds no register, no second
+balance and no calculation.
+
+**One paired-release capacity, not a payable register.** The original-unit and
+book-carrying release is the released WIP-FX02-P1 calculation, unchanged — the
+same numerator, denominator, half-up rule and residual the partial settlement
+profile already uses. `readItemState` derives the remaining amounts from every
+active settlement row of *any* profile, so an explicit-fee leg consumes the same
+capacity a partial leg consumes and the existing unique index
+`(book_id, item_id, leg_ordinal)` still orders the legs. A correction restores
+both amounts from the retained history rather than from a mutable counter.
+
+**A payable is a genuine obligation, not a relabelled receivable.** The
+discriminated `synthetic_supplier_foreign_payable_v1` recognition debits the
+expense role and credits the payable control from a qualified rate observation.
+A book-currency number is never relabelled as foreign units: the profile still
+requires `originalCurrency != book.currency` and refuses otherwise.
+
+**One journal carries K, every fee and every cash leg.** The packet's three
+vectors are the obligations, and the compiler produces exactly them:
+
+| Vector | Journal | `cash_source_minor` | `realized_gain_minor` |
+|---|---|---|---|
+| payable b110000 K112000 F1000 | AP+110000, FX loss+2000, fee+1000, cash−113000 | −113000 | −2000 |
+| payable b110000 K108000 F1000 | AP+110000, fee+1000, cash−109000, FX gain+2000 | −109000 | +2000 |
+| receivable b110000 K112000 F1000 | cash+111000, fee+1000, AR−110000, FX gain−2000 | +111000 | +2000 |
+
+The signed cash carries the settlement's own sign: a receipt is `K − F`, a
+payment is `−(K + F)`. An earlier revision of this migration stored the payment
+as the *magnitude* `K + F`, which contradicted the sealed `signedCashMinor` the
+application writes and would have made every supplier settlement uninsertable.
+The direction-aware `CASE` in the profile check is what the compiler's own
+`formula` string states.
+
+**Source rights are common, not settlement-local.** A fee or bank observation is
+consumed by at most one financial operation, enforced at prepare and again inside
+the posting transaction. The shared `readLineOwners` projection gained the
+`commerce_fx_settlement_sources` join, so a line this settlement posted cannot
+also be admitted as a bank match. This matters because a settlement posts up to
+twenty cash legs while its `cash_line_id` names only the first; without the join
+the remaining legs were unowned and doubly matchable. A correction releases the
+right by its own existence — `readActiveSourceIdentities` excludes any settlement
+that has a correction — so nothing is deleted, rewritten or flagged. A reversed
+explicit-fee settlement is still listed in `MonetaryItem.feeSettlements`, so
+`feeCorrections` states which of them were reversed; without it a reader cannot
+tell that a source right is consumable again.
+
+**Refusals are structural, not defaulted.** A fee posts to one reviewed expense
+account that is neither a bank account, nor a retained control account, nor an
+account the item already binds. Fee tax, foreign cash, hedges and multilateral
+netting have no reviewed owner here. A zero gross consideration, a zero fee total
+and a cash total that disagrees with the signed cash equation are all refused
+before any line is written. The two released receivable settlement profiles
+refuse a supplier item with `UnsupportedProfile` rather than posting a receipt
+shape for a payment.
+
+Runtime evidence, on a real PostgreSQL 17.11 with the whole `0001`–`0018` chain
+applied in filename order: all three packet vectors insert with the values in the
+table above, and the pre-fix magnitude is refused by
+`commerce_fx_settlements_profile_check`. The corrected ownership read returns
+`fx` for the first cash line, the second cash source line and the fee line, and
+nothing for an unrelated line on the same voucher. Inserting a correction row
+empties the consumed set while both source rows remain. `openerp_runtime` holds
+`SELECT, INSERT` on the new table and no `UPDATE` or `DELETE`. **The application
+Effect was not run**: no operation, HTTP request or Worker was invoked, so
+concurrency, replay and every stale-dependency branch remain unobserved.
+
+Deliberate omissions, reported by the worker and recorded here:
+
+- **No web UI.** The packet names no route, and the released commerce FX
+  operations expose no UI today.
+- **No MCP capabilities for the new operations**, matching the released
+  `commerce/fx` owner.
+- **No VAT return integration.** The settlement posts a
+  `not_applicable` tax assessment. `D-04`/`D-08` still gate any real-company
+  rate, and the packet's `K` is a caller-evidenced amount, never a computed
+  default.
+- **The evidence baseline S03/S07 is not re-derived here.** `K` stays an input
+  with a required evidence reference, exactly as the packet specifies.
 
 ### NEXT-06 — Owner-paid expenses, reimbursement and funding
 
@@ -769,6 +853,15 @@ their observation, not as ours. Therefore:
 - `bun run check`, `bun run lint`, `bun run check-types` and `bun run build` all
   pass on the merged tree. That is **source- and type-level evidence only**. A
   typecheck is not a substitute for observing a transaction.
+- **NEXT-17 added database evidence, but only of constraints.** A disposable
+  local PostgreSQL 17.11 applied the whole `0001`-`0018` chain in filename order
+  and the three packet vectors were inserted directly into
+  `openerp.commerce_fx_settlements` with the bodies the application builds, with
+  foreign-key triggers disabled so the fixture did not need a whole book. That
+  observed the CHECK expressions, the source table, the corrected ownership read
+  and the runtime grants. It did **not** run one application Effect, so
+  preparation, approval, execution, replay, concurrency and the Worker remain
+  unobserved.
 - **Unobserved by this programme:** grant matrices matching the runtime role; transaction and rollback behaviour; lock
   ordering under contention; same-key replay, same-key recovery and
   different-key duplicate conflicts; approval expiry and revocation; the
@@ -804,3 +897,8 @@ at all — a reviewed `rule_releases` row for one family.
 The five reserved WIP assignments remain untouched and were not reimplemented,
 requalified or taken over: `WIP-VAT03`, `WIP-FX02-P1`, `WIP-AST03-UI`,
 `WIP-VAT04-A1`, `WIP-COM2-W1`. NEXT-02 and NEXT-13 consume none of them.
+NEXT-17 **uses** `WIP-FX02-P1` and does not duplicate it: the paired-release
+capacity, its half-up rule and its residual handling stay the released owner's,
+and the packet's instruction not to copy the WIP partial-release algorithm is
+met — the compiler adds K, F and the signed cash equation around the existing
+release rather than restating it.
