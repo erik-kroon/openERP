@@ -1,10 +1,11 @@
 # NEXT packet implementation progress
 
-This records implementation state for the application-owned v2 work packets
-NEXT-01 through NEXT-25. It separates **implemented source** from **verified
-behaviour**, because at the time of writing nothing in this effort has been
-observed at runtime. See [Verification limits](#verification-limits) before
-relying on any row here.
+This records selected application-owned NEXT packets by stable packet ID. It
+separates **implemented source**, integration and qualification gates from
+**verified behaviour**. Local core E2E runs exercise startup, migrations and
+selected posting invariants; they do not establish every packet's financial
+journey. See [Verification limits](#verification-limits) and the current
+[repair record](evidence/latest-landed-review-repairs.md) before relying on a row.
 
 The packet set is a design specification, not authority. It does not grant
 database, deployment, real-company or provider permission, and it does not
@@ -26,25 +27,26 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-15 | Legal customer credit notes | P1 | implemented | none |
 | NEXT-06 | Owner-paid expenses, reimbursement and funding | P0 | implemented | none |
 | NEXT-14 | Original dimension assignments | P2 | implemented | none |
-| NEXT-04, NEXT-05 … NEXT-25 (15 packets) | — | — | not started | none |
+| NEXT-04 | Actual domestic VAT return and controls | P0 | integrated in `082c418`, with subsequent capture/rounding/control repairs | fresh migration and core Worker suite; qualified VAT journey unobserved |
+| NEXT-22 | Pre-close tax bridge and INK2/SRU | P1 | source integrated from `next/NEXT-22`; reviewed corporate-tax release still required | fresh migration and core Worker suite; tax bridge/approval/declaration journey unobserved |
+| NEXT-29 | Recurring commercial invoice occurrences | P1 | integrated through `0eaad64`, with schema/materialization/interval repairs | core Worker suite; successive recurring issue journey unobserved |
+| NEXT-16 | Evidence-aware period preparation | P0 | in progress in `next/NEXT-16b`; original `next/NEXT-16` has no unique work to integrate | no feature-path proof |
+| NEXT-17 | Payable FX and explicit fees | P1 | in progress in `next/NEXT-17` | no feature-path proof |
 
-NEXT-01 is complete. NEXT-02, NEXT-03, NEXT-06, NEXT-11, NEXT-13, NEXT-14,
-NEXT-15, NEXT-20, NEXT-26 and NEXT-49 are merged. The remaining 15 first-wave
-packets are untouched.
+The rows above do not classify every other packet as untouched. Resolve its
+current branch, owning source and release gates before starting work. A source
+merge is not itself a released cross-owner financial contract.
 
-Newly unblocked by these merges: NEXT-16 (NEXT-01, NEXT-03, NEXT-06 all merged)
-and NEXT-43, NEXT-44 (NEXT-14 plus NEXT-13). NEXT-30 and NEXT-46 have their
-NEXT-15 prerequisite satisfied. NEXT-05 and NEXT-04 remain blocked only on each
-other, and NEXT-04 is the largest remaining unlock: it opens NEXT-05, NEXT-23,
-NEXT-37 and NEXT-38.
+Source dependency edges are now present for NEXT-05 (NEXT-03 and NEXT-04),
+NEXT-16 (NEXT-01, NEXT-03 and NEXT-06), NEXT-23 (NEXT-13 and NEXT-22),
+NEXT-43/44 (NEXT-13 and NEXT-14), and NEXT-30/46's NEXT-15 dependency.
+Each consumer must still resolve its qualification, owner-port and runtime
+obligations. NEXT-25 remains the final fixed-revision company rehearsal, not a
+substitute for completing those dependencies.
 
-Dependency edges now satisfied by merged source: NEXT-04, NEXT-06, NEXT-07,
-NEXT-16, NEXT-31, NEXT-33, NEXT-38 and NEXT-46 name NEXT-03; NEXT-22 and NEXT-45
-name NEXT-13; NEXT-43 and NEXT-44 name NEXT-13; NEXT-37 and NEXT-38 gain from
-NEXT-04 once it lands. NEXT-05 needs NEXT-03 and NEXT-04. NEXT-30 and NEXT-46
-still need NEXT-15. Six packets remain decision-gated and unimplemented by
-choice: NEXT-32, NEXT-40, NEXT-41, NEXT-42, NEXT-45 and NEXT-36. NEXT-25 is
-deferred to the end of the programme.
+The current repair record links individual review findings to source changes and
+actual checks. Its passing existing-suite result covers only those cases;
+reviewed tax content, real-company facts and external acceptance remain open.
 
 ## What was implemented
 
@@ -380,6 +382,172 @@ Per-diem, mileage and reimbursement amounts are qualified inputs under
 D-04/D-08; a missing one is an explicit refusal, never a default. NEXT-16 names
 this packet alongside NEXT-01 and NEXT-03 and is now unblocked; NEXT-23, NEXT-32
 and NEXT-34 name it conditionally and remain unimplemented or decision-gated.
+
+### NEXT-22 — Pre-close corporate income-tax bridge and INK2/SRU
+
+A sealed pre-close bridge, one approved current-tax effect and one INK2/SRU
+declaration lineage, in three records that never share a transaction or a table.
+See [CORPORATE-TAX.md](../../apps/api/docs/CORPORATE-TAX.md) for the full
+description; the load-bearing points are these.
+
+**The tax journal cannot move the number the tax is calculated from.** The
+pre-tax figure is the retained statement result plus the booked current
+income-tax effect added back exactly once, so recognising a tax effect never
+changes the pre-tax population it was derived from. The retained figure is the
+statement snapshot's own untransferred fiscal-year result line; the snapshot does
+not retain the transferred movement, and no amount is invented for it.
+
+**Only the delta is posted.** `delta = sealedYearTarget - alreadyRecognized`. A
+zero delta is an approved no-effect receipt with no voucher and no consumed
+voucher number, not a zero voucher. Preliminary tax paid to a tax account is
+never subtracted from the target to make a return agree.
+
+**A duplicate adjustment over one economic component is refused** unless the
+reviewed release explicitly establishes the two adjustments as distinct and
+non-overlapping. A negative taxable result never becomes a negative cash
+receivable: the offset is bounded by the reviewed allowance and the base is
+clamped at zero.
+
+**The effect is validated, never self-approved.** `tax_execute_effect` requires a
+separate operator's current approval of the sealed plan digest through the shared
+change-set approval endpoint and refuses when the approver is the executing
+operator. The preserved draft created its own approval inside the same call and
+then compared that fresh random identity with the caller-supplied one, so the
+operation could never succeed; it also removed the only four-eyes separation the
+packet asks for. It now validates through the shared
+`readExecutionApprovalInTransaction`, and the whole basis is re-resolved inside
+the executing transaction before anything posts.
+
+**The engine and the exported form start from one result.** Which current-tax
+figure the form adds back depends on where its declared accounting result came
+from: the calculated current tax for a projected after-tax result, the booked
+effect inside the retained population for a ledger result. The preserved draft
+always used the booked effect, so a projected form could not reconcile. The
+declaration now requires the add-back source it actually needs and blocks
+otherwise.
+
+**Two further defects in the preserved draft, both found by running the packet's
+own vector.** The independent SRU re-parse failed the info file by construction,
+because it demanded field values from a file that carries none and then reported
+a comparison it could not make; the info file now gets the structural check only
+and reports zero compared totals. The record scanner also rejected a per-form
+terminator, so no rendered blanket letter could ever be re-parsed.
+
+**No reviewed value is a default.** No rate, rounding policy, loss profile,
+journal series, form version, form identifier, field code, record marker, header,
+separator, encoding, terminator, filename or size bound is a literal in the
+code. The preserved draft hardcoded `#BLANKETT`, `#UPPGIFT` and a `#` info prefix
+while claiming no record name was a default; all three are now reviewed bundle
+data. The selected profile is the ordinary limited company; NE and the
+comprehensive special regimes are refused, not approximated.
+
+**Deliberate deviation.** The packet sketches rendering the SRU files in an
+effect-mq Bun job outside the persisting transaction. This implementation renders
+and re-parses inline, which commits the semantic fields and the exact verified
+bytes together so a retained declaration can never exist without its files. The
+render is pure, bounded, in-memory work, so it adds no meaningful lock duration.
+See the doc for the full reasoning and what adopting the packet's shape would
+require.
+
+**Two more defects that only contract decoding would have caught.** The
+pre-tax overlay digested its retained income-tax membership by handing a bare
+array to `toJsonObject`, which accepts only JSON objects, so `captureBasis`
+failed on every capture including an empty component set. The membership is
+now enveloped under its own key, and the envelope is part of the digest. The
+SRU record markers were bounded by a pattern that rejected every letter and
+digit, which made the hash-led uppercase markers the file-transfer contract
+actually uses unrepresentable and every conforming release impossible. The
+bound is now the writer's own emittable set without the space, and a marker
+that conflicts with the bundle's separators is refused at render time instead.
+
+Both were invisible to the vector run, because that fixture called the pure
+functions with plain objects and never went through a contract schema. The
+lesson is specific and worth keeping: **arithmetic evidence is not wire-shape
+evidence.** A pure-function vector cannot see a decode failure.
+
+**A retained-witness regression this packet introduced and then removed.**
+`ProfileDates.taxPeriodOn` was made a required nullable field, but
+`ProfileDates` is embedded in every retained `ProfileWitness`, so every witness
+sealed before NEXT-22 — the VAT and purchase ones included — would have failed
+to decode. The field is now optional and `selectorDate` normalises a missing
+value to `null`, so a caller that names no fiscal tax period gets no
+corporate-tax family. That also removed five call sites that had been passing
+`taxPeriodOn` purely to satisfy the required field: `bookStatus`, payroll
+calculation, purchase recognition, the VAT return and the company-admission
+panel all had no business selecting a tax release on a date that is not a
+fiscal period end.
+
+**Two execution defects found in `executeEffect`.** The retained
+`groupReceiptId` was a freshly minted identity that was inserted only on the
+zero-delta path, so a nonzero recognition retained a receipt id that existed
+nowhere; it now reads back the group receipt the shared primitive committed.
+The zero-delta path also bypassed `validatePlan` entirely, so a plan nothing had
+checked could be consumed; it now validates its own sealed plan, asserts the
+plan carries no group, and only then writes its no-effect receipt.
+
+**The stale-population gap, closed.** Revalidation re-read an immutable
+snapshot and compared its digest, which proves the bytes did not change but
+not that the population behind them did not. A new or backdated non-tax posting
+after the snapshot leaves every retained byte identical, and the shared posting
+kernel does not catch it either, because a sealed plan records profile, writer
+epoch, period and account dependencies and no committed-sequence boundary. The
+bridge now asks the statement owner, at capture and again at execution, using its
+own released currentness read: a reopen covering the reported as-of date, or any
+voucher after the snapshot's cutoff other than this owner's own current-tax
+effects, refuses. That boundary is deliberately conservative — it refuses on a
+later posting that provably cannot touch the reported population — because
+refusing a proposal costs a fresh snapshot while posting an accrual derived
+from a moved population is not recoverable.
+
+The own-tax exclusion is what keeps the boundary from being self-defeating: the
+first tax effect is itself a voucher after the cutoff. Ownership is proved by a
+committed `corporate_tax_effect` row for the same book and reported fiscal year
+whose change set is the voucher's own, never by an event-key prefix — a key is a
+naming convention any posting path can choose, so a manual posting that merely
+named itself like tax would otherwise escape the guard. An earlier revision used
+the prefix and was wrong; the replacement is recorded in the owner document as
+the one NEXT-22 query never executed against a database.
+
+**A double-recognition path through the generic posting surface.** Extending
+`PostingOwner` with `corporate_income_tax` was not enough. The bridge seals an
+ordinary posting plan, so its change set is approvable through the shared
+endpoint, and the generic `changes_execute` would have posted that approved plan
+with no owner: no `corporate_tax_effects` row, no recorded year target, and the
+tax owner free to recognise the same amount again. A generic reversal would have
+bypassed the tax register too. `readOwnedSources` now projects
+`corporate_tax_bridges` as a `corporate_income_tax` source keyed on the bridge's
+change set, with a null `evidence_id` so it matches only that plan and its
+correction descendants and nothing else, and `readProtectedCorrections` reports
+any voucher a tax effect points at. The zero-delta path needs no pretending: its
+plan carries no group, so generic execution refuses on the plan shape and no
+voucher exists to reverse.
+
+**A defect in the statement owner's released currentness read, found by running
+it.** `readStatementLiveStatus` selected `closing_transitions.committed_at`.
+That table has no such column; the transition's time lives in its body as
+`committedAt`. The read therefore raised `column t.committed_at does not exist`
+on a real database, which means every statement row page read fails today and any
+consumer of that read cannot work at all. It is repaired here to
+`(t.body->>'committedAt')::timestamptz`, which is NEXT-13's file and NEXT-13's
+owner's to ratify. This is the second time in this programme that a query which
+looked obviously correct was only caught by executing it.
+
+**A migration defect that only a database could find.** The preserved
+`corporate_tax_declarations` constraint compared
+`body ->> 'fiscalYear'::text ->> 'id'::text` against `fiscal_year_id`. `->>`
+returns `text` and PostgreSQL has no `text ->> text` operator, so the whole
+`0001`–`0018` chain aborted at `0013-next-22.sql`. It now uses `->` for the
+intermediate step, as `0015-next-04.sql` does. The corrected chain applies clean
+on a fresh PostgreSQL 17, and this closes the gap this document records below:
+migrations had been checked for the absence of functions and the presence of a
+`GRANT`, never parsed. They should be.
+
+**External gate, stated plainly.** The reviewed Swedish corporate-tax rule release
+must be loaded into `openerp.rule_releases` before any capability in this group
+can succeed. No reviewed INK2 field map, SRU grammar, rate, rounding policy or
+journal series ships in this repository, and none was invented. Export is not
+filing: no transmission, destination acceptance, signature or statutory claim is
+made.
 
 ### NEXT-01 — Owner-aware case review
 
