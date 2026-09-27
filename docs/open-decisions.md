@@ -79,6 +79,7 @@ For [this isolated delivery](plans/document-intelligence-delivery.md), the user
 explicitly approved E2E coverage for PDF/image reading, review, draft creation,
 missing pages, failures, retries and human edits (D-09). The user also instructed
 that live provider use remain disabled (D-10). The loopback-tested HTTP adapter
-is supplied only through an injected binding; no normal runtime configuration,
-credential store, live connection or rollout is added. This task-specific scope
+is connected to the normal self-host API and preparation runner through explicit,
+default-disabled configuration. No live credentials, connection or rollout are
+enabled. This task-specific scope
 does not authorize other provider exercises or remove D-10's deployment gates.

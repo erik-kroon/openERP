@@ -47,9 +47,10 @@ SiftX isolation, shadow diagnostics and extended capacity remain separate gates.
 ## Observed delivery — 2026-09-27
 
 Implemented on `codex/document-intelligence` in the isolated product checkout.
-The normal runtime has no document-reader binding: live reading stays disabled.
-The injected adapter is exercised only against a loopback HTTP simulator. Native
-text reading and manual review remain available.
+The normal self-host API and preparation runner share explicit, default-disabled
+reader configuration and private original storage. The adapter has been exercised
+only against a loopback HTTP simulator. Native text reading and manual review
+remain available. Live provider use remains disabled.
 
 The route retains original bytes, independently counts physical pages, validates
 provider identity and source quotes, parses Swedish printed amounts exactly, and
@@ -60,12 +61,15 @@ Review retains human edits and links the existing draft owner. No automatic post
 or payment is introduced. Inbox pagination, draft summaries and nested review
 receipt keys were repaired because they prevented this journey from completing.
 
-Eight E2E scenarios and a browser walkthrough passed. See the
-[dated verification receipt](evidence/document-intelligence-2026-09-27/README.md).
+Ten E2E scenarios and a browser walkthrough through the normal self-host runtime
+passed. Explicit suggestion selection preserves its reading identity, while human
+corrections survive draft save and reload. See the
+[current verification receipt](evidence/document-intelligence-end-to-end-2026-09-27/README.md).
+The [initial receipt](evidence/document-intelligence-2026-09-27/README.md) is historical.
 The failure contract above includes rollout requirements beyond this test set;
 it must not be read as a claim that every listed failure was exercised.
 
-Still outside this delivery: live provider configuration and qualification,
+Still outside this delivery: live provider activation and qualification,
 representative accuracy/cost evaluation, hostile-document process isolation,
 SiftX, shadow routing, exact visual highlights, extended capacity, company data,
 and production or Book Zero acceptance. JPEG is supported by the adapter but the
@@ -76,3 +80,19 @@ Adapter contract references: [Azure analyze API](https://learn.microsoft.com/en-
 [Azure result API](https://learn.microsoft.com/en-us/rest/api/aiservices/document-models/get-analyze-result?view=rest-aiservices-v4.0%20(2024-11-30)),
 [invoice model](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice?view=doc-intel-4.0.0),
 and [PDF loading](https://pdf-lib.js.org/docs/api/classes/pdfdocument#load).
+
+## End-to-end completion contract — 2026-09-27
+
+The completed increment connects the normal self-host API and preparation process to
+one explicit, default-disabled reader configuration and the same original store.
+The complete local journey is upload, request reading, background polling, inspect
+page-backed suggestions, explicitly use selected values, fill remaining facts,
+save and reopen the supplier draft. Live access remains disabled.
+
+Failures to exercise before implementation: missing/invalid configuration must
+fail closed; loopback simulation must not allow external endpoints; the worker
+must read API-retained bytes from shared storage; pending operations must retry
+without another disclosure; UI must refresh completion and keep human edits;
+unknown candidate fields must not become invented invoice lines. The normal
+self-host process and normal preparation runner must be exercised together, not
+replaced by an injected application handler.

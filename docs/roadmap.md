@@ -2,9 +2,9 @@
 
 Status: the documentation-first checkpoint is committed in `52bd1117`. All seven requested areas now have a [complete working delivery plan](plans/README.md). Implementation has advanced, but no complete phase exit is established by this planning review.
 
-## Document reading integration — isolated branch
+## Document reading integration
 
-The [Document Intelligence first journey](plans/document-intelligence-delivery.md) has eight passing synthetic E2E scenarios and a browser review proof on `codex/document-intelligence`. This is local integration evidence; live provider qualification and company acceptance remain open.
+The [Document Intelligence first journey](plans/document-intelligence-delivery.md) has ten passing synthetic E2E scenarios, including the normal self-host API and preparation runner, and a browser suggestion-to-draft proof. This is local integration evidence; live provider qualification and company acceptance remain open.
 
 ## Current checkout
 
