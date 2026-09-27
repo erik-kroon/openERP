@@ -464,6 +464,26 @@ functions with plain objects and never went through a contract schema. The
 lesson is specific and worth keeping: **arithmetic evidence is not wire-shape
 evidence.** A pure-function vector cannot see a decode failure.
 
+**A retained-witness regression this packet introduced and then removed.**
+`ProfileDates.taxPeriodOn` was made a required nullable field, but
+`ProfileDates` is embedded in every retained `ProfileWitness`, so every witness
+sealed before NEXT-22 — the VAT and purchase ones included — would have failed
+to decode. The field is now optional and `selectorDate` normalises a missing
+value to `null`, so a caller that names no fiscal tax period gets no
+corporate-tax family. That also removed five call sites that had been passing
+`taxPeriodOn` purely to satisfy the required field: `bookStatus`, payroll
+calculation, purchase recognition, the VAT return and the company-admission
+panel all had no business selecting a tax release on a date that is not a
+fiscal period end.
+
+**Two execution defects found in `executeEffect`.** The retained
+`groupReceiptId` was a freshly minted identity that was inserted only on the
+zero-delta path, so a nonzero recognition retained a receipt id that existed
+nowhere; it now reads back the group receipt the shared primitive committed.
+The zero-delta path also bypassed `validatePlan` entirely, so a plan nothing had
+checked could be consumed; it now validates its own sealed plan, asserts the
+plan carries no group, and only then writes its no-effect receipt.
+
 **A migration defect that only a database could find.** The preserved
 `corporate_tax_declarations` constraint compared
 `body ->> 'fiscalYear'::text ->> 'id'::text` against `fiscal_year_id`. `->>`
