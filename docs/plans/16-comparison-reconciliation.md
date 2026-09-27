@@ -44,7 +44,7 @@ The archive remains outside the workspace. Its patch, fixtures and tools are not
 | FWD-14 — Payroll/AGI | **Conditional, partial.** Foundation and frozen payroll calculation exist. The calculation owner explicitly does not post, pay or declare. | PAY packets; BZ-10 and applicable Cash contributions | Establish applicability first. Qualify each required execution/declaration step or an explicit external-payroll handoff. A calculation is not a payroll release. |
 | FWD-15 — Restore and archive | **Partial.** Recovery tooling and a local replacement rehearsal exist. Restricted application recovery, custody and production promotion remain open. | OPS-01/OPS-02/OPS-04–OPS-07; BZ-13/BZ-14, NFR-06; L6/G6 | Rehearse the selected deployment's DB, object, key and pending-delivery recovery in quarantine. Preserve one authorized writer and dispatch owner. |
 | FWD-16 — Journey proof | **Partial; evidence model exists.** Book Zero already specifies gate records. Bend now has retained synthetic host-qualification evidence as well as offline checks. | FND-04 and existing verification records; all G gates | Extend the existing evidence record for each journey. Do not create a second proof ledger. Preserve the distinction between synthetic host qualification, deployment approval and company acceptance. |
-| FWD-17 — Caller authority | **Inventory open.** MCP includes capabilities unless `agentCallable` is false. This confirms the catalog policy, not an authorization bypass. | FND-02/PST-04; AI-04, NFR-02 | Classify current callers and explicit capability exposure. Check owner admission and recovery before changing defaults. Cover human-only operations and internal posting authority. |
+| FWD-17 — Caller authority | **Catalog policy implemented and E2E-verified.** Every write is classified; unclassified writes and human-only operations are withheld. Current owner admission still governs every caller. | FND-02/PST-04; AI-04, NFR-02 | Keep the live inventory and owner checks current. Family-specific financial and job-race proof stays with its owning packet. See [MCP authority](../../apps/api/docs/MCP.md#exposure-policy-and-callers). |
 | FWD-18 — Capture size | **Conditional qualification.** Register capture has explicit record/byte bounds; VAT capture also refuses excess populations. NEXT-16 execution has a cursor, which does not solve report completeness. | FND-04 and each capture owner; BZ-03/BZ-11, NFR-04 | Measure the selected source population. Change only a bound that blocks the selected profile. Pin membership, cutoff, count and final digest across pages. |
 
 ## One execution order
@@ -114,3 +114,19 @@ The E2E journey also exposed and repaired four prerequisites: ordinary draft cre
 Verification on 2026-09-27: fast and full changed-file checks passed, including web and test types. The real PostgreSQL/workerd suite passed all 24 tests. The new journey retains `test-results/e2e/bank-reference-journey.json` and `bank-reference-candidates.json`; the suite retains its source manifest and results. No financial records were seeded directly in SQL. The fixture provisions only synthetic identity, accounts and periods.
 
 This closes the delivered synthetic reference profile, not OCR, legal-invoice/provider qualification, browser acceptance or actual-company readiness. Those limits remain explicit in the owner document.
+
+### FWD-17 — Failure contract before implementation
+
+Inventory the current catalog before changing exposure. Read operations already declare `readOnly`; every write needs an explicit classification. Missing write classification must withhold the tool. An owner's `agentCallable: false` must still override catalog policy.
+
+The current catalog exposes names for human-only company fact review, role binding, firm administration and company setup. Source admission already requires an operator or human session. Hide these unusable authority tools without granting new authority elsewhere. Keep supported preparation and execution of human-approved work available.
+
+E2E cases must cover the advertised catalog, direct calls to hidden names, forged posting-owner fields, wrong-book execution, exact approved agent execution, same-key recovery, changed-input conflict, and revocation before a new effect. Retain the complete classified catalog and observed receipts. Existing HTTP admission tests continue to check the owning boundary; catalog policy does not replace it.
+
+### FWD-17 — Delivered policy and observations
+
+The MCP catalog now requires explicit write classification. Reads retain their declared read policy, and owner exclusions still apply. Human review, administration, activation and operator-only period work are withheld from both discovery and invocation. The existing prepare/approved-execution path remains available under current owner admission.
+
+The new E2E case passed through the real MCP endpoint. It observed catalog exclusions with both agent and operator tokens, rejected forged owner arguments and another book, committed and replayed an approved journal, rejected changed input, and refused a revoked agent before dispatch. An authorized operator recovered the existing receipt. The full PostgreSQL/workerd suite passed all 25 tests; fast and full changed-file checks also passed.
+
+`test-results/e2e/mcp-authority-journey.json` retains every current capability's classification and exposure, the live catalog and financial receipts. The [MCP caller map](../../apps/api/docs/MCP.md#exposure-policy-and-callers) records web/REST, MCP, Bun and operator-script boundaries. This is not a claim that every owner-specific financial journey or background race has been exercised.
