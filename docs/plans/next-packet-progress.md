@@ -448,6 +448,16 @@ render is pure, bounded, in-memory work, so it adds no meaningful lock duration.
 See the doc for the full reasoning and what adopting the packet's shape would
 require.
 
+**A migration defect that only a database could find.** The preserved
+`corporate_tax_declarations` constraint compared
+`body ->> 'fiscalYear'::text ->> 'id'::text` against `fiscal_year_id`. `->>`
+returns `text` and PostgreSQL has no `text ->> text` operator, so the whole
+`0001`–`0018` chain aborted at `0013-next-22.sql`. It now uses `->` for the
+intermediate step, as `0015-next-04.sql` does. The corrected chain applies clean
+on a fresh PostgreSQL 17, and this closes the gap this document records below:
+migrations had been checked for the absence of functions and the presence of a
+`GRANT`, never parsed. They should be.
+
 **External gate, stated plainly.** The reviewed Swedish corporate-tax rule release
 must be loaded into `openerp.rule_releases` before any capability in this group
 can succeed. No reviewed INK2 field map, SRU grammar, rate, rounding policy or
