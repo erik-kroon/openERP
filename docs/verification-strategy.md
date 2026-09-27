@@ -44,6 +44,19 @@ checker is not an official Bend compiler or independent safe-kernel result;
 does not establish PRY-33 product integration, VAT eligibility, statutory
 applicability or application transaction behavior.
 
+The additive [authority candidate](../verification/bend/authority/README.md) keeps
+its evidence separate. Its compiler lane verifies pinned upstream source,
+reproducible JS generation and compiled execution before independent safe-kernel
+checking. Current-owner mapping, actual-host integration and explicit deployment
+approval are additional gates; compiler success alone cannot promote a release.
+
+The dedicated VAT qualification config reuses the existing PostgreSQL/workerd
+setup and invokes the actual Effect capture/sealing/read workflow at a Bun
+boundary. Its [failure obligations](../apps/api/tests/BEND-QUALIFICATION.md)
+cover currentness, immutable records, replay, no fallback and shared
+approval/execution. This separate lane requires a qualified build artifact;
+ordinary E2E runs remain independent of the Bend/Lean toolchain.
+
 Write failure outcomes before implementation. Use small synthetic fixtures with scenario/invariant IDs, provenance, exact expected values and profile/rule/schema versions. Do not compute expectations with the production calculator or backfill unit tests after implementation.
 
 For a fresh-book posting of `12500` minor units, expect two lines, bank/clearing balances `12500`/`-12500`, sequence and series number `1`, one receipt, one outbox event and one consumed approval. Observe through a fresh request and connection. Retry preserves those counts; reversal retains the original and returns balances to zero. This is arithmetic proof, not a tax example.
