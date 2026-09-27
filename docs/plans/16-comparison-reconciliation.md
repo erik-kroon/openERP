@@ -28,7 +28,7 @@ The archive remains outside the workspace. Its patch, fixtures and tools are not
 
 | Proposal | Current disposition | Existing owner and Book Zero requirement | Remaining task |
 | --- | --- | --- | --- |
-| FWD-01 — Architecture and readiness | **Partial.** README architecture is fixed. `bookSetup` still says tax treatment and reporting are not implemented. `bookStatus` already separates installed family status from `productionReady: false`. | FND-03; BZ-01, WF-01 | Correct the setup warnings against each owner's supported profile. Keep company and evidence blockers. Do not apply the old README patch. |
+| FWD-01 — Architecture and readiness | **Completed source change.** README architecture is fixed. Setup warnings now distinguish the manual-journal profile from other operations and from missing company evidence. `bookStatus` retains installed/admitted status and `productionReady: false`. | FND-03; BZ-01, WF-01 | Company qualification continues under FWD-02. No old README patch or readiness override is needed. |
 | FWD-02 — Swedish company profile | **Qualification open.** Company-profile resolution and dated admission exist. Company originals and reviewed releases remain required. | FND-03; BZ-01/BZ-09; L0/G0 | Select the first period and applicable families. Bind facts, dates, evidence and reviewers. Exercise missing, ambiguous, withdrawn and stale basis. |
 | FWD-03 — Complete accounting journey | **Proof open.** Core E2E evidence exists. It does not cover the proposed sales, credit, payment, purchase and owner-expense journey. | FND-04 with PST/COM/VAT/IMP owners; BZ-06–BZ-11; L1/G1 | Map one bounded journey to real commands. Compare independent GL, bank and register controls at the same cutoff. Retain receipts and unresolved steps. |
 | FWD-04 — Credit and owner-expense VAT | **Partial.** Actual-return capture reads admitted facts and purchase components. Customer credit reports `taxConsequenceObserved: false`. The repair record keeps customer-credit and owner-purchase producers open. | VAT-02–VAT-04 with COM-04; BZ-07–BZ-09 | Trace producer-to-return coverage. Complete missing owner links once, with original fact, period and signed tax provenance. Do not repeat the landed source/deductible-tax repairs. |
@@ -86,3 +86,13 @@ Use direct verbs, short sentences and one term for each concept. Keep exact API 
 ## Documentation checks
 
 Run `python3 docs/plans/check-plan.py` after edits. It validates local links, anchors, packet ownership tables and dependency order, then updates [planning integrity](evidence/planning-integrity.json). This review preserves FWD-01 through FWD-18 in the disposition table and leaves the 53 accounting packets unchanged. Documentation checks do not execute the proposed financial cases.
+
+## Execution record
+
+### FWD-01 — Readiness communication
+
+Completed on 2026-09-27 against baseline `122cf94`. The remaining source change corrects `bookSetup` warnings in `apps/api/src/application/posting.ts`. It removes the false claim that tax treatment and statutory reporting have no implementation. It states the manual-journal profile limit and the separate evidence required for live company use.
+
+Source review confirmed that `bookStatus` already reports installed and admitted families separately. Its unresolved-family blockers and `productionReady: false` remain intact. The README architecture and fulfillment reverification fixes were already present; this packet does not repeat them.
+
+Verification: `bun run check:changed` and `bun run check:changed:full` passed. This is a copy and source-consistency result, not company qualification or a new financial-journey observation. No tests or fixtures were changed.

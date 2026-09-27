@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-27T12:34:46.513705+00:00",
-  "headObservedAtValidation": "d014634ba9ae944d2e08802f9da7e5b9ebd03d58",
+  "checkedAt": "2026-09-27T13:02:37.483389+00:00",
+  "headObservedAtValidation": "122cf94683d5c7b70e49413439780db1bbbd83d1",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -194,7 +194,7 @@
     },
     {
       "path": "docs/plans/16-comparison-reconciliation.md",
-      "sha256": "e4da069446ea4504f6949d3cb1b02b5c4596fc5be8690e649830e9df0f5a05fb"
+      "sha256": "0bb6064859c610da98c1ccb8bbb6f43fc4eb373cd8d8a12a3b84fd3ea79198e6"
     },
     {
       "path": "docs/plans/README.md",
@@ -234,7 +234,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "1c37769882aba1aed51c3e148459db222a421a032e4e483ea871ade39246c8aa"
+      "sha256": "0df47094e2201f3d5fca83a5df2d33964fe4db530743c410e8a6a06c1ca5f8d1"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
