@@ -1,0 +1,89 @@
+{
+  "synthetic": true,
+  "liveProvider": false,
+  "state": {
+    "currencyScale": 2,
+    "documentReaderAvailable": true,
+    "scope": {
+      "entityId": "entity_dd90158cac72e5e2",
+      "bookId": "book_dd90158cac72e5e2"
+    },
+    "occurrenceId": "source_e930f74705374196995516cf37470cc6",
+    "requests": [
+      {
+        "id": "supplier_extraction_request_54366206bd8e4844b2ce87ab16f57db5",
+        "occurrenceId": "source_e930f74705374196995516cf37470cc6",
+        "generation": 1,
+        "originalHash": "sha256:4e860584c6676f1d8e45f17502ab3c4a7788b7418fac72a7de37f97b799e0c7b",
+        "originalBytes": 1102,
+        "engineRelease": "azure-invoice-v1",
+        "attemptIdentity": "sha256:8bb03b21bd836126372b1c2b3ee930c408e9cc47f7ef5d766e72a969670ec364",
+        "state": "completed",
+        "cancelVersion": 0,
+        "attemptsMade": 1,
+        "requestedBy": "operator_dd90158cac72e5e2",
+        "requestedAt": "2026-09-27 23:40:42.327+02",
+        "digest": "sha256:f7e1704b5c0eaebd600ad1bf924b621e5470e2a86000ce975824b9578d74727d"
+      }
+    ],
+    "attempt": {
+      "requestId": "supplier_extraction_request_54366206bd8e4844b2ce87ab16f57db5",
+      "attemptId": "supplier_extraction_d7f7f73114f44713b3244e004296a90d",
+      "engineRelease": "azure-invoice-v1",
+      "sourceHash": "sha256:4e860584c6676f1d8e45f17502ab3c4a7788b7418fac72a7de37f97b799e0c7b",
+      "originalHashUnchanged": true,
+      "result": "succeeded",
+      "textDigest": "sha256:f9d016ee7e7fa5571c8b619484a06887fbcef17c01885e78f61addf67c2800dd",
+      "textByteLength": 35,
+      "retainedOutputHash": "sha256:3a3fb448cd8b5f22bd8b093fa63e822f04adf3e5d50a9e485b50c01909ef151a",
+      "fields": [
+        {
+          "lineOrdinal": 0,
+          "fieldKey": "supplierDocumentNumber",
+          "proposedValue": "SYNTHETIC-1",
+          "sourceLocators": [
+            {
+              "kind": "document_quote",
+              "page": 1,
+              "quote": "SYNTHETIC-1",
+              "textOffset": 0,
+              "textLength": 11
+            }
+          ]
+        },
+        {
+          "lineOrdinal": 0,
+          "fieldKey": "sourceTotalMinor",
+          "proposedValue": "125000",
+          "sourceLocators": [
+            {
+              "kind": "document_quote",
+              "page": 1,
+              "quote": "1250,00 SEK",
+              "textOffset": 12,
+              "textLength": 11
+            }
+          ]
+        }
+      ],
+      "candidateLines": [],
+      "diagnostics": [],
+      "document": {
+        "physicalPages": 2,
+        "readPages": [
+          1,
+          2
+        ],
+        "coverage": "complete",
+        "apiVersion": "2024-11-30",
+        "modelId": "prebuilt-invoice",
+        "amountProfile": "sv-SE-SEK",
+        "transcript": "SYNTHETIC-1\n1250,00 SEK\nSecond page"
+      },
+      "createdAt": "2026-09-27T21:40:53.183Z"
+    },
+    "fieldDecisions": []
+  },
+  "submissions": 1,
+  "polls": 2
+}
