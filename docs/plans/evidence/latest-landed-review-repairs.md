@@ -15,7 +15,7 @@ checks only; no tests or fixtures are added by this repair pass.
 | LR-06: duplicated VAT control components | Pending. | Physical GL identity and fact relationships must not multiply amounts. |
 | LR-07: source versus deductible VAT | Pending. | Retain the recognition owner's source tax and deduction decision separately. |
 | LR-08: negative integral floor | VAT now reuses the purchasing owner's sign-aware `roundRational`. | Changed-file full gate and existing E2E pass; no dedicated VAT-rounding regression case is added. |
-| LR-09: owner-paid payable residual | Pending. | All shared capacity consumers must include the discharge exactly once. |
+| LR-09: owner-paid payable residual | Source repaired: live invoices and fixed-cutoff register reports share the owner-discharge summary, include its amount and version, and validate its payable posting. Owner operations no longer subtract it locally a second time and refuse exported-payment conflicts. Register lines retain explicit owner-discharge provenance. | Full changed-file gate and existing E2E pass. The suite does not exercise the owner-discharge/ordinary-settlement competition or the affected report query. |
 | LR-10: zero-tax credit lines | Pending. | Preserve semantic zero tax without emitting a zero journal line. |
 | LR-11: fulfillment reverification | Pending. | Preserve command replay and append new evidence observations explicitly. |
 | LR-12: stale progress/parity claims | Pending. | Source presence, integration, qualification and runtime evidence remain distinct. |
