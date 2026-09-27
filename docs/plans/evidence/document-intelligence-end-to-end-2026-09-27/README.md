@@ -6,6 +6,10 @@ The browser selected page-backed invoice number and total suggestions, corrected
 
 Repeat with `bun run test:e2e apps/api/tests/document-reader.e2e.test.ts`. For browser proof, build the web app first, then set `DOCUMENT_SELF_HOST_BROWSER=1` for that command. Follow the URL emitted in the browser receipt, complete the synthetic draft within the bounded hold, and save the browser completion receipt described by the test. The default run performs draft creation through HTTP.
 
-`results.json`, `junit.xml`, `manifest.json` and `source-integrity.json` retain test results and source identity. `web-source.json` separately records the browser source, which the API harness inventory does not cover. The normal-runtime receipts record the reading, draft and terminal refusal. The screenshot records the reloaded draft. Earlier isolated evidence remains in the adjacent historical directory.
+`results.json`, `manifest.json` and `source-integrity.json` retain test results and source identity. `web-source.json` separately records the browser source, which the API harness inventory does not cover. The normal-runtime receipts record the reading, draft and terminal refusal. The screenshot records the reloaded draft. Earlier isolated evidence remains in the adjacent historical directory.
 
 Full changed-branch lint/type checks, frozen dependency installation and the web build passed before this run. This is local integration proof, not live OCR quality, provider qualification, production deployment or Book Zero acceptance. JPEG and encrypted/corrupt PDF handling have no dedicated retained cases. SiftX, shadow routing, hostile-parser process isolation, representative accuracy and cost evaluation remain separate gates.
+
+## Main integration
+
+After merging committed main through `3e2c758`, all ten scenarios passed again on `558e642` (188.55 seconds including harness startup). Full changed-branch type-aware lint and type checks passed. The `main-integration/` receipts identify this combined source and confirm it stayed unchanged during the run. The document-reading implementation and commerce browser controls were unchanged from the browser-proved source. Concurrent uncommitted work in the primary checkout was excluded and preserved.
