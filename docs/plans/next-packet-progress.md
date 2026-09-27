@@ -26,11 +26,12 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-15 | Legal customer credit notes | P1 | implemented | none |
 | NEXT-06 | Owner-paid expenses, reimbursement and funding | P0 | implemented | none |
 | NEXT-14 | Original dimension assignments | P2 | implemented | none |
+| NEXT-22 | Pre-close tax bridge and INK2/SRU | P0 | implemented | none |
 | NEXT-04, NEXT-05 … NEXT-25 (15 packets) | — | — | not started | none |
 
 NEXT-01 is complete. NEXT-02, NEXT-03, NEXT-06, NEXT-11, NEXT-13, NEXT-14,
-NEXT-15, NEXT-20, NEXT-26 and NEXT-49 are merged. The remaining 15 first-wave
-packets are untouched.
+NEXT-15, NEXT-20, NEXT-22, NEXT-26 and NEXT-49 are merged. The remaining 15
+first-wave packets are untouched.
 
 Newly unblocked by these merges: NEXT-16 (NEXT-01, NEXT-03, NEXT-06 all merged)
 and NEXT-43, NEXT-44 (NEXT-14 plus NEXT-13). NEXT-30 and NEXT-46 have their
@@ -380,6 +381,79 @@ Per-diem, mileage and reimbursement amounts are qualified inputs under
 D-04/D-08; a missing one is an explicit refusal, never a default. NEXT-16 names
 this packet alongside NEXT-01 and NEXT-03 and is now unblocked; NEXT-23, NEXT-32
 and NEXT-34 name it conditionally and remain unimplemented or decision-gated.
+
+### NEXT-22 — Pre-close corporate income-tax bridge and INK2/SRU
+
+A sealed pre-close bridge, one approved current-tax effect and one INK2/SRU
+declaration lineage, in three records that never share a transaction or a table.
+See [CORPORATE-TAX.md](../../apps/api/docs/CORPORATE-TAX.md) for the full
+description; the load-bearing points are these.
+
+**The tax journal cannot move the number the tax is calculated from.** The
+pre-tax figure is the retained statement result plus the booked current
+income-tax effect added back exactly once, so recognising a tax effect never
+changes the pre-tax population it was derived from. The retained figure is the
+statement snapshot's own untransferred fiscal-year result line; the snapshot does
+not retain the transferred movement, and no amount is invented for it.
+
+**Only the delta is posted.** `delta = sealedYearTarget - alreadyRecognized`. A
+zero delta is an approved no-effect receipt with no voucher and no consumed
+voucher number, not a zero voucher. Preliminary tax paid to a tax account is
+never subtracted from the target to make a return agree.
+
+**A duplicate adjustment over one economic component is refused** unless the
+reviewed release explicitly establishes the two adjustments as distinct and
+non-overlapping. A negative taxable result never becomes a negative cash
+receivable: the offset is bounded by the reviewed allowance and the base is
+clamped at zero.
+
+**The effect is validated, never self-approved.** `tax_execute_effect` requires a
+separate operator's current approval of the sealed plan digest through the shared
+change-set approval endpoint and refuses when the approver is the executing
+operator. The preserved draft created its own approval inside the same call and
+then compared that fresh random identity with the caller-supplied one, so the
+operation could never succeed; it also removed the only four-eyes separation the
+packet asks for. It now validates through the shared
+`readExecutionApprovalInTransaction`, and the whole basis is re-resolved inside
+the executing transaction before anything posts.
+
+**The engine and the exported form start from one result.** Which current-tax
+figure the form adds back depends on where its declared accounting result came
+from: the calculated current tax for a projected after-tax result, the booked
+effect inside the retained population for a ledger result. The preserved draft
+always used the booked effect, so a projected form could not reconcile. The
+declaration now requires the add-back source it actually needs and blocks
+otherwise.
+
+**Two further defects in the preserved draft, both found by running the packet's
+own vector.** The independent SRU re-parse failed the info file by construction,
+because it demanded field values from a file that carries none and then reported
+a comparison it could not make; the info file now gets the structural check only
+and reports zero compared totals. The record scanner also rejected a per-form
+terminator, so no rendered blanket letter could ever be re-parsed.
+
+**No reviewed value is a default.** No rate, rounding policy, loss profile,
+journal series, form version, form identifier, field code, record marker, header,
+separator, encoding, terminator, filename or size bound is a literal in the
+code. The preserved draft hardcoded `#BLANKETT`, `#UPPGIFT` and a `#` info prefix
+while claiming no record name was a default; all three are now reviewed bundle
+data. The selected profile is the ordinary limited company; NE and the
+comprehensive special regimes are refused, not approximated.
+
+**Deliberate deviation.** The packet sketches rendering the SRU files in an
+effect-mq Bun job outside the persisting transaction. This implementation renders
+and re-parses inline, which commits the semantic fields and the exact verified
+bytes together so a retained declaration can never exist without its files. The
+render is pure, bounded, in-memory work, so it adds no meaningful lock duration.
+See the doc for the full reasoning and what adopting the packet's shape would
+require.
+
+**External gate, stated plainly.** The reviewed Swedish corporate-tax rule release
+must be loaded into `openerp.rule_releases` before any capability in this group
+can succeed. No reviewed INK2 field map, SRU grammar, rate, rounding policy or
+journal series ships in this repository, and none was invented. Export is not
+filing: no transmission, destination acceptance, signature or statutory claim is
+made.
 
 ### NEXT-01 — Owner-aware case review
 
