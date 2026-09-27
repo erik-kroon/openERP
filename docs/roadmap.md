@@ -2,6 +2,10 @@
 
 Status: the documentation-first checkpoint is committed in `52bd1117`. All seven requested areas now have a [complete working delivery plan](plans/README.md). Implementation has advanced, but no complete phase exit is established by this planning review.
 
+## Document reading integration — isolated branch
+
+The [Document Intelligence first journey](plans/document-intelligence-delivery.md) has eight passing synthetic E2E scenarios and a browser review proof on `codex/document-intelligence`. This is local integration evidence; live provider qualification and company acceptance remain open.
+
 ## Current checkout
 
 The synthetic accounting workflow began at `e5fe3e69`. The planning capture at `1965622afa65285fa8e9013ccdd98a47ebe86dfb` includes further accounting workflows and recovery tooling. The [dated source manifest](plans/evidence/planning-baseline.json) records that revision, working-tree status and inspected-file hashes. Active correction, matching, commerce, subledger, closing and recovery work continues in the shared tree. Reconcile the live diff and its evidence before each packet; source presence does not change a whole milestone to verified.

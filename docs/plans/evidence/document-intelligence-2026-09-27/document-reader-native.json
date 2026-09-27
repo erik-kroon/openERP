@@ -1,0 +1,140 @@
+{
+  "synthetic": true,
+  "sourceHash": "sha256:3f4fc3094a2a618fe1bf40536942b29e5a17018c356b037dc75f871218673585",
+  "requestId": "supplier_extraction_request_fa0f15d710db4a6091236dda8c1e4457",
+  "expectedTotalMinor": "125000",
+  "first": {
+    "currencyScale": 2,
+    "documentReaderAvailable": false,
+    "scope": {
+      "entityId": "entity_8856b9abaae19325",
+      "bookId": "book_8856b9abaae19325"
+    },
+    "occurrenceId": "source_085bf0c7a1454dfda41623f5a0bd5239",
+    "requests": [
+      {
+        "id": "supplier_extraction_request_fa0f15d710db4a6091236dda8c1e4457",
+        "occurrenceId": "source_085bf0c7a1454dfda41623f5a0bd5239",
+        "generation": 1,
+        "originalHash": "sha256:3f4fc3094a2a618fe1bf40536942b29e5a17018c356b037dc75f871218673585",
+        "originalBytes": 82,
+        "engineRelease": "native-text-v1",
+        "attemptIdentity": "sha256:8d70caa7ecff718b75113a87f9dae6b32a8c18e88ad11d6750408a4b66d33dbb",
+        "state": "completed",
+        "cancelVersion": 0,
+        "attemptsMade": 0,
+        "requestedBy": "operator_8856b9abaae19325",
+        "requestedAt": "2026-09-27 22:35:57.199+02",
+        "digest": "sha256:6e10e1bd4ce08d513ae1f0780a419a92f970935b328bce64d729f761fe6852fe"
+      }
+    ],
+    "attempt": {
+      "requestId": "supplier_extraction_request_fa0f15d710db4a6091236dda8c1e4457",
+      "attemptId": "supplier_extraction_077987182e75454b9e8780e63ca10fdf",
+      "engineRelease": "native-text-v1",
+      "sourceHash": "sha256:3f4fc3094a2a618fe1bf40536942b29e5a17018c356b037dc75f871218673585",
+      "originalHashUnchanged": true,
+      "result": "succeeded",
+      "textDigest": null,
+      "textByteLength": 82,
+      "retainedOutputHash": "sha256:dc0c664ff70696c5cd275d225ce274cd2dfefef79d072062a1e8557f598d913a",
+      "fields": [
+        {
+          "lineOrdinal": 0,
+          "fieldKey": "supplierDocumentNumber",
+          "proposedValue": "SYNTHETIC-1",
+          "sourceLocators": [
+            "span:16-27"
+          ]
+        },
+        {
+          "lineOrdinal": 0,
+          "fieldKey": "documentDate",
+          "proposedValue": "2026-09-27",
+          "sourceLocators": [
+            "span:42-52"
+          ]
+        },
+        {
+          "lineOrdinal": 0,
+          "fieldKey": "sourceTotalMinor",
+          "proposedValue": "125000",
+          "sourceLocators": [
+            "span:74-81"
+          ]
+        }
+      ],
+      "candidateLines": [],
+      "diagnostics": [],
+      "createdAt": "2026-09-27T20:35:57.907Z"
+    },
+    "fieldDecisions": []
+  },
+  "replay": {
+    "currencyScale": 2,
+    "documentReaderAvailable": false,
+    "scope": {
+      "entityId": "entity_8856b9abaae19325",
+      "bookId": "book_8856b9abaae19325"
+    },
+    "occurrenceId": "source_085bf0c7a1454dfda41623f5a0bd5239",
+    "requests": [
+      {
+        "id": "supplier_extraction_request_fa0f15d710db4a6091236dda8c1e4457",
+        "occurrenceId": "source_085bf0c7a1454dfda41623f5a0bd5239",
+        "generation": 1,
+        "originalHash": "sha256:3f4fc3094a2a618fe1bf40536942b29e5a17018c356b037dc75f871218673585",
+        "originalBytes": 82,
+        "engineRelease": "native-text-v1",
+        "attemptIdentity": "sha256:8d70caa7ecff718b75113a87f9dae6b32a8c18e88ad11d6750408a4b66d33dbb",
+        "state": "completed",
+        "cancelVersion": 0,
+        "attemptsMade": 0,
+        "requestedBy": "operator_8856b9abaae19325",
+        "requestedAt": "2026-09-27 22:35:57.199+02",
+        "digest": "sha256:6e10e1bd4ce08d513ae1f0780a419a92f970935b328bce64d729f761fe6852fe"
+      }
+    ],
+    "attempt": {
+      "requestId": "supplier_extraction_request_fa0f15d710db4a6091236dda8c1e4457",
+      "attemptId": "supplier_extraction_077987182e75454b9e8780e63ca10fdf",
+      "engineRelease": "native-text-v1",
+      "sourceHash": "sha256:3f4fc3094a2a618fe1bf40536942b29e5a17018c356b037dc75f871218673585",
+      "originalHashUnchanged": true,
+      "result": "succeeded",
+      "textDigest": null,
+      "textByteLength": 82,
+      "retainedOutputHash": "sha256:dc0c664ff70696c5cd275d225ce274cd2dfefef79d072062a1e8557f598d913a",
+      "fields": [
+        {
+          "lineOrdinal": 0,
+          "fieldKey": "supplierDocumentNumber",
+          "proposedValue": "SYNTHETIC-1",
+          "sourceLocators": [
+            "span:16-27"
+          ]
+        },
+        {
+          "lineOrdinal": 0,
+          "fieldKey": "documentDate",
+          "proposedValue": "2026-09-27",
+          "sourceLocators": [
+            "span:42-52"
+          ]
+        },
+        {
+          "lineOrdinal": 0,
+          "fieldKey": "sourceTotalMinor",
+          "proposedValue": "125000",
+          "sourceLocators": [
+            "span:74-81"
+          ]
+        }
+      ],
+      "candidateLines": [],
+      "diagnostics": [],
+      "createdAt": "2026-09-27T20:35:57.907Z"
+    },
+    "fieldDecisions": []
+  }
+}
