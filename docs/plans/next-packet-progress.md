@@ -484,6 +484,39 @@ The zero-delta path also bypassed `validatePlan` entirely, so a plan nothing had
 checked could be consumed; it now validates its own sealed plan, asserts the
 plan carries no group, and only then writes its no-effect receipt.
 
+**The stale-population gap, closed.** Revalidation re-read an immutable
+snapshot and compared its digest, which proves the bytes did not change but
+not that the population behind them did not. A new or backdated non-tax posting
+after the snapshot leaves every retained byte identical, and the shared posting
+kernel does not catch it either, because a sealed plan records profile, writer
+epoch, period and account dependencies and no committed-sequence boundary. The
+bridge now asks the statement owner, at capture and again at execution, using its
+own released currentness read: a reopen covering the reported as-of date, or any
+voucher after the snapshot's cutoff other than this owner's own current-tax
+effects, refuses. That boundary is deliberately conservative — it refuses on a
+later posting that provably cannot touch the reported population — because
+refusing a proposal costs a fresh snapshot while posting an accrual derived
+from a moved population is not recoverable.
+
+The own-tax exclusion is what keeps the boundary from being self-defeating: the
+first tax effect is itself a voucher after the cutoff. Ownership is proved by a
+committed `corporate_tax_effect` row for the same book and reported fiscal year
+whose change set is the voucher's own, never by an event-key prefix — a key is a
+naming convention any posting path can choose, so a manual posting that merely
+named itself like tax would otherwise escape the guard. An earlier revision used
+the prefix and was wrong; the replacement is recorded in the owner document as
+the one NEXT-22 query never executed against a database.
+
+**A defect in the statement owner's released currentness read, found by running
+it.** `readStatementLiveStatus` selected `closing_transitions.committed_at`.
+That table has no such column; the transition's time lives in its body as
+`committedAt`. The read therefore raised `column t.committed_at does not exist`
+on a real database, which means every statement row page read fails today and any
+consumer of that read cannot work at all. It is repaired here to
+`(t.body->>'committedAt')::timestamptz`, which is NEXT-13's file and NEXT-13's
+owner's to ratify. This is the second time in this programme that a query which
+looked obviously correct was only caught by executing it.
+
 **A migration defect that only a database could find.** The preserved
 `corporate_tax_declarations` constraint compared
 `body ->> 'fiscalYear'::text ->> 'id'::text` against `fiscal_year_id`. `->>`
