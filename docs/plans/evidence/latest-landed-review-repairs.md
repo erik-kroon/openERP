@@ -9,9 +9,9 @@ checks only; no tests or fixtures are added by this repair pass.
 | --- | --- | --- |
 | LR-01: frozen installation | Fixed in `893e33f`; CI also selects PostgreSQL 17 explicitly to match local development and recovery. | Frozen install passed locally. Existing E2E suite passed all 23 cases on local PostgreSQL/workerd. Updated hosted workflow has not been observed. |
 | LR-02: VAT arrays decoded as objects | Control bindings and coverage decode through their exact array schemas. Invalid JSON-key casts in the same owner's SQL reads are also corrected. | Changed-file full gate and existing E2E pass. The suite does not exercise qualified actual-VAT capture. |
-| LR-03: owner approval digest | Pending. | Separate review binding from approval-body integrity. |
-| LR-04: recurring component arrays | Pending. | Exact array must survive template, materialization, read and issue. |
-| LR-05: adjacent recurrence intervals | Pending. | First-cycle and service-boundary policy must be consistent. |
+| LR-03: owner approval digest | Source repaired: the stored `digest` seals the approval body; generated `review_digest` has a foreign key to the exact review digest. Execution and usability compare `reviewDigest`. Forward migration `0019-owner-approval-digests.sql` preserves the earlier migration and body-hash constraint. | Full changed-file gate and existing E2E pass, including fresh migration/rerun. The suite does not exercise this owner-specific approval flow. |
+| LR-04: recurring component arrays | Source repaired: materialization and agreement reads decode the retained template contract and use its exact component array. | Full changed-file gate and existing E2E pass. No successive recurring-invoice issue journey is covered by that suite. |
+| LR-05: adjacent recurrence intervals | Source repaired: service intervals are half-open, adjacency is permitted, and empty/reversed intervals refuse explicitly. | Full changed-file gate and existing E2E pass; the selected interval policy below is source-verified, not an observed recurring-issue journey. |
 | LR-06: duplicated VAT control components | Pending. | Physical GL identity and fact relationships must not multiply amounts. |
 | LR-07: source versus deductible VAT | Pending. | Retain the recognition owner's source tax and deduction decision separately. |
 | LR-08: negative integral floor | VAT now reuses the purchasing owner's sign-aware `roundRational`. | Changed-file full gate and existing E2E pass; no dedicated VAT-rounding regression case is added. |
@@ -26,6 +26,16 @@ by moving occurrence identity to its domain owner. A fresh database and Worker
 then started successfully. The existing suite writes its source/migration/lock
 manifest, JSON results, JUnit results and runtime logs to `test-results/e2e/`;
 the next run replaces those artifacts.
+
+The existing recurrence compiler is a bounded arrears profile: service starts at
+the preceding cycle boundary (the anchor for the first selected cycle) and ends
+at the cycle date, exclusively. A cycle on the anchor itself has no service
+duration and now refuses with `InvalidServiceInterval`; choose a first cycle
+after the anchor for this profile. Advance billing and an initial point charge
+need a separately reviewed policy. This repair does not infer either. Issuance
+uses the same overlap check, while schedule amendments retain their stricter
+frozen-history comparison. Existing zero-length coverage refuses further
+billing rather than silently disappearing from capacity checks.
 
 Reproduce current gates with `bun install --frozen-lockfile`,
 `bun run check:changed:full <base-ref>` and `bun run test:e2e`. Core E2E success
