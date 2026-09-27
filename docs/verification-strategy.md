@@ -4,7 +4,7 @@ Status: requirements for the existing E2E suite; coverage remains tied to actual
 
 ## Runner and environment
 
-Run `bun run test:e2e` from the root. [Vite+](../vite.config.ts) runs Vitest over `apps/api/tests` and `apps/web/tests`; Playwright drives browser actions. The [suite instructions](../apps/api/tests/README.md) specify prerequisites and `test-results/e2e` artifacts. Preserve this runner unless a demonstrated need warrants a change.
+Run `bun run test:e2e` from the root. [Vite+](../vite.config.ts) runs the existing API Vitest suite against workerd and disposable PostgreSQL. There is no automated browser suite in this configuration. The [suite instructions](../apps/api/tests/README.md) specify prerequisites and `test-results/e2e` artifacts. Preserve this runner unless a demonstrated need warrants a change.
 
 Drive public requests through the real API Worker and PostgreSQL. Give the Worker only a restricted runtime login. Use separate maintenance credentials for setup and independent database observations. Browser journeys use the same operations. Do not replace internal services or wrap the suite in an outer transaction: requests must commit and remain visible to fresh connections.
 
@@ -21,6 +21,16 @@ Label runtime evidence precisely:
 | Built web/API Workers           | Assets, service binding and deployment composition.                                     |
 | Managed Hyperdrive              | Actual uncached reads, networking and connection behavior in an authorized environment. |
 | Bun                             | Migration/maintenance behavior; separately exercise any self-host application adapter.  |
+
+## Continuous integration
+
+[OpenERP CI](../.github/workflows/ci.yml) runs on pull requests, pushes to `main` and manual dispatch. It pins Ubuntu and Node, reads the Bun version from `package.json`, and requires `bun install --frozen-lockfile` in both jobs. Dependency changes must include the corresponding `bun.lock` update; never remove frozen installation to hide drift.
+
+The validation job reports formatting, type-aware lint, type checking and application builds separately. Once installation succeeds, a failed validation step does not hide the remaining checks. The E2E job runs independently and installs PostgreSQL server binaries for the harness-owned cluster. Both jobs and their expensive steps have time limits; superseded runs on the same ref are cancelled.
+
+An E2E run uploads `e2e-evidence` on success or failure, including the console log under `test-results/ci` and available results, manifest and runtime logs under `test-results/e2e`. The console log remains available even when global setup fails before the normal manifest is written. Read the PostgreSQL log for migration errors and `worker.json` for Worker startup errors: type checking and a successful bundle do not prove schema initialization or runtime startup.
+
+Reproduce the gates locally with `bun install --frozen-lockfile`, `bun run format:check`, `bun run lint`, `bun run check-types`, `bun run build` and `bun run test:e2e`. Run these sequentially in one worktree. The source and environment manifest limits what a passing local run proves; it is not an observed GitHub Actions result.
 
 ## Expectations and fault control
 
