@@ -448,6 +448,22 @@ render is pure, bounded, in-memory work, so it adds no meaningful lock duration.
 See the doc for the full reasoning and what adopting the packet's shape would
 require.
 
+**Two more defects that only contract decoding would have caught.** The
+pre-tax overlay digested its retained income-tax membership by handing a bare
+array to `toJsonObject`, which accepts only JSON objects, so `captureBasis`
+failed on every capture including an empty component set. The membership is
+now enveloped under its own key, and the envelope is part of the digest. The
+SRU record markers were bounded by a pattern that rejected every letter and
+digit, which made the hash-led uppercase markers the file-transfer contract
+actually uses unrepresentable and every conforming release impossible. The
+bound is now the writer's own emittable set without the space, and a marker
+that conflicts with the bundle's separators is refused at render time instead.
+
+Both were invisible to the vector run, because that fixture called the pure
+functions with plain objects and never went through a contract schema. The
+lesson is specific and worth keeping: **arithmetic evidence is not wire-shape
+evidence.** A pure-function vector cannot see a decode failure.
+
 **A migration defect that only a database could find.** The preserved
 `corporate_tax_declarations` constraint compared
 `body ->> 'fiscalYear'::text ->> 'id'::text` against `fiscal_year_id`. `->>`
