@@ -409,7 +409,10 @@ also be admitted as a bank match. This matters because a settlement posts up to
 twenty cash legs while its `cash_line_id` names only the first; without the join
 the remaining legs were unowned and doubly matchable. A correction releases the
 right by its own existence — `readActiveSourceIdentities` excludes any settlement
-that has a correction — so nothing is deleted, rewritten or flagged.
+that has a correction — so nothing is deleted, rewritten or flagged. A reversed
+explicit-fee settlement is still listed in `MonetaryItem.feeSettlements`, so
+`feeCorrections` states which of them were reversed; without it a reader cannot
+tell that a source right is consumable again.
 
 **Refusals are structural, not defaulted.** A fee posts to one reviewed expense
 account that is neither a bank account, nor a retained control account, nor an
