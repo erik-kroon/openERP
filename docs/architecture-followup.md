@@ -26,3 +26,42 @@ The new [ADR 0005](adr/0005-open-accounting-and-managed-services.md) records ope
 [CONTRIBUTING.md](../CONTRIBUTING.md) supplies contributor entry points and scope/provenance rules. [The self-host package](../infra/self-host/README.md) adds the Bun runtime, local configuration and PostgreSQL Compose recipe. It does not implement unavailable accounting, archive, provider or regulatory capabilities merely by packaging the current application.
 
 The later [layout decision](adr/0007-domain-and-jurisdiction-layout.md) extracts shared models and existing Swedish calculations into real workspace packages and separates API internals by responsibility. It adds no new accounting capability. No managed-service repository, hosted billing, credential vault, Rust crate, additional country or cloud deployment is created. These require real consumers or external arrangements. Runtime evidence and container verification limits are recorded alongside the self-host package.
+
+## Post-migration review, September 2026
+
+The supplied review of `1e632b93c758aa81550d61455f288a24b3c461d0`
+retains the Effect/application-owned modular monolith. Its concrete fixes now use
+the existing owners:
+
+| Finding | Implemented behavior |
+| --- | --- |
+| F01: immutable extraction request locking | Plain request reads; current scoped book authority and mutable lifecycle locks serialize execution, review and cancellation. No widened grants. |
+| F02: extraction executor authority | Service-intent requests survive requester-session expiry. Current executor API credential, identity and entity/book membership are required at capture, publication and terminal settlement. Cancellation and supersession remain independent fences. Dispatch filters the executor's books. |
+| F03: duplicate cursors | Named context/kind/id/revision fields, validated kind/revision combinations and retained scoped anchor checks. Both draft and registered continuations are exercised by the E2E journey. |
+| F04: retained-history ceiling | Creation has no lifetime draft quota. HTTP/MCP/UI use live 200-head keyset pages, with bounded search input. The list's count is page-local, next continues it, and complete is true only when the initial page contains the whole matching collection. History is preserved. |
+| F05: Swedish business date | One Europe/Stockholm instant conversion feeds backend admission and frontend dates. Overview and status queries change across midnight; focus and visibility changes refresh suspended pages. |
+
+Draft summaries take decoded revision contracts. Unknown calculated tax/gross
+amounts stay null, while zero stays the exact string `"0"`. The full supplier
+journey also exposed and repaired nested draft/parent command-receipt collisions,
+missing extraction-result projection fields and registered duplicate results that
+had omitted the live invoice projection. Nested command receipts use distinct
+keys and remain atomic with their owning review receipt.
+
+Duplicate body loading now needs at most two bounded queries: candidate draft
+bodies and a batch through the existing live invoice owner. Read operations in
+the touched draft/extraction paths reuse the authority owner's book lock instead
+of repeating an unused book query. The book-wide consistency boundary remains.
+The approved E2E workload measures statement count, PostgreSQL execution time,
+HTTP latency and an intentionally contended book read; those local measurements
+do not establish production throughput or justify finer-grained locking.
+
+Run commands, failure contracts and artifact names are maintained in
+[the E2E guide](../apps/api/tests/README.md). Static checks, local runtime results,
+browser observations and actual-company acceptance remain distinct. Static DDL
+capability caching and narrower worker credentials remain deployment design work;
+mutable principal authority is never cached with database capabilities.
+
+[Local verification](plans/evidence/post-migration-review-fixes.md) records the
+fixed-source 44-test pass, runtime-role and revocation journeys, 201 accepted
+historical drafts, browser date/pagination observations and query/lock samples.
