@@ -17,7 +17,7 @@ not evidence that an application journey is complete.
 | NEXT-18 | Integrator | Five confirmed leaf defects repaired; before/after public-domain probes and both changed-file gates pass. [Evidence](evidence/next-18-leaf-review.md). No current valuation application caller exists. |
 | NEXT-30 | Integrator | Adopted clearing receipts/refunds and consumed-principal reversal repaired; [domain probes and static gates](evidence/next-30-leaf-review.md) pass. No application consumer exists. |
 | NEXT-38 | Integrator | Separated paid/recognized/credited coverage, selected an explicit gross-conserving component policy, preserved credit-adjusted state and strengthened history/membership checks. [Thirty domain probes and static gates](evidence/next-38-leaf-review.md) pass; application integration remains open. |
-| NEXT-39 | Integrator review queue | Independent source/schema probes found signed-value rejection, reversed dispute signs, amount-only/under-scoped identities, unqualified payout fees, journal validation and replay-effect identity defects. Leaf remains unconsumed; repair before integration. |
+| NEXT-39 | Integrator | Repaired signed provider amounts, dispute directions/capacity, scoped occurrence/payout identities, bounded one-sided journals and effect-bound replay. [42 schema/compiler probes and static gates](evidence/next-39-leaf-review.md) pass. Fee-bearing payouts and other unqualified shapes refuse; no application/provider reconciliation is claimed. |
 | Other overnight leaves | Unassigned review queue | Maintain existing leaf-only status until inspected against the packet and real owners. |
 
 ## NEXT-18 failure obligations, before repair
