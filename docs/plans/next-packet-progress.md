@@ -55,7 +55,7 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-39 | Processor balance and payout clearing, Stripe first | P1 | leaf implemented: `@open-erp/domain/processor-clearing` gross/fee/net clearing journals with no revenue netting, refund capacity consumption, payout transit, bank receipt, evidenced failure reversal, same-source replay and independent closings; fetching, profiles and persistence remain with the treasury/bank owners | packet vectors executed against the pure compiler; provider/storage journey unobserved |
 | NEXT-34 | Mileage reimbursement with exact tax and payout partition | P2 | leaf implemented: `@open-erp/domain/mileage-reimbursement` exact distance split with half-up rounding, disjoint exempt/payroll handoff identities, same-trip idempotency, unreviewed-route and missing-fact refusal, and consumed-delta correction with lawful basis; handoff execution stays with the claim/payroll owners | packet vectors executed against the pure compiler; payroll journey unobserved |
 | NEXT-46 | Peppol invoice and credit exchange through a selected access point | P1 | leaf implemented: `@open-erp/domain/peppol-exchange` BIS amount reconciliation with credit structure and original reference, stable dispatch admission with semantic-buyer check and lost-response recovery, and inbound envelope handling with integrity incidents and duplicate candidates; transport, validation and persistence remain with the delivery owners | packet vectors executed against the pure compiler; network journey unobserved |
-| NEXT-24 | K2 annual-report semantic model and iXBRL | P1 | leaf implemented: `@open-erp/domain/annual-report` disclosure finalization with unknown-fact and framework guards, presentation reconciliation with explicit rounding rows, deterministic iXBRL assembly with duplicate/dangling refusal, validation-run evaluation, and signature-scope fencing; native validation, signing and filing remain with the artifact/authority owners | packet vectors executed against the pure compiler; filing journey unobserved |
+| NEXT-24 | K2 annual-report semantic model and iXBRL | P1 | implemented end to end on the released leaf: `0027-next-24.sql` draft/approval/final/presentation/artifact tables, `reports/annual-report` prepare/approve/finalize/presentation/render owner, HTTP routes plus read-only MCP capabilities; the leaf's finalization/presentation/assembly/validation compilers are consumed unchanged | packet vectors plus refusal cases executed; 0001–0027 chain applies on fresh PostgreSQL with DDL/grant probes; 7 existing E2E tests pass with 0027 applied; report financial journey unobserved |
 | NEXT-25 | Fixed-revision company rehearsal and restore | P0 | leaf implemented: `@open-erp/domain/rehearsal-verification` acceptance inventory with unknown-blocking and waiting handoffs, backup-manifest verification with no certificate on gaps, field-by-field restore comparison with retained differences, drift refusal and dispatch-fence proof; actual checkpoint capture, backup, restore and exercise remain with the operations owner under separate authority | packet vectors executed against the pure compiler; rehearsal exercise unobserved |
 | NEXT-47 | Document signatures bound to exact content and purpose | P1 | leaf implemented: `@open-erp/domain/document-signatures` purpose-bound intent freezing, authentic completion with digest/signer/environment checks and replay, distinct signer-set coverage, revocation-split eligibility, and unknown-start retention; provider protocol and receipts remain with the signing adapter owners | packet vectors executed against the pure compiler; cryptographic journey unobserved |
 | NEXT-12 | Historical open-item adoption | P1 | leaf implemented: `@open-erp/domain/historical-adoptions` residual adoption with full_history/opening_set exclusivity, pool capacity conservation and unknown-history preservation, execution-time conservation check, new-settlement remaining math without double-subtracting history, residual-credit refusal, and pool/live control assertions; journals stay empty with GL delta 0 and persistence remains with the sie/historical and commerce settlement owners | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
@@ -941,6 +941,54 @@ throwaway process; the full `0001`–`0026` chain applies on a fresh PostgreSQL
 with the seven tables, immutable triggers and runtime grants probed; the
 existing posting, persistence and supplier-drafts E2E suites pass (8 tests)
 with 0026 applied. The close financial journey itself remains unobserved.
+
+### NEXT-24 — K2 annual-report semantic model and iXBRL
+
+The full owning pipeline on top of the released leaf compilers, which are
+consumed unchanged. `prepareAnnualReport` seals the draft against the active
+NEXT-23 close certificate and the exact NEXT-13 snapshots, with the K2
+framework release, disclosure requirements, taxonomy concept mappings and
+every non-ledger fact as reviewed sealed input. Unknown mandatory facts keep
+the report a draft; only K2 exists as a profile and anything else is refused
+rather than templated. `approveAnnualReport` is a separate human approval
+with expiry; `finalizeAnnualReport` enforces four-eyes separation, seals the
+semantic model and commits the render intent to the outbox atomically — no
+journal posts. `prepareReportPresentation` checks every displayed value
+against its sealed source and reconciles the declared total through explicit
+presentation-only rows. `renderReportArtifact` assembles deterministic XHTML
+from the same presentation data through reviewed concept mappings and retains
+the bytes with their content hash.
+
+**Validation pending is a retained state, not a pass.** No qualified native
+XBRL validator is released, so every artifact carries
+`pending_qualified_validator`: preserved draft evidence that blocks artifact
+acceptance, exactly as the packet requires. A process exit code with a
+skipped document stage could never pass here because no stage is ever
+claimed. Signatures stay NEXT-47's: the manifest carries a null signature
+scope until a signature event exists, and an adoption after signing is that
+owner's verification, never this one's assumption.
+
+Deliberate omissions, recorded rather than smoothed over:
+
+- **No web UI and MCP exposes reads only**, matching the close precedent.
+  Mutations are HTTP operator operations.
+- **Duration contexts are refused by the assembler.** The leaf emits instant
+  contexts only; a duration period fails its validation rather than rendering
+  a wrong context.
+- **No cascade rendering service.** The render intent commits to the generic
+  outbox and the same named render operation serves an artifact worker later;
+  in this release the operator invokes it directly, which the packet's
+  no-extra-service rule permits.
+- **No reviewed taxonomy, framework data or company facts ship.** Concept
+  QNames, contexts, units and the framework release are qualified operator
+  input on every command.
+
+Runtime evidence, kept as observations rather than committed tests: all
+packet vectors and refusal cases executed against the leaf compilers in a
+throwaway process; the full `0001`–`0027` chain applies on a fresh PostgreSQL
+with the five tables, immutable triggers and runtime grants probed; the
+existing posting and persistence E2E suites pass (7 tests) with 0027 applied.
+The report financial journey itself remains unobserved.
 
 ## Integration debt carried by these merges
 
