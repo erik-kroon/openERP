@@ -31,7 +31,7 @@ These review plans this repository already maintains and propose **replacements 
 | [`parity-plan-review/`](parity-plan-review/README.md) | the [reference parity backlog](../plans/11-parity-backlog.md) and [ADR 0011](../adr/0011-reference-parity-backlog.md) | `ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb` | `checks/check_review.py`: 36 of 36 passed | supplied `SHA256SUMS.txt` — all files OK; checker re-run passed |
 | [`testing-plan-review/`](testing-plan-review/README.md) | the [test suite design](../plans/test-suite-design.md) and [pseudologic](../plans/test-suite-pseudologic.md) | `8bff9fadbcacf9d369758b967971469548834365`, read at `ac9e1a91` | none supplied; `CHECKS.json` records illustrative arithmetic only | manifest **computed on import** — 8 of 8 files OK |
 
-The testing archive ships no checksum manifest and no `checks/` directory, so its `SHA256SUMS.txt` was generated during import. Do not read it as archive-supplied provenance. Adoption of either replacement is an open maintainer decision recorded in [14-plan-review-adoption.md](../plans/14-plan-review-adoption.md).
+The testing archive ships no checksum manifest and no `checks/` directory, so its `SHA256SUMS.txt` was generated during import. Do not read it as archive-supplied provenance. Adoption of the reviews' **decisions** was resolved on 2026-09-28 and is recorded in [14-plan-review-adoption.md](../plans/14-plan-review-adoption.md) and [ADR 0015](../adr/0015-owner-delegated-decision-pass.md); the **textual** reconciliation of the accepted plans with the proposed replacements is still outstanding, and until it lands the accepted files remain the authority for text while the adopted decisions are the authority for intent.
 
 
 ## Book Zero PRD
