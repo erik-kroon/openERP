@@ -176,6 +176,8 @@ Existing commerce packets own invoice issuance, payment allocation, credits on t
 | PRY-52 | Revenue deferral derived from an issued invoice, with a per-line service period and a balancing account, so a prepaid annual service invoiced in January is not January revenue. | COM, AST | PRY-45 | B |
 | PRY-53 | Retained delivered bytes and a customer-facing artifact: the exact document bytes captured before any external send are the retained record, and a later re-render from current settings is a different document and must never be served as the sent one. Plus a customer statement artifact with a revocable scoped link, pinned to an as-of date, so a later payment changes the next statement without rewriting a prior one. | COM, OPS | PRY-14 | A |
 | PRY-54 | Currency resolution on the invoice write paths: one resolver every write surface calls, refusing creation rather than persisting an absent rate, because a rate-less foreign purchase cannot be posted and a fabricated one produces a wrong return. The rate date anchors to the document date so money and voucher cannot sit on different days. A caller-supplied rate is honoured but refused when implausible, never silently replaced. | COM, FX | PRY-10, PRY-20 | B |
+| PRY-131 | Invoice payment-link issuance and provider settlement matching: a payment link bound to the exact issued invoice identity and amount, with expiry and single-use semantics; provider payout events reconcile against issued links so a paid link settles its invoice rather than creating a new receipt, and an unmatched payout stays unapplied with a named reason. A link is never a second invoice. | COM | PRY-01 | B |
+| PRY-133 | One reader-facing source for "amount outstanding" per receivable and payable: either a dedicated collection subledger that owns the outstanding amount, or a single shared read path derived from the existing allocations, so reports, ageing, collections and the cash forecast read the same figure instead of each recomputing it. A receivable's outstanding is never an independent sum of raw ledger rows per caller. Preserves the existing allocation and conservation model; this names the single owner and forbids divergent readers. | COM | COM-03 | A |
 
 ## VAT and tax-account profiles
 
@@ -258,10 +260,11 @@ Everything below has **no** `NEXT` owner and no other plan owner. Each still nee
 | --- | --- |
 | External systems and providers | PRY-01, PRY-02, PRY-03, PRY-06, PRY-07, PRY-08, PRY-12, PRY-13, PRY-14, PRY-15, PRY-107, PRY-108, PRY-111 |
 | Identifier and money primitives | PRY-16, PRY-17, PRY-19, PRY-20, PRY-24 |
-| Intake and chart of accounts | PRY-21, PRY-22, PRY-23, PRY-25, PRY-27, PRY-28, PRY-29, PRY-30, PRY-31, PRY-35, PRY-99, PRY-100, PRY-101, PRY-104 |
+| Intake and chart of accounts | PRY-21, PRY-22, PRY-23, PRY-25, PRY-27, PRY-28, PRY-29, PRY-30, PRY-31, PRY-35, PRY-99, PRY-100, PRY-101, PRY-104, PRY-132 |
 | Matching and reconciliation | PRY-33, PRY-34, PRY-35, PRY-36, PRY-37, PRY-38, PRY-39, PRY-40, PRY-41, PRY-42, PRY-43, PRY-119, PRY-125 |
-| Commerce outside the NEXT packets | PRY-44, PRY-46, PRY-48, PRY-49, PRY-50, PRY-52, PRY-53, PRY-120, PRY-121, PRY-122, PRY-126 |
+| Commerce outside the NEXT packets | PRY-44, PRY-46, PRY-48, PRY-49, PRY-50, PRY-52, PRY-53, PRY-120, PRY-121, PRY-122, PRY-126, PRY-131, PRY-133 |
 | Platform and agent governance | PRY-109, PRY-110, PRY-112, PRY-113, PRY-114, PRY-115, PRY-116, PRY-117, PRY-118 |
+| Legal-form profiles | PRY-128, PRY-129, PRY-130 |
 | Deadlines, calendar, attention | PRY-81, PRY-82, PRY-83, PRY-84, PRY-124 |
 
 ### What this reconciliation changes
@@ -285,9 +288,19 @@ The largest unmined area in the reference and the biggest capability gap after p
 | PRY-93 | iXBRL generation gated on a generated concept registry for the pinned taxonomy version, the sign convention, and a local pre-flight carrying the official validation codes, severities, effective dates and authorities so a re-run under different rules is a different validation run rather than a silent pass. | END | PRY-90, PRY-91 | B, `R36` |
 | PRY-94 | The statutory processing-history report, with its two limbs (what was posted and who registered it; what changed in the system and when) and, critically, two different scope modes that are not the same query narrowed. | END | PRY-80 | A, `R37` |
 | PRY-95 | Whole-krona presentation for statutory forms: the exact minor-unit figure stays the fact, the truncation is a declared, deterministic, retained property of the artifact, and the residual is **declared** rather than absorbed into a real account's reported amount. The two statement sides are reconciled independently so a balancing check cannot pass while one side differs. | END | PRY-93, PRY-86 | A, `R29` |
-| PRY-96 | The year-end work catalogue in the order of the work, with a date-bounded sign-off predicate and not-applicable as a first-class state requiring a human assertion. Includes the sole-trader boundary, where every mechanism is declaration-only and books nothing, and a wrong legal form refuses before any figure is computed. | END | PRY-86 | A |
+| PRY-96 | The year-end work catalogue in the order of the work, with a date-bounded sign-off predicate and not-applicable as a first-class state requiring a human assertion. Includes the sole-trader boundary, where every mechanism is declaration-only and books nothing, and a wrong legal form refuses before any figure is computed. Full profile delivery is [PRY-128](#legal-form-profiles-aktiebolag-and-enskild-firma) to [PRY-130](#legal-form-profiles-aktiebolag-and-enskild-firma). | END | PRY-86 | A |
 | PRY-97 | The income-tax declaration, the business-activity schedule and their field-mapping generation, as separate artifacts from the accounting result, each with its own schema version, validation and external outcome. | VAT, END | PRY-87, PRY-93 | B |
 | PRY-98 | The asset note reconciled to posted schedules rather than a re-run of the engine, with the disposal mirror, and linear depreciation from an opening book value where the life-end period absorbs the remainder so no öre is stranded. | AST, END | PRY-64 | A, `R33` |
+
+## Legal-form profiles (aktiebolag and enskild firma)
+
+The product admits `enskild_firma` as a setup value but treats it only as a boundary: PRY-96 refuses the wrong form before any figure is computed and books nothing declaration-side. The reference runs both forms end to end, and the ledger records the legal-form-conditioned binding as an unowned gap. The three packets below make the second form buildable. None of them activates a tax rate, contribution rate or declaration schema: every figure set is dated class-B/C material under D-04/D-08, and "not applicable" for a form requires the company fact, never a default.
+
+| ID | Deliverable | Owner | Prerequisite | Class |
+| --- | --- | --- | --- | --- |
+| PRY-128 | Legal-form-conditioned treatment binding: a declared, reviewed legal-form attribute on the book profile that every divergent treatment reads; a wrong form refuses before any figure is computed. Sole-trader owner expense liability posts to an equity account, never a liability, and payout grouping skips that account because the firm owes its owner nothing. Extends the PRY-96 boundary into a reusable binding and covers the ledger's unowned legal-form row. | FND | PRY-100, PRY-121 | A |
+| PRY-129 | Sole-trader owner economics: own deposits and withdrawals as equity movements with no receivable or payable created; close transfers straight into retained equity and moves nothing between funds. No owner salary exists on this form; any payroll-looking input for the owner refuses with the remedy. Reference packs `eget-insattning.yaml` and `eget-uttag.yaml` are template structure inputs only; amounts are re-derived, never ported. | COM, END | PRY-128 | A |
+| PRY-130 | Sole-trader declaration outputs as declaration-only artifacts with their own schema versions and validation, booking nothing: the business-activity schedule equivalent and the contribution/preliminary-tax computations. Reference pack `preliminar-f-skatt-ef.yaml` is a template structure input only. Gated on the dated company fact and reviewer before any parameter set exists. | VAT, END | PRY-128, PRY-97 | B |
 
 ## Chart of accounts and ledger foundations
 
@@ -303,6 +316,7 @@ Everything below this line depends on a standard chart, which the target does no
 | PRY-104 | Proportional allocation of an amount over weighted shares in exact minor units, using floors plus a remainder to the largest fractional parts, so the parts always sum to the total. The reference's motivation is the accounting one: independent rounding drifts by a unit per share and the balance guarantee then refuses the entry. | FND, AST | — | A, `R28` |
 | PRY-105 | Supplier-side correctness details: a stated document VAT amount may replace a rate-based line but never create one, and is bounded by the maximum tax the gross can carry. Plus the accrual interim-account role binding and the accrual posting-date floor with a forward clamp into the earliest open period. | VAT, AST | PRY-100 | A, `R39`, `R32` |
 | PRY-106 | Charset-corruption triage with three distinct signatures and three different recoveries, where the irreversible one falls back to a known-good sibling rather than a guess. Read-side only: never rewrite a stored posted or reported value. Includes the letter-adjacency test that distinguishes a corrupt quotation mark from a legitimate dash, and the directional guard that stops a normaliser degrading a correct value. | FND | PRY-23 | A |
+| PRY-132 | Locked-period write refusal as a database-integrity control, not only an application check: the write layer rejects any posting, correction or other financial effect whose accounting date falls in a locked or closed period, so an agent, a script, or a future code path cannot post into a locked period even if the application gate is bypassed. Lock scope is declared per book and period, and opening/closing a period is itself a recorded, authorized operation. Closes the reference comparison's named database gap. | FND, END | PRY-101 | A |
 
 ## Platform, transport and agent governance
 
@@ -355,7 +369,7 @@ A packet is not activated by this backlog. Each of the following needs a dated c
 
 | Gate | Blocks | Fact required |
 | --- | --- | --- |
-| D-04 | PRY-44, PRY-47, PRY-48, PRY-50, PRY-56, PRY-57, PRY-58, all of PRY-59 to PRY-74 | Legal entity, fiscal year, accounting and VAT methods, registrations, statement scope, payroll presence and prevalence, currencies in use |
+| D-04 | PRY-44, PRY-47, PRY-48, PRY-50, PRY-56, PRY-57, PRY-58, all of PRY-59 to PRY-74, PRY-128, PRY-129, PRY-130 | Legal entity including supported legal forms, fiscal year, accounting and VAT methods, registrations, statement scope, payroll presence and prevalence, currencies in use |
 | D-06 | PRY-03, PRY-04, PRY-06, PRY-08, PRY-30 | Which previous system, which version, which registers are complete, permitted data use, full-history versus reduced-history cutover |
 | D-08 | PRY-10, PRY-11, PRY-12, PRY-49, PRY-55, PRY-61, PRY-62, PRY-63, PRY-70, PRY-71, PRY-72, PRY-73, PRY-81, PRY-82 | The applicable rule, chart, schema or table version, with provenance for every reused constant |
 | D-10 | PRY-03, PRY-06, PRY-09, PRY-13, PRY-14, PRY-15 | Provider account, certificate, sandbox availability, the specific submission capability, and authorization to exercise it |

@@ -81,3 +81,20 @@ the authorization, operation recovery and request/session boundaries raised no
 additional demonstrated failure; its JSON-error compatibility concern was
 confirmed and repaired. Unknown submission remains a retained unknown outcome
 requiring an explicit new request, never automatic redisclosure.
+
+## CI integration follow-up
+
+Main advanced independently to `116a5ca` while the NEXT-37 review ran. Its CI and
+planning changes are retained. Validation now generates frontend types before
+lint/type checks, and E2E installs the pinned Playwright Chromium plus Linux
+runtime dependencies. Frozen installs remain enabled.
+
+Whole-workspace validation found formatting drift in twenty overnight domain
+modules and the E2E guide. The repository formatter normalized those files;
+one missing statement-separation line in `agent-context.ts` was added. These
+are formatting changes, not correctness acceptance of the unreviewed leaves.
+Workflow YAML parsing, API/web builds, format check, whole-workspace type-aware
+lint and workspace type checks passed locally. The first aggregate type-check
+invocation hit its outer deadline after workspace compilation; process inspection
+found no surviving owned compiler, and a bounded retry with `GOMAXPROCS=2`
+completed successfully. No GitHub-hosted run is claimed by these local checks.
