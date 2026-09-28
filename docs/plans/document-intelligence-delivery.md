@@ -89,6 +89,27 @@ Adapter contract references: [Azure analyze API](https://learn.microsoft.com/en-
 [invoice model](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice?view=doc-intel-4.0.0),
 and [PDF loading](https://pdf-lib.js.org/docs/api/classes/pdfdocument#load).
 
+## Migration numbering and root check ownership — 2026-09-28
+
+`0028-next-37.sql` is owned by NEXT-37 and `0029-next-07.sql` by NEXT-07;
+`0030-next-23-review.sql` is reserved for the critical financial-close repair in
+its isolated worktree. Document Intelligence claims no migration number today:
+the first journey needs no new table, because the retained operation receipt
+already lives in `supplier_document_operations` (`0024`) and review continues
+through existing review/draft owners.
+
+Any future document migration takes a distinct later number allocated at the time
+it is actually needed — not in advance. Expected candidates, if their packets
+ever become unblocked: a provider budget/attempt ledger (P04), a separate
+diagnostics store for off/shadow studies (P09), and a derivative/page-manifest
+table (P02/P03). Each needs its own forward migration with the runtime role
+granting only the columns the application uses.
+
+Root `check:changed`/`check:changed:full` windows stay coordinated with
+`wB:p1C` (NEXT-37) and `wB:p1G` (NEXT-07). Document edits are limited to
+document-owned files, committed explicitly; no shared-schema or export changes
+while those packets are open.
+
 ## P00 binding — 2026-09-28 (combined main `844f680`)
 
 Revision `844f680` (merge `77d5ab1` + `7c4defb` on `26ba496`); dirty NEXT-07/NEXT-37
@@ -99,12 +120,15 @@ now present: `native-text-v1` + `azure-invoice-v1` (`packages/contracts/src/supp
 profile with independent page count, sparse quote-locator review into existing drafts,
 16 doc/extraction E2Es green per `docs/plans/overnight-review-ledger.md`.
 
-Remaining delta P01–P13: JPEG retained case, corrupt/encrypted rejection case,
-SiftX native helper (no binary/ABI — O04/O05), provider budget/tariff/disclosure
-policy (O06–O08, all entries unqualified, no paid dispatch), live qualification and
-corpus/company acceptance (O12–O13), off/shadow diagnostics (O14), extended profile
-disabled (O15). First bounded increment: retained corrupt-PDF rejection case in the
-document-owned E2E only; no shared-schema/exports, no live disclosure.
+Delivered since that binding, both in the document-owned E2E only: a corrupt-PDF
+rejection case (`failed`, zero provider submissions) and a JPEG sparse
+complete-reading case. Neither changes shared schema, exports or a migration.
+
+Remaining delta P01–P13: SiftX native helper (no binary/ABI — O04/O05), provider
+budget/tariff/disclosure policy (O06–O08, all entries unqualified, no paid
+dispatch), live qualification and corpus/company acceptance (O12–O13),
+off/shadow diagnostics (O14), extended profile disabled (O15). Encrypted-PDF
+rejection shares the corrupt-PDF path and remains without its own retained case.
 
 ## End-to-end completion contract — 2026-09-27
 
