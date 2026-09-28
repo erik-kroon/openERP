@@ -46,6 +46,12 @@ Plan salaried/hourly pay; ordinary variable pay; benefits and expense reimbursem
 
 Compute exact component breakdowns and independent control equations. Never obtain expected test answers by calling the production calculator. Approved pay runs remain stable if an employee later changes address, schedule, tax status or salary. Corrections name the original run and distinguish replacement/catch-up pay from declaration amendments.
 
+### Retroactive corrections and locked periods
+
+[ADR 0014](../adr/0014-retro-payroll-open-period-adjustments.md) selects the working default for PAY-03 / NEXT-36: preserve the original payroll period and component lineage, and post a linked adjustment on an authorized date in an open accounting period. Full reversal is conditional, not automatic; today is not a hard-coded date. PRY-132 applies without a payroll bypass. Reopening, if supported and permitted, is a separate authorized operation. PAY-04 determines reporting-period attribution and declaration amendments independently.
+
+Readers retain the original close view and separately show payroll attribution including later corrections, linked to their actual adjustment-period postings. Release evidence must cover locked-date refusal, closing after preparation, fresh approval for date changes, duplicate recovery, atomic failure, original-artifact preservation and separate declaration state. D-04/D-08 still gate Swedish accounting and employer-declaration treatment before company applicability; this working decision establishes no new runtime result.
+
 ### Workflow and proof
 
 Collect inputs → validate completeness → calculate draft → freeze/review → approve → commit payroll/register effects → authorize/export or submit payment → observe settlement → prepare/validate/approve declaration → record external outcome. The same UI can guide these steps without conflating their authority. A prepared payroll does not mean salaries were paid or a declaration accepted.

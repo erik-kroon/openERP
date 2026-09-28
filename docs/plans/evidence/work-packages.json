@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-28T07:44:21.140990+00:00",
-  "headObservedAtValidation": "b8a21bc0035bbf422b3a2d6a27ebfe89f9839f76",
+  "generatedAt": "2026-09-28T09:54:37.451695+00:00",
+  "headObservedAtValidation": "8f3836e64283e4087e018f8767996e50398b7801",
   "authority": "Derived from domain packet tables and the conditional-gate table; not an implementation/proof status report.",
   "packetCount": 53,
   "packets": [
@@ -420,7 +420,7 @@
       "id": "VAT-01",
       "owner": "VAT and tax-account profiles",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 103,
+      "sourceLine": 109,
       "deliverable": "Dated treatment/profile matrix and source-backed TaxFacts with explicit unsupported cases.",
       "dependsOn": [
         "FND-03",
@@ -437,7 +437,7 @@
       "id": "VAT-02",
       "owner": "VAT and tax-account profiles",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 104,
+      "sourceLine": 110,
       "deliverable": "Return snapshots, contribution/exclusion lineage and independent box controls.",
       "dependsOn": [
         "VAT-01",
@@ -454,7 +454,7 @@
       "id": "VAT-03",
       "owner": "VAT and tax-account profiles",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 105,
+      "sourceLine": 111,
       "deliverable": "Tax-account source events, matching, settlement and control rollforward.",
       "dependsOn": [
         "VAT-02",
@@ -471,7 +471,7 @@
       "id": "VAT-04",
       "owner": "VAT and tax-account profiles",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 106,
+      "sourceLine": 112,
       "deliverable": "Return amendment/version impact and approved artifact handoff.",
       "dependsOn": [
         "VAT-03",
@@ -488,7 +488,7 @@
       "id": "PAY-01",
       "owner": "Payroll and declaration profiles",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 107,
+      "sourceLine": 113,
       "deliverable": "Employment/work/obligation revisions, privacy scope and dated rule inputs.",
       "dependsOn": [
         "FND-02",
@@ -506,7 +506,7 @@
       "id": "PAY-02",
       "owner": "Payroll and declaration profiles",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 108,
+      "sourceLine": 114,
       "deliverable": "Exact calculation profiles for the declared payroll case matrix.",
       "dependsOn": [
         "PAY-01",
@@ -523,7 +523,7 @@
       "id": "PAY-03",
       "owner": "Payroll and declaration profiles",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 109,
+      "sourceLine": 115,
       "deliverable": "Frozen run approval/posting, payment instructions and register-aware correction.",
       "dependsOn": [
         "PAY-02",
@@ -541,7 +541,7 @@
       "id": "PAY-04",
       "owner": "Payroll and declaration profiles",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 110,
+      "sourceLine": 116,
       "deliverable": "AGI/KU artifact profiles, individual/control checks, amendment and delivery state.",
       "dependsOn": [
         "PAY-03",
@@ -559,7 +559,7 @@
       "id": "AST-01",
       "owner": "Assets and deferrals",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 111,
+      "sourceLine": 117,
       "deliverable": "Evidence-backed asset/deferral register and imported opening carrying basis.",
       "dependsOn": [
         "IMP-02",
@@ -576,7 +576,7 @@
       "id": "AST-02",
       "owner": "Assets and deferrals",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 112,
+      "sourceLine": 118,
       "deliverable": "Complete current schedule/occurrence slice and atomic posting/linkage with future amendments.",
       "dependsOn": [
         "AST-01",
@@ -593,7 +593,7 @@
       "id": "AST-03",
       "owner": "Assets and deferrals",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 113,
+      "sourceLine": 119,
       "deliverable": "Disposal, impairment/estimate profiles, reversals and register controls.",
       "dependsOn": [
         "AST-02",
@@ -610,7 +610,7 @@
       "id": "FX-01",
       "owner": "Currency valuation and settlement",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 114,
+      "sourceLine": 120,
       "deliverable": "Versioned rate sources, exact conversion and missing-rate policy.",
       "dependsOn": [
         "FND-03",
@@ -627,7 +627,7 @@
       "id": "FX-02",
       "owner": "Currency valuation and settlement",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 115,
+      "sourceLine": 121,
       "deliverable": "Cross-currency recognition/partial settlement and fee/realized-FX conservation.",
       "dependsOn": [
         "FX-01",
@@ -643,7 +643,7 @@
       "id": "FX-03",
       "owner": "Currency valuation and settlement",
       "source": "docs/plans/05-vat-payroll-assets-fx.md",
-      "sourceLine": 116,
+      "sourceLine": 122,
       "deliverable": "Period remeasurement/reversal and valuation report controls.",
       "dependsOn": [
         "FX-02",
