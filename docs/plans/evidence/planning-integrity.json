@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-28T19:59:48.409585+00:00",
-  "headObservedAtValidation": "e5121df4d5ee61745e7fcda13ca09828c78d69a3",
+  "checkedAt": "2026-09-28T21:33:43.910176+00:00",
+  "headObservedAtValidation": "c6d5c2b82c5ba03cce3b8f2f9092529bf1d23564",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,7 +9,7 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 889,
+    "localLinksAndAnchorsChecked": 890,
     "documentsChecked": 44,
     "coverage": {
       "R": [
@@ -242,7 +242,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "75990935f2f0ad975073f37c15a602de4c83db725d135b1b46e0a76c301a1a71"
+      "sha256": "b9235bb7e64239a05405662aeb9c5bf6d51ddf8e6183b7061546f3ff1fc87f43"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -250,7 +250,7 @@
     },
     {
       "path": "docs/plans/next-packet-progress.md",
-      "sha256": "f370395351a3322d75551d9f0b9de0c17b24adeca43437391190c3d5d1c067b2"
+      "sha256": "ef07b14abc58507a0e310d483cf18fefb32a16d2338fc4809209cb6ae17deb31"
     },
     {
       "path": "docs/plans/overnight-review-ledger.md",
