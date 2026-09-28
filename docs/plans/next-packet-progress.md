@@ -60,7 +60,7 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-47 | Document signatures bound to exact content and purpose | P1 | leaf implemented: `@open-erp/domain/document-signatures` purpose-bound intent freezing, authentic completion with digest/signer/environment checks and replay, distinct signer-set coverage, revocation-split eligibility, and unknown-start retention; provider protocol and receipts remain with the signing adapter owners | packet vectors executed against the pure compiler; cryptographic journey unobserved |
 | NEXT-12 | Historical open-item adoption | P1 | leaf implemented: `@open-erp/domain/historical-adoptions` residual adoption with full_history/opening_set exclusivity, pool capacity conservation and unknown-history preservation, execution-time conservation check, new-settlement remaining math without double-subtracting history, residual-credit refusal, and pool/live control assertions; journals stay empty with GL delta 0 and persistence remains with the sie/historical and commerce settlement owners | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
 | NEXT-19 | Disposal with proceeds | P1 | leaf implemented: `@open-erp/domain/asset-disposals` post-impairment carrying removal with unposted-cash and invoiced-proceeds modes, clearing-or-qualified-reclassification branch with no second AR/cash/VAT recognition, gain/loss legs, double-proceeds refusal and execution-time conservation; schedule retirement and disposition persistence remain with the reserved asset owner | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
-| NEXT-23 | Financial close and single-count carry-forward | P1 | leaf implemented: `@open-erp/domain/financial-close` result-transfer delta compiler with zero-delta no-voucher case, required-control and tax-bridge gating with no certificate on blocker, single-count opening projection with nominal-zero and double-count refusals, opening-delta explanation and execution-time conservation; atomic posting, balance reads and locks remain with the closing owners | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
+| NEXT-23 | Financial close and single-count carry-forward | P1 | implemented end to end on the released leaf: `0026-next-23.sql` preparation/proposal/approval/transfer/opening/certificate/reopen tables, `closing/financial-close` prepare/advance/approve/execute/reopen owner with `result_transfer_v1` posting purpose, HTTP routes plus read-only MCP capabilities; the leaf's delta/proposal/opening/conservation compilers are consumed unchanged | packet vectors plus refusal cases executed; 0001–0026 chain applies on fresh PostgreSQL with DDL/grant probes; 8 existing E2E tests pass with 0026 applied; close financial journey unobserved |
 | NEXT-21 | Payroll posting, payslip and AGI artifact | P1 | leaf implemented: `@open-erp/domain/payroll-runs` pay-run journal with derived net payables and no benefit double-expense, same-key single posting, full-payment evidence with paid-period reporting, AGI aggregation over recorded withholding with reconciliation bridge, same-identity amendment with withholding-decrease review, and unpaid-only correction; cash movement, rendering and submission remain with the payroll owners | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
 | NEXT-44 | Multi-year SIE partition and dimension-preserving import | P1 | leaf implemented: `@open-erp/domain/sie-partitions` scoped voucher identities, unique-year partition with blocking diagnostics, final-versus-history totals, declaration-bound object mapping with source-code retention, unknown-control refusal, UB/IB single link and paused-run checkpoints; parsing, staging and admission remain with the SIE owners | packet vectors executed against the pure compiler; migration journey unobserved |
 | NEXT-28 | Authorized collection reminders and dispatch recovery | P1 | leaf implemented: `@open-erp/domain/collection-reminders` exact-message sealing and approval, stale-basis admission refusal, idempotent single-attempt recovery on retry, dispute-hold refusal and same-identity unknown-outcome recovery; statements, disputes and provider calls remain with the commerce/delivery owners | packet vectors executed against the pure compiler; external-delivery journey unobserved |
@@ -888,6 +888,59 @@ zero net and `filingReady: true` on reconciled controls; the existing
 credit-document, posting and persistence E2E suites pass (9 tests) with 0025
 applied. The service prepare/approve/execute financial journey itself remains
 unobserved.
+
+### NEXT-23 — Financial close and single-count carry-forward
+
+The full owning transaction on top of the released leaf compilers, which are
+consumed unchanged. `prepareYearClose` seals the applicable-family inventory
+(statements and corporate tax verified natively against the sealed NEXT-13
+snapshot and NEXT-22 bridge; any other family claimed required is a blocker
+and only dated not-applicable evidence is retained), the after-tax profit
+from the snapshot's own untransferred result line, and the close basis
+version. `advanceYearClose` recaptures the basis, seals the domain final
+proposal with the transfer delta D = P - F, and retains the balance-sheet
+opening target. `approveFinalProposal` is a separate human approval with
+expiry; `executeFinalClose` enforces four-eyes separation, rechecks the
+conservation boundary inside the same transaction after the transfer posts,
+then commits the transfer effect, the derived opening set, the certificate
+and the year period locks atomically. A zero delta posts no voucher but still
+seals the no-effect transfer, opening, certificate and locks.
+
+**The transfer is recognizable, not a plain adjustment.** A new
+`result_transfer_v1` posting purpose travels on the transfer vouchers through
+a dedicated action variant, gated to the `financial_close` owner in admission
+and validation; the statement owner recognizes exactly that purpose as an
+owned transfer, which is the handoff its read anticipated with the empty
+purpose list. The nominal transfer and year-result equity accounts are
+reviewed operator input verified active and distinct; the statement mapping
+identifies the technical transfer role, which this owner never assigns.
+
+**Status is derived, never stored.** Closed, ready, preparing,
+adjustments-pending and open follow from the preparation/proposal/
+certificate/reopen rows, so no status column can drift. Reopen is one atomic
+step rather than the packet's prepare/execute split: the downstream
+enumeration (later openings, certificates and statement snapshots) and the
+period unlock must see the same membership, and a consumed downstream year
+refuses with its exact dependency list retained on the sealed refusal record.
+
+Deliberate omissions, recorded rather than smoothed over:
+
+- **No web UI and MCP exposes reads only**, matching the service-purchase
+  precedent. Mutations are HTTP operator operations.
+- **No reviewed transfer-account mapping is verified.** The operator's
+  statement release must map the nominal account technical; the owner checks
+  activity, not mapping.
+- **Cascade reopen is refused.** Any consumed downstream year blocks with its
+  list; multi-year cascade repair is future work.
+- **No reviewed fiscal year, snapshot, bridge or release ships.** Every
+  command is refused until those qualified inputs exist.
+
+Runtime evidence, kept as observations rather than committed tests: all
+packet vectors and refusal cases executed against the leaf compilers in a
+throwaway process; the full `0001`–`0026` chain applies on a fresh PostgreSQL
+with the seven tables, immutable triggers and runtime grants probed; the
+existing posting, persistence and supplier-drafts E2E suites pass (8 tests)
+with 0026 applied. The close financial journey itself remains unobserved.
 
 ## Integration debt carried by these merges
 
