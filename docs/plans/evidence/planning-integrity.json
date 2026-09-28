@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-28T19:27:36.594075+00:00",
-  "headObservedAtValidation": "29747fbd3c0b8e4bbdee700275c3fc8f5cc07fd0",
+  "checkedAt": "2026-09-28T19:59:48.409585+00:00",
+  "headObservedAtValidation": "e5121df4d5ee61745e7fcda13ca09828c78d69a3",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,7 +9,7 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 887,
+    "localLinksAndAnchorsChecked": 889,
     "documentsChecked": 44,
     "coverage": {
       "R": [
@@ -222,7 +222,7 @@
     },
     {
       "path": "docs/plans/capability-backlog.md",
-      "sha256": "d79a7aa5589e51e53977c0e3d63723c8a6472cf12208d862cbc6dc6466bfef3c"
+      "sha256": "9e1e68d92ae55f7766549f7a3db7b0c3855a2f07c453ef9635832cddcfaca8ce"
     },
     {
       "path": "docs/plans/check-plan.py",
@@ -242,7 +242,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "f075141236e4da4bc24e705b8f79ab1d45fcede7a592b59b5281128a86ae1023"
+      "sha256": "75990935f2f0ad975073f37c15a602de4c83db725d135b1b46e0a76c301a1a71"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
