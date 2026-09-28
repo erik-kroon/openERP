@@ -1,0 +1,215 @@
+{
+  "synthetic": true,
+  "inbox": {
+    "occurrence": {
+      "occurrence": {
+        "id": "source_f540ee3ce26e4fc3a1854e6b6d4c790e",
+        "scope": {
+          "entityId": "entity_878c08c724291d34",
+          "bookId": "book_878c08c724291d34"
+        },
+        "sourceSystem": "self-host-document-e2e",
+        "sourceAccountId": "synthetic",
+        "occurrenceKey": "07bd7676-4d91-4949-acc9-312a1cb46b9a",
+        "sourceRevision": "1",
+        "filename": "self-host-invoice.pdf",
+        "sha256": "sha256:451a0c69f3917177ddc581bf515669ecfc5f0d3b976e211349664412f52d3ee8",
+        "byteLength": 1102,
+        "mediaType": "application/pdf",
+        "retainedBy": "operator_878c08c724291d34",
+        "retainedAt": "2026-09-27T21:27:42.473Z",
+        "receipt": {
+          "key": "539b9147-2be2-4a2e-8db4-08eca70158e8",
+          "operation": "retain_source_object",
+          "actorId": "operator_878c08c724291d34"
+        }
+      },
+      "latestPreviewId": null,
+      "admission": null
+    },
+    "channel": "upload",
+    "messageIdentity": null,
+    "draftId": "supplier_invoice_draft_fea2cc7e634a448a951c5635e74b6013",
+    "reviewReason": "Checked both pages, used source-backed suggestions, completed amounts and corrected the invoice number.",
+    "reviewAttemptId": "supplier_extraction_4cdeebcf9ea64b28ac2231e22aa927c0",
+    "attempts": [
+      {
+        "parserVersion": "azure-invoice-v1",
+        "status": "succeeded",
+        "suggestions": [],
+        "diagnostics": [],
+        "id": "supplier_extraction_4cdeebcf9ea64b28ac2231e22aa927c0",
+        "occurrenceId": "source_f540ee3ce26e4fc3a1854e6b6d4c790e",
+        "ordinal": 1,
+        "createdBy": "operator_878c08c724291d34",
+        "createdAt": "2026-09-27T21:27:53.251Z",
+        "requestId": "supplier_extraction_request_7b44623ee4dd4656aab0e46f61a1983d",
+        "engineRelease": "azure-invoice-v1",
+        "sourceHash": "sha256:451a0c69f3917177ddc581bf515669ecfc5f0d3b976e211349664412f52d3ee8",
+        "textDigest": "sha256:f9d016ee7e7fa5571c8b619484a06887fbcef17c01885e78f61addf67c2800dd",
+        "textByteLength": 35,
+        "retainedOutputHash": "sha256:e02f9c9854a6d151797da86fb4c545eb90b31bef0a664dd0b2c8d8dfb82aee89"
+      }
+    ]
+  },
+  "draft": {
+    "id": "supplier_invoice_draft_fea2cc7e634a448a951c5635e74b6013",
+    "scope": {
+      "entityId": "entity_878c08c724291d34",
+      "bookId": "book_878c08c724291d34"
+    },
+    "draftKey": "ap_b1d483bc3fd6528a08d2f52a49c5ec16a6dd0a4d648d4a76fb1b8e6ebff5",
+    "revision": "1",
+    "status": "draft",
+    "acceptanceSupported": false,
+    "recognitionSupported": false,
+    "recognitionAssessment": "not_assessed",
+    "calculationBasis": "explicit_line_amounts_v1",
+    "content": {
+      "title": "Self-host reviewed invoice",
+      "counterpartyId": "counterparty_628b816aa10e4253ab6879e023d2650d",
+      "counterpartyRevision": "1",
+      "supplier": {
+        "legalName": "Synthetic supplier",
+        "registrationId": null,
+        "taxId": null,
+        "address": null,
+        "countryCode": null,
+        "evidenceId": "evidence_85f1bf6b26734af3b2bfe0371ae7d743"
+      },
+      "buyer": {
+        "legalName": "Synthetic E2E book",
+        "registrationId": null,
+        "taxId": null,
+        "address": null,
+        "countryCode": null,
+        "evidenceId": "evidence_85f1bf6b26734af3b2bfe0371ae7d743"
+      },
+      "sourceEvidenceId": "evidence_85f1bf6b26734af3b2bfe0371ae7d743",
+      "supplierDocumentNumber": "SELF-HOST-REVIEWED",
+      "currency": "SEK",
+      "currencyScale": 2,
+      "documentDate": null,
+      "supplyDate": null,
+      "dueDate": null,
+      "paymentTerms": null,
+      "sourceTotalMinor": "125000",
+      "lines": [
+        {
+          "id": "line_9c24302939af48799ea25d13344e6225",
+          "description": "Manually reviewed item",
+          "quantity": "1",
+          "unitPriceMinor": "100000",
+          "baseMinor": "100000",
+          "discountMinor": "0",
+          "chargeMinor": "0",
+          "taxMinor": "25000",
+          "taxDescription": null,
+          "taxEvidenceId": "evidence_85f1bf6b26734af3b2bfe0371ae7d743",
+          "sourceGrossMinor": null
+        }
+      ]
+    },
+    "counterparty": {
+      "kind": "synthetic_counterparty_v1",
+      "externalKey": "ac56a3a2-7d4f-4582-8f43-ff94a6f5823c",
+      "role": "supplier",
+      "displayName": "Synthetic supplier",
+      "evidenceId": "evidence_3d5e0887381a41aeba28e6790c8aaf23",
+      "reason": "Self-host journey fixture",
+      "id": "counterparty_628b816aa10e4253ab6879e023d2650d",
+      "scope": {
+        "entityId": "entity_878c08c724291d34",
+        "bookId": "book_878c08c724291d34"
+      },
+      "revision": "1",
+      "evidence": {
+        "evidenceId": "evidence_3d5e0887381a41aeba28e6790c8aaf23",
+        "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+      },
+      "legalIdentityVerified": false,
+      "createdAt": "2026-09-27T21:27:53.522073Z",
+      "receipt": {
+        "key": "87e4ab12-57f5-4891-8ffe-c2c5bf384838",
+        "operation": "commerce_create_counterparty",
+        "actorId": "operator_878c08c724291d34"
+      }
+    },
+    "supplierEvidence": {
+      "evidenceId": "evidence_85f1bf6b26734af3b2bfe0371ae7d743",
+      "sha256": "c49e07a58dd04bc9feb9b283bdccd9e1a7b5b8a8187bc482ac4655bc573dd49b"
+    },
+    "buyerEvidence": {
+      "evidenceId": "evidence_85f1bf6b26734af3b2bfe0371ae7d743",
+      "sha256": "c49e07a58dd04bc9feb9b283bdccd9e1a7b5b8a8187bc482ac4655bc573dd49b"
+    },
+    "sourceEvidence": {
+      "evidenceId": "evidence_85f1bf6b26734af3b2bfe0371ae7d743",
+      "sha256": "c49e07a58dd04bc9feb9b283bdccd9e1a7b5b8a8187bc482ac4655bc573dd49b"
+    },
+    "totals": {
+      "baseMinor": "100000",
+      "discountMinor": "0",
+      "chargeMinor": "0",
+      "netMinor": "100000",
+      "taxMinor": "25000",
+      "grossMinor": "125000",
+      "sourceTotalMatches": true
+    },
+    "calculatedLines": [
+      {
+        "id": "line_9c24302939af48799ea25d13344e6225",
+        "calculatedBaseMinor": "100000",
+        "netMinor": "100000",
+        "grossMinor": "125000",
+        "sourceGrossMatches": null,
+        "taxEvidence": {
+          "evidenceId": "evidence_85f1bf6b26734af3b2bfe0371ae7d743",
+          "sha256": "c49e07a58dd04bc9feb9b283bdccd9e1a7b5b8a8187bc482ac4655bc573dd49b"
+        }
+      }
+    ],
+    "blockers": [
+      {
+        "code": "acceptance_not_implemented",
+        "lineId": null
+      },
+      {
+        "code": "legal_identity_not_verified",
+        "lineId": null
+      },
+      {
+        "code": "tax_profile_not_activated",
+        "lineId": null
+      },
+      {
+        "code": "supplier_identity_fields_missing",
+        "lineId": null
+      },
+      {
+        "code": "buyer_identity_fields_missing",
+        "lineId": null
+      },
+      {
+        "code": "dates_or_terms_missing",
+        "lineId": null
+      },
+      {
+        "code": "tax_inputs_unreviewed",
+        "lineId": "line_9c24302939af48799ea25d13344e6225"
+      },
+      {
+        "code": "recognition_not_implemented",
+        "lineId": null
+      }
+    ],
+    "reason": "Initial supplier commercial draft",
+    "createdAt": "2026-09-27T21:31:23.941Z",
+    "receipt": {
+      "key": "inboxdraft_f5ae6faff3696711e071226fa27ef05da2a0764f7eab4f57f2996",
+      "operation": "create_supplier_invoice_draft",
+      "actorId": "operator_878c08c724291d34"
+    },
+    "digest": "sha256:6fa711527ac03d8e205220496c252547689af9252675a29e0571e01738b87a28"
+  }
+}

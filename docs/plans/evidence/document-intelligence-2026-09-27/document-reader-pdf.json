@@ -1,0 +1,291 @@
+{
+  "synthetic": true,
+  "liveProvider": false,
+  "state": {
+    "currencyScale": 2,
+    "documentReaderAvailable": true,
+    "scope": {
+      "entityId": "entity_a335e77bb0b17c38",
+      "bookId": "book_a335e77bb0b17c38"
+    },
+    "occurrenceId": "source_962ba5f0e7ff4fc29000062d4d07ad1e",
+    "requests": [
+      {
+        "id": "supplier_extraction_request_e67d317b84bb49a699b629ad991adf4f",
+        "occurrenceId": "source_962ba5f0e7ff4fc29000062d4d07ad1e",
+        "generation": 1,
+        "originalHash": "sha256:84768a0f08a3c619c2dd9e2f0aa23e0f3a201b9ed81dbc5b55ba01004000aa72",
+        "originalBytes": 1102,
+        "engineRelease": "azure-invoice-v1",
+        "attemptIdentity": "sha256:f38c156785002a6efb47640682b0d47d1e3ad745dc928eb8e1752daf29af0482",
+        "state": "completed",
+        "cancelVersion": 0,
+        "attemptsMade": 0,
+        "requestedBy": "operator_a335e77bb0b17c38",
+        "requestedAt": "2026-09-27 22:36:01.257+02",
+        "digest": "sha256:fb5cad11b36792e9f3fefa474904c5c0a217ac9b7421255c3f5ed67408385792"
+      }
+    ],
+    "attempt": {
+      "requestId": "supplier_extraction_request_e67d317b84bb49a699b629ad991adf4f",
+      "attemptId": "supplier_extraction_8a47054275744535af00cf942176a7de",
+      "engineRelease": "azure-invoice-v1",
+      "sourceHash": "sha256:84768a0f08a3c619c2dd9e2f0aa23e0f3a201b9ed81dbc5b55ba01004000aa72",
+      "originalHashUnchanged": true,
+      "result": "succeeded",
+      "textDigest": "sha256:f9d016ee7e7fa5571c8b619484a06887fbcef17c01885e78f61addf67c2800dd",
+      "textByteLength": 35,
+      "retainedOutputHash": "sha256:d23f4dad468f9f7e6944c8255025869e5d6c1a09f4fa3e2c67923b6230cf8767",
+      "fields": [
+        {
+          "lineOrdinal": 0,
+          "fieldKey": "supplierDocumentNumber",
+          "proposedValue": "SYNTHETIC-1",
+          "sourceLocators": [
+            {
+              "kind": "document_quote",
+              "page": 1,
+              "quote": "SYNTHETIC-1",
+              "textOffset": 0,
+              "textLength": 11
+            }
+          ]
+        },
+        {
+          "lineOrdinal": 0,
+          "fieldKey": "sourceTotalMinor",
+          "proposedValue": "125000",
+          "sourceLocators": [
+            {
+              "kind": "document_quote",
+              "page": 1,
+              "quote": "1250,00 SEK",
+              "textOffset": 12,
+              "textLength": 11
+            }
+          ]
+        }
+      ],
+      "candidateLines": [],
+      "diagnostics": [],
+      "document": {
+        "physicalPages": 2,
+        "readPages": [
+          1,
+          2
+        ],
+        "coverage": "complete",
+        "apiVersion": "2024-11-30",
+        "modelId": "prebuilt-invoice",
+        "amountProfile": "sv-SE-SEK",
+        "transcript": "SYNTHETIC-1\n1250,00 SEK\nSecond page"
+      },
+      "createdAt": "2026-09-27T20:36:02.629Z"
+    },
+    "fieldDecisions": []
+  },
+  "prepared": {
+    "currencyScale": 2,
+    "scope": {
+      "entityId": "entity_a335e77bb0b17c38",
+      "bookId": "book_a335e77bb0b17c38"
+    },
+    "occurrenceId": "source_962ba5f0e7ff4fc29000062d4d07ad1e",
+    "request": {
+      "id": "supplier_extraction_request_e67d317b84bb49a699b629ad991adf4f",
+      "occurrenceId": "source_962ba5f0e7ff4fc29000062d4d07ad1e",
+      "generation": 1,
+      "originalHash": "sha256:84768a0f08a3c619c2dd9e2f0aa23e0f3a201b9ed81dbc5b55ba01004000aa72",
+      "originalBytes": 1102,
+      "engineRelease": "azure-invoice-v1",
+      "attemptIdentity": "sha256:f38c156785002a6efb47640682b0d47d1e3ad745dc928eb8e1752daf29af0482",
+      "state": "completed",
+      "cancelVersion": 0,
+      "attemptsMade": 0,
+      "requestedBy": "operator_a335e77bb0b17c38",
+      "requestedAt": "2026-09-27 22:36:01.257+02",
+      "digest": "sha256:fb5cad11b36792e9f3fefa474904c5c0a217ac9b7421255c3f5ed67408385792"
+    },
+    "attempt": {
+      "requestId": "supplier_extraction_request_e67d317b84bb49a699b629ad991adf4f",
+      "attemptId": "supplier_extraction_8a47054275744535af00cf942176a7de",
+      "engineRelease": "azure-invoice-v1",
+      "sourceHash": "sha256:84768a0f08a3c619c2dd9e2f0aa23e0f3a201b9ed81dbc5b55ba01004000aa72",
+      "originalHashUnchanged": true,
+      "result": "succeeded",
+      "textDigest": "sha256:f9d016ee7e7fa5571c8b619484a06887fbcef17c01885e78f61addf67c2800dd",
+      "textByteLength": 35,
+      "retainedOutputHash": "sha256:d23f4dad468f9f7e6944c8255025869e5d6c1a09f4fa3e2c67923b6230cf8767",
+      "fields": [
+        {
+          "lineOrdinal": 0,
+          "fieldKey": "supplierDocumentNumber",
+          "proposedValue": "SYNTHETIC-1",
+          "sourceLocators": [
+            {
+              "kind": "document_quote",
+              "page": 1,
+              "quote": "SYNTHETIC-1",
+              "textOffset": 0,
+              "textLength": 11
+            }
+          ]
+        },
+        {
+          "lineOrdinal": 0,
+          "fieldKey": "sourceTotalMinor",
+          "proposedValue": "125000",
+          "sourceLocators": [
+            {
+              "kind": "document_quote",
+              "page": 1,
+              "quote": "1250,00 SEK",
+              "textOffset": 12,
+              "textLength": 11
+            }
+          ]
+        }
+      ],
+      "candidateLines": [],
+      "diagnostics": [],
+      "document": {
+        "physicalPages": 2,
+        "readPages": [
+          1,
+          2
+        ],
+        "coverage": "complete",
+        "apiVersion": "2024-11-30",
+        "modelId": "prebuilt-invoice",
+        "amountProfile": "sv-SE-SEK",
+        "transcript": "SYNTHETIC-1\n1250,00 SEK\nSecond page"
+      },
+      "createdAt": "2026-09-27T20:36:02.629Z"
+    },
+    "draft": {
+      "id": null,
+      "revision": null,
+      "digest": null,
+      "state": "absent"
+    },
+    "fields": [
+      {
+        "lineOrdinal": 0,
+        "fieldKey": "title",
+        "state": "unchanged",
+        "base": null,
+        "current": null,
+        "suggestion": null,
+        "selected": null,
+        "evidenceLocators": [],
+        "detail": ""
+      },
+      {
+        "lineOrdinal": 0,
+        "fieldKey": "supplierDocumentNumber",
+        "state": "proposed_change",
+        "base": null,
+        "current": null,
+        "suggestion": "SYNTHETIC-1",
+        "selected": "SYNTHETIC-1",
+        "evidenceLocators": [
+          {
+            "kind": "document_quote",
+            "page": 1,
+            "quote": "SYNTHETIC-1",
+            "textOffset": 0,
+            "textLength": 11
+          }
+        ],
+        "detail": ""
+      },
+      {
+        "lineOrdinal": 0,
+        "fieldKey": "documentDate",
+        "state": "unchanged",
+        "base": null,
+        "current": null,
+        "suggestion": null,
+        "selected": null,
+        "evidenceLocators": [],
+        "detail": ""
+      },
+      {
+        "lineOrdinal": 0,
+        "fieldKey": "supplyDate",
+        "state": "unchanged",
+        "base": null,
+        "current": null,
+        "suggestion": null,
+        "selected": null,
+        "evidenceLocators": [],
+        "detail": ""
+      },
+      {
+        "lineOrdinal": 0,
+        "fieldKey": "dueDate",
+        "state": "unchanged",
+        "base": null,
+        "current": null,
+        "suggestion": null,
+        "selected": null,
+        "evidenceLocators": [],
+        "detail": ""
+      },
+      {
+        "lineOrdinal": 0,
+        "fieldKey": "paymentTerms",
+        "state": "unchanged",
+        "base": null,
+        "current": null,
+        "suggestion": null,
+        "selected": null,
+        "evidenceLocators": [],
+        "detail": ""
+      },
+      {
+        "lineOrdinal": 0,
+        "fieldKey": "sourceTotalMinor",
+        "state": "proposed_change",
+        "base": null,
+        "current": null,
+        "suggestion": "125000",
+        "selected": "125000",
+        "evidenceLocators": [
+          {
+            "kind": "document_quote",
+            "page": 1,
+            "quote": "1250,00 SEK",
+            "textOffset": 12,
+            "textLength": 11
+          }
+        ],
+        "detail": ""
+      }
+    ],
+    "lines": [],
+    "discrepancies": [
+      {
+        "code": "line_count_out_of_range",
+        "lineOrdinal": 0,
+        "fieldKey": "lines",
+        "detail": ""
+      }
+    ],
+    "proposed": null,
+    "proposedTotals": null,
+    "proposedBlockers": [],
+    "requiredBaseFacts": [
+      "counterpartyId",
+      "counterpartyRevision",
+      "supplier",
+      "buyer",
+      "sourceEvidenceId",
+      "currency",
+      "currencyScale",
+      "lines[].id"
+    ]
+  },
+  "submissions": 2,
+  "polls": 3
+}

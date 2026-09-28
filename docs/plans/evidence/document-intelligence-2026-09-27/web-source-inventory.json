@@ -1,0 +1,4585 @@
+{
+  "capturedAfterBrowserProof": true,
+  "files": [
+    {
+      "path": "apps/web/src/components/account-register.tsx",
+      "sha256": "9b44ed98a4cf714ec8472ec523b42b1d4378aec1ded8e0aa605eff9481d5ede8"
+    },
+    {
+      "path": "apps/web/src/components/accountant-review/copy.ts",
+      "sha256": "fef286d2d4ce63e84d701cbf8ed1d856d36ec0b877769dfb29fa9ea1975167e0"
+    },
+    {
+      "path": "apps/web/src/components/accountant-review/coverage-rows.tsx",
+      "sha256": "bc61c81754a459c28d28e9cf91510ffb61f7d4f4a40f7b19c60b3fed63fa7629"
+    },
+    {
+      "path": "apps/web/src/components/accountant-review/inspector.tsx",
+      "sha256": "22b9d79074060f96d7c0694a78c3778a659096373898edfd64aefe26b504b21b"
+    },
+    {
+      "path": "apps/web/src/components/accountant-review/panel.tsx",
+      "sha256": "e9a2c1e3d735ffb190e2c933e278f3023eb16e19bf2cb7ffcd5841f66a3dc687"
+    },
+    {
+      "path": "apps/web/src/components/accountant-review/provider-rows.tsx",
+      "sha256": "7f185ac5ca21e992e28623a20eb3ec9930dfa18644399a09d19f3adcaf2ee98d"
+    },
+    {
+      "path": "apps/web/src/components/accountant-review/sie-copy.ts",
+      "sha256": "096b41f012d174c3a33e9901c630902a658daa6dadda9d681a70b099f7dc1df7"
+    },
+    {
+      "path": "apps/web/src/components/accountant-review/sie-panel.tsx",
+      "sha256": "6fd23d00e88a31c4573347a87fd4528335740f91e906929add0ce17b4408be0f"
+    },
+    {
+      "path": "apps/web/src/components/accounting-access.tsx",
+      "sha256": "066f79ef10995e5a8db637ec07d69ecdfeea7ffd84b6c88d6a545913f1b864cc"
+    },
+    {
+      "path": "apps/web/src/components/accounting-status.tsx",
+      "sha256": "283663b14283cc7932c69d16bde8250ee287d6746caa648c77496b28cad86667"
+    },
+    {
+      "path": "apps/web/src/components/accounting-workspace.tsx",
+      "sha256": "26e4d72a389c9c701b812930962cc63373203b59607701bc674fdc74ffbe30a1"
+    },
+    {
+      "path": "apps/web/src/components/attention-list.tsx",
+      "sha256": "7d0ebb40668aa66fd5853ade7ef298c5240deb1cbaca411ca81a17ac35913b13"
+    },
+    {
+      "path": "apps/web/src/components/bank-account-workspace.tsx",
+      "sha256": "1198c017b9ca2f37e3494e658e7e68d118091c926841fd83f0d8a14260503729"
+    },
+    {
+      "path": "apps/web/src/components/bank-import.tsx",
+      "sha256": "47e62dd30a3d97ad5272adee7a2930eb45abb60d7c350b8d1eaaa3940a468902"
+    },
+    {
+      "path": "apps/web/src/components/bank-match-candidates/copy.ts",
+      "sha256": "ca1620d4d763b2b3a4413c0ae08cec37a9b92b396e86446fbe22262cbf6e219a"
+    },
+    {
+      "path": "apps/web/src/components/bank-match-candidates/panel.tsx",
+      "sha256": "aacce7a99fe17d791b389950a9b915c2cd98d3bff29b148d608696a4a29225a3"
+    },
+    {
+      "path": "apps/web/src/components/bank-match-candidates/results.tsx",
+      "sha256": "c861c62a3a8dc7a3551c30a7221f22f9fbb6ccfca962d5437db88e96e7e4ac1b"
+    },
+    {
+      "path": "apps/web/src/components/bank-match-candidates/workspace.tsx",
+      "sha256": "218ae2487a86d9e5abe52f1e84e4dbabbb3ddffff912121857296aa735bc66b3"
+    },
+    {
+      "path": "apps/web/src/components/bank-match-reversals/copy.ts",
+      "sha256": "b6c57d37dd4b754e850deb0f9b8779b68ead573983822112596b1130e1f22dbc"
+    },
+    {
+      "path": "apps/web/src/components/bank-match-reversals/notice.tsx",
+      "sha256": "8fa319fcd7b6e5c09cb5e2d12f7191df3a298c63fbe622c97de7131c33005c6f"
+    },
+    {
+      "path": "apps/web/src/components/bank-match-reversals/panel.tsx",
+      "sha256": "2f23d0c346e8803632ae8c75c35d67e31ffab9839ece39edf0340d2d49f603e0"
+    },
+    {
+      "path": "apps/web/src/components/bank-match-reversals/review.tsx",
+      "sha256": "d849f351720428eb6cb14a12ba1480aadb6d3cd7dc844d8d2971e7e1caba43f0"
+    },
+    {
+      "path": "apps/web/src/components/bank-reconciliation.tsx",
+      "sha256": "7490a2dcb23cbeb614d7b6ffff6a2328f5a3954be8ac7fcf79f230d7e54c172d"
+    },
+    {
+      "path": "apps/web/src/components/bank-report.tsx",
+      "sha256": "1bbb9d3cae21b9122399bf9b10f6029dcc90da0b7b821505b07321b203dc7238"
+    },
+    {
+      "path": "apps/web/src/components/bank-source-coverage/copy.ts",
+      "sha256": "eb07c96d61a759b96c1d45dd7591079eac42ff14204d2d7d035db2184bab0e36"
+    },
+    {
+      "path": "apps/web/src/components/bank-source-coverage/panel.tsx",
+      "sha256": "6792f1840bb41c75f13f167bc23c4481aec0b18f5110d81e2e09631188da51cd"
+    },
+    {
+      "path": "apps/web/src/components/bank-source-coverage/review.tsx",
+      "sha256": "1eeb340c6adec446de96a621bd4d81ca75739088be19317e94c626144e424590"
+    },
+    {
+      "path": "apps/web/src/components/bank-statement.tsx",
+      "sha256": "bfeae6b2db623c7801c41723992c9cb997476d68735f5331c16facf54426cb67"
+    },
+    {
+      "path": "apps/web/src/components/bank-transaction-match.tsx",
+      "sha256": "1c2c25f86116ade8468b6d3f5c120d6d2f13548b90d80a60996b8fe8d05a33e1"
+    },
+    {
+      "path": "apps/web/src/components/banking-setup/consent-detail.tsx",
+      "sha256": "7445fec21663db3037768965e218ac7f31a32c1a152c2a8ba392486930848931"
+    },
+    {
+      "path": "apps/web/src/components/banking-setup/consent-form.tsx",
+      "sha256": "a6efe2749665ef78b14d9459527de7cb7b05dda6858837e5dda1190b62c5cbbf"
+    },
+    {
+      "path": "apps/web/src/components/banking-setup/panel.tsx",
+      "sha256": "a60849e3d23b604bcac30f96ff704336c7ab2392931d58d7b2c73e4175f699c8"
+    },
+    {
+      "path": "apps/web/src/components/banking-workspace.tsx",
+      "sha256": "abe13d2df6a2fa1c86335b06e3e43a3384cef4655b63b9863d42d70ce149dd9d"
+    },
+    {
+      "path": "apps/web/src/components/book-navigation.tsx",
+      "sha256": "2d47e893400532e9adc6b1c46833001d52721786888eeb47153986348d61c8e0"
+    },
+    {
+      "path": "apps/web/src/components/book-readiness.tsx",
+      "sha256": "2916e149b698d7ab830b96f605ba4092d0d0d73dba671ec9a18b6fc226fdc451"
+    },
+    {
+      "path": "apps/web/src/components/book-workspace.tsx",
+      "sha256": "db264aeb80532bc68b0418cc5cf19459dedfbbaf0b7cad5a145acacfd48b90e1"
+    },
+    {
+      "path": "apps/web/src/components/case-context.tsx",
+      "sha256": "24bf958afc69fc17225e70846d2fdfc98e658f547448acfa3324a04b084977b1"
+    },
+    {
+      "path": "apps/web/src/components/case-snapshots.tsx",
+      "sha256": "5e303ac5c28ec9974f48380aea545d7a8b6c6708a1a7efb0d6328c00e87e5253"
+    },
+    {
+      "path": "apps/web/src/components/closing/copy.ts",
+      "sha256": "6380915947297c7f7f61bd800344fceaa10dee3139f4eb79e7e1c2b2ca8bcee1"
+    },
+    {
+      "path": "apps/web/src/components/closing/inventory-editor.tsx",
+      "sha256": "d630c37d9cedc3581fe3dd6911e8bc25c2af0d39d6e2d081e6749c9b8f4633c1"
+    },
+    {
+      "path": "apps/web/src/components/closing/inventory.tsx",
+      "sha256": "15e769bc96dde2ee093132188b1e5aaf9ed2ff329299f108c2c270483be06100"
+    },
+    {
+      "path": "apps/web/src/components/closing/panel.tsx",
+      "sha256": "a23ae9ca0723b2b2eaa76ef392a113c33e8a60a40c115f29b70f67c92e9c937c"
+    },
+    {
+      "path": "apps/web/src/components/closing/review.tsx",
+      "sha256": "c9d95b781ac75bc260681230d68f377728b368647d2ee66f3c6cb83a6713cf94"
+    },
+    {
+      "path": "apps/web/src/components/closing/workspace.tsx",
+      "sha256": "3e83a1c576aba6cd968917d7d0da0c444243db5014ab857da225b69fd3eab240"
+    },
+    {
+      "path": "apps/web/src/components/commerce/allocation-reversal-copy.ts",
+      "sha256": "902e52c990c337bd76e7802a12c3d56b9284bbc6653e5143ae993969d384848f"
+    },
+    {
+      "path": "apps/web/src/components/commerce/allocation-reversal-review.tsx",
+      "sha256": "ac4e74ad2c71f7e08fe7a76a4398afb822f314a6a3142b2e79e51e4c97b90f9d"
+    },
+    {
+      "path": "apps/web/src/components/commerce/allocation-reversals.tsx",
+      "sha256": "b807309aa577f8e547b510fd11532cd1a886cfb046e2f465cad08cfbaf811493"
+    },
+    {
+      "path": "apps/web/src/components/commerce/allocations.tsx",
+      "sha256": "7ef1d88094820256a6b708fab771df37f3a12e07dc9989dfaa9a98dcf07fe29a"
+    },
+    {
+      "path": "apps/web/src/components/commerce/catalog-articles.tsx",
+      "sha256": "22749d5c582b1b1c8820d3d120df1bfd6de203ffcb877913a4e128a5b1412ab0"
+    },
+    {
+      "path": "apps/web/src/components/commerce/collections.tsx",
+      "sha256": "35ea955de2b659117a87316c18a4d610504fd6ff78e4664c6cff82aa63a9df05"
+    },
+    {
+      "path": "apps/web/src/components/commerce/command-recovery.ts",
+      "sha256": "8387ee0259510ee7ed5778460e1df628785b31753fac1cb4401f466e896fe246"
+    },
+    {
+      "path": "apps/web/src/components/commerce/commerce-panel.tsx",
+      "sha256": "a6810e21415886fbc77a1fa4d9b9c1cf746c8d7704d3debab328def928f34159"
+    },
+    {
+      "path": "apps/web/src/components/commerce/contact-editor.tsx",
+      "sha256": "84689b28c2b9c7b571103a6c40ffce87fa962df1faa89fe9357fa66361b34caa"
+    },
+    {
+      "path": "apps/web/src/components/commerce/copy.ts",
+      "sha256": "51da090dc7918e4c9fa5dcf0c353d32e7fd52f3b0b10d9bab894df5a808472e8"
+    },
+    {
+      "path": "apps/web/src/components/commerce/counterparties.tsx",
+      "sha256": "bc24b8520f374cc996ccaba120e9b3dfd5e6e7fef1af7c4362add2a036193863"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-cancellation-copy.ts",
+      "sha256": "6573b9dfb335dafcc9e537974fc1b979381c37bac6bf19ae31971d25538e0089"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-cancellations.tsx",
+      "sha256": "49c153ae2287ccea14dda6b64ed0c7563c574d9679ae9602c655ee770b228959"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-document-copy.ts",
+      "sha256": "e792298f4f63cb67529c9b2131d551141e8d641dc7c6117cb530e6e28d737180"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-documents.tsx",
+      "sha256": "629341ec748897cacf7ae85a7af611ee9ad97a4e714551baac9695cd7a6754ae"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-draft-copy.ts",
+      "sha256": "12e96b19564a00b836787166fdf84056e6e7c0b3e4325e9beed209143d1c34fa"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-draft-document.tsx",
+      "sha256": "e458a6ca0588e44b770c6d53e8a9fbe08c8f988e2b8c297fa87ef4049f688e8a"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-draft-issue-overlay.tsx",
+      "sha256": "368fd004c1b0bd547434dbc927ee7912d4ec2808a5d101cb8d6f71600cf6d17e"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-draft-party.tsx",
+      "sha256": "e740155732368298d420589eace912f2829a2606fc8886036c45f0a9745e96d1"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-draft-save.tsx",
+      "sha256": "4ac5e742b41bb2e747d7c7cc48a56c11bae8c6c8ffce9de8d4b595af5325426e"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-draft-session.tsx",
+      "sha256": "551c55d17e91f0fdd4a36b073ee4daecce68c1f21afe376687a3798b785d4a8c"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-drafts.tsx",
+      "sha256": "5a5e49d6bf87a3f4220ba04ae5aa3827d8af117f55697b0593764ec76817ce4e"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-editor-lines.tsx",
+      "sha256": "aec28a4eb381539f2eee7148ebe7d4449b06fb95d33a8ec606a851ff7391f6c0"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-issuance.tsx",
+      "sha256": "5dff2f9dcce0aa9251119bb80ece6809a22433e1d39568714ec26d76f4cb2fc3"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-issue-copy.ts",
+      "sha256": "40cfc54868f1b1a6ecfc80baafc0d404fff5d0fd26f398440657d4f0b646c283"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-payment-copy.ts",
+      "sha256": "bf9b6b6cf140e4077c299ef050eb4a44140124c4c55af52045731eda0532aa1e"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-payment-review.tsx",
+      "sha256": "e4761032a2977bbba8abb55c9f35eb581079d0a83717e56707b08f1ce781e601"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-payment-undo.tsx",
+      "sha256": "e4a5b5ef43db58781e502bb1a41553033fa8c8e8a07317774badf5d3548c0b47"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-payments.tsx",
+      "sha256": "4aaa65ef7261761ccd5ae8d042bcfae347948495e9f03431e6e1340538f23ec4"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoice-registration.tsx",
+      "sha256": "1cb35b3fda6ce59a97e3fb740c8a553ac2b256c634c9b69099fe9fe509990482"
+    },
+    {
+      "path": "apps/web/src/components/commerce/invoices.tsx",
+      "sha256": "53215da21fa47ec2c9a4a280c8388060f5dc062139ed7f29032f216746e3e732"
+    },
+    {
+      "path": "apps/web/src/components/commerce/issued-invoice-document.tsx",
+      "sha256": "9bc057aa03db419187ad7ef2aec0b9d82a1a1466c9790d4e5377f4e236d3c3bb"
+    },
+    {
+      "path": "apps/web/src/components/commerce/payment-undo-copy.ts",
+      "sha256": "933dd04a69987a0c30cf3ef885f4977bec14565f634b897377ce69fc04d0f63d"
+    },
+    {
+      "path": "apps/web/src/components/commerce/register-reports.tsx",
+      "sha256": "e62c902f7eea74dfe64ae632cec000673c36534efbc164266742adcd5bdce2e1"
+    },
+    {
+      "path": "apps/web/src/components/commerce/sales-orders.tsx",
+      "sha256": "fd332d81333cf98f45d44de9609f91453215f014675bf9ab24bd880407ca18ea"
+    },
+    {
+      "path": "apps/web/src/components/commerce/sales-workspace.tsx",
+      "sha256": "c07953c424204c6bff564f2c346fc6195665a19da8d514c91718db5eee0ee7c3"
+    },
+    {
+      "path": "apps/web/src/components/commerce/shared.tsx",
+      "sha256": "1090bb1d043f8dc00e690b823bdb66b6dbe4ab82099bafda5f62395b563d94c9"
+    },
+    {
+      "path": "apps/web/src/components/commerce/supplier-acceptance.tsx",
+      "sha256": "6501a153c0732c0d7a29002b1d6874bc823590bc1227cae65758cdd6af527600"
+    },
+    {
+      "path": "apps/web/src/components/commerce/supplier-credit-panel.tsx",
+      "sha256": "ead21b3b8c0d0e0f4caad33df720c0119bbb212f03f8a202fce746c98439adb2"
+    },
+    {
+      "path": "apps/web/src/components/commerce/supplier-extraction.tsx",
+      "sha256": "9846b54996501a0f81d9ee6a9bdbd53f0bc47df8380b64bb7a770791df441b42"
+    },
+    {
+      "path": "apps/web/src/components/commerce/supplier-inbox.tsx",
+      "sha256": "2a4e40af7e96e1e51e63dac9958a84c7e98a8284a6e61117ac21c74936396e24"
+    },
+    {
+      "path": "apps/web/src/components/commerce/supplier-invoice-drafts.tsx",
+      "sha256": "2ee2c373d355c2b3c4652d7072bd65e3db55d12b42d0188037da17441f7c7088"
+    },
+    {
+      "path": "apps/web/src/components/commerce/supplier-invoice-editor.tsx",
+      "sha256": "9f59f188d4072f7c86f3f3f70f0f534d7966cffd09f92c282e6d88e85091311a"
+    },
+    {
+      "path": "apps/web/src/components/commerce/supplier-invoice-pickers.tsx",
+      "sha256": "c1766f266aa268e05ea13aaad2f8dd87fc2d86026f4f9da326de2d79c319fe0d"
+    },
+    {
+      "path": "apps/web/src/components/commerce/supplier-payment-files.tsx",
+      "sha256": "7f1c47d48e8603b3d07feea4ecdbcad747240808a366cfcb0ed8f874cf9bf266"
+    },
+    {
+      "path": "apps/web/src/components/commerce/supplier-payment-state.tsx",
+      "sha256": "48f5288df4bc82153455873f05b8dd4aeb9a4c5bf2924d9aa59cc2b580649298"
+    },
+    {
+      "path": "apps/web/src/components/company-admission/copy.ts",
+      "sha256": "bbba2e28ae64c2a9d0e610e7b6fa5f73128fd54dbc9391aa32ca203c5a0fe8cb"
+    },
+    {
+      "path": "apps/web/src/components/company-admission/panel.tsx",
+      "sha256": "3331ec99494319fe50ff11c225d7683ffe4acb65ff2e974aa540175b665c4c2a"
+    },
+    {
+      "path": "apps/web/src/components/company-directory.tsx",
+      "sha256": "363a9d035a88918053038e156528edf7f4fa0379b1350e4b8c466fee3ead4dd4"
+    },
+    {
+      "path": "apps/web/src/components/company-overview.tsx",
+      "sha256": "c458f945334186db66164f2f9c7d2fa88b188230eb5565bfe3a8da07319ec0a1"
+    },
+    {
+      "path": "apps/web/src/components/company-setup/copy.ts",
+      "sha256": "f9aca86413f5096cfba8ea218e4c2685a31fedc1024bbbc2f16880f01df38300"
+    },
+    {
+      "path": "apps/web/src/components/company-setup/create-company.tsx",
+      "sha256": "b13d44a973309c588f18f143227451e08c35abb647d3c01ece4ee0218b84f90a"
+    },
+    {
+      "path": "apps/web/src/components/company-setup/panel.tsx",
+      "sha256": "d45deea922a6d1f18fa44ab3f2b4dca7ed3f8adf83e2068c0b7f69f4533f6398"
+    },
+    {
+      "path": "apps/web/src/components/company-work-sections.tsx",
+      "sha256": "e2f6e28c1f49a507968d4c3f36a27b264f3f829a7952438258b4ecfd46508421"
+    },
+    {
+      "path": "apps/web/src/components/corrections/copy.ts",
+      "sha256": "3180f7dd6d9eeaa351c9ea98f4af8c515b4d7168d6717cafae684d8135ecdee1"
+    },
+    {
+      "path": "apps/web/src/components/corrections/correction-review.tsx",
+      "sha256": "da6dfc7ea8ef1a4ff64d8cc0798d5172f51cc59d8569a50e38c234602bfa1fc9"
+    },
+    {
+      "path": "apps/web/src/components/corrections/corrections-panel.tsx",
+      "sha256": "18bb0a911e2e842dbada7ad9eca3e0f2683237a13e75fccd48f49077aef391d7"
+    },
+    {
+      "path": "apps/web/src/components/corrections/discovery.tsx",
+      "sha256": "fab6b623a609427af0ff0c7bd34af7ea3245e57bb6ba0250d91228894023a78f"
+    },
+    {
+      "path": "apps/web/src/components/corrections/impact-review.tsx",
+      "sha256": "a87aa0427b32304e6e79263880ece64d58fd0a3279da3a0e76a04654fc0c12ae"
+    },
+    {
+      "path": "apps/web/src/components/deadline-fulfillment-link.tsx",
+      "sha256": "31c1b9ac3f0f133cc19415bfdd92f22f1a2eec64226f7fb65e1658b1782f5f28"
+    },
+    {
+      "path": "apps/web/src/components/deadline-obligations.tsx",
+      "sha256": "8c297cf6c8a47904b2ad135618646b75a1a37bc8b54e21b77eddb1550a5b8415"
+    },
+    {
+      "path": "apps/web/src/components/dimension-settings.tsx",
+      "sha256": "f15da78eee5905a86658ed6ce708e1347cd2649c720ca3cee4bb5d1d99b11790"
+    },
+    {
+      "path": "apps/web/src/components/document-inbox.tsx",
+      "sha256": "b698d70d4bf7c36af4083424f0363fc164866342830bc503f6f836ec647e0abb"
+    },
+    {
+      "path": "apps/web/src/components/evidence-command-form.tsx",
+      "sha256": "c00a687533f08c852448ea64929094dfa9dda97022c9aaa1e073e04f63501121"
+    },
+    {
+      "path": "apps/web/src/components/evidence-inspector.tsx",
+      "sha256": "9fab3793d57aee5c3e0cc116c3fc2a83f38ac9788d94f9275f2392ba12fb5a1d"
+    },
+    {
+      "path": "apps/web/src/components/exchange-rates/copy.ts",
+      "sha256": "063602799b50f89ac8a544937222bb053f154302364176a752e201a8d8c637a8"
+    },
+    {
+      "path": "apps/web/src/components/exchange-rates/forms.tsx",
+      "sha256": "645859d3e53a9baee878c67583e06ea51ea7ea06d5792333e0573cc98bc129fe"
+    },
+    {
+      "path": "apps/web/src/components/exchange-rates/panel.tsx",
+      "sha256": "525f03d34d7e55b07a3ffc13a39cb76bda81f5f99a17eb83f8dd26b7f8ef1bd0"
+    },
+    {
+      "path": "apps/web/src/components/exchange-rates/views.tsx",
+      "sha256": "a18887c391b276bfcca7e7c6cd213852cc8aa0a36b0e515d8c77abb8b632a203"
+    },
+    {
+      "path": "apps/web/src/components/exchange-rates/withdrawal-form.tsx",
+      "sha256": "d4a7b877b8f074a6f420ad042febd1aa5c014d3f3605b99633440f5381707dec"
+    },
+    {
+      "path": "apps/web/src/components/expense-tax/blockers.ts",
+      "sha256": "79e68ad60725f016046f8aaf24d9923a3dd4a3df08927113772cf17c7c2859bc"
+    },
+    {
+      "path": "apps/web/src/components/expense-tax/copy.ts",
+      "sha256": "a12182128a9209a668bc14508977a2b9c0846cd298fb201985e7c09adecb60b3"
+    },
+    {
+      "path": "apps/web/src/components/expense-tax/expense-editor.tsx",
+      "sha256": "e69c3a4ccbd09536a27b8bf8174f4597b98a810d73f71e236392084c50464875"
+    },
+    {
+      "path": "apps/web/src/components/expense-tax/forms.tsx",
+      "sha256": "3ec7fcb2cdb18e0759fa2ed749e93c40155a37b448af34d4a576556879e5ce0d"
+    },
+    {
+      "path": "apps/web/src/components/expense-tax/panel.tsx",
+      "sha256": "1289c0788161a68ef47638dea1c150cd19c8d57dd65cb7a280e26f399f30fb04"
+    },
+    {
+      "path": "apps/web/src/components/expense-tax/review-editor.tsx",
+      "sha256": "60c7dba957d19de72d9f82923b33ac273a55c4c5b41675b89d54abd7ec0abf89"
+    },
+    {
+      "path": "apps/web/src/components/expense-tax/views.tsx",
+      "sha256": "2a34af7ce820d7a548f1888c1e06df7ce811d1e70404c04021053aef24e450ed"
+    },
+    {
+      "path": "apps/web/src/components/finance-area.tsx",
+      "sha256": "122d91138c22c5800bf58c21cab8e82815287c2b1cb67e8b4a3dbcd4b515d0b0"
+    },
+    {
+      "path": "apps/web/src/components/firms/client-dialog.tsx",
+      "sha256": "3696830b2e17e70a73f33b896c8ccb40bc764fb588e1aaa91ca5889c7642a270"
+    },
+    {
+      "path": "apps/web/src/components/firms/client-period.tsx",
+      "sha256": "92bd2fca3ca2a30963382f428076fd9eeaef7595b689fc83b5a73fa2fcd9691d"
+    },
+    {
+      "path": "apps/web/src/components/firms/form.tsx",
+      "sha256": "f22814d9748b828367ab103761447226d26416d9b2d73020c8cddca0f50549e3"
+    },
+    {
+      "path": "apps/web/src/components/firms/index.tsx",
+      "sha256": "28fd515ef1df034433d0ef7a68824ada38fb6f47e5283efd7b288a8795f252cb"
+    },
+    {
+      "path": "apps/web/src/components/firms/portfolio-return.ts",
+      "sha256": "256815495ee671c70f3025c15098430038b83dbeb7d3494ca3d2669e6ce1769e"
+    },
+    {
+      "path": "apps/web/src/components/firms/portfolio.tsx",
+      "sha256": "b271679e57d1a9801384822deae3dff444c67c826656de254d09db49363ee833"
+    },
+    {
+      "path": "apps/web/src/components/firms/team.tsx",
+      "sha256": "ac1fad05b898cd46fa94f163654eae352949a5118df0b4833aa036a6756da435"
+    },
+    {
+      "path": "apps/web/src/components/general-ledger.tsx",
+      "sha256": "450892ca3c5e1ac7e7d98c891ec042cead4333d55bebb02aa4d22b49bfa15b76"
+    },
+    {
+      "path": "apps/web/src/components/historical-intake/admission.tsx",
+      "sha256": "31086d26b37e4e610e0ebd4f685f0d54672e5f0ddd5cfa20c49dc0f0f8102f85"
+    },
+    {
+      "path": "apps/web/src/components/historical-intake/basis.tsx",
+      "sha256": "84cd96d501511024eb7a4bd9d14e24018d37aed27058d02446f51e0a26b8f4c3"
+    },
+    {
+      "path": "apps/web/src/components/historical-intake/closing-comparison.tsx",
+      "sha256": "3bd3c9317870102d7a163ec2055c109fec9f731b7578748ac96c48c9a91f120b"
+    },
+    {
+      "path": "apps/web/src/components/historical-intake/financial-review.tsx",
+      "sha256": "df3a9058c3a6942107fb9ea64d30fd247a68236f9051d501a8fe19d80a48e21f"
+    },
+    {
+      "path": "apps/web/src/components/historical-intake/financial.tsx",
+      "sha256": "57e43e55419ffc1dd93b6c8505437a6ad20421b71a44d7415d40f3f75e4d9b7c"
+    },
+    {
+      "path": "apps/web/src/components/historical-intake/open-items.tsx",
+      "sha256": "174b2cc498b826afd26713526687652ce8da99f6f94bba6b59ea7f4faf92d4b6"
+    },
+    {
+      "path": "apps/web/src/components/historical-intake/panel.tsx",
+      "sha256": "a73e798ae3e9d7f8cd0a7853a2369648830d232fd61f1f70710b8d99afc07ce2"
+    },
+    {
+      "path": "apps/web/src/components/historical-intake/payment-entry.tsx",
+      "sha256": "f64783046049eb6df8c99a2307970f71024d71e6c4a23f6a0fccf0d69a4d5de9"
+    },
+    {
+      "path": "apps/web/src/components/historical-intake/plan.tsx",
+      "sha256": "d380c118dcaceaa1b54163f4c48dde7ea55898de30e623a278f721e72fb68c12"
+    },
+    {
+      "path": "apps/web/src/components/historical-intake/refresh-opening.tsx",
+      "sha256": "5677d91ef172e99964d5d205df32829a3d457f99937b1c6466a56fb05ebd59bb"
+    },
+    {
+      "path": "apps/web/src/components/historical-intake/run.tsx",
+      "sha256": "02ca14c77697d87a807b97d4b8a74418738d91716321f57fb6d4ab942aa710e6"
+    },
+    {
+      "path": "apps/web/src/components/historical-intake/select-basis.tsx",
+      "sha256": "31ef394f3f48b95da5a390c02226529eff7675bc0f41fa48707760dab189cac1"
+    },
+    {
+      "path": "apps/web/src/components/internal-reports.tsx",
+      "sha256": "1bda9320bce5ecef605e70648c1acb85ff96675b4416ef74062ed9477a9fd651"
+    },
+    {
+      "path": "apps/web/src/components/journal-correction.tsx",
+      "sha256": "cddfd5e460230bd739687ca91d5b1b8c24834b9368db858bd63d187a83658d62"
+    },
+    {
+      "path": "apps/web/src/components/journal-draft.tsx",
+      "sha256": "ccc391c9c1e81dea5ab15c2b8411a4165a2c076acf075a763db0381799cf4e97"
+    },
+    {
+      "path": "apps/web/src/components/journal-review.tsx",
+      "sha256": "7fd53fbcf41ef40f2251a920540bf95f56cba76f1f26cb670a0d9bfca57bc0e5"
+    },
+    {
+      "path": "apps/web/src/components/original-document.tsx",
+      "sha256": "e60da14d0c0c0b0b10353ccdedb4aa6b56c976abbd2d672d9c5a864b2b671a84"
+    },
+    {
+      "path": "apps/web/src/components/owner-register/owner-register-panel.tsx",
+      "sha256": "101e440b876c1e151822f866d72455127d9bb76e51e46fa230f40ef9d0b4a294"
+    },
+    {
+      "path": "apps/web/src/components/payroll-foundation.tsx",
+      "sha256": "b526746bcaa7bb253858f20913c4f86ccda5ee6c08c10d4fe5ca7dcab1c7c27a"
+    },
+    {
+      "path": "apps/web/src/components/period-work/copy.ts",
+      "sha256": "e21b3d74fab795a6d643da1535f2504bdf665c1294fd676886fb8fa1b3bde9a2"
+    },
+    {
+      "path": "apps/web/src/components/period-work/panel.tsx",
+      "sha256": "e8730af0e00f2368a53d7699a54d236341ebbab304e6d1c4c27ec1d51db40550"
+    },
+    {
+      "path": "apps/web/src/components/posted-records.tsx",
+      "sha256": "9296c37866cf9b79f3142797288bb678d5eb26b3d843e56eb2ecad3b679c2138"
+    },
+    {
+      "path": "apps/web/src/components/posting-recovery/copy.ts",
+      "sha256": "94bb003089edc19f33b659f2bb9fb70fffb57cbc7819916334365259a7caeb5a"
+    },
+    {
+      "path": "apps/web/src/components/posting-recovery/draft.tsx",
+      "sha256": "7e70027eecacb376c8d6d5abe7c6629d537e2ad4fd9c19c00b462f5aac70b32e"
+    },
+    {
+      "path": "apps/web/src/components/posting-recovery/panel.tsx",
+      "sha256": "db5c6be8ee890c7140bb19649aab853d7a35e480e5004166a37600acfd54c93b"
+    },
+    {
+      "path": "apps/web/src/components/posting-recovery/request.ts",
+      "sha256": "e604bbd51e89341f8205021df72b83664ac852807fbc16ae9ef681b447524d14"
+    },
+    {
+      "path": "apps/web/src/components/posting-recovery/review-entry.tsx",
+      "sha256": "d45daaa5f2777e18c37c7b49ca8e656e1050717cb00881f82fb39acb1769a83e"
+    },
+    {
+      "path": "apps/web/src/components/posting-recovery/review.tsx",
+      "sha256": "650a5b5c73a4de4f9b901aeb2027062a684c7fee08410b3735f856aa95fd6189"
+    },
+    {
+      "path": "apps/web/src/components/posting-recovery/saved-requests.tsx",
+      "sha256": "d6eda71ffa5634b235912bb19a8762ac0f6487bbf0fbd1b31e3fa10d461cf34f"
+    },
+    {
+      "path": "apps/web/src/components/preparation-background.tsx",
+      "sha256": "6a56b85b8297d510a224f0b307bb6c2ff52052fe01652ed29340801513eab382"
+    },
+    {
+      "path": "apps/web/src/components/preparation-run.tsx",
+      "sha256": "c0a91b6187bcae30fe90cb01792824ddb1e07d8abe9f538b3165440f7ac1a564"
+    },
+    {
+      "path": "apps/web/src/components/preparation-selection.tsx",
+      "sha256": "eb7b5f7a68cd4f66660bcdfe25eceef0c98fbca5b82571bb858213079112f987"
+    },
+    {
+      "path": "apps/web/src/components/recurring-preparation.tsx",
+      "sha256": "b6d6dbd16b33135f810d3e965af2058d07646e2d4467046803c79823ba4903a7"
+    },
+    {
+      "path": "apps/web/src/components/recurring-rule-form.tsx",
+      "sha256": "d25408baab4f5a2572f2e52254c886ca6c525d5ded37320a9e42b356d5dc7301"
+    },
+    {
+      "path": "apps/web/src/components/recurring-rule.tsx",
+      "sha256": "4d9ec3a7b34c8a5d0f5eb916dc2e751a777e273a6226f83c06bd49eb8215b605"
+    },
+    {
+      "path": "apps/web/src/components/report-workspace.tsx",
+      "sha256": "2fe715d7abc244c6bc2861945644169c3ac02b1069a0895b68f35e38369e5a8f"
+    },
+    {
+      "path": "apps/web/src/components/retained-note.tsx",
+      "sha256": "2e66f9f155f733fb19fa93c780e46e6863ec14b13e43f7c4db561893219ced7b"
+    },
+    {
+      "path": "apps/web/src/components/rule-impact-panel.tsx",
+      "sha256": "8ef499eb77506e3bfac57d1e89638927118649b63aca4d54500b7fef059433ee"
+    },
+    {
+      "path": "apps/web/src/components/saved-work-views.tsx",
+      "sha256": "7cec39debfd42fcaddf2f3682ca7e39ab3f7faa96c6071b434505691cb94be27"
+    },
+    {
+      "path": "apps/web/src/components/settlements/copy.ts",
+      "sha256": "9a29c33a706718ba0e5bec6ba78ff836c03674aecdb265987eb754bbdd06ca05"
+    },
+    {
+      "path": "apps/web/src/components/settlements/index.tsx",
+      "sha256": "6864324ee0a07464fad21a739970c588e92b4398d00de02a83eb8fb7b6211259"
+    },
+    {
+      "path": "apps/web/src/components/settlements/report.tsx",
+      "sha256": "2322e1b72a4ec17005887933eff025f9f897ae83adf086c96c4622dec3a81b36"
+    },
+    {
+      "path": "apps/web/src/components/settlements/review.tsx",
+      "sha256": "b8bea8a2337b84d70dd7451a32c3329176dbd2390577e6309e6da7fbf99b9908"
+    },
+    {
+      "path": "apps/web/src/components/site-link.tsx",
+      "sha256": "26adcc226b20c73fb90f4ef9828e1bcbc30b8d7509e3c80c76120002bf034776"
+    },
+    {
+      "path": "apps/web/src/components/source-intake/copy.ts",
+      "sha256": "e6624fb4e5a07e9fff63d4b167e127afe07ec9a11d2f0bfae55ab6d5bd629f13"
+    },
+    {
+      "path": "apps/web/src/components/source-intake/download.ts",
+      "sha256": "67baa7798d774489342edc31d1176447f79a989080e3f35fe075f995ee8b60a4"
+    },
+    {
+      "path": "apps/web/src/components/source-intake/index.tsx",
+      "sha256": "ea2218d3e6b367956d4d7005a7b911e3d948af7cf28df18d2cfff1a3d7dcdc5d"
+    },
+    {
+      "path": "apps/web/src/components/source-intake/review.tsx",
+      "sha256": "8e093b20e95bdec9c8df40640fdfdd76a7a11dfb6e9134e9253e49e1632cebe1"
+    },
+    {
+      "path": "apps/web/src/components/source-intake/workspace.tsx",
+      "sha256": "e30d29d9a2fd046315a56c1610fc2ff6db5192368b02be228530d66f3862d27b"
+    },
+    {
+      "path": "apps/web/src/components/statement-imports.tsx",
+      "sha256": "4c3aefeeaf9abf8c3b1cb417786bd69168fdf2a1c98923c32096eb8c390c72a8"
+    },
+    {
+      "path": "apps/web/src/components/statement-preview/copy.ts",
+      "sha256": "515292aa02eabf4d6222465f97b106cae80def42a200a5c787142025d6ce92e7"
+    },
+    {
+      "path": "apps/web/src/components/statement-preview/preview.tsx",
+      "sha256": "17c6a34e888eebd3710b0d2206336611f4604435e73a72f1064eb28822240df0"
+    },
+    {
+      "path": "apps/web/src/components/subledger-controls/basis-form.tsx",
+      "sha256": "9ff5755d5b89d8a0c304e216580316d377b7ffd4bed2ee1d5d5982ee9297b170"
+    },
+    {
+      "path": "apps/web/src/components/subledger-controls/copy.ts",
+      "sha256": "766834b34c7dfeb0caa964da9aeba34f08ecf911f147009c55dad79f312b2587"
+    },
+    {
+      "path": "apps/web/src/components/subledger-controls/panel.tsx",
+      "sha256": "68f79a37bc868bd2a764bb753fa0fca7f9b97134cf2aa2d5f2bace830a0dd99c"
+    },
+    {
+      "path": "apps/web/src/components/subledger-controls/views.tsx",
+      "sha256": "a1cf93a275054fe64a31b9c3a9953da8c625a20db9a22937fedcffb57da3532a"
+    },
+    {
+      "path": "apps/web/src/components/subledgers/copy.ts",
+      "sha256": "5f734c6ed2b07cd36596ecd6bef93d10366bcb4fd941d5944ee778ba3c6dd73b"
+    },
+    {
+      "path": "apps/web/src/components/subledgers/schedule-evidence.tsx",
+      "sha256": "1ded4b1dbf3f6cc7858613524f175cd8b5113b7e1789e8eb8f514df6518e5bcf"
+    },
+    {
+      "path": "apps/web/src/components/subledgers/schedule-form.tsx",
+      "sha256": "0308b9ed9a1a8dc7457e039d0867a9b97aaf62cae20f8dd9e25b7ab0b476f329"
+    },
+    {
+      "path": "apps/web/src/components/subledgers/schedules.tsx",
+      "sha256": "12993cf1f23179f248e995ca88065f650e2b7602b530caa00d9da6d2bf3a3d7b"
+    },
+    {
+      "path": "apps/web/src/components/subledgers/workspace.tsx",
+      "sha256": "ef66676dd8344fedfd4e6b3f6ed85d3f8ae681d51ce667d4f05a776df0a04a17"
+    },
+    {
+      "path": "apps/web/src/components/trial-balance.tsx",
+      "sha256": "a05ba92724b2cc2a03f607b5deab228669b9c7e8fa4349f9e27745833a655dff"
+    },
+    {
+      "path": "apps/web/src/components/vat-returns/blockers.ts",
+      "sha256": "597ee7276b2b0f87551435d2a93b7d9369697bb394650c33bcd6b3a8c1aec256"
+    },
+    {
+      "path": "apps/web/src/components/vat-returns/copy.ts",
+      "sha256": "b68fd10de2c04c12a11471ffc2baabf857c3b59454662490081c4ea66a98ec48"
+    },
+    {
+      "path": "apps/web/src/components/vat-returns/fact-editor.tsx",
+      "sha256": "5c8e63bce8afb35095967d391861e3dd1d98323a2806ae916b2915900afc3aa8"
+    },
+    {
+      "path": "apps/web/src/components/vat-returns/forms.tsx",
+      "sha256": "4292e9a79c1336bd6435bc519657cdc59e3667473d4021e1cf154e677e05b5e4"
+    },
+    {
+      "path": "apps/web/src/components/vat-returns/panel.tsx",
+      "sha256": "8c21f87022494068faf890185e0607aaf98ef10b86164d3a16ddb72a66705ebe"
+    },
+    {
+      "path": "apps/web/src/components/vat-returns/reclassification-panel.tsx",
+      "sha256": "28cbd2a9663ff5cb76980a659b2df024943a0a8593bb9ea69a94bab236737204"
+    },
+    {
+      "path": "apps/web/src/components/vat-returns/views.tsx",
+      "sha256": "8331ce7a11b4ec1783458e349f7afdd11ea83378b22e5f7bf4beb6d431fe781c"
+    },
+    {
+      "path": "apps/web/src/components/work-handoff.tsx",
+      "sha256": "123caf7dd7941545e08ac52700bfd2f33781b29680d631fe444a4c7424bfcee4"
+    },
+    {
+      "path": "apps/web/src/components/work-home.tsx",
+      "sha256": "528100dd55ffc666b1ae26a8704b00d2ed0642a1751da051f0db8b1be269c1f1"
+    },
+    {
+      "path": "apps/web/src/components/work-return-action.tsx",
+      "sha256": "cff24f5071111bc3f7d29fe40a134ef168eda29ecdb1cc1e78e689590bf0b617"
+    },
+    {
+      "path": "apps/web/src/index.css",
+      "sha256": "a4dfd00845df221684905a252ad1723f836146a1764be90da24130aa1f58dcbd"
+    },
+    {
+      "path": "apps/web/src/lib/accounting-api.ts",
+      "sha256": "a0e31174a1635572be9445be44c0daf3feaf226fa52fea7c39cc42897ba78e98"
+    },
+    {
+      "path": "apps/web/src/lib/accounting-copy.ts",
+      "sha256": "b325f652a7958a61289b37e39ccee17f2ca2e1474f111de34a75fdad51c84329"
+    },
+    {
+      "path": "apps/web/src/lib/attention.ts",
+      "sha256": "b0cda80d95b9cf60b129e3664c057dda5068ac7a827ae3c2d5a5cdf2a264ff93"
+    },
+    {
+      "path": "apps/web/src/lib/auth-client.ts",
+      "sha256": "89d7ccdfbdceb9b7f5b1fabe46095479244c1d86d6c3cf75d7008bd4d41893cd"
+    },
+    {
+      "path": "apps/web/src/lib/book-context.ts",
+      "sha256": "2178a6767826c910fa13390c1a43ead8d1ed8c070ab92f33ae8fb224010fb71b"
+    },
+    {
+      "path": "apps/web/src/lib/company-work.ts",
+      "sha256": "8cb0e4e1dce4bba265c71e6d970c221b90c1ad1c30fbba67c58027ebd3d04429"
+    },
+    {
+      "path": "apps/web/src/lib/frontend-copy.ts",
+      "sha256": "d7b30e525a8fe7803d58e4bec2fcda3ee83b25f874295bc1f2566b3c143abb57"
+    },
+    {
+      "path": "apps/web/src/lib/period-work.ts",
+      "sha256": "1b8653fd3956a4f91eeca5f51d5d50d86ef3caacd12abbb5404fa78bda1f5e63"
+    },
+    {
+      "path": "apps/web/src/lib/seb-statement.ts",
+      "sha256": "65e094186258202f82dbeba6a1b4ab4d884d985bb44f3eb5f1e0dd490844c4da"
+    },
+    {
+      "path": "apps/web/src/lib/seo.ts",
+      "sha256": "bb0c7dfcec90de3a18d99c35d671cbbcfa4fab36f6df8893b80af74811a4e6df"
+    },
+    {
+      "path": "apps/web/src/lib/source-documents.ts",
+      "sha256": "13042d11c90a03a7c367702af914043f27904485f010fe5dcf20e08a4e7781ba"
+    },
+    {
+      "path": "apps/web/src/lib/statement-format.ts",
+      "sha256": "72f52a6e61a0db908975851d606c8489fc0492f26a8ab22df0c5b44cea6b319d"
+    },
+    {
+      "path": "apps/web/src/lib/use-page-locale.ts",
+      "sha256": "f56ba89810032d3df7fb864f64656c7f6f8eefeb405ea0025049999b0277d056"
+    },
+    {
+      "path": "apps/web/src/lib/work-return.ts",
+      "sha256": "75a7f1b3aa101f34233582468e9b4a1cf0294b4dec196201c0bd13f81be451a4"
+    },
+    {
+      "path": "apps/web/src/lib/workspace-api.ts",
+      "sha256": "9068674d411078fee5af8cab6ab6eafc8a567c6a1110cec6c42c4e94fb29e2a1"
+    },
+    {
+      "path": "apps/web/src/lib/workspace-coordination.ts",
+      "sha256": "f69ac328238b29a2ed3de1f983981a308c43b6ae2ba110ffeeab14d831850a13"
+    },
+    {
+      "path": "apps/web/src/paraglide/.gitignore",
+      "sha256": "b883351b813b26c0b960de2b0d5c7d20178658f93089777e1db3411d03f3be19"
+    },
+    {
+      "path": "apps/web/src/paraglide/.prettierignore",
+      "sha256": "b883351b813b26c0b960de2b0d5c7d20178658f93089777e1db3411d03f3be19"
+    },
+    {
+      "path": "apps/web/src/paraglide/README.md",
+      "sha256": "678b8146489a05b6f07ede3e8d8215856a8f075f78b9754c645300705b27ac87"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/_index.d.ts",
+      "sha256": "6c2d3793035335a392d118ea606cd965c42ae7eb319ae2e07b5ae02a41447faa"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/_index.js",
+      "sha256": "a042cbd2ebad43aa40d3a421b32b2d4c84e53130053ce5d98e46e6ee37c672ca"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/app_title.d.ts",
+      "sha256": "62fed8c56916c6dec20a7fce4da3caf7d6df75d21183ccd21c03fe93b4d18a7d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/app_title.js",
+      "sha256": "4ccf55f32b24eaed2842915717a45cd0da9e47a82d8b276ef396e75c76945aa8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_action.d.ts",
+      "sha256": "88e62c692c3767619ec9036e8f9057f7f7cf049b08cc78a173b428c6130367be"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_action.js",
+      "sha256": "da94a0e34f4757cda53994c2a8b5f41cfca52133f84cf5b288716d842b9caa13"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_activate.d.ts",
+      "sha256": "cb0e693ab28ba45c61ba58629dc09138945ea2be1f16879995f2ff02c830ba01"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_activate.js",
+      "sha256": "6608030c4e4791cd2c06f9b9e0e32bc9e1d0d2a62ffa236c754cc81e0b881123"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_activated.d.ts",
+      "sha256": "c405661f7426edf7d1881af3c5803414a9a80ba4cf81887c05f3c4b799c0fa78"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_activated.js",
+      "sha256": "bfc3700405fba9a6b3eaacc3f1beb5b9680df3058ae313f6b3378c7ede1d892b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_activation.d.ts",
+      "sha256": "acb7be85b6b9fdbd2a79fcb613639a899e16c0999d8330ff71fb7bdb0ec87959"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_activation.js",
+      "sha256": "59ddbf8baff41d05dedb56e8f1a7d181df6071cd5bb6e9c61297bff73ee0323a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_activation_help.d.ts",
+      "sha256": "ff2b5f1d6874e920ae4c924be6527ab91d042bc9129abc6cd624e412934a8cfa"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_activation_help.js",
+      "sha256": "dead338e3d53e57b86ae5b46f50153eb83a101f44bc99286b51f618f13ca6fc4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_activation_id.d.ts",
+      "sha256": "eca95f869e3de90864a4330036d4bd7157b37ae0698ce3c5aabb74d90db116cc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_activation_id.js",
+      "sha256": "f496db7ce3922ba8dfa7357b94a6de725e35b8c0462ef33fcd414dfdb502d423"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_activation_mismatch.d.ts",
+      "sha256": "17dbaf4a2ac400843c28342af92e2b89e39cb153c0f2acbb7b1eb6cef6f4b9eb"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_activation_mismatch.js",
+      "sha256": "91d4fa760e0cd3821bae27e4fa502c06dffd9251a2291721d59887ac56754aa5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_actor.d.ts",
+      "sha256": "174c182882ae224f1c4524696d39640bc20f3fed00435e91a087c60b835f363e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_actor.js",
+      "sha256": "0544ab7c369a9dd4299dcb5038eca787caba2e7bc5503ade432f87de795f9a54"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_already_posted.d.ts",
+      "sha256": "4a635e519ebd9115c0457889e10266941b3a73a802569ba7d90698fdeddc2ce3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_already_posted.js",
+      "sha256": "4192d97e93bf6fae0b252717668633be17308f54cb0be28c425358f23d06c876"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_audit.d.ts",
+      "sha256": "971feecbf0ebdf7da5d3040e362a3c78207c928ca71d685388e67c3804b86f41"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_audit.js",
+      "sha256": "01dddded3e779df08cff9604cd88f4d5adb8e936fb48535097f3468706da41b9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_bank_account.d.ts",
+      "sha256": "7e162fdc71ba5a28af13741843f110321c2b7d82b408f393343bd59931c9e5a2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_bank_account.js",
+      "sha256": "4a528e14593067ec1cd44600a4f3a27bc78d74bf15e67931867bd654de8ce4b5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_batch.d.ts",
+      "sha256": "6a10bad49e4488ec88c1ddca1185c3f1b15e59545dadea99305957d33d18fdc1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_batch.js",
+      "sha256": "f0f86dbdc386f3b94ceff97b6ab64061b5c65c330d2f097803894cd4c7354bb7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_blocked.d.ts",
+      "sha256": "36cdba60e65795cef46256dcb2cca5648af60520e9dc257f4660f698cd81f339"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_blocked.js",
+      "sha256": "53fabdf365901bc495ed26575063035ad3e8594a32d47e1ce0894126cef9cd55"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_blockers.d.ts",
+      "sha256": "55687e5bf42cfe1bf79185d084bd2d900901649573a89d1c205cfe4428d430f8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_blockers.js",
+      "sha256": "c312ef6f5cf2164730ab832d77dc875dc97000d4a5466445c71731c2be25a1ec"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_cancel.d.ts",
+      "sha256": "4acde4470c384a6284ce63a51637b2837b6bad888dc7ca924b70eb735e63cf80"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_cancel.js",
+      "sha256": "30c941641da9d47980b6c450fa621c9737c870414eed5c1335dec38474846071"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_cancel_help.d.ts",
+      "sha256": "5f48fce41522e589552970b3f51325bd0167500cc88aa8eee2db1066085a0ea3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_cancel_help.js",
+      "sha256": "08ac8a865e95a4bb9fedcd265daa6d14c63f7f8bb3af11435ec8e5d42e149b57"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_cancelled.d.ts",
+      "sha256": "f1ef654467ba9d7cbb3d9a57b745d6dfa8e64015fe7b2dfd8d7e7ff5e32f0dc4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_cancelled.js",
+      "sha256": "faa1f358108bce1bd5d14fc54594fdfcedcfc3f2e1f8aaf39aeb0a5b84ccf846"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_completed.d.ts",
+      "sha256": "e70c15edabd88568d611679d0289b7f275e80bb805411d2f804b0e4c6304e8a5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_completed.js",
+      "sha256": "432c2557aacf5117362f3d79d9e934b474167ebdee89cab4390bd30b0be0540b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_conflicts.d.ts",
+      "sha256": "b2277eb0e5789b8b779f24088fc1cb7a8320628e5b824ceb98e07b9ef85120a3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_conflicts.js",
+      "sha256": "1111f8f706924c57e7be03bb97d10b4e651586f9053b7449d5a584811db71ba9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_continue.d.ts",
+      "sha256": "afcc9d73f252b0636116683f71b754ba1b98531a037e3166f5134c62b5b56592"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_continue.js",
+      "sha256": "bf092d500775c49a67a38c8679782d340e1656b8304f192785bf48e1358f7c07"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_counterpart.d.ts",
+      "sha256": "db66e902686f1cf7bca7b7fb58f674dc5aaeeefa5c7d6d9a44c48e8d5c29ef2a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_counterpart.js",
+      "sha256": "1a02c5b51d5d5314d8cb24bf8bb9974292b45413dc96dfb3292109d9c04f7076"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_create_run.d.ts",
+      "sha256": "66dde26c60277cafa055318553bf1769113f4ffef65d1cf57678e2f1b0bb72ae"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_create_run.js",
+      "sha256": "a41db970544d43247a6ee85fa8035f7e2e804b679322122adc11f7814b9f4478"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_cursor.d.ts",
+      "sha256": "2c12dd39dbfa3afaeb2b2bc1bcf0d5453dc5c96af5b74079e72db46063d5b14b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_cursor.js",
+      "sha256": "245882f8a712874d49da9ea2a8b458727f85a5e92c9571927b6fe6714937eb63"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_deactivate.d.ts",
+      "sha256": "a4ba8beeded31250b84769c0599e96660be3cffd0f28cb3d089cc36b6ed87f9e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_deactivate.js",
+      "sha256": "0f0c19b97fbb15cc017e1cdedb0fee5bcf33724fdd995db5c069db5564e7d77a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_deactivated.d.ts",
+      "sha256": "d50b96e4b93ff28327513e92c035bdd65e4cdd280ba063f47ed59d9eb4c21fb0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_deactivated.js",
+      "sha256": "8c3767ee9aea6dd6dc0f0b698fc35902898afd9519899a6787ea2bd46794cb20"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_dependencies_current.d.ts",
+      "sha256": "3a4777a8aba62d66381d6b36e59c42c27e412c27d107c3afd6eab0544efd04ec"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_dependencies_current.js",
+      "sha256": "2a8f7a1a57e91e60d424e8448bf40742da67ff8f75d4c759910e9c1ecfd79470"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_dependencies_stale.d.ts",
+      "sha256": "dc4efd9e27333d366d2b44bf2df0a30a20187d01c854537b0471f120217e23f7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_dependencies_stale.js",
+      "sha256": "249e25ed6eeeb419853b898df9726ad0139879673cd91d64b774e2088bb7e5ed"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_description.d.ts",
+      "sha256": "650d20e89ce4d123e5e0e789c758a90e447285a87d1cf82ad48fdfd4cd90ccf3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_description.js",
+      "sha256": "3098e450cfcc301be185f74f75b39f9ddb5d17caa6f9172a98a5ed0a0d5aab46"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_different_accounts.d.ts",
+      "sha256": "95e928bc757c47e942bb17cc6be686b499e84a81f2527c264486e3c0b0432499"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_different_accounts.js",
+      "sha256": "4ff1eb4f60d0f02f88ddde18ded270dba7cf1cdb827c887c67e846331ca91d7e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_exact_help.d.ts",
+      "sha256": "142a301f989487e067adc2f93fbdd606d921bd7cca3af6927bdb394e2f367d2d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_exact_help.js",
+      "sha256": "b0e2e9e5dc5b0364cd35e474ce6dba2d33d20cbd2aeaf2c57c10edf802b980bb"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_inactive.d.ts",
+      "sha256": "31ffedbf4d4530bbd995890163692e5a40009d87bead99c7e14068f581c7935e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_inactive.js",
+      "sha256": "521ce4ec7acfb7e28de5a94d8cf57a3b08b26638e987698b8125f1a8e756ac5a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_load_rule.d.ts",
+      "sha256": "8af5ed73f81738dc6edb22b23c9daf5d664550c67f27948e7d9ce9645a1841f8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_load_rule.js",
+      "sha256": "411cebcfdce81f1e285f45b6db1da3864c842349f013763fc9bd19c585495759"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_load_run.d.ts",
+      "sha256": "ca11274a75f23c8c5156bdb6f9feafdbecd7e62ca37f1266ee98bc1c95a214f0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_load_run.js",
+      "sha256": "f53136890d0cc3babf4a558bd75abf362d0e82be7a863d6c8aa9858600e7c164"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_load_simulation.d.ts",
+      "sha256": "81305bef3a2375188190f48337209b08fd54c4b6b515a18d9dc0b6860f53908c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_load_simulation.js",
+      "sha256": "217d3069058ab7718d0d494e9b713a80e59702656455d2ab0289515ec15d2e77"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_matched_count.d.ts",
+      "sha256": "778cd4297869faacaeff74467dfe3c8b49bf1fb2991809f424487af34e669826"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_matched_count.js",
+      "sha256": "e33526a8b6a5fe862ff83d369eeaea368ebf9b3a08a198c843e1f9fa09e05571"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_matching_count.d.ts",
+      "sha256": "573f2ed115ae883a0bc9f157389b35e23c184812171eebcf42f6fad1f3844145"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_matching_count.js",
+      "sha256": "c66be027e00c97dc17f46bccbb233cf7a12ad6136fa5cca1fafa27e75397d62b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_name.d.ts",
+      "sha256": "78ed786606a3c647ba2867a183289dbed6636adbc2cd16cc0384d16538267e98"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_name.js",
+      "sha256": "020c147260c1cd96d1ae4b3cc948433a4e421f2a8a24c167f9a59145f7b685e1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_negative.d.ts",
+      "sha256": "895dbb5c2c1f7ca2d68238a99edefe08d7a7e6f51049d5b22b65abf2e077e81b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_negative.js",
+      "sha256": "d6e1066126b23c08cc1ac033d37e12b25146b3edba0877a603cdaf84fa883293"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_new_rule.d.ts",
+      "sha256": "00b52812cd70af993a841cdb1775cf28ec7417dbd5aedb755aa3636b41515364"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_new_rule.js",
+      "sha256": "d3550fe2448291d396b6fb9188d1033fa8761bb4da76dc6aa54bda9d5aa3b134"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_new_run.d.ts",
+      "sha256": "9b9d81253bb4fabee9b95ffacbd19c08ad765565aaaf51e3ca7932ee7dc89e8a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_new_run.js",
+      "sha256": "23529de33c82d994ef2e0dcedc227e6230e97b6fe966c8649fc634a030ea3935"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_new_simulation.d.ts",
+      "sha256": "69c891ce6fc417b0e1d10bcb9b602408f6dc14b0234491753f8cc605a05db72b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_new_simulation.js",
+      "sha256": "89cb9e808aa4a587e0dd7e0e5291a874929a747c5f0769180e3069b07207aeb6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_no_blockers.d.ts",
+      "sha256": "724299aee23f6e73e27b80e5f015797d4b07863d71aa4a097f9c45de49d54cd5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_no_blockers.js",
+      "sha256": "19f55a3626419caf7c414b15ecfd492bccc7903296239a2646428d8cdb942b83"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_no_conflicts.d.ts",
+      "sha256": "782bb6eaf1e8f742436eab295345dfd3f6b62c43c2cc7a3fabdea42881a2d951"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_no_conflicts.js",
+      "sha256": "a1a06c5d4bb690161e43a083c4e8a134913fc687e4243746840c643ed6b83985"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_operator_only.d.ts",
+      "sha256": "cc1ab865d5c9052ef1b1d1ef37b3cf58a29b8e9392354d9001910a7a1ca29b07"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_operator_only.js",
+      "sha256": "35f94df28968e7b5b6fa2c9e580307e08b36ce1695b5a274ce6eae6525afc982"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_period_version.d.ts",
+      "sha256": "db8ee75357c8cfab58c912ef2b08b03d5915cb9d537c863bdff964d678c56b42"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_period_version.js",
+      "sha256": "b07ab7818cdf0164d8b04bc15bb5b7ee621895b100438b88718d63ceedd02983"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_positive.d.ts",
+      "sha256": "0af43acbde292358f4c951f1360ca48b5ca7ec28950cd6f41b25eeaafbe49861"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_positive.js",
+      "sha256": "860707f96163f12223f5ae65253878f7487482bc428f257b4a3b2c365880f0d4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_prepared.d.ts",
+      "sha256": "ea34e41f879202976381289192c9f0c89954eb78362da46839dace7eb16aedf1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_prepared.js",
+      "sha256": "7f78dbd32e59b22c0fabeb9c79e792db9ad339ffbe5aa9328c36a3fbea95f8e5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_propose.d.ts",
+      "sha256": "41d1e5724b6fcdbb95132fbaa5f82d2b538f8de839febf585b249bd4d9b01a91"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_propose.js",
+      "sha256": "e3057f4242229405497dd80a3ed6526dc3c23ad53bae44a5a42ae5cd7ed8074d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_ready.d.ts",
+      "sha256": "3d9cc2bb215143b543ae686066bdf9b40a547186f88ad78510a0ae11b9e2d3c4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_ready.js",
+      "sha256": "ca04cd563434fd56fa49f7fe1b445e661282e49c2359c1cf43e8567fab740c05"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_recorded_at.d.ts",
+      "sha256": "8aba7ea9e21ce69c47d1730571d9854ad59ba0268f1acff1fb32adb521551b7f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_recorded_at.js",
+      "sha256": "3c5bc2923d66ad631615f5d040630a12e9b5654e0d9398cc14bae48366f148c9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_recovered.d.ts",
+      "sha256": "8882473f907426e22c46c29dd7c1425bc74f88293e89498abac891f5001d080f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_recovered.js",
+      "sha256": "3ed30756ba7d41fc6953835b5c8ce322866282f214dc08f95020fed598c4ce2d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_result_state.d.ts",
+      "sha256": "c04f204de95efa59f7b9aeb6f1a84f846a77a189ca34653318a33c34633e849c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_result_state.js",
+      "sha256": "79fdaaff72f082d6b484ab33b62997599116ff836ef49e74c0ed93709a8c1130"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_results.d.ts",
+      "sha256": "48b972382dd18a60009f47825246d9d3ee818a860cc1231fda92e08d74c8c269"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_results.js",
+      "sha256": "bee1914a3bad68e5306698a476b55372a9808f827a56b125d288ac3fd99642c5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_resume.d.ts",
+      "sha256": "cfbc5c4d9309041da17ac8b6ec62f24899c0eff14c6ca1d0125198faac649b23"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_resume.js",
+      "sha256": "734f0c23481895e34c10bdc18eb60c6ec1c4db0a6e78ae1cb9ca2336099b80b9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_retry.d.ts",
+      "sha256": "d6b9bea8750f8360041fbea3f3acca25f809eb26741dbf289ee0f630b27cff4c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_retry.js",
+      "sha256": "0311c6be32c22da5bcad8e2fb2fb7ccfcdabbbf264250741cacd1a058e04aeb2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_review_plan.d.ts",
+      "sha256": "96a752b04da891c7b9ed32ffc70413268f953e57eabbd4afdd4a103bc9e861a8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_review_plan.js",
+      "sha256": "9e33e818141891fe439805f7404635d989d908bc70c06f4a23374f626fe8e188"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_rule.d.ts",
+      "sha256": "8fa2810394a22ff3d15a78118309d0c5eb6f36b2aa5d142157a6b102a152e963"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_rule.js",
+      "sha256": "6d50fd585ab0a7586bd2f1d2c8394cb00f6f60a48ea8562b325c1136eb930086"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_rule_digest.d.ts",
+      "sha256": "4fc73592674c93f0c24a52210a3b62c12a745e9e17dc365644753af3f53888b9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_rule_digest.js",
+      "sha256": "f11ece6ff1d7552533636d24794bbb1dc3f4e59bce551e34a64c767c0197beff"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_rule_id.d.ts",
+      "sha256": "e43e94b7f3bcf7430573b8dc165145e945c82601ba1554be93477d59d9974c98"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_rule_id.js",
+      "sha256": "c1cd49e62c12a87d6c2bd4e02c8f6e9d2c30a5e8965ef50ee5e43069132e3383"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_run.d.ts",
+      "sha256": "ec223e6c30bc49532b52f8241068213098ff98b11b40ac6ce75e047fb7b17e18"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_run.js",
+      "sha256": "009452c5a3f9b48688e0a90499b8f0b39adfaa07965f13a891bc3f31c3517686"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_run_help.d.ts",
+      "sha256": "a8fd7429a63fd118e7d8cec4b7632f81e210ca228cdaf669fcac3c12a50bcc00"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_run_help.js",
+      "sha256": "1348d52ad6308468ad8a2ccbec6a78ad5530e243253e97ccc35e44cc31ce6451"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_run_id.d.ts",
+      "sha256": "d80bdcd756772f7542a8279ec9d702c4d078fdf49e72c4b969b0e5282f3e4445"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_run_id.js",
+      "sha256": "8271d184a516518da325e5104d9092827213b522e7bdaa897c0bcdc53b6a78ff"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_selection.d.ts",
+      "sha256": "b8c1e9705cc08dcef253f482217106c266cd77d8f6aea44950493db49287afc1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_selection.js",
+      "sha256": "ceb6c5a1302a1ba39daddd2d00e5b78e9daa3760c4ea43f67921bb5fd308c36b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_sign.d.ts",
+      "sha256": "0f09d73598da34227e08832398c678ad7a771ca406b4bd2045dc8c8dd605ea26"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_sign.js",
+      "sha256": "4f399903720dd7fe5fcffb91a465dcabc4f9e8daea56aa39b285e3b521b2a0e1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_simulate.d.ts",
+      "sha256": "0da3234ff5f199ae0a85f9f30a2aae9393950c97670db52daaf0460e8d68cd74"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_simulate.js",
+      "sha256": "ac4f100d6dfbb0b1cbb648f099675ec4d310ead508e8c0983cb0618d587a6b75"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_simulation.d.ts",
+      "sha256": "d5fb653c1202ee5fc326cfc08cdcfc5b12f04a7ad1e05bd3a2f2de7db8db07f0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_simulation.js",
+      "sha256": "8c780f17c71328698ca7b8428f5a5f447e8d163b58b89b577d2b9d90c9a10841"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_simulation_digest.d.ts",
+      "sha256": "dfd83a08bca0ca6e3e5415f45c8ee12a7291de4c3b22aa4c108470bd17c73398"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_simulation_digest.js",
+      "sha256": "4430ca1f6396a2566f1d332711d5ce6a4f9efda7743fb544fe9c79e4f1e4d86e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_simulation_id.d.ts",
+      "sha256": "1b188c5656b8526d6dad7c9499eae696862b921070b29fd4456d39637d99d055"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_simulation_id.js",
+      "sha256": "b1987f19a8fe12632ecc9a36062eb8a47d469dd8cb829b4fae8a154b5d15f6c8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_skipped.d.ts",
+      "sha256": "60aeabdfbf952795eef9d9bb090724174062ba97ebd03820846ba7dd8b76c93f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_skipped.js",
+      "sha256": "ad2acd25902b36cfbe2584e7f4b862ce166c0924edbbaede50773de26599731e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_state.d.ts",
+      "sha256": "2767407f3972fcdb00555b9de123bc33dcbc77102dbecffa4cdc50d87b3b7c2b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_state.js",
+      "sha256": "d137b73ba34fe11fd6969b09aca7dd415a22acf271c49bfc6c519dfd2ee6922d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_title.d.ts",
+      "sha256": "075ff40dca360a1fab03ab4cb49d3e6d90c4e05e8ccdc5ae32576cca0f0bd3e3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_title.js",
+      "sha256": "dcdd59b856b691ebfea364ce083c708161cd4bf793fe6f743ee38bb11fb31db3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_total.d.ts",
+      "sha256": "5447be24dc225c96251daa97e07f43cdf93edcde95366e2896eef9f04674e478"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_total.js",
+      "sha256": "157055f169e50092d1ba6b8acd026da24ec8ba4f270fc1e97a82f583eb1491f1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_uncertain.d.ts",
+      "sha256": "9448a6768e43c82908bc341c31d679f0d25d3d5f387b3782e12f02b4359f57df"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_uncertain.js",
+      "sha256": "23e14e18f65fe058ba391f1b4109a16e4935a61f66ee3df426bfc3ee28895215"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_unmatched_count.d.ts",
+      "sha256": "686a245757a23a5e8d28c134f05b73ca2fa403a7e0bc4482f7d08554cc81c7e2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_unmatched_count.js",
+      "sha256": "8dc848f1e2b482d3e13d13d9a58b776da9bb1296c0c886df9c83fb7bc79dc0f7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_unverified_read.d.ts",
+      "sha256": "9cbc7e1602d328cefcf93e143dcbf2168f3d5206365774d6c72e18fef8fa44b8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_unverified_read.js",
+      "sha256": "3b85f423da6ade1bcee93fa732a0365c4b025c0fe7a00230143bd292ae16c919"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_warning.d.ts",
+      "sha256": "2f80bd4b99f440eef1cdd5dc49e3058279c4be378559cf017f2c20780bd01148"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/auto_warning.js",
+      "sha256": "9978ee0aea38e607eca928f3f1999c7d16c50d41172647cb4925205fe5887b21"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_account_checkpoint.d.ts",
+      "sha256": "f7f3635984fc09dd9120200f8507402531a12cbdc145afbc5ee9892bb05d6f85"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_account_checkpoint.js",
+      "sha256": "fdae54485b1b4115f30368c9a643ee72dfe1e5a3829b9cb017a377f70ff49996"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_amount.d.ts",
+      "sha256": "04d897e6787d72ac546ab4f86f8ba389e848a0ca2ead46162a0527d2537d7e07"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_amount.js",
+      "sha256": "d1ff31a9db1d89e82b7bdcd58cd59b2eab5e4aa7337cbd2e7b88319d132cc4c6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_basis.d.ts",
+      "sha256": "379c36796ad2033c8433377f896c102ea7628707c1517d93e8e21a18b0a8703e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_basis.js",
+      "sha256": "d5c080257fe561e0f462172827008316a38b03ff858f8df6051c4bac5be1c87a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_checkpoint.d.ts",
+      "sha256": "7e6d56c9843e845bd697e1e8a5e0afbed6f5b46559b1433d957e3dc2d1c41183"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_checkpoint.js",
+      "sha256": "7770bc4b62944f35555a122484f02ced6a48f3bb21ba99c2829b4e3782ace616"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_closing.d.ts",
+      "sha256": "0edd7fb6146838577e79d58e9d606eb4c242fc18abafabb0e3cb01efea251f4f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_closing.js",
+      "sha256": "acfbcf00ebbf116841c5c2221a2ac33b3da877dac9fa137a2c61b65abaf7c6b4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_complete.d.ts",
+      "sha256": "bcb3971681f74f582e28626feab053da8a4af46a7bb8c255b944776b3943e877"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_complete.js",
+      "sha256": "5055f9144e394ffd80d1b1265d4c69936bf517b80da371cc67ff07e5714dc766"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_current.d.ts",
+      "sha256": "263f259f442940bafbc363401cce39cf9f0924142997beaa1d8e5cf1bc40ff90"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_current.js",
+      "sha256": "cf85f8ea9bbf1be869f3e3107c6be8089e6cba3a60f334fe1f88803401e5d305"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_declared.d.ts",
+      "sha256": "123fca6127ff28d2150844d8ff490f7ddce06c6cc865722012c0b2fc8f19333f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_declared.js",
+      "sha256": "cf6f761cc7972321f8b1cccfe3b4b736ea1c2e1de1f01925d99f279dca65abc2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_difference.d.ts",
+      "sha256": "0e6a7b2334885330d34906c13d52e38d42c1394ec82ec18ab5350820256725df"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_difference.js",
+      "sha256": "928b16e54acd75cd3348956aa6b2cd3b69914bd35eb2bccfa012677e418e492f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_differences.d.ts",
+      "sha256": "722ee8038ff62519afc40dbb838370372034dfdb9a7dfb39581e9fb4623ac8ee"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_differences.js",
+      "sha256": "5cdf4ae4271fb9c6e35369b990f549e5e55124259c3b64f88bac60953d3bca49"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_empty.d.ts",
+      "sha256": "00f9181c50f8509f0e15cb82f1c5204a4d35104dad66aa92ba89a1a26d28d6a3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_empty.js",
+      "sha256": "c54bf0e5e801b604c4efa981b5bdef110d265648edcc102e00ae7bf401eed969"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_ends.d.ts",
+      "sha256": "60bb8c171b76338e4ef14b344f801d131e8e27af35581f2b74f428f5ad49d122"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_ends.js",
+      "sha256": "eef24f2c728bcfe45f5753f89b80c46b0f3c8d422540805861ffbce8b0c2d921"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_example.d.ts",
+      "sha256": "47afe11b1b268e9290b36476f8e25d13b589c447d99cd5d330c36627a35c6b90"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_example.js",
+      "sha256": "6ec69f6e69c49c66156be3c29698122f3bdfeab11a2fd8fcf4ee2e4e9029ad17"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_existing.d.ts",
+      "sha256": "f3d02c65beb249e304dbdaf67ed02d91a964f92989b79c81e628b49c4010f1d7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_existing.js",
+      "sha256": "7c121bdf175c0716f115234873834e2a17c802a77731993bf5d65e6b5dc21c24"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_existing_help.d.ts",
+      "sha256": "a4f96a061a8721c27fedbf7a087e13de5464e65664f1551e2cc99edaef33f3f9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_existing_help.js",
+      "sha256": "554148ba0a5ad55c7daf0c2ba82fad99e9273603a8f485ffab233cbac2b0a94d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_fresh.d.ts",
+      "sha256": "e74de087eb7c03084dff0da3066838855f473daa5e9efc4f6638953583a12d0f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_fresh.js",
+      "sha256": "527f852c7c9eaaa8d935f6b464330d59e301630282d6bbc02ba00617657a655f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_freshness_unknown.d.ts",
+      "sha256": "f4e9598eafa8baa2e9b3274b8304e512fae529da27c0c54b8f31e99b354e771a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_freshness_unknown.js",
+      "sha256": "7a43d654f7f9fee681794b6adb4388320f7b61622c697456c812a63ebd6b7d2b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_gaps.d.ts",
+      "sha256": "99e8e0438dab6045c26831fbb8dbf148ba72d3c940f1b165825f77363948be43"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_gaps.js",
+      "sha256": "2d8ca80196b4c0dac25eaf33088d8c65dfb9defd21a970218c1fec30a7b558c4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_import.d.ts",
+      "sha256": "03cbbb0af271694204be090bf82193924e9ff1911c1ad25e784bf941233370c2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_import.js",
+      "sha256": "fb9c35a5791a45816f75c8699d37066c6bdb2f8a47050226473eb3ecb03b56b4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_imported.d.ts",
+      "sha256": "c77964311273f08eb8377efed8df222ca78409f7da29aec26694b03c59bff90d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_imported.js",
+      "sha256": "58886ca44335462969507ac62f8fa194ce8acaf49ec915c634fa3580581f49c3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_incomplete.d.ts",
+      "sha256": "691044b28d40420fa35096360ba56be620a4876b97e87462eb345215f3fd860d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_incomplete.js",
+      "sha256": "5e22b90e5e3057cd986d5da27500a169b5c1d3d777d807b423bdad760c521959"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_interval.d.ts",
+      "sha256": "68df1620db1470a6116a70beda1638d9c7ef7126d1f68b7dbe2691537524006d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_interval.js",
+      "sha256": "0692394cfc6ed720fff1869d66b3a389b8e88c899d24a5f8c103c9223a45c2e4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_invalid.d.ts",
+      "sha256": "d09f1b38bfbf46140c45c54e4268da7e752e1c8f2a4fb9472b6670b9ca19bc13"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_invalid.js",
+      "sha256": "8f992f4b423b2629c64ae4bb7ca8a077813b342c05af66f13eab7e14d493b936"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_last_checked.d.ts",
+      "sha256": "7436ea237927066d4fa91d6ef54bd7079808741d150a8daa7dadc5fbe4bca6b3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_last_checked.js",
+      "sha256": "0d4095b2b06f9f1a55b9af6c59bd21b2b01e05b60e99158f1c5b436889643b68"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_ledger.d.ts",
+      "sha256": "adc6bb6c7977a78885ac1294612190d5209b6863fa7a661c5409f3aa514615ff"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_ledger.js",
+      "sha256": "1358cb956005fd066b618e2d9db8b3944cbf981be774d11c7fb8a1242c6ae066"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_ledger_lines.d.ts",
+      "sha256": "b27a8e5bb8028fae69c3ccdbcdcd82e40e0cc9ffc8f59178faecc48e359c650f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_ledger_lines.js",
+      "sha256": "83f43756141a6721b677dcf588781b1defd9a44a435be64905daee4eca9a9050"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_line_id.d.ts",
+      "sha256": "376d204979c1f5e394180bac00ec724a8e15cdc5f76b1443972ded7acbe1cfcb"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_line_id.js",
+      "sha256": "6a121ef9e1ff2042084e551e68e66dcf6a8d1a216fe71635374d37b568a3534c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_load_report.d.ts",
+      "sha256": "04283248839bdd193c3243d4b41c27a7df865d2197b68531e4e173f9b350596e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_load_report.js",
+      "sha256": "60a63928683ece73d7ef417d7556b4241d227874255b7ebb633f719636f440b0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_load_statement.d.ts",
+      "sha256": "cce6a1e4f8c4d32a5647446cded8088b910cd4c49cbd6a3adfea1761133ed8ac"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_load_statement.js",
+      "sha256": "1ba2efb8a1900681a3fb4f9d0be777499adf6188ca6b8a2a5845d68288531a94"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_match.d.ts",
+      "sha256": "5833c4c9f7d607558e79f6b32b525ad2e7ae3787c7e1881d9fc1134d0019d13d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_match.js",
+      "sha256": "c8360ac6ddd80d654d8c83cb99568821dce5eac934112e883ab9eb3e369c433d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_match_help.d.ts",
+      "sha256": "cedfe66aa1e7bf1e86b0a72d8d1d68c2ec81f075379b7b2edcd28dcb31d0b89d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_match_help.js",
+      "sha256": "38d8c9fdac38044b6e24cbc8e61d50b62b2eef4e89827451c2094811a9d2b279"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_match_rules.d.ts",
+      "sha256": "7b4275b121b214abe11e60fe14a520deaaeea180b91520f08f7f748e176c9ad7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_match_rules.js",
+      "sha256": "fdf0ce3711cd91248c50f55dba60d5d3612c17196aa633a3d6f772dd6fd06dd3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_matched.d.ts",
+      "sha256": "afd67f5fe25b2763d7dc11e0cb79f686ec7acd1d861578e096c071814e23110e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_matched.js",
+      "sha256": "b903c943da790f80e38d55127fa91b1dd234beb38144d8af7cf5c85bca3d1fb7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_matches.d.ts",
+      "sha256": "d7f43fdc9e6b1b5a6c8466a67d6e94f3c26301df11d0fdcf0a219d85f065188a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_matches.js",
+      "sha256": "c25c39b9df640841d1a05671570f04ddf975b40130ed1ed51a84b16214c8faef"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_missing.d.ts",
+      "sha256": "58e95bf3d2db380a5e4b6bdb41566d01b28ce2a9f5f81aa4edbe35d02b897a32"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_missing.js",
+      "sha256": "6984d22f2862051ce96bba25ed40e704f98675c8942c0569e6a2716db8c13171"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_new_import.d.ts",
+      "sha256": "2889883f5ac1fb02f3e4c9ee5e935103315f22f12550ec65e16bf77e0f22e080"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_new_import.js",
+      "sha256": "2a5bf3b3ed438b965bc33f948d3ea0a29fa208a1132d82c1c666dc947792d462"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_new_run.d.ts",
+      "sha256": "4dd38bbd59b7ef3e2ff495b62d5b5274ac5d5c208944e42c119ff51085462bd6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_new_run.js",
+      "sha256": "5f1ad7d6f45bb768c4704c73f94f1738fbac13066d730b894bc20b8a90a9820c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_no_differences.d.ts",
+      "sha256": "7692d8e6623452ea95eede5cd628ba0890d288e9b0edb1dbd4f0f10a9f7ca2a4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_no_differences.js",
+      "sha256": "4c2f92f2dd123c59e26bec46758ab49f714986c415ed0fcd866b8ae85ff15d34"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_no_gaps.d.ts",
+      "sha256": "f1514a710c9b7433e2d1d4e9f41242ddf8abdafa456920488e7291f9b9bb7c86"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_no_gaps.js",
+      "sha256": "31cab1e73f0344125e989dd263316d307f7e0b223fbfcb3b0e31d589941f585e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_no_unmatched.d.ts",
+      "sha256": "6cba8a9170be15665e0ef4e17928f6d7237f84cdf55b34bc8625de71a44478b5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_no_unmatched.js",
+      "sha256": "e57b4f2f4b1e0e48e9a1634b5e4228e1f56e55eea165ab1bc28f3a316d707003"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_not_declared.d.ts",
+      "sha256": "6d6a2e8191f3c98c461cf6f2b8fc4f14f8f24af2c024ce1f7456f63e5b3571f5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_not_declared.js",
+      "sha256": "1c620ca5dff121c835abbb28a9dad95607c5116921fdb2aeabf95a96f627d699"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_opening.d.ts",
+      "sha256": "d876efe2c9aadcd1f8e124551ab0fc3a80888bb97a0c4c7e48505b9ca329e6fe"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_opening.js",
+      "sha256": "c2a29355277326aa34a37cb406c2557c87b6539e8fcfa36d9b3579f4c044af0c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_ordinal.d.ts",
+      "sha256": "c176f0294897f5f3691b2f41a1806ac4e4c703c1d269e43c49bd72774a79ccb2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_ordinal.js",
+      "sha256": "c64f7f0f08b8271966e10664a8dc7d30fe3cbf261b391e4432679ac65b84a1cc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_provider_id.d.ts",
+      "sha256": "fc33e791b0b4fb51bbb6a01009156c82e5c14efb87705911026744a3676bea4f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_provider_id.js",
+      "sha256": "f469dda1fa57e85d5989504cf9070095a3ac0fc7ef3ae2cb43346e5e8d8bd9f4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_range_rules.d.ts",
+      "sha256": "17242b4bf4ffa521ab65233d4f17659ed96f273e7038e9755863f12ae3d9d716"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_range_rules.js",
+      "sha256": "95228b6d82451f04f709f411a49f5f5ac801390c0a59ab067d5ca07a9b64e206"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_receipt.d.ts",
+      "sha256": "9bb2f47993c1f9ddf6758749a0f4c70a3ba754a91da7b48b913c850b0aad57e9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_receipt.js",
+      "sha256": "49011ecb4837ad8a44e0bf6b23a56278e5cb7ff8b576bf4d4f6fc61e022a13e7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_recorded_status.d.ts",
+      "sha256": "728b31362bcdaacd2d3d3ba7e2277cfeb943e42d9dfa619a094318cea7e6d943"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_recorded_status.js",
+      "sha256": "70af7d63e462aac51c612f4b9f669dc3846a1b7ae8e3734a61f002048cfd1ee0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_report.d.ts",
+      "sha256": "565c8cba5aba7b3b033364c2740364f7efd25672c5486d8c34a18b88e20c1564"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_report.js",
+      "sha256": "ed02864455aeb5f9bf9220d4e0872ae8eb8531bf88f270069353e8b6a2ff6e5f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_report_id.d.ts",
+      "sha256": "56e8dd367bb57b90f62dd25cd4177dc4d00bbafb1594fa70f14dc062493deeeb"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_report_id.js",
+      "sha256": "b70b675df70da687f504677d9002c060092e0a9e87daacfb85a34b5242a5f866"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_rows.d.ts",
+      "sha256": "7eecc3c8ea117a33104945ec236c995200ea666f1ee00417c3cb91416009e70b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_rows.js",
+      "sha256": "18c3f6ef6cbfd6c4118dcce42d206cc9d3769e09e6e0fd04678678778ab57053"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_run.d.ts",
+      "sha256": "775291b5ba1f8bc0b0866177ac5c82677762a7f75ad3f1847b730597ac98aa16"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_run.js",
+      "sha256": "8ca453bf438f5d00a4217661084c761aca6bd460cbb6362929b02e12c3a4f3a2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_run_help.d.ts",
+      "sha256": "b7bdba9626b7bef154af3e029210d50a305621b5b694021315c52cd06d2b90e8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_run_help.js",
+      "sha256": "f8f972e919963f350bea80b6478457aff64ed71e65f03cbdd2ea8ae21615ddc8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_source.d.ts",
+      "sha256": "4c893edd0c400c8e166442d03b15c2b1712afd13e50c043ae3d5c9e1ef10da86"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_source.js",
+      "sha256": "814cd171e2ec502594efd6b4aa4da627da5b8c00f83fe5a7b50680352bce654d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_source_account.d.ts",
+      "sha256": "7f8620d0f97d8078ef30425fb3deea029f3e008763c4584e7a845642e5ef00a7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_source_account.js",
+      "sha256": "c39a054ee1dfe2bf0555293efe6b187463c66e7f65451538dfb640ff43ac06f1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_source_help.d.ts",
+      "sha256": "61c819e76442601f9a9bf97b09ae15213ae067af31c35eb591646e208fc928ff"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_source_help.js",
+      "sha256": "9b36123d24a58a175fdd71b417406928b3150fb5530fed4b875240d4adad7dd9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_source_label.d.ts",
+      "sha256": "f11d716a39d3bab35139a62d1761ffac33ebd715d213878043891f159bcb32d4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_source_label.js",
+      "sha256": "f6da4e914e34e25f6c10a5b3b8c44be8b8770fc101c0842a2c545653c7a5ad00"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_source_revision.d.ts",
+      "sha256": "e5eed6d92fdc5531c3e8e2dda0684da934c27ad0e60555e4d3896c0ba9bca45e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_source_revision.js",
+      "sha256": "ea5cf3fa72573fa5248a4d3d720d9d593df1f520fd6af499fc5008fd3b3fe26d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_source_rules.d.ts",
+      "sha256": "cb2508c30df1b4749e1c9257cff93e323847d75abda0e3ef94bbd5f971d2ed73"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_source_rules.js",
+      "sha256": "181b42d0721044421dd235f19f9cf88462da47cb3e3105e2881c98ab1e937d98"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_sources.d.ts",
+      "sha256": "3c9e1c55f5729479a74ad440dfc8d6d50d007bdb8ebc635473522ad242ac4208"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_sources.js",
+      "sha256": "9888c5b08c5ea808fe32424c73d38c02c6163fdd8164c20e0e0f183d1f36c501"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_sources_complete.d.ts",
+      "sha256": "f84a5560fc012707414667003889035647b2b0f4c19d78c361de3c8ccb8edc61"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_sources_complete.js",
+      "sha256": "7016d384e4ae90062ba508fc36b2101ba9abb2f90f29bcb4b19dfa410b71d283"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_sources_incomplete.d.ts",
+      "sha256": "d2dc577125991a2a98a6c6105af4adf735991863e9a8441d463b00511fd12fba"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_sources_incomplete.js",
+      "sha256": "a9bb535cd7d47a6a618639206f247ee99e30ba6685c9e674aaafe617b8eceea0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_stale.d.ts",
+      "sha256": "564c8dba537c36e05c59a9cf552316740f8fa8aac8c38f7f1aaff9f6285fe399"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_stale.js",
+      "sha256": "2df51de4c97b4b526bae72558015ac0df23307b82bf6dfecfc3a228064d53b3f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_starts.d.ts",
+      "sha256": "f7c0f8fbd70116f4fe8b7a29418579b72ed81e8f7a233b298a6f9c37ed23553c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_starts.js",
+      "sha256": "ff1a0ebb3d652ff2477ba77d9c2c1ee1803885e85240c2f3beb75b63d6736d80"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_statement.d.ts",
+      "sha256": "487e79abbc5abedb8a75cb2760ff8eb0579ca920c0171680a56aa0899e093ce0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_statement.js",
+      "sha256": "0ac31e806f1f1b8643d98fe45e7ba4f61b87e7628f81fad690100850a1f63555"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_statement_id.d.ts",
+      "sha256": "8ff3400cefaced52741ba7e3853c2c3317d6c9d7fc8d8d67c36a3a6119d4016b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_statement_id.js",
+      "sha256": "19cf8caa4ed3cdcb97cc6b4c723c25978143527baad08fcb92b6000d016a21bf"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_summary.d.ts",
+      "sha256": "85f87bd143978330202dd107ee25a549c1eefe21e8406819787c051c643b3e03"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_summary.js",
+      "sha256": "591707e522adfacf7121c8cfae2ec8f57d7b67d2fa5a4f0be4cbe7b8d323cb91"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_title.d.ts",
+      "sha256": "61b63173b6d555c5fe8a3a5bb00cc3bd33dba3f4c4ea7caa9a35fee1f7acac5d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_title.js",
+      "sha256": "5ecfb62400d8782c7ca6a1bc56d8c9a611a1a85af19d7ea48a4acfb5bd846378"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_unmatched_ledger.d.ts",
+      "sha256": "85f910e7e58b5ef3f34c89b6251b27521d9910662ab69f7866bed563e2a84839"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_unmatched_ledger.js",
+      "sha256": "7e8fa4cf56d794110032b6f0182d8a5977804fe6fd998cc14352be1346bd6aa9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_unmatched_source.d.ts",
+      "sha256": "bac1209914abf1067c70c9f82fcf4b8607b8a14b93f293ddc420fc3aa6718ace"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_unmatched_source.js",
+      "sha256": "31527ad8ae3fc61550dd2e614f1b3bd78642497b088b2017857c6241f7fbac07"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_warning.d.ts",
+      "sha256": "0aa11251109c10fd51eac90ecb2f6a6c609188c4340ea088d8388e01f3396f5f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/bank_warning.js",
+      "sha256": "db09ae0e162f82fb466b77290cfccb712e3c1477b53c127d33d4b998e0b89bb6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_action_warning.d.ts",
+      "sha256": "a133c953ac7b3b016ac7578429be902589bd35bc4bbd991b06bd0190b2f10d3a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_action_warning.js",
+      "sha256": "a484f688db0ef69bae35a3b956e9f96cdf3d9470309c52f936423948a40758ea"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_bundle_id.d.ts",
+      "sha256": "c4e41aec7cbb282c0cc9519a9bb5e94ff843251b4fd13ce74b9da020b0731d75"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_bundle_id.js",
+      "sha256": "3f8bd64eccfa8f2940cf9b4527f76353eb37feeff90a3f416fa42c484ff08803"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_capture.d.ts",
+      "sha256": "765714758b56eaea00ada4da8dee7066a54ab8cb1e349be14998431f1a28890e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_capture.js",
+      "sha256": "cd6d7a0ae45091ea011a7152a1d8c7ff4c4b89c714dc9993564bd655a7d76269"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_capture_help.d.ts",
+      "sha256": "cdf76140712a079d92ff128fd6061940cbc99e486ae1144f21a272899d5991b2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_capture_help.js",
+      "sha256": "66c78269549290a3b37202adaf61be972f38c2babaf780ef342add8698340748"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_captured.d.ts",
+      "sha256": "70e3d54fd74ce460d4f68225d208d336ed5f787dabef489858d10690e9e3d824"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_captured.js",
+      "sha256": "ea11a9f89d01a102e71253a13ba9dfa9f99f7a3620f4c1cbbfa59d700332ab09"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_captured_at.d.ts",
+      "sha256": "28326897f6767e047e77f9f4b8a2279ccc7a820d4ab45fdfb110c5b52e5fd67a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_captured_at.js",
+      "sha256": "52843e9a20d8ceba1e3c593eaf5623c7236672e51c84d90323c629660382741c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_conflicting_owners.d.ts",
+      "sha256": "63b29403b7869325d6491d9b5a169a1946c0c3d141f62992a6340a28ed263b07"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_conflicting_owners.js",
+      "sha256": "c09cd0590fdd07f567f238f7e94f8dbf9fdbbc753d88e30ce098dab95677bc59"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_content_complete.d.ts",
+      "sha256": "a5c240aba678793038c0f7dee0aabc5b260c7072d745beb89497485f1e433f01"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_content_complete.js",
+      "sha256": "9200f0560ee9cc98f558868fd888f0c5805944de64573a999a83344c26b27e87"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_content_excerpt.d.ts",
+      "sha256": "f8ac8439adc86b7b2276fe05477ed614f54f2c1aafb4918d29a02b6f635322b9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_content_excerpt.js",
+      "sha256": "5e54ef56ffb8a6d9dcef1df756a56da635c137ac9fbacce407ce2acdce58cf0c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_content_not_requested.d.ts",
+      "sha256": "bf331a3803fc198667c128c4f91d3519cf3ab2b70435413c478b3b1cb4d66174"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_content_not_requested.js",
+      "sha256": "089d422b9140dd41e9ad9bd8467faee7a3c0d8dce416c6d016268ac641d4de1a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_detail.d.ts",
+      "sha256": "33a3228052617eac51b360e31a7ace603451ab0fbd251055a0362673a4e9876b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_detail.js",
+      "sha256": "aa63f3cb761de5201c16428b2e87930fc17b00c23502441ad9029a1c98b10d34"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_empty.d.ts",
+      "sha256": "f49d5fde3dc795985bddb2e05af37965e3576bbeb4b34e9430e2d3216fe67b65"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_empty.js",
+      "sha256": "9bdb4f7fa762af2509989ff3c557d87365652eba138098fdb7a0de2737d492ea"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_event.d.ts",
+      "sha256": "790543c2b802f8f585e48f53af5dddf42a4dc20ddf7fb1a01d3f8903b249a1b6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_event.js",
+      "sha256": "6aec8924f90ba6a528d951af771b18860392a258aaa17d31b5cd534a37922ab9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_evidence_detail.d.ts",
+      "sha256": "b4e296827d41bffb037177ac5adc55fddccd95387b756bbd66728e58ad1879aa"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_evidence_detail.js",
+      "sha256": "b91b51b492bcc45a8e0b66454c1d599cf79b46c9508db52c7ea3b663036ff8b5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_facts.d.ts",
+      "sha256": "4149e19c01ffd6e009185d124de49153b2f20a751175d8a546fdcb8d299b1f3b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_facts.js",
+      "sha256": "10c0858174c2670e616c17615b91e922ae52246cd4a5285380fbd82df2917daf"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_full_source_help.d.ts",
+      "sha256": "642ec65eee500fa91804101ae306174bd113191ca64dc81db52690b92f0e63a6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_full_source_help.js",
+      "sha256": "0e85d4bc1e10da26886d385123bdcf777bcc99ad95161f9410266dd64853ded4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_gross.d.ts",
+      "sha256": "e1f6f60128e483a1adee51256c6c24ffa60ba6b4507a2a93006cb59775886de9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_gross.js",
+      "sha256": "c876188a67232e375ae176c8138988a2a5712ceee066cd1023e5ef92458761aa"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_history.d.ts",
+      "sha256": "ac36579361b7a513db7aa18a2860eb90f73be883bb8232836097a2f7335e1d40"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_history.js",
+      "sha256": "c30ad3e871b38cd536865ebc01f946950c1cf2947cd044c33152bac96f0a5bba"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_history_loaded.d.ts",
+      "sha256": "ddc8d9084a5d3274c37d4210673556a25316543c3091a0bbe4c6649a9bfa26cc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_history_loaded.js",
+      "sha256": "0069df32ec6a4a895c3cb5817846477e8f45f9d679958bd3882dc00d4ab94886"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_history_remaining.d.ts",
+      "sha256": "a3bff47218d2777cc4b94bc67eeb62b0b39ff7740fcee1e7844f8e0315912d57"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_history_remaining.js",
+      "sha256": "fc12e79327e752f274543d47db108030bf55ce3c88259d192a79494b3b24d5fb"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_history_summary.d.ts",
+      "sha256": "5c9223424cba9a07753a0b4d364cba190d94d4401441a27aa20b12fc9505e3ed"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_history_summary.js",
+      "sha256": "02ae0a330cd164999a12a3ffc5c0e0e589eb466aabc34a62b16b325935d80f49"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_history_total.d.ts",
+      "sha256": "edb7f178eb80543275d18a43c547d81bb706c125eca7ea32b6f396934f7c427e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_history_total.js",
+      "sha256": "0f29a0518588fd16d577d2bc21a9ce857c95bff9ef49ba160b73832dede31cd1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_id.d.ts",
+      "sha256": "96d9c0d7fd3bba7678884bc097bab2dd767d3516ca8a487c7174af51cf29908f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_id.js",
+      "sha256": "7c74433843ce5b247c3aa4eed35399d5e8de98c0be9844619684f0f458205ed1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_inspect.d.ts",
+      "sha256": "f4fd8008387dd672de8564653d8eb7b65cbb03bee6c2919b1f52058758144218"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_inspect.js",
+      "sha256": "dedf64d44e9664a91e1aab5194c585e48dbcceb5c1c2e739b835d14e4fabdb5e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_latest_plan.d.ts",
+      "sha256": "7af88e91eea1fc64149e66733b9060e4ff3b1c05b40c3e04afa26cab1d78514f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_latest_plan.js",
+      "sha256": "c778307c6655c8631781ba503d4184fa3649f8f68dc0d4d2a4a03bc8fade3d6f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_latest_plan_bundle.d.ts",
+      "sha256": "2957332bc077e763957d37fe185b0af3f2c012f3035b1f0692666a1e48cdadf7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_latest_plan_bundle.js",
+      "sha256": "6d3a5f516c4e46c8a86a81cba94e199d2bfb61eb490022119bc9d5fb87fed4bc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_loaded.d.ts",
+      "sha256": "396a1c55186905f49c551aaaf7c3d7c50886b849ff28faf1aeaf533eeabb0768"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_loaded.js",
+      "sha256": "b0b54d10bc6a976932d85cc6a5c1a3d3b5f4e7cca1b4a3c178effe7a9a2c14e0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_more.d.ts",
+      "sha256": "9462f24de6a308649b891ff525845b667980c8948c824e28d2efc50664111b1c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_more.js",
+      "sha256": "9a14731341e63b28d755a61f49e8a0f8f6f7cd1c49ae8102534b33b3d14b2679"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_more_history.d.ts",
+      "sha256": "5f8ee6c65cd3ac9035fbc72e450a14418c6f581468b017d3ff88b56382b0fafa"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_more_history.js",
+      "sha256": "6fc1e8e40b9e56f578b88277506b2b37f6c1cd6e989442396a8043355e09392c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_new.d.ts",
+      "sha256": "5d628ec6f301fb76291fac634902b97889c27f5ed87ec348e5c67cd5b6536f6e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_new.js",
+      "sha256": "a4c28038fa1bbc05eee3d4e099947cff78249e1a388160955c28a7292f39d1f2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_next_actions.d.ts",
+      "sha256": "8a59222c560b83b53abb4ce87b08ad3c4be802ed20f73dc4d46c0590a45b7230"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_next_actions.js",
+      "sha256": "0a3fa0aaaac0a0a39a22d2edc5b181c44af9d3df564f3cf4f11d15ad66c2d25a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_no_items.d.ts",
+      "sha256": "0f4dcc9b4cbd8f7b5e6efccccbe4a24980d584a0a78724428871cdac985c0282"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_no_items.js",
+      "sha256": "fd96ab891b3a5ce9dc2a118721fdc7bf938d25c339d9a317265d876fb785f4d0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_no_remaining.d.ts",
+      "sha256": "8fe9bfd3bc2eba3370fc48088e02b363bd3901dcd793ae00a5f43bb7228ca498"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_no_remaining.js",
+      "sha256": "568508e737a0a754b7524733d3b66cc9211f9a58bcf11c7f6a00a94a2e0303dc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_not_assessed.d.ts",
+      "sha256": "5185187d8bd818fa54ce61d4d1096300b87466b85c15469c57047f749e31c815"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_not_assessed.js",
+      "sha256": "c7a1cd8d2bdbc2c5b50cf7e5784aae409231940a4ee3c4a6cd7af8669ba49d3a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_obligations.d.ts",
+      "sha256": "0f4239e33cc53a920d66cc00b8e2919420238ec830686f92a7b060f40e2bcd63"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_obligations.js",
+      "sha256": "79199955754193cbc0d45d1b6610422ebab77965c213e25bed47ac21fe358586"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_optional_id.d.ts",
+      "sha256": "7129d1b74e40cf0de378a05faa6e10ea31131202102c31967a48ee831de4a3c6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_optional_id.js",
+      "sha256": "506f6aaad74609b24d832f15722d320334f4e08c8e3e0678acd115d1ee2617ab"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_owner_conflict.d.ts",
+      "sha256": "c5966ad65938dc04382e1151782cb9701c895c9fbd12756421700250bb8db077"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_owner_conflict.js",
+      "sha256": "d4b78f970a929133e81633d081db2db2bd76a6e2dc673dad5fa94feebaaf3929"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_owner_conflict_reason.d.ts",
+      "sha256": "dfec4583d75b376dd988fb0cc4818ae581e18593220cfb9f9afa21312efcbe75"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_owner_conflict_reason.js",
+      "sha256": "7137fb7809ce16fc169dae055171e594349505985a68ee5315a0f0d4a6671de6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_owner_conflict_recovery.d.ts",
+      "sha256": "4e248d4795cd0fa2b9edddd1b4f49a74bc7bd1aed5e7330f800c17afa9e698f3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_owner_conflict_recovery.js",
+      "sha256": "c5e41e1609d0fff9ec12dee24e5083f8956f781281baa346374f2515c749853e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_posted.d.ts",
+      "sha256": "ba0cb32c85b44f6b36c33458e853ce01e284d6152b25ff0bb0d41eb9782c0966"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_posted.js",
+      "sha256": "7c6a62bea02578f6ec7f0d64ae0b3a8459a3d0016a5cec2385c6862605227767"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_proposed.d.ts",
+      "sha256": "5ff7f2933b3fe5df23cbd2e298a100b56acc0d83624623e10df6ee21a48f0b10"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_proposed.js",
+      "sha256": "6df258db642c4559723c9e356dac14d3d0a5138776689d04855f2b697229121d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_remaining.d.ts",
+      "sha256": "a68b44a9c96d349f0e66b86a619d15387a482951cce4165ac4bf1de1c8605dff"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_remaining.js",
+      "sha256": "76d29f98715d93ba1b941fbf5eb28cad0ab5dc5eac6d7802865074c72821e661"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_remaining_characters.d.ts",
+      "sha256": "543c7336b87256ae109ef64dfcee0617e609ed71d5077a2a143a2be426d66a27"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_remaining_characters.js",
+      "sha256": "8c54946fc98ada9006fcfd3fafcdb7b76251e5b3151d8de5618fcd8a54aced1c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_required_fields.d.ts",
+      "sha256": "c0e108cb8824146100901e63f4ab89a5b987fc371568c0799fe074732465846f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_required_fields.js",
+      "sha256": "21c801c1e8f11859f739b5bba18b4cbaddf0193ffdf582f3d2f22ddcbabc6608"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_resume.d.ts",
+      "sha256": "70d1125569ffe87392e1f58a5e282d0b007b081d781e7c8308237b85cd15b4ee"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_resume.js",
+      "sha256": "7e771add8ede589b212e82e4351b9f4c42905dabe749a33b4ce5c6e76d626d8d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_returned_characters.d.ts",
+      "sha256": "68ddd07517bfaed537fe64249c93e6d16335dd8f3a30713bc247a4459ae1fa73"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_returned_characters.js",
+      "sha256": "b808f037271a25cede74844a901637ebf096f8839b5bdddf02b297f19df02aa6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_reversed.d.ts",
+      "sha256": "3db9cbb85e470cc32216604ba4e6d52cca3fa80d53ad008500f41bef22940b8c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_reversed.js",
+      "sha256": "7767dc540f590a8dd5b1663e006579872530ba068c601153f11e491438cf214e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_review_plan.d.ts",
+      "sha256": "22d3479ba8c315c3c3da223059ee6da7b625da83ec095529603ccfedf41f1a51"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_review_plan.js",
+      "sha256": "529457b8085070e5f2072dc093b577aa99e0f5790a04d54955c1b26ab1eb78e9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_role.d.ts",
+      "sha256": "af8629327a4ba22a551247a1466267ce77f7436a26e49cc8139c4b1f9a88b902"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_role.js",
+      "sha256": "b5f2d39cad007311ffcc2ca6a5d01e5f3188a2036c1b9c80db727f3cf9d9d4da"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_snapshot.d.ts",
+      "sha256": "bb29248b5e244eda50a5b36ae8f73950f3880e6b748000013c4cd1264b699e8c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_snapshot.js",
+      "sha256": "cbd83a5bcece4ef946d593793552d1c1c34e3d4e90bca0cb4be66c8e85d53a79"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_snapshot_id.d.ts",
+      "sha256": "7734ff1b1e82ffd588ebf0435d0e2a3af26434ae6b97de3c3455df58e9ce248b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_snapshot_id.js",
+      "sha256": "618172c751311c2d9b83d8b2dcc56ff26baf4c5b5930b453c8acc2b54b921c35"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_standard.d.ts",
+      "sha256": "fa36ac35a62ae772f6a7b1484d0e1129c771691c023633f2ce18c30bcac44e18"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_standard.js",
+      "sha256": "56689225158846e58ae72399fd4cce1398586d1d6cdae8b599131cf240b8b980"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_state.d.ts",
+      "sha256": "45dd844784313ce3b96d2a062457033d557a601239fec57c0d4412cc9a3d1987"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_state.js",
+      "sha256": "79007f332eb87f3899d587d4c8a7ab74702fb190cb7887f78baca71aed262eb5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_summary.d.ts",
+      "sha256": "5502806b17a8ddfded5ad5a8fcab8716f7390f23c6eebe65cdf8ea817181f362"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_summary.js",
+      "sha256": "73c60e1b52a539eb5cd84588e99a3f837459bcf6c1ed6a819214a8fabdb4473a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_title.d.ts",
+      "sha256": "1c7ed16609e791c2ffe8fbed036a8fb5dc515a95bb80af38101b807ec60ccf90"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_title.js",
+      "sha256": "fcdc1834e29a3cda64424bf8bc403ee5b6cdef6f99091dd7b684616607ed42e0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_total_cases.d.ts",
+      "sha256": "3f828ecce1626ff36683463159717ff114ac949e2b57261ed4fdfc8454052ac8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_total_cases.js",
+      "sha256": "4ac817f6a7d02a454f3189ca8941c591a1081231055c358c48aebcfd0031038a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_total_characters.d.ts",
+      "sha256": "716390b88292c72f6aa303c8e14ffee36d1556ef44652ce0178a7ba712d32811"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_total_characters.js",
+      "sha256": "2832a173943ebda159e7d12be7e0c3f82e931fc00e36e6928f9d715664776433"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_total_plans.d.ts",
+      "sha256": "b9bdcbb199c4a62f0eff42310ba9297004a15ed2c52f7312cf406c2ca8d15873"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_total_plans.js",
+      "sha256": "2140cf391e3f7e67f0b81bedf3c0a96e2c7bcc828768d210aebbfc6628f1ccc8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_totals.d.ts",
+      "sha256": "ec51a987119a6ad00105ddcd72db94ada76ffb19bc4617fcd154cd3497ab6f81"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_totals.js",
+      "sha256": "a7b5209d6d92c256dfe58565a3560c7914f3a324e62dd5431b868a79734aa8e3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_untrusted.d.ts",
+      "sha256": "7aed0b92a70fbb4c19f3a995becfc773b1dc9582ce6c7153133f2e2ae3e8b702"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_untrusted.js",
+      "sha256": "97e0c03d2905ef89004ff6ad795ae206142a903698f21e5b899c83bc2c638c8b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_vouchers.d.ts",
+      "sha256": "9ebcd5a26e8267e21b0838ab8bbe4b922809be18e4d9a0340f9b83e839cc3ae6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_vouchers.js",
+      "sha256": "0205ae0d936d6dcbd02828403b3b871adb1fc2f94e7288d5c40e436765d865b7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_warning.d.ts",
+      "sha256": "5d0954e58d80f5de90cb1170949efa6cdf9272ce4bd4623a85acd6bbe143ec39"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/case_warning.js",
+      "sha256": "5e6e21c3b80af8ce5bc73653511e0f637bb9581c776601e030b32adc906e2d2a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_account.d.ts",
+      "sha256": "57efd920fd0dc1aab55208fe4b6d068845156dc40543ade985b3f0f07658ee3c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_account.js",
+      "sha256": "2c866c9b0e9d5aa45948d0d6d9e103bfd1294c18fe33e2020239f7fbedb1a477"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_accounts.d.ts",
+      "sha256": "6be8710ab147b912060d9fad78a3114e2902629125ac62b2b8840f87b7872a23"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_accounts.js",
+      "sha256": "4b10794a66bce83e05ee4dbaebb7e960842ea173e7b952ae13f078df8ce74e75"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_active.d.ts",
+      "sha256": "6fc1113c2f20386051b1cdd68924f0412a8692fc7bd172aea2a9f3d2977d5240"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_active.js",
+      "sha256": "9a9cdddd4f86acb7f9db99f67df45e208c9ef4621ecfc898c8a63e4d80883c53"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_add_line.d.ts",
+      "sha256": "f709c025ae59283372d3451f3e7b08dbb805f177e36ec3ad4c0f4e92448bd0f4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_add_line.js",
+      "sha256": "64a8b1f12430d0a413a5eb216b6a7c8c3991a5b3b9212fc4efe3f7bcc17a6156"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_approval_id.d.ts",
+      "sha256": "abcca04ac96df86d83bcc32625236066dd8d272471fce895bfd2e72f095dd1c8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_approval_id.js",
+      "sha256": "7c0b9ea0c34db6777bc492857b9e0a460331e3ec070a713ebfcb7011a942f3b9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_approve.d.ts",
+      "sha256": "87de3115d2fc2f9efc98196485fae6c119bdd4b334f4846635cff9984d801846"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_approve.js",
+      "sha256": "20cbbb3b0be555f54be8c98fb14145b190009062e43545041586b0e2851da17f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_approved.d.ts",
+      "sha256": "6d4daac9d46bf8b9a38138d861de189501aae1cd500b274e9aa508fd85622e51"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_approved.js",
+      "sha256": "6b2ff358657d27d0ef72ae4e82634d7f4ac09e8dc7b23d1e095d283a0dae613b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_balance.d.ts",
+      "sha256": "eb4a974a34114e385a5b90d2845749ecff99aee1724ef1ea052daa5bb8923b38"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_balance.js",
+      "sha256": "ed27c44884d831c93516e51bb8936694fc8c5143fc15b3202586d719aba54f72"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_balance_error.d.ts",
+      "sha256": "0ffce17ae8833ba82f5189bfc43cf2ec2eb7aaff4604906020dc38735f9c42f0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_balance_error.js",
+      "sha256": "2604d09e29b6b782f886c8a9d1026b69981ed63a3932b909d7d6e0597ce5323b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_book.d.ts",
+      "sha256": "e2e403b23c672949abf41682b730fd32e6c69f11ee0c7e4203f82b4de6b6c3d8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_book.js",
+      "sha256": "773585fe09e677b3a977d190d40a8ddf8294bc63c3d3108c7198b062c934c36a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_choose.d.ts",
+      "sha256": "17ae015fdd654ab1849d7d9beee3217342ec9023048e7558f9d37fea5772e159"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_choose.js",
+      "sha256": "1b7721544a14aec5136f7c17172d6592bb4b906d75f0a59e9702f707cdbdf67c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_committed.d.ts",
+      "sha256": "71c3227e9507e5c91859d99b28412d6a9f11f98c2b11712ac917aebdd4d45606"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_committed.js",
+      "sha256": "038f1e79d2ead4fdaaa39c787a5a0d6b0789b3e4b2ef19644ab024c7ad27b903"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_content.d.ts",
+      "sha256": "8949e0a52888bfcb590be21756c88bc315f520c884c27e33db2cca7f72842740"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_content.js",
+      "sha256": "1a1ddde1671992934eb2ba74cf170a244c9d98c0329a1ad83b81954fb216d56f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_correction.d.ts",
+      "sha256": "80f8debda9c234c4125dbd381766314cbba5c9a62693324a60836ff71559ca1d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_correction.js",
+      "sha256": "8e6491df2950b1b83255102ab4227485ceee9242053eef4237033ebd48d34b66"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_correction_help.d.ts",
+      "sha256": "643ffdde9e9d00592d8516662ad5476f020688c4333cef0474fb3c5e128d77ee"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_correction_help.js",
+      "sha256": "f7f7a54d12440797a2bb7ea46f4173a9a0095bc4a01400f09572e4df64ab9698"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_correction_ready.d.ts",
+      "sha256": "49986077836bff529d04347f637cebbf8869b9fdfca6500dc239171eb103ac69"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_correction_ready.js",
+      "sha256": "b57275bb4de163fcaa76c1926b1cd5c5b5193c023abf767916b954d958acf0b5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_credit.d.ts",
+      "sha256": "08247a259368de811894ae719205e32ffc7a45e443dc9c6360164fb83ccdfcae"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_credit.js",
+      "sha256": "4e3e1031c2c43d9888725c896cc90a90a63516c17ca10c02b66944f04072fe76"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_date.d.ts",
+      "sha256": "dca495872e1aa02131ed5afcd6f292c454656cfae3ce1e96026a1cde632b5afa"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_date.js",
+      "sha256": "df7551b5d0df01f2e388255f2026396cb4d15469cca144807c91b6f89362969c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_debit.d.ts",
+      "sha256": "e3eb80b63bfb51cadee0f49328c432bbae83f0d647118a61ca6d353630bd8db8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_debit.js",
+      "sha256": "3bb378dc614ceb677c2155f335b98a42a1f56198f5bc84550c3020b45a896e30"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_dependencies.d.ts",
+      "sha256": "f5cb7d8ede389c5116a097aed6bac26b3c51f0ddf938d7e3937450711c237b58"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_dependencies.js",
+      "sha256": "df84261b6eeb9cf48dc38d4808d0b5cf26bcd2bd20d0cd2d47c46bb84b10f248"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_description.d.ts",
+      "sha256": "5d9763a5060789697fa8c022f26730010365cb7603a82a032b8585c74dd62b02"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_description.js",
+      "sha256": "81e85426e738f7269a16d5d892e792bc515448ed2397f5a2971008e7f51b37ae"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_digest.d.ts",
+      "sha256": "e821a0af4533ad7c868c026f3e15d624536f20075cde071a896cc9d931854fd4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_digest.js",
+      "sha256": "3557d3f02950d70bfdc61ffda4ddf86637385528d42b916660352f8f4dc938ad"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_email.d.ts",
+      "sha256": "ea9a25a19af5387faae3a8450dcf6c4c0b78da48044d6c1cb10a15953595059e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_email.js",
+      "sha256": "734630aebdf37702cf49e522d40b5d7f25a1753ea85137c74233338bf7cbefb0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_empty_vouchers.d.ts",
+      "sha256": "48b9d857a8ba899d679290df5f5ed7e123b80189c9c8ef24aa7c7cfd0f0e33b4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_empty_vouchers.js",
+      "sha256": "a22b7be93ef372f529002b918aa62c80815102cc7b707dd0fde6c65f87ae019f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_event.d.ts",
+      "sha256": "1cad1c199c27fcb110368595a4b2a52af634cdedae5a04614c535d19afa038bd"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_event.js",
+      "sha256": "892e230cbf43d499753df593983de6b48fef6a451b4ab7a70a5ccef26e892db7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_event_help.d.ts",
+      "sha256": "faff7934e07ba53e672a801f58fe33f54d662a07ceac803faf9c91b79d8b6ce4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_event_help.js",
+      "sha256": "fe0d47f5a2760a4b39c64bcd66e641871520acad716c3ee5c4f9ceabd73971cf"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_evidence.d.ts",
+      "sha256": "ea99bd77c5a1ab0623dac11771fd227f49dcb156610d97d36cbdff1596294678"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_evidence.js",
+      "sha256": "70b4b719f1bc2a4c8e992bdb314c9746e236a541f7207fa849d637c5b733a739"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_evidence_created.d.ts",
+      "sha256": "0a6f9e4a2c7c062c9394bb903096388310855e3731070763c00a725d5e54fe3a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_evidence_created.js",
+      "sha256": "64c3147f630ac88af832e4f2f25e9c68bfb48b29e75fb5110c49acf2a99aded6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_evidence_format.d.ts",
+      "sha256": "a951b1c2ab0cb6621cd65e63bcab5329617a5c57d23261e7588870e1bfd85d03"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_evidence_format.js",
+      "sha256": "b61efb74b2f74c5324adbd25acf466853548f912a3c861132ee3eb8464601ba1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_evidence_help.d.ts",
+      "sha256": "97722bdeab2896407f2b728fcde2124e43d3d9655bd78d1c00cf583dde66cd9b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_evidence_help.js",
+      "sha256": "397fb6d31ad64d6caf64d281726f0dee7e3567563826adac29f472c1698f5d42"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_evidence_refs.d.ts",
+      "sha256": "6205c9d2001a84107815b1cf6c2853aab39c9b91e6db91f22948492cef4756b9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_evidence_refs.js",
+      "sha256": "029a93e14c2776af01c57e9ae54f7d88f766856bcb0d159f866523aac6312605"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_execute.d.ts",
+      "sha256": "32c64b3d83122fe5ff8a1f8e00942d421c58a96de2a9c1f614fc96b6a577638a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_execute.js",
+      "sha256": "5d409965f24c0566008d94a5d2d62b38885bb88c11ab4e97eae7b7592c74f114"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_execute_help.d.ts",
+      "sha256": "33080c35a0bbe583f4177e3f68d34a1bf8575f16ee30c894f48c7909b455bb85"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_execute_help.js",
+      "sha256": "c95d29f41a9f5072242c34ac97623818b88ad68bb9d8751dbbb6d344d0d9c8e7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_expires.d.ts",
+      "sha256": "9363969f933ade4f7c1286599f705c64eda6e035eaa4ed8dcb969b2649a69cfa"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_expires.js",
+      "sha256": "99c820d23284c12abcf9042b17a386eff6d7be54364b901f98d5ebdd7b0197cb"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_hide_evidence.d.ts",
+      "sha256": "67e3067051cd3e477babc186fef41673a027d75a648f954375cd0bcf7e69ed77"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_hide_evidence.js",
+      "sha256": "36e27cd59055137eb4ddb24c922f3e5b83fc287d7c587d894598928e553bd1e0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_inactive.d.ts",
+      "sha256": "5ac32394d4f98ce78c466062c0b7d1a274142b79ae0655e1811592f924971f4d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_inactive.js",
+      "sha256": "5142aa48343d4aa3c88c0411ca15d8ef6939039079a72cc3aeb7b3e6c639a814"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_inspect_evidence.d.ts",
+      "sha256": "5067725559545ea894b4ca1b4297648393b05475f9c52b7af966ca6c4337a00a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_inspect_evidence.js",
+      "sha256": "a9c27c421ba1542544ee55cc5b172e7eb59c609caf30fd659203a26a7c803d2d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_intro.d.ts",
+      "sha256": "d029448bb7cc8ee8328eb2d42e402adb831c7ea41bbeb843c41bb913cae4f803"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_intro.js",
+      "sha256": "21a3ec5741edd6d76efb59568a3aeb278aad6d133c5052d3acf5dfb3234bec78"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_invalid.d.ts",
+      "sha256": "f3f899b36fc936620376b18a5810b9ad2f56ae1c9856470f610d82ed2b273faf"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_invalid.js",
+      "sha256": "8bcc160268a91bb06c810ed86c64b16162be598e70e1889ea8a264472097107c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_leave.d.ts",
+      "sha256": "2a5dc661521a12db05b0a9ef3a9974e36047ad5c74354b7a10d9aaea23457d32"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_leave.js",
+      "sha256": "f7ede7e6270af88fa3d1d5d8ebdc76a9cb5e666dbbc4822b4bc413cb983e1710"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_ledger.d.ts",
+      "sha256": "62d9bab1ef780822e0a0905bc2d0eed996833e78575d8e8ab0e5dca881ae3eae"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_ledger.js",
+      "sha256": "ad4d5c403c7d080290940e7ccbdaad1c350710d6c029ceaa36234abe2efd0e75"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_line.d.ts",
+      "sha256": "14b1ba22ff9a49a0bfcdabcee790f8f4524a0a5f8ccdf2643dbae57d2149dfba"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_line.js",
+      "sha256": "e5362440c66efe6844a0d28c88a7e6793770e54af69f08f3973625baaec510a3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_load.d.ts",
+      "sha256": "45977a6efb561c2ba7f6e195e16d75a86cfb092ad55bb3fda495cc129c164680"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_load.js",
+      "sha256": "a282fb83793f5c1bcefe384e2c3ee4cb02efc94879aae3cc589bd39db585743c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_locked.d.ts",
+      "sha256": "8e593389f1e52157935d0404a5f519d0f9253d9df30bdb70864d6967b4ad379c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_locked.js",
+      "sha256": "ce0af3aba55ebff03a084a46639988cdc313f1d9d75cfe9f21f3e0cf3f2b9ebe"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_login.d.ts",
+      "sha256": "e0e3ab619786c17fcd0b8c8a3c4b8ba4e01e1c5edd00b12bfc474b4ed9673f1a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_login.js",
+      "sha256": "852aee727f25673b627b7ac3b5e78cac8086e0a774c8ad4560102deb196dde67"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_login_help.d.ts",
+      "sha256": "b8bcf3ae7843068377eb9481c3eb522cecd2818531ac55b2fd06d03ed2506529"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_login_help.js",
+      "sha256": "c8ac93379782af207b8313b956a22ad1359ec6499c238d4583f7e5c4a6906bf5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_logout.d.ts",
+      "sha256": "097b2fba380d9a1e0bd3e54389c1221aafc55f9e4032b8a1960ef2ae731b6d4f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_logout.js",
+      "sha256": "e9422337032759ab12185b66ceafdb71354a4feb25b6d21802f190a079670903"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_manual_scope.d.ts",
+      "sha256": "57686e7db56bd6f30d427807c30a23fa4402a209cc51e374417790127baf7d27"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_manual_scope.js",
+      "sha256": "742839ae70c309f1aa5f7e8b963c3e0235cbdda394d54e17abc9552d41bc245a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_more.d.ts",
+      "sha256": "d606db117b156beb87cc8983f68dc2df76bb13c038c84e085ec660e42ef1f285"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_more.js",
+      "sha256": "5a517dc4643045f777c67c2423abdc8a9d369bd68ae06fab659f1c9bdd82358e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_new.d.ts",
+      "sha256": "0af588d74b7fa3b07143679d8e379bac7e0694271b6986036e5c1a4e524e7e52"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_new.js",
+      "sha256": "86df30f349fdddced3f898e2cdb6b5e208add8d0b8aeb37044983014d820be39"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_no_accounts.d.ts",
+      "sha256": "c906597ad4713531c449b818e4fcfb653439fa85b6a8ae16205bd43f3bb2cc8e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_no_accounts.js",
+      "sha256": "10ef9b41518c667f66a3fad2cb1de6c218ce4138ce5c0f96bab90de960ed0efd"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_no_books.d.ts",
+      "sha256": "9475ee6247333f33ea6d49d3abe410aa01e24ae764f3de5be5a6d15210560c19"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_no_books.js",
+      "sha256": "99a03592fec6de1fc4aba1c83c464423b04aab5bd0c22f0604ac14b37e7ca3fc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_open.d.ts",
+      "sha256": "6ceba4e4bcf5d813866c0c951333e1a4e28fc3f677069d01b7f10539d433586a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_open.js",
+      "sha256": "ad4ea18fe1d7b53ce77929678becd30406247a494498eec9a3353bf20fb6dfba"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_open_review.d.ts",
+      "sha256": "faac503f60bb47bbd8a3374cb78bf24d740a5dc7381a012e2f3b8741496de487"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_open_review.js",
+      "sha256": "cae3c85aad7e822876cb02d7fda91262e9b994eb0c265a41c927d79ec5e03516"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_operator_only.d.ts",
+      "sha256": "a5edd9c22ac766185825534a7ed4e471ca786a1673ef30658ef80a26435eb708"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_operator_only.js",
+      "sha256": "51a669ad3aeff45343c301265b36b2e7db7bf9b4da23d41d210c0fca85650ddd"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_origin.d.ts",
+      "sha256": "750be5194099c5bb841cb524c998a288e300a84798b54db7fe82c6e7dedc2abe"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_origin.js",
+      "sha256": "00e173370a08e140c47dd1e5c3968a9a1c511efcbee81f282a25d4dacfde2c35"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_password.d.ts",
+      "sha256": "9a2d3302e7fe7b3af0d90a99d319238d24ece42c1f9bc7c09e6a82e696d69b90"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_password.js",
+      "sha256": "80a1fb5bd46557e142848974ba0c3cb05db628118e397883c2fc33153db47a23"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_period.d.ts",
+      "sha256": "d66385cdde794839a693d7aaa79fc82fc434a31fc6b2f4a53ea1750c190112e5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_period.js",
+      "sha256": "fdb1b4e1641fb5302b0928df1969fde9dfbf58e9714c33b1a9e2b77b8be56ab0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_periods.d.ts",
+      "sha256": "6782d85f894d7ca6c20deae90a72a8b0b3cff105da1021729424e9bc78e53625"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_periods.js",
+      "sha256": "cfd8b29c1262bd34c1edd5cd54af155950d30fc28dbcc29b6e6907288f3c4796"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_plan_id.d.ts",
+      "sha256": "dc0d4821641b80b474c4439574f0285d71d9f0f645c5288656d94225d3857947"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_plan_id.js",
+      "sha256": "49dc5b9185495c10bf31fac08ebddbdb2c771a5566762cd83758de1672bd2f48"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_posted.d.ts",
+      "sha256": "333b6b5695084f307c09eb25e394af9f4a79bc7ebe7f05f9c345285be428d50d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_posted.js",
+      "sha256": "2e9c943e77a568ffd525f6a581dec0fc0a7d0cd770fab66d635a0b6efe6f82c6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_prepare.d.ts",
+      "sha256": "36b3999c805c26f8ebfb944a2074c6ff3c0640e6ccd47f09a5e3a6e2f28b0ca3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_prepare.js",
+      "sha256": "9337890a1fef9208872d3b62d19023826bef1c57f69ff22b69af18ac723d6bd8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_profile.d.ts",
+      "sha256": "6b2fda54805da6f6ccb3cb82b5fa458024d72a2835ba7ea5fc74b21f1c182799"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_profile.js",
+      "sha256": "0a3217d56aa4bb05e70993d125ede2ba7cae509098f0564cc4a4ab7c193f16b0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_rationale.d.ts",
+      "sha256": "1a14bb06dfe682a59c572471ba8082e3cd9cf7169c35619753d6e368ba66b001"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_rationale.js",
+      "sha256": "4696cf0cf2201867058650c70df81f111f0472cf0157afdde733f5b49d19cff1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_read_error.d.ts",
+      "sha256": "a48643d0bd3ed1d50ad6f3813b0a8b2533973c282dc3a6afadbf305e0004841d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_read_error.js",
+      "sha256": "ee36ae4c50a6412ced22815422dccc4f3bb39e3b709cd676cbb45c5360e4ff15"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_receipt.d.ts",
+      "sha256": "023fff08b929873a7907e7a8b9031360bb062ac74b205f9c2e839ee5d01b056c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_receipt.js",
+      "sha256": "66f55592f69880ca20c24250e8482c15936ebcb162c806ce218b20e7b53e03e5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_refresh.d.ts",
+      "sha256": "923279c3701776e9d6478d2da0aa2f8c7bbee76d90faee62f162056286c926cd"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_refresh.js",
+      "sha256": "cf24cf0f44b6f3432cfbfb9a2461c8b3dc6e5dd640a660de79982ef74b79ba91"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_remove_line.d.ts",
+      "sha256": "b8360a8047b2b5fbd1ac8bc67fc3e829b68f50418cf98dbee0925bb536129011"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_remove_line.js",
+      "sha256": "957eb1a66494eced52469a22d803080034ea316b9b4cacc3afa8c0909de9e2bf"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_resume.d.ts",
+      "sha256": "90e5a358a28c76ead34c552a6665f1f4307fddedf7107b859d6254d69daaaba1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_resume.js",
+      "sha256": "fdd169f15cb143b972a467e4f39364c3be70fa84e9a9341c6843128c327ed003"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_retain.d.ts",
+      "sha256": "45d551c71851d1ae0e3952b5880db0944b98679b7d9f15c0a84f6f6db487ffda"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_retain.js",
+      "sha256": "db6a642dfc399f365553c0b5e3fe39ea37b8b64fd78005b2d27dc743ea59616c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_retained.d.ts",
+      "sha256": "9f58c130dd49a13c5e2df23a580b2d7c67490f68124c1806a82a3cbbfa80c6aa"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_retained.js",
+      "sha256": "0df7699a8b4297f3e4a707d8bc811d4776ff107acd332c48579a9d5c50af7cc4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_retry.d.ts",
+      "sha256": "88461ee98a48de6cdaee9530ee53d15327ff63ad38b30d9c70215f995e4e2a22"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_retry.js",
+      "sha256": "6c7153ae74876b3247079167efd05b3fbef8ecf576cb1510e94ac1458009b8b2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_review.d.ts",
+      "sha256": "1035d763f50d7fad052c3600632c1bde0673ea9b8569fe5a3da16c81124785e5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_review.js",
+      "sha256": "977d42048a436ae5e8aed1f4ec40abc69ed1416f75887e62a368c6d2ffbcaecc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_review_help.d.ts",
+      "sha256": "619cec27193b6d1dd24ee8a75f102ad0ac36d6e2eca9c4e9dc73672cffbd39e2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_review_help.js",
+      "sha256": "e8a21f1047d24188ffd7a3d2af7a516027e72c90d7f72c012507ec5afb5ca11e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_role.d.ts",
+      "sha256": "7abb0af6c77fec745cba5378064bd5f828d0852d37687702ea3a2fa868d83844"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_role.js",
+      "sha256": "b2f793b8609c8a9212e6654144842b97dc022c64a86e11c02a3f71a4872edf92"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_seal.d.ts",
+      "sha256": "f0bfb5b7b32de6e15cd0ec9f9c7621546f5af419ddb438b5cd0349c857fffeb6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_seal.js",
+      "sha256": "a543df166e4d70ef455d08752860fda48a386e97a96ff968a79454e971315741"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_sequence.d.ts",
+      "sha256": "cf601da6ede996561c633045760f35cf53f4fd7f9d043510b118000fc89043ac"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_sequence.js",
+      "sha256": "b4e43d05893f70e8b668628141bc8e39504cb0de82d848d3d7aa2d965ab1e4cf"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_series.d.ts",
+      "sha256": "c0b86ce429db0ff06cbaeb62e6f9a141415aac7eb02eaf2692b6ec76a491b15b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_series.js",
+      "sha256": "da4eb6697a5ac524c1849e89a606d78f680dfbfd90046475706ba11ffd0463d1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_setup.d.ts",
+      "sha256": "43fe45c97742d8fccaac4de5ce9ffb8ba8393f96bbc427a7face2b4c85662039"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_setup.js",
+      "sha256": "b705390674a615768b7b3b3c4ae6340f42c4f1fefecdf2f736cfa2a764b99adb"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_setup_warnings.d.ts",
+      "sha256": "de97b9aadc932f73d6e5ac2dcba192c3c3965e6cf7374991f712e1a76db25f0e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_setup_warnings.js",
+      "sha256": "4834ba657ad040d869149e97e713e7a0b817a01c1883c6210584c667f937b921"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_stale.d.ts",
+      "sha256": "ba08c962e5745dedcebf5ee5497be241a78fda711bac53b7738ea65af83c6865"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_stale.js",
+      "sha256": "618fdbef3714008d4ff85a48a98ec9a30f6bbbc2acdfe0ffa7c0f3d837757796"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_title.d.ts",
+      "sha256": "4e6084fdcd9ae3c9c36ce08999ddd7fbe37de93e9d41891846ea50d0d8e35dde"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_title.js",
+      "sha256": "b04a0b3595f8d191a3f651dd7f78570c9739986916355f34f51a717f8eb0e344"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_title_field.d.ts",
+      "sha256": "157fa5aa29ccd22d5cc25c7100c277f78fe44e56997323b5304361affe31fe44"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_title_field.js",
+      "sha256": "0eb027dad7c29f379ef9248f32b49feecc6b351717bc2859dc0ad9a8c52204e8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_uncertain.d.ts",
+      "sha256": "ad13cc03ef1c7ff102e3a9ca4705881c7b162082b75c3a86c927c3b0e4df2185"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_uncertain.js",
+      "sha256": "d092c65de2e27b81687fd0481f48fab86ce18fcb1477d18ca0dfd2647663b93a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_units.d.ts",
+      "sha256": "a28202dacc04f48d6d3c181ab9cf8fc231bef5040a8012e8242b486f2a670508"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_units.js",
+      "sha256": "13cc5c5a0b88e06796ffd56123a530b6e8bcdcb5f1b1dcd0ddc82fb7c1e9d35f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_valid.d.ts",
+      "sha256": "942e0bbce44965d5494a0e25e592f1de9b7c720a052d707dbe97fdc21b196e31"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_valid.js",
+      "sha256": "775336315bc7769ac71ec9b6304371145560f4d831970fe2fc88833cfef16f59"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_validate.d.ts",
+      "sha256": "051ca68a1c85b1485a3b42c366ec64648df21807148fa97864e9279df60dbf3c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_validate.js",
+      "sha256": "cd273e2d24a9dee240d44c6d8be033528760b61b4c6b1c1ac3dfb0ee18a29606"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_voucher.d.ts",
+      "sha256": "ca96d36b2610e5db29c89146b5df3fd5f647aea4cea71d96a6927ce8d5399dad"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_voucher.js",
+      "sha256": "774b751594ae395f94f0bad17f8bae0fcc75649a950443c4934113d98ce8b149"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_vouchers.d.ts",
+      "sha256": "766738e372b548f9996165a0d31afb31281a532d4045fa2b1bd50f1c3a62305f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_vouchers.js",
+      "sha256": "9b85e97e83fcd87e562eee5b6361287218ce89b57e73716e0eaba7c3b72091af"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_warning.d.ts",
+      "sha256": "ad6e75864674becb74907ead3c278c1719f4b107a49908a6d979404384540a8b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_warning.js",
+      "sha256": "187fafb6bc973fb3282ed888029777a7c6e7d9f1b5fb2e4ff941bd18a42ea9c8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_working.d.ts",
+      "sha256": "98e43de0b9af3acce3d6bf27005ae0adce4926130efb5f73faff0e2d78da8fab"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/journal_working.js",
+      "sha256": "5e9068efe816a65c3f3b9285819d7c4e60ba906f9e110d225068a4f8fdac7448"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/language_label.d.ts",
+      "sha256": "2cc8d3949a752b64a5701565d612f4435228309abdc9b3ab9b293c44be92c242"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/language_label.js",
+      "sha256": "4e9125fa61f9ecffd72db58cf5de586814e9ba9a04cca2c5a68e962999f98420"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/package.json",
+      "sha256": "dbc2557d46ed30bf7647d845faf3fb73a74762b15d7fbe9b09e825c5eb60ee45"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_authority.d.ts",
+      "sha256": "97e9d323043efa08e6e0d967bfb5cb9f8a1032345d436c74f67f72e33af5bd4a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_authority.js",
+      "sha256": "7c6518c7c0cbdfa2ce03404abe439a041f1ba9881a439c9334aa4ae7443a8afe"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_availability.d.ts",
+      "sha256": "aaddf8170c090e6ff065fb5a02183ac708bc041a216db219e8ea8365393e3370"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_availability.js",
+      "sha256": "9434d6c3bd8c5804d8cbe37dad8637202fb84e985d84e9686ce96341eb5ff954"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_available.d.ts",
+      "sha256": "0d5d1f245d1ece1223cbae6a04d4dea1bef782a34108befd3da3eb207e96819f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_available.js",
+      "sha256": "c7ed65f018bbf3d915655b440a46578d264dc6ddbd318b3c13d005d8dc33ecb9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_blockers.d.ts",
+      "sha256": "9974bc6f17cdb967abc821db619ea50c9fe5b28fea476c32c44fe9b2ea363663"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_blockers.js",
+      "sha256": "f65aa06116978ae621fd38ac295465074e26f91761669ce09376928764d043d8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_feature.d.ts",
+      "sha256": "cb86b5b29c08bc4029d4fb83d53b5d7a9e94a8441c513a9592b863f3fba33dc7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_feature.js",
+      "sha256": "2812c3daa79a7b85ee72298a01af2b5563b0744994bf6a96e2194265b1b7af6f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_features.d.ts",
+      "sha256": "88a3aa67ef57c69be708a0af7ef1b778ddf151b5505910e0e988acb532b94cb5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_features.js",
+      "sha256": "545556794a02912a527960d4de449f2c15a154b411a2f8cd78a7addbcce839c2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_inputs.d.ts",
+      "sha256": "083e23b0d9c3d2db7978a6868b5c776ce0ceda3c03811519474c182a9adfdacc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_inputs.js",
+      "sha256": "ae2934a9f004a1098c52b577c58286c8db34376bf8e5345db11864f5e7a56a48"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_installed.d.ts",
+      "sha256": "d1f5afa23216fe09a5dc9657c78945fb33d8a7d8b883590218ee363839983867"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_installed.js",
+      "sha256": "7aa9149d0e0806008ebc629fc0cf00d090b5c0bde54fdd9f1ec0e85b4ac6fe17"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_limitation.d.ts",
+      "sha256": "096a56f05d260eb1a2c37c2b6989fd41b2911c5a237f66a54c8419fc71445124"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_limitation.js",
+      "sha256": "084725dbcc966b76ae076ee68d8959f57672c77a5ab610f79ec7e13a4e3cbf9e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_missing.d.ts",
+      "sha256": "96d20ea1ae700c3f5320976c92c90a6ce84c036a205f9048ded59d4687e35821"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_missing.js",
+      "sha256": "9d4f53af21a13934d1e146ec9b452fcb37e7401daca138043bced5d40719fe9f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_no_blockers.d.ts",
+      "sha256": "f5501a5d668546d0eee341bbf7726c53c8e1e346b5ccb93b2461e8478f3bdfb6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_no_blockers.js",
+      "sha256": "cfab08053c3ce12b47b0a136415f0e986bf0b4c0b2f1dcce2dfd39d4652536d6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_title.d.ts",
+      "sha256": "73c610c48fff154dc87d38fae47d114644988eed30a9e06e366d8528d6b17d84"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_title.js",
+      "sha256": "54455d8b5d0261f69992880e75b5c536bdfc5e4edc6db0a21a54ddf5ce8c1442"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_unavailable.d.ts",
+      "sha256": "8febffbe28d6b499545855d3ffb69ad259b01977f04b1bd6d3fbfe340594514f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_unavailable.js",
+      "sha256": "5a4e40f7c4440ac6f4d537881a3bf7b5367358a3796b2493b3290455a4938f3d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_warning.d.ts",
+      "sha256": "09f48231e506bec842388775d6bfec61a381cdeb6891e7691a2263459277e23c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/readiness_warning.js",
+      "sha256": "de2fe72829298fc2dd7fdf4ee6cca64ea1a07787c4590e09923ef1136fc4a7f7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_account_count.d.ts",
+      "sha256": "fe4ac9579eb33011dd390b87c9fd94c99085ff9ce4957232a7b6865330fabf45"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_account_count.js",
+      "sha256": "f3145fce6ec82c530bedba12a1b734bb89396bf783599ce699138eeda0ecb3dd"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_account_help.d.ts",
+      "sha256": "7f1770ea5a88d7047a811185d55b8ee23edac116258d0927ebd667d66dbc4a1e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_account_help.js",
+      "sha256": "7663d35acdd30258aa818dc50ed9358ddf05f9c7e55d9db9b452cb754a776df0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_accounts.d.ts",
+      "sha256": "e13ff04a8d549a1e9f38912b21a551177f1869023b53b541876762c878fd44bb"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_accounts.js",
+      "sha256": "3b92618179ade1ff4298028b10b8b004b66bc205050bf2b121faa7b7bbe2739d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_balanced.d.ts",
+      "sha256": "70d51e1fd528585af798052d9b5634e63e7890fa18391607e413e58f04dcf7c0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_balanced.js",
+      "sha256": "aea15770bb1948a14e009cf38866e42d0a7b9f138e21fe1e1576809ba66018b5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_contributions.d.ts",
+      "sha256": "0e63aeb9792f50adecf1619bd31e570514f0cbdf29f2b9ff0da6c10ee3e21336"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_contributions.js",
+      "sha256": "68cb7f9db89f6a1b54a3d92d3c31ef9838871707708e9e4df0c951ce981c1af9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_coverage.d.ts",
+      "sha256": "258a05d1fa769f6b2e9ac93b86328cc56b0ce2c4845ec8f5ea8c8a4c2db31e4c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_coverage.js",
+      "sha256": "d3152894101c58c50bdcb9c3ce3283e65ba60ddaeb5f622f5b3b55e3410afce9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_created.d.ts",
+      "sha256": "7486095da26b20187e730eb710516f92ff66bb89d3dc7c74355932b46add1ea8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_created.js",
+      "sha256": "ca574a68031b0b70b9e179d8c17c3aa90e15956533434f9bd9899e26bd063c3a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_created_at.d.ts",
+      "sha256": "be29636a823c304100e89057f41ceae3c0b71f41c014a698f642ccc91b95da1b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_created_at.js",
+      "sha256": "28fb435d8e2cb1947a082c5b75c3a15775e3f095102156bbab1cdd75242e3e88"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_empty.d.ts",
+      "sha256": "3f829a6c39291a395c263061dd0c5a10b672347c87e6ceeb4f10022513982535"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_empty.js",
+      "sha256": "2e2cc4b74dcdd6c94003119aa2a29d35ded0ca3b6ebcecd15f25b25c2e369f3d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_evidence.d.ts",
+      "sha256": "63010e548121980a108a0edb9a024518e0146a7bcae748c4639aa062b74b3c35"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_evidence.js",
+      "sha256": "aef71648b510cf09b410ef8a7d0e5987b9d0064d7d74009d8cd20b91c6847e7a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_explanation.d.ts",
+      "sha256": "d7058fb9fc560780c1b330057040be034ee5a3e495170463579512a4984f01ff"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_explanation.js",
+      "sha256": "9ec30f6bf708421140d1b8ea870e857855ecc0b8d47ae1feaf64cf0f7e405703"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_formula.d.ts",
+      "sha256": "146e91fcb9709c6373e0bc8b4d416f36124090c16ca581fa3f4fd12d9894c345"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_formula.js",
+      "sha256": "c5328bbe18204134fb1893d9a25285bddb790d86fd9157c2fbe771bd5c6840c4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_frozen_totals.d.ts",
+      "sha256": "7018cd720f643b54c9ad4db7770f60fa6993533f4b0b896b2771277819bfbcbe"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_frozen_totals.js",
+      "sha256": "b262a46be18d95649f785b7a791f27b46335fb0e4b14c1211ba1eadf6cafe593"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_global_totals.d.ts",
+      "sha256": "7160096cac3844c98b59ff76181a8254966ecaec29825723c38aad29be2ac9d3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_global_totals.js",
+      "sha256": "cdbf168106e8adf959474e6fb136ebaa4d90316afd35a1d11e992f445eb48aa3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_id.d.ts",
+      "sha256": "a3c7f5078d3bbfac17c852796e3bc59b351aed68d0d695ae6ba54ae1c127e5ea"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_id.js",
+      "sha256": "9cc53bccb61d228045fea9119b28964cdeda632e4dc259c821cf41194dc93925"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_load.d.ts",
+      "sha256": "f094e5fe3317b49063591e01553ff5dca2ce043873b109d7f8949cfb0afc4646"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_load.js",
+      "sha256": "35eb9bd26ea91ad82fb182e3f2010d7611e77616bd83d9c8c69777c7022b6dcd"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_loaded_accounts.d.ts",
+      "sha256": "b73de7d1e3d1ae00e4844ff067e397fde174b5fc0edac4cb48cca6c39dc92ef9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_loaded_accounts.js",
+      "sha256": "fb3af81071ab6cdb311cda63fa72439300bf4649b9035fb6e7bfa9e57dbf1f8f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_loaded_contributions.d.ts",
+      "sha256": "7740f8ece58ea6408c0673e85a2856984e456c353efdff0723c58803a6e1a07f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_loaded_contributions.js",
+      "sha256": "64b9c17cbdceea9ce2e8bbb9195331df6cc6018aff7f14c1e7a0f86880de1800"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_more_accounts.d.ts",
+      "sha256": "fa6c17f897b32c9c7d73365109ace08750edde9b9bad86c935ef74a9376b7fd4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_more_accounts.js",
+      "sha256": "016989fab2b4aebb577fd620e8a009ab5bdbcf6dd475aa00596d4e57e66bdac0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_more_contributions.d.ts",
+      "sha256": "2c2e1aaeb662724c7e2ca1d16ce096521a5b8fbc622895839dab2b0e7827fdf9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_more_contributions.js",
+      "sha256": "2d2dd451a94e47954353386c000bdbeb556dde0edd2e0cccd46099f62587b581"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_movement_part.d.ts",
+      "sha256": "22a4549f9fe8ccb688a3fc91fbf92332d409e3626f0ce414aea9da4a8c5b3ff6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_movement_part.js",
+      "sha256": "c0807fab9235b00c920f512ed3152e8f3fc53bfe70dd8f3ea02801b30f270929"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_new.d.ts",
+      "sha256": "326d1365495246216bcf05f8b0099bd5ebf0a40ab9ed78fd381d4d2c214f28fc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_new.js",
+      "sha256": "4d64db27019c29607979fbb08e1dd7fdc1239468cfd441ac85ceeceba639711a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_no_contributions.d.ts",
+      "sha256": "5632ae341ea9e792bb6064b3b59df98b36865d528107d19014c64e4569abaaa9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_no_contributions.js",
+      "sha256": "69f690a9340529326d60e1c684e72b5a6b4f20d3a086138f753223a66e84142b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_no_evidence.d.ts",
+      "sha256": "6123c38876bb7074cece62cb1f29a1adbcc0ef72dd1021cd1d4ba00aa4b6c895"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_no_evidence.js",
+      "sha256": "215c50933ee16dd06215b12f6aa0f312808a135761fe2f7b70775cfc22d66133"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_opening_part.d.ts",
+      "sha256": "02b3b5324d6e354067906380e47fc0d74a14678e4cdd63fe9655fa72ddeee5d6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_opening_part.js",
+      "sha256": "74eba17033c880af42a204c9d641f735f61c1a4949e66dd03dcd521910cca8eb"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_part.d.ts",
+      "sha256": "d0df3d76f521cd9a6582da8e6f3f3ce28257f9145185c909feff9778ad4e1de7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_part.js",
+      "sha256": "6811794771aff78fe6ea8c6735b21839333d6cb580d6c77861e2daadf29603a1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_prepare.d.ts",
+      "sha256": "4a24e0bad571ce57f6818ff85ed34e584dbb06ff0209f3147a5b597a8b158a1d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_prepare.js",
+      "sha256": "c1c1e37eadd27128c97a828b73d5c7fddbba888e0c203fc9113e5ed7ae761c8c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_prepare_help.d.ts",
+      "sha256": "cd0db6186cb0c80a2c63faf6f26f0ae3c6384d1e06635a66c7b938c0ff49ffbf"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_prepare_help.js",
+      "sha256": "a30f66af2e188c5dcc6fe0cffae3d98aa94f05fdfa109227a28c79b8d2674f5e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_sequence.d.ts",
+      "sha256": "ae8935d1c720bda1e3f2c348e7b0b13370c899d2533619c3e952dbf104f6a2fa"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_sequence.js",
+      "sha256": "48cca9deb269bca8892eb1db5482c48baf7c7021d71ba001dc746435782ffb6f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_snapshot.d.ts",
+      "sha256": "6a80b981dcfd97526916d31d2e03eb8fc2752ae638299f5be94b821b8890ceed"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_snapshot.js",
+      "sha256": "0c74abc1a2b9db5e39317b65a940200dfc145440f21ca9467228e95abdcf02a1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_title.d.ts",
+      "sha256": "053708fdc9bd2f48d6b60c4b7f6e8bdac70411179dbbd0a720fbccf57a304fae"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_title.js",
+      "sha256": "c9b3d88b76e4a6369890c17833efa5d0e9bd54837a1d7a503f0f57da348a88db"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_total_contributions.d.ts",
+      "sha256": "4bb9ee7def8e1f72cc9afa957397cb3cbac8c73374b9d7ab6115a1f995f8f0a2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_total_contributions.js",
+      "sha256": "7a7c0516307a20a5ce8fb02a245cff1b018468fb8a25fac85392daffc5b2d48d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_unbalanced.d.ts",
+      "sha256": "56bbc2811ee96c9360e485a370841ec79fac3ea57e428df5ee10165385e28d7a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_unbalanced.js",
+      "sha256": "8cf7345256e5c3ecf74c97f172f27bc7cd32f2102e904701cfff96930d566eb3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_voucher_count.d.ts",
+      "sha256": "7fca2e1c938cd707a7146d94bd283ec357b529758a7857969c3d4a7357132ca3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_voucher_count.js",
+      "sha256": "ab1802219a0ad16536d441bb3d468d30a2a44500e8c9f1329cfaf4f979333e79"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_warning.d.ts",
+      "sha256": "9742a07299024033a2f87249a53480ff7602fbed715c5a2abcdb61a8f9e725fc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/report_warning.js",
+      "sha256": "438d475d490556b50e774701ff9050e189e0b0729cce0247346947993fe4b89a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_bank.d.ts",
+      "sha256": "9b70e7373de79c2bc59c559a815e26e6221a5e4487ea43a3ed8e67e30c88d7d8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_bank.js",
+      "sha256": "a054091fb266f9685a2d8403b4ae4352a4d0b7a92f9973e851df19355a604991"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_cases.d.ts",
+      "sha256": "8377431902ea184f7be8bfee7413bd32d63466447f3693efc82dd8401918f4d6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_cases.js",
+      "sha256": "22370c25ba3029e53cfe405b1b3762536d8f14759eb43a2e7e2dab9d7bdee8ae"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_journal.d.ts",
+      "sha256": "cf8a2a254583ab79d61bacba9683336531339c21a0b23a4cb0cbc5dde2b476ad"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_journal.js",
+      "sha256": "59e51797072281feca1b3d291a24f8c23266908cf00ea985ab5cb9e2b8786c22"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_preparation.d.ts",
+      "sha256": "710cc68669037a1fad7350e1f625e3681e3aaaa3759ec7ef05b4e74907676b37"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_preparation.js",
+      "sha256": "195bc2f2076929c9aeac87796151730ff7c05be49681502b24eddb13f1a1ec73"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_readiness.d.ts",
+      "sha256": "ade4c974d1ba39e68dfd0e6ada3149fc73ecadb3fce0140474d00e5ef7082d23"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_readiness.js",
+      "sha256": "66e92d24905bf809bb8d4c04482931c72fd9e2316ba8027521b28693b02dc537"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_reports.d.ts",
+      "sha256": "5f5c89e9f980a86d7ce0c7c7781f26a5404e437a199b86ab050e117e9115b2e0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_reports.js",
+      "sha256": "e06478b7919d73f037bc0a8386154567327cf20a1097d6eeecfb2f3bb18a76ab"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_vouchers.d.ts",
+      "sha256": "74c0770843ea36931a2797d7b23964e4f67640ed26315a7eac96d8261a9c527b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/section_vouchers.js",
+      "sha256": "d72f0c4ec25ffac20a6847cf9f56de56f561d16fa2b582ca14cafd09b667ffc2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/seo_description.d.ts",
+      "sha256": "af6c50e2ebe0e6cf8071f061830fee365eb03f4517ccd5c7d9c7b68e06c3e617"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/seo_description.js",
+      "sha256": "9a0d7d41cd110fc4defd6565317d5f8aafa01412353febc14126957e37f3cb35"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/skip_to_content.d.ts",
+      "sha256": "3062a8af5c05f03eb84dfe76d407fc1562119a4449e1e0122550505b3b6acfba"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/skip_to_content.js",
+      "sha256": "1312a39dc12d4a6961d724d27697d4c0626d61d81b7adc809f2413e54723b0a2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_all.d.ts",
+      "sha256": "240e860c3379d6cd006fb39a884b7b48e7e4d197352c716c9460a3e6a43cacc8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_all.js",
+      "sha256": "41910ecbfbf7b343986db878c52cad5e10fb4f071ccb2c7e99ac81256d5636c9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_all_periods.d.ts",
+      "sha256": "960c0eea179ecece05fcaaf55b77547b2736013a882ee863233a009f9a0ea121"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_all_periods.js",
+      "sha256": "8c231eb07e5e584942d05e13ec115d055048de6d3c55a99934900ba4fa7939e9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_all_work.d.ts",
+      "sha256": "70292a3da7e79dc5070b0ec7cd4f763c7dac142f5ee3e2b25c35a9151fbe892e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_all_work.js",
+      "sha256": "fee8a583420d03093d78be846b92d238a87d9c14829cfd2d18692c97a3ef3024"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_amount.d.ts",
+      "sha256": "f29576f1eeb65253de3d904bfff5574f4d2baff4c6fc843b47f3c2843b653d62"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_amount.js",
+      "sha256": "650d3209218452587a9f03c5ef7d4f18498bc84948e0fa46eb334e44eb82a0d8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_amount_invalid.d.ts",
+      "sha256": "40e63aa337e9f55839013a0efc72e04a60bdbd4377316b0dd85d05148e6b8c9f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_amount_invalid.js",
+      "sha256": "0788ff12583dc0c97b3bedeeb964cc1a5833fc07e4ec934a5a68fb0d1c6c4ec0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_approved_ready.d.ts",
+      "sha256": "347cb6945f0e7fe2cb744e9bd03f94a3b8e343cd8a45b2b6c5b146f94e57e9d3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_approved_ready.js",
+      "sha256": "a7850375840a04ddfb2f2c8516584d477d22ead36a2190d5a33ccd0947762bf6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_back.d.ts",
+      "sha256": "e001b9041623a229beefe574c8e57034c1d5d2a72ab3d0c8bd894eb2d982e711"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_back.js",
+      "sha256": "977c07a27ece016e61a9d800ad179541206954226766f44fb91be98ad94b0ec6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_balanced.d.ts",
+      "sha256": "dd2916767ce97bfde70169b7cf473112e6bd0c0641f5a092ac80b16a188eeef5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_balanced.js",
+      "sha256": "321da536fc0d7cca26210f8a7ecf6b0d89de030ad7b4d877f8a87cdbe91dbfb7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_banking.d.ts",
+      "sha256": "6ea3d285719585b8087fa3f3875a38de5f4314f7cc61c940501b3f4736fb5e37"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_banking.js",
+      "sha256": "31c2392ddbf757e0fdd001f16f7182d3cca5035344a661449490069da4e10a91"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_book_context.d.ts",
+      "sha256": "5f40dc82a78b0a20cdbe65569aa6c04195200a4446b00d29397ef95c1ad9c555"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_book_context.js",
+      "sha256": "36a82c914e2c56d8c06b76b0fb4c00bf421ce24724964eda82771bd2a150109d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_books.d.ts",
+      "sha256": "914e1bff502590934b127c18135dc8da284dd3b0d8b218bc9f76b5be24675bb2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_books.js",
+      "sha256": "6074d81f2f6dbca80b274d773c6d0d22489f949d4c206ded5a24db32df966c38"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_checked.d.ts",
+      "sha256": "711724c9a5812e419f4785ac139bafee6270aa45357c9dc5e0fc1381ce93714e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_checked.js",
+      "sha256": "b100bc453f050d6d75666efa562c40f178afe403a18fcf4e3de9be446bb48a82"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_choose.d.ts",
+      "sha256": "32bed965e4dc9e7730c3ea4871346c768bd807cf9df2e10bdcd3237185529715"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_choose.js",
+      "sha256": "146c79dd435650aef34b7165e4f0e54dc17466f5d8bfd20b69b6e6870c8ccf7a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_choose_help.d.ts",
+      "sha256": "def0b120be0071c82e7842ae04ff39e812f95526106d42d30ca57ed725682c66"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_choose_help.js",
+      "sha256": "d6accb4244dff0af1c8f03479668b7cf3b994dc30887f7bb03bc4177dd9ba585"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_completed.d.ts",
+      "sha256": "611ecb246d3bb3baeee066ef75c9874671b7c0417ed00415f3c41676006fba9e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_completed.js",
+      "sha256": "bab066c603bee9155f489ceb7e614ebcb447d6796137b7175e5331bf5934db4d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_coverage_note.d.ts",
+      "sha256": "e68226ebb82ec0b16e55dfe0e1fe71a63d5e52c59f70d106aaeed95ebff3f538"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_coverage_note.js",
+      "sha256": "e80b91082f409c9727c9ac8ad7dd971029b25be047a52535a517f259cd0442bb"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_credit.d.ts",
+      "sha256": "bc804fc36aa31f71a85e9606d541a2541497568da054a9c62801b7de009e78ee"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_credit.js",
+      "sha256": "21768474a69f518e2ad04f48d7748362901ec31c2d8f807a1da6371a8c21f64e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_currency_unavailable.d.ts",
+      "sha256": "b96ba6c42d172ac06be185b2eee17cd3f140b27dcaa5f2df9717d1067a68640c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_currency_unavailable.js",
+      "sha256": "ff5721ca43ded562ba71121f0ffb769868c1a42850f5280bffb5427a27ce74ef"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_current_revision.d.ts",
+      "sha256": "15c9529d33891ab7b4800627a6541474b71305db9269e66b9a1b4ce732b9120e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_current_revision.js",
+      "sha256": "c7988e9d26dc463e7ca3e47d9e3372833a93a33aa1bdb11d996ce0e5e3e16f9d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_debit.d.ts",
+      "sha256": "4ec7a3a50da9c60ce655f8013aa88734f5c5f6a0c8d9f47eb6119e29c2ec2c99"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_debit.js",
+      "sha256": "33c830b7446193b4c48268ab6bb6c603e9455cf20f081c8453ec3a32b06ec969"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_difference.d.ts",
+      "sha256": "1d7f84d31f7eab5c9b2bec75e5a27f93d7614bc70f8f0b11b3fe50e78a755383"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_difference.js",
+      "sha256": "d00bc8f540c864dfe0a405e6e757caf08e348c6700d477324cff88791aebc325"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_empty.d.ts",
+      "sha256": "d60b6a1b4ebdf3e13367e8c6385cf1cc6618673dcf80375fed3ebeb039c87de1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_empty.js",
+      "sha256": "b4e8dc8baf22b80017f9f65b5db9528beb76dc39740afd64c6cf82fd7ff0ae87"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_empty_title.d.ts",
+      "sha256": "b1bab00d188fb7e9031dde3a7025f477daa7191a9569cecc6ec5647f6d73bc51"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_empty_title.js",
+      "sha256": "4484e7009b23ab5f13c591721632d80a035c8d4b595da2389df3202cc8d0e3eb"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_entry_step.d.ts",
+      "sha256": "1e262610a55eced5d54ad5951f9de2841fa3409982e6509070e6027df39d9126"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_entry_step.js",
+      "sha256": "76d9565c075247d4c25e5973b9c5a1595d06fdd53b3ad33c236de9ab1e0956d4"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_filter.d.ts",
+      "sha256": "a8fa659ce9d341f0474fdff9605cd6f8fd69cc0d54aed448d68237999229c99e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_filter.js",
+      "sha256": "ec29acfc2bbe02407c4eea0cdab1c033bfc33d8d87b9b3fb47a0d3aa95c57e65"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_first_page.d.ts",
+      "sha256": "ccfd8b60350e2f81ab77fa2219e85df63f610da83896772974ebf2dc68e7b016"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_first_page.js",
+      "sha256": "ea40eadeae79cff405319687e4ac93a9817277f7487e0d4709f60e668e501fd7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_journal_intro.d.ts",
+      "sha256": "4a814d1b34a0e199ef58841e9c0fcc1f20ecfa941573b4bb4528998781851a4d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_journal_intro.js",
+      "sha256": "f6aa55c57b667dcbea5fef0833c571d88473e7d3645ae6906150076f7dbb0bd2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_journal_steps.d.ts",
+      "sha256": "1128f7140059eb5a4a434b011abb8f22e19b7029c6091891568bb1a5123237fc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_journal_steps.js",
+      "sha256": "8756e5461d7622d709cf1b0a1cf17193d206423193343086e3c9149e272934cb"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_line_note.d.ts",
+      "sha256": "9ff7c210ada4a178f18dcf56a73aceb6372cc07fbd7b7dacac15409936a6e01d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_line_note.js",
+      "sha256": "de93b65bc55daa63c359ee245c532149e413bdd832e2f9e4aad61f8e7c1e2a7f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_loading.d.ts",
+      "sha256": "111fca6a8030c54f539d9a87385e903db96b86239989852f4db8efd0e8cf4ee8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_loading.js",
+      "sha256": "54a2ffe2718b76c060ea519b9d6f4f702da6accd3c7d01d32ce7d30aa4af0171"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_menu.d.ts",
+      "sha256": "6e847b5c1acedfe092717b265bd99ec84e003b4c16e4e63f170fedc8a3ca5c9c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_menu.js",
+      "sha256": "72519de299f8a04dc75da5564be4fabd8296e456aa85feec09a437c4d745e346"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_navigation.d.ts",
+      "sha256": "94a938b4d766556fd8008b04e67d24e5df86d040bf00beb3247b2127f505f592"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_navigation.js",
+      "sha256": "be557809b60b2f7d4b26250294818fcb9efe66ab9f2581fc2b763e951b41d688"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_new_journal.d.ts",
+      "sha256": "a12f8097b1457a0da4da5e2c5a34c433c719b38b33a92b649893c8cb59f189b3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_new_journal.js",
+      "sha256": "4834be0a094fd886d3c636a9de83e03b81bccbe7ab969310830726b3d54566c0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_newest.d.ts",
+      "sha256": "154a3f808bd88a48b034cb7fc6d2000983beceb1cc7c66bca992c5eaeda67f06"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_newest.js",
+      "sha256": "84c10100cdf59e67d946ff76e88f1b63992a4e82f720b31d287f04ca8d35dea2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_next_page.d.ts",
+      "sha256": "804c200d74c767058b2a4be5fb8cb979912cf29e719f7b809988353ea1109fa0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_next_page.js",
+      "sha256": "89ed079626537c1b3eaf8571da81f941c04ca7f19a456039f5a80a03adf99c24"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_oldest.d.ts",
+      "sha256": "fdae952790868ec7d082e5488806f3273771f25843c689bbad53066580c8218c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_oldest.js",
+      "sha256": "04ac0b10e50cd698449c897c42915cf9419849664438f17b170d469dcc5a42da"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_open.d.ts",
+      "sha256": "a99bc45b89bf82fe13c3957849f01cfe4e0e5645ac66c2963c6382671006614c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_open.js",
+      "sha256": "ff9e966c7906e41ea2d89433dbfe77ac850968ae3a1744e796aca9e7d694e661"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_overview.d.ts",
+      "sha256": "156bb946fe5172fcf5518053f91c0b4a9a0f8da121ac15aa3dc108ab9d61721b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_overview.js",
+      "sha256": "dc13ae0bb4f2655dcca04389b5ac00846f93621e4d393331550cefadb3c993a1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_overview_help.d.ts",
+      "sha256": "cdb47c951db9a5ff381bf9012550484587f78e3dad559bbfea9057c1f02fc130"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_overview_help.js",
+      "sha256": "ef138dbefed848e9a3d9f2f26d7807764d0a0bd43ef13b20b8943feac37045ad"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_period.d.ts",
+      "sha256": "2aeae9049a23351dc432f157addae9bf256abc8deb4143af49111a7448ed8cd7"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_period.js",
+      "sha256": "0aec2efbf07d0b9a10e188148ee735089bb5d3db1029c7a2012d2807a95165ab"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_posted.d.ts",
+      "sha256": "48cdaeb766d1a9802de21d6c07215083a3dea0dc69b0941437fb6085114f24b9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_posted.js",
+      "sha256": "2af248cff17390898e83f514c9337c7ea8bbe9322b040c35c4f174ea7e0608d6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_posted_elsewhere.d.ts",
+      "sha256": "e102be04f0e6f4010cf09bfd08bd93cde5812c3b29bef9e90840ca71943e9ffc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_posted_elsewhere.js",
+      "sha256": "a1381aa521b5e30f57e1336be36eaee3817b4439ce104c758a68e90a39c8aa81"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_posted_receipt.d.ts",
+      "sha256": "47d43c622bd5e6c9d3d154499f77f7baf17c809bb0216c98ea3d16c41c03db84"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_posted_receipt.js",
+      "sha256": "d2dc4f39af671efa3ccfd441940f2cc8d4a4faff5f5c4acc99a258c2ac244126"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_proposals.d.ts",
+      "sha256": "eac4069752eaf07db14a0770f8f18e8b29db92749a1149c26c3dc7123dc0e60a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_proposals.js",
+      "sha256": "73d950f6e053a7fc8a7c06696580a807d90a22825d7a0081192d11cab6983e79"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_purchases.d.ts",
+      "sha256": "5523042efa6c12d1cdfd03621660dbc2665c1954b757a3d7ea3d18dadc250b23"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_purchases.js",
+      "sha256": "eb3b5eb11dd7d34f26506d9cc5736a2d60037468248452d6671fafb7ae8f4217"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_record.d.ts",
+      "sha256": "2cc1512fee61f05528b7a03b6735b300c5bc8b3d91ae425dcc86ecda1826a7b9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_record.js",
+      "sha256": "dd1ccf5f897de79477adb90c8d2d9aeabc4573e8a906b6364ae77a637b1a6da3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_recovery.d.ts",
+      "sha256": "f577ab46abb157e65da1fe6663eb366f045a814ca42121adc4286d3e4bf9033b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_recovery.js",
+      "sha256": "7bee85f426a552b19fc2d08b37e0eb6a1ad026b10b22780153d49efe18ead411"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_recovery_help.d.ts",
+      "sha256": "662d972ce90ba33773438ef2ae99f0d9ba54bd175daba1639749b06986198d10"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_recovery_help.js",
+      "sha256": "3508675d84ad287145ab77e0157c2fb41b69a807d88f7d0f9f18c97a99c6f7ba"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_reference_details.d.ts",
+      "sha256": "9b61059514788958c5900c78185766a7ab7d1d75ba547984a30819d298afd3f1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_reference_details.js",
+      "sha256": "3949dcad67c696e482e7df31c3e3f04feb4d7bd66d8421efa21d64040a84112c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_reports.d.ts",
+      "sha256": "cb7c1b981f81bbb07b4a46b4b6e1582553f6ccbfb40e7d64e6a7105137f92ab3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_reports.js",
+      "sha256": "5e00c4230402462266f82b40d539a033b85608f1c554f8d09c83a2403d96f548"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_results.d.ts",
+      "sha256": "898cd6b025f06ee6df35cb5fd1d421047de95471313d6833aa8ea8790e8f4714"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_results.js",
+      "sha256": "9f0e48c1a039df61b583bbebb305ab6e66ab6117d74bf4213282ac56470dd39d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_review.d.ts",
+      "sha256": "8800051eae7ffd1302d9645b5b7b129af265913d2a349ecd149f9b9b88ee721e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_review.js",
+      "sha256": "54f4e9303b8e4f978a7df813772ff0a813f4feba98c7cceb98b25d80e00baa0b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_review_effect.d.ts",
+      "sha256": "3c44849f688531994c8bb345e85b97d5ff8d7ebf3873fbc19d5705bbee470cf9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_review_effect.js",
+      "sha256": "084fbbe0f47ccd02b324b199c4e90f6ae049f0184bda91eb61608d562b598596"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_review_first.d.ts",
+      "sha256": "4e59ffb4494cf18b77421435f49a31b2851d20dfad41e8afc53844138b655ad3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_review_first.js",
+      "sha256": "bd3f9d5ae13d93bc3c6a9f560ca3cfc4bd6274270d905abb2a647a99d9b8750d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_review_first_help.d.ts",
+      "sha256": "77265af18addb61d70ff761b65012c3f2129c52af80607f095698001b1a286e3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_review_first_help.js",
+      "sha256": "477f79374490eace3922fd8768dc5440aac26e47ba094ce7fa3251577cd6f279"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_review_step.d.ts",
+      "sha256": "82345438b05d5e023e349a9e9709f35e57260b659822b144634cd228723894af"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_review_step.js",
+      "sha256": "4211e484ffdd0e7b9124f1c23f4b03cc4cf28cb7d8df7b5754664aaee2c5221b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_revision_mismatch.d.ts",
+      "sha256": "883ad049e21a9793dcc1ffb2915ed693b54a39a9f5512dcb6e75c788dd2888b1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_revision_mismatch.js",
+      "sha256": "a8df9c588cd481c152210ec37439f9b94e72e62c0175839992a55717c4b92f5c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_sales.d.ts",
+      "sha256": "b69d33163d748de7a0ff91e03404ac283c77601776c87f4d9594b99b97c40a73"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_sales.js",
+      "sha256": "2a6c2841e1cb68d7cb3d202f7216b37d65c1ff71db7737ac9f908d26c550962a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_saved.d.ts",
+      "sha256": "7567ac5ff4dadab2b1fd34f2d0b67ae27eda3dbe53212820f678e4091cb16937"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_saved.js",
+      "sha256": "df02d4bef13838b061fa107c029f72525073e400a47ed2cf4595073b4847e796"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_scope_denied.d.ts",
+      "sha256": "d1082aba7e4ffd0efff8c8879f85adadd48b424bed70a3646bd8afe72996b6af"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_scope_denied.js",
+      "sha256": "b440619978c08d5caa711da39016ed358994e38b1ce24a82deba1555dcc7ac53"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_search.d.ts",
+      "sha256": "71a92b56921a37b07e14ccbda1eda9ffed2f3afaa570ca42e23d5f642b995b6f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_search.js",
+      "sha256": "b1b279a9650f36f33efa2c2792ec8090bccee888cedd7dc92a549693741654e0"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_sections.d.ts",
+      "sha256": "37fea4830a5d1e3d14b08fa63a0fe98df29fabb5735a1d1016d153ac12bf9846"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_sections.js",
+      "sha256": "395f84dffd9d7037cba9c304aa01bba7bbbf87e4d8c2592431654649b3715aaf"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_settings.d.ts",
+      "sha256": "ca979eb1fc578a2f355c41f0ac690db7b6b637f6b633df9c4ce2bf0891733b98"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_settings.js",
+      "sha256": "dbe13c5304c6c25a5f1c32d2d58650d8ec507f722242a3fd05d751c6c87499c3"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_setup.d.ts",
+      "sha256": "1c2d198ca6295ab9cace22d4766c8f972a3ba6c2c7ac670d29ebd2909e54b8d8"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_setup.js",
+      "sha256": "99c1e1fa2b02331050bd63852553cb0ffd179baaf813eeb46e91bc2496c6e4ab"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_sort.d.ts",
+      "sha256": "90251806c02a6ff2862b275c1f9f44bf3e555a7b098dcdbfa5f9b514ade4ecdc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_sort.js",
+      "sha256": "b113f01591f5e2fd2c4018c4cd332a9c5afdd24a6728aca63bf42baa70515ef6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_content_example.d.ts",
+      "sha256": "781910a33fd9ef68ee6a7d00f15812daa7919011fa91a276f56fd42317c792bc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_content_example.js",
+      "sha256": "7b23fed2848055a68e711d9ea689768f45504fd13de85987b0fcf6f04614ed05"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_details.d.ts",
+      "sha256": "e09e6c0e5117c1d2e66aea74b80ab67055dccee233708e95d1e5af1b2d22772e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_details.js",
+      "sha256": "e06810e41adb4053d72afc4f0b0bdc7ec60da8194872b9ce4c6016624fd261b5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_origin_example.d.ts",
+      "sha256": "b1f502bcb557940533406f82b66c2e24b77aecb3360e5934e3dd43ac0629ebe2"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_origin_example.js",
+      "sha256": "a67e210edc6504386d05803541fc09b8a18a5859b82182b6e0e9f3a5fbc0a968"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_saved.d.ts",
+      "sha256": "5da7b05191880fde6359f062e694120afc6e4a3d1e44dcc7fac775d9c6a0b77e"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_saved.js",
+      "sha256": "944fda2a2a9d773212041bcbaacd9a01adc0a3540a7148ea3d78d8ce53ec5ef1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_step.d.ts",
+      "sha256": "04c0e63f7bf70116d0f3a7f8c7e775417a96aeec569f1cfb3e8bc24aa8a6039c"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_step.js",
+      "sha256": "90a0ea7eee6194676a50be479a8ab966c845aac295bb8f42b05db93ce3df7a3f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_title_example.d.ts",
+      "sha256": "c6c4f9240db84de811bee65627595de2ec91734e9f6d1e6fc788fad3fbc7e85f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_title_example.js",
+      "sha256": "b184cfabe5cf23d594000fa43d2f432c1c4872bedc68da7eb1f9b1938d830d45"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_why.d.ts",
+      "sha256": "483bb2fd91aacb2aa63abe964a2cbe6707512b7188ac769c13d76a6aa7caedd5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_why.js",
+      "sha256": "c8db7e9a04accc9ffb0af1b619f2822be749901d02238aa0d4824aa93918c7e5"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_why_help.d.ts",
+      "sha256": "694a8e8fc9042e9babb397469d9423ab52f3b06e05714c77d7ac271921723e4a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_source_why_help.js",
+      "sha256": "8fc4162d189028367164850bfc3659efae0f9864a44698fa367d1ea85e61a59b"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_status.d.ts",
+      "sha256": "81a8035f8b59dcfc876175e39080e1f5549263cc87dd9926bf9242b85db1b412"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_status.js",
+      "sha256": "3dbb9b7f8d14b88400b4811778c08a281505eaca47a6efdeefbb7befcaf20ef1"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_switch.d.ts",
+      "sha256": "1025efb478ca74e075c2f3128a14f29173583967baec66d3c404b7e62ab76d40"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_switch.js",
+      "sha256": "0cc777e3ba7f0435a6935a83177c272d12e0eab6d50cd080f60ec97a9fbc5063"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_synthetic.d.ts",
+      "sha256": "379ff33c23be58346e4ff52f9a0ba83ec8c02a993f1d33a1676acc7f275887b6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_synthetic.js",
+      "sha256": "30aed664341595e7872770862301970fcec5060564757b86059193c41cdb4f10"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_tools.d.ts",
+      "sha256": "b7fcb34bd2625416203ae51f76acc0f6a1185c6ac8bdb35fd36bf3564f97c219"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_tools.js",
+      "sha256": "2082c44d61926b451cd127fc5a73a11309dddb74be7b557532ba5dd1fe567a16"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_tools_help.d.ts",
+      "sha256": "e7f7167092fec932b4b296e8b319b1a9c3a1bb3d6e3332e9a3b3eae50675c64a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_tools_help.js",
+      "sha256": "4db110fecc575a8937f15f60c1cf5e708c76676d379636edcbb8bc8eda0d953f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_unposted.d.ts",
+      "sha256": "0f68d28373b5a63ed0b6606a8b6e6de5553005ba17763dcfd0b15b6b62a6fdec"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_unposted.js",
+      "sha256": "9983bfe9422dfeb5f8197890d5a4b38b390b76d6dbf99229a3770d2505213e16"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_view_vouchers.d.ts",
+      "sha256": "86217a87665b47377da4570145fc4d655393d775f8f7a3373614efe6e36ea9e9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_view_vouchers.js",
+      "sha256": "30f7c81223ebc0ee44adc519b316e15e4543e7f0e3b80c226f860a27cec02346"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_voucher_intro.d.ts",
+      "sha256": "954c1e5e6cc0fce4bf7b2f6702e91aecd7427df9fc9a436ef72520be46bddbe6"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_voucher_intro.js",
+      "sha256": "f83c8c761c76cbee9f3fcc4b7ebfdff2101fb470d8e9e8b455f03457e97f2685"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_vouchers.d.ts",
+      "sha256": "20c6cd07eb0309540c092db6d5005a0e299c58bc1bff9c8c5cf154aa5558ad50"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_vouchers.js",
+      "sha256": "4ca6b05668469f63f472255ffd33d99a33774d771243a179da03b93d34017c6a"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_work.d.ts",
+      "sha256": "42510d6c2c0301fa44b7488098bb4a5c13c0926387786570adcdea1d7ff450e9"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_work.js",
+      "sha256": "cbb30cd9f18737404192308ecee96a7c245951bd5e3cdc4cd57f284ad40d87fc"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_work_help.d.ts",
+      "sha256": "36858d8ee760d255bc980e69cb3f3c87d1941db3e8d086231d8f4c38f361fa8d"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages/workspace_work_help.js",
+      "sha256": "dbe505cedcdb3f4b3947264053a43bddbcf281811a256a031773ef9a4a38b76f"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages.d.ts",
+      "sha256": "ba4b5a4e76b9b9a54a76d5189cac315a3b1c40143d7b97674ccee5621d997856"
+    },
+    {
+      "path": "apps/web/src/paraglide/messages.js",
+      "sha256": "39a9ca36b7cde8ef89011723c3b137ef0db319ddf59d9481fc3ae6e634453347"
+    },
+    {
+      "path": "apps/web/src/paraglide/registry.d.ts",
+      "sha256": "7d074bf1cac39c2994965d77ace58429022ce782b237b2b5d1b3bbf7b724e33c"
+    },
+    {
+      "path": "apps/web/src/paraglide/registry.js",
+      "sha256": "38d8ba99a6914c2c375d9b4ae6d8af0ece59e3bd9d5e5dcba236b39dcb19833c"
+    },
+    {
+      "path": "apps/web/src/paraglide/runtime.d.ts",
+      "sha256": "bf5312fd75405519c83254ea1c09b12684d778d4ac52fb5d31e4a8558963d6f2"
+    },
+    {
+      "path": "apps/web/src/paraglide/runtime.js",
+      "sha256": "ee08f43d77155eb877cc2fcab883072e2801ca653dd4032ecb90c63d0e0d7fa4"
+    },
+    {
+      "path": "apps/web/src/paraglide/server.d.ts",
+      "sha256": "d9e714a4b753808bdfcad3f8f7e2e23baf03425082c650ce5b5881c04cfa5dde"
+    },
+    {
+      "path": "apps/web/src/paraglide/server.js",
+      "sha256": "e41aedda4068cf245816e5c094817ca5079986982d12c4b565e814aefc060458"
+    },
+    {
+      "path": "apps/web/src/routeTree.gen.ts",
+      "sha256": "3d46c5a5847ffc12d0b69d1d7ad409ec804fa6ddb34c72d0837e029d0c3619dc"
+    },
+    {
+      "path": "apps/web/src/router.tsx",
+      "sha256": "6c3db3e3c7b2e3f44a7b9bf4ba9148194f56730a5da378a30f5814928822cc97"
+    },
+    {
+      "path": "apps/web/src/routes/__root.tsx",
+      "sha256": "9d736847f2de2fad68a73ef0d4b3e2283fb55a571615683270dfab8615a2a985"
+    },
+    {
+      "path": "apps/web/src/routes/companies.tsx",
+      "sha256": "415d2f6cc579773076d03c91c16b86ce383e21d2081a50e90b4ead9417d0fbc2"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.accounts.tsx",
+      "sha256": "ed262da428613de9baa294ea9ae24b0aebd001a0f4ad1c66b68f229d0296b9a9"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.banking-setup.tsx",
+      "sha256": "fe52684e69a3c414a60c1ff4d94740e936e27ae6fd08f9bd23f1d75f4452ba98"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.books.tsx",
+      "sha256": "8f2a3a580b4e2a6da98c8938a06503c6a3cdb8b841b90ccac91fb755fe5ea44c"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.closing.tsx",
+      "sha256": "ca0db9871d908c607bea7338f9c41c6651df3a1bfd904ecac6db72e34a7a654c"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.history.tsx",
+      "sha256": "319b2775963e43a5c573acf8500dd3dd6245a0eac9f765b32c1f1728b33d5836"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.index.tsx",
+      "sha256": "25396bfb17d81c54f3cb196bfca4cfec2f53be6bde130ebc997aed3fca7ae974"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.overview.tsx",
+      "sha256": "a7a88b96ee9d2d64684f557f59210b7170c1ec8db4d57cb3434df822fde22784"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.purchases.tsx",
+      "sha256": "d1c7d915855c1f413e99b35e5fb95706844b5cc021ac6df00198995c2e99aa3c"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.reports.tsx",
+      "sha256": "00826c77816c4e35c6d187eaa0a672e3a93a3dcd7613a29d5b9ac08542d441c6"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.reviews.$planId.$revision.tsx",
+      "sha256": "3a0305da59675c4477ec6c5369908d0e74e55f0b57493f9ece0a131bf5d38def"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.reviews.$planId.index.tsx",
+      "sha256": "589d779d9ded4122f91d43e5a5f82aede05e0655782ddd786ccbc8c950d0584b"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.sales.tsx",
+      "sha256": "ce2febdd28cfc40ddfd95e11895896aafd369af115624a4133e958d3fd34aae3"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.settings.tsx",
+      "sha256": "d36359761153df8dc064e77c7d54497678902b5e9ce2ba327d2bfd7d8efe8bcb"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.setup.tsx",
+      "sha256": "c387d19553c1e0fb9129d11a323766401b73e77c50aa3a83616f3c58b40737ef"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.tax.tsx",
+      "sha256": "6e82fe192b983d6572658ce404673665dee5039d76d7493326b80113590abe47"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.tools.tsx",
+      "sha256": "6e7b2bd86f01f42ad5b04ca02ded110148e2afa0cb96e3c633d882abffef9117"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.tsx",
+      "sha256": "74a517b37c2d53fe3596ae88a90b3a62684a0479d2c0103778c09b9c0a3964f3"
+    },
+    {
+      "path": "apps/web/src/routes/entities.$entityId.books.$bookId.work.tsx",
+      "sha256": "8f55262d85a7f515eaf180bf9e9dde3f04da15388134d199ded7b9bd9a238b11"
+    },
+    {
+      "path": "apps/web/src/routes/firms.tsx",
+      "sha256": "6260cee03212f7b9069418daf66ba74184cdc825b376270827bdc394c4751c81"
+    },
+    {
+      "path": "apps/web/src/routes/index.tsx",
+      "sha256": "f519c735acf544906fb1a8c211e6ded2d03f6c64b333c82e9af63538d48a7cf8"
+    },
+    {
+      "path": "apps/web/src/routes/intake.tsx",
+      "sha256": "9626e33240cc2f45e1c0ed3a89910efc9966f0f30aa603d9000388ddee1605e9"
+    },
+    {
+      "path": "apps/web/src/worker.ts",
+      "sha256": "7e5244a2de861cc13b4aabcb3287c5b8cbcce5f239c6e2c84cc629963175f9c4"
+    }
+  ]
+}
