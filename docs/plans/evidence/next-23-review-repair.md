@@ -5,6 +5,21 @@ Status: implemented in the isolated worktree; fast/full static gates and 27 real
 Worker/HTTP/restricted-PostgreSQL E2E cases passed on 2026-09-28. Not a company,
 statutory or provider qualification. Integration and commit remain with the caller.
 
+## Integration with committed NEXT-07/NEXT-37
+
+The integrator committed the reviewed close repair as `a03aca4`, then merged
+main `c828603` into that isolated branch. Both supplier-refund and financial-close
+correction protections, plus all new posting-owner kinds, remain present.
+
+`bun install --frozen-lockfile` and `bun run check:changed:full fc47b27` passed.
+The combined financial-close, supplier-refund-journey, VAT-assessment, admission
+and persistence run passed **26 tests in five files**. Source inventory was
+stable: `fa75d490375ecb2787b6a66451e251b0d9a08e4f9833288c37b53b2cf96e5ec0`.
+The focused 27-case receipt below belongs to the prior isolated repair; this
+combined run uses a different selection rather than implying the counts match.
+NEXT-37's new-assessment mode remains a named refusal in that owner's test;
+this integration does not claim it has been repaired.
+
 ## Observable contract (recorded before implementation)
 
 1. Real HTTP preparation/advance must decode retained statement pages and return a sealed proposal.

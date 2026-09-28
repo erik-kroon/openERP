@@ -10,12 +10,14 @@ not evidence that an application journey is complete.
 | Scope | Owner | Current review disposition |
 | --- | --- | --- |
 | Main/origin reconciliation and document reading | Integrator, Herdr `wB:p19` | Merged into local main through `77d5ab1` and `7c4defb`, retaining remote `c859d9b` and reviewed guard repair `26ba496`. Builds/full static gate and affected runtime scenarios pass; detailed run scope below. |
-| NEXT-07 | Herdr `wB:p1G` | User-assigned end-to-end integration. Independent review found a consumed-payment reversal guard that accepts an orphaned refund principal, plus the shared journal validator accepting two positive sides. Agent repaired these in `26ba496`; application/persistence completion remains its lane. |
-| NEXT-37 | Herdr `wB:p1C` | Application integration in progress; its final commit, financial journey and role/grant proof require review. |
-| NEXT-05, NEXT-23, NEXT-24 | Herdr `wB:p1C`, review after NEXT-37 | Committed source at `cc726bb`, `b8a21bc`, `bac876c`; packet-specific financial journeys remain unverified. Review before claiming complete support. |
+| NEXT-07 | Integrator review queue | Agent committed `398c213`; real paid-credit/refund HTTP journey passes. Review the known uppercase document source-key defect and remaining cash-source/correction contracts before accepting broader support. |
+| NEXT-37 | Integrator review queue | Agent committed `c828603`; residual bridge/adopted-match journey passes. New-assessment posting still refuses and must be completed; the whole packet is not verified. |
+| NEXT-05, NEXT-24 | Review queue | Committed source at `cc726bb`, `bac876c`; packet-specific financial journeys remain unverified. Earlier worker has closed; review before claiming complete support. |
+| NEXT-23 | Integrator | `a03aca4` repairs thirteen findings plus the independently discovered prior-year opening drift. [Real HTTP proof](evidence/next-23-review-repair.md) covers close/reclose/approved reopen, raw openings, current authority, rollback and replay. Combined NEXT-07/37 gate passes. |
 | NEXT-18 | Integrator | Five confirmed leaf defects repaired; before/after public-domain probes and both changed-file gates pass. [Evidence](evidence/next-18-leaf-review.md). No current valuation application caller exists. |
 | NEXT-30 | Integrator | Adopted clearing receipts/refunds and consumed-principal reversal repaired; [domain probes and static gates](evidence/next-30-leaf-review.md) pass. No application consumer exists. |
 | NEXT-38 | Integrator | Separated paid/recognized/credited coverage, selected an explicit gross-conserving component policy, preserved credit-adjusted state and strengthened history/membership checks. [Thirty domain probes and static gates](evidence/next-38-leaf-review.md) pass; application integration remains open. |
+| NEXT-39 | Integrator review queue | Independent source/schema probes found signed-value rejection, reversed dispute signs, amount-only/under-scoped identities, unqualified payout fees, journal validation and replay-effect identity defects. Leaf remains unconsumed; repair before integration. |
 | Other overnight leaves | Unassigned review queue | Maintain existing leaf-only status until inspected against the packet and real owners. |
 
 ## NEXT-18 failure obligations, before repair
