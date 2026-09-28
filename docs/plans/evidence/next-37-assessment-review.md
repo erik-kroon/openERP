@@ -1,5 +1,10 @@
 # NEXT-37 rounding-bridge and assessment ownership
 
+**Historical handoff for `c828603`.** The later [review repair](next-37-review-repair.md)
+supersedes its implementation status and disproves the match-before-post ordering
+hypothesis below. The new proof uses actual tax-owner import/match operations,
+not the original seeded match, and completes new posting plus stale-plan renewal.
+
 ## Scope and status
 
 NEXT-37 adds the HTTP surface for the already-implemented `@open-erp/domain/vat-assessment` leaf: a rounding bridge between the exact net of a saved actual VAT return and its assessed figure, and an authority assessment that either posts new or adopts an existing tax-account match. The work spans `packages/contracts/src/vat-assessment.ts`, `apps/api/migrations/0028-next-37.sql`, `apps/api/src/db/vat/assessment.ts`, `apps/api/src/application/vat/assessment.ts`, the capability and route wiring, and one focused E2E.

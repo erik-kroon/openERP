@@ -2,6 +2,20 @@
 
 Base: `0195527`, branch `review/next37-assessment-completion`. Work is isolated from main. This record distinguishes the failure contract, implementation and observed proof.
 
+## Integrator acceptance
+
+The reviewed repair is committed as `c5075fe`. Independent review identified
+the stale-preparation recovery gap recorded below; after repair it approved the
+receipt-level uniqueness, fresh approval and immutable-history behavior.
+
+The integrator merged main's `3127991` credit source-identity fix into the isolated
+branch. `bun run check:changed:full 0195527` passed. The combined NEXT-37,
+NEXT-07 supplier-refund, NEXT-23 financial-close, posting, admission and persistence
+run passed **38 tests across six files**. Source inventory remained stable:
+`8a48c4d55fbed35abb1be15e0957d7c712fad30c1fbab4a09391e9ed0297f37b`.
+This supplements the prior 35-case receipt; the additional three cases exercise
+unpaid credit numbers and exact-key recovery on the integrated financial owners.
+
 ## Failure contract recorded before production edits
 
 The seam is real HTTP against the disposable PostgreSQL/workerd E2E runtime. Only synthetic identity, rule and chart prerequisites may be seeded; assessment matches and financial receipts must be produced by their owners.
