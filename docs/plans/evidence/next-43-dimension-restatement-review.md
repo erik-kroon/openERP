@@ -16,11 +16,40 @@ The leaf already had correct pure rules (`prepareRestatement`,
 - three new tables in `apps/api/migrations/0032-next-43-dimension-restatement.sql`;
 - the wire contract and endpoints in `packages/contracts/src/dimensions.ts`;
 - the HTTP handlers in `apps/api/src/transport/http/routes/dimensions.ts`;
-- a read-only MCP capability `dimensions_classification_view`;
+- two read-only capabilities, `dimensions_classification_view` and
+  `dimensions_restatement_view`;
 - a focused E2E over real workerd, PostgreSQL and the restricted runtime role.
 
 This extends the **existing** NEXT-14 dimension owner rather than creating a new
 subsystem, which is why the packet could be delivered without inventing an owner.
+
+## The analytical view, and what it proves
+
+`analyticalView` is a pure read added to the leaf to deliver the packet's
+"original-versus-reviewed analytical view". For each requested dimension it
+partitions **the same selection** twice, and the property it enforces is
+conservation: every bucket of a dimension sums to the unfiltered selection total
+in both views. A line with no assignment for a dimension lands in an explicit
+`unassigned` bucket rather than vanishing, which is what makes the partition
+complete. Two dimensions are never added together.
+
+The E2E proves this over real data with an expectation derived from the retained
+posting (one debited line, 12500 minor units):
+
+- the original view holds 12500 in `Department:0012` and the reviewed view holds
+  12500 in `Department:0099`, so the money moved between buckets and was not
+  duplicated;
+- the original view has no `0099` bucket and the reviewed view has no `0012`
+  bucket;
+- per dimension and per view, the buckets sum to 12500;
+- the unchanged Project dimension is identical in both views;
+- a cutoff before the revision makes the two views identical, because "as at
+  when" is part of the question.
+
+Building this surfaced a real bug in my own code: `originalValueKey` already
+returns a dimension-qualified key, and I prefixed it a second time, which nested
+the dimension inside the value and split one bucket into two. The conservation
+check caught it. It is recorded here because the check did its job.
 
 ## A restatement never edits a posting
 
@@ -69,7 +98,7 @@ prepare rather than silently collapsing two lines into one.
 
 ## E2E results
 
-`bun run test:e2e apps/api/tests/dimension-restatement.e2e.test.ts` — **5 passed,
+`bun run test:e2e apps/api/tests/dimension-restatement.e2e.test.ts` — **6 passed,
 0 failed**, exit 0. Real workerd, PostgreSQL with the full migration chain, and
 the restricted runtime role.
 
@@ -102,7 +131,7 @@ production compiler is never used to generate an expectation.
 - `apps/api/src/application/capabilities/dimensions.ts` (read-only capability)
 - `apps/api/src/transport/http/routes/dimensions.ts` (three handlers)
 - `packages/contracts/src/dimensions.ts` (contract and endpoints)
-- `apps/api/tests/dimension-restatement.e2e.test.ts` (new)
+- `apps/api/tests/dimension-restatement.e2e.test.ts` (new, 6 cases)
 - `docs/plans/domain-leaf-integration.json` (this leaf only)
 
 No file shared with the NEXT-45 cash-flow work is modified: this change touches
