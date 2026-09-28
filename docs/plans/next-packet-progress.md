@@ -36,6 +36,7 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-18 | Incremental open-item FX remeasurement | P1 | leaf implemented: `@open-erp/domain/fx-remeasurement` complete-population valuation compiler, execution-time membership check, and settlement-basis carrying helper; valuation posting/effects persistence remain with the commerce FX owner | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
 | NEXT-30 | Customer unapplied cash, paid credits and refunds | P1 | leaf implemented: `@open-erp/domain/customer-credits` customer position derivation, receipt compiler with advance refusal, paid-credit compiler, credit application and cash-refund preparation; line compilation stays with the legal-credit owner and posting/persistence with the commerce owners | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
 | NEXT-38 | Cash-method recognition and unpaid year-end cutover | P0 | leaf implemented: `@open-erp/domain/cash-method` partial-payment coverage compiler, once-only year-end unpaid recognition, next-year settlement without repeated VAT, and the credit/backdated-change boundary; posting/persistence remain with the commerce/register owners | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
+| NEXT-05 | General-rule cross-border service purchases | P0 | implemented: `@open-erp/domain/service-purchases` compiler, `vat` release general-rule section, `0025-next-05.sql` recognition/review/approval tables, `purchases/service-purchases` prepare/approve/execute owner, HTTP routes plus read-only MCP capabilities, and actual-return capture of boxes 21/22/30/31/32 with 48 | packet vectors plus a pure return vector executed; 0001–0025 chain applies on fresh PostgreSQL with DDL/grant probes; 9 existing E2E tests pass with 0025 applied; service financial journey unobserved |
 | NEXT-43 | Reviewed dimension restatement without editing journals | P1 | leaf implemented: `@open-erp/domain/dimension-restatement` sealed restatement preview with financial-immutability guard, report-time `classificationAt` resolution, and revision-append with replay/stale semantics; overlay persistence and report capture remain with the dimension/report owners | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
 | NEXT-31 | Invoice-linked prepayments and accrued-cost true-up | P1 | leaf implemented: `@open-erp/domain/prepayments` exact weighted schedule allocation, accrual decisions, invoice resolution with signed true-ups, and future-only estimate revision; schedule persistence and purchase posting remain with the subledger/commerce owners | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
 | NEXT-37 | VAT assessment ownership and exact-to-assessed bridge | P0 | leaf implemented: `@open-erp/domain/vat-assessment` rounding-bridge compiler, authority-assessment capture with adoption, and the expected settlement-control equation; reclassification/amendment effects and tax-account matching remain with their reserved owners | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
@@ -55,6 +56,7 @@ or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 | NEXT-34 | Mileage reimbursement with exact tax and payout partition | P2 | leaf implemented: `@open-erp/domain/mileage-reimbursement` exact distance split with half-up rounding, disjoint exempt/payroll handoff identities, same-trip idempotency, unreviewed-route and missing-fact refusal, and consumed-delta correction with lawful basis; handoff execution stays with the claim/payroll owners | packet vectors executed against the pure compiler; payroll journey unobserved |
 | NEXT-46 | Peppol invoice and credit exchange through a selected access point | P1 | leaf implemented: `@open-erp/domain/peppol-exchange` BIS amount reconciliation with credit structure and original reference, stable dispatch admission with semantic-buyer check and lost-response recovery, and inbound envelope handling with integrity incidents and duplicate candidates; transport, validation and persistence remain with the delivery owners | packet vectors executed against the pure compiler; network journey unobserved |
 | NEXT-24 | K2 annual-report semantic model and iXBRL | P1 | leaf implemented: `@open-erp/domain/annual-report` disclosure finalization with unknown-fact and framework guards, presentation reconciliation with explicit rounding rows, deterministic iXBRL assembly with duplicate/dangling refusal, validation-run evaluation, and signature-scope fencing; native validation, signing and filing remain with the artifact/authority owners | packet vectors executed against the pure compiler; filing journey unobserved |
+| NEXT-25 | Fixed-revision company rehearsal and restore | P0 | leaf implemented: `@open-erp/domain/rehearsal-verification` acceptance inventory with unknown-blocking and waiting handoffs, backup-manifest verification with no certificate on gaps, field-by-field restore comparison with retained differences, drift refusal and dispatch-fence proof; actual checkpoint capture, backup, restore and exercise remain with the operations owner under separate authority | packet vectors executed against the pure compiler; rehearsal exercise unobserved |
 | NEXT-47 | Document signatures bound to exact content and purpose | P1 | leaf implemented: `@open-erp/domain/document-signatures` purpose-bound intent freezing, authentic completion with digest/signer/environment checks and replay, distinct signer-set coverage, revocation-split eligibility, and unknown-start retention; provider protocol and receipts remain with the signing adapter owners | packet vectors executed against the pure compiler; cryptographic journey unobserved |
 | NEXT-12 | Historical open-item adoption | P1 | leaf implemented: `@open-erp/domain/historical-adoptions` residual adoption with full_history/opening_set exclusivity, pool capacity conservation and unknown-history preservation, execution-time conservation check, new-settlement remaining math without double-subtracting history, residual-credit refusal, and pool/live control assertions; journals stay empty with GL delta 0 and persistence remains with the sie/historical and commerce settlement owners | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
 | NEXT-19 | Disposal with proceeds | P1 | leaf implemented: `@open-erp/domain/asset-disposals` post-impairment carrying removal with unposted-cash and invoiced-proceeds modes, clearing-or-qualified-reclassification branch with no second AR/cash/VAT recognition, gain/loss legs, double-proceeds refusal and execution-time conservation; schedule retirement and disposition persistence remain with the reserved asset owner | packet vectors executed against the pure compiler; HTTP/MCP journey unobserved |
@@ -822,6 +824,70 @@ A deterministic `bigint` semantic model derives P&L and balance-sheet
 snapshots from retained ledger facts, sealed into immutable snapshot
 membership. Reads separate the saved model from live status, and the empty-page
 cursor case returns a next cursor while unscanned members remain.
+
+### NEXT-05 — General-rule cross-border service purchases
+
+A general-rule service purchase is its own economic event with its own sealed
+plan, journal group, book-currency payable and signed reverse-charge
+components. The pure calculation lives in
+`@open-erp/domain/service-purchases`: `classifyGeneralService` binds the
+service kind and origin class to the qualified release selection, and
+`compileCrossBorderService` converts the original liability and the SEK tax
+base through separate explicit witnesses, derives the output tax from the
+qualified rate and the deductible input from the reviewed fraction, and posts
+cost, reverse-charge input, reverse-charge output and payable as one balanced
+group. All three packet vectors hold exactly, and a nonzero source tax, an
+unsupported kind or class, a special place-of-supply exception and a duplicate
+line are refused.
+
+**The release carries the section; nothing defaults it.** The `vat` rule
+release gains an optional `generalRuleServices` section with the supported
+kinds, origin classes, exact rate rows with their 30/31/32 output boxes, and
+the tax and deduction rounding. A release without the section cannot recognize
+a service and is refused. Report boxes 21/22/30/31/32 join the shared box
+vocabulary; the net payable now adds reverse-charge output alongside domestic
+output, which changes no existing return.
+
+**Reuse, not a second register.** The owner binds the existing supplier draft
+and evidence workflow, the shared journal kernel with a new `service_purchase`
+posting owner kind, and `createInvoiceInTransaction` for the supplier payable,
+which stays book-currency. The payable control and the input VAT account
+resolve to the same retained controls the domestic purchase owner uses, so the
+VAT return already reconciles them; only the reverse-charge output account is
+operator-placed, and the return's control reconciliation is the backstop for
+it. The original currency amount and both conversion witnesses are retained in
+the sealed body. No FX register is written: foreign-currency original-unit
+obligation tracking stays NEXT-17's, and a first implementation that books the
+payable in book currency with retained witnesses is exactly what the packet
+allows. The actual return reads each sealed component once and declares the
+21/22 basis, the 30/31/32 output and the 48 input from it, with the sealed
+boxes cross-checked against the qualified rate row.
+
+Deliberate omissions, recorded rather than smoothed over:
+
+- **No web UI.** State is carried explicitly in the review, approval and
+  receipt records, matching the NEXT-15 precedent.
+- **MCP exposes reads only** (review, history, recognition). Mutations are
+  HTTP operator operations, matching the acceptance and FX owners.
+- **No service-credit follow-up.** Per-line originals are retained in the
+  sealed body for a later credit owner; no mutable capacity table was added
+  for a writer that does not exist yet.
+- **A received-date tax point is refused.** Supplier drafts carry no received
+  date evidence in this owner, so only document and supply bases are
+  supported.
+- **No reviewed general-rule release ships.** Until one exists every command
+  is refused with `UnsupportedProfile`, which is designed behavior, not a
+  default.
+
+Runtime evidence, kept as observations rather than committed tests: the three
+packet vectors plus refusal cases executed against the pure compiler in a
+throwaway process; the full `0001`–`0025` chain applies on a fresh PostgreSQL
+with the new tables, widened box/origin checks, immutable triggers and
+runtime grants probed; a pure actual-return vector declares 21/30/48 with a
+zero net and `filingReady: true` on reconciled controls; the existing
+credit-document, posting and persistence E2E suites pass (9 tests) with 0025
+applied. The service prepare/approve/execute financial journey itself remains
+unobserved.
 
 ## Integration debt carried by these merges
 
