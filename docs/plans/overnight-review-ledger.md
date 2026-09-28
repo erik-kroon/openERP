@@ -9,11 +9,11 @@ not evidence that an application journey is complete.
 
 | Scope | Owner | Current review disposition |
 | --- | --- | --- |
-| Main/origin reconciliation and document reading | Integrator, Herdr `wB:p19` | Local `129a0da` and remote `c859d9b` reconciled in `review/overnight-integration`; current executor authority is retained through disclosure claim, operation receipt and publication. Builds/full static gate pass. Native/document scenarios and repaired admission/pagination scenarios pass; detailed run scope below. |
+| Main/origin reconciliation and document reading | Integrator, Herdr `wB:p19` | Merged into local main through `77d5ab1` and `7c4defb`, retaining remote `c859d9b` and reviewed guard repair `26ba496`. Builds/full static gate and affected runtime scenarios pass; detailed run scope below. |
 | NEXT-07 | Herdr `wB:p1G` | User-assigned end-to-end integration. Independent review found a consumed-payment reversal guard that accepts an orphaned refund principal, plus the shared journal validator accepting two positive sides. Agent repaired these in `26ba496`; application/persistence completion remains its lane. |
 | NEXT-37 | Herdr `wB:p1C` | Application integration in progress; its final commit, financial journey and role/grant proof require review. |
 | NEXT-05, NEXT-23, NEXT-24 | Herdr `wB:p1C`, review after NEXT-37 | Committed source at `cc726bb`, `b8a21bc`, `bac876c`; packet-specific financial journeys remain unverified. Review before claiming complete support. |
-| NEXT-18 | Integrator | Independent read-only review found the defects below. Leaf repair precedes application integration; no current valuation application caller exists. |
+| NEXT-18 | Integrator | Five confirmed leaf defects repaired; before/after public-domain probes and both changed-file gates pass. [Evidence](evidence/next-18-leaf-review.md). No current valuation application caller exists. |
 | Other overnight leaves | Unassigned review queue | Maintain existing leaf-only status until inspected against the packet and real owners. |
 
 ## NEXT-18 failure obligations, before repair
@@ -37,6 +37,13 @@ The current FX owner has no valuation application consumer and still derives
 carrying from initial recognition less settlement releases. Fixing a pure leaf
 does not enable valuation posting; persistence, current qualified rates, complete
 scope recapture, approval, replay and settlement consumption must land together.
+
+The follow-up integration of `26ba496` passed its seven isolated defect checks
+and three existing real supplier/credit journeys. An earlier combined invocation
+timed out before tests produced results; it was not counted as passing. Its owned
+PostgreSQL process was identified through the run log and stopped before the
+bounded successful reruns. Main was then fast-forwarded during an agreed
+no-check/no-commit window, preserving the NEXT-07/NEXT-37 owners' dirty files.
 
 ## Merge discipline
 
