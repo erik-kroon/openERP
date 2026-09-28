@@ -34,7 +34,7 @@ The receipt rows, the single principal-increase row (`25000`/`25000`), two alloc
 
 ## Open questions for owners
 
-**An uppercase supplier credit number breaks both credit paths.** `credit-basis.ts` builds `sourceKey: supplier_credit:${supplierCreditNumber}` for the credit's own tax fact, but `SourceReference.sourceKey` is constrained to `^[a-z0-9][a-z0-9._:-]{2,127}$`. A supplier credit number such as `N07-CN-1` makes the paid prepare fail with HTTP 500 `InternalError` on the tax-adjustment decode. This is pre-existing and identical in the unpaid path, so it is the credit-basis owner's decision whether to encode the source key rather than the supplier's own document number. The focused journey uses a lowercase number; no shared identity construction was changed here.
+**Resolved in the review follow-up: valid credit document numbers now work in both paths.** Four HTTP regressions first reproduced `500 InternalError`: an uppercase paid-credit number, and uppercase, Unicode/punctuation and 128-character unpaid-credit numbers. `credit-basis.ts` now derives the bounded `supplier_credit:` source key from the existing credit recognition identity, which already hashes the exact counterparty/document-number economic key. The supplied document number retains its exact case and spelling, and the tax-component namespace is unchanged. No source-key schema was widened or financial identity lowercased.
 
 **A cash refund source is not required to be a registered bank account.** The first cut required `openerp.bank_sources`, which is only written by the bank statement import and needs retained `application/json` evidence plus a statement window. That would make a refund unreachable on any book that has not imported a statement, which the packet does not ask for: it asks for an evidenced same-currency cash receipt from the supplier. The shipped rule is an active, non-reserved account plus retained refund and cash evidence. If the intended rule is a registered bank source, that is a one-line tightening plus a dependency on the banking owner.
 
@@ -47,3 +47,15 @@ The receipt rows, the single principal-increase row (`25000`/`25000`), two alloc
 ## Limitations
 
 The evidence is synthetic-book. It does not establish a real-company VAT profile, a legal credit-note document, a bank-confirmed payment, a statutory refund claim or an MCP journey. The refundable and refund-due figures are derived from retained rows at read time; no negative outstanding is ever stored, and the older `outstandingMinor` contract is unchanged.
+
+## Source-identity follow-up verification
+
+`bun run check:changed`, `bun run check:changed:full` and
+`bun run test:e2e apps/api/tests/supplier-refund-journey.e2e.test.ts` passed.
+All six HTTP cases passed, including both credit paths, exact-key unpaid replay,
+the original paid-credit/refund conservation journey and consumed-payment refusal.
+Artifacts `supplier-credit-source-uppercase.json`, `supplier-credit-source-unicode.json`
+and `supplier-credit-source-maximum-length.json` retain the source keys, exact
+document numbers and execution receipts. The paid journey now uses `N07-CN-1`.
+Source inventory was stable:
+`3d3462c6bb4cc58d7bcab529997642e6d088f78fee9452d1333f7e847150146e`.
