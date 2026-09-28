@@ -1,0 +1,237 @@
+{
+  "meaning": "Independent synthetic expected values and chosen profile mechanics, not actual statutory parameters or application fixtures",
+  "money_encoding": "Exact minor-unit strings with currencies/scale declared by each selected profile",
+  "examples": [
+    {
+      "id": "mixed_domestic",
+      "packet": "NEXT-51",
+      "inputs": {
+        "netA": "10000",
+        "rateA": "1/4",
+        "netB": "20000",
+        "rateB": "3/25",
+        "exemptNet": "5000"
+      },
+      "expected": {
+        "tax": "4900",
+        "gross": "39900"
+      }
+    },
+    {
+      "id": "inclusive_backout",
+      "packet": "NEXT-51",
+      "inputs": {
+        "gross": "12500",
+        "rate": "1/4"
+      },
+      "expected": {
+        "net": "10000",
+        "tax": "2500"
+      }
+    },
+    {
+      "id": "eu_acquisition_partial_deduction",
+      "packet": "NEXT-53",
+      "inputs": {
+        "purchaseCost": "100000",
+        "outputTax": "25000",
+        "deduction": "12500"
+      },
+      "expected": {
+        "expenseDebit": "112500",
+        "inputDebit": "12500",
+        "payableCredit": "100000",
+        "outputCredit": "25000"
+      }
+    },
+    {
+      "id": "import_base",
+      "packet": "NEXT-54",
+      "inputs": {
+        "customsValue": "100000",
+        "duty": "5000",
+        "freightNotAlreadyIncluded": "2000",
+        "rate": "1/4"
+      },
+      "expected": {
+        "base": "107000",
+        "tax": "26750"
+      }
+    },
+    {
+      "id": "customer_advance_final",
+      "packet": "NEXT-56",
+      "inputs": {
+        "advanceGross": "12500",
+        "advanceNet": "10000",
+        "advanceTax": "2500",
+        "finalNet": "30000",
+        "finalTax": "7500"
+      },
+      "expected": {
+        "remainingAR": "25000",
+        "additionalVAT": "5000",
+        "lifetimeVAT": "7500"
+      }
+    },
+    {
+      "id": "supplier_advance_final",
+      "packet": "NEXT-57",
+      "inputs": {
+        "advanceGross": "12500",
+        "deductedOnAdvance": "2500",
+        "finalGross": "37500",
+        "finalDeduction": "7500"
+      },
+      "expected": {
+        "costDebit": "30000",
+        "newVATDebit": "5000",
+        "advanceCredit": "10000",
+        "payableCredit": "25000"
+      }
+    },
+    {
+      "id": "equal_instalments",
+      "packet": "NEXT-59",
+      "inputs": {
+        "gross": "125000",
+        "weights": [
+          "1",
+          "1",
+          "1"
+        ],
+        "payment": "50000"
+      },
+      "expected": {
+        "initial": [
+          "41667",
+          "41667",
+          "41666"
+        ],
+        "remaining": [
+          "0",
+          "33334",
+          "41666"
+        ]
+      }
+    },
+    {
+      "id": "cash_discount",
+      "packet": "NEXT-60",
+      "inputs": {
+        "principal": "10000",
+        "cash": "9800",
+        "discountNet": "160",
+        "discountTax": "40"
+      },
+      "expected": {
+        "journalSigned": [
+          "9800",
+          "160",
+          "40",
+          "-10000"
+        ],
+        "remaining": "0"
+      }
+    },
+    {
+      "id": "bad_debt_allowance",
+      "packet": "NEXT-61",
+      "inputs": {
+        "gross": "125000",
+        "VATRelief": "25000",
+        "allowance": "40000"
+      },
+      "expected": {
+        "newLossExpense": "60000",
+        "journalSigned": [
+          "40000",
+          "60000",
+          "25000",
+          "-125000"
+        ]
+      }
+    },
+    {
+      "id": "synthetic_interest",
+      "packet": "NEXT-62",
+      "inputs": {
+        "principal": "100000",
+        "annualRate": "1/10",
+        "days": "30",
+        "basisDays": "365"
+      },
+      "expected": {
+        "halfUpMinor": "822"
+      }
+    },
+    {
+      "id": "budget_exposure",
+      "packet": "NEXT-67",
+      "inputs": {
+        "budget": "100000",
+        "actual": "30000",
+        "openOrders": "20000",
+        "unreplacedRequests": "10000",
+        "newRequest": "45000"
+      },
+      "expected": {
+        "beforeHeadroom": "40000",
+        "overBudget": "5000"
+      }
+    },
+    {
+      "id": "statement_entry_details",
+      "packet": "NEXT-70",
+      "inputs": {
+        "opening": "100000",
+        "debitEntry": "30000",
+        "debitDetails": [
+          "10000",
+          "20000"
+        ],
+        "creditEntry": "5000"
+      },
+      "expected": {
+        "closing": "75000",
+        "debitCounted": "30000"
+      }
+    },
+    {
+      "id": "bank_partial_status",
+      "packet": "NEXT-71",
+      "inputs": {
+        "instructed": [
+          "40000",
+          "60000"
+        ],
+        "accepted": [
+          "40000"
+        ],
+        "booked": [
+          "40000"
+        ]
+      },
+      "expected": {
+        "remainingPrincipal": "60000",
+        "paymentCounted": "40000"
+      }
+    },
+    {
+      "id": "method_change_unrecognized",
+      "packet": "NEXT-75",
+      "inputs": {
+        "gross": "125000",
+        "net": "100000",
+        "tax": "25000",
+        "recognizedPaidGross": "50000",
+        "unrecognizedGross": "75000"
+      },
+      "expected": {
+        "bridgeNet": "60000",
+        "bridgeTax": "15000",
+        "VATOnLaterSettlement": "0"
+      }
+    }
+  ]
+}

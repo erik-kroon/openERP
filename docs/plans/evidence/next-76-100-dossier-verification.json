@@ -1,0 +1,82 @@
+{
+  "observedAt": "2026-09-28T00:00:00+00:00",
+  "headObserved": "66355b62b23e3b8007c2d324f3739fbbcc96cdc0",
+  "pinnedRevisionObserved": "66355b62b23e3b8007c2d324f3739fbbcc96cdc0",
+  "pinnedRevisionIsAncestorOfHead": true,
+  "pinnedRevisionEqualsObservedHead": true,
+  "result": "vendored_document_verified_against_its_own_records",
+  "scope": "Import and integrity observation of one externally supplied fourth-wave design dossier covering NEXT-76..100. No application, database, worker, queue, browser or provider workflow was executed.",
+  "source": {
+    "archive": "openerp-next-76-100.zip",
+    "entries": 41,
+    "suppliedFrom": "~/Downloads",
+    "archivePreparedOn": "2026-09-28",
+    "archiveStatus": "Proposed implementation-level work packets, not repository patches or completion claims",
+    "archiveScope": "ordinary AB accounting and selected business/review extensions; no consolidation or financial-services platform",
+    "archiveRepositoryReading": "targeted to plans, operations and the candidate entry point; no complete source audit or runtime qualification claimed"
+  },
+  "vendoredTree": {
+    "path": "docs/specs/next-76-100",
+    "packets": 25,
+    "packetRange": [
+      76,
+      100
+    ],
+    "checksumFile": "SHA256SUMS.txt",
+    "filesOnDisk": 41,
+    "filesCoveredByManifest": 40,
+    "filesOk": 40,
+    "mismatches": [],
+    "manifestSelfCoverage": "SHA256SUMS.txt is the only file on disk not listed in the manifest, as expected for a self-describing manifest",
+    "checker": "checks/validate.py",
+    "checkerExitCode": 0,
+    "checkerReported": {
+      "passed": 264,
+      "failed": 0,
+      "count": 264,
+      "byGroup": {
+        "structure": 131,
+        "documents": 69,
+        "arithmetic": 64
+      },
+      "matchesArchiveCheckDocument": true,
+      "kind": "dossier structure, dependency, link and independent synthetic arithmetic checks",
+      "repository_code_imported": false,
+      "sql_worker_or_queue_executed": false,
+      "provider_executed": false,
+      "repository_modified_by_checker": "checks/results.json only, written by the checker itself"
+    }
+  },
+  "checkerReproducibility": {
+    "checkerWritesItsOwnResultsFile": true,
+    "archivedResultsJsonSha256": "52309eac358b379421d5b75a762486146470aee8f15239dee530362561fe438e",
+    "rerunResult": "same 264 results, same counts, 0 failed",
+    "differenceFromArchivedFile": "ordering of the named document checks only; the checker emits them in filesystem enumeration order, not sorted order",
+    "consequence": "running the checker inside the vendored tree makes checks/results.json fail the manifest",
+    "remediationApplied": "archived bytes restored from the archive and manifest re-verified at 40 of 40 before this record was written",
+    "earlierWavesCompared": {
+      "next-01-25": "regenerated results.json byte-identical to archived",
+      "next-26-50": "regenerated results.json byte-identical to archived",
+      "next-51-75": "regenerated results.json byte-identical to archived"
+    }
+  },
+  "claimsBoundedByTheArchive": [
+    "The archive records prior_status 'not assumed complete' for NEXT-01..75 and states only the new-wave graph is checked.",
+    "The archive states its repository reading was targeted, with no complete source audit or runtime qualification claimed.",
+    "The archive reserves the earlier WIP owners by name, stating the names identify the original reservations rather than a claim they are still unfinished.",
+    "The archive states its conditional tax, grant, dividend, termination, pension and lease profiles are not launch prerequisites."
+  ],
+  "applicationCodeExecuted": false,
+  "packetsImplemented": 0,
+  "relatedRecords": [
+    "next-dossier-verification.md",
+    "next-51-75-dossier-verification.md"
+  ],
+  "limitations": [
+    "The archive's checker is a document and arithmetic check over its own content; it cannot establish implementation correctness.",
+    "Absence statements come from a targeted read rather than an exhaustive source audit, so they are weak evidence of absence even though the pinned revision is the observed head.",
+    "No statutory rate, table, statement or declaration schema, bank format, pension or tax-reserve parameter, provider contract or credential was qualified; nothing here activates a legal or provider profile.",
+    "No repository test, data reset, deployment, provider call, payment or filing was performed or authorized.",
+    "The fourth-wave gap entries in the dossier plan are the result of a dated title and text search of the maintained plans, capability backlog and parity backlog, not a verified absence audit of the checkout."
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "nodes": {
+    "NEXT-76": [],
+    "NEXT-77": [
+      "NEXT-76",
+      "NEXT-79"
+    ],
+    "NEXT-78": [
+      "NEXT-76",
+      "NEXT-79"
+    ],
+    "NEXT-79": [
+      "NEXT-76"
+    ],
+    "NEXT-80": [],
+    "NEXT-81": [],
+    "NEXT-82": [
+      "NEXT-81"
+    ],
+    "NEXT-83": [],
+    "NEXT-84": [
+      "NEXT-81"
+    ],
+    "NEXT-85": [],
+    "NEXT-86": [],
+    "NEXT-87": [],
+    "NEXT-88": [
+      "NEXT-87"
+    ],
+    "NEXT-89": [],
+    "NEXT-90": [],
+    "NEXT-91": [],
+    "NEXT-92": [],
+    "NEXT-93": [],
+    "NEXT-94": [],
+    "NEXT-95": [],
+    "NEXT-96": [],
+    "NEXT-97": [],
+    "NEXT-98": [
+      "NEXT-95"
+    ],
+    "NEXT-99": [],
+    "NEXT-100": []
+  },
+  "order": [
+    "NEXT-100",
+    "NEXT-76",
+    "NEXT-80",
+    "NEXT-81",
+    "NEXT-83",
+    "NEXT-85",
+    "NEXT-86",
+    "NEXT-87",
+    "NEXT-89",
+    "NEXT-90",
+    "NEXT-91",
+    "NEXT-92",
+    "NEXT-93",
+    "NEXT-94",
+    "NEXT-95",
+    "NEXT-96",
+    "NEXT-97",
+    "NEXT-99",
+    "NEXT-79",
+    "NEXT-82",
+    "NEXT-84",
+    "NEXT-88",
+    "NEXT-98",
+    "NEXT-77",
+    "NEXT-78"
+  ],
+  "prior_dependencies": {
+    "NEXT-76": [],
+    "NEXT-77": [
+      "NEXT-51"
+    ],
+    "NEXT-78": [
+      "NEXT-51",
+      "NEXT-59"
+    ],
+    "NEXT-79": [
+      "NEXT-13",
+      "NEXT-51",
+      "NEXT-58"
+    ],
+    "NEXT-80": [
+      "NEXT-03",
+      "NEXT-07",
+      "NEXT-08",
+      "NEXT-71"
+    ],
+    "NEXT-81": [
+      "NEXT-03",
+      "NEXT-31"
+    ],
+    "NEXT-82": [
+      "NEXT-19",
+      "NEXT-42"
+    ],
+    "NEXT-83": [
+      "NEXT-31",
+      "NEXT-57",
+      "NEXT-59"
+    ],
+    "NEXT-84": [
+      "NEXT-02",
+      "NEXT-13"
+    ],
+    "NEXT-85": [
+      "NEXT-22",
+      "NEXT-49"
+    ],
+    "NEXT-86": [
+      "NEXT-51",
+      "NEXT-15",
+      "NEXT-30",
+      "NEXT-49"
+    ],
+    "NEXT-87": [
+      "NEXT-03",
+      "NEXT-20",
+      "NEXT-22"
+    ],
+    "NEXT-88": [
+      "NEXT-20",
+      "NEXT-21",
+      "NEXT-35",
+      "NEXT-36"
+    ],
+    "NEXT-89": [
+      "NEXT-02",
+      "NEXT-22",
+      "NEXT-23",
+      "NEXT-49"
+    ],
+    "NEXT-90": [
+      "NEXT-02",
+      "NEXT-03",
+      "NEXT-13",
+      "NEXT-22"
+    ],
+    "NEXT-91": [
+      "NEXT-07",
+      "NEXT-57",
+      "NEXT-71"
+    ],
+    "NEXT-92": [
+      "NEXT-30",
+      "NEXT-07"
+    ],
+    "NEXT-93": [
+      "NEXT-26",
+      "NEXT-50"
+    ],
+    "NEXT-94": [
+      "NEXT-26"
+    ],
+    "NEXT-95": [
+      "NEXT-13",
+      "NEXT-65"
+    ],
+    "NEXT-96": [],
+    "NEXT-97": [
+      "NEXT-09",
+      "NEXT-10"
+    ],
+    "NEXT-98": [
+      "NEXT-13",
+      "NEXT-23",
+      "NEXT-25",
+      "NEXT-49",
+      "NEXT-50"
+    ],
+    "NEXT-99": [
+      "NEXT-13",
+      "NEXT-45",
+      "NEXT-50"
+    ],
+    "NEXT-100": []
+  },
+  "scope": "Only the new wave graph is checked; prior work is an external contract dependency, not a revalidated100-task graph."
+}

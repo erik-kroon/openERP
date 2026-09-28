@@ -1,0 +1,1332 @@
+{
+  "scope": "Dossier structural and independent synthetic calculation checks only",
+  "application_executed": false,
+  "sql_executed": false,
+  "provider_executed": false,
+  "repository_modified": false,
+  "results": [
+    {
+      "name": "exact25 consecutive task identities",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "exact25 packet files",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "no identical new-scope descriptions",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "source checkpoint retained",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "new-wave topological order contains25 once",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-76 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-76 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-76 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-76 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-76 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-77 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-77 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-77 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-77 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-77 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-78 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-78 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-78 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-78 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-78 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-79 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-79 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-79 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-79 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-79 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-80 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-80 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-80 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-80 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-80 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-81 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-81 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-81 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-81 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-81 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-82 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-82 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-82 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-82 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-82 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-83 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-83 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-83 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-83 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-83 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-84 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-84 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-84 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-84 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-84 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-85 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-85 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-85 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-85 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-85 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-86 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-86 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-86 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-86 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-86 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-87 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-87 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-87 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-87 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-87 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-88 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-88 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-88 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-88 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-88 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-89 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-89 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-89 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-89 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-89 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-90 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-90 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-90 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-90 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-90 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-91 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-91 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-91 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-91 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-91 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-92 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-92 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-92 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-92 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-92 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-93 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-93 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-93 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-93 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-93 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-94 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-94 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-94 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-94 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-94 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-95 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-95 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-95 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-95 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-95 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-96 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-96 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-96 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-96 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-96 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-97 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-97 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-97 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-97 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-97 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-98 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-98 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-98 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-98 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-98 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-99 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-99 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-99 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-99 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-99 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-100 file matches recorded hash",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-100 dependencies ordered",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-100 prior dependencies valid",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-100 source references known",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "NEXT-100 appears once in master",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "00-COMMON.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "00-COMMON.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "01-QUALIFIED-INPUTS.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "01-QUALIFIED-INPUTS.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "SOURCES.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "SOURCES.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "README.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "README.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "COORDINATOR-HANDOFF.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "COORDINATOR-HANDOFF.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "INTEGRATION-MAP.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "INTEGRATION-MAP.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "CHECKS.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "CHECKS.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "DECISIONS.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "DECISIONS.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "MASTER-PSEUDOCODE.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "MASTER-PSEUDOCODE.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-79.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-79.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-96.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-96.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-88.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-88.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-82.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-82.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-100.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-100.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-86.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-86.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-99.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-99.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-98.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-98.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-83.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-83.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-92.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-92.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-81.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-81.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-84.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-84.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-76.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-76.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-78.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-78.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-95.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-95.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-91.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-91.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-97.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-97.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-94.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-94.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-87.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-87.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-89.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-89.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-85.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-85.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-90.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-90.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-93.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-93.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-77.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-77.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-80.md paired fences",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "packets/NEXT-80.md no em dash",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "local links and master anchors resolve",
+      "passed": true,
+      "group": "documents"
+    },
+    {
+      "name": "five earlier WIP reservations retained",
+      "passed": true,
+      "group": "structure"
+    },
+    {
+      "name": "positive half-up tie",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "negative half-up tie",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "zero denominator refused",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "equal installment residual",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "zero weight gets no amount",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "all zero weights refused",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "contract cap after increase",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "reduction below consumed cap refuses",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "time billing exact minute conversion",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "time remaining after reservations",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "retention preserves original gross",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "unbilled recognition",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "invoice releases prior earnings",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "unbilled lifetime revenue only once",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "held slices union does not double count",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "overlapping holds union exact",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "hold plus distinct reserved leaves no new capacity",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "asset commissioning no new payable",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "partial commissioning preserves remainder",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "component retirement and replacement",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "indexed rent",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "apply refundable rental deposit",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "deposit remaining",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "synthetic tax deduction ceiling",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "chosen tax deduction and reserve",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "tax reserve posts only delta",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "excess depreciation delta",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "synthetic periodic reserve choice below ceiling",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "vintage tax versus book reversal difference",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "ROT reclassification changes no consideration",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "ROT claim cash receipt",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "pension provision true-up",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "pension fee tax counted separately",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "SLP target delta synthetic",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "final holiday expense only unprovided part",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "dividend entitlement conservation",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "dividend liability after partial cash",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "grant cash before earned",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "grant later earns through deferred plus receivable",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "grant negative revision removes receivable and creates liability",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "supplier credit two applications",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "supplier credit excess refuses",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "supplier credit applies to payable",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "bilateral setoff no bank movement",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "bilateral setoff both balances update",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "one human cannot fill two distinct approval slots",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "two distinct eligible humans fill slots",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "revoked human invalidates unconsumed quorum",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "batch risk is gross not one leg",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "two exact covers remain ambiguous",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "smallest complete cover selected",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "incomplete search not false no-match",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "truncated candidate pool not global uniqueness",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "full selected pool no solution",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "forecast timing amount day5",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "forecast total error day7",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "negative cash-flow error has correct sign",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "forecast exact decomposition (100, 80, 5, 7)",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "forecast exact decomposition (100, 120, 5, 3)",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "forecast exact decomposition (-100, -80, 5, 7)",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "forecast exact decomposition (-100, -120, 5, 3)",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "opposite cash signs require explicit classification",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "HMAC fixture verifies exact bytes",
+      "passed": true,
+      "group": "arithmetic"
+    },
+    {
+      "name": "changed event body does not verify",
+      "passed": true,
+      "group": "arithmetic"
+    }
+  ],
+  "passed": 264,
+  "failed": 0,
+  "count": 264
+}

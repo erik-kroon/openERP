@@ -1,0 +1,99 @@
+{
+  "repository": "erik-kroon/openERP",
+  "commit": "66355b62b23e3b8007c2d324f3739fbbcc96cdc0",
+  "repository_sources": {
+    "R01": {
+      "title": "Pinned main-branch metadata",
+      "url": "https://github.com/erik-kroon/openERP/commit/66355b62b23e3b8007c2d324f3739fbbcc96cdc0",
+      "read": "Branch metadata only",
+      "meaning": "Observed main at this revision. This does not establish an end-of-task latest-head claim or a full commit-diff review."
+    },
+    "R02": {
+      "title": "Capability backlog",
+      "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/docs/plans/capability-backlog.md",
+      "read": "Requested lines90-255, returned requirement sections through document, sales, expenses and recurring work",
+      "meaning": "Supports owning areas and stated requirements. Historical missing/unowned language is not adopted as verified absence in current code."
+    },
+    "R03": {
+      "title": "VAT, payroll, assets and FX plan",
+      "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/docs/plans/05-vat-payroll-assets-fx.md",
+      "read": "Requested lines1-180",
+      "meaning": "Supports dated profiles, termination/benefit inputs and distinct book/tax/asset calculations. Old migration/subset descriptions are planning history, not fresh runtime evidence."
+    },
+    "R04": {
+      "title": "Operations and review",
+      "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/docs/operations.md",
+      "read": "Requested lines1-175; returned complete operation/review/provider sections",
+      "meaning": "Application ownership, authority, retained context and provider/outbox requirements. Its pre-release baseline language is not authority to reset current meaningful data."
+    },
+    "R05": {
+      "title": "Bank candidate application entry point",
+      "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/apps/api/src/application/banking/candidates.ts",
+      "read": "Lines1-145 only",
+      "meaning": "Confirms the current scoped candidate application and selected capacity/comparability inputs. The unread remainder and other match modules were not audited; no complete absence claim for covering sets is made."
+    },
+    "R06": {
+      "title": "Book Zero and Cash",
+      "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/docs/plans/15-book-zero-workflow-cash.md",
+      "read": "Requested lines100-230; returned results, scenarios and acceptance sections",
+      "meaning": "Supports saved Cash scenarios, outcome comparison by timing/amount/information and independent reviewer gates. Proposed NEXT-99 adds scoring mechanics, not another forecast authority."
+    }
+  },
+  "external_sources": {
+    "X01": {
+      "title": "Skatteverket: periodiseringsfond for AB",
+      "urls": [
+        "https://www.skatteverket.se/foretag/drivaforetag/foretagsformer/aktiebolag/periodiseringsfond.4.4887341d16e1e2b8ddf30e.html",
+        "https://www4.skatteverket.se/rattsligvagledning/edition/2026.7/329552.html"
+      ],
+      "meaning": "Separate annual reserve cohorts, release ordering and dated tax-year/vintage rules. The examples in the packet use synthetic factors. No complete release/exception corpus was qualified.",
+      "evidence": "Official search-rendered pages; no full statutory-rule compilation"
+    },
+    "X02": {
+      "title": "Skatteverket: ROT/RUT work, payment and claim scope",
+      "urls": [
+        "https://www.skatteverket.se/foretag/etjansterochblanketter/svarpavanligafragor/rotochrutarbete/foretagrotochrutarbetefaq/narskajagsomutforareansokaomutbetalningdakundenbetalatbaraendelavfakturabeloppetexempelvisviddelfaktureringochvadhanderombetalningargorspabadasidornaavettarsskifte.5.71004e4c133e23bf6db800013003.html",
+        "https://www.skatteverket.se/foretag/skatterochavdrag/rotochrut/safungerarrutavdraget.4.64a656d113f4c7597011e41.html",
+        "https://www4.skatteverket.se/rattsligvagledning/edition/2026.14/326163.html"
+      ],
+      "meaning": "Claim coverage depends on completed work and payment facts; partial payments and actual authority payment/offset are distinct. Do not copy a page example rate into every case.",
+      "evidence": "Official search-rendered passages; exact production schema, current full eligibility/caps and company facts were not qualified"
+    },
+    "X03": {
+      "title": "Skatteverket: SLP and employer contribution distinction",
+      "urls": [
+        "https://www.skatteverket.se/arbetsgivaravgifter",
+        "https://www4.skatteverket.se/rattsligvagledning/edition/2026.7/2912.html"
+      ],
+      "meaning": "SLP on pension costs is distinct from ordinary employer contribution and other special payroll tax. Its basis belongs in the qualified income-tax reporting workflow. No actual rate or annual formula release supplied here.",
+      "evidence": "Official search-rendered summaries; complete pension policy/provider data not read"
+    },
+    "X04": {
+      "title": "Skatteverket: KU31 examples",
+      "urls": [
+        "https://www.skatteverket.se/foretag/skatterochavdrag/kontrolluppgifter/kontrolluppgiftomutdelningmedmerapadelagarrattku31/exempelpahurdufyllerikontrolluppgiftenomutdelningmmpadelagarratt.4.3810a01c150939e893f289fc.html"
+      ],
+      "meaning": "Illustrates company-side distribution reporting and case-dependent withholding. The packet requires actual availability/recipient/form qualification; it supplies no universal dividend rule.",
+      "evidence": "Official example inspected through search output, not a complete form/schema qualification"
+    },
+    "X05": {
+      "title": "Aktiebolagslag: value transfer and dividend authority",
+      "urls": [
+        "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/aktiebolagslag-2005551_sfs-2005-551/"
+      ],
+      "meaning": "A dividend is a legally authorised value transfer with applicable capital/governance conditions. A positive Cash forecast is not that authority. Effective-date selection is required; the consolidated text includes future provisions.",
+      "evidence": "Official legislation search result, not a legal opinion or full current corporate-law analysis"
+    },
+    "X06": {
+      "title": "Google Gmail sync and message retrieval",
+      "urls": [
+        "https://developers.google.com/workspace/gmail/api/guides/sync",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get"
+      ],
+      "meaning": "Partial history can expire and require full synchronization; get supports retained full/raw message capture subject to actual authorised scopes. The proposed workflow adds domain-specific evidence/routing semantics.",
+      "evidence": "Official pages opened; no Gmail account accessed or adapter exercised"
+    }
+  },
+  "prior_archive_sha256": "b137d233f7e6261f9bacc8c94eb2b3adcfd6d5055bc45a3f5555ef90ae2fc9d8",
+  "prior_index_sha256": "4f30c9ba564b8ee0da64d92ce8e1e3315f13b7745ca821ec19f4455f6c24f7cd"
+}

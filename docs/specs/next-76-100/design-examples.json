@@ -1,0 +1,224 @@
+{
+  "status": "synthetic independent expected values; not statutory parameters or executed application results",
+  "examples": [
+    {
+      "id": "WORK_TIME",
+      "packet": "NEXT-77",
+      "inputs": {
+        "minutes": "90",
+        "rateMinorPerHour": "120000"
+      },
+      "expected": {
+        "netMinor": "180000"
+      }
+    },
+    {
+      "id": "RETENTION",
+      "packet": "NEXT-78",
+      "inputs": {
+        "gross": "125000",
+        "retention": "12500"
+      },
+      "expected": {
+        "dueNow": "112500",
+        "retained": "12500"
+      }
+    },
+    {
+      "id": "UNBILLED",
+      "packet": "NEXT-79",
+      "inputs": {
+        "priorEarned": "60000",
+        "invoiceNet": "80000",
+        "tax": "20000"
+      },
+      "expected": {
+        "arDebit": "100000",
+        "assetCredit": "60000",
+        "newRevenueCredit": "20000",
+        "taxCredit": "20000"
+      }
+    },
+    {
+      "id": "COMMISSION",
+      "packet": "NEXT-81",
+      "inputs": {
+        "purchaseCost": "100000",
+        "eligibleInstallation": "20000"
+      },
+      "expected": {
+        "assetDebit": "120000",
+        "constructionCredit": "120000"
+      }
+    },
+    {
+      "id": "REPLACE_COMPONENT",
+      "packet": "NEXT-82",
+      "inputs": {
+        "gross": "100000",
+        "ordinary": "60000",
+        "impairment": "10000",
+        "newCost": "80000"
+      },
+      "expected": {
+        "retirementLoss": "30000",
+        "newCarrying": "80000"
+      }
+    },
+    {
+      "id": "INDEXED_RENT",
+      "packet": "NEXT-83",
+      "inputs": {
+        "base": "10000",
+        "factorNumerator": "103",
+        "factorDenominator": "100"
+      },
+      "expected": {
+        "rent": "10300"
+      }
+    },
+    {
+      "id": "TAX_DEPRECIATION",
+      "packet": "NEXT-84",
+      "inputs": {
+        "taxBasis": "1000000",
+        "allowedMinimumClosing": "700000",
+        "chosenDeduction": "250000",
+        "bookCarrying": "800000",
+        "priorReserve": "30000"
+      },
+      "expected": {
+        "maxDeduction": "300000",
+        "taxClosing": "750000",
+        "targetReserve": "50000",
+        "reserveDelta": "20000"
+      }
+    },
+    {
+      "id": "RESERVE",
+      "packet": "NEXT-85",
+      "inputs": {
+        "qualifiedBasis": "1000000",
+        "syntheticNumerator": "1",
+        "syntheticDenominator": "4",
+        "chosenAllocation": "200000"
+      },
+      "expected": {
+        "ceiling": "250000",
+        "chosenReserve": "200000"
+      }
+    },
+    {
+      "id": "PENSION",
+      "packet": "NEXT-87",
+      "inputs": {
+        "priorProvision": "10000",
+        "actualCost": "11000",
+        "deductibleFeeVAT": "0"
+      },
+      "expected": {
+        "provisionDebit": "10000",
+        "newCostDebit": "1000",
+        "apCredit": "11000"
+      }
+    },
+    {
+      "id": "FINAL_HOLIDAY",
+      "packet": "NEXT-88",
+      "inputs": {
+        "existingLiability": "12000",
+        "entitlement": "15000"
+      },
+      "expected": {
+        "releasedLiability": "12000",
+        "additionalCost": "3000"
+      }
+    },
+    {
+      "id": "DIVIDEND",
+      "packet": "NEXT-89",
+      "inputs": {
+        "actualDeclared": "100000",
+        "rightA": "3",
+        "rightB": "2"
+      },
+      "expected": {
+        "holderA": "60000",
+        "holderB": "40000"
+      }
+    },
+    {
+      "id": "GRANT",
+      "packet": "NEXT-90",
+      "inputs": {
+        "cashReceived": "50000",
+        "earnedFirst": "30000",
+        "newEarnedTarget": "70000"
+      },
+      "expected": {
+        "firstDeferredRemaining": "20000",
+        "additionalIncome": "40000",
+        "additionalReceivable": "20000"
+      }
+    },
+    {
+      "id": "CREDIT_APPLICATION",
+      "packet": "NEXT-91",
+      "inputs": {
+        "originalCredit": "30000",
+        "firstApplication": "20000",
+        "secondApplication": "8000"
+      },
+      "expected": {
+        "remainingCredit": "2000"
+      }
+    },
+    {
+      "id": "SETOFF",
+      "packet": "NEXT-92",
+      "inputs": {
+        "originalAR": "150000",
+        "originalAP": "100000",
+        "setoff": "80000"
+      },
+      "expected": {
+        "arRemaining": "70000",
+        "apRemaining": "20000",
+        "cashEffect": "0"
+      }
+    },
+    {
+      "id": "COVER_AMBIGUITY",
+      "packet": "NEXT-97",
+      "inputs": {
+        "target": "100",
+        "candidates": [
+          "70",
+          "30",
+          "60",
+          "40"
+        ]
+      },
+      "expected": {
+        "minimalSetSize": 2,
+        "numberOfEqualCovers": 2
+      }
+    },
+    {
+      "id": "FORECAST_ERROR",
+      "packet": "NEXT-99",
+      "inputs": {
+        "predicted": "100",
+        "actual": "80",
+        "predictedDay": 5,
+        "actualDay": 7
+      },
+      "expected": {
+        "day5Timing": "-80",
+        "day5Amount": "-20",
+        "day5Total": "-100",
+        "day7Total": "-20"
+      }
+    }
+  ]
+}

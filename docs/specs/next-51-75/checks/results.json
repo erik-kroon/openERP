@@ -1,0 +1,414 @@
+{
+  "scope": "Standalone dossier structure and independent synthetic mathematical examples only",
+  "baseline": "116a5ca6b5fb9ec9fb08ee55c3beaad5af6b8fa5",
+  "application_code_imported": false,
+  "repository_tests_run": false,
+  "database_run": false,
+  "provider_run": false,
+  "repository_modified": false,
+  "named_checks": 80,
+  "passed": 80,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Exactly 25 new IDs in order",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Exactly 25 packet files",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No first-wave file overwritten in the new packet folder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Every packet has a distinct explicit delta",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Every packet names current ownership and complete atomic result",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Every packet requires more than a leaf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "All delivered packet hashes agree with the index",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Old dependencies remain in the existing namespace",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "New dependencies resolve inside this wave",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "All conditional dependencies resolve in NEXT-01..75",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "All packet evidence labels resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Source pins agree",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "New-wave dependency graph has 25 unique nodes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "All declared new-wave edges are acyclic",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Services-only sales list does not hard-depend on goods support",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "SEK bank import does not hard-depend on foreign cash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Portal does not require payment-link delivery",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Whole-invoice payment link does not require installments",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Master contains every new packet heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Master discloses no application test claim",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "All Markdown code fences paired",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No em dashes in delivered Markdown",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "All local document links resolve",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "name": "No font files included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No executable feature stored-procedure instruction",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Floor exact negative division is unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Floor positive inexact division rounds down",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Floor negative inexact division rounds down",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Half-up is sign-symmetric",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Half-even distinguishes odd/even ties",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Exact mode refuses discarded residual",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Zero denominator refuses",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Signed floor agrees on a finite independent grid",
+      "passed": true,
+      "detail": "1339 synthetic rational inputs; not statutory qualification or repository calculator tests."
+    },
+    {
+      "name": "Largest-remainder allocation conserves exact amounts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Allocation ties are deterministic by stable ID",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Zero weight gets no allocation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "All-zero weights refuse",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Mixed domestic amounts reconcile",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Gross-preserving inclusive backout example",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Mixed invoice payable-rounding effect",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [39901, -35000, -4900, -1]"
+    },
+    {
+      "name": "EU acquisition partial deduction",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [112500, 12500, -100000, -25000]"
+    },
+    {
+      "name": "Import tax base includes only uncounted charges",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Import charge already included is not added twice",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "EU original-error correction replaces total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Customer advance initial receipt",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [12500, -10000, -2500]"
+    },
+    {
+      "name": "Customer advance final application",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [25000, 10000, -30000, -5000]"
+    },
+    {
+      "name": "Customer advance lifetime tax is final supply tax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Unused customer advance refund",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [10000, 2500, -12500]"
+    },
+    {
+      "name": "Supplier advance receipt",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [10000, 2500, -12500]"
+    },
+    {
+      "name": "Supplier advance final deduction and payable",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [30000, 5000, -10000, -25000]"
+    },
+    {
+      "name": "Supplier advance with initial deduction deferred",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [30000, 7500, -12500, -25000]"
+    },
+    {
+      "name": "Advance formula conserves partial components",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Revenue deferral example retains remaining source capacity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Installments partition invoice exactly",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Partial payment conserves installment residual",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Payment cannot consume excess installment principal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Qualified cash discount",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [9800, 160, 40, -10000]"
+    },
+    {
+      "name": "Unqualified short payment leaves unpaid principal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Confirmed loss with allowance 0",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [0, 100000, 25000, -125000]"
+    },
+    {
+      "name": "Confirmed loss with allowance 40000",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [40000, 60000, 25000, -125000]"
+    },
+    {
+      "name": "Confirmed loss with allowance 100000",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [100000, 0, 25000, -125000]"
+    },
+    {
+      "name": "Confirmed loss with allowance 125000",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [125000, -25000, 25000, -125000]"
+    },
+    {
+      "name": "Qualified late bad-debt cash recovery",
+      "passed": true,
+      "detail": "Synthetic debit-positive integer vector: [25000, -20000, -5000]"
+    },
+    {
+      "name": "Synthetic single-segment interest",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Synthetic reduced-principal interest sums before rounding",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Budget exposure replaces rather than adds stages",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Budget shortfall example",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Serialized competing budget requests cannot both fit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Three-way accepted-unbilled quantity is disjoint",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Statement entry is not summed with details",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Unreconciled bank detail decomposition refuses",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Accepted bank instruction does not settle entire principal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Uploaded tax draft is not submitted fulfillment",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Missing external signature remains pending",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Signed-submitted is still not guaranteed accepted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Wrong entity receipt cannot fulfill obligation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Sandbox receipt cannot fulfill production obligation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Correct observed accepted receipt can satisfy declared profile",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Method-change recognized/unrecognized coverage conserves tax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Already year-end-recognized method-change residual has no new tax",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

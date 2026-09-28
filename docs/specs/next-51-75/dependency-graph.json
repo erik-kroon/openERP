@@ -1,0 +1,80 @@
+{
+  "meaning": "Declared new-wave prerequisite order including optional integrations. Prior NEXT contracts are external nodes whose completion is not assumed.",
+  "nodes": {
+    "NEXT-51": [],
+    "NEXT-52": [
+      "NEXT-51"
+    ],
+    "NEXT-53": [
+      "NEXT-51"
+    ],
+    "NEXT-54": [],
+    "NEXT-55": [
+      "NEXT-52",
+      "NEXT-53"
+    ],
+    "NEXT-56": [
+      "NEXT-51"
+    ],
+    "NEXT-57": [],
+    "NEXT-58": [],
+    "NEXT-59": [],
+    "NEXT-60": [],
+    "NEXT-61": [],
+    "NEXT-62": [
+      "NEXT-59"
+    ],
+    "NEXT-63": [
+      "NEXT-51"
+    ],
+    "NEXT-64": [
+      "NEXT-59"
+    ],
+    "NEXT-65": [
+      "NEXT-59",
+      "NEXT-64"
+    ],
+    "NEXT-66": [],
+    "NEXT-67": [
+      "NEXT-66"
+    ],
+    "NEXT-68": [],
+    "NEXT-69": [],
+    "NEXT-70": [],
+    "NEXT-71": [
+      "NEXT-59",
+      "NEXT-70"
+    ],
+    "NEXT-72": [],
+    "NEXT-73": [],
+    "NEXT-74": [],
+    "NEXT-75": []
+  },
+  "topological_order": [
+    "NEXT-51",
+    "NEXT-54",
+    "NEXT-57",
+    "NEXT-58",
+    "NEXT-59",
+    "NEXT-60",
+    "NEXT-61",
+    "NEXT-66",
+    "NEXT-68",
+    "NEXT-69",
+    "NEXT-70",
+    "NEXT-72",
+    "NEXT-73",
+    "NEXT-74",
+    "NEXT-75",
+    "NEXT-52",
+    "NEXT-53",
+    "NEXT-56",
+    "NEXT-62",
+    "NEXT-63",
+    "NEXT-64",
+    "NEXT-67",
+    "NEXT-71",
+    "NEXT-55",
+    "NEXT-65"
+  ]
+}

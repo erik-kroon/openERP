@@ -1,0 +1,73 @@
+{
+  "observedAt": "2026-09-28T00:00:00+00:00",
+  "headObserved": "66355b62b23e3b8007c2d324f3739fbbcc96cdc0",
+  "pinnedRevisionObserved": "116a5ca6b5fb9ec9fb08ee55c3beaad5af6b8fa5",
+  "pinnedRevisionIsAncestorOfHead": true,
+  "result": "vendored_document_verified_against_its_own_records",
+  "scope": "Import and integrity observation of one externally supplied third-wave design dossier covering NEXT-51..75. No application, database, worker, queue, browser or provider workflow was executed.",
+  "source": {
+    "archive": "openerp-next-51-75.zip",
+    "entries": 41,
+    "suppliedFrom": "~/Downloads",
+    "archivePreparedOn": "2026-09-28",
+    "archiveStatus": "Proposed implementation-level work packets, not repository patches or completion claims",
+    "archiveScope": "Ordinary AB commercial accounting and selected external completion; no banking/lending platform adoption"
+  },
+  "vendoredTree": {
+    "path": "docs/specs/next-51-75",
+    "packets": 25,
+    "packetRange": [
+      51,
+      75
+    ],
+    "checksumFile": "SHA256SUMS.txt",
+    "filesOnDisk": 41,
+    "filesCoveredByManifest": 40,
+    "filesOk": 40,
+    "mismatches": [],
+    "manifestSelfCoverage": "SHA256SUMS.txt is the only file on disk not listed in the manifest, as expected for a self-describing manifest",
+    "checker": "checks/validate.py",
+    "checkerExitCode": 0,
+    "checkerReported": {
+      "named_checks": 80,
+      "passed": 80,
+      "failed": 0,
+      "kind": "dossier document, link and illustrative arithmetic checks",
+      "repository_code_imported": false,
+      "sql_worker_or_queue_executed": false,
+      "provider_executed": false,
+      "repository_modified_by_checker": false,
+      "cannot_establish": [
+        "transaction atomicity",
+        "actual access policy",
+        "legal applicability",
+        "live external acceptance"
+      ]
+    }
+  },
+  "claimsBoundedByTheArchive": [
+    "The archive states a packet describes a workflow absent from the prior NEXT scope, and that this is not an exhaustive current-source absence audit.",
+    "The archive states it does not claim all fifty earlier tasks are complete, nor that every new capability is wholly absent from unreviewed code.",
+    "The archive states no OpenERP runtime, transaction, browser or provider was exercised in producing it, and no repository file was changed."
+  ],
+  "applicationCodeExecuted": false,
+  "packetsImplemented": 0,
+  "maintainedPlanUpdates": [
+    "docs/plans/12-next-implementation-dossier.md",
+    "docs/specs/README.md",
+    "docs/adr/0012-next-implementation-dossier.md",
+    "docs/adr/README.md",
+    "docs/plans/README.md",
+    "docs/README.md",
+    "docs/roadmap.md",
+    "docs/open-decisions.md"
+  ],
+  "relatedRecord": "next-dossier-verification.md",
+  "limitations": [
+    "The archive's checker is a document and arithmetic check over its own content; it cannot establish implementation correctness.",
+    "Absence statements describe the pinned revision 116a5ca6 and are further narrowed by the archive's own statement that it is not an exhaustive absence audit.",
+    "No statutory rate, table, statement or declaration schema, bank format, provider contract or credential was qualified; nothing here activates a legal or provider profile.",
+    "No repository test, data reset, deployment, provider call, payment or filing was performed or authorized.",
+    "The gap table in the dossier plan for the third wave is the result of a dated title and text search of the maintained plans, capability backlog and parity backlog, not a verified absence audit of the checkout."
+  ]
+}

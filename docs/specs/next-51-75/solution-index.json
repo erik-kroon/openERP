@@ -1,0 +1,1067 @@
+{
+  "schema_version": 1,
+  "edition": "NEXT-51..75 / application-owned wave 3",
+  "repository": "erik-kroon/openERP",
+  "baseline": "116a5ca6b5fb9ec9fb08ee55c3beaad5af6b8fa5",
+  "prepared_on": "2026-09-28",
+  "status": "Proposed implementation-level work packets, not repository patches or completion claims",
+  "range": [
+    51,
+    75
+  ],
+  "old_packets_preserved": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50
+  ],
+  "new_count": 25,
+  "scope": "Ordinary AB commercial accounting and selected external completion; no banking/lending platform adoption",
+  "solutions": [
+    {
+      "id": "NEXT-51",
+      "title": "Mixed-rate domestic sales and tax-inclusive prices",
+      "priority": "P0",
+      "lane": "COMMERCE",
+      "prior_wave_dependencies": [
+        "NEXT-02",
+        "NEXT-04",
+        "NEXT-15"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R04",
+        "X01"
+      ],
+      "new_scope": "Extend the bounded domestic standard-rate invoice into explicitly qualified reduced-rate, exempt and mixed-rate documents with inclusive pricing. This is new sales scope, not a repair of the original credit or purchase packets.",
+      "existing_owner": "Existing commerce invoice draft/issue/credit operations, legal policy, VAT facts and retained renderers.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-51.md",
+      "conditional_dependencies": [],
+      "atomic_scope": "Journal + invoice/tax components + original credit capacities",
+      "parity_inputs": "PRY-47, PRY-51, PRY-55",
+      "canonical_owner_family": "COM-02/04, VAT-02",
+      "non_overlap": "Domestic standard-rate owner gains new mixed/reduced/exempt profiles, not a second issue engine.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "885c79274f9a58af654954bdab8ad17ca25caee9d91316c81d4c6157e53d34a4",
+      "word_count": 705
+    },
+    {
+      "id": "NEXT-52",
+      "title": "Cross-border B2B service sales and customer-status evidence",
+      "priority": "P1",
+      "lane": "COMMERCE",
+      "prior_wave_dependencies": [
+        "NEXT-02",
+        "NEXT-04",
+        "NEXT-15"
+      ],
+      "dependencies": [
+        "NEXT-51"
+      ],
+      "source_refs": [
+        "R03",
+        "R04",
+        "X02",
+        "X03"
+      ],
+      "new_scope": "Add the sale-side general-rule EU and non-EU B2B service profiles. NEXT-05 covers service purchases, not these sales or their customer-status evidence.",
+      "existing_owner": "Existing sales issue/credit and party fact owners; dated jurisdiction treatment selection.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-52.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-17",
+          "when": "The selected sale is in foreign currency and needs the existing monetary-item representation."
+        }
+      ],
+      "atomic_scope": "Journal + AR + zero/output tax and cross-border reporting facts",
+      "parity_inputs": "PRY-47, PRY-11",
+      "canonical_owner_family": "COM-02/04, VAT-02",
+      "non_overlap": "Sale-side general-rule B2B services are distinct from NEXT-05 purchase-side services.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "291370a6404f3ba377b5b461ca48ad1bc010096927a659dff533b88c707bee3e",
+      "word_count": 707
+    },
+    {
+      "id": "NEXT-53",
+      "title": "Intra-EU goods acquisition and supply accounting",
+      "priority": "P2",
+      "lane": "TAX-COMMERCE",
+      "prior_wave_dependencies": [
+        "NEXT-02",
+        "NEXT-03",
+        "NEXT-04",
+        "NEXT-15"
+      ],
+      "dependencies": [
+        "NEXT-51"
+      ],
+      "source_refs": [
+        "R03",
+        "R04",
+        "X01",
+        "X02"
+      ],
+      "new_scope": "Add goods-specific intra-EU acquisition and sale profiles, including movement evidence. Neither service-purchase NEXT-05 nor service-sale NEXT-52 establishes goods treatment.",
+      "existing_owner": "Purchase/sales recognition and reporting fact owners, with existing asset/expense destinations.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-53.md",
+      "conditional_dependencies": [],
+      "atomic_scope": "Journal + original goods recognition + tax/movement lineage",
+      "parity_inputs": "PRY-47, PRY-55/56",
+      "canonical_owner_family": "COM-02/04, VAT-02",
+      "non_overlap": "Goods movement/acquisition/supply treatment is not inferred from the service profile.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "4dd731788bf9f73d5927cacd7c01894d5646576eabc6ea3b26d93f1809b32e76",
+      "word_count": 648
+    },
+    {
+      "id": "NEXT-54",
+      "title": "Customs imports, import VAT and landed-cost attribution",
+      "priority": "P2",
+      "lane": "TAX-COMMERCE",
+      "prior_wave_dependencies": [
+        "NEXT-02",
+        "NEXT-03",
+        "NEXT-04"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R04",
+        "X04"
+      ],
+      "new_scope": "Add the customs assessment and import-tax basis alongside purchase recognition. A non-EU service purchase is not an imported-goods tax record.",
+      "existing_owner": "Existing supplier recognition, source intake, tax facts and supported expense/asset cost owner.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-54.md",
+      "conditional_dependencies": [],
+      "atomic_scope": "Customs assessment delta + qualified cost/tax effects",
+      "parity_inputs": "PRY-55/56",
+      "canonical_owner_family": "COM-02, VAT-02",
+      "non_overlap": "Customs import decisions and landed-cost attribution extend purchase recognition, not inventory custody.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "80123228b18ae449d9acf9bf52084efbf09abf607a693f4a5efbebc92e733a13",
+      "word_count": 635
+    },
+    {
+      "id": "NEXT-55",
+      "title": "Periodisk sammanst\u00e4llning with correction lineage",
+      "priority": "P1",
+      "lane": "TAX-REPORTING",
+      "prior_wave_dependencies": [
+        "NEXT-04",
+        "NEXT-49"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "X02",
+        "X03"
+      ],
+      "new_scope": "Add EU-sales-list preparation, versioning and delivery handoff. VAT-return calculations and generic annual filing do not supply this distinct reporting obligation.",
+      "existing_owner": "Existing reporting snapshots, qualified releases, deadline/fulfillment and external-delivery infrastructure.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-55.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-52",
+          "when": "The selected statement includes general-rule cross-border services."
+        },
+        {
+          "task": "NEXT-53",
+          "when": "The selected statement includes qualifying intra-EU goods."
+        }
+      ],
+      "atomic_scope": "No journal; statement artifact, correction membership and submission observations",
+      "parity_inputs": "PRY-47/55 and EU reporting requirements",
+      "canonical_owner_family": "VAT, END-06/07",
+      "non_overlap": "EU statement artifacts and correction history are not the ordinary VAT return.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "a0a298ea5e7bdbf7d68396a4f3e975a728cf3072fb887a1a7ec19897fbf8f59a",
+      "word_count": 706
+    },
+    {
+      "id": "NEXT-56",
+      "title": "Customer advances, deposits and final-invoice application",
+      "priority": "P1",
+      "lane": "COMMERCE",
+      "prior_wave_dependencies": [
+        "NEXT-02",
+        "NEXT-04",
+        "NEXT-30"
+      ],
+      "dependencies": [
+        "NEXT-51"
+      ],
+      "source_refs": [
+        "R03",
+        "R04",
+        "X05"
+      ],
+      "new_scope": "Handle money received before a supply with its own tax and liability timing. NEXT-30 deliberately distinguishes refundable excess cash from a taxable advance and does not implement that advance.",
+      "existing_owner": "Existing customer-credit, invoice recognition, bank-source and tax-fact owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-56.md",
+      "conditional_dependencies": [],
+      "atomic_scope": "Cash/clearing + advance liability/tax + final AR application",
+      "parity_inputs": "Advance concepts in ERPNext review",
+      "canonical_owner_family": "COM-02/03/04, VAT",
+      "non_overlap": "Customer advance tax timing differs from NEXT-30 refundable overpayments.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "9f8148472b200c8f638b5d36c69445f073ebb7d4673edf054dd862333de0de00",
+      "word_count": 679
+    },
+    {
+      "id": "NEXT-57",
+      "title": "Supplier advances and final-purchase settlement",
+      "priority": "P1",
+      "lane": "COMMERCE",
+      "prior_wave_dependencies": [
+        "NEXT-02",
+        "NEXT-03",
+        "NEXT-07"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R04",
+        "X05"
+      ],
+      "new_scope": "Add prepayment to suppliers before an expense or asset is recognized. NEXT-31 defers already recognized service cost and is not a supplier advance register.",
+      "existing_owner": "Existing supplier payment, purchase recognition, refund and cash-source owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-57.md",
+      "conditional_dependencies": [],
+      "atomic_scope": "Cash/clearing + supplier advance/deduction + final purchase/AP",
+      "parity_inputs": "Advance concepts in ERPNext review",
+      "canonical_owner_family": "COM-02/03/04, VAT",
+      "non_overlap": "Supplier cash prepayment is not NEXT-31 expense deferral or a credit of an unrecognized purchase.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "019243612ffb76e04288454b3385c12bb86ccafba8ed92262908d20ab6e0bff8",
+      "word_count": 693
+    },
+    {
+      "id": "NEXT-58",
+      "title": "Invoice-driven deferred revenue and service-period changes",
+      "priority": "P0",
+      "lane": "SCHEDULES",
+      "prior_wave_dependencies": [
+        "NEXT-02",
+        "NEXT-15"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R04"
+      ],
+      "new_scope": "Add the sales-side unearned-revenue lifecycle. NEXT-31 owns prepaid expenses/accrued costs, while recurring invoice occurrences do not establish when revenue is earned.",
+      "existing_owner": "Existing sales issue/credit and schedule recognition owners; reuse exact weighted allocation machinery.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-58.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-29",
+          "when": "The originating invoice is a recurring occurrence."
+        },
+        {
+          "task": "NEXT-31",
+          "when": "The shared schedule contract is being extended together with expense deferral; no duplicate schedule owner."
+        }
+      ],
+      "atomic_scope": "Revenue/deferral journal + schedule occurrence ownership",
+      "parity_inputs": "PRY-52",
+      "canonical_owner_family": "COM-02/04, AST",
+      "non_overlap": "Revenue liability/service recognition differs from NEXT-31 prepaid costs and NEXT-29 billing dates.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "1a18f9c119358f6eb74271186a467d1027510b4fb6f2a2272d9c2360c7010598",
+      "word_count": 672
+    },
+    {
+      "id": "NEXT-59",
+      "title": "Installment terms, partial due amounts and payment promises",
+      "priority": "P1",
+      "lane": "COMMERCE",
+      "prior_wave_dependencies": [
+        "NEXT-15",
+        "NEXT-30"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R04",
+        "R05"
+      ],
+      "new_scope": "Partition one invoice receivable into contractual due installments and retain later payment promises without multiplying the invoice or changing legal dates silently.",
+      "existing_owner": "Existing invoice residual/allocations, collection work and read-only Cash contribution adapters.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-59.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-50",
+          "when": "Include installment and promise summaries in agent context."
+        }
+      ],
+      "atomic_scope": "No journal for term or promise changes; shared settlement updates remain owned",
+      "parity_inputs": "Payment-term schedules in ERPNext review",
+      "canonical_owner_family": "COM-03/06, Cash readers",
+      "non_overlap": "Legal installment residuals and payment promises extend one native obligation, not recurring billing.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "b0cf9d5a6164a2c49ccfe7b93ccf89337e485a50cf4283b6189b4c03bf73c8c5",
+      "word_count": 686
+    },
+    {
+      "id": "NEXT-60",
+      "title": "Payment discounts and evidenced settlement differences",
+      "priority": "P1",
+      "lane": "COMMERCE",
+      "prior_wave_dependencies": [
+        "NEXT-07",
+        "NEXT-15",
+        "NEXT-30"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R04"
+      ],
+      "new_scope": "Add economically classified discounts and small-difference settlement, without a general rounding plug. Existing exact allocation correctly refuses these unmodelled residuals.",
+      "existing_owner": "Existing customer/supplier settlement, credit, tax adjustment and bank-source owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-60.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-17",
+          "when": "The settlement includes foreign-currency principal or a separately evidenced FX difference."
+        }
+      ],
+      "atomic_scope": "Explicit discount/fee/FX/rounding journal + exact principal settlement",
+      "parity_inputs": "PRY-34, PRY-51",
+      "canonical_owner_family": "COM-03/04, IMP",
+      "non_overlap": "Explicit price/fee/rounding difference decisions are not a generic tolerance plug or a new FX owner.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "7d33dd32317d9211fa165a5c983247fa3807409092452e996002eab4126e6f04",
+      "word_count": 671
+    },
+    {
+      "id": "NEXT-61",
+      "title": "Receivable allowances, confirmed losses and later recovery",
+      "priority": "P1",
+      "lane": "COMMERCE-TAX",
+      "prior_wave_dependencies": [
+        "NEXT-04",
+        "NEXT-15",
+        "NEXT-30"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R04",
+        "X06"
+      ],
+      "new_scope": "Add impaired receivable valuation and confirmed bad-debt disposal without treating every overdue invoice as a credit. Neither normal customer credit nor a collection reminder creates this accounting.",
+      "existing_owner": "Existing AR residual, customer source-line tax, valuation/control and recovery cash owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-61.md",
+      "conditional_dependencies": [],
+      "atomic_scope": "Allowance/loss/VAT recovery effects + original receivable lineage",
+      "parity_inputs": "Receivable lifecycle extension",
+      "canonical_owner_family": "COM-04/06, VAT",
+      "non_overlap": "Accounting allowance and confirmed tax loss are not customer credits or disputes alone.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "84b9abcd002b3d168806c896c9410dad4b4d2bfe31e6e4313a03872490757c51",
+      "word_count": 656
+    },
+    {
+      "id": "NEXT-62",
+      "title": "Dunning interest and enforceable reminder fees",
+      "priority": "P2",
+      "lane": "COMMERCE",
+      "prior_wave_dependencies": [
+        "NEXT-28",
+        "NEXT-30"
+      ],
+      "dependencies": [
+        "NEXT-59"
+      ],
+      "source_refs": [
+        "R03",
+        "R04",
+        "X13"
+      ],
+      "new_scope": "Add financial interest and fee claims. NEXT-28 deliberately sends exact reminders without inventing those charges.",
+      "existing_owner": "Existing collections, contract/party evidence, AR and reminder-delivery owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-62.md",
+      "conditional_dependencies": [],
+      "atomic_scope": "Qualified interest/fee claim + receipt allocation, not implicit invoice repricing",
+      "parity_inputs": "PRY-49",
+      "canonical_owner_family": "COM-04/05/06",
+      "non_overlap": "Creates qualified monetary interest/fee claims; NEXT-28 only owns reminder dispatch.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "db1e849fc974393202fcb1b595397acde918111d73b508b935ffbc17046ad62b",
+      "word_count": 626
+    },
+    {
+      "id": "NEXT-63",
+      "title": "Self-billed sales and buyer-issued invoice acceptance",
+      "priority": "P2",
+      "lane": "COMMERCE",
+      "prior_wave_dependencies": [
+        "NEXT-02",
+        "NEXT-15"
+      ],
+      "dependencies": [
+        "NEXT-51"
+      ],
+      "source_refs": [
+        "R03",
+        "X07"
+      ],
+      "new_scope": "Admit buyer-issued sales documents under an explicit self-billing agreement. This is not a supplier purchase or another use of the seller-generated invoice-number counter.",
+      "existing_owner": "Existing source occurrence, sales recognition/credit, party identity and document provenance owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-63.md",
+      "conditional_dependencies": [],
+      "atomic_scope": "Original buyer-issued source accepted/adopted into seller revenue/tax owner",
+      "parity_inputs": "PRY-48",
+      "canonical_owner_family": "COM-02/04",
+      "non_overlap": "Buyer-issued sale acceptance preserves external numbering and seller revenue ownership.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "2c3a7a8f68e3ac6690531dfe931030b0ae50106fc76c48295c65c2730954f3ca",
+      "word_count": 656
+    },
+    {
+      "id": "NEXT-64",
+      "title": "Invoice payment links with outstanding-bound settlement",
+      "priority": "P1",
+      "lane": "PAYMENTS",
+      "prior_wave_dependencies": [
+        "NEXT-30",
+        "NEXT-39"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R05"
+      ],
+      "new_scope": "Add a customer payment request tied to an already issued invoice or installment. NEXT-39 reconciles processor money after events exist and does not own the checkout request.",
+      "existing_owner": "Existing invoice residual, external-attempt/credential, processor clearing and customer-credit owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-64.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-59",
+          "when": "A link covers a selected installment rather than the entire residual."
+        }
+      ],
+      "atomic_scope": "No invoice at link creation; processor/cash settlement through original owner",
+      "parity_inputs": "PRY-131",
+      "canonical_owner_family": "COM-03/05, OPS-03",
+      "non_overlap": "An invoice payment link precedes settlement; NEXT-39 remains processor-event accounting.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "2afc3a0ed3756f6164c495b8cc721b0d4a7feecf6a558ac33559c07859999b2d",
+      "word_count": 684
+    },
+    {
+      "id": "NEXT-65",
+      "title": "Scoped customer document and statement portal",
+      "priority": "P1",
+      "lane": "COMMERCE-UX",
+      "prior_wave_dependencies": [
+        "NEXT-13",
+        "NEXT-30"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R05",
+        "R06"
+      ],
+      "new_scope": "Let a customer view exact issued documents and a frozen statement through revocable scoped access. Existing accountant book access and artifact rendering do not provide this external customer workflow.",
+      "existing_owner": "Existing immutable document/statement artifacts, customer identity, access and delivery owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-65.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-59",
+          "when": "Portal displays installment-level due amounts and payment promises."
+        },
+        {
+          "task": "NEXT-64",
+          "when": "Portal offers a separately authorized payment link."
+        }
+      ],
+      "atomic_scope": "No financial writes; exact authorized customer artifact/current-data views",
+      "parity_inputs": "PRY-53",
+      "canonical_owner_family": "COM-05/06, FE, OPS",
+      "non_overlap": "Customer-facing constrained artifact/current-balance access is not general book access.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "52e5e110786a915f30bf60288ae7ecc4efc73611797b6e2c989e0a96d38b94f4",
+      "word_count": 723
+    },
+    {
+      "id": "NEXT-66",
+      "title": "Purchase commitments and three-way invoice matching",
+      "priority": "P2",
+      "lane": "PROCUREMENT",
+      "prior_wave_dependencies": [
+        "NEXT-03"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R04",
+        "R05"
+      ],
+      "new_scope": "Add purchase request, purchase order and receipt/acceptance evidence before supplier invoice recognition. Webshop sales-order intake and supplier invoice drafting are not purchase commitments.",
+      "existing_owner": "Existing supplier/party, source, purchase recognition and approval operations; no new inventory ledger.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-66.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-26",
+          "when": "Invoice source matching uses extraction suggestions."
+        },
+        {
+          "task": "NEXT-31",
+          "when": "Accepted but unbilled service is recognized through an accrued-cost decision."
+        }
+      ],
+      "atomic_scope": "No accounting for purchase order alone; recognition/accrual only through existing owner",
+      "parity_inputs": "Purchase/acceptance bridges in ERPNext review",
+      "canonical_owner_family": "COM-02, IMP, Cash readers",
+      "non_overlap": "Commitment/acceptance records precede AP and do not implement a warehouse or a second accrual owner.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "308e8e5a544ceab0f1e1651a1c0debe31e7f3051def32208087302bfcf3b4b94",
+      "word_count": 712
+    },
+    {
+      "id": "NEXT-67",
+      "title": "Commitment-aware budgets with stop and warn decisions",
+      "priority": "P2",
+      "lane": "PROCUREMENT",
+      "prior_wave_dependencies": [
+        "NEXT-13",
+        "NEXT-14"
+      ],
+      "dependencies": [
+        "NEXT-66"
+      ],
+      "source_refs": [
+        "R04",
+        "R05"
+      ],
+      "new_scope": "Add controlled expense/commitment budgets. Existing reports show actuals and Cash forecasts liquidity; neither is a spend-budget admission rule.",
+      "existing_owner": "Existing dimensions, purchase commitment, approval and report contribution owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-67.md",
+      "conditional_dependencies": [],
+      "atomic_scope": "No journal; commitments and enforcement decision for discretionary authorization",
+      "parity_inputs": "Budget Stop/Warn mechanisms in ERPNext review",
+      "canonical_owner_family": "COM authorization, report readers",
+      "non_overlap": "Discretionary commitment control adds no balance ledger and must not prevent recording reality.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "7cbef6a028cd69b37e9e33d0db9580f30ed5e08c569209f3eb56ec3ff42b2932",
+      "word_count": 679
+    },
+    {
+      "id": "NEXT-68",
+      "title": "Versioned BAS chart adoption and controlled annual updates",
+      "priority": "P0",
+      "lane": "FOUNDATION-REPORTING",
+      "prior_wave_dependencies": [
+        "NEXT-02",
+        "NEXT-13",
+        "NEXT-49"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R04",
+        "X09"
+      ],
+      "new_scope": "Add reviewed adoption and upgrade of a reference chart without rewriting historical accounts or silently changing tax/report mappings. Existing account CRUD and historical SIE mapping do not deliver annual chart maintenance.",
+      "existing_owner": "Existing native accounts, role bindings, report mapping and qualified-release owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-68.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-14",
+          "when": "Account changes affect active dimension requirements."
+        }
+      ],
+      "atomic_scope": "No journal for chart metadata; reclassification requires a separate financial plan",
+      "parity_inputs": "PRY-24/30 and chart foundations",
+      "canonical_owner_family": "FND-03, IMP, VAT, END",
+      "non_overlap": "Versioned chart adoption maintains stable native identities and retained historical meaning.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "fe0669728124585062eedfae8ad3c38c3c3d82bc65207ad19dccc45746827b26",
+      "word_count": 721
+    },
+    {
+      "id": "NEXT-69",
+      "title": "Spreadsheet master-data import with staged reconciliation",
+      "priority": "P1",
+      "lane": "INTAKE",
+      "prior_wave_dependencies": [
+        "NEXT-02",
+        "NEXT-27"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R05"
+      ],
+      "new_scope": "Add typed workbook/CSV onboarding for customers, suppliers and catalog records. NEXT-44 imports accounting history, and NEXT-26 reads supplier documents, not bulk master data.",
+      "existing_owner": "Existing source retention, party/catalog revision and reviewed import-run owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-69.md",
+      "conditional_dependencies": [],
+      "atomic_scope": "No journal; staged master-data inserts/revisions and per-row receipts",
+      "parity_inputs": "PRY-27/28",
+      "canonical_owner_family": "IMP, COM master data",
+      "non_overlap": "Spreadsheet master-data staging differs from NEXT-12/44 financial-history imports.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "75bdb78efa4e5b8a1e1edb49eddcc246e1f4bda3b139a271d97d49b27763f82f",
+      "word_count": 678
+    },
+    {
+      "id": "NEXT-70",
+      "title": "Structured bank-statement ingestion with exact entry lineage",
+      "priority": "P0",
+      "lane": "BANKING",
+      "prior_wave_dependencies": [
+        "NEXT-09",
+        "NEXT-10"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R05",
+        "X08"
+      ],
+      "new_scope": "Add bank-file decoding and controlled admission, initially one qualified camt.053 profile. Plaid windows and provider-revision semantics do not parse a bank statement file.",
+      "existing_owner": "Existing source intake, statement/observation identity, bank-source revision and reconciliation owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-70.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-40",
+          "when": "The statement belongs to a native foreign-currency cash account."
+        }
+      ],
+      "atomic_scope": "No journal; bank-source statement/observation admission",
+      "parity_inputs": "PRY-08 and bank-format requirements",
+      "canonical_owner_family": "IMP-01/03/04",
+      "non_overlap": "Structured bank-file decoding reuses NEXT-10 admission instead of duplicating Plaid windows.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "c6ffb0597e9985a3a60d6460fc3be0423c2a8d6159f386369cf5787285e615ed",
+      "word_count": 649
+    },
+    {
+      "id": "NEXT-71",
+      "title": "Bank-qualified payment exports and status reconciliation",
+      "priority": "P0",
+      "lane": "PAYMENTS",
+      "prior_wave_dependencies": [
+        "NEXT-08",
+        "NEXT-10"
+      ],
+      "dependencies": [
+        "NEXT-70"
+      ],
+      "source_refs": [
+        "R03",
+        "R05",
+        "R07",
+        "X08"
+      ],
+      "new_scope": "Qualify a selected bank payment-file profile and its status-to-settlement journey. Reuse the existing synthetic pain.001 exporter, instruction reservations and recovery owner instead of creating another payment system.",
+      "existing_owner": "Existing supplier-payment batch/export, payee verification, instruction resolution and bank-settlement application owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-71.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-17",
+          "when": "The chosen bank profile supports foreign-currency obligation settlement."
+        },
+        {
+          "task": "NEXT-59",
+          "when": "Transfers select invoice installments."
+        }
+      ],
+      "atomic_scope": "No cash posting on export/status; actual payment uses existing allocation owner",
+      "parity_inputs": "Bank payment-format and recovery requirements",
+      "canonical_owner_family": "COM-03, OPS-03",
+      "non_overlap": "Qualify the actual bank format/status channel around existing export and NEXT-08 capacities.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "050844baaf7963f5dfabfd2c06455186735976478f1ac3edb74571233f266c0e",
+      "word_count": 774
+    },
+    {
+      "id": "NEXT-72",
+      "title": "VAT declaration submission and authoritative return history",
+      "priority": "P0",
+      "lane": "TAX-DELIVERY",
+      "prior_wave_dependencies": [
+        "NEXT-04",
+        "NEXT-49"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R05",
+        "X01",
+        "X10"
+      ],
+      "new_scope": "Add the filing lifecycle after the existing VAT calculation: exact submission authority, external period/declaration state, safe replacement and authentic outcomes. NEXT-37 remains the separate assessment owner.",
+      "existing_owner": "Existing VAT return snapshots, qualified releases, external attempts, declaration history and obligation fulfillment.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-72.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-37",
+          "when": "Link an actual later VAT assessment; submission itself has no assessment journal."
+        }
+      ],
+      "atomic_scope": "No journal; declaration attempts and authentic outcomes only",
+      "parity_inputs": "PRY-57",
+      "canonical_owner_family": "VAT-02/04, END-07, OPS-03",
+      "non_overlap": "Declaration dispatch is distinct from NEXT-04 calculations and NEXT-37 assessment.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "a0814ff7fc13c9adbf2beee3ac1d5b70247374af6d44e1c9704e9c6d8515d59d",
+      "word_count": 741
+    },
+    {
+      "id": "NEXT-73",
+      "title": "AGI submission and stable individual correction outcomes",
+      "priority": "P1",
+      "lane": "PAYROLL-DELIVERY",
+      "prior_wave_dependencies": [
+        "NEXT-21",
+        "NEXT-49"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R02",
+        "R08",
+        "R09",
+        "X10",
+        "X14"
+      ],
+      "new_scope": "Add actual employer-declaration delivery and period/item outcome tracking after the existing AGI producer. Do not recalculate payroll, repeat paid-payroll correction or equate file preparation with signing.",
+      "existing_owner": "Existing payroll declaration/pay-run owners, private payroll admission, external delivery and fulfillment.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-73.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-36",
+          "when": "The selected submission changes previously paid/reportable compensation."
+        },
+        {
+          "task": "NEXT-47",
+          "when": "The actual selected protocol uses an independently qualified signature adapter; do not substitute generic signing."
+        }
+      ],
+      "atomic_scope": "No payroll/cash mutation; private declaration-item submissions and outcomes",
+      "parity_inputs": "PAY-04 external-outcome requirements",
+      "canonical_owner_family": "PAY-04, END-07, OPS-03",
+      "non_overlap": "AGI submission consumes NEXT-21/36 output and does not replace payroll accounting.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "e16991bb4b21a8119436a840121d34ddd864bfc2200d304c955a28ad306d6442",
+      "word_count": 754
+    },
+    {
+      "id": "NEXT-74",
+      "title": "INK2 filing, signature handoff and assessment attribution",
+      "priority": "P1",
+      "lane": "TAX-DELIVERY",
+      "prior_wave_dependencies": [
+        "NEXT-22",
+        "NEXT-23",
+        "NEXT-49"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R05",
+        "X10",
+        "X11"
+      ],
+      "new_scope": "Complete the external corporate-income-tax filing journey after the existing tax bridge and INK2/SRU artifact. Keep signature, transfer, declaration record and final assessment separate.",
+      "existing_owner": "Existing corporate-tax calculation/declaration, financial closing, retained artifacts, tax-account and external-outcome owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-74.md",
+      "conditional_dependencies": [],
+      "atomic_scope": "No second income-tax expense; tax submission/signature/assessment references",
+      "parity_inputs": "INK2/SRU external-outcome requirements",
+      "canonical_owner_family": "END-06/07, OPS-03",
+      "non_overlap": "Tax filing/signature follows NEXT-22 fields and is not NEXT-48 annual-report registration.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "ad1b94d095720b20238bb79666bb72c5d7a0029c23863d839d51a398eaefd74f",
+      "word_count": 726
+    },
+    {
+      "id": "NEXT-75",
+      "title": "Accounting-method change with conserved recognition coverage",
+      "priority": "P2",
+      "lane": "TAX-FOUNDATION",
+      "prior_wave_dependencies": [
+        "NEXT-02",
+        "NEXT-03",
+        "NEXT-04",
+        "NEXT-23",
+        "NEXT-38"
+      ],
+      "dependencies": [],
+      "source_refs": [
+        "R03",
+        "R05",
+        "X12"
+      ],
+      "new_scope": "Add a deliberate transition between qualified accounting/VAT methods. NEXT-38 implements cash-method events; it does not authorize changing method or prevent old invoices being reinterpreted by a new global flag.",
+      "existing_owner": "Existing company-profile activation, invoice recognition coverage, fiscal closing and statutory-method evidence owners.",
+      "status": "Proposed implementation specification; no application change or runtime qualification",
+      "file": "packets/NEXT-75.md",
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-12",
+          "when": "Imported open items require historical recognition evidence."
+        }
+      ],
+      "atomic_scope": "Complete qualified transition journal/coverage plus dated profile activation",
+      "parity_inputs": "Accounting-method transition extension",
+      "canonical_owner_family": "FND-03, COM-02, VAT, END",
+      "non_overlap": "A reviewed method cutover is distinct from NEXT-38 ordinary cash-method events.",
+      "suggested_home": "Extend the existing named owner identified above. Proposed record/helper names are not established exports.",
+      "complete_requires": [
+        "Integrated application command and tx-passing persistence where needed",
+        "Shared HTTP/MCP classification and usable UI or explicit official-channel handoff",
+        "All affected residual/report/currentness consumers",
+        "Observed permitted success, refusal, replay and atomic failure for the selected profile",
+        "Qualified rules and authentic external outcomes where applicable"
+      ],
+      "packet_sha256": "a29f52cf6ae0a6a7fe571cdca9aa2c39270fb7c47c6f7ce89fac85f63f3ce721",
+      "word_count": 738
+    }
+  ],
+  "master": "MASTER-PSEUDOCODE.md",
+  "coordinator": "COORDINATOR-HANDOFF.md",
+  "checks": "checks/results.json",
+  "qualified_inputs": "01-QUALIFIED-INPUTS.md"
+}

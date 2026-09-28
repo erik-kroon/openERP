@@ -1,0 +1,724 @@
+{
+  "schema_version": 1,
+  "edition": "NEXT-76..100 application-owned wave4",
+  "repository": "erik-kroon/openERP",
+  "baseline": "66355b62b23e3b8007c2d324f3739fbbcc96cdc0",
+  "prepared_on": "2026-09-28",
+  "range": [
+    76,
+    100
+  ],
+  "new_count": 25,
+  "prior_range": [
+    1,
+    75
+  ],
+  "prior_status": "not assumed complete",
+  "scope": "ordinary AB accounting and selected business/review extensions; no consolidation or financial-services platform",
+  "reserved_work": {
+    "VAT-03": "Existing reclassification/qualification owner; consume its current released application ports.",
+    "FX-02-P1": "Existing exact paired partial-release owner; no duplicate principal balance or algorithm.",
+    "AST-03": "Existing impairment/UI/control closure; asset additions use its released basis and schedule ports.",
+    "VAT-04-A1": "Existing VAT amendment target-delta owner; new tax families do not recreate it.",
+    "COM-2-W1": "Existing webshop/order/catalog source authority; project changes and billing must compose with it.",
+    "APPLICATION-MIGRATION": "Current application-owned baseline/port integration; no new packet reassigns incomplete earlier work."
+  },
+  "solutions": [
+    {
+      "id": "NEXT-76",
+      "title": "Accepted contract changes and sales-order billing limits",
+      "priority": "P1",
+      "lane": "SALES",
+      "prior_dependencies": [],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-51",
+          "when": "issuing invoices with the chosen tax/price profile"
+        }
+      ],
+      "source_refs": [
+        "R02",
+        "P29",
+        "P66"
+      ],
+      "new_scope": "Add reviewed post-acceptance scope/price changes and billing-capacity conservation. This is not another webshop order intake, catalog or recurring-template owner.",
+      "existing_owner": "Existing quote, order, catalog revision and invoice conversion owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-76.md",
+      "application_owned": true,
+      "file_sha256": "945a5998997d886776ca6ba176d0d961438a37534db0407a495a45b33c3f9766",
+      "word_count": 548
+    },
+    {
+      "id": "NEXT-77",
+      "title": "Time-and-materials billing with once-only work coverage",
+      "priority": "P1",
+      "lane": "SALES",
+      "prior_dependencies": [
+        "NEXT-51"
+      ],
+      "dependencies": [
+        "NEXT-76"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-79",
+          "when": "selected work already has unbilled revenue recognition"
+        }
+      ],
+      "source_refs": [
+        "R02",
+        "P35",
+        "P58"
+      ],
+      "new_scope": "Add reviewed billable work capture and conversion into invoice lines. Payroll work facts, recurring invoices and deferred revenue remain separate owners.",
+      "existing_owner": "Existing employee/project references, source occurrences, sales-order capacity and invoice draft/issue owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-77.md",
+      "application_owned": true,
+      "file_sha256": "f5ba840dcfd053112a06bc34a2fa0184ab9dde8921d25286aea16275303ddbb5",
+      "word_count": 580
+    },
+    {
+      "id": "NEXT-78",
+      "title": "Milestone certificates and retained contract consideration",
+      "priority": "P1",
+      "lane": "SALES",
+      "prior_dependencies": [
+        "NEXT-51",
+        "NEXT-59"
+      ],
+      "dependencies": [
+        "NEXT-76"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-79",
+          "when": "prior earned revenue or conditional contract-asset treatment is selected"
+        }
+      ],
+      "source_refs": [
+        "R02",
+        "P59",
+        "P66"
+      ],
+      "new_scope": "Add delivered-milestone acceptance and retained amounts on customer contracts. Invoice installments split due dates; they do not prove a milestone occurred or that retention is unconditional.",
+      "existing_owner": "Existing sales agreement, acceptance evidence, invoice and installment owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-78.md",
+      "application_owned": true,
+      "file_sha256": "5ffa5c71a360a6c61fbfe207c6bbf5e543ae956f88b73d39785356ab3973fa35",
+      "word_count": 561
+    },
+    {
+      "id": "NEXT-79",
+      "title": "Earned but unbilled service revenue and later invoicing",
+      "priority": "P1",
+      "lane": "SALES",
+      "prior_dependencies": [
+        "NEXT-13",
+        "NEXT-51",
+        "NEXT-58"
+      ],
+      "dependencies": [
+        "NEXT-76"
+      ],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R02",
+        "R03",
+        "P58"
+      ],
+      "new_scope": "Add earned-unbilled recognition before invoice issue. NEXT-58 defers invoiced revenue and is the opposite timing direction.",
+      "existing_owner": "Existing contract, revenue schedules, GL, invoice and tax-fact owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-79.md",
+      "application_owned": true,
+      "file_sha256": "1031a2aeb9ce9d35cd958d3ab5c587d7e2dceda5d57051f6e4932327b661cf0b",
+      "word_count": 535
+    },
+    {
+      "id": "NEXT-80",
+      "title": "Supplier disputes with partial payment holds and release",
+      "priority": "P1",
+      "lane": "PURCHASES",
+      "prior_dependencies": [
+        "NEXT-03",
+        "NEXT-07",
+        "NEXT-08",
+        "NEXT-71"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R02",
+        "P28",
+        "P66"
+      ],
+      "new_scope": "Add supplier-side documentary dispute and explicitly bounded payment holds. Customer collection disputes and procurement acceptance do not supply this payable workflow.",
+      "existing_owner": "Existing payable residual, supplier credit, payment reservation and invoice evidence owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-80.md",
+      "application_owned": true,
+      "file_sha256": "bfa20e59ef5ad26f7d1cc186413efdb9aa89ef98dc3f7ddcc424a8f49942796c",
+      "word_count": 574
+    },
+    {
+      "id": "NEXT-81",
+      "title": "Asset work-in-progress and commissioning from purchase costs",
+      "priority": "P1",
+      "lane": "ASSETS",
+      "prior_dependencies": [
+        "NEXT-03",
+        "NEXT-31"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-54",
+          "when": "qualified import/landed-cost components enter the asset basis"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "P54"
+      ],
+      "new_scope": "Add multi-source asset construction/acquisition accumulation and an explicit ready-for-use transition. Existing asset bases and depreciation schedules remain their owners.",
+      "existing_owner": "Purchase recognition, asset register, original-cost allocation and schedule application services.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-81.md",
+      "application_owned": true,
+      "file_sha256": "9ce5a9646205b2ca7fde9827655d6e030dcf672f5ab3cb2bfec070a72f13ed89",
+      "word_count": 560
+    },
+    {
+      "id": "NEXT-82",
+      "title": "Component replacement, improvements and partial asset retirement",
+      "priority": "P2",
+      "lane": "ASSETS",
+      "prior_dependencies": [
+        "NEXT-19",
+        "NEXT-42"
+      ],
+      "dependencies": [
+        "NEXT-81"
+      ],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R03",
+        "P19",
+        "P42"
+      ],
+      "new_scope": "Add separately supported asset-component replacement and improvement accounting. Whole-asset impairment and disposal remain unchanged.",
+      "existing_owner": "Existing asset carrying/impairment/schedule owners and the source-cost owner from NEXT-81.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-82.md",
+      "application_owned": true,
+      "file_sha256": "877e6d313c2d68a8eca910ef5b38d94c0c7b2f1d2d5c53f21a28bc4221a554ec",
+      "word_count": 559
+    },
+    {
+      "id": "NEXT-83",
+      "title": "Operating-rental contracts, refundable deposits and index changes",
+      "priority": "P2",
+      "lane": "PURCHASES",
+      "prior_dependencies": [
+        "NEXT-31",
+        "NEXT-57",
+        "NEXT-59"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R03",
+        "P31",
+        "P57"
+      ],
+      "new_scope": "Add contract-owned operating-rental commitments and deposit recovery. This is not a finance-lease/right-of-use asset or another recurring expense scheduler.",
+      "existing_owner": "Existing purchase, prepayment/accrual, supplier advance, schedule and Cash contribution owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-83.md",
+      "application_owned": true,
+      "file_sha256": "a0cea473c56911612baaaa03987d2b043d1b25b7280b4c42614eb958ecc59e0c",
+      "word_count": 542
+    },
+    {
+      "id": "NEXT-84",
+      "title": "Book-to-tax depreciation cohorts and excess-depreciation bridge",
+      "priority": "P2",
+      "lane": "TAX",
+      "prior_dependencies": [
+        "NEXT-02",
+        "NEXT-13"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-22",
+          "when": "the annual tax bridge consumes the selected deduction"
+        },
+        {
+          "task": "NEXT-81",
+          "when": "new commissioned assets enter the eligible tax pool"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "P22"
+      ],
+      "new_scope": "Add a tax-value and deduction calculation linked to book assets. Ordinary book depreciation and income-tax calculation remain separate owners.",
+      "existing_owner": "Asset register, qualified tax release, corporate-tax bridge and appropriation/reserve journal owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-84.md",
+      "application_owned": true,
+      "file_sha256": "1c29b450c61eb02dbe7560c9b209369683d198a95a2d05c9ddc400dc9365d281",
+      "word_count": 558
+    },
+    {
+      "id": "NEXT-85",
+      "title": "Periodiseringsfond cohorts, reversals and annual tax linkage",
+      "priority": "P2",
+      "lane": "TAX",
+      "prior_dependencies": [
+        "NEXT-22",
+        "NEXT-49"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "X01",
+        "R03",
+        "P22"
+      ],
+      "new_scope": "Add optional tax-allocation reserve choices and their cohort history. Current-tax calculation alone does not own reserve deadlines or reversals.",
+      "existing_owner": "Existing tax bridge, closing, qualified rule releases, deadline and appropriation posting owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-85.md",
+      "application_owned": true,
+      "file_sha256": "b15e5917131175f59dedbafb3f8f9542853883554ff0a4df3cc9ffafbdc75b7a",
+      "word_count": 565
+    },
+    {
+      "id": "NEXT-86",
+      "title": "ROT/RUT split claims and customer-authority settlement",
+      "priority": "P2",
+      "lane": "TAX",
+      "prior_dependencies": [
+        "NEXT-51",
+        "NEXT-15",
+        "NEXT-30",
+        "NEXT-49"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R02",
+        "X02"
+      ],
+      "new_scope": "Add the explicitly conditional household-work profile, with labour evidence, split obligors and claim/rejection recovery. Mixed-rate ordinary invoices are not this workflow.",
+      "existing_owner": "Existing invoice/tax facts, receivable allocations, customer credit and external declaration-attempt owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-86.md",
+      "application_owned": true,
+      "file_sha256": "98178f4b03cd39e8a9548c3b60404da6515337836522844c8857291068636053",
+      "word_count": 602
+    },
+    {
+      "id": "NEXT-87",
+      "title": "Pension invoice reconciliation and SLP annual basis",
+      "priority": "P2",
+      "lane": "PAYROLL",
+      "prior_dependencies": [
+        "NEXT-03",
+        "NEXT-20",
+        "NEXT-22"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-35",
+          "when": "payroll accruals already include pension provisions"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "X03"
+      ],
+      "new_scope": "Add actual pension provider charges, reconciliation against accrued obligations and separate special-payroll-tax basis. Regular pay calculations do not implement this evidence lifecycle.",
+      "existing_owner": "Payroll provisions, purchasing, tax bridge, private personnel scope and tax-account assessment owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-87.md",
+      "application_owned": true,
+      "file_sha256": "f7f064346c03ce289014abff08ecf2e2800a6ce570ff98d2b1413ca1971c76b3",
+      "word_count": 607
+    },
+    {
+      "id": "NEXT-88",
+      "title": "Employment termination and final-pay obligation closure",
+      "priority": "P2",
+      "lane": "PAYROLL",
+      "prior_dependencies": [
+        "NEXT-20",
+        "NEXT-21",
+        "NEXT-35",
+        "NEXT-36"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-87",
+          "when": "pension obligations require a final provider settlement"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "P35",
+        "P36"
+      ],
+      "new_scope": "Add a reviewed employment-end event and complete final-pay inventory. This is not another regular salary or generic paid-correction implementation.",
+      "existing_owner": "Employment/work revisions, holiday balances, employee claims, payroll runs and paid-reporting owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-88.md",
+      "application_owned": true,
+      "file_sha256": "9ef229ebff715736b02bf797e68cadc227c0cdb7a41a95a28cdab489ee7e1710",
+      "word_count": 555
+    },
+    {
+      "id": "NEXT-89",
+      "title": "Dividend resolutions, shareholder payables and KU31 preparation",
+      "priority": "P2",
+      "lane": "EQUITY",
+      "prior_dependencies": [
+        "NEXT-02",
+        "NEXT-22",
+        "NEXT-23",
+        "NEXT-49"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "X04",
+        "X05",
+        "P24"
+      ],
+      "new_scope": "Add a company-side dividend lifecycle with real resolution evidence, shareholder entitlements and reporting. It is not owner expense reimbursement or personal K10 optimization.",
+      "existing_owner": "Reviewed company/financial statements, ownership evidence, liability/payment and statutory artifact owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-89.md",
+      "application_owned": true,
+      "file_sha256": "20d41ab53b0e52e3325c7df53028dd95c6692aebed899c7d0bf7e8b9daeef050",
+      "word_count": 540
+    },
+    {
+      "id": "NEXT-90",
+      "title": "Conditional grants, earned funding and repayment obligations",
+      "priority": "P2",
+      "lane": "INCOME",
+      "prior_dependencies": [
+        "NEXT-02",
+        "NEXT-03",
+        "NEXT-13",
+        "NEXT-22"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R03",
+        "P31"
+      ],
+      "new_scope": "Add a bounded operating-grant lifecycle separate from sales and loans. This is a proposed accounting expansion, not a finding that a current grant implementation is defective.",
+      "existing_owner": "Source evidence, qualified recognition rules, GL, grant receivable/deferred-income and tax-bridge owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-90.md",
+      "application_owned": true,
+      "file_sha256": "d7c454fd715e9a4c1d743c6aa86ea2f5c8503031a5c9a5718e70f0dab8758ed7",
+      "word_count": 620
+    },
+    {
+      "id": "NEXT-91",
+      "title": "Apply supplier credit balances to other payable invoices",
+      "priority": "P1",
+      "lane": "PURCHASES",
+      "prior_dependencies": [
+        "NEXT-07",
+        "NEXT-57",
+        "NEXT-71"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "P07",
+        "P57",
+        "R02"
+      ],
+      "new_scope": "Add noncash application of an established supplier refund/credit asset to another invoice. Creating credits/refunds and supplier advances do not yet define this settlement.",
+      "existing_owner": "Supplier credit asset, payable residual, allocation and payment reservation owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-91.md",
+      "application_owned": true,
+      "file_sha256": "11bfa04780450ac8d8656b009f859859d0a0851c28c97c3bf5604f2610e54104",
+      "word_count": 552
+    },
+    {
+      "id": "NEXT-92",
+      "title": "Documented bilateral receivable-payable setoff",
+      "priority": "P2",
+      "lane": "TREASURY",
+      "prior_dependencies": [
+        "NEXT-30",
+        "NEXT-07"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R02",
+        "P30",
+        "P07"
+      ],
+      "new_scope": "Add explicitly agreed same-counterparty AR/AP discharge without cash. This is not applying a customer credit or supplier refund to another invoice.",
+      "existing_owner": "Existing receivable/payable settlement and current party/authority owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-92.md",
+      "application_owned": true,
+      "file_sha256": "baad224d9f3204d6e5c536a3987157a5fb9a452c7bc174c3620d20233f544af5",
+      "word_count": 543
+    },
+    {
+      "id": "NEXT-93",
+      "title": "Source-located evidence search and retained-page retrieval",
+      "priority": "P1",
+      "lane": "EVIDENCE",
+      "prior_dependencies": [
+        "NEXT-26",
+        "NEXT-50"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R02",
+        "R04"
+      ],
+      "new_scope": "Add a searchable projection of retained originals and interpretation text with exact source locations. Extraction suggestions and agent context are not a document search index.",
+      "existing_owner": "Original evidence/content store, extraction attempts, permissions and existing artifact/retention owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-93.md",
+      "application_owned": true,
+      "file_sha256": "001534bcc640dc814d003081fdf6a65866488427ca36678707357e7bc0355eb1",
+      "word_count": 588
+    },
+    {
+      "id": "NEXT-94",
+      "title": "Read-only mailbox intake and scoped attachment routing",
+      "priority": "P1",
+      "lane": "EVIDENCE",
+      "prior_dependencies": [
+        "NEXT-26"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R02",
+        "R04",
+        "X06"
+      ],
+      "new_scope": "Add a real inbound-email source channel to the existing supplier inbox. It does not replace uploads, extraction or reviewed draft creation.",
+      "existing_owner": "Provider credentials/consent, raw evidence, source occurrences and extraction-request owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-94.md",
+      "application_owned": true,
+      "file_sha256": "1ec3539af010e40dfd5c13946a9b01184a0f67750f98ec97f1a6079d8cce3f0b",
+      "word_count": 603
+    },
+    {
+      "id": "NEXT-95",
+      "title": "Counterparty balance confirmations with independent evidence",
+      "priority": "P1",
+      "lane": "REVIEW",
+      "prior_dependencies": [
+        "NEXT-13",
+        "NEXT-65"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R02",
+        "R04",
+        "P25"
+      ],
+      "new_scope": "Add requests for customers or suppliers to confirm a frozen balance and investigate differences. It is not merely another statement export or a claim of audit certification.",
+      "existing_owner": "Existing statement snapshots, scoped guest access, delivery and reconciliation-review owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-95.md",
+      "application_owned": true,
+      "file_sha256": "1c56c16cd8e2f72875101676a5fa784f1d7a3c6ebcae2e67f0c12e7d34930b55",
+      "word_count": 554
+    },
+    {
+      "id": "NEXT-96",
+      "title": "Multi-human approval routing and segregated review policies",
+      "priority": "P1",
+      "lane": "AUTHORITY",
+      "prior_dependencies": [],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-67",
+          "when": "budget classifications contribute to routing only, not permission to hide liabilities"
+        }
+      ],
+      "source_refs": [
+        "R04",
+        "P16"
+      ],
+      "new_scope": "Add finite, versioned multi-reviewer routing for exact plans. Existing human approvals remain the financial authority; this is not unattended posting or an agent mandate.",
+      "existing_owner": "Current principal/role admission, exact approval records, task routing and final operation execution owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-96.md",
+      "application_owned": true,
+      "file_sha256": "4faf24666e0caac2a8076759777888e8023c90cfbb9e4e4f3362a1a2be79b407",
+      "word_count": 620
+    },
+    {
+      "id": "NEXT-97",
+      "title": "Exact covering-set reconciliation with explicit ambiguity",
+      "priority": "P1",
+      "lane": "BANKING",
+      "prior_dependencies": [
+        "NEXT-09",
+        "NEXT-10"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-70",
+          "when": "the selected source is a structured bank file"
+        },
+        {
+          "task": "NEXT-40",
+          "when": "native foreign-cash comparability is supported"
+        }
+      ],
+      "source_refs": [
+        "R05",
+        "P09",
+        "P10"
+      ],
+      "new_scope": "Add bounded one-to-many discovery and cross-proposal conflict analysis. Existing exact matches and reviewed allocation execution remain their owners.",
+      "existing_owner": "Current banking candidate reads, exact-money comparability and bank-allocation prepare/approve/execute operations.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-97.md",
+      "application_owned": true,
+      "file_sha256": "848f70bc913f7b0beb947b9e8aa562e1ba4f211eb9638d557c81a63071667e1c",
+      "word_count": 612
+    },
+    {
+      "id": "NEXT-98",
+      "title": "Accountant period-review engagements and versioned acceptance",
+      "priority": "P1",
+      "lane": "REVIEW",
+      "prior_dependencies": [
+        "NEXT-13",
+        "NEXT-23",
+        "NEXT-25",
+        "NEXT-49",
+        "NEXT-50"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-95",
+          "when": "counterparty confirmations are part of the selected review evidence"
+        }
+      ],
+      "source_refs": [
+        "R02",
+        "R04",
+        "P25"
+      ],
+      "new_scope": "Add an in-product accountant review engagement around exact period artifacts and findings. Book Zero already owns the review outcome; this adds its collaborative workflow rather than another close certificate.",
+      "existing_owner": "Book-scoped membership, review packs, existing cases, corrections and period-readiness owners.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-98.md",
+      "application_owned": true,
+      "file_sha256": "45e37ba0f945fb5326432833f6e2877ad6f36370837e446261ff1812d47ba350",
+      "word_count": 592
+    },
+    {
+      "id": "NEXT-99",
+      "title": "Cash forecast vintage scoring and error attribution",
+      "priority": "P1",
+      "lane": "CASH",
+      "prior_dependencies": [
+        "NEXT-13",
+        "NEXT-45",
+        "NEXT-50"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R06",
+        "P45"
+      ],
+      "new_scope": "Add retrospective evaluation of saved forecasts, not another forecasting engine. Cash scenarios and historical cash-flow statements remain their original owners.",
+      "existing_owner": "Existing immutable Cash forecasts, payment-occurrence identities, actual bank/control observations and report snapshots.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-99.md",
+      "application_owned": true,
+      "file_sha256": "e82fe9e18a02db072f553b69daa7a44e5a9259d22517512f7b1526eead4bec06",
+      "word_count": 567
+    },
+    {
+      "id": "NEXT-100",
+      "title": "Scoped integration event subscriptions and delivery receipts",
+      "priority": "P1",
+      "lane": "INTEGRATIONS",
+      "prior_dependencies": [],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R04"
+      ],
+      "new_scope": "Add a concrete read-only outbound event subscription capability for external consumers. Existing outbox jobs are internal delivery, not a client-facing event contract.",
+      "existing_owner": "Existing scoped API authority, application outbox, effect-mq, immutable receipts and guarded outbound transport.",
+      "status": "proposed complete supported workflow; pure module alone is not completion",
+      "file": "packets/NEXT-100.md",
+      "application_owned": true,
+      "file_sha256": "da9a74180c63d997c9c79b00ed21280e0614233909e4acbb763606988b8c7a89",
+      "word_count": 637
+    }
+  ],
+  "new_wave_order_including_conditional_edges": [
+    "NEXT-100",
+    "NEXT-76",
+    "NEXT-80",
+    "NEXT-81",
+    "NEXT-83",
+    "NEXT-85",
+    "NEXT-86",
+    "NEXT-87",
+    "NEXT-89",
+    "NEXT-90",
+    "NEXT-91",
+    "NEXT-92",
+    "NEXT-93",
+    "NEXT-94",
+    "NEXT-95",
+    "NEXT-96",
+    "NEXT-97",
+    "NEXT-99",
+    "NEXT-79",
+    "NEXT-82",
+    "NEXT-84",
+    "NEXT-88",
+    "NEXT-98",
+    "NEXT-77",
+    "NEXT-78"
+  ],
+  "graph_scope": "Only the new wave graph is checked; prior work is an external contract dependency, not a revalidated100-task graph.",
+  "master": "MASTER-PSEUDOCODE.md",
+  "coordinator": "COORDINATOR-HANDOFF.md",
+  "checks": "checks/results.json",
+  "qualified_inputs": "01-QUALIFIED-INPUTS.md",
+  "design_examples": "design-examples.json"
+}
