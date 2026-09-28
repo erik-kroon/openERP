@@ -89,6 +89,23 @@ Adapter contract references: [Azure analyze API](https://learn.microsoft.com/en-
 [invoice model](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/prebuilt/invoice?view=doc-intel-4.0.0),
 and [PDF loading](https://pdf-lib.js.org/docs/api/classes/pdfdocument#load).
 
+## P00 binding — 2026-09-28 (combined main `844f680`)
+
+Revision `844f680` (merge `77d5ab1` + `7c4defb` on `26ba496`); dirty NEXT-07/NEXT-37
+files stay owned by `wB:p1G`/`wB:p1C` and are out of document scope. Document owners
+now present: `native-text-v1` + `azure-invoice-v1` (`packages/contracts/src/supplier-extraction.ts:21`),
+`supplier_document_operations` (`migrations/0024`), default-disabled `DOCUMENT_READER`
+(`runtime/document-reader.ts`, `environment.ts`), loopback-only fixture, 5 MiB/20-page
+profile with independent page count, sparse quote-locator review into existing drafts,
+16 doc/extraction E2Es green per `docs/plans/overnight-review-ledger.md`.
+
+Remaining delta P01–P13: JPEG retained case, corrupt/encrypted rejection case,
+SiftX native helper (no binary/ABI — O04/O05), provider budget/tariff/disclosure
+policy (O06–O08, all entries unqualified, no paid dispatch), live qualification and
+corpus/company acceptance (O12–O13), off/shadow diagnostics (O14), extended profile
+disabled (O15). First bounded increment: retained corrupt-PDF rejection case in the
+document-owned E2E only; no shared-schema/exports, no live disclosure.
+
 ## End-to-end completion contract — 2026-09-27
 
 The completed increment connects the normal self-host API and preparation process to
