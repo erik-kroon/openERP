@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-27T21:42:07.769500+00:00",
-  "headObservedAtValidation": "0fb4feb24422350858a99665ed6af2a18942850c",
+  "generatedAt": "2026-09-28T06:25:47.987457+00:00",
+  "headObservedAtValidation": "6642f9276c35b7bb8b66f92e59483e7be660511a",
   "authority": "Derived from domain packet tables and the conditional-gate table; not an implementation/proof status report.",
   "packetCount": 53,
   "packets": [

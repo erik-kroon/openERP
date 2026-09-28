@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-27T21:42:07.769500+00:00",
-  "headObservedAtValidation": "0fb4feb24422350858a99665ed6af2a18942850c",
+  "checkedAt": "2026-09-28T06:25:47.987457+00:00",
+  "headObservedAtValidation": "6642f9276c35b7bb8b66f92e59483e7be660511a",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -234,7 +234,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "1d29037dab8b2277a8fd28213ebd22afea31392276f39bfa0d190a87796b965e"
+      "sha256": "57689f30742df8dfcabd0452df07aa3ad96c20644a4425a5e5dccc6c1f0a004c"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -242,7 +242,7 @@
     },
     {
       "path": "docs/plans/next-packet-progress.md",
-      "sha256": "26305f54d649e18b88b40409097a890b0781bfd258e78f90b1b7bc12b06dafd4"
+      "sha256": "416c066b5aa314e3c60b1f3b4a0e84a3526cab324569f34c031318eeea99e91d"
     },
     {
       "path": "docs/plans/seb-statement-preview.md",
