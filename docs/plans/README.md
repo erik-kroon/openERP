@@ -32,7 +32,7 @@ These records map requirements to owners. They do not add to the 53-packet compl
 | [Reference parity backlog](11-parity-backlog.md) | PRY proposals, owners and adoption classes under [ADR 0011](../adr/0011-reference-parity-backlog.md). |
 | [Reference parity ledger](14-parity-ledger.md) | Coverage findings and unowned gaps. A coverage label is not runtime proof. |
 | [Reference-derived defects](13-reference-derived-defects.md) | Reported defects in existing behavior. Check current source before fixing them; [ADR 0013](../adr/0013-reference-derived-defects.md) governs placement. |
-| [NEXT dossier](12-next-implementation-dossier.md) | Design input for NEXT-01…100 mapped to existing owners under [ADR 0012](../adr/0012-next-implementation-dossier.md), as amended for the third and fourth waves. NEXT identifiers are not migration numbers. |
+| [NEXT dossier](12-next-implementation-dossier.md) | Design input for NEXT-01…125 mapped to existing owners under [ADR 0012](../adr/0012-next-implementation-dossier.md), as amended for the third, fourth and fifth waves. NEXT identifiers are not migration numbers. |
 | [Plan review adoption](14-plan-review-adoption.md) | Unadopted corrections to parity and test plans. Read before using a PRY recipe or the proposed harness. |
 | [Accounted comparison reconciliation](16-comparison-reconciliation.md) | All FWD proposals mapped to current owners, Book Zero order and evidence limits. |
 

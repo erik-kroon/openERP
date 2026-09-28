@@ -13,9 +13,8 @@ override `AGENTS.md`, [ADR 0010](../adr/0010-application-owned-accounting-replac
 or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 
 The table below is a **selected** record, not a complete index. It covers
-NEXT-01 … NEXT-50; the third wave NEXT-51 … NEXT-75 and the fourth wave
-NEXT-76 … NEXT-100, both vendored 2026-09-28, have **no rows and no
-implementation state**, and the absence of a row is not a finding that the work
+NEXT-01 … NEXT-50; the third, fourth and fifth waves NEXT-51 … NEXT-125,
+all vendored 2026-09-28, have **no rows and no implementation state**, and the absence of a row is not a finding that the work
 is missing from source. See the [dossier plan](12-next-implementation-dossier.md)
 for the full packet index and the reserved owners.
 

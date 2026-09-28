@@ -1,0 +1,12 @@
+{
+  "scope": "Structure and local packaging only",
+  "decisions": 10,
+  "scope_dispositions": 23,
+  "adoption_decisions": 5,
+  "unknown_company_values_preserved": true,
+  "local_links_valid": true,
+  "application_executed": false,
+  "database_executed": false,
+  "repository_changed": false,
+  "provider_exercised": false
+}

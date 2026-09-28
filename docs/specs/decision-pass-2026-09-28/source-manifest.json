@@ -1,0 +1,82 @@
+{
+  "R1": {
+    "title": "OpenERP head and authoritative decisions",
+    "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/docs/open-decisions.md",
+    "scope": "Full returned register read. Shows existing scoped evidence and document-intelligence test authority. Company facts remain reported."
+  },
+  "R2": {
+    "title": "Current repository implementation rules",
+    "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/AGENTS.md",
+    "scope": "Full returned file read. Application/DB ownership, quality restrictions, frozen dependencies and checks retained."
+  },
+  "R3": {
+    "title": "Review-adoption register",
+    "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/docs/plans/14-plan-review-adoption.md",
+    "scope": "Full returned adoption record, including pending decisions and test-plan conflicts. Older proposed replacement files not all reread here."
+  },
+  "R4": {
+    "title": "Local versus hosted auth configuration",
+    "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/apps/api/src/adapters/auth/configuration.ts",
+    "scope": "Full source read. Local password selection only for actual loopback hostname; hosted OIDC requirements preserved."
+  },
+  "R5": {
+    "title": "Better Auth composition",
+    "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/apps/api/src/adapters/auth/better-auth.ts",
+    "scope": "Full source read. Eight-hour sessions, no signup and existing adapter composition. No execution verified."
+  },
+  "R6": {
+    "title": "Accounting API composition and current owner documentation",
+    "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/apps/api/README.md",
+    "scope": "Read first190 requested lines including shared Bun/Worker composition, tx passing and period-work owner limitations. Documentation is not independent runtime proof."
+  },
+  "R7": {
+    "title": "MCP implementation",
+    "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/apps/api/src/transport/mcp.ts",
+    "scope": "Lines1-145 requested/read. Existing version selection, exposure filter and stateless JSON instructions."
+  },
+  "A1": {
+    "title": "Pinned Accounted reference README",
+    "url": "https://github.com/erp-mafia/accounted/blob/7ebea94fb3968c126e67e6cfe7efab695cc65b2f/README.md",
+    "scope": "Full returned README read as source claims, not certified accounting behavior. No full Accounted source run or hosted account accessed."
+  },
+  "A2": {
+    "title": "Pinned Accounted license",
+    "url": "https://github.com/erp-mafia/accounted/blob/7ebea94fb3968c126e67e6cfe7efab695cc65b2f/LICENSE",
+    "scope": "First55 lines read. AGPL3-or-later plus scoped extension exception. Preserve upstream notices and terms; no blanket licence conclusion for all third-party datasets."
+  },
+  "E1": {
+    "title": "Skatteverket: registration method and cadence on register extract",
+    "url": "https://www.skatteverket.se/foretag/moms/momsregistrering/registreradigformoms.4.deeebd105a602bfe38000256.html",
+    "scope": "Official current page via web. Current extract and historical change decisions must cover the relevant dates."
+  },
+  "E2": {
+    "title": "Skatteverket: register extract",
+    "url": "https://www.skatteverket.se/foretag/drivaforetag/startaochregistrera/registerutdrag.4.2132aba31199fa6713e800010366.html",
+    "scope": "Official page identifies VAT/employer/F-tax information and how the owner retrieves the extract."
+  },
+  "E3": {
+    "title": "BFN: framework versions and effective dates",
+    "url": "https://www.bfn.se/informationsmaterial/vagledningar/",
+    "scope": "Official index. Different versions apply by fiscal-year start and stated first-year exceptions; no full PDF rule release was read or qualified here."
+  },
+  "E4": {
+    "title": "BFN: K2 eligibility",
+    "url": "https://www.bfn.se/fragor-och-svar/k2-arsredovisning/tillampning/",
+    "scope": "Official current eligibility guidance. K2 target does not establish actual Drastic eligibility."
+  },
+  "E5": {
+    "title": "Verksamt: owner bookkeeping and responsibility",
+    "url": "https://verksamt.se/bokforing/bokforing-sa-funkar-det",
+    "scope": "Official guidance permits owner or hired bookkeeping and retains company responsibility. This pass grants no statutory-audit exemption."
+  },
+  "E6": {
+    "title": "Bokforingslag1999:1078, chapter7",
+    "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/bokforingslag-19991078_sfs-1999-1078/",
+    "scope": "Official consolidated text for durable/readable retention. General rule through end of seventh calendar year after fiscal-year end; other categories/longer holds require review."
+  },
+  "F1": {
+    "title": "User-provided allocation excerpt",
+    "url": null,
+    "scope": "Conversation attachment lines492-514 pass one transaction through execution insertion, leg insertion, source revision and receipt. Historical source illustration, not a current-head execution proof."
+  }
+}

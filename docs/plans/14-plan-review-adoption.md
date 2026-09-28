@@ -1,11 +1,13 @@
 # Plan review adoption: reference parity and test plan
 
-Status: **review material vendored; no replacement adopted**. Added 2026-09-26. Two externally produced review packages were imported under [`docs/specs`](../specs/README.md) and are recorded here. Neither the accepted [reference parity backlog](11-parity-backlog.md), [ADR 0011](../adr/0011-reference-parity-backlog.md) nor the [test suite design](test-suite-design.md) / [pseudologic](test-suite-pseudologic.md) has been modified. Adoption of either proposed replacement is a maintainer decision and has **not** been taken.
+Status: **decisions adopted 2026-09-28; textual reconciliation incomplete**. Added 2026-09-26 as import-only material. The five adoption questions were open maintainer decisions; the [owner-delegated decision pass](../adr/0015-owner-delegated-decision-pass.md) resolved all five on 2026-09-28.
 
-| Review | Reviewed commit | Files inspected at | Proposed replacement | Adopted |
-| --- | --- | --- | --- | --- |
-| [Reference parity](../specs/parity-plan-review/README.md) | `ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb` (`parity backlog`) | same | `11-parity-backlog.REVISED.md` (1,503 → 235 lines) + `ADR-0011.REVISED.md` | no |
-| [Test plan](../specs/testing-plan-review/README.md) | `8bff9fadbcacf9d369758b967971469548834365` (`test plans`) | `ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb` | `REVISED-TEST-PLAN.md` + `CORRECTED-WORKFLOW-CASES.md` (1,223 → 743 lines) | no |
+**The decisions are taken. The files are not yet rewritten, and the two must not be conflated.** A decision to adopt a corrected model is not a decision to overwrite a 1,503-line plan with a 235-line replacement. Each row below records what was decided, what the integration requires, and the honest current state. Neither the accepted [reference parity backlog](11-parity-backlog.md), [ADR 0011](../adr/0011-reference-parity-backlog.md) nor the [test suite design](test-suite-design.md) / [pseudologic](test-suite-pseudologic.md) has been modified by this integration.
+
+| Review | Reviewed commit | Files inspected at | Proposed replacement | Decisions adopted 2026-09-28 | Textual state |
+| --- | --- | --- | --- | --- | --- |
+| [Reference parity](../specs/parity-plan-review/README.md) | `ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb` (`parity backlog`) | same | `11-parity-backlog.REVISED.md` (1,503 → 235 lines) + `ADR-0011.REVISED.md` | ADOPT-1, ADOPT-2, ADOPT-4 | not yet merged |
+| [Test plan](../specs/testing-plan-review/README.md) | `8bff9fadbcacf9d369758b967971469548834365` (`test plans`) | `ac9e1a918d86c6872f415e3a988cbc7d25b6f9fb` | `REVISED-TEST-PLAN.md` + `CORRECTED-WORKFLOW-CASES.md` (1,223 → 743 lines) | ADOPT-3, ADOPT-5 | not yet merged |
 
 The vendoring decision follows [ADR 0012](../adr/0012-next-implementation-dossier.md): the material is kept outside the maintained plan namespace so no maintained requirement, dependency edge, completion count or acceptance gate inherits its status. Both packages state this themselves — the parity ADR is labelled *"proposed replacement … for review"* and its companion edits say the accepted ADR *"is not retroactively rewritten by this artifact"*.
 
@@ -29,19 +31,46 @@ It also finds the plan's "unowned" assertions contradicted by existing maintaine
 
 The review's central revision is to make the plan a specification of observable business behavior rather than a transcription of today's `if`-statement order, preserving guard-order assertions only where the order is a real contract (current access before receipt disclosure, replay before new-work expiry, complete validation before committed effects, owner routing before constituent execution).
 
-## Why nothing was replaced
+## What was decided on 2026-09-28
 
-Replacing an accepted ADR and a 1,503-line plan is a material working decision. `docs/README.md` requires such a change to go through its ADR with the affected requirements, operations and proof gates updated together, and both packages defer adoption to the maintainer. The defects above are recorded here so they are not lost, and so the next reader of `11-parity-backlog.md` or `test-suite-design.md` knows a review exists and what it found.
+The owner/operator has now taken both decisions. They are recorded in [ADR 0015](../adr/0015-owner-delegated-decision-pass.md) and summarised here. The defects above are retained as history and as the reason each decision was made; they are not deleted, and the accepted files are not yet rewritten.
+
+| ID | Question | Decision | Integration requirement | State |
+| --- | --- | --- | --- | --- |
+| ADOPT-1 | Revised parity backlog | Adopt the corrected ownership, evidence and per-rule safety model. | Reconcile the proposed older replacement against **current** source; preserve every later valid requirement and all stable `PRY-nn` identifiers. No wholesale old-file overwrite, no verbatim unsafe R1–R25 recipe. | decision taken; merge outstanding |
+| ADOPT-2 | Revised ADR 0011 | Adopt the separation of design coverage, implementation, observed evidence and selected-release readiness. | Retain the core historical denominator; derive a separate selected-scope release result rather than moving the denominator. | decision taken; ADR text outstanding |
+| ADOPT-3 | Revised test plan | Adopt the corrected observable-business cases and bounded unit/property/conformance testing; retain real-PostgreSQL/workerd integration. | Derive current expected behaviour from accepted contracts and primary-source facts, not by copying an older patch. Guard-order assertions survive only where the order is a real contract — current access before replay disclosure, replay before new-work expiry, complete validation before committed effects, owner routing before constituent execution. | decision taken; cases outstanding |
+| ADOPT-4 | Companion D-register edits | Apply this pass as the resolution of scope and process choices. | Replaced blanket facts/provider/reviewer blocks with affected-stage gates in the [D-register](../open-decisions.md). Preserve real facts and operational outcomes as unresolved until evidenced, and keep one authoritative register. | **done** |
+| ADOPT-5 | Register validator | Implement a small derived validator — or recognise the existing one. | A passing metadata checker is not monetary, database or company-readiness proof. | **already satisfied** |
+
+**ADOPT-5 is already satisfied and was not rebuilt.** `docs/plans/check-plan.py` validates known identifiers, owners, dependency cycles, conditional-gate references, traceability coverage, counters, trailing whitespace, local links and anchors, and `git diff --check`. That is the derived metadata validator the decision asks for, and it runs on every planning change. Building a second one would duplicate it and add a second place for planning metadata to drift. Its success proves metadata consistency only, exactly as the decision states.
+
+**HARNESS-1 is rejected, and the reason is architectural.** It requires the runtime role to be unable to write application tables, which [ADR 0010](../adr/0010-application-owned-accounting-replacement.md) and `AGENTS.md` explicitly assign to the trusted application. Implemented as written it would reject the intended installation, conflate a backend database identity with an end-user identity, and invite RLS/GUC tenant identities back. Tests must establish that unauthorised callers cannot misuse those operations at their real admission boundary, not that valid application writes are forbidden.
+
+**Two classifications must not be merged.** A test-plan error is a defect **in the plan**, not a proven runtime defect. And a planning defect is not automatically a code defect: inspect composed constraints before claiming a missing redundant trigger is a failure, and do not add a trigger for an invariant the application already enforces.
 
 The originals are recoverable in full: the parity backlog at `ac9e1a9`, the test plan at `8bff9fa`, and per-finding original-versus-proposed detail in the vendored `parity-register.json` (85 findings) and `rule-review.json` (R1–R25 dispositions).
 
-## Decision required from the maintainer
+## Questions closed, and the work they leave behind
 
-1. **Parity backlog.** Adopt `11-parity-backlog.REVISED.md` as the replacement, or reconcile it against the current checkout first? The register is a working scope decision per ID; adopting it makes the register, not the prose, the dispatch surface.
-2. **ADR 0011.** Adopt `ADR-0011.REVISED.md`? It adds truthful ownership and stage-specific release gates while preserving the `PRY` namespace and the historical core denominator, and removes unsubstantiated claims that every reference constant was correct for some company/year.
-3. **Test plan.** Adopt the revised plan and corrected cases, and separately settle the no-unit-test policy? The handoff states plainly that the plan's original no-unit-test rule *"must be discussed explicitly if pure conformance/regression tests are to be added"* and that *"no authorization is inferred from this document"*. `AGENTS.md` still forbids test changes without explicit approval, so **no test was added, changed or run by this import.**
-4. **Companion edits.** Apply the `D-04`, `D-06`, `D-08` and `D-10` amendments in `COMPANION-EDITS.md` to [open decisions](../open-decisions.md), and the separate-measures sentence to [the plans index](README.md)? These are proposed, not applied.
-5. **Register validator.** `COMPANION-EDITS.md` proposes a small register validator and nine required checks for the maintained planning artifacts. Not written. A documentation change may propose it; any actual test change still follows repository authorization.
+The five questions below were open when this file was written on 2026-09-26. They were answered on 2026-09-28 and the answers are in the table above. They are kept here as the record of what was actually asked, because the shape of the questions shows what the review was for.
+
+1. **Parity backlog.** *Adopted as a decision, reconciled rather than copied.* The register is a working scope decision per ID, which makes the register, not the prose, the dispatch surface. What remains is the textual merge: bring the corrected ownership, evidence and safety model into the current file without losing requirements added since `ac9e1a9`.
+2. **ADR 0011.** *Adopted in principle.* It adds truthful ownership and stage-specific release gates while preserving the `PRY` namespace and the historical core denominator, and it removes unsubstantiated claims that every reference constant was correct for some company/year. What remains is the ADR text.
+3. **Test plan, and the no-unit-test policy.** *Both settled.* The revised plan and corrected cases are adopted; the policy question is resolved as a bounded standing permission recorded in `AGENTS.md` and D-09. The original handoff's condition — that the no-unit-test rule "must be discussed explicitly if pure conformance/regression tests are to be added" — was that discussion, and it happened. **No test was added, changed or run by the import**, and the decision pass itself executed no test.
+4. **Companion edits.** *Applied.* The D-04, D-06, D-08 and D-10 amendments are now in the [D-register](../open-decisions.md) as affected-stage gates, and the separate-measures sentence is in [the plans index](README.md). Proposed is no longer the word for them.
+5. **Register validator.** *Already satisfied.* `docs/plans/check-plan.py` performs the derived metadata checks. Nothing further is written.
+
+### Remaining integration work, and its order
+
+This is documentation work, sequenced so the planning gate keeps passing:
+
+1. Merge the corrected parity model into `11-parity-backlog.md`, preserving all `PRY-nn` identifiers and every requirement added since the review's revision.
+2. Write the revised ADR 0011 as a dated amendment of the existing record rather than a replacement file, so the original decision text and its denominator survive.
+3. Bring the corrected observable-business cases into the test plan, deriving current expectations from accepted contracts and primary-source facts.
+4. Build the selected-case release view, which includes required conditional edges without changing the historical 53-packet count or 101-edge DAG.
+
+Until steps 1–3 land, **the accepted files remain the authority for text and the adopted decisions remain the authority for intent**, and an implementer must read both. The contradictions listed under *Effect on packet dispatch* below still stand as live constraints.
 
 ## Import verification
 

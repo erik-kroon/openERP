@@ -1,0 +1,39 @@
+{
+  "purpose": "Dated company evidence ledger seed; no financial activation granted",
+  "reported_from_existing_repo": {
+    "name": "Drastic AB",
+    "bank": "SEB",
+    "normal_fiscal_year": "May 1-April 30",
+    "first_fiscal_year": {
+      "start": "2025-05-17",
+      "end": "2026-04-30"
+    }
+  },
+  "not_established_here": {
+    "accounting_method": null,
+    "vat_method": null,
+    "vat_cadence": null,
+    "registrations_effective_history": null,
+    "framework_eligibility": null,
+    "prior_declarations": null,
+    "complete_bank_account_set": null,
+    "prior_official_ledger": null,
+    "payroll_asset_fx_case_population": null
+  },
+  "engineering_examples_not_company_facts": {
+    "primary": "synthetic AB, SEK, accrual",
+    "separate_required_case": "synthetic cash method including unpaid year-end recognition",
+    "annual_report_target": "K2 for actually eligible companies"
+  },
+  "activation_rule": "Real affected financial execution requires evidence of its mandatory facts and qualified rule, not this JSON default.",
+  "private_evidence_record": {
+    "fact_key": "required",
+    "value": "required, can be explicit Unknown",
+    "effective_from": "required for dated fact",
+    "effective_through": "date or explicit continuing/unknown",
+    "source_reference": "original stored locator/hash",
+    "reviewer": "actual human fact confirmer or named AI rule-review role, never invented professional",
+    "status": "reported|evidenced|conflicted|unknown",
+    "affected_operations": []
+  }
+}

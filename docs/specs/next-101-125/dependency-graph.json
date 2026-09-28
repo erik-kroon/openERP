@@ -1,0 +1,65 @@
+{
+  "new_nodes": {
+    "NEXT-101": [],
+    "NEXT-102": [
+      "NEXT-101"
+    ],
+    "NEXT-103": [
+      "NEXT-102"
+    ],
+    "NEXT-104": [],
+    "NEXT-105": [
+      "NEXT-104"
+    ],
+    "NEXT-106": [],
+    "NEXT-107": [
+      "NEXT-105"
+    ],
+    "NEXT-108": [],
+    "NEXT-109": [],
+    "NEXT-110": [],
+    "NEXT-111": [],
+    "NEXT-112": [],
+    "NEXT-113": [],
+    "NEXT-114": [],
+    "NEXT-115": [],
+    "NEXT-116": [],
+    "NEXT-117": [],
+    "NEXT-118": [],
+    "NEXT-119": [],
+    "NEXT-120": [],
+    "NEXT-121": [],
+    "NEXT-122": [],
+    "NEXT-123": [],
+    "NEXT-124": [],
+    "NEXT-125": []
+  },
+  "topological_order": [
+    "NEXT-101",
+    "NEXT-104",
+    "NEXT-106",
+    "NEXT-108",
+    "NEXT-109",
+    "NEXT-110",
+    "NEXT-111",
+    "NEXT-112",
+    "NEXT-113",
+    "NEXT-114",
+    "NEXT-115",
+    "NEXT-116",
+    "NEXT-117",
+    "NEXT-118",
+    "NEXT-119",
+    "NEXT-120",
+    "NEXT-121",
+    "NEXT-122",
+    "NEXT-123",
+    "NEXT-124",
+    "NEXT-125",
+    "NEXT-102",
+    "NEXT-105",
+    "NEXT-103",
+    "NEXT-107"
+  ],
+  "prior_nodes": "references only, not re-audited dependency graphs"
+}

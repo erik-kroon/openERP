@@ -1,0 +1,494 @@
+{
+  "decision_id": "owner-delegated-decision-pass-2026-09-28",
+  "repository": "erik-kroon/openERP",
+  "reviewed_head": "66355b62b23e3b8007c2d324f3739fbbcc96cdc0",
+  "accounted_reference": "7ebea94fb3968c126e67e6cfe7efab695cc65b2f",
+  "authority": "User delegated the product/engineering decision pass; this records those decisions. Repository changes are not claimed.",
+  "created_on": "2026-09-28",
+  "status": "decisions selected in conversation; integration into maintained repository documents pending",
+  "gates": [
+    {
+      "id": "D-01",
+      "decision": "First release is private single-operator use through the existing loopback Better Auth password path. Keep current scoped sessions, explicit memberships and revocable agent tokens. Hosted mode retains the existing OIDC boundary; do not expose local auth remotely.",
+      "design_status": "decided; local configuration and runtime acceptance remain",
+      "remaining": [
+        "Actual local actor and book grants",
+        "Actual secrets and authentication/authority acceptance",
+        "Hosted OIDC registration only before hosted access"
+      ],
+      "next_work": [
+        "Use the existing configuration and password bootstrap, not a new identity service",
+        "Test separate requester, operator, nonmember and revoked actors",
+        "Keep human financial approval outside ordinary MCP"
+      ],
+      "rejected": [
+        "External OIDC registration as a prerequisite to all local development",
+        "Agent self-approval",
+        "Hardcoded company identity or auth bypass"
+      ],
+      "independently_verified_by_this_pass": false
+    },
+    {
+      "id": "D-02",
+      "decision": "Retain ADR0010 and its existing narrow database boundary. Reuse fixed-revision evidence; requalify changed schema, authority and transaction paths at the actual head through real PostgreSQL, workerd and the selected Bun composition.",
+      "design_status": "design decided; proof is scoped per revision",
+      "remaining": [
+        "Actual runtime results for changed paths",
+        "Clean locked dependency installation and applied restricted-role migrations"
+      ],
+      "next_work": [
+        "Map existing evidence to affected code/schema revisions",
+        "Exercise one complete selected workflow before calling its contract integrated",
+        "Keep authentic failure, race, rollback and recovery records"
+      ],
+      "rejected": [
+        "Rebuilding SQL-owned business procedures",
+        "Reclassifying every absent duplicate trigger as a bug",
+        "Treating a documented pass as current universal proof"
+      ],
+      "independently_verified_by_this_pass": false
+    },
+    {
+      "id": "D-03",
+      "decision": "Use independently specified expected amounts, byte vectors and finite laws in addition to end-to-end tests. Accounted is a pinned comparison system, never the sole source of expected truth.",
+      "design_status": "verification design decided; results not asserted",
+      "remaining": [
+        "Executable vectors and actual cross-runtime outputs",
+        "Adjudication of disagreements with source and qualified rules"
+      ],
+      "next_work": [
+        "Write expected monetary/control outcomes before inspecting production results",
+        "Check exact dates, signed rounding, residual release, array/scalar shape, hashes and referenced IDs",
+        "Separate unchanged contracts from materially changed ones"
+      ],
+      "rejected": [
+        "Generating expected outputs with the same function under test",
+        "Majority vote between repeated model answers as independent proof",
+        "Changing assertions to copy a faulty reference result"
+      ],
+      "independently_verified_by_this_pass": false
+    },
+    {
+      "id": "D-04",
+      "decision": "Build two distinct native accounting-method profiles and preserve their independent VAT-method configuration. Use a synthetic Swedish AB/SEK/accrual engineering reference first and a separate cash-method/year-end case. K2 is the first annual-report target for eligible small ABs, not a claim that Drastic already qualifies. Actual company activation uses dated records.",
+      "design_status": "product choices decided; company facts remain factual inputs",
+      "remaining": [
+        "Actual accounting/VAT methods and effective history",
+        "Cadence and tax/employer registrations",
+        "Actual framework applicability and prior declarations",
+        "Complete account/source and special-transaction population"
+      ],
+      "next_work": [
+        "Retain reported Drastic name, fiscal dates and SEB without promoting them to verified facts",
+        "Acquire register extract plus original/change decisions covering the relevant dates",
+        "Keep all source intake and nonfinancial review usable before financial treatment is selected"
+      ],
+      "rejected": [
+        "Guessing historical registrations",
+        "Silently defaulting an unknown method to accrual or cash",
+        "Blocking all development until every optional company fact exists"
+      ],
+      "independently_verified_by_this_pass": false
+    },
+    {
+      "id": "D-05",
+      "decision": "Retain the current shared capabilities and stateless JSON MCP contract: 2025-11-25 default with 2025-06-18 accepted as implemented. No SSE/tasks redesign. Generate the catalogue from source metadata and qualify allowed UI/REST/MCP/job routes individually.",
+      "design_status": "contract selected from current source; observed parity remains",
+      "remaining": [
+        "Actual route/permission/output observations",
+        "Explicit exposure classification for each new capability"
+      ],
+      "next_work": [
+        "Test discovery and invocation filtering under current access",
+        "Verify current admission before replay and exact approved execution after it",
+        "Keep operator-only approvals out of ordinary MCP"
+      ],
+      "rejected": [
+        "Counting a planned tool as supported transport",
+        "Advertising every schema symbol as an executable agent capability"
+      ],
+      "independently_verified_by_this_pass": false
+    },
+    {
+      "id": "D-06",
+      "decision": "Select file-first full-history import when an authoritative prior ledger exists and complete material is available. Otherwise use a separately identified original-source reconstruction with an evidenced opening; no invented previous system. Preserve existing receipt matches and original bytes. Reduced-history cutover is an explicit exception.",
+      "design_status": "migration policy decided; source inventory remains",
+      "remaining": [
+        "Whether any official prior ledger exists and its actual export/version",
+        "Original statements and account set",
+        "Actual prior filings/openings",
+        "Complete candidate review interval"
+      ],
+      "next_work": [
+        "Inventory available evidence before requesting missing material",
+        "Inspect source scopes and independent opening/movement/closing controls",
+        "Keep Accounted reference runs isolated and nonauthoritative"
+      ],
+      "rejected": [
+        "Six predecessor adapters before a file-based period",
+        "Duplicating full history and opening balances",
+        "Destroying matches to rerun AI extraction",
+        "Undocumented cutover assumptions"
+      ],
+      "independently_verified_by_this_pass": false
+    },
+    {
+      "id": "D-07",
+      "decision": "Select the existing self-host Bun API plus PostgreSQL and filesystem original store for the first private operational profile. Retain Worker/Cloudflare and R2 ports without making public hosting a first-use dependency. Data stays outside code worktrees on encrypted operator-controlled storage in Sweden. Require an independent encrypted backup and a demonstrated restore before relying on it as the sole live ledger.",
+      "design_status": "operating design decided; configuration and restore evidence remain",
+      "remaining": [
+        "Actual persistent paths, storage location and access",
+        "Actual backup destination and recovery key custody",
+        "Observed restoration and achieved recovery targets"
+      ],
+      "next_work": [
+        "Select an initial engineering target of RPO at most24h and RTO at most4h, then measure rather than assert it",
+        "Back up DB, original objects, migration/configuration manifests and key recovery together",
+        "Keep automatic deletion disabled until record-class retention is qualified; choose export before/after important runs"
+      ],
+      "rejected": [
+        "A second folder on the same device as disaster recovery",
+        "An invented bucket, production credential or completed backup",
+        "A whole book dependent on an unretained chat/download link"
+      ],
+      "independently_verified_by_this_pass": false
+    },
+    {
+      "id": "D-08",
+      "decision": "AI/coding agents perform primary-source rule research and specification review. No nonexistent outside accountant is the default engineering prerequisite. Use legislation, BFN/Skatteverket and official format specifications for normative rules; use pinned Accounted code as implementation/case evidence. Activate only the complete bounded scenario whose rules and tests are established.",
+      "design_status": "rule qualification process decided; specific releases remain incomplete until evidenced",
+      "remaining": [
+        "Required period-specific rule inputs",
+        "Rights/provenance for copied code/data",
+        "Material factual or rule ambiguity in an actual case"
+      ],
+      "next_work": [
+        "Preserve provenance, effective dates, reviewer identity and limitations in existing rule records",
+        "Keep implementation-generated assumptions distinct from independent expected results",
+        "For first reported2025-05-17 year, select the applicable BFN version from its start/end conditions, not latest publication date"
+      ],
+      "rejected": [
+        "Declaring all Accounted features legally correct",
+        "Requiring every Swedish rule family before the ordinary selected workflow",
+        "Fabricated expert review or source authority"
+      ],
+      "independently_verified_by_this_pass": false
+    },
+    {
+      "id": "D-09",
+      "decision": "Under this delegated product/engineering decision pass, select a standing bounded permission for focused unit, property/conformance, regression and integration/E2E tests needed for existing and explicitly adopted workflows. Use synthetic data and disposable isolated local/CI systems. This changes the test policy but creates no live-operation authority.",
+      "design_status": "policy decided here; repository policy integration pending",
+      "remaining": [
+        "Record this delegated policy in AGENTS.md and D-09",
+        "Respect stricter task-specific exclusions outside this scope"
+      ],
+      "next_work": [
+        "Keep existing test/check tooling; do not build a new testing platform first",
+        "Permit real local PostgreSQL/workerd/Bun and selected browser/REST/MCP tests within the task",
+        "Retain existing document-intelligence authorization and no-live-provider restriction"
+      ],
+      "rejected": [
+        "Another approval request for every ordinary arithmetic/regression test",
+        "Blanket authority to use real company data, external accounts, production databases or payments",
+        "Weakening checks to make CI pass"
+      ],
+      "independently_verified_by_this_pass": false
+    },
+    {
+      "id": "D-10",
+      "decision": "Select file/manual official-channel handoffs first and leave connected provider actions disabled. Build local artifacts, parsers and documented adapter contracts without live credentials. A user performs any actual bank/signing/filing gesture through the authorised official channel; the app records exact resulting evidence.",
+      "design_status": "delivery policy decided; real connected access/outcomes remain external inputs",
+      "remaining": [
+        "Credentials/contracts only for a selected connected exercise",
+        "Actual human signature or statutory filing authority",
+        "Observed submission/assessment/payment outcomes"
+      ],
+      "next_work": [
+        "Do not confuse offline format validation with provider acceptance",
+        "Use no-network fixtures or explicit local emulators for ordinary tests",
+        "Keep original-key/provider-identity recovery and unknown states"
+      ],
+      "rejected": [
+        "A vault before every public parser or local artifact",
+        "Simulated submitted/paid/accepted states",
+        "Automated real filings, payments or contact inferred from this delegation"
+      ],
+      "independently_verified_by_this_pass": false
+    }
+  ],
+  "product_scope": [
+    {
+      "row": 1,
+      "capability": "Loan lifecycle",
+      "next_ids": [
+        32
+      ],
+      "decision": "adopt_conditional_accounting",
+      "owner": "owner-funding and loan owner",
+      "boundary": "Ordinary documented borrowing/principal/interest/repayment. No lending product. Required when the selected company period actually contains it."
+    },
+    {
+      "row": 2,
+      "capability": "Late FX chain repair",
+      "next_ids": [
+        41
+      ],
+      "decision": "adopt_correction_envelope",
+      "owner": "existing FX monetary-item owner",
+      "boundary": "Implement bounded supported closure repair. Reject unsupported consumed chains visibly; no rate edit in historical entries or fake open-date workaround."
+    },
+    {
+      "row": 3,
+      "capability": "Economic impairment reversal",
+      "next_ids": [
+        42
+      ],
+      "decision": "adopt_conditional_accounting",
+      "owner": "asset impairment and schedule owner",
+      "boundary": "Eligible depreciable assets only with qualified cap and future schedule. No blanket goodwill/intangible reversal."
+    },
+    {
+      "row": 4,
+      "capability": "Foreign-currency cash holdings",
+      "next_ids": [
+        40
+      ],
+      "decision": "adopt_conditional_accounting",
+      "owner": "bank cash and paired FX owner",
+      "boundary": "Native foreign account units/carrying. A foreign invoice settled into a SEK account does not imply a foreign-cash account."
+    },
+    {
+      "row": 5,
+      "capability": "Direct cash-flow statement",
+      "next_ids": [
+        45
+      ],
+      "decision": "adopt_optional_product",
+      "owner": "report snapshots and cash-flow classifier",
+      "boundary": "Historical statement, not another Cash forecast. Not a universal first-period release condition."
+    },
+    {
+      "row": 6,
+      "capability": "Paid payroll recovery",
+      "next_ids": [
+        36
+      ],
+      "decision": "adopt_correction_envelope",
+      "owner": "payroll and declaration owners",
+      "boundary": "Required before advertising the associated paid-payroll correction case. Retain the already adopted open-period linked-adjustment policy; no retrospective withholding invention."
+    },
+    {
+      "row": 7,
+      "capability": "Periodic EU sales summary",
+      "next_ids": [
+        55
+      ],
+      "decision": "adopt_conditional_accounting",
+      "owner": "existing EU-sales facts and declaration artifacts",
+      "boundary": "Required for the actual qualifying sale/reporting case. Its format and submission remain separate gates."
+    },
+    {
+      "row": 8,
+      "capability": "Receivable allowance, loss and recovery",
+      "next_ids": [
+        61
+      ],
+      "decision": "adopt_conditional_accounting",
+      "owner": "AR and VAT correction owners",
+      "boundary": "Separate gross claim, allowance, qualified tax relief and actual cash recovery. Delinquency alone never creates VAT relief."
+    },
+    {
+      "row": 9,
+      "capability": "Purchase commitments and three-way matching",
+      "next_ids": [
+        66
+      ],
+      "decision": "adopt_optional_product",
+      "owner": "purchases and procurement review",
+      "boundary": "Add after the native payable loop unless a current required client needs it. A policy breach cannot suppress a real liability."
+    },
+    {
+      "row": 10,
+      "capability": "Commitment-aware budgets",
+      "next_ids": [
+        67
+      ],
+      "decision": "adopt_optional_product",
+      "owner": "purchase commitments and budget policy",
+      "boundary": "Later management control over discretionary commitments, not cash/financial truth or a prerequisite to recording actual invoices."
+    },
+    {
+      "row": 11,
+      "capability": "Accounting-method change",
+      "next_ids": [
+        75
+      ],
+      "decision": "adopt_optional_product",
+      "owner": "accounting-method/recognition owner",
+      "boundary": "Later reviewed transition, not a forced precondition to opening an actual existing-method book. Never relabel old recognition."
+    },
+    {
+      "row": 12,
+      "capability": "Project/time and milestone billing",
+      "next_ids": [
+        77,
+        78
+      ],
+      "decision": "adopt_optional_product",
+      "owner": "contract/order and invoice issue owners",
+      "boundary": "Accepted service coverage, once-only billing and exact retention. No new CRM or default earned-revenue method."
+    },
+    {
+      "row": 13,
+      "capability": "Earned but unbilled revenue",
+      "next_ids": [
+        79
+      ],
+      "decision": "adopt_conditional_accounting",
+      "owner": "contract asset and invoice recognition owners",
+      "boundary": "Enable only a qualified bounded performance/entitlement method. Accounted output or elapsed time alone is not earning proof."
+    },
+    {
+      "row": 14,
+      "capability": "Supplier disputes and payment holds",
+      "next_ids": [
+        80
+      ],
+      "decision": "adopt_conditional_accounting",
+      "owner": "shared AP/payment eligibility owner",
+      "boundary": "Shared invoice residual remains true. Disputed eligible amount blocks the relevant payment, not recognition or source retention."
+    },
+    {
+      "row": 15,
+      "capability": "Operating rentals",
+      "next_ids": [
+        83
+      ],
+      "decision": "adopt_limited_profile",
+      "owner": "purchase schedules and refundable deposits",
+      "boundary": "Operating-rental profile adopted. Finance-lease/right-of-use accounting is excluded from this packet and first-release scope."
+    },
+    {
+      "row": 16,
+      "capability": "Book-to-tax depreciation",
+      "next_ids": [
+        84
+      ],
+      "decision": "adopt_conditional_accounting",
+      "owner": "asset and corporate-tax bridge",
+      "boundary": "Ordinary supported tax pools/candidates. Qualified book/tax linkage, not a second ledger or automatic maximum deduction."
+    },
+    {
+      "row": 17,
+      "capability": "Periodiseringsfond",
+      "next_ids": [
+        85
+      ],
+      "decision": "adopt_conditional_accounting",
+      "owner": "corporate-tax/cohort/appropriation owner",
+      "boundary": "Optional elected reserve with dated cohorts and required reversal rules. No automatic tax-strategy choice on the user behalf."
+    },
+    {
+      "row": 18,
+      "capability": "Pension reconciliation and SLP",
+      "next_ids": [
+        87
+      ],
+      "decision": "adopt_conditional_accounting",
+      "owner": "payroll provisions, purchases and annual tax owner",
+      "boundary": "Actual pension charges and qualified SLP basis. No requirement to finish this before an evidenced no-pension case."
+    },
+    {
+      "row": 19,
+      "capability": "Dividends and KU31",
+      "next_ids": [
+        89
+      ],
+      "decision": "adopt_conditional_accounting",
+      "owner": "company resolutions, shareholder payable and reporting",
+      "boundary": "Actual resolution/entitlement required. Does not authorise a dividend, personal tax plan or actual payment."
+    },
+    {
+      "row": 20,
+      "capability": "Conditional grants",
+      "next_ids": [
+        90
+      ],
+      "decision": "defer_product_expansion",
+      "owner": "future grant profile attached to existing income/source owners",
+      "boundary": "Not a first-release feature. Preserve any discovered real grant as an unsupported accounting case; do not call it ordinary sale or silently exclude it."
+    },
+    {
+      "row": 21,
+      "capability": "Bilateral AR/AP setoff",
+      "next_ids": [
+        92
+      ],
+      "decision": "adopt_optional_product",
+      "owner": "both original settlement owners",
+      "boundary": "Later same-party/same-currency documented setoff, one atomic AP/AR effect. No automatic group netting or assumed legal consent."
+    },
+    {
+      "row": 22,
+      "capability": "Counterparty confirmations",
+      "next_ids": [
+        95
+      ],
+      "decision": "adopt_optional_product",
+      "owner": "statement, evidence and review owners",
+      "boundary": "Later optional independent evidence channel. Nonresponse is not confirmation; not an obligatory outside reviewer for every period."
+    },
+    {
+      "row": 23,
+      "capability": "Multi-reviewer quorum",
+      "next_ids": [
+        96
+      ],
+      "decision": "defer_product_expansion",
+      "owner": "existing exact approval contract",
+      "boundary": "Preserve as future governance extension. First release uses one real owner/operator approval, not invented additional humans or weakened agent authority."
+    }
+  ],
+  "review_adoptions": [
+    {
+      "id": "ADOPT-1",
+      "topic": "Parity backlog",
+      "decision": "Adopt corrected ownership, evidence and per-rule safety principles now. Reconcile the proposed older replacement against current source before editing text; preserve all later valid requirements and stable PRY identifiers.",
+      "not_allowed": "No wholesale old-file overwrite and no verbatim unsafe R1-R25 recipe. Planned does not equal implemented or qualified."
+    },
+    {
+      "id": "ADOPT-2",
+      "topic": "ADR0011",
+      "decision": "Adopt the revised separation of design coverage, implementation, observed evidence and selected-release gates. Retain core historical denominator; derive a separate selected-scope release result.",
+      "not_allowed": "No moving denominator as a reason to leave product choices unowned. No claimed immutable-byte proof of business correctness."
+    },
+    {
+      "id": "ADOPT-3",
+      "topic": "Test plan",
+      "decision": "Adopt corrected observable-business cases and bounded unit/property/conformance testing. Retain real-PostgreSQL/workerd integration. Reject HARNESS-1 expectations that forbid the application role from its intended table writes.",
+      "not_allowed": "No copying guard order as truth except real ordering contracts such as current access before replay disclosure. Test defects are not proven runtime defects."
+    },
+    {
+      "id": "ADOPT-4",
+      "topic": "Companion D-register edits",
+      "decision": "Apply this pass as the resolution of scope and process choices. Replace blanket facts/provider/reviewer blocks with affected-stage gates. Preserve real facts and operational outcomes as unresolved until evidenced.",
+      "not_allowed": "No guessing data to close a row and no creating a parallel authoritative open-decisions register."
+    },
+    {
+      "id": "ADOPT-5",
+      "topic": "Register validator",
+      "decision": "Implement a small derived validator over existing metadata for known IDs, owners, conditional gate evaluation, evidence freshness and counter consistency. It can use a simple script and native data, without a new platform/dependency.",
+      "not_allowed": "A passing metadata checker is not monetary, database or company-readiness proof."
+    }
+  ],
+  "forbidden_actions": [
+    "No production migration/reset",
+    "No real-data processing inferred from test permission",
+    "No live provider use",
+    "No payment or bank instruction",
+    "No signature or statutory filing",
+    "No customer/third-party contact",
+    "No invented company records or professional certification"
+  ],
+  "single_source_of_truth": "docs/open-decisions.md after integration; this JSON is a generated decision handoff, not a competing unresolved register"
+}

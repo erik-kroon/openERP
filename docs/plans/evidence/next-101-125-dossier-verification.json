@@ -1,0 +1,108 @@
+{
+  "observedAt": "2026-09-28T00:00:00+00:00",
+  "headObserved": "4caa8dd1be84dfb8de1c3974e4f65a6d48d93340",
+  "pinnedRevisionObserved": "66355b62b23e3b8007c2d324f3739fbbcc96cdc0",
+  "pinnedRevisionIsAncestorOfHead": true,
+  "pinnedRevisionEqualsObservedHead": false,
+  "result": "vendored_document_verified_against_its_own_records",
+  "scope": "Import and integrity observation of one externally supplied fifth-wave design dossier covering NEXT-101..125. No application, database, worker, queue, browser or provider workflow was executed.",
+  "source": {
+    "archive": "openerp-next-101-125.zip",
+    "entries": 41,
+    "suppliedFrom": "~/Downloads",
+    "archivePreparedOn": "2026-09-28",
+    "archiveStatus": "Proposed implementation-level work packets, not repository patches or completion claims",
+    "archiveScope": "ordinary Swedish AB and explicitly selected specialist/collaboration extensions; no inventory, consolidation, bank or general finance platform",
+    "archiveRepositoryReading": "targeted to the branch and shared operations/contracts; specialist rules and provider facts checked narrowly against primary sources, not fully qualified"
+  },
+  "vendoredTree": {
+    "path": "docs/specs/next-101-125",
+    "packets": 25,
+    "packetRange": [
+      101,
+      125
+    ],
+    "checksumFile": "SHA256SUMS.txt",
+    "filesOnDisk": 41,
+    "filesCoveredByManifest": 40,
+    "filesOk": 40,
+    "mismatches": [],
+    "manifestSelfCoverage": "SHA256SUMS.txt is the only file on disk not listed in the manifest",
+    "checker": "checks/validate.py",
+    "checkerExitCode": 0,
+    "checkerReported": {
+      "total": 741,
+      "passed": 741,
+      "failed": 0,
+      "byGroup": {
+        "structure": 132,
+        "dependencies": 77,
+        "documents": 94,
+        "links": 269,
+        "arithmetic": 58,
+        "access_model": 3,
+        "accounting_models": 3,
+        "mandate_model": 12,
+        "planner_model": 6,
+        "provider_model": 3,
+        "refund_model": 8,
+        "published_vectors": 76
+      },
+      "structureDependencyDocumentLinkTotal": 572,
+      "arithmeticModelPublishedVectorTotal": 169,
+      "matchesArchiveClaimedSplit": true,
+      "kind": "dossier structure, dependency, link, finite-model and published-vector checks",
+      "repository_code_imported": false,
+      "sql_worker_or_queue_executed": false,
+      "provider_executed": false,
+      "repository_modified_by_checker": "checks/results.json only, written by the checker itself"
+    }
+  },
+  "checkerReproducibility": {
+    "checkerWritesItsOwnResultsFile": true,
+    "archivedResultsJsonSha256": "608730aeea57f1bb4e9c19831b631ace80cc8e57969b014767638323502f53b1",
+    "rerunResult": "same 741 results, same counts, 0 failed",
+    "differenceFromArchivedFile": "ordering of a Python set of task IDs rendered into one check's detail string; string-set iteration order depends on the interpreter hash seed",
+    "consequence": "running the checker inside the vendored tree makes checks/results.json fail the manifest",
+    "remediationApplied": "archived bytes restored from the archive and manifest re-verified at 40 of 40 before this record was written",
+    "sameSymptomDifferentCause": {
+      "tree": "docs/specs/next-76-100",
+      "cause": "filesystem enumeration order of document checks"
+    },
+    "byteIdenticalOnRerun": {
+      "next-01-25": true,
+      "next-26-50": true,
+      "next-51-75": true
+    }
+  },
+  "claimsBoundedByTheArchive": [
+    "prior_status 'not assumed complete' for NEXT-01..100; only new-wave edges checked, no 125-node acyclicity claim",
+    "Repository reading was targeted to the branch and shared operations/contracts, with no complete source audit or runtime qualification claimed",
+    "Specialist rules and provider facts were checked narrowly against primary sources, not fully qualified",
+    "The package is proposed additional design, not an instruction to ignore current code; a pure function or retained JSON blob is not a completed application journey"
+  ],
+  "notableFinding": {
+    "packet": "NEXT-121",
+    "subject": "opt-in bounded standing posting mandates",
+    "finding": "The maintained operations plan already specifies the governing contract: explicit operation/book/period/account scope, currency, validity, revocation and cumulative limits, atomic shared budget reserve/consume, and that a mandate never implicitly authorizes payment, closure, signature or filing. Unattended posting under a standing mandate is already placed outside the Book Zero delivery as later scope.",
+    "implication": "This packet needs an authorization decision before implementation, not an ownership decision. The operations plan is the maintained authority.",
+    "source": [
+      "docs/operations.md",
+      "docs/specs/next-101-125/packets/NEXT-121.md"
+    ]
+  },
+  "applicationCodeExecuted": false,
+  "packetsImplemented": 0,
+  "relatedRecords": [
+    "next-dossier-verification.md",
+    "next-51-75-dossier-verification.md",
+    "next-76-100-dossier-verification.md"
+  ],
+  "limitations": [
+    "The archive's checker is a document, dependency, link and arithmetic check over its own content; it cannot establish implementation correctness.",
+    "Absence statements come from a targeted read rather than an exhaustive source audit, so they are weak evidence of absence even though the pinned revision is the observed head.",
+    "No statutory rate, table, statement or declaration schema, bank or direct-debit format, benefit or per-diem parameter, provider contract or credential was qualified; nothing here activates a legal or provider profile.",
+    "No repository test, data reset, deployment, provider call, payment or filing was performed or authorized.",
+    "The fifth-wave gap entries in the dossier plan are the result of a dated title and text search of the maintained plans, capability backlog and parity backlog, not a verified absence audit of the checkout."
+  ]
+}

@@ -1,0 +1,4524 @@
+{
+  "scope": "local dossier and independent synthetic arithmetic/finite models only",
+  "repository_modified": false,
+  "application_executed": false,
+  "database_executed": false,
+  "browser_executed": false,
+  "provider_executed": false,
+  "legal_release_qualified": false,
+  "actual_concurrency_proved": false,
+  "full_125_dependency_audit": false,
+  "total": 741,
+  "passed": 741,
+  "failed": 0,
+  "groups": {
+    "structure": {
+      "total": 132,
+      "passed": 132,
+      "failed": 0
+    },
+    "dependencies": {
+      "total": 77,
+      "passed": 77,
+      "failed": 0
+    },
+    "documents": {
+      "total": 94,
+      "passed": 94,
+      "failed": 0
+    },
+    "links": {
+      "total": 269,
+      "passed": 269,
+      "failed": 0
+    },
+    "arithmetic": {
+      "total": 58,
+      "passed": 58,
+      "failed": 0
+    },
+    "access_model": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "accounting_models": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "mandate_model": {
+      "total": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    "planner_model": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "provider_model": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "refund_model": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0
+    },
+    "published_vectors": {
+      "total": 76,
+      "passed": 76,
+      "failed": 0
+    }
+  },
+  "checks": [
+    {
+      "group": "structure",
+      "name": "exactly 25 unique IDs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "source checkpoint has 40 hex digits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "earlier completion not claimed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "only new graph completeness asserted",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "all five historical reservations remain",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-101 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-101 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-101 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-101 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-101 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-101 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-101 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-101 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-102 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-102 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-102 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-102 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-102 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-102 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-102 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-102 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-103 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-103 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-103 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-103 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-103 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-103 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-103 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-103 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-104 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-104 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-104 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-104 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-104 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-104 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-104 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-104 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-105 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-105 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-105 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-105 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-105 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-105 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-105 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-105 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-106 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-106 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-106 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-106 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-106 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-106 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-106 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-106 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-107 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-107 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-107 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-107 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-107 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-107 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-107 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-107 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-108 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-108 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-108 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-108 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-108 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-108 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-108 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-108 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-109 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-109 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-109 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-109 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-109 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-109 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-109 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-109 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-110 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-110 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-110 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-110 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-110 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-110 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-110 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-110 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-111 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-111 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-111 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-111 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-111 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-111 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-111 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-111 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-112 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-112 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-112 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-112 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-112 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-112 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-112 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-112 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-113 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-113 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-113 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-113 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-113 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-113 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-113 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-113 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-114 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-114 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-114 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-114 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-114 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-114 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-114 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-114 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-115 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-115 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-115 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-115 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-115 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-115 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-115 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-115 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-116 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-116 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-116 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-116 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-116 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-116 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-116 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-116 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-117 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-117 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-117 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-117 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-117 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-117 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-117 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-117 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-118 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-118 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-118 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-118 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-118 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-118 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-118 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-118 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-119 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-119 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-119 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-119 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-119 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-119 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-119 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-119 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-120 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-120 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-120 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-120 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-120 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-120 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-120 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-120 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-121 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-121 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-121 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-121 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-121 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-121 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-121 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-121 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-122 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-122 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-122 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-122 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-122 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-122 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-122 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-122 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-123 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-123 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-123 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-123 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-123 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-123 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-123 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-123 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-124 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-124 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-124 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-124 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-124 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-124 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-124 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-124 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-125 file and correct heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-125 declares new scope and original owner",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-125 references resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-125 example body included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "structure",
+      "name": "NEXT-125 is not marked complete",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-125 earlier dependencies are prior contracts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-125 new prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "NEXT-125 conditional prerequisites resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "new graph contains 25 distinct nodes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "dependencies",
+      "name": "declared conditional graph is acyclic",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-101 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-102 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-103 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-104 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-105 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-106 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-107 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-108 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-109 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-110 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-111 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-112 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-113 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-114 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-115 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-116 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-117 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-118 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-119 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-120 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-121 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-122 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-123 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-124 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "NEXT-125 master heading once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "00-COMMON.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "00-COMMON.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "01-QUALIFIED-INPUTS.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "01-QUALIFIED-INPUTS.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "CHECKS.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "CHECKS.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "CHECKS.md -> checks/results.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "CHECKS.md -> checks/validate.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "COORDINATOR-HANDOFF.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "COORDINATOR-HANDOFF.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "DECISIONS.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "DECISIONS.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "INTEGRATION-MAP.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "INTEGRATION-MAP.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-101.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-102.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-103.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-104.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-105.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-106.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-107.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-108.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-109.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-110.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-111.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-112.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-113.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-114.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-115.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-116.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-117.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-118.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-119.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-120.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-121.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-122.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-123.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-124.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "INTEGRATION-MAP.md -> packets/NEXT-125.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "MASTER-PSEUDOCODE.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "MASTER-PSEUDOCODE.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-01",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-02",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-03",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-04",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-05",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-06",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-07",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-08",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-11",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-12",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-13",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-14",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-15",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-16",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-17",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-18",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-19",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-20",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-21",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-22",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-23",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-24",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-25",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-26",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-27",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-28",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-29",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-30",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md #part-31",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-101.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-102.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-103.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-104.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-105.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-106.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-107.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-108.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-109.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-110.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-111.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-112.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-113.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-114.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-115.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-116.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-117.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-118.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-119.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-120.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-121.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-122.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-123.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-124.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "MASTER-PSEUDOCODE.md -> packets/NEXT-125.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "README.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "README.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> MASTER-PSEUDOCODE.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> COORDINATOR-HANDOFF.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> INTEGRATION-MAP.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> 00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> 01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-101.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-102.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-103.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-104.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-105.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-106.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-107.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-108.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-109.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-110.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-111.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-112.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-113.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-114.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-115.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-116.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-117.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-118.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-119.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-120.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-121.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-122.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-123.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-124.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> packets/NEXT-125.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> DECISIONS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> solution-index.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> dependency-graph.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> design-examples.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "README.md -> CHECKS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "SOURCES.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "SOURCES.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-101.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-101.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-101.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-101.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-101.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-102.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-102.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-102.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-102.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-102.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-103.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-103.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-103.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-103.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-103.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-104.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-104.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-104.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-104.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-104.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-105.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-105.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-105.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-105.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-105.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-106.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-106.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-106.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-106.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-106.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-107.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-107.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-107.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-107.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-107.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-108.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-108.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-108.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-108.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-108.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-109.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-109.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-109.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-109.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-109.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-110.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-110.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-110.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-110.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-110.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-111.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-111.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-111.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-111.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-111.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-112.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-112.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-112.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-112.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-112.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-113.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-113.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-113.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-113.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-113.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-114.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-114.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-114.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-114.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-114.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-115.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-115.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-115.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-115.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-115.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-116.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-116.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-116.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-116.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-116.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-117.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-117.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-117.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-117.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-117.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-118.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-118.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-118.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-118.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-118.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-119.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-119.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-119.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-119.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-119.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-120.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-120.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-120.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-120.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-120.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-121.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-121.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-121.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-121.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-121.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-122.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-122.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-122.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-122.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-122.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-123.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-123.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-123.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-123.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-123.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-124.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-124.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-124.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-124.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-124.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-125.md paired fences",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "packets/NEXT-125.md no em dash",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-125.md -> ../SOURCES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-125.md -> ../00-COMMON.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "links",
+      "name": "NEXT-125.md -> ../01-QUALIFIED-INPUTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "documents",
+      "name": "no font files distributed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "arithmetic",
+      "name": "positive floor",
+      "passed": true,
+      "detail": "25 == 25"
+    },
+    {
+      "group": "arithmetic",
+      "name": "negative exact floor",
+      "passed": true,
+      "detail": "-1 == -1"
+    },
+    {
+      "group": "arithmetic",
+      "name": "negative nonexact floor",
+      "passed": true,
+      "detail": "-2 == -2"
+    },
+    {
+      "group": "arithmetic",
+      "name": "half-up positive tie",
+      "passed": true,
+      "detail": "3 == 3"
+    },
+    {
+      "group": "arithmetic",
+      "name": "half-up negative tie",
+      "passed": true,
+      "detail": "-3 == -3"
+    },
+    {
+      "group": "arithmetic",
+      "name": "half-even even tie",
+      "passed": true,
+      "detail": "2 == 2"
+    },
+    {
+      "group": "arithmetic",
+      "name": "half-even odd tie",
+      "passed": true,
+      "detail": "4 == 4"
+    },
+    {
+      "group": "arithmetic",
+      "name": "zero denominator refused",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "arithmetic",
+      "name": "nonexact exact mode refused",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "access_model",
+      "name": "delegated permissions intersect",
+      "passed": true,
+      "detail": "{'read'} == {'read'}"
+    },
+    {
+      "group": "access_model",
+      "name": "revoked client grant yields no rights",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "access_model",
+      "name": "firm role cannot enlarge client grant",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "accounting_models",
+      "name": "offsetting unexplained rows do not establish completeness",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "arithmetic",
+      "name": "shared cost split",
+      "passed": true,
+      "detail": "{'A': 3334, 'B': 6667} == {'A': 3334, 'B': 6667}"
+    },
+    {
+      "group": "arithmetic",
+      "name": "zero weight receives no residual",
+      "passed": true,
+      "detail": "{'A': 0, 'B': 7} == {'A': 0, 'B': 7}"
+    },
+    {
+      "group": "arithmetic",
+      "name": "tie-break stable identity",
+      "passed": true,
+      "detail": "{'B': 0, 'A': 1} == {'B': 0, 'A': 1}"
+    },
+    {
+      "group": "arithmetic",
+      "name": "all-zero allocation weights refused",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "arithmetic",
+      "name": "negative source allocation conserves amount",
+      "passed": true,
+      "detail": "-10001 == -10001"
+    },
+    {
+      "group": "arithmetic",
+      "name": "project revenue bridge",
+      "passed": true,
+      "detail": "95000 == 95000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "project margin with one cost allocation",
+      "passed": true,
+      "detail": "45000 == 45000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "retainer first release",
+      "passed": true,
+      "detail": "25000 == 25000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "retainer final release consumes residual",
+      "passed": true,
+      "detail": "167 == 167"
+    },
+    {
+      "group": "arithmetic",
+      "name": "retainer overuse refuses",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "arithmetic",
+      "name": "retainer earned revenue release",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "remaining retainer units and value",
+      "passed": true,
+      "detail": "(450, 75000) == (450, 75000)"
+    },
+    {
+      "group": "arithmetic",
+      "name": "onerous first target",
+      "passed": true,
+      "detail": "60000 == 60000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "onerous revised target delta",
+      "passed": true,
+      "detail": "-5000 == -5000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "provision target recognition",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "provision release",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "warranty synthetic expected value",
+      "passed": true,
+      "detail": "50000 == 50000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "warranty remaining after actual claim",
+      "passed": true,
+      "detail": "38000 == 38000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "warranty remeasurement delta",
+      "passed": true,
+      "detail": "2000 == 2000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "direct insurer settlement",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "supplier residual after direct insurer payment",
+      "passed": true,
+      "detail": "2500 == 2500"
+    },
+    {
+      "group": "arithmetic",
+      "name": "recognized principal forgiveness",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "loan balances after principal forgiveness",
+      "passed": true,
+      "detail": "(80000, 5000) == (80000, 5000)"
+    },
+    {
+      "group": "arithmetic",
+      "name": "VAT deduction true-up",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "VAT repeat target changes nothing",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "VAT reduced eligible basis delta",
+      "passed": true,
+      "detail": "-1300 == -1300"
+    },
+    {
+      "group": "arithmetic",
+      "name": "construction full deduction",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "construction half deduction",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "OSS inclusive price decomposition",
+      "passed": true,
+      "detail": "(10000, 2000) == (10000, 2000)"
+    },
+    {
+      "group": "arithmetic",
+      "name": "OSS booked sale",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "OSS tax settlement FX loss",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "foreign tax recovery of expensed cost",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "travel cash/benefit partition",
+      "passed": true,
+      "detail": "(2000, 1000, 400) == (2000, 1000, 400)"
+    },
+    {
+      "group": "arithmetic",
+      "name": "travel noncash benefit does not increase cash",
+      "passed": true,
+      "detail": "3000 == 3000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "car actual net contribution reduces qualified base",
+      "passed": true,
+      "detail": "40000 == 40000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "car excess cannot create negative benefit",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "gross reduction not a benefit payment",
+      "passed": true,
+      "detail": "50000 == 50000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "interest gross amount vs withholding",
+      "passed": true,
+      "detail": "8000 == 8000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "interest accrual/reporting bridge",
+      "passed": true,
+      "detail": "4000 == 4000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "salary exchange cash gross",
+      "passed": true,
+      "detail": "5500000 == 5500000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "extra pension accrual",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "share nominal/premium split",
+      "passed": true,
+      "detail": "(100000, 20000, 80000) == (100000, 20000, 80000)"
+    },
+    {
+      "group": "arithmetic",
+      "name": "subscription excess is not shares",
+      "passed": true,
+      "detail": "5000 == 5000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "paid allotment classification",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "preliminary forecast change",
+      "passed": true,
+      "detail": "-30000 == -30000"
+    },
+    {
+      "group": "accounting_models",
+      "name": "tax proposal does not amend authoritative installment",
+      "passed": true,
+      "detail": "10000 == 10000"
+    },
+    {
+      "group": "mandate_model",
+      "name": "successful amount consumes gross budget",
+      "passed": true,
+      "detail": "95000 == 95000"
+    },
+    {
+      "group": "mandate_model",
+      "name": "replay after expiry consumes no new budget",
+      "passed": true,
+      "detail": "95000 == 95000"
+    },
+    {
+      "group": "mandate_model",
+      "name": "new event above budget refused",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "mandate_model",
+      "name": "same economic event new key refused",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "mandate_model",
+      "name": "same key changed amount refused",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "mandate_model",
+      "name": "current access required even for replay",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "mandate_model",
+      "name": "model fault before commit aborts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "mandate_model",
+      "name": "fault retains all original state",
+      "passed": true,
+      "detail": "MandateModel(limit=100000, used=70000, receipts={}, effects=set()) == MandateModel(limit=100000, used=70000, receipts={}, effects=set())"
+    },
+    {
+      "group": "mandate_model",
+      "name": "serialized competing events AB",
+      "passed": true,
+      "detail": "1 == 1"
+    },
+    {
+      "group": "mandate_model",
+      "name": "serialized budget after AB",
+      "passed": true,
+      "detail": "90000 == 90000"
+    },
+    {
+      "group": "mandate_model",
+      "name": "serialized competing events BA",
+      "passed": true,
+      "detail": "1 == 1"
+    },
+    {
+      "group": "mandate_model",
+      "name": "serialized budget after BA",
+      "passed": true,
+      "detail": "90000 == 90000"
+    },
+    {
+      "group": "planner_model",
+      "name": "both full mandatory choices cannot fit",
+      "passed": true,
+      "detail": "'infeasible_within_model' == 'infeasible_within_model'"
+    },
+    {
+      "group": "planner_model",
+      "name": "allowed installment feasible",
+      "passed": true,
+      "detail": "'optimal_within_model' == 'optimal_within_model'"
+    },
+    {
+      "group": "planner_model",
+      "name": "permitted choices produce exact floor",
+      "passed": true,
+      "detail": "[0] == [0]"
+    },
+    {
+      "group": "planner_model",
+      "name": "interrupted feasible result not optimum",
+      "passed": true,
+      "detail": "'feasible_bounded' == 'feasible_bounded'"
+    },
+    {
+      "group": "planner_model",
+      "name": "interrupted before feasible choice not infeasibility proof",
+      "passed": true,
+      "detail": "'exhausted_no_candidate' == 'exhausted_no_candidate'"
+    },
+    {
+      "group": "planner_model",
+      "name": "candidate outflow replaced rather than added twice",
+      "passed": true,
+      "detail": "40000 == 40000"
+    },
+    {
+      "group": "arithmetic",
+      "name": "direct debit settles AR",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "returned unconsumed collection restores AR",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "accounting_models",
+      "name": "accepted instruction leaves AR outstanding",
+      "passed": true,
+      "detail": "100000 == 100000"
+    },
+    {
+      "group": "provider_model",
+      "name": "proven source aliases share one observation",
+      "passed": true,
+      "detail": "5000 == 5000"
+    },
+    {
+      "group": "provider_model",
+      "name": "equal amounts without proven identity both retained",
+      "passed": true,
+      "detail": "10000 == 10000"
+    },
+    {
+      "group": "provider_model",
+      "name": "conflicting same identity is not silently merged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "refund_model",
+      "name": "instruction reduces available not liability",
+      "passed": true,
+      "detail": "(30000, 50000) == (30000, 50000)"
+    },
+    {
+      "group": "refund_model",
+      "name": "pending movement creates transit",
+      "passed": true,
+      "detail": "(50000, 20000, -20000) == (50000, 20000, -20000)"
+    },
+    {
+      "group": "refund_model",
+      "name": "duplicate provider movement does not repost",
+      "passed": true,
+      "detail": "(20000, -20000) == (20000, -20000)"
+    },
+    {
+      "group": "refund_model",
+      "name": "qualified discharge settles once",
+      "passed": true,
+      "detail": "(30000, 0, 0) == (30000, 0, 0)"
+    },
+    {
+      "group": "refund_model",
+      "name": "returned completed refund restores original liability",
+      "passed": true,
+      "detail": "(50000, 0, 0) == (50000, 0, 0)"
+    },
+    {
+      "group": "refund_model",
+      "name": "returned funds without final proof retain reservation",
+      "passed": true,
+      "detail": "(50000, 0, 20000) == (50000, 0, 20000)"
+    },
+    {
+      "group": "refund_model",
+      "name": "final failed refund releases reservation",
+      "passed": true,
+      "detail": "(50000, 0, 0) == (50000, 0, 0)"
+    },
+    {
+      "group": "refund_model",
+      "name": "over-reservation fails",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "arithmetic",
+      "name": "refund pending transit",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "arithmetic",
+      "name": "refund liability discharge",
+      "passed": true,
+      "detail": "0 == 0"
+    },
+    {
+      "group": "structure",
+      "name": "example covers every new packet",
+      "passed": true,
+      "detail": "{'NEXT-101', 'NEXT-125', 'NEXT-121', 'NEXT-105', 'NEXT-120', 'NEXT-113', 'NEXT-123', 'NEXT-116', 'NEXT-102', 'NEXT-106', 'NEXT-104', 'NEXT-103', 'NEXT-109', 'NEXT-110', 'NEXT-117', 'NEXT-107', 'NEXT-124', 'NEXT-115', 'NEXT-118', 'NEXT-114', 'NEXT-112', 'NEXT-122', 'NEXT-108', 'NEXT-119', 'NEXT-111'} == {'NEXT-101', 'NEXT-125', 'NEXT-121', 'NEXT-105', 'NEXT-120', 'NEXT-113', 'NEXT-123', 'NEXT-116', 'NEXT-102', 'NEXT-106', 'NEXT-104', 'NEXT-103', 'NEXT-109', 'NEXT-110', 'NEXT-117', 'NEXT-107', 'NEXT-124', 'NEXT-115', 'NEXT-118', 'NEXT-114', 'NEXT-112', 'NEXT-122', 'NEXT-108', 'NEXT-119', 'NEXT-111'}"
+    },
+    {
+      "group": "structure",
+      "name": "examples explicitly marked synthetic",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-101 effective",
+      "passed": true,
+      "detail": "['read'] == ['read']"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-103 difference",
+      "passed": true,
+      "detail": "'0' == '0'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-103 complete",
+      "passed": true,
+      "detail": "False == False"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-104 A",
+      "passed": true,
+      "detail": "'3334' == '3334'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-104 B",
+      "passed": true,
+      "detail": "'6667' == '6667'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-104 sum",
+      "passed": true,
+      "detail": "'10001' == '10001'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-105 earnedRevenue",
+      "passed": true,
+      "detail": "'95000' == '95000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-105 totalCost",
+      "passed": true,
+      "detail": "'50000' == '50000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-105 margin",
+      "passed": true,
+      "detail": "'45000' == '45000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-106 release",
+      "passed": true,
+      "detail": "'25000' == '25000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-106 minutesRemaining",
+      "passed": true,
+      "detail": "'450' == '450'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-106 deferredRemaining",
+      "passed": true,
+      "detail": "'75000' == '75000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-107 initialTarget",
+      "passed": true,
+      "detail": "'60000' == '60000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-107 remainingBeforeRemeasurement",
+      "passed": true,
+      "detail": "'30000' == '30000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-107 revisedTarget",
+      "passed": true,
+      "detail": "'25000' == '25000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-107 delta",
+      "passed": true,
+      "detail": "'-5000' == '-5000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-108 initialTarget",
+      "passed": true,
+      "detail": "'50000' == '50000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-108 remaining",
+      "passed": true,
+      "detail": "'38000' == '38000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-108 newAdjustment",
+      "passed": true,
+      "detail": "'2000' == '2000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-109 payableRemaining",
+      "passed": true,
+      "detail": "'2500' == '2500'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-109 insuranceReceivableRemaining",
+      "passed": true,
+      "detail": "'0' == '0'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-109 bankDelta",
+      "passed": true,
+      "detail": "'0' == '0'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-110 principalRemaining",
+      "passed": true,
+      "detail": "'80000' == '80000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-110 accruedInterestRemaining",
+      "passed": true,
+      "detail": "'5000' == '5000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-110 bookGain",
+      "passed": true,
+      "detail": "'20000' == '20000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-111 inputVatDelta",
+      "passed": true,
+      "detail": "'2500' == '2500'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-111 expenseDelta",
+      "passed": true,
+      "detail": "'-2500' == '-2500'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-111 payableDelta",
+      "passed": true,
+      "detail": "'0' == '0'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-112 costDebit",
+      "passed": true,
+      "detail": "'112500' == '112500'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-112 inputDebit",
+      "passed": true,
+      "detail": "'12500' == '12500'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-112 outputCredit",
+      "passed": true,
+      "detail": "'25000' == '25000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-112 payableCredit",
+      "passed": true,
+      "detail": "'100000' == '100000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-113 netEURMinor",
+      "passed": true,
+      "detail": "'10000' == '10000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-113 taxEURMinor",
+      "passed": true,
+      "detail": "'2000' == '2000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-113 grossSEKMinor",
+      "passed": true,
+      "detail": "'132000' == '132000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-113 netSEKMinor",
+      "passed": true,
+      "detail": "'110000' == '110000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-113 taxSEKMinor",
+      "passed": true,
+      "detail": "'22000' == '22000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-113 settlementFxLoss",
+      "passed": true,
+      "detail": "'400' == '400'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-114 recoveryReceivableDebit",
+      "passed": true,
+      "detail": "'1500' == '1500'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-114 expenseRecoveryCredit",
+      "passed": true,
+      "detail": "'1500' == '1500'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-114 swedishInputVatDelta",
+      "passed": true,
+      "detail": "'0' == '0'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-115 exemptCash",
+      "passed": true,
+      "detail": "'2000' == '2000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-115 taxableCash",
+      "passed": true,
+      "detail": "'1000' == '1000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-115 noncashBenefit",
+      "passed": true,
+      "detail": "'400' == '400'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-115 cashTotal",
+      "passed": true,
+      "detail": "'3000' == '3000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-116 benefitAfterNetPayment",
+      "passed": true,
+      "detail": "'40000' == '40000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-116 benefitWithOnlyGrossReduction",
+      "passed": true,
+      "detail": "'50000' == '50000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-117 statementGross",
+      "passed": true,
+      "detail": "'8000' == '8000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-117 unreportedTimingBridge",
+      "passed": true,
+      "detail": "'4000' == '4000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-117 paymentReconciles",
+      "passed": true,
+      "detail": "True == True"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-118 cashGrossAfter",
+      "passed": true,
+      "detail": "'5500000' == '5500000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-118 pensionAccrual",
+      "passed": true,
+      "detail": "'530000' == '530000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-118 secondNetDeduction",
+      "passed": true,
+      "detail": "'0' == '0'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-119 subscriptionAmount",
+      "passed": true,
+      "detail": "'100000' == '100000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-119 nominal",
+      "passed": true,
+      "detail": "'20000' == '20000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-119 premium",
+      "passed": true,
+      "detail": "'80000' == '80000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-119 unallocatedExcess",
+      "passed": true,
+      "detail": "'5000' == '5000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-120 estimateDelta",
+      "passed": true,
+      "detail": "'-30000' == '-30000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-120 actualNextInstallmentBeforeDecision",
+      "passed": true,
+      "detail": "'10000' == '10000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-121 usedAfterFirst",
+      "passed": true,
+      "detail": "'95000' == '95000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-121 usedAfterReplay",
+      "passed": true,
+      "detail": "'95000' == '95000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-121 nextEvent",
+      "passed": true,
+      "detail": "'refused' == 'refused'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-122 bothFullFeasible",
+      "passed": true,
+      "detail": "False == False"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-122 qualifiedInstallmentFeasible",
+      "passed": true,
+      "detail": "True == True"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-122 fullPaymentShortfall",
+      "passed": true,
+      "detail": "'10000' == '10000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-123 remainingBeforeCash",
+      "passed": true,
+      "detail": "'100000' == '100000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-123 remainingAfterCash",
+      "passed": true,
+      "detail": "'0' == '0'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-123 remainingAfterUnconsumedReturn",
+      "passed": true,
+      "detail": "'100000' == '100000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-124 newOpeningJournal",
+      "passed": true,
+      "detail": "'0' == '0'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-124 canonicalTransactionAmount",
+      "passed": true,
+      "detail": "'5000' == '5000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-125 reserved",
+      "passed": true,
+      "detail": "'20000' == '20000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-125 freeInstructionCapacity",
+      "passed": true,
+      "detail": "'30000' == '30000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-125 liabilityWhilePending",
+      "passed": true,
+      "detail": "'50000' == '50000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-125 transitAfterDebit",
+      "passed": true,
+      "detail": "'20000' == '20000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-125 liabilityAfterQualifiedDischarge",
+      "passed": true,
+      "detail": "'30000' == '30000'"
+    },
+    {
+      "group": "published_vectors",
+      "name": "NEXT-125 transitAfterDischarge",
+      "passed": true,
+      "detail": "'0' == '0'"
+    }
+  ]
+}

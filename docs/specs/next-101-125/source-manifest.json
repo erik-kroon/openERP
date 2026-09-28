@@ -1,0 +1,111 @@
+{
+  "repository": {
+    "R01": {
+      "title": "Current main branch observation",
+      "url": "https://api.github.com/repos/erik-kroon/openERP/branches/main",
+      "observed": "Resolved to 66355b62b23e3b8007c2d324f3739fbbcc96cdc0 (clean up). A commit pin, not a claim of execution or completion."
+    },
+    "R02": {
+      "title": "Application operations and future mandate boundaries",
+      "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/docs/operations.md",
+      "observed": "Current source read of operation ownership, tx passing, exact human review, effect-mq, governed rules, scoped context and standing-mandate requirements. Book Zero retains human approval; unattended mandates are later scope."
+    },
+    "R03": {
+      "title": "Shared contracts and admission/integrity",
+      "url": "https://github.com/erik-kroon/openERP/blob/66355b62b23e3b8007c2d324f3739fbbcc96cdc0/docs/plans/00-shared-contracts.md",
+      "observed": "Read lines1-180 through GitHub. Contains exact types, current authority lock ordering, snapshots, app-owned writes, group idempotency and profile/rule distinctions. No application behavior was executed."
+    },
+    "R04": {
+      "title": "Attached NEXT-76..100 dossier",
+      "url": null,
+      "observed": "README and integration map read through Files; archive index/common decisions read from the supplied mounted ZIP. It defines the preceding25 scopes and does not claim the first75 are complete."
+    },
+    "R05": {
+      "title": "Supplied bank-allocation application example",
+      "url": null,
+      "observed": "User-supplied source shows explicit tx-passing allocation writes, request replay and application capacity checks. Used as architectural context only, not a current-HEAD code audit or endorsement of every earlier expression."
+    },
+    "R06": {
+      "title": "Earlier NEXT task definitions",
+      "url": null,
+      "observed": "NEXT-01..50 scopes come from the prior conversation. NEXT-51..75 and76..100 metadata were read from their provided ZIP indexes. New deltas are crosswalked to those definitions, not proven absent from every repo file."
+    }
+  },
+  "external": {
+    "X01": {
+      "title": "Skatteverket: allocation of input VAT",
+      "url": "https://www4.skatteverket.se/rattsligvagledning/edition/2026.13/407328.html",
+      "observed": "Official search-returned text distinguishes common-cost allocation methods, provisional/final allocation and separate capital-goods adjustment cases. The proposed packet must qualify a selected method, not apply a universal turnover ratio."
+    },
+    "X02": {
+      "title": "Skatteverket: construction reverse charge",
+      "url": "https://www4.skatteverket.se/rattsligvagledning/edition/2026.9/423282.html",
+      "related": [
+        "https://www4.skatteverket.se/rattsligvagledning/edition/2026.12/423288.html"
+      ],
+      "observed": "Official search text covers service class and buyer activity conditions. It does not establish eligibility for a real invoice. Exact current tax-box and exception releases remain unqualified inputs here."
+    },
+    "X03": {
+      "title": "Skatteverket: declare and pay OSS",
+      "url": "https://www.skatteverket.se/foretag/moms/deklareramoms/ansokomattredovisadistansforsaljningionestopshoposs/deklareraochbetalamomsionestopshop.4.40cab8f8197edf03e644dee.html",
+      "observed": "Official page opened. Separates OSS reporting and euro payment from regular VAT; registered zero-activity periods still have reporting requirements. Full schema, all scheme eligibility rules and provider access were not qualified."
+    },
+    "X04": {
+      "title": "Skatteverket: foreign VAT refunds",
+      "url": "https://www.skatteverket.se/foretagorganisationer/moms/momsvidhandelmedeulander/aterbetalningavmomsinomeu.4.58d555751259e4d661680001107.html",
+      "observed": "Official search text states foreign tax is not deducted as Swedish VAT and describes EU electronic applications through the Swedish service. Country eligibility/expense/form requirements remain actual qualification inputs."
+    },
+    "X05": {
+      "title": "Skatteverket: employer travel allowances",
+      "url": "https://www.skatteverket.se/foretagochorganisationer/arbetsgivare/lonochersattning/traktamente.4.361dc8c15312eff6fd1703e.html",
+      "related": [
+        "https://www.skatteverket.se/privat/skatter/arbeteinkomst/traktamente.4.dfe345a107ebcc9baf80006547.html"
+      ],
+      "observed": "Official search-returned guidance distinguishes allowance reductions and meal benefits, with dated tables and specific exceptions. This dossier supplies no activated allowance rates."
+    },
+    "X06": {
+      "title": "Skatteverket: benefit valuation and employee payments",
+      "url": "https://www4.skatteverket.se/rattsligvagledning/edition/2026.12/1323.html",
+      "related": [
+        "https://www.skatteverket.se/agbeskrivning"
+      ],
+      "observed": "Official text distinguishes net employee payments from gross salary exchange and contains separate benefit reporting categories. The car packet uses a bounded qualified profile, not all benefit/fuel rules."
+    },
+    "X07": {
+      "title": "Skatteverket: KU20/KU25 interest reporting",
+      "url": "https://www.skatteverket.se/foretag/skatterochavdrag/kontrolluppgifter/kontrolluppgiftomranteinkomstku20ochranteutgiftku25.4.1df9c71e181083ce6f6349.html",
+      "observed": "Official search-returned text distinguishes reporting directions, actual timing, specification number and year-specific digital format changes. Exact applicable schemas and each company reporting duty remain unqualified here."
+    },
+    "X08": {
+      "title": "Skatteverket: salary and pension basis",
+      "url": "https://www4.skatteverket.se/rattsligvagledning/edition/2026.7/402073.html",
+      "observed": "Official text explains that pensionable salary and allowable basis depend on the actual pension agreement, not simply the salary-exchange amount or a side clause. No recommendation about personal suitability is made."
+    },
+    "X09": {
+      "title": "Bolagsverket: company forms and registration entry point",
+      "url": "https://bolagsverket.se/sjalvservice/blanketterochmallar/aktiebolag.1713.html",
+      "observed": "Official search-rendered index identifies capital-increase registration/form workflow. It does not qualify the legal effect, accounting date or intermediate equity classification of a particular cash issue. Those in NEXT-119 are proposed conditional contracts."
+    },
+    "X10": {
+      "title": "Skatteverket: preliminary income-tax service",
+      "url": "https://www.skatteverket.se/sdginstruktioner/howtouseoureservicepreliminaryincometax.4.5dc1d8b31903014b1bf11be.html",
+      "observed": "Official search-rendered service guidance separates declarations, saved drafts and decisions for a selected year. The proposed forecast is not an authoritative payable schedule or a full API integration."
+    },
+    "X11": {
+      "title": "Bankgirot: Bg Autogiro",
+      "url": "https://www.bankgirot.se/tjanster/autogiro/Autogiro/",
+      "observed": "Official page opened and search text inspected. The service has payer consents, payment submission and cancellation via the bank/service. Marketing claims of on-time payment are not adopted as final cash guarantees. Exact file/status/cutoff specifications were not acquired."
+    },
+    "X12": {
+      "title": "Stripe: refunds and create-refund API",
+      "url": "https://docs.stripe.com/refunds",
+      "related": [
+        "https://docs.stripe.com/api/refunds/create"
+      ],
+      "observed": "Official pages opened. Support partial original-charge refunds, original destination, pending/failure/cancellation states and returned-funds references. Card cancellation is not assumed to have a general API. No provider request was executed and no complete current adapter contract qualified."
+    }
+  },
+  "pinned_commit": "66355b62b23e3b8007c2d324f3739fbbcc96cdc0",
+  "review_kind": "targeted continuation planning",
+  "prepared_on": "2026-09-28"
+}

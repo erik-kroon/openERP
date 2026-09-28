@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-28T16:03:38.122501+00:00",
-  "headObservedAtValidation": "66355b62b23e3b8007c2d324f3739fbbcc96cdc0",
+  "checkedAt": "2026-09-28T16:56:17.782966+00:00",
+  "headObservedAtValidation": "e76f2d1457d94c73d5cef78a50d576bb1ad3e10f",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,7 +9,7 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 823,
+    "localLinksAndAnchorsChecked": 886,
     "documentsChecked": 44,
     "coverage": {
       "R": [
@@ -90,7 +90,7 @@
   "files": [
     {
       "path": "docs/README.md",
-      "sha256": "4deb1a7bf9e22d673e2d24ad489eb3c7442b4e8d8e35f1270c4e51cf763cf06f"
+      "sha256": "2680e1691ac30dc797f249d721d0b73d5b934b8efe79ce6f9cde5a9082bf52d8"
     },
     {
       "path": "docs/adr/0002-exact-posting-and-approval.md",
@@ -102,7 +102,7 @@
     },
     {
       "path": "docs/adr/README.md",
-      "sha256": "6e9ca14d68f1abd1eb35092700079b77c30a4a7cfad72af8b6e0fdb29e6d291b"
+      "sha256": "9465840b00da41ba5f92a9f040419c521c8d6066465b5df668d10e2925103d0f"
     },
     {
       "path": "docs/architecture.md",
@@ -118,7 +118,7 @@
     },
     {
       "path": "docs/open-decisions.md",
-      "sha256": "4e531d268db5c2344fe4e526e3771ac7ae42fd30f47a50b39442274c73e14ecd"
+      "sha256": "9f5999c03a93d3472bd65c3070d7d8ddc6ca302ab8e498113b0b48bf79338af8"
     },
     {
       "path": "docs/operations.md",
@@ -174,7 +174,7 @@
     },
     {
       "path": "docs/plans/12-next-implementation-dossier.md",
-      "sha256": "d15ca9f2776c21b825b3cff257f29dc3a19ad9ec9ba10c8c39d4d3d81949462b"
+      "sha256": "9160565c04d510c7c7546c0672fcfdfd12f0ee0684af072b34fe23daa321aace"
     },
     {
       "path": "docs/plans/13-reference-derived-defects.md",
@@ -186,11 +186,11 @@
     },
     {
       "path": "docs/plans/14-plan-review-adoption.md",
-      "sha256": "c102bb6111a0f66636eb02c915558ce5a64895e76a057741409184a35da4e1c4"
+      "sha256": "130c6f72afad862564792cab429a285af731261abefb1599218a9a4ba1b5fe08"
     },
     {
       "path": "docs/plans/15-book-zero-workflow-cash.md",
-      "sha256": "d31eb72c1d12c1ee528eeddd220521f57f83ad165377e1e9985a333633fd1843"
+      "sha256": "ac4395d5e9167469f647b62600d152d83eb9ea86aa576a9f6d7b1b2b4249d966"
     },
     {
       "path": "docs/plans/16-comparison-reconciliation.md",
@@ -202,7 +202,7 @@
     },
     {
       "path": "docs/plans/README.md",
-      "sha256": "cd149e6d45ef48a5c0d94e3f13e20466bb63fb3a2f80b21fc85de0312b59cb5c"
+      "sha256": "f77bb13627cad428b011a6a7f72ee66912122707254ae45d8d2b216075e5caee"
     },
     {
       "path": "docs/plans/accounting-completion-wave.md",
@@ -242,7 +242,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "a7089f388b9a14005039e230e7a1df5f2543c578ce807f86ea8f92a489c0b8d3"
+      "sha256": "0ebf51fbd7ab01da42df99ae544dcb942bf59152700096642f7f169108c450a1"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -250,7 +250,7 @@
     },
     {
       "path": "docs/plans/next-packet-progress.md",
-      "sha256": "8707e30629465f5c69a2a11d808db7f0e2d7a241c6be703f5a847c86d53a9a10"
+      "sha256": "cd3adcef20dad39dc244fe879791fab608d25e2808a5dd75febd077a91eed858"
     },
     {
       "path": "docs/plans/overnight-review-ledger.md",
@@ -270,7 +270,7 @@
     },
     {
       "path": "docs/roadmap.md",
-      "sha256": "0df7acb081263dfd8da31fb563e3eb6355ca649f8bc9482c6105b7ca444e6941"
+      "sha256": "fda4bacea18498ff791e96c52a65f43e929439504c74fd09521942f72fb2d9d2"
     },
     {
       "path": "docs/verification.md",

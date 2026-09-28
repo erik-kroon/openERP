@@ -1,0 +1,448 @@
+{
+  "amounts": "canonical integer strings in explicit minor units unless named otherwise",
+  "rates": "synthetic examples, never activated statutory/provider data",
+  "examples": [
+    {
+      "packet": "NEXT-101",
+      "case": "permission_intersection",
+      "inputs": {
+        "client": [
+          "read",
+          "prepare",
+          "payroll_read"
+        ],
+        "firmRole": [
+          "read",
+          "prepare"
+        ],
+        "assignment": [
+          "read"
+        ],
+        "privateScope": [
+          "read",
+          "payroll_read"
+        ]
+      },
+      "expected": {
+        "effective": [
+          "read"
+        ]
+      },
+      "assumptions": "All required scopes intersect. A broad client grant cannot enlarge the firm role.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-102",
+      "case": "upload_does_not_resolve",
+      "inputs": {
+        "reply": "retained",
+        "factReview": "missing"
+      },
+      "expected": {
+        "request": "response_received_needs_review",
+        "postingCount": 0
+      },
+      "assumptions": "Source receipt is separate from confirmed facts.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-103",
+      "case": "offsetting_unexplained_records",
+      "inputs": {
+        "ledgerBalance": "10000",
+        "independentBalance": "10000",
+        "unexplainedRows": [
+          "500",
+          "-500"
+        ]
+      },
+      "expected": {
+        "difference": "0",
+        "complete": false
+      },
+      "assumptions": "Numerical equality alone does not establish complete reconciliation.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-104",
+      "case": "exact_shared_allocation",
+      "inputs": {
+        "totalMinor": "10001",
+        "weights": {
+          "A": "1",
+          "B": "2"
+        }
+      },
+      "expected": {
+        "A": "3334",
+        "B": "6667",
+        "sum": "10001"
+      },
+      "assumptions": "Declared largest-remainder rule with stable identity tie-break.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-105",
+      "case": "project_revenue_bridge",
+      "inputs": {
+        "billedNet": "80000",
+        "unbilledMovement": "10000",
+        "deferredMovement": "-5000",
+        "directCosts": "40000",
+        "sharedCosts": "10000"
+      },
+      "expected": {
+        "earnedRevenue": "95000",
+        "totalCost": "50000",
+        "margin": "45000"
+      },
+      "assumptions": "Original recognition facts validate the bridge. Analytical costs are counted once.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-106",
+      "case": "retainer_drawdown",
+      "inputs": {
+        "grantedMinutes": "600",
+        "fundedNetMinor": "100000",
+        "priorUsedMinutes": "0",
+        "newUsedMinutes": "150"
+      },
+      "expected": {
+        "release": "25000",
+        "minutesRemaining": "450",
+        "deferredRemaining": "75000"
+      },
+      "assumptions": "Qualified proportional use-based policy. No new VAT or cash on drawdown.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-107",
+      "case": "onerous_remaining_target",
+      "inputs": {
+        "initialCosts": "260000",
+        "initialBenefits": "200000",
+        "coveredRelease": "30000",
+        "revisedCosts": "125000",
+        "revisedBenefits": "100000"
+      },
+      "expected": {
+        "initialTarget": "60000",
+        "remainingBeforeRemeasurement": "30000",
+        "revisedTarget": "25000",
+        "delta": "-5000"
+      },
+      "assumptions": "Qualified short-duration obligation and explicit covered-loss release; no universal K2 rule.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-108",
+      "case": "warranty_target_after_claim",
+      "inputs": {
+        "units": "100",
+        "probabilityNumerator": "1",
+        "probabilityDenominator": "20",
+        "costPerClaim": "10000",
+        "settledClaim": "12000",
+        "newTarget": "40000"
+      },
+      "expected": {
+        "initialTarget": "50000",
+        "remaining": "38000",
+        "newAdjustment": "2000"
+      },
+      "assumptions": "Synthetic expected-cost measurement; actual liability recognition requires qualified evidence.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-109",
+      "case": "direct_insurer_settlement",
+      "inputs": {
+        "supplierPayable": "12500",
+        "recognizedInsuranceReceivable": "10000",
+        "directInsurerPayment": "10000"
+      },
+      "expected": {
+        "payableRemaining": "2500",
+        "insuranceReceivableRemaining": "0",
+        "bankDelta": "0"
+      },
+      "assumptions": "Insurer payment evidence discharges the actual payable and recognized recovery.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-110",
+      "case": "principal_forgiveness",
+      "inputs": {
+        "principal": "100000",
+        "accruedInterest": "5000",
+        "legallyForgivenPrincipal": "20000"
+      },
+      "expected": {
+        "principalRemaining": "80000",
+        "accruedInterestRemaining": "5000",
+        "bookGain": "20000"
+      },
+      "assumptions": "Supported recognized principal only. Unaccrued future interest is not an additional gain.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-111",
+      "case": "deduction_target_delta",
+      "inputs": {
+        "availableSourceTax": "10000",
+        "effectiveDeduction": "4000",
+        "qualifiedTarget": "6500"
+      },
+      "expected": {
+        "inputVatDelta": "2500",
+        "expenseDelta": "-2500",
+        "payableDelta": "0"
+      },
+      "assumptions": "Eligible common operating cost and qualified final deduction method.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-112",
+      "case": "construction_reverse_charge",
+      "inputs": {
+        "net": "100000",
+        "selfAssessedTax": "25000",
+        "deductionNumerator": "1",
+        "deductionDenominator": "2"
+      },
+      "expected": {
+        "costDebit": "112500",
+        "inputDebit": "12500",
+        "outputCredit": "25000",
+        "payableCredit": "100000"
+      },
+      "assumptions": "Synthetic25% tax and half deduction for a reviewed eligible construction service.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-113",
+      "case": "oss_original_and_book_units",
+      "inputs": {
+        "originalGrossEURMinor": "12000",
+        "rateNumerator": "1",
+        "rateDenominator": "5",
+        "bookRateNumerator": "11",
+        "bookRateDenominator": "1",
+        "bookScale": 2,
+        "originalScale": 2,
+        "actualTaxCashSEKMinor": "22400"
+      },
+      "expected": {
+        "netEURMinor": "10000",
+        "taxEURMinor": "2000",
+        "grossSEKMinor": "132000",
+        "netSEKMinor": "110000",
+        "taxSEKMinor": "22000",
+        "settlementFxLoss": "400"
+      },
+      "assumptions": "Synthetic20% destination tax. Book and EUR reporting bases remain separate; example assumes coincident reporting tax2000EURminor.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-114",
+      "case": "foreign_tax_recovery",
+      "inputs": {
+        "originalExpensedCost": "12000",
+        "foreignTaxIncluded": "2000",
+        "qualifiedAcceptedRecovery": "1500"
+      },
+      "expected": {
+        "recoveryReceivableDebit": "1500",
+        "expenseRecoveryCredit": "1500",
+        "swedishInputVatDelta": "0"
+      },
+      "assumptions": "Fully expensed original cost and recognized supported recovery, not an application submission alone.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-115",
+      "case": "allowance_meal_partition",
+      "inputs": {
+        "entitlement": "3000",
+        "exemptLimitBeforeMeal": "2500",
+        "qualifiedMealReduction": "500",
+        "independentMealBenefit": "400"
+      },
+      "expected": {
+        "exemptCash": "2000",
+        "taxableCash": "1000",
+        "noncashBenefit": "400",
+        "cashTotal": "3000"
+      },
+      "assumptions": "All rates and meal classification are supplied synthetic profile values.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-116",
+      "case": "car_benefit_payment_types",
+      "inputs": {
+        "benefitValue": "50000",
+        "actualQualifiedNetPayment": "10000",
+        "grossSalaryReduction": "10000"
+      },
+      "expected": {
+        "benefitAfterNetPayment": "40000",
+        "benefitWithOnlyGrossReduction": "50000"
+      },
+      "assumptions": "Employee payment is not inferred from reduced gross salary. Excess is not a negative benefit.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-117",
+      "case": "reportable_interest_vs_accrued",
+      "inputs": {
+        "accruedInterest": "12000",
+        "qualifiedReportableInterest": "8000",
+        "netCash": "6000",
+        "withheld": "2000"
+      },
+      "expected": {
+        "statementGross": "8000",
+        "unreportedTimingBridge": "4000",
+        "paymentReconciles": true
+      },
+      "assumptions": "Synthetic withholding amount. Legal reporter and available/paid definitions must be qualified.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-118",
+      "case": "salary_exchange",
+      "inputs": {
+        "cashGrossBefore": "6000000",
+        "prospectiveExchange": "500000",
+        "agreedExtraPension": "530000"
+      },
+      "expected": {
+        "cashGrossAfter": "5500000",
+        "pensionAccrual": "530000",
+        "secondNetDeduction": "0"
+      },
+      "assumptions": "Actual employer agreement determines pension amount and deduction basis. No statutory rate inferred.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-119",
+      "case": "cash_share_issue",
+      "inputs": {
+        "units": "100",
+        "priceMinor": "1000",
+        "nominalMinorPerUnit": "200",
+        "cashReceived": "105000"
+      },
+      "expected": {
+        "subscriptionAmount": "100000",
+        "nominal": "20000",
+        "premium": "80000",
+        "unallocatedExcess": "5000"
+      },
+      "assumptions": "Selected paid cash issue profile with separately verified allotment/registration conditions.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-120",
+      "case": "tax_estimate_not_assessment",
+      "inputs": {
+        "oldEstimate": "120000",
+        "newEstimate": "90000",
+        "assessedNextInstallment": "10000",
+        "proposedNewInstallment": "6000"
+      },
+      "expected": {
+        "estimateDelta": "-30000",
+        "actualNextInstallmentBeforeDecision": "10000"
+      },
+      "assumptions": "Proposal does not amend the authority decision. Expense and tax-account payment are distinct.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-121",
+      "case": "mandate_budget_replay",
+      "inputs": {
+        "limit": "100000",
+        "usedBefore": "70000",
+        "firstEventGross": "25000",
+        "nextEventGross": "10000"
+      },
+      "expected": {
+        "usedAfterFirst": "95000",
+        "usedAfterReplay": "95000",
+        "nextEvent": "refused"
+      },
+      "assumptions": "Gross exposure, exact same-key replay, one atomic book/pool owner and no automatic budget replenishment.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-122",
+      "case": "finite_payment_choices",
+      "inputs": {
+        "opening": "100000",
+        "mandatoryTax": "60000",
+        "invoice": "50000",
+        "permittedInstallment": "40000"
+      },
+      "expected": {
+        "bothFullFeasible": false,
+        "qualifiedInstallmentFeasible": true,
+        "fullPaymentShortfall": "10000"
+      },
+      "assumptions": "Installment option exists only when the terms owner supplies it. Solver does not invent it.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-123",
+      "case": "collection_acceptance_vs_cash",
+      "inputs": {
+        "invoiceGross": "125000",
+        "alreadyPaid": "25000",
+        "instruction": "100000"
+      },
+      "expected": {
+        "remainingBeforeCash": "100000",
+        "remainingAfterCash": "0",
+        "remainingAfterUnconsumedReturn": "100000"
+      },
+      "assumptions": "Actual collected and returned cash use complete supported settlement/correction, not transport status.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-124",
+      "case": "bank_provider_continuity",
+      "inputs": {
+        "oldProviderBalance": "100000",
+        "newProviderBalance": "100000",
+        "oldTxn": "5000",
+        "provenSameNewTxn": "5000"
+      },
+      "expected": {
+        "newOpeningJournal": "0",
+        "canonicalTransactionAmount": "5000"
+      },
+      "assumptions": "Explicit verified source alias and same bank account. Equal amount alone cannot establish identity.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    },
+    {
+      "packet": "NEXT-125",
+      "case": "pending_refund_transit",
+      "inputs": {
+        "creditLiability": "50000",
+        "authorizedRefund": "20000"
+      },
+      "expected": {
+        "reserved": "20000",
+        "freeInstructionCapacity": "30000",
+        "liabilityWhilePending": "50000",
+        "transitAfterDebit": "20000",
+        "liabilityAfterQualifiedDischarge": "30000",
+        "transitAfterDischarge": "0"
+      },
+      "assumptions": "Original-source processor cash movement and discharge are distinct. No second bank refund while unknown.",
+      "scope": "independent synthetic design example, not application or legal proof"
+    }
+  ]
+}

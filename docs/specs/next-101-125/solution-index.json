@@ -1,0 +1,791 @@
+{
+  "schema_version": 1,
+  "edition": "NEXT-101..125 application-owned wave5",
+  "repository": "erik-kroon/openERP",
+  "baseline": "66355b62b23e3b8007c2d324f3739fbbcc96cdc0",
+  "prepared_on": "2026-09-28",
+  "range": [
+    101,
+    125
+  ],
+  "prior_range": [
+    1,
+    100
+  ],
+  "prior_status": "not assumed complete",
+  "scope": "ordinary Swedish AB and explicitly selected specialist/collaboration extensions; no inventory, consolidation, bank or general finance platform",
+  "reserved_work": {
+    "VAT-03": "Current reclassification/qualification owner; no reimplementation.",
+    "FX-02-P1": "Current exact paired settlement owner; no duplicate balances or release algorithm.",
+    "AST-03": "Current impairment/schedule/control/disposal owner; consume current released ports.",
+    "VAT-04-A1": "Current VAT amendment delta owner; specialist tax facts do not recreate it.",
+    "COM-2-W1": "Current webshop order/catalog authority; no independent conversion capacity.",
+    "APPLICATION-OWNERSHIP": "Current Effect migration and required domain ports stay with their original owners."
+  },
+  "solutions": [
+    {
+      "id": "NEXT-101",
+      "title": "Accounting-firm delegation and multi-client workspaces",
+      "priority": "P1",
+      "lane": "IDENTITY",
+      "prior_dependencies": [
+        "NEXT-50"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-98",
+          "when": "a client delegates an accountant period-review engagement"
+        }
+      ],
+      "source_refs": [
+        "R02",
+        "R03",
+        "P98"
+      ],
+      "new_scope": "NEXT-98 owns a period review. Add firm membership, client-granted scopes and a multi-client queue without turning a reviewer into a book administrator.",
+      "existing_owner": "Existing verified-principal admission, client memberships, capability registry and review engagements.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-101.md",
+      "word_count": 728,
+      "packet_sha256": "d3e391a6654396b3f8650b25a01c7725c6a71f0ac242860a6177c24c4e7018f0"
+    },
+    {
+      "id": "NEXT-102",
+      "title": "Scoped evidence requests and response reconciliation",
+      "priority": "P1",
+      "lane": "EVIDENCE",
+      "prior_dependencies": [
+        "NEXT-26",
+        "NEXT-65",
+        "NEXT-93",
+        "NEXT-98"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-101",
+          "when": "the requester uses firm-to-client delegated access"
+        }
+      ],
+      "source_refs": [
+        "R02",
+        "P93",
+        "P98"
+      ],
+      "new_scope": "Add an explicit request/reply workflow for missing facts or documents. Search, upload and a review finding alone do not say who was asked, what they supplied or whether the request was satisfied.",
+      "existing_owner": "Existing source occurrence/inbox, permission-scoped sharing and review-case owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-102.md",
+      "word_count": 692,
+      "packet_sha256": "553978a9b11d729fc1738ef2bc38787dab270bce5fcf2ad9276a3505b4378985"
+    },
+    {
+      "id": "NEXT-103",
+      "title": "Versioned balance-sheet substantiation schedules",
+      "priority": "P1",
+      "lane": "REVIEW",
+      "prior_dependencies": [
+        "NEXT-13",
+        "NEXT-23",
+        "NEXT-95",
+        "NEXT-98"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-102",
+          "when": "missing supporting evidence is requested from a client"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "P13",
+        "P98"
+      ],
+      "new_scope": "Add per-account explained balance schedules and preparer/reviewer certification. This supports an existing close/review; it is not another close certificate or journal reconciliation engine.",
+      "existing_owner": "Existing immutable report snapshots, financial contribution identities and independent evidence/review owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-103.md",
+      "word_count": 660,
+      "packet_sha256": "434a6f67a356a65933e9be6de89207d67e152f37476e7627258b6ae645d082ec"
+    },
+    {
+      "id": "NEXT-104",
+      "title": "Shared-cost attribution across projects and dimensions",
+      "priority": "P1",
+      "lane": "REPORTING",
+      "prior_dependencies": [
+        "NEXT-13",
+        "NEXT-14"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-43",
+          "when": "the selected analytical view uses reviewed classification revisions"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "P14",
+        "P43"
+      ],
+      "new_scope": "NEXT-43 changes analytical labels. Add conserved fractional attribution of one shared cost to several recipients without duplicating costs or modifying the financial journal.",
+      "existing_owner": "Existing original/reviewed dimension histories and report contribution owner.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-104.md",
+      "word_count": 648,
+      "packet_sha256": "8c5e76b953318ab332af66ffbbc20fe360d3634e6fa792b3327bc4e9a671bdac"
+    },
+    {
+      "id": "NEXT-105",
+      "title": "Project margin with billing, recognition and cash bridges",
+      "priority": "P1",
+      "lane": "REPORTING",
+      "prior_dependencies": [
+        "NEXT-13",
+        "NEXT-58",
+        "NEXT-77",
+        "NEXT-79"
+      ],
+      "dependencies": [
+        "NEXT-104"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-78",
+          "when": "milestone/retention balances enter the selected project"
+        }
+      ],
+      "source_refs": [
+        "R02",
+        "P77",
+        "P79"
+      ],
+      "new_scope": "Add a coherent project-performance snapshot combining contract rights, earned revenue, allocated cost and actual cash. It does not replace P&L, Cash forecasts or contract recognition.",
+      "existing_owner": "Existing sales coverage, deferred/unbilled revenue, time billing, cost contribution and cash-settlement readers.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-105.md",
+      "word_count": 649,
+      "packet_sha256": "95548283dd41711b1aa5e2a0b23c581a51f291f4535b2bf0d789149312bff622"
+    },
+    {
+      "id": "NEXT-106",
+      "title": "Service-retainer entitlements and once-only drawdown",
+      "priority": "P1",
+      "lane": "COMMERCE",
+      "prior_dependencies": [
+        "NEXT-56",
+        "NEXT-58",
+        "NEXT-76",
+        "NEXT-77"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R02",
+        "P56",
+        "P77"
+      ],
+      "new_scope": "Add unit-denominated contractual service rights and consumption against prepaid retainers. Customer advances track money; recurring invoices track billing dates; neither alone tracks remaining service entitlement.",
+      "existing_owner": "Existing accepted contract, work coverage, advance/deferred-revenue and billing-capacity owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-106.md",
+      "word_count": 680,
+      "packet_sha256": "d9b12d1f0a2c42b3ef20cf052e54dd61dd4ad1a4e9e56d7687cd9c171069e2f8"
+    },
+    {
+      "id": "NEXT-107",
+      "title": "Onerous service-contract provisions and release on performance",
+      "priority": "P2",
+      "lane": "SCHEDULES",
+      "prior_dependencies": [
+        "NEXT-13",
+        "NEXT-76",
+        "NEXT-79"
+      ],
+      "dependencies": [
+        "NEXT-105"
+      ],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-42",
+          "when": "a related asset impairment assessment must precede contract-loss recognition"
+        }
+      ],
+      "source_refs": [
+        "R03",
+        "P76",
+        "P79"
+      ],
+      "new_scope": "Add reviewed loss obligations on remaining service contracts. Project margin is a report and unbilled revenue is an asset; neither records a qualified future unavoidable loss.",
+      "existing_owner": "Existing contract, provision/adjustment posting, purchase/payroll expense and financial-close owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-107.md",
+      "word_count": 619,
+      "packet_sha256": "81bbd3ae1420c20dde6df035420537d32f848cc0befdc54f6052f1af6e902c49"
+    },
+    {
+      "id": "NEXT-108",
+      "title": "Warranty cohorts, expected claims and provision consumption",
+      "priority": "P2",
+      "lane": "SCHEDULES",
+      "prior_dependencies": [
+        "NEXT-03",
+        "NEXT-13",
+        "NEXT-51"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R03",
+        "P51"
+      ],
+      "new_scope": "Add an assurance-warranty obligation and claim-cost lifecycle. A customer refund, billed service warranty or asset impairment is not the same liability.",
+      "existing_owner": "Existing sale occurrence, purchase expense and supported provision posting owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-108.md",
+      "word_count": 668,
+      "packet_sha256": "c4bc01247a7ab7562c818e913ce5585f8e66e96ee1797eca20d5966e1b90d811"
+    },
+    {
+      "id": "NEXT-109",
+      "title": "Insurance-loss claims and gross compensation accounting",
+      "priority": "P2",
+      "lane": "COMMERCE",
+      "prior_dependencies": [
+        "NEXT-03",
+        "NEXT-13",
+        "NEXT-19"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R03",
+        "P19"
+      ],
+      "new_scope": "Add insured-loss claims, recognized recoveries and insurer-to-repairer settlements. Insurance compensation is not ordinary sale proceeds or a grant and must not hide gross damage/repair effects.",
+      "existing_owner": "Existing damaged-asset disposal/impairment, purchase recognition, receivable and payment owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-109.md",
+      "word_count": 705,
+      "packet_sha256": "151e48841bb228f9df4361e6340d7f84f772b309660a97fcf4bd9bd42d01a30f"
+    },
+    {
+      "id": "NEXT-110",
+      "title": "Borrowing reschedules, debt forgiveness and amended obligations",
+      "priority": "P2",
+      "lane": "TREASURY",
+      "prior_dependencies": [
+        "NEXT-32",
+        "NEXT-71"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-22",
+          "when": "a book gain or cost needs separate corporate-tax treatment"
+        }
+      ],
+      "source_refs": [
+        "R02",
+        "P32"
+      ],
+      "new_scope": "Extend existing loan principal/interest with evidenced rescheduling and extinguishment. Merely editing a rate or due date must not erase debt or create an unsupported modification gain.",
+      "existing_owner": "Existing borrowing agreement, principal/interest effect history and payment instruction owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-110.md",
+      "word_count": 677,
+      "packet_sha256": "eb5fe1830ba05ad4b4bb20de681c257509aafde9ddd430da193f3cecdd99336b"
+    },
+    {
+      "id": "NEXT-111",
+      "title": "Annual common-cost VAT deduction true-up",
+      "priority": "P1",
+      "lane": "TAX",
+      "prior_dependencies": [
+        "NEXT-03",
+        "NEXT-04",
+        "NEXT-22",
+        "NEXT-49"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R02",
+        "X01",
+        "P03",
+        "P04"
+      ],
+      "new_scope": "Invoice-level partial deduction already exists. Add a qualified final common-cost allocation over a complete annual population and post only the difference from effective deductions.",
+      "existing_owner": "Existing recognized tax components, qualified releases, VAT return amendments and cost/asset owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-111.md",
+      "word_count": 692,
+      "packet_sha256": "c688fd188ec42b9d468656f5ee82e2174f7a4201dff244569a83891494781850"
+    },
+    {
+      "id": "NEXT-112",
+      "title": "Domestic construction reverse-charge sales and purchases",
+      "priority": "P2",
+      "lane": "TAX",
+      "prior_dependencies": [
+        "NEXT-03",
+        "NEXT-04",
+        "NEXT-51",
+        "NEXT-15"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R02",
+        "X02",
+        "P03",
+        "P51"
+      ],
+      "new_scope": "Add a qualified domestic construction reverse-charge profile. Cross-border services and ROT/RUT claims do not establish the seller/buyer conditions for this treatment.",
+      "existing_owner": "Existing invoice issue, purchase recognition, tax-fact and credit-note owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-112.md",
+      "word_count": 650,
+      "packet_sha256": "d476213f9f7568c8225b30f2d4fe8d885f53a18de2ada67ff8f7b145985db16f"
+    },
+    {
+      "id": "NEXT-113",
+      "title": "EU B2C destination VAT and Union OSS reporting",
+      "priority": "P2",
+      "lane": "TAX",
+      "prior_dependencies": [
+        "NEXT-51",
+        "NEXT-49"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-39",
+          "when": "proceeds arrive through a processor"
+        },
+        {
+          "task": "NEXT-53",
+          "when": "a qualified goods supply rather than service is selected"
+        }
+      ],
+      "source_refs": [
+        "X03",
+        "R02",
+        "P51"
+      ],
+      "new_scope": "Add destination-tax consumer sales and a distinct Union OSS obligation. Earlier EU B2B sales and periodisk sammanst\u00e4llning do not cover this reporting family.",
+      "existing_owner": "Existing source/order intake, sale recognition, country/rate witnesses, FX reporting and external-obligation owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-113.md",
+      "word_count": 691,
+      "packet_sha256": "50ba92a1883f05d06c2e66a0aec0b8dd72d0d0ad9078ce7810efb7e679007fa7"
+    },
+    {
+      "id": "NEXT-114",
+      "title": "EU foreign input-VAT recovery claims and receipts",
+      "priority": "P1",
+      "lane": "TAX",
+      "prior_dependencies": [
+        "NEXT-03",
+        "NEXT-49"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-17",
+          "when": "an approved foreign-currency refund receivable needs supported FX settlement"
+        }
+      ],
+      "source_refs": [
+        "X04",
+        "P03"
+      ],
+      "new_scope": "Add foreign VAT recovery from the foreign authority. A foreign tax amount must not be claimed as Swedish deductible input VAT merely because it appears on a purchase.",
+      "existing_owner": "Existing original purchase, evidence, tax-claim obligation, currency and receipt owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-114.md",
+      "word_count": 677,
+      "packet_sha256": "d8e6cd83cbba6a9d3c68091f02069dd7d8cea4640fd4e77f5185edc9c75f1d9a"
+    },
+    {
+      "id": "NEXT-115",
+      "title": "Overnight travel allowances and meal-benefit partition",
+      "priority": "P2",
+      "lane": "PAYROLL",
+      "prior_dependencies": [
+        "NEXT-33",
+        "NEXT-20",
+        "NEXT-21"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-34",
+          "when": "the same retained trip also includes a mileage award"
+        }
+      ],
+      "source_refs": [
+        "X05",
+        "P34"
+      ],
+      "new_scope": "Mileage reimburses distance. Add overnight business-travel allowance eligibility, country/day classification and separate meal reductions/benefit inputs without reusing the mileage rate formula.",
+      "existing_owner": "Existing employee trip, claim, payroll earning/benefit and payout-handoff owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-115.md",
+      "word_count": 664,
+      "packet_sha256": "16868aa46c9bfad374f7edf2176f0cda2402f9e240002efb93123faa58547015"
+    },
+    {
+      "id": "NEXT-116",
+      "title": "Recurring car-benefit valuation and employee payment links",
+      "priority": "P2",
+      "lane": "PAYROLL",
+      "prior_dependencies": [
+        "NEXT-20",
+        "NEXT-21",
+        "NEXT-35"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "X06",
+        "P20"
+      ],
+      "new_scope": "Payroll already accepts benefit inputs. Add a concrete retained car-benefit eligibility/valuation lifecycle and payment reconciliation so those inputs are not anonymous monthly amounts.",
+      "existing_owner": "Existing employee revisions, private payroll calculations, actual paid/provided reporting and company car cost records.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-116.md",
+      "word_count": 717,
+      "packet_sha256": "b2fd1cedd975bd2d242c1a9038887acb1ac7121b76195a227bb503de5ee18992"
+    },
+    {
+      "id": "NEXT-117",
+      "title": "Interest statements: KU20 and applicable KU25 identities",
+      "priority": "P2",
+      "lane": "TAX",
+      "prior_dependencies": [
+        "NEXT-32",
+        "NEXT-49"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-62",
+          "when": "received late-payment interest creates an applicable reporting obligation"
+        }
+      ],
+      "source_refs": [
+        "X07",
+        "P32"
+      ],
+      "new_scope": "KU31 covers dividends and AGI covers compensation. Add annual interest reporting with its own reporter/recipient, timing and correction rules rather than treating every loan accrual as a reportable amount.",
+      "existing_owner": "Existing loan interest, actual settlement, tax withholding and versioned information-return artifact owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-117.md",
+      "word_count": 717,
+      "packet_sha256": "89feda289bc6966912c69cf1a8fff430b11a13be3500319dcdc7c0316917e2c2"
+    },
+    {
+      "id": "NEXT-118",
+      "title": "Prospective salary exchange into pension contributions",
+      "priority": "P2",
+      "lane": "PAYROLL",
+      "prior_dependencies": [
+        "NEXT-20",
+        "NEXT-21",
+        "NEXT-87"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-36",
+          "when": "an already paid or reported period requires a supported correction"
+        }
+      ],
+      "source_refs": [
+        "X08",
+        "P87"
+      ],
+      "new_scope": "Add an effective-dated employee/employer salary-exchange agreement with distinct salary and pension bases. Pension invoice reconciliation alone does not define the waived salary or prevent double deductions.",
+      "existing_owner": "Existing employment revisions, payroll component compiler, pension accrual/provider reconciliation and SLP basis.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-118.md",
+      "word_count": 690,
+      "packet_sha256": "afc674e7ce7b19cb5545f24d236ccf9d5f31a7358ac03a5c4221a250ded41536"
+    },
+    {
+      "id": "NEXT-119",
+      "title": "Cash share subscriptions and registered-capital transition",
+      "priority": "P2",
+      "lane": "EQUITY",
+      "prior_dependencies": [
+        "NEXT-02",
+        "NEXT-13",
+        "NEXT-49",
+        "NEXT-89"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "X09",
+        "P89"
+      ],
+      "new_scope": "Dividends distribute existing equity. Add the company-side record of cash subscriptions, paid allotments and an evidenced capital-registration transition without inventing share rights from bank receipts.",
+      "existing_owner": "Existing company/shareholder facts, bank receipt, equity roles, signed-decision and external-obligation owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-119.md",
+      "word_count": 666,
+      "packet_sha256": "205f9bd4e5103021e1d146b42e615712e685ae7bf55c38365bc050ed5494a7a7"
+    },
+    {
+      "id": "NEXT-120",
+      "title": "Preliminary income-tax revisions and authoritative installment schedules",
+      "priority": "P1",
+      "lane": "TAX",
+      "prior_dependencies": [
+        "NEXT-22",
+        "NEXT-49"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-74",
+          "when": "linking final annual filing outcomes"
+        },
+        {
+          "task": "NEXT-99",
+          "when": "later scoring the retained estimate against actual tax outcomes"
+        }
+      ],
+      "source_refs": [
+        "X10",
+        "P22",
+        "P99"
+      ],
+      "new_scope": "Annual current-tax calculation and final INK2 filing already have owners. Add a separately labelled forecast-based preliminary declaration, its revised authority decision and the payment-schedule impact.",
+      "existing_owner": "Existing corporate-tax calculator, immutable Cash forecast/scenario, tax-account events and external obligations.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-120.md",
+      "word_count": 696,
+      "packet_sha256": "d560a70322675b6f2b73e571302f68fc077a8e70ff0d7448cd506e83510f5045"
+    },
+    {
+      "id": "NEXT-121",
+      "title": "Opt-in bounded standing posting mandates",
+      "priority": "P1",
+      "lane": "AGENT",
+      "prior_dependencies": [
+        "NEXT-02",
+        "NEXT-03",
+        "NEXT-16",
+        "NEXT-96"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [],
+      "source_refs": [
+        "R02",
+        "R03",
+        "P96"
+      ],
+      "new_scope": "Multi-human approval covers exact plans. Add an explicitly enabled later-scope authority for a narrowly allowed recurring purchase pattern, with atomic cumulative limits. Book Zero remains exact-human-approval by default.",
+      "existing_owner": "Existing admission, rule activation, plan execution and financial receipts; extend only explicitly allowlisted application operations.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-121.md",
+      "word_count": 730,
+      "packet_sha256": "ab7ad1655fe3398bb24647021f1d5eda27729f0ff5350caf678f971f16ef02c8"
+    },
+    {
+      "id": "NEXT-122",
+      "title": "Cash-constrained payment proposals with explicit optimization bounds",
+      "priority": "P1",
+      "lane": "TREASURY",
+      "prior_dependencies": [
+        "NEXT-71",
+        "NEXT-80"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-59",
+          "when": "installment promises define permitted partial payment options"
+        },
+        {
+          "task": "NEXT-67",
+          "when": "reviewed spending policy contributes constraints"
+        },
+        {
+          "task": "NEXT-99",
+          "when": "historical forecast accuracy informs separately reviewed assumptions"
+        }
+      ],
+      "source_refs": [
+        "R02",
+        "P59",
+        "P99"
+      ],
+      "new_scope": "Cash forecasts explain expected balances and budgets constrain authorization. Add a read-only constrained selection/scheduling proposal over actual payable capacity; it does not alter debts, due dates or initiate payment.",
+      "existing_owner": "Existing Cash contribution graph, contractual payment terms, disputes/reservations and payment-plan preparation owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-122.md",
+      "word_count": 750,
+      "packet_sha256": "cb8d0edad54170498f3dd6392bf1b3d19d15d89d5e30d3e9dc6b2f3cd26fdee4"
+    },
+    {
+      "id": "NEXT-123",
+      "title": "Autogiro mandates and direct-debit collection outcomes",
+      "priority": "P1",
+      "lane": "DELIVERY",
+      "prior_dependencies": [
+        "NEXT-30"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-59",
+          "when": "collecting contractually defined installments"
+        },
+        {
+          "task": "NEXT-100",
+          "when": "publishing customer integration events"
+        }
+      ],
+      "source_refs": [
+        "X11",
+        "P30",
+        "P71"
+      ],
+      "new_scope": "Payment links ask a customer to pay; supplier payment exports initiate outgoing payments. Add authorized direct-debit collection of customer receivables, with payer mandates and returned-payment effects.",
+      "existing_owner": "Existing customer residual, bank-source, external-attempt, notification and payment-capacity owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-123.md",
+      "word_count": 710,
+      "packet_sha256": "50a0595e197231b648c3729b90dab875d80fff94a81e9b5c4b2deed496280772"
+    },
+    {
+      "id": "NEXT-124",
+      "title": "Bank-feed provider handover with continuity evidence",
+      "priority": "P1",
+      "lane": "BANKING",
+      "prior_dependencies": [
+        "NEXT-09",
+        "NEXT-10"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-70",
+          "when": "independent control comes from a supported structured statement"
+        },
+        {
+          "task": "NEXT-97",
+          "when": "ambiguous grouped overlap needs candidate discovery"
+        }
+      ],
+      "source_refs": [
+        "R02",
+        "P09",
+        "P70"
+      ],
+      "new_scope": "Add operational replacement of a read-only feed provider for the same real bank account. Historic import and one provider sync do not by themselves prove continuous coverage or safe cross-provider identity.",
+      "existing_owner": "Existing bank account identity, source occurrences, sync generations, matching and consent owners.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-124.md",
+      "word_count": 724,
+      "packet_sha256": "9345e1efa07b84b84a944f4bc66d4d4a9ea56b155896d6ce87f20ab98f43437d"
+    },
+    {
+      "id": "NEXT-125",
+      "title": "Processor refund initiation with reserved entitlement and outcome recovery",
+      "priority": "P1",
+      "lane": "DELIVERY",
+      "prior_dependencies": [
+        "NEXT-30",
+        "NEXT-39"
+      ],
+      "dependencies": [],
+      "conditional_dependencies": [
+        {
+          "task": "NEXT-64",
+          "when": "the original charge was created through the invoice payment-link owner"
+        }
+      ],
+      "source_refs": [
+        "X12",
+        "P30",
+        "P39"
+      ],
+      "new_scope": "NEXT-30 owns customer refund liability and NEXT-39 records processor movements. Add the authorized external refund request and its in-flight financial bridge instead of treating a local refund record as money sent.",
+      "existing_owner": "Existing customer-credit/refund capacity, processor source events and authenticated external attempts; Stripe card refunds are the first bounded profile.",
+      "status": "proposed application-owned design; implementation and profile evidence not established",
+      "application_owned": true,
+      "file": "packets/NEXT-125.md",
+      "word_count": 776,
+      "packet_sha256": "66b6cd38a8d3564038cd1d6ba7a38651f1756665a2c38f68ac17a000b72b98a4"
+    }
+  ],
+  "master": "MASTER-PSEUDOCODE.md",
+  "coordinator": "COORDINATOR-HANDOFF.md",
+  "qualified_inputs": "01-QUALIFIED-INPUTS.md",
+  "checks": "checks/results.json",
+  "design_examples": "design-examples.json",
+  "new_wave_order_including_conditional_edges": [
+    "NEXT-101",
+    "NEXT-104",
+    "NEXT-106",
+    "NEXT-108",
+    "NEXT-109",
+    "NEXT-110",
+    "NEXT-111",
+    "NEXT-112",
+    "NEXT-113",
+    "NEXT-114",
+    "NEXT-115",
+    "NEXT-116",
+    "NEXT-117",
+    "NEXT-118",
+    "NEXT-119",
+    "NEXT-120",
+    "NEXT-121",
+    "NEXT-122",
+    "NEXT-123",
+    "NEXT-124",
+    "NEXT-125",
+    "NEXT-102",
+    "NEXT-105",
+    "NEXT-103",
+    "NEXT-107"
+  ],
+  "graph_scope": "All new-wave edges are checked. Earlier IDs are external contracts; no full125-node acyclicity claim is made.",
+  "counts": {
+    "packets": 25,
+    "prior_packet_contracts": 100,
+    "qualified_profiles_activated": 0
+  }
+}
