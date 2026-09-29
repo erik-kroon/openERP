@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-28T21:33:43.910176+00:00",
-  "headObservedAtValidation": "c6d5c2b82c5ba03cce3b8f2f9092529bf1d23564",
+  "checkedAt": "2026-09-29T08:00:18.481717+00:00",
+  "headObservedAtValidation": "522295f41cdcfafd5cbd72b640e03701944bcec5",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,8 +9,8 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 890,
-    "documentsChecked": 44,
+    "localLinksAndAnchorsChecked": 892,
+    "documentsChecked": 45,
     "coverage": {
       "R": [
         "R-01",
@@ -221,6 +221,10 @@
       "sha256": "17184c10ac66e64eda90e9c23a313b6a4a12e3f54bb0b5bf809ab9b144eb33b2"
     },
     {
+      "path": "docs/plans/assurance-suite-integration.md",
+      "sha256": "6bee28e4ec632e289e11c512865f39531db4af3945ca1a589cd8bc993b4944dd"
+    },
+    {
       "path": "docs/plans/capability-backlog.md",
       "sha256": "9e1e68d92ae55f7766549f7a3db7b0c3855a2f07c453ef9635832cddcfaca8ce"
     },
@@ -242,7 +246,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "b9235bb7e64239a05405662aeb9c5bf6d51ddf8e6183b7061546f3ff1fc87f43"
+      "sha256": "3775e050341ae4c195abf630b9151e11f0543433398c6c311aac57459219e22b"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -250,7 +254,7 @@
     },
     {
       "path": "docs/plans/next-packet-progress.md",
-      "sha256": "ef07b14abc58507a0e310d483cf18fefb32a16d2338fc4809209cb6ae17deb31"
+      "sha256": "98b3927ae69c1a497bb957fef845a9bd6485bd92cbcb8aceb88686aa44d875d4"
     },
     {
       "path": "docs/plans/overnight-review-ledger.md",
