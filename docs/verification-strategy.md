@@ -30,6 +30,15 @@ The validation job reports formatting, type-aware lint, type checking and applic
 
 An E2E run uploads `e2e-evidence` on success or failure, including the console log under `test-results/ci` and available results, manifest and runtime logs under `test-results/e2e`. The console log remains available even when global setup fails before the normal manifest is written. Read the PostgreSQL log for migration errors and `worker.json` for Worker startup errors: type checking and a successful bundle do not prove schema initialization or runtime startup.
 
+For application failures, match the response's `x-request-id` to `worker.json`.
+Unexpected transaction failures retain sanitized schema/database causes in Effect
+logs; public responses remain generic. The [diagnostics regression](../apps/api/tests/README.md#failure-diagnostics-regression-contract)
+exercises console capture, retained-schema failure, a database constraint and
+rejected connection credentials on real workerd/PostgreSQL. Its separate
+`diagnostics-worker.json` is captured from its test-owned Worker. Set
+`OPENERP_E2E_ARTIFACTS` to a distinct `test-results/` subdirectory when another run
+owns the default artifacts; this does not relax source-integrity checks.
+
 Reproduce the gates locally with `bun install --frozen-lockfile`, `bun run format:check`, `bun run lint`, `bun run check-types`, `bun run build` and `bun run test:e2e`. Run these sequentially in one worktree. The source and environment manifest limits what a passing local run proves; it is not an observed GitHub Actions result.
 
 ## Expectations and fault control
