@@ -74,10 +74,15 @@ No such owner exists in `apps/api/src/application/payroll`,
 `apps/api/src/application/payroll-foundation.ts` or elsewhere. Wiring the
 leaf to the wrong owner to clear the check would be false delivery.
 
-No migration was landed. The `0036-next-34-mileage.sql` draft from the
-`review/next34-mileage` worktree (trip revisions, rule releases, award
-plans) is intentionally left out: tables without an owning transaction
-are dead DDL. They land with the owner, not before it.
+No migration was landed. A `0036-next-34-mileage.sql` draft (trip
+revisions, rule releases, award plans — 75 lines, blob
+`2e6d754ae60d7b0fbf17496df778a908e378a259`) is preserved on the
+`review/next34-mileage` branch as `2256e19` with the message "Draft
+NEXT-34 mileage tables, not for main: no owner consumes them yet". It is
+intentionally not merged: tables without an owning transaction are dead
+DDL. The future owner picks it up from that commit, reviews it against
+the then-current `payroll_employees` key and grant baseline, and lands it
+in the same merge as the application/db/contract/route/E2E files.
 
 ## Not proven
 
