@@ -41,6 +41,10 @@ owns the default artifacts; this does not relax source-integrity checks.
 
 Reproduce the gates locally with `bun install --frozen-lockfile`, `bun run format:check`, `bun run lint`, `bun run check-types`, `bun run build` and `bun run test:e2e`. Run these sequentially in one worktree. The source and environment manifest limits what a passing local run proves; it is not an observed GitHub Actions result.
 
+The E2E job runs the scoped `core` excellence profile rather than the bare E2E
+command, so ordinary continuous integration supplies synthetic regression
+protection and per-case evidence. It is not the whole release claim.
+
 ## Expectations and fault control
 
 The isolated [Bend verification kit](../verification/bend/README.md) adds an
@@ -84,6 +88,33 @@ Use accessible roles/labels and real actions. Check source bytes, exact lines, d
 
 Cover Swedish/English money/date presentation, keyboard/focus recovery, narrow layouts and reduced motion. Record actual 200% browser zoom, contrast and screen-reader observations separately; viewport resizing does not prove them. Keep decisive success screenshots and failure traces. Downloaded reports need exact fact/hash checks and independent semantic validation where applicable.
 
+## Excellence profiles
+
+The scoped qualification layer lives in
+[`verification/assurance/excellence`](../verification/assurance/excellence) and
+adds profile-scoped gates on top of the existing assurance runner. It reuses the
+same workerd/PostgreSQL harness; it does not replace that runner or the native
+suite.
+
+```sh
+node verification/assurance/excellence/scripts/run.mjs core
+```
+
+| Profile   | Adds                                                                                                                                                                                                                                        | Requires                                                                    |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `core`    | Independent supplier oracle, three seeded HTTP histories, a late refund fault with same-key retry, an FX valuation chain oracle, payroll rounding/band conformance and a real `pg_dump`/`pg_restore` drill through a second Worker runtime. | Nothing beyond the standard harness.                                        |
+| `stress`  | The semantic mutation campaign, which now counts a killed mutant only when the executed test identities exactly match the passing baseline.                                                                                                 | A clean committed checkout.                                                 |
+| `kernel`  | The official Bend release gate.                                                                                                                                                                                                             | `BEND_SOURCE_ROOT` and `OPENERP_OWNER_ADAPTER`. There is no local fallback. |
+| `company` | An independent reviewed business-case comparator.                                                                                                                                                                                           | `EXCELLENCE_COMPANY_CASES` and `EXCELLENCE_COMPANY_OBSERVED`.               |
+| `release` | All three additional stages together.                                                                                                                                                                                                       | Every prerequisite above.                                                   |
+
+A missing prerequisite keeps its lane `blocked`; it is never downgraded to a
+pass. Read `run.json` and `verdict.json` under
+`test-results/excellence/<run>/` before any test count: a green tooling counter
+is not a qualification. `core` and `stress` do not imply production readiness,
+and the recovery drill shares one PostgreSQL cluster rather than qualifying
+production object-store, IAM, network or old-writer recovery.
+
 ## Evidence and gates
 
 Each successful or failed run retains a readable result, source/environment manifest, machine-readable assertions, sanitized requests/receipts/ledger observations, setup/runtime/cleanup logs and relevant browser/export artifacts. Preserve a run before another overwrites it. Link approval → receipt → voucher → evidence.
@@ -97,13 +128,13 @@ for exclusions; a hash is an identity check, not deployment or company acceptanc
 
 Record revision plus dirty-input, lockfile, migration, contract, rule and validator hashes; runtime/database/browser versions; locale/timezone/time anchor/seed; selected, collected and executed cases; expected/observed values; failures, omissions and retries; exact replay commands and working directories. Capture evidence before teardown and report cleanup failure separately. Exclude credentials, session files and company data; traces may contain headers and forms.
 
-| Gate                     | Required evidence                                                                                           |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------- |
-| Every product change     | Strict static checks, relevant real Worker/PostgreSQL cases, core browser journeys and nonempty collection. |
+| Gate                     | Required evidence                                                                                                              |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| Every product change     | Strict static checks, relevant real Worker/PostgreSQL cases, core browser journeys and nonempty collection.                    |
 | Migration change         | Clean-baseline fresh/rerun, checksum-drift refusal and effective grants for this reset; forward-migration proof after release. |
-| Runtime/packaging change | Built routing, assets, service binding and financial journey.                                               |
-| Capability release       | Applicable corpus, races, reports, restore and operational cases at fixed versions.                         |
-| External capability      | Authorized environment, exact integration stage and provider receipts.                                      |
+| Runtime/packaging change | Built routing, assets, service binding and financial journey.                                                                  |
+| Capability release       | Applicable corpus, races, reports, restore and operational cases at fixed versions.                                            |
+| External capability      | Authorized environment, exact integration stage and provider receipts.                                                         |
 
 These are required gates, not claims of current CI coverage. Missing prerequisites, required validators, fixtures or cases fail the lane. Skipped/cancelled jobs and empty check sets cannot yield readiness. Include SQL, rules/fixtures, runtime configuration and lockfile changes in affected gates; retain evidence on success and failure.
 
