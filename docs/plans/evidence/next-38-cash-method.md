@@ -1,65 +1,52 @@
-# NEXT-38 cash-method recognition and unpaid year-end cutover
+# NEXT-38: unsafe financial writer fenced
 
-**Status: wired and observed 2026-09-29.** Real E2E over workerd + PostgreSQL
-17.11 + the restricted `e2e_runtime` role, with the source inventory stable
-across the run.
+**Status: leaf retained; financial integration deferred.** The pure
+`packages/domain/src/cash-method.ts` leaf models exact payment/year-end coverage.
+It is not currently composed by a financial owner. The old application writer
+was removed after tracing its claimed payment and invoice inputs through the
+real commerce owner.
 
-## What the packet needed
+## Why the former green journey was not a cash-method journey
 
-The leaf in `packages/domain/src/cash-method.ts` calculates a payment's
-recognition split and a year-end's unpaid cutover. It was reviewed and repaired
-in `fc47b27`, which distinguished paid from recognized from credited coverage and
-made the component policy explicit and gross-conserving, but nothing composed
-it. This packet gives it a named owner rather than a second owner.
+`commerce_invoices` requires an executed recognition voucher and line. Both
+synthetic invoice registration and legal customer issue post that voucher first;
+the register has no admitted invoice with commercial debt but no accrual
+revenue/expense and VAT effect. Registering its posted gross again as a
+cash-method line could lead to duplicate effects when the prepared journal is
+executed.
 
-## The owner
+The former payment command took `paidGrossMinor`, `paymentRef` and
+`cashEvidenceId` from the caller. It did not read a final, effective commerce
+allocation to that invoice or derive the settled amount in the owning
+transaction. A retained evidence row does not prove cash was paid. The
+year-end path scanned only voluntarily registered rows, not the complete
+eligible invoice population. The previous E2E tests proved arithmetic over
+caller assertions and insertion into synthetic tables, not these prerequisites.
 
-`apps/api/src/application/commerce/cash-method.ts` composes the leaf at two
-boundaries inside the existing commerce invoice owner, because a cash-method
-document is an invoiced document. It is not a new engine:
+## Current boundary
 
-- The caller names a line, an amount, a cash-evidence reference and a basis. It
-  never states a net, a tax or a split.
-- The net/tax split is read from the retained recognition voucher's journal
-  lines, with the control line identified by the recognition line the invoice
-  owner already retained. A cash-method document posts its gross against a net
-  and a tax, so the non-control sides must sum to exactly the control gross; the
-  net is the largest of them and the tax is what remains. A voucher that does
-  not balance that way is refused rather than guessed at.
-- The commercial gross is the invoice's own amount, so commercial unpaid is
-  `gross - credits - paid` and recognized unpaid is
-  `recognized gross - paid`. The two are reported separately and never merged.
+The three write routes — register, payment recognition and year-end cutover —
+now refuse `UnsupportedProfile` after scoped operator admission, before any
+financial or register write. The read-only route still inspects any retained
+rows, deriving unpaid balances from exact prefixes; its year-end flag uses an
+unbounded existence query rather than a truncated recognition page.
 
-`apps/api/src/db/commerce/cash-method.ts` holds the reads, all passing the
-caller's transaction. `0040-next-38-cash-method.sql` retains the recognized
-prefix per line, the append-only recognition history naming the trigger that
-caused it, and at most one cutover run per period. The line advances one
-version under the version the writer observed, so two concurrent recognitions
-cannot both succeed. Recognition journals are prepared through the released
-prepare/approve/execute boundary, so responses report `journalIds: []` and the
-cash effect is not committed by this packet.
+`0040-next-38-cash-method.sql` remains in the migration chain; no applied
+migration was rewritten. The integration inventory records the leaf as
+deferred with its actual owner prerequisites. Before any future writer is
+enabled, its invoice identity must be fenced against a second caller-chosen
+source-line label for the same gross.
 
-## What the E2E proves
+## To deliver the packet
 
-1. **A payment recognizes without changing what is owed.** Paying 500 of a 1250
-   document recognizes 500, composed as 400 net and 100 tax by the leaf's
-   cumulative tax-first policy. Commercial unpaid falls to 750 while recognized
-   unpaid is 0, because the payment covered everything the book had taken. The
-   recognition is prepared, not executed: the book has no bank voucher. The
-   same payment under a different command key still refuses, because the
-   trigger is the payment's own retained identity rather than the command.
-2. **A year end recognizes the unpaid remainder once per period and never
-   again.** The same document is carried into a year end, the cutover run
-   recognizes 1000 with its journal prepared, and the commercial balance is
-   unchanged at 1000 — the customer still owes, which is the whole point of the
-   method. A second year end for the same period refuses.
-3. **A line with no reviewed witness is not a cash-method line.** The witness is
-   the recognition voucher and line the invoice owner retained; a document
-   without one never becomes a cash-method line.
-
-## Bounds
-
-No vendor invoice import, no payment reconciliation, no year-end close
-workflow and no VAT return line exists. The leaf is composed at two
-recognition boundaries only. `bun run check:integration` reports 31 wired and
-17 declared deferred; the full E2E suite passes 170 tests across 42 files.
+Extend the commerce issue/acceptance owner to retain a qualified cash-method
+document without immediate revenue/expense and VAT posting, while preserving
+the commercial open item. Then compose the leaf in the **same transaction** as
+the effective payment-allocation owner, deriving principal, evidence and
+identity from its retained posted cash event. Adopt existing cash capacity
+without posting bank a second time. Seal complete eligible year-end membership
+and the accounting method/profile revision, and make correction and next-year
+settlement use the same source capacity and tax-fact owner. Prove payment,
+year-end, correction, replay and rollback through HTTP/PostgreSQL before
+changing the integration declaration back to wired. No actual-company method
+or statutory tax treatment is inferred from a synthetic fixture.
