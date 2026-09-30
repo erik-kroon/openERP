@@ -8,6 +8,12 @@ The [Document Intelligence first journey](plans/document-intelligence-delivery.m
 
 ## Current checkout
 
+[PRY-17 clearing/account hints](plans/evidence/pry-17-bank-account-hints.md) now
+uses an explicit retained reference profile through the supplier workspace and
+shared REST/MCP. Valid, invalid and no-opinion outcomes are observed; checksum
+hints remain non-blocking and verify no account or payment authority. Five
+focused E2E tests pass, including the earlier giro/OCR and MCP-authority journeys.
+
 [PRY-16 payment identifiers](plans/evidence/pry-16-payment-identifiers.md) is wired
 through the supplier-payment workspace and shared REST/MCP. Giro/OCR checks and
 explicit OCR candidates preserve source identifiers without verifying payees or

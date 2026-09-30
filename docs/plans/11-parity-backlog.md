@@ -80,7 +80,7 @@ Reference folder → disposition. "Owned" names the requirement that already car
 | `providers/` | **Entirely unowned.** No reference provider, and no cross-cutting provider infrastructure, is named anywhere in this repository → [PRY-01](#external-systems-identity-and-provider-authority) to [PRY-05](#external-systems-identity-and-provider-authority). |
 | `skatteverket/` | Tax-account matching and controls are owned. **The connection is unowned** → [PRY-06](#external-systems-identity-and-provider-authority); file import → [PRY-07](#external-systems-identity-and-provider-authority). |
 | `currency/` | Money and scale modelling are owned and ahead of the reference. **The rate source and rate-date policy are unowned** → [PRY-10](#external-systems-identity-and-provider-authority), [PRY-20](#swedish-identifiers-and-payment-primitives), [PRY-54](#commerce-and-open-item-registers), [PRY-85](#deadlines-calendar-and-currency-reporting). |
-| `bankgiro/` | PRY-16 primitives are wired and locally verified; clearing checks and domestic payment files remain with [PRY-17/18](#swedish-identifiers-and-payment-primitives), and mapping suggestions with [PRY-24](#source-intake-and-migration) (`R19`). |
+| `bankgiro/` | PRY-16 primitives and PRY-17's explicit reference-profile hints are wired and locally verified. Current-bank qualification and [PRY-18 domestic files](#swedish-identifiers-and-payment-primitives) remain open; mapping suggestions remain with [PRY-24](#source-intake-and-migration) (`R19`). |
 | `deadlines/` | Obligation identity, outcome history and revocable feed are owned. **Escalation, regeneration and date derivation are unowned** → [PRY-83](#deadlines-calendar-and-currency-reporting), [PRY-82](#deadlines-calendar-and-currency-reporting). |
 | `calendar/` | Feed is owned and more conformant than the reference. **Gaps are unowned** → [PRY-84](#deadlines-calendar-and-currency-reporting). |
 | `bokslut/` | Technical closing is owned; financial year-end is not. **The whole folder is unowned** → [PRY-86](#financial-year-end-and-statutory-output) to [PRY-98](#financial-year-end-and-statutory-output). |
@@ -132,6 +132,13 @@ composed by the purchases payment-identifier owner, with scoped REST, read-only
 MCP and real supplier-workspace controls. [The delivery record](evidence/pry-16-payment-identifiers.md)
 names independent vectors, string-preserving refusals, maximum lengths, browser
 observations and the remaining account-verification/payment-file boundaries.
+
+**PRY-17 implemented and observed 2026-09-30 for `reference_r2_v1`.** The same
+domain/application owner provides non-blocking, three-valued account hints through
+REST/MCP and supplier-workspace controls. [Its delivery record](evidence/pry-17-bank-account-hints.md)
+identifies the reference basis, supported lengths, all checksum families,
+independent vectors and actual browser observations. Current-bank qualification
+and any financial use remain separate gates.
 
 ## Source intake and migration
 
