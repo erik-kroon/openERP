@@ -8,6 +8,11 @@ The [Document Intelligence first journey](plans/document-intelligence-delivery.m
 
 ## Current checkout
 
+[NEXT-97 exact grouped bank matching](plans/evidence/next-97-exact-covers.md) has
+local synthetic HTTP and Chromium proof: bounded discovery preserves ambiguity
+and shared-capacity conflicts, and a selected group follows the existing
+prepare/approve/execute flow. This is a matching slice, not a P2 actual-period exit.
+
 The synthetic accounting workflow began at `e5fe3e69`. The planning capture at `1965622afa65285fa8e9013ccdd98a47ebe86dfb` includes further accounting workflows and recovery tooling. The [dated source manifest](plans/evidence/planning-baseline.json) records that revision, working-tree status and inspected-file hashes. Active correction, matching, commerce, subledger, closing and recovery work continues in the shared tree. Reconcile the live diff and its evidence before each packet; source presence does not change a whole milestone to verified.
 
 An isolated local Worker/PostgreSQL observation exercised evidence retention, proposal, validation, operator approval, posting and receipt lookup. One journal produced the independently expected debit and credit; repeated execution returned the same receipt. [The runtime checkpoint](evidence/initial-runtime-checkpoint.md) records the environment, actual results, migration failures and remaining gaps. This is partial evidence for E-01, E-03, E-04 and E-20, not completion of those scenarios. No browser, provider, restore or actual-company proof was performed in that observation.

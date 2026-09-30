@@ -73,6 +73,17 @@ Candidate generation is read-only and explains exact reference/provider matches 
 
 Approval seals all proposed legs and capacity versions. Recheck at execution; append allocation effects and receipt atomically. Unmatching appends reversal legs with reason and original references, restoring capacity exactly once. Historic exact matches are retained with their original basis; speculative matches are never promoted merely because importing them is convenient.
 
+The [NEXT-97 bounded exact-cover slice](evidence/next-97-exact-covers.md) adds
+whole-residual grouped discovery to the existing candidate reader and Accounts
+matching sheet. Fewest-line/minimum-maximum-day-gap ranking preserves equal-ranked
+alternatives. Candidate, visit and alternative limits report incomplete search;
+conflict checks disclose shared lines among at most ten other observations in
+the same statement, with their full population and completeness status. Selection
+pre-fills the existing reviewed allocation flow and never allocates automatically.
+Local HTTP and browser evidence covers tied alternatives, two successive consumers,
+stale competing execution and same-key recovery; it does not qualify actual-company
+source coverage or native foreign-cash conversion.
+
 **Bank matching does not pay an invoice.** It relates external cash evidence to posted cash lines. Commerce owns invoice↔payment allocations. Link the two through the immutable payment event/voucher and preserve both conserved dimensions. No shared mutable “remaining” field serves both meanings.
 
 ## Reconciliation and human review

@@ -181,7 +181,7 @@ Like the third wave, the `Requires` column mixes prior-wave and same-wave contra
 | NEXT-99 | P1 | CASH | Cash forecast vintage scoring and error attribution | NEXT-13, NEXT-45, NEXT-50 | — | [NEXT-99](../specs/next-76-100/packets/NEXT-99.md) |
 | NEXT-100 | P1 | INTEGRATIONS | Scoped integration event subscriptions and delivery receipts | existing core owners | — | [NEXT-100](../specs/next-76-100/packets/NEXT-100.md) |
 
-**Implementation status, fourth wave.** None. No fourth-wave packet has a row in [next-packet-progress.md](next-packet-progress.md), and this document creates no implementation state for one. Its suggested independent starts — evidence 93/94, contract changes 76, acquisition/commissioning 81, exact matching 97 — and its statement that the tax, grant, dividend, termination and lease profiles are "conditional capability extensions, not a demand to delay Book Zero" are the archive's own prioritisation. Selection follows the company and customer facts under [D-04](../open-decisions.md).
+**Implementation status, fourth wave.** NEXT-97 has a bounded synthetic HTTP/browser delivery recorded in [next-packet-progress.md](next-packet-progress.md) and [its evidence](evidence/next-97-exact-covers.md). Other fourth-wave packets have no implementation state recorded here. Its suggested independent starts — evidence 93/94, contract changes 76, acquisition/commissioning 81, exact matching 97 — and its statement that the tax, grant, dividend, termination and lease profiles are "conditional capability extensions, not a demand to delay Book Zero" are the archive's own prioritisation. Selection follows the company and customer facts under [D-04](../open-decisions.md).
 
 ### Fifth wave: NEXT-101 … NEXT-125
 

@@ -13,8 +13,8 @@ override `AGENTS.md`, [ADR 0010](../adr/0010-application-owned-accounting-replac
 or [ADR 0009](../adr/0009-effect-mq-background-jobs.md).
 
 The table below is a **selected** record, not a complete index. It covers
-NEXT-01 … NEXT-50; the third, fourth and fifth waves NEXT-51 … NEXT-125,
-all vendored 2026-09-28, have **no rows and no implementation state**, and the absence of a row is not a finding that the work
+NEXT-01 … NEXT-50 and selected later packets. The later waves were vendored
+2026-09-28; the absence of a row is not a finding that the work
 is missing from source. See the [dossier plan](12-next-implementation-dossier.md)
 for the full packet index and the reserved owners.
 
@@ -74,6 +74,7 @@ for the full packet index and the reserved owners.
 | NEXT-32 | Loan principal, interest accrual and repayment allocation | P2 | leaf implemented: `@open-erp/domain/loan-lifecycle` principal timeline, exact-rational segmented accrual with single half-up rounding and idempotent cumulative targets, accrual/repayment journals and posted-principal adoption; schedules, persistence and the D-04 lending-scope decision remain open with the future subledger/owners port | packet vectors executed against the pure compiler; treasury journey unobserved |
 | NEXT-41 | Late FX valuation and consumed-chain correction | P1 | leaf implemented: `@open-erp/domain/fx-chain-repair` frozen-fact replay with corrected-rate valuation, owner-supplied paired releases, per-date/role desired-versus-old diffs, cash/foreign conservation and final-carrying agreement, staleness and closed-period refusals; posting, revision advance and downstream review remain with the owning transaction while accepted scope stays open | packet vectors executed against the pure compiler; FX journey unobserved |
 | NEXT-42 | Economic impairment reversal and zero-carrying assets | P1 | leaf implemented: `@open-erp/domain/impairment-reversal` role-reconciled carrying, without-impairment counterfactual, capped economic reversal with footing schedule, qualified zero-carrying write-down, loss-free zero disposal, revival refusal and consumed-correction guard; schedule persistence and disposal records remain with the asset owners | packet vectors executed against the pure compiler; valuation journey unobserved |
+| NEXT-97 | Exact covering-set reconciliation with explicit ambiguity | P1 | wired to the existing bank candidate reader and Accounts matching sheet; whole-residual covers pre-fill the existing reviewed allocation flow. Same-statement conflicts disclose shared capacity; search and conflict limits remain explicit. No new financial writer or migration | [Real HTTP and Chromium E2E](evidence/next-97-exact-covers.md): two tied covers, candidate/visit limits, conflict truncation, no-match, read-only agent parity, two successive approved consumers, stale competing execution and same-key recovery; operator discovery-to-confirmation at desktop and narrow widths. Synthetic profile only |
 
 The rows above do not classify every other packet as untouched. Resolve its
 current branch, owning source and release gates before starting work. A source
