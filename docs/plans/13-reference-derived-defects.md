@@ -1,6 +1,10 @@
 # Reference-derived defect register
 
-Status: **findings from a reference comparison, verified against the current checkout.** Prepared 2026-09-26. Every row was confirmed by reading the cited file in this repository; the evidence line is the current state, not a proposal. This document claims no fix, no test and no runtime observation. It is a register of things the comparison surfaced that are wrong, contradictory or silently unsafe **now**, and it is deliberately separate from the forward [parity backlog](11-parity-backlog.md), which is new scope.
+Status: **dated reference findings with subsequent repair records.** Prepared
+2026-09-26 by reading the cited source. Fixed rows name their later implementation
+and observed evidence; unclosed rows retain the original finding and must be
+reconciled against the current checkout before work starts. This defect register
+is separate from the forward [parity backlog](11-parity-backlog.md), which is new scope.
 
 Placement is governed by [ADR 0013](../adr/0013-reference-derived-defects.md): every fix is a **forward migration or a forward packet**. The reviewed three-file baseline is never edited.
 
@@ -72,15 +76,28 @@ This register was first written against an earlier revision. Re-verification aga
 
 ---
 
-## DF-04 — A state-dependent refusal permanently burns a saved request
+## DF-04 — Saved-request state refusals preserve their identity — fixed
 
 **Severity: high.** Class A.
 
-**Evidence.** `apps/api/migrations/0001-schema.sql:2360-2371` gives `posting_request_outcomes` a primary key on `(book_id, key)` plus `posting_outcome_immutable`. `isPersistableRefusal` in `apps/api/src/application/posting-recovery.ts:152-164` places `ApprovalRequired`, `StaleDependency`, `PeriodLocked`, `AlreadyPosted` and `NotFound` in the persistable set.
+**Implemented and verified 2026-09-30.** Forward `0043-posting-request-attempts.sql`
+adds immutable attempts beside the existing saved body/kernel identity. The
+application uses the pure posting-line validator to prove content-invalid
+journals terminal, permits explicit unchanged retry of referenced-state refusals,
+and retains old outcomes untouched. The shared kernel no longer blocks reserved
+keys merely because they have a historical refusal; actor/operation/body identity
+checks remain. The UI runs the original key rather than replacing it.
 
-**Consequence.** A grant that is activated afterwards, a period that is reopened, or an approval that arrives a moment later **cannot be applied to the original request**. The stored refusal is returned for ever and the caller must mint a new idempotency key. That contradicts [ADR 0010](../adr/0010-application-owned-accounting-replacement.md) ("never creates a fresh economic command automatically") and instructs the UI in `docs/frontend.md` not to do it. The identity is absorbing on a *committed* outcome; it should not be absorbing on a refusal that only referenced domain state.
+**Observed acceptance.** [The repair record](evidence/df-04-saved-request-retry.md)
+includes restored reviewer authority, concurrent same-key execution, legacy
+refusal preservation, pure-content terminal replay, identity conflict, late-write
+rollback and original-key recovery, MCP preparation retry and the real browser
+flow. The complete local synthetic suite passed 182 tests across 46 files.
 
-**Fix.** Split refusal kinds deterministically from the request bytes alone. A refusal determined by the **content** of the request needs new bytes and consumes the identity. A refusal determined only by **referenced state that could change** leaves the identity runnable, so the same bytes succeed later. The decision must not be a hand-maintained list at the call site.
+**Boundary.** Retryability does not bypass current authority or make an obsolete
+plan current. A changed command still needs new reviewed bytes. Committed outcomes
+and request-content refusals remain absorbing; unexpected infrastructure failures
+remain unknown rather than fabricated refusals. No company readiness is claimed.
 
 ---
 

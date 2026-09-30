@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-29T13:20:52.343227+00:00",
-  "headObservedAtValidation": "46bff7404bba3266157a8355ffa102ff0e87ad4c",
+  "checkedAt": "2026-09-30T14:16:13.564862+00:00",
+  "headObservedAtValidation": "a2e4883cb7f56d1d58a419f04f355bd46aa1c939",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,8 +9,8 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 895,
-    "documentsChecked": 45,
+    "localLinksAndAnchorsChecked": 908,
+    "documentsChecked": 46,
     "coverage": {
       "R": [
         "R-01",
@@ -90,7 +90,7 @@
   "files": [
     {
       "path": "docs/README.md",
-      "sha256": "2680e1691ac30dc797f249d721d0b73d5b934b8efe79ce6f9cde5a9082bf52d8"
+      "sha256": "f9183b796b8862fa37c1e5bb2ac662ef22a158d390e9b3b867b2a24d52e18caa"
     },
     {
       "path": "docs/adr/0002-exact-posting-and-approval.md",
@@ -102,7 +102,7 @@
     },
     {
       "path": "docs/adr/README.md",
-      "sha256": "9465840b00da41ba5f92a9f040419c521c8d6066465b5df668d10e2925103d0f"
+      "sha256": "caaa449a79e1b9a61ff986943167d14e2c721fdf6ef8db920a4bf454a056db5d"
     },
     {
       "path": "docs/architecture.md",
@@ -130,7 +130,7 @@
     },
     {
       "path": "docs/plans/01-posting-approval-receipts.md",
-      "sha256": "2c8ce42298bc9af648005d23513e649bd041ca0af975275bb835d41f6d7732fe"
+      "sha256": "e06a9407a69e28786ca8fda088d218571ab7166a0cf00869bebc36dca9e8ea96"
     },
     {
       "path": "docs/plans/02-corrections.md",
@@ -138,7 +138,7 @@
     },
     {
       "path": "docs/plans/03-imports-matching-reconciliation.md",
-      "sha256": "6d12bc14734bfd85cad491fc3173e846378b423437fcb86b82617cc1c12c7878"
+      "sha256": "7f09956fb8ad5f839601240b53bb5bca516bd28b91db678f22a000bb19215f67"
     },
     {
       "path": "docs/plans/04-invoices-payments-registers.md",
@@ -174,11 +174,11 @@
     },
     {
       "path": "docs/plans/12-next-implementation-dossier.md",
-      "sha256": "9160565c04d510c7c7546c0672fcfdfd12f0ee0684af072b34fe23daa321aace"
+      "sha256": "ab2e2b8da9937be329cdb7e8687e81f2d3afeb7955b74f95c4c3a35ce76ff98a"
     },
     {
       "path": "docs/plans/13-reference-derived-defects.md",
-      "sha256": "585ddc30e602b1659de8c28bb6de472fdd75d1a1666d18f56dc9a2096b950537"
+      "sha256": "209805ae2fc7035e1fdedf63e13dd146c8dba9dbbb2bc6fa4d5147ffa52a4fd8"
     },
     {
       "path": "docs/plans/14-parity-ledger.md",
@@ -246,7 +246,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "d3d0ddc3f97058d4d55e383754ffb013a71937b1e8f532a1f52152be82fca00f"
+      "sha256": "c84902772cde916b8022788154f16bcd1a7d1f51a10f6cae092b6b845c6bfc49"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -254,11 +254,15 @@
     },
     {
       "path": "docs/plans/next-packet-progress.md",
-      "sha256": "8b4c06d96b8bf9a493b594487f1b634f49438828a4a39368f297863ddd3288e7"
+      "sha256": "b340506c5d6a350773d577f6dad4ed593627513609fc8783439c16fd8ea0e47c"
     },
     {
       "path": "docs/plans/overnight-review-ledger.md",
       "sha256": "6684840b19b476d7b342756ea918fac80bd39a477a067bbd960c2a5eb0393cd9"
+    },
+    {
+      "path": "docs/plans/pdfcn-adoption.md",
+      "sha256": "e233615949ba7430ddb5ef202938bb460e44b5abfd34a8e3b394fbffcfd4e036"
     },
     {
       "path": "docs/plans/seb-statement-preview.md",
@@ -274,7 +278,7 @@
     },
     {
       "path": "docs/roadmap.md",
-      "sha256": "fda4bacea18498ff791e96c52a65f43e929439504c74fd09521942f72fb2d9d2"
+      "sha256": "597482239b1b21fce3d7412a589c281b490895fe9134d79ebc5f9ec1d85e9f5b"
     },
     {
       "path": "docs/verification.md",
