@@ -101,18 +101,26 @@ remain unknown rather than fabricated refusals. No company readiness is claimed.
 
 ---
 
-## DF-05 — Our own two files disagree on how wide an account number is
+## DF-05 — SIE account-code width is consistent — fixed
 
 **Severity: high.** Internal contradiction.
 
-**Evidence.**
-- `packages/contracts/src/sie-import.ts:76` — `sourceAccount: Schema.String.check(Schema.isPattern(/^[0-9]{4}$/))`
-- `apps/api/src/application/sie-import-parser.ts` uses the same four-digit rule
-- `jurisdictions/se/src/sie/encoder.ts:73` — `if (!/^[1-9][0-9]{0,7}$/.test(account.code) || codes.has(account.code))`
+**Implemented and verified 2026-09-30.** The domain `AccountCode` owns the
+one-to-eight ASCII-digit lexical contract consumed by the parser, mapping/control
+schemas and movement renderer. Source prefixes remain strings, not numeric
+normalization. Malformed account declarations retain their original bytes and
+diagnostics. The separate complete-book export keeps its explicit four-digit
+profile and no BAS or financial-admission policy is inferred from code shape.
 
-**Consequence.** We refuse to **import** a chart containing an account number we will happily **export**. A migration that legitimately carries a five-to-eight digit account fails at intake with no explanation, and the failure looks like a corrupt file rather than a schema disagreement.
+**Observed acceptance.** [The repair record](evidence/df-05-sie-account-codes.md)
+contains real movement export, retained interpretation, reviewed mapping and
+staging for `1`, `19301`, `19301234` and `0012`, plus malformed identifier refusal
+and preserved UTF-8 byte locations. Fourteen local E2E cases pass, including the
+existing SIE4E dimension and retained-version recovery cases.
 
-**Fix.** One named account-code schema owned by the domain, referenced by the contract, the parser and the encoder. The widest supported form wins, because a narrower importer is a data-loss risk and a wider importer is a validation risk we can name. Two supporting rules from the same comparison, both class A: an account number is an **identifier, never a number** (arithmetic on one is always a bug, and a numeric type invites it), and the BAS account class is read **positionally** from the leading digit in exactly one place.
+**Boundary.** This fixes format disagreement, not financial import or chart
+classification. Source staging creates no destination vouchers and does not
+establish actual-company or external-recipient acceptance.
 
 ---
 

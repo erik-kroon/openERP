@@ -8,6 +8,11 @@ The [Document Intelligence first journey](plans/document-intelligence-delivery.m
 
 ## Current checkout
 
+[DF-05 SIE account-code consistency](plans/evidence/df-05-sie-account-codes.md)
+has real movement-export-to-retained-staging proof for one-, five- and eight-digit
+codes and preserved zero prefixes. Fourteen focused E2E cases pass; financial
+admission, actual-company history and external receiving software remain separate.
+
 [NEXT-97 exact grouped bank matching](plans/evidence/next-97-exact-covers.md) has
 local synthetic HTTP and Chromium proof: bounded discovery preserves ambiguity
 and shared-capacity conflicts, and a selected group follows the existing

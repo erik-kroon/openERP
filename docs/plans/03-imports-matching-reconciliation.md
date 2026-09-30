@@ -61,6 +61,12 @@ Leases include a monotonically increasing fencing token. A worker checks it unde
 
 SIE profiles retain format/version, exporter identity, encoding, original series/number/date, account/dimension references, final lines, correction-history records and control records. Unsupported variants fail with locators. Final transaction lines and historical correction records have different meanings and cannot all be summed. The [SIE publisher's format catalogue](https://sie.se/format/) distinguishes SIE 4, 4i and 5; treat them as separate capabilities with their own specification/roundtrip fixtures.
 
+[DF-05](evidence/df-05-sie-account-codes.md) aligns inbound account grammar and
+mapping/control schemas with the movement export's eight-digit width. Account
+codes remain lexical identifiers, including zero prefixes. The complete-book
+export's four-digit profile and the separate financial-admission gate remain
+explicit; grammar acceptance alone does not classify or post an account.
+
 Keep source voucher references as immutable external identifiers. Assign native identities independently. If continuing a source's voucher series, initialize its transactional native counter once from the reviewed cutover boundary and retained provenance; never allocate ordinary numbers using a live `MAX(number)` query. Conflicting historical references create an import decision, not automatic renumbering that loses the original.
 
 Choose one opening basis per year: full retained prior history linked to an approved prior close, or an explicitly reviewed migration OpeningSet. A reduced-history midyear migration records the unavailable detail and required comparative limitations. Importing movements and an opening that represents those same movements is refused. Preserve previous filings, period locks, unpaid items, schedules and existing matches when supplied.

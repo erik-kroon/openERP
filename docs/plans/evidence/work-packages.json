@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-30T14:16:13.564862+00:00",
-  "headObservedAtValidation": "a2e4883cb7f56d1d58a419f04f355bd46aa1c939",
+  "generatedAt": "2026-09-30T15:27:29.338943+00:00",
+  "headObservedAtValidation": "ab40383da2c837a376e5a4f370fca3ec710b9d36",
   "authority": "Derived from domain packet tables and the conditional-gate table; not an implementation/proof status report.",
   "packetCount": 53,
   "packets": [
@@ -214,7 +214,7 @@
       "id": "IMP-01",
       "owner": "Source intake, matching and reconciliation",
       "source": "docs/plans/03-imports-matching-reconciliation.md",
-      "sourceLine": 101,
+      "sourceLine": 107,
       "deliverable": "Content/occurrence split, source inventory and immutable parsing/diagnostics.",
       "dependsOn": [
         "FND-03",
@@ -231,7 +231,7 @@
       "id": "IMP-02",
       "owner": "Source intake, matching and reconciliation",
       "source": "docs/plans/03-imports-matching-reconciliation.md",
-      "sourceLine": 102,
+      "sourceLine": 108,
       "deliverable": "Actual-source profile, loss-preserving SIE/provider mapping and reviewed import plan.",
       "dependsOn": [
         "IMP-01"
@@ -247,7 +247,7 @@
       "id": "IMP-03",
       "owner": "Source intake, matching and reconciliation",
       "source": "docs/plans/03-imports-matching-reconciliation.md",
-      "sourceLine": 103,
+      "sourceLine": 109,
       "deliverable": "Bounded durable chunk admission, lease fencing, receipts, pause/resume and compensation.",
       "dependsOn": [
         "IMP-02",
@@ -266,7 +266,7 @@
       "id": "IMP-04",
       "owner": "Source intake, matching and reconciliation",
       "source": "docs/plans/03-imports-matching-reconciliation.md",
-      "sourceLine": 104,
+      "sourceLine": 110,
       "deliverable": "Reviewed many-to-many bank capacity, unmatch reversal and ambiguity UI over current draft.",
       "dependsOn": [
         "IMP-01",
@@ -283,7 +283,7 @@
       "id": "IMP-05",
       "owner": "Source intake, matching and reconciliation",
       "source": "docs/plans/03-imports-matching-reconciliation.md",
-      "sourceLine": 105,
+      "sourceLine": 111,
       "deliverable": "Inventory-bound reconciliation, independent controls and stale signoff behavior.",
       "dependsOn": [
         "IMP-03",
@@ -300,7 +300,7 @@
       "id": "IMP-06",
       "owner": "Source intake, matching and reconciliation",
       "source": "docs/plans/03-imports-matching-reconciliation.md",
-      "sourceLine": 106,
+      "sourceLine": 112,
       "deliverable": "Actual-company historical/opening comparison and retained match/filing handoff.",
       "dependsOn": [
         "IMP-05",

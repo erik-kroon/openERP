@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-30T14:16:13.564862+00:00",
-  "headObservedAtValidation": "a2e4883cb7f56d1d58a419f04f355bd46aa1c939",
+  "checkedAt": "2026-09-30T15:27:29.338943+00:00",
+  "headObservedAtValidation": "ab40383da2c837a376e5a4f370fca3ec710b9d36",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,7 +9,7 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 908,
+    "localLinksAndAnchorsChecked": 911,
     "documentsChecked": 46,
     "coverage": {
       "R": [
@@ -138,7 +138,7 @@
     },
     {
       "path": "docs/plans/03-imports-matching-reconciliation.md",
-      "sha256": "7f09956fb8ad5f839601240b53bb5bca516bd28b91db678f22a000bb19215f67"
+      "sha256": "9b04befb3db82b7d01725a3732d4a2c4397e843f6196e6dd8b2df51a071c8e24"
     },
     {
       "path": "docs/plans/04-invoices-payments-registers.md",
@@ -178,7 +178,7 @@
     },
     {
       "path": "docs/plans/13-reference-derived-defects.md",
-      "sha256": "209805ae2fc7035e1fdedf63e13dd146c8dba9dbbb2bc6fa4d5147ffa52a4fd8"
+      "sha256": "21b8dafd139cdac0ef8afff8f98d61166e2a2ff1f67621f4ca1e45bc9dc1452c"
     },
     {
       "path": "docs/plans/14-parity-ledger.md",
@@ -246,7 +246,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "c84902772cde916b8022788154f16bcd1a7d1f51a10f6cae092b6b845c6bfc49"
+      "sha256": "98b47d63d5ec158ba4ade0c17bb782424ada2142595bededa1afe80a01596c9d"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -278,7 +278,7 @@
     },
     {
       "path": "docs/roadmap.md",
-      "sha256": "597482239b1b21fce3d7412a589c281b490895fe9134d79ebc5f9ec1d85e9f5b"
+      "sha256": "9ac58486eaa5e78a7c17aa5f16b71c82cffe7c64ab0e5d5c50b9cfadd1ba4f99"
     },
     {
       "path": "docs/verification.md",
