@@ -324,6 +324,8 @@ Reported gaps, recorded rather than smoothed over:
 
 ### NEXT-15 — Legal customer credit notes
 
+The original delivery report below predates the released credit-document owner. Its renderer and relay omission is superseded by [credit-document delivery](../../apps/api/docs/CREDIT-DOCUMENTS.md), now using the [verified pdfcn presentation](pdfcn-adoption.md).
+
 A legal customer credit note is its own document identity, number series and
 journal group: original-line credit capacity, receivable reduction, signed
 negative tax effects and the reviewed artifact.
