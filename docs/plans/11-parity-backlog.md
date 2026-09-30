@@ -1,6 +1,11 @@
 # Reference parity backlog and preserved rule logic
 
-Status: **planned scope, high level**. Prepared from a folder-level comparison of the `accounted` reference implementation against this repository. The comparison is a planning input, not a verification of either repository: a surface existing in the reference does not establish correctness, and a surface missing here is only assigned once the live code was checked. This document adds no implementation, test or proof claim and activates no rule, rate, provider or legal profile.
+Status: **planned scope with explicit implementation additions**. Prepared from
+a folder-level comparison of the `accounted` reference implementation against
+this repository. The comparison is a planning input, not current verification:
+reference presence does not establish correctness, and historical absence claims
+must be reconciled against the live code. Later implemented rows link their scoped
+proof; none of those observations activates a provider or legal accounting profile.
 
 Owner: cross-area integrator, with the per-area owner named by each packet. Phase: sequenced after the seven-area [delivery plan](README.md) baseline; the packets here are **supplemental** and are not added to the 53-packet accounting index.
 
@@ -75,7 +80,7 @@ Reference folder → disposition. "Owned" names the requirement that already car
 | `providers/` | **Entirely unowned.** No reference provider, and no cross-cutting provider infrastructure, is named anywhere in this repository → [PRY-01](#external-systems-identity-and-provider-authority) to [PRY-05](#external-systems-identity-and-provider-authority). |
 | `skatteverket/` | Tax-account matching and controls are owned. **The connection is unowned** → [PRY-06](#external-systems-identity-and-provider-authority); file import → [PRY-07](#external-systems-identity-and-provider-authority). |
 | `currency/` | Money and scale modelling are owned and ahead of the reference. **The rate source and rate-date policy are unowned** → [PRY-10](#external-systems-identity-and-provider-authority), [PRY-20](#swedish-identifiers-and-payment-primitives), [PRY-54](#commerce-and-open-item-registers), [PRY-85](#deadlines-calendar-and-currency-reporting). |
-| `bankgiro/` | **Entirely unowned**, and the cheapest high-value item here → [PRY-16](#swedish-identifiers-and-payment-primitives) to [PRY-18](#swedish-identifiers-and-payment-primitives), [PRY-24](#source-intake-and-migration) (`R19`). |
+| `bankgiro/` | PRY-16 primitives are wired and locally verified; clearing checks and domestic payment files remain with [PRY-17/18](#swedish-identifiers-and-payment-primitives), and mapping suggestions with [PRY-24](#source-intake-and-migration) (`R19`). |
 | `deadlines/` | Obligation identity, outcome history and revocable feed are owned. **Escalation, regeneration and date derivation are unowned** → [PRY-83](#deadlines-calendar-and-currency-reporting), [PRY-82](#deadlines-calendar-and-currency-reporting). |
 | `calendar/` | Feed is owned and more conformant than the reference. **Gaps are unowned** → [PRY-84](#deadlines-calendar-and-currency-reporting). |
 | `bokslut/` | Technical closing is owned; financial year-end is not. **The whole folder is unowned** → [PRY-86](#financial-year-end-and-statutory-output) to [PRY-98](#financial-year-end-and-statutory-output). |
@@ -121,6 +126,12 @@ Pure, dependency-free, high leverage. These gate payment files, tax-account sett
 | PRY-18 | Domestic payment file: recipient validation that refuses by name rather than truncating when a field width cannot hold the account, the record layout and character set, and the separation between "instruction exported" and "accepted by the bank". | FND, COM | PRY-16, PRY-17 | B, `R24` |
 | PRY-19 | Personnummer lifecycle: format validation including coordination numbers and the century/date offset, birth-date derivation where an age-dependent rule needs it, encryption at rest with a masked display form, and the twelve-digit *redovisare* reduction shared by every declaration and payment that identifies a taxpayer. | FND | PRY-16 | A, `R3` |
 | PRY-20 | Currency registry and contract-layer typing: a validated currency reference with name, ordering and active flag, foreign keys from money-bearing records, and replacement of bare string currency fields in contracts with the domain currency types that already exist. Adding or deactivating a currency becomes data, not a migration. | FND | — | A |
+
+**PRY-16 implemented and observed 2026-09-30.** The shared domain implementation is
+composed by the purchases payment-identifier owner, with scoped REST, read-only
+MCP and real supplier-workspace controls. [The delivery record](evidence/pry-16-payment-identifiers.md)
+names independent vectors, string-preserving refusals, maximum lengths, browser
+observations and the remaining account-verification/payment-file boundaries.
 
 ## Source intake and migration
 
@@ -390,6 +401,9 @@ The following logic was read in the reference and is worth keeping. Each entry s
 ### R1 — Check digits, giro numbers and OCR references
 
 Class **A**. Port as one implementation. Weight alternates 2, 1 from the rightmost digit; a doubled product above 9 has 9 subtracted; the check digit is `(10 - sum mod 10) mod 10`.
+
+R1 is now implemented by [PRY-16](evidence/pry-16-payment-identifiers.md); the
+pseudocode below remains its design input, not the implementation's expected-value oracle.
 
 ```text
 function checkDigit(digits):

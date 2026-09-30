@@ -8,6 +8,12 @@ The [Document Intelligence first journey](plans/document-intelligence-delivery.m
 
 ## Current checkout
 
+[PRY-16 payment identifiers](plans/evidence/pry-16-payment-identifiers.md) is wired
+through the supplier-payment workspace and shared REST/MCP. Giro/OCR checks and
+explicit OCR candidates preserve source identifiers without verifying payees or
+authorizing payments. Twenty-two focused E2E cases pass, including both DF-05 SIE
+suites; this does not establish company or provider readiness.
+
 [DF-05 SIE account-code consistency](plans/evidence/df-05-sie-account-codes.md)
 has real movement-export-to-retained-staging proof for one-, five- and eight-digit
 codes and preserved zero prefixes. Fourteen focused E2E cases pass; financial

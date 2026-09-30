@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-30T15:27:29.338943+00:00",
-  "headObservedAtValidation": "ab40383da2c837a376e5a4f370fca3ec710b9d36",
+  "checkedAt": "2026-09-30T17:02:12.696177+00:00",
+  "headObservedAtValidation": "442ca123312d3ab350f3d34dbc382215e05bdd83",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,7 +9,7 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 911,
+    "localLinksAndAnchorsChecked": 913,
     "documentsChecked": 46,
     "coverage": {
       "R": [
@@ -170,7 +170,7 @@
     },
     {
       "path": "docs/plans/11-parity-backlog.md",
-      "sha256": "40fa6483d043063a5d1cf06e46b13e0be6c6346888b510606e2b3b0e55609a1a"
+      "sha256": "242c371b7f0e8dfd7c5346a9d8476591df27de5decc1ef9f1923f3079216f4a4"
     },
     {
       "path": "docs/plans/12-next-implementation-dossier.md",
@@ -246,7 +246,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "98b47d63d5ec158ba4ade0c17bb782424ada2142595bededa1afe80a01596c9d"
+      "sha256": "86240b5725d85c3dcdb88b5c96a473c668f38f309400541533dbabe8971bd088"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -278,7 +278,7 @@
     },
     {
       "path": "docs/roadmap.md",
-      "sha256": "9ac58486eaa5e78a7c17aa5f16b71c82cffe7c64ab0e5d5c50b9cfadd1ba4f99"
+      "sha256": "be47100801f892f9d573ba103b7fccb6b0e697ce19e91b65ec253f73443b2cb1"
     },
     {
       "path": "docs/verification.md",
