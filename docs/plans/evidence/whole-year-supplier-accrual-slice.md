@@ -4,6 +4,12 @@ Implemented owner: `apps/api/src/application/purchases/supplier-settlements.ts`.
 
 ## Observed proof — 2026-10-01
 
+Current consolidated supplier proof: **20 passed, zero failed/skipped** at
+`test-results/supplier-packet8-current-20261001`, including later-open-period
+recovery, report concurrency and migration0055 receipt bindings. The full
+changed-file gate and integration declaration check pass. This does not release
+the unimplemented wider families or establish actual-company qualification.
+
 Earlier bounded supplier verification is **16/16, zero failed/skipped** at
 `test-results/supplier-qualified-accrual-20261001`, after the discovery,
 cancellation impact/revocation/history, qualification and authority changes below.
@@ -52,6 +58,20 @@ Five disposable rejecting-trigger boundaries exercise settlement match, allocati
 The takeover fixed native reversal defects uncovered on this real path: missing bank-plan command receipt, wrong array projection of released match legs, and nonexistent allocation-reversal execution/approval columns. Cancellation now admits only the invoice state produced by its exact settlement; a later invoice revision refuses before inverse preparation. Its red observation is retained in `-r4`.
 
 ## Remaining obligations and blocker
+
+### Exact receipt relational integrity
+
+Migration `0055-supplier-settlement-receipt-bindings.sql` adds composite receipt
+foreign keys tying the approval to the exact plan, and the plan to the exact
+payable/statement/row. Existing scoped keys remain; no grants or workflow logic
+move into PostgreSQL. The new E2E failed before the migration at the missing
+approval/plan constraint (`supplier-receipt-relations-red-20261001`) and passed
+one selected case after it (`supplier-receipt-relations-green-20261001`). It
+inspects both installed composite constraints and observes three foreign-book
+receipt insert refusals with SQLSTATE `23503`, rolling back each isolated probe.
+Financial snapshots remain unchanged. These are cross-book insert probes, not
+independent executions of each same-book mismatch; exact same-book relationships
+are enforced by the installed composite constraints. Full changed gate passed.
 
 ### Later-open-period cancellation
 
