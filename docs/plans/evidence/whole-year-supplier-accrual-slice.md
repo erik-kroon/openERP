@@ -37,6 +37,37 @@ The takeover fixed native reversal defects uncovered on this real path: missing 
 
 ## Remaining obligations and blocker
 
+### Retained report cancellation fence
+
+Cancellation basis validation now refuses `StaleDependency` when a retained
+report snapshot in the admitted book covers the settlement date. The shared
+basis check runs during preparation and later cancellation revalidation; this
+bounded owner does not adopt the generic correction owner's nonblocking report
+policy. No report is rewritten or deleted.
+
+The cancellation plan now retains the correction owner's actual impact-resource
+list and compares it again at approval/execution. Retained closing certificates
+also refuse, and an over-limit impact list fails closed. Historical plans without
+this witness remain readable but require fresh preparation before execution.
+Focused verification at `test-results/supplier-impact-witness-20261001` passed
+three selected cases, including a report created after cancellation approval.
+
+Operator REST now exposes cancellation approval revocation at
+`/purchases/supplier-settlement-cancellation-approvals/:id/revoke`. Migration
+`0054-supplier-cancellation-revocations.sql` adds scoped append-only records with
+only runtime SELECT/INSERT grants. Revocation shares the book lock with execution;
+committed exact replay still returns its original result. No MCP approval or
+revocation tool was added. Focused verification at
+`test-results/supplier-cancellation-revoke-20261001` passed one selected journey:
+revoke, refuse execution without effects, independently approve again, cancel once.
+
+Focused ordinary-owner verification passed **1 selected test** (8 unselected)
+at `test-results/supplier-report-fence-20261001`: settle, retain a trial balance
+through `/report-snapshots`, refuse cancellation, and compare independent
+financial snapshots. `supplier-report-consumption.json` retains those snapshots.
+Both changed-file gates passed. This is not proof of report/cancellation races
+or whole-packet completion.
+
 ### Scoped discovery and cancellation recovery
 
 The owner now exposes `GET /purchases/supplier-settlements?after=ID` and
