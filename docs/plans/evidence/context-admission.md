@@ -20,11 +20,35 @@ Worker, starts a replacement against retained PostgreSQL, and resumes at50 with
 the final record. JSON journey artifacts, runtime/migration manifest and stable
 source inventory are retained. The full changed-file gate passes.
 
-Packet6 remains open: current adapter coverage does not establish all unresolved
-application owners; supported-empty/unsupported/unknown registry and owner-backed
-delta delivery still need acceptance. Capture construction and fresh checks retain
-the existing full internal traversal; only continuation responses are item-bounded.
-This proof does not claim bounded capture memory or whole-company completeness.
+### Packet6 acceptance — existing context-owner continuation
+
+The original packet6 condition (extend the existing50-item context owner with safe
+continuation, durable progress, fresh-state checks and restart discovery) is verified
+for all three existing adapters: journal proposals, invoice drafts and expense reviews.
+It is not acceptance of every proposed NEXT-50 adapter or whole-company completeness.
+
+`test-results/context-continuation-acceptance-20261001` passes16/16 cases with zero
+skips/failures on stable source inventory
+`08eeeb7f6c7b49db593d3718c41c8cf240b5242418bd137d4fc6b1b3c10c09fb`.
+Supported-empty adapter summaries are explicit. Other registered capability
+namespaces report unavailable context coverage; payroll is withheld from this
+general context, not queried through ordinary book authority. Counts from unavailable
+namespaces must not be interpreted as zero unresolved work.
+
+REST/MCP delta pages compare at most50 union identities at a time. The target must
+still be current; incompatible goal/period scopes and stale targets refuse.
+Resolution comes from the existing workspace owner's retained completion query
+(native execution receipts, invoice issues, digest-bound expense reviews), never
+absence. Unsupported resolution remains unknown. Concurrent distinct progress
+commands produce one success and one stale refusal; committed membership revocation
+denies both historical pages and deltas. New response fields retain source-bound
+historical captures, not new accounting authority.
+
+Capture construction and fresh checks retain the existing full internal traversal;
+only continuation and delta responses are item-bounded. This proof does not claim
+bounded capture memory, payroll admission, new cross-domain adapters, UI integration
+or measured model-performance improvement. These wider NEXT-50 extensions remain
+separate work, not silently counted as delivered by packet6.
 
 ## Packet 6 continuation update — 2026-10-01
 
