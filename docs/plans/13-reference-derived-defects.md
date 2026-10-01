@@ -228,15 +228,28 @@ One discipline worth recording alongside it: an **infrastructure** failure must 
 
 ---
 
-## DF-11 — No voucher-date-inside-its-period guarantee
+## DF-11 — Voucher dates remain inside their accounting periods — fixed
 
-**Severity: medium-high.** Class A. Both products miss it; we can do it cleanly.
+**Severity: medium-high.** Class A. **Implemented and observed 2026-10-01.**
 
-**Evidence.** `openerp.vouchers` carries `posting_date` and a foreign key to its period, and the two are never reconciled. The reference only checks it inside function bodies, repeated in roughly twenty later migrations.
+**Reproduced.** Synthetic write faults through the real HTTP posting owner committed
+vouchers dated before and after their referenced period. The baseline foreign key
+establishes period identity, not date containment.
 
-**Consequence.** A voucher can be dated outside the period it belongs to. The roll-forward arithmetic and every continuity check read the date, so this silently misstates opening balances and makes a year look continuous when it is not.
+**Repair.** Forward `0044-voucher-period-date.sql` checks the final inserted voucher
+against the book/year/period bounds and refuses period-boundary edits that would
+strand retained vouchers. It locks the book and referenced period, admits both
+endpoints, and fails migration preflight on inconsistent existing history rather
+than rewriting it. Financial workflow and approval remain application-owned.
 
-**Fix.** A guard on the voucher path that the date lies inside the referenced period, using the same overlap test and the same book lock that `check_calendar` already uses. A date-range overlap test is a few lines.
+**Observed acceptance.** [The repair record](evidence/df-11-voucher-period-date.md)
+records authentic `InvalidJournal` HTTP refusals, complete financial rollback,
+original-key recovery, endpoint admission and retained-date protection. Seven
+focused E2E tests pass, including DF-01 completeness regression coverage.
+
+**Boundary.** No new UI or transport owner is needed: all posting consumers reach
+the guarded voucher table and existing shared refusal mapping. This is synthetic
+local integrity proof, not company readiness or a period-reopening policy.
 
 ---
 

@@ -8,6 +8,12 @@ The [Document Intelligence first journey](plans/document-intelligence-delivery.m
 
 ## Current checkout
 
+[DF-11 voucher-period dates](plans/evidence/df-11-voucher-period-date.md) now
+refuses out-of-period voucher writes and period edits that would strand retained
+dates. Real HTTP rollback and original-key recovery plus inclusive endpoint checks
+pass with DF-01 regression coverage; the reviewed baseline is unchanged.
+The integrated local suite passes 200 tests across 53 files at this revision.
+
 [DF-02 acquisition qualification](plans/evidence/df-02-occurrence-multiplicity.md)
 verifies that identical inline originals retain distinct supplier occurrences,
 with retry convergence and REST/MCP discovery parity. Existing content sharing
