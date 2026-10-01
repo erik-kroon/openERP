@@ -1,6 +1,6 @@
 # Whole-year packet 8: bounded synthetic accrual slice
 
-Implemented owner: `apps/api/src/application/purchases/supplier-settlements.ts`. This extends the previously integrated pending-review slice with real HTTP/MCP execution, joined native posting/match/allocation receipts and atomic latest same-open-period cancellation. It is **not complete packet 8** and does not activate a real-company rule.
+Implemented owner: `apps/api/src/application/purchases/supplier-settlements.ts`. This extends the previously integrated pending-review slice with real HTTP/MCP execution, joined native posting/match/allocation receipts and atomic latest cancellation in the original or a selected later open period. It is **not complete packet 8** and does not activate a real-company rule.
 
 ## Observed proof — 2026-10-01
 
@@ -52,6 +52,40 @@ Five disposable rejecting-trigger boundaries exercise settlement match, allocati
 The takeover fixed native reversal defects uncovered on this real path: missing bank-plan command receipt, wrong array projection of released match legs, and nonexistent allocation-reversal execution/approval columns. Cancellation now admits only the invoice state produced by its exact settlement; a later invoice revision refuses before inverse preparation. Its red observation is retained in `-r4`.
 
 ## Remaining obligations and blocker
+
+### Later-open-period cancellation
+
+Cancellation preparation now accepts optional `correction` with
+`accountingPeriodId` and `postingDate`, matching the native correction owner's
+selection fields. Omitting it preserves the original date/period. Amounts,
+accounts, source claims and native child identities remain owner-derived.
+Both original and selected periods must remain open; the selected date must lie
+in its period and cannot precede the settlement. Native allocation/match period
+guards are unchanged. This does **not** release correction from a closed period.
+
+The parent retains a separately qualified correction-date profile witness and
+the union of original-date and correction-date impact resources. Approval and
+execution revalidate both dated witnesses and the native correction dependencies.
+Earlier same-date plans remain readable and use their original profile witness
+when no separate correction witness was retained. Reports covering either date
+and retained closing certificates still refuse; the permanent source claim remains.
+
+Focused verification passed **4 selected tests, 14 unselected** at
+`test-results/supplier-cross-period-qualified-20261001`: normal same-period
+settlement/cancellation, both existing report-consumption refusals, and a new
+September-to-October correction. Its independent period oracle is September bank
+`-4000`/payable `6000`, October bank `4000`/payable `4000`, total bank `0`/payable
+`10000`, expense unchanged `10000`, three vouchers/six lines. It also proves locked
+original/target refusal, invalid target-date refusal, exact committed replay and
+one retained source claim. `supplier-cross-period-cancellation.json` retains
+period balances and joined receipts. Full changed-file gate passed. No schema
+migration, dependency change, provider action or real-company activation occurred.
+
+Original and selected period locks are acquired once each in sorted ID order.
+After this ordering change, two selected cases passed at
+`test-results/supplier-cross-period-lock-order-20261001` (16 unselected): the
+existing same-period journey and the later-open-period journey. This verifies
+behavior after the ordering change, not a concurrent deadlock proof.
 
 ### Retained report cancellation fence
 
@@ -193,6 +227,6 @@ Full changed-file gate passed. This follow-up does not repeat or extend the earl
 21-test regression claim. The subsequent API README edit only corrects the stale
 missing-owner description; it changes no executable source.
 
-The bounded synthetic transaction works. The blocker to **whole packet acceptance** is incomplete qualification and coverage, not credentials or an outside reviewer: wider transaction populations and correction paths remain unsupported. Real-company activation still requires evidenced accrual/VAT methods and dated applicable rules (D-04/D-08). Cash, FX/fees, provider payment instructions, replacement/reassignment and cross-period/later-consumed correction are not released by this slice.
+The bounded synthetic transaction works. The blocker to **whole packet acceptance** is incomplete qualification and coverage, not credentials or an outside reviewer: wider transaction populations and correction paths remain unsupported. Real-company activation still requires evidenced accrual/VAT methods and dated applicable rules (D-04/D-08). Cash, FX/fees, provider payment instructions, replacement/reassignment, closed-period and later-consumed correction are not released. Later-open-period cancellation is supported under the bounds above.
 
 Remaining first-unit qualification includes exhaustive child-expiry/native-approval relation and cross-book relational constraint vectors, cancellation/revocation commit-order races beyond the observed reviewer-disable ordering, and wider retained assessment/close consumption. The implemented and verified discovery, cancellation reads, generic source fences, account/source/writer changes, method supersession and reviewer prebook ordering are no longer missing. No UI, whole-year journey, complete backup/restore or first-pass freeze/comparison proof is claimed. Packet 1 remains verified only at its recorded `375bea6` source.
