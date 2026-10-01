@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-01T08:58:37.824353+00:00",
-  "headObservedAtValidation": "13088719ad98f6bf6332268194587d3fbd34610c",
+  "checkedAt": "2026-10-01T09:03:38.581175+00:00",
+  "headObservedAtValidation": "88b49d04f5fc58b1f4e72282f44c23a8f8badc53",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,7 +9,7 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 925,
+    "localLinksAndAnchorsChecked": 926,
     "documentsChecked": 46,
     "coverage": {
       "R": [
@@ -178,7 +178,7 @@
     },
     {
       "path": "docs/plans/13-reference-derived-defects.md",
-      "sha256": "71cd949584d151ea2c83c4cfb1f8be2d6717fe11c53bf572db599dd664390c58"
+      "sha256": "08ff4abc074a8092479bc849608460a3575549b7a0469bc1673f399523925565"
     },
     {
       "path": "docs/plans/14-parity-ledger.md",
@@ -246,7 +246,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "9d0acc2d5f7f69fea9860eb410c1f18bea70f45f3888382b4317e3489ded496e"
+      "sha256": "9c3a6a04a523d38df5700bd960076424a8c4a97660e090b117b76d0fe5e6a9dd"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",

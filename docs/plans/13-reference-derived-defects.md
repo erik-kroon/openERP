@@ -216,6 +216,12 @@ Related and worth stating in the same change: `invoice_cancellations` carries `U
 
 ## DF-10 — Failures carry no machine code at the boundary and no retry class anywhere
 
+**DF-10A delivered 2026-10-01.** [Outer boundary codes](evidence/df-10-boundary-codes.md)
+now preserve tagged accounting errors and expose stable body-refusal codes with
+pre-routing recovery semantics. Five real Worker boundary/diagnostics E2E cases
+pass. The domain-wide recovery taxonomy and remedy-code split below remain open;
+this row is not marked fully repaired.
+
 **Severity: high.** Class A.
 
 **Evidence.** `apps/api/src/index.ts:167-182` (`boundaryResponse`) emits `{ message }` with no `code` for any failure raised outside a declared error channel. `packages/contracts/src/accounting-errors.ts` has thirteen codes mapped to seven statuses. `PeriodLocked` and `StaleDependency` are both 409; `InvalidJournal` and `UnsupportedProfile` are both 422. There is no retryable/permanent bit in the domain, the contract, or the transport.
