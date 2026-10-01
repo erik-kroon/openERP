@@ -58,6 +58,15 @@ records. All refusals retained the prior independent financial fingerprint.
 This is later source than the 16/16 claim above and does not extend that whole-run
 claim; its full changed-file gate passed.
 
+Native cancellation approval preflight now also compares each retained child
+digest, checks native revocations and posting consumption before any reversal.
+`test-results/supplier-native-approval-preflight-20261001` passed two selected
+cases: normal cancellation and one refusal journey covering maker impersonation,
+past/malformed parent expiry, an independently inserted wrong native match digest,
+and ordinary operator revocation of the exact native match approval. Its artifact
+retains the actual revocation plus independent financial snapshots. No new
+database grants or migration were needed for these plain scoped reads.
+
 Sealed settlement currentness now treats lost accounting-profile qualification
 as a stale dependency, rather than presenting an already approved plan as a new
 unsupported request. New preparation retains `UnsupportedProfile`; locked-period
