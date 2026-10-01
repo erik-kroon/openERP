@@ -219,17 +219,30 @@ reopening and statutory readiness remain separate qualification gates.
 
 ---
 
-## DF-09 — No aggregate cap on credits against one invoice
+## DF-09 — Retained supplier credits respect original capacity — fixed
 
 **Severity: high.** Class A. Named explicitly in ADR 0010 as a database responsibility ("aggregate integrity").
 
+**Implemented and observed 2026-10-01.** Forward `0047-supplier-credit-cap.sql`
+locks the book and original supplier invoice before checking all retained credit
+amounts. It admits partial credits through the exact original cap and refuses
+existing excess during migration preflight. [The delivery record](evidence/df-09-supplier-credit-cap.md)
+corrects the earlier public-workflow claim: the application already checks capacity;
+the injected final-write overflow previously caused a later schema failure and
+rollback, not demonstrated successful over-credit. It now refuses `InvalidJournal`
+at the retained integrity boundary. Eleven E2E cases cover exact capacity,
+rollback/recovery, competing credits and related supplier/persistence regressions.
+
 **Evidence.** `apps/api/migrations/0001-schema.sql:2963` gives `supplier_credits` only `CHECK (amount_minor > 0)`. Nothing relates the **sum** of credits referencing one invoice to that invoice's amount.
 
-**Consequence.** A supplier invoice can be credited a hundred times for its full amount and the database is silent. Partial credit is legally permitted, so a naive total cap is wrong too — the invariant is that the sum may not exceed the original.
+**Invariant.** The sum of all retained supplier credits must not exceed the
+original gross amount; equality and partial credits are valid.
 
-**Fix.** Take the lock on the original row **before** summing, because under read-committed two concurrent credits would each read the pre-insert sum. Two supporting rules from the same comparison, both worth keeping: a null status counts as **live**, never as cancelled, because that is the direction to fail in; and the refusal message must not carry the original's figures, because it can then be read by a caller who should not see them.
+**Boundary.** No nullable status excludes retained credits, and refusal messages
+do not expose original figures. Financial policy and approval remain application-owned.
 
-Related and worth stating in the same change: `invoice_cancellations` carries `UNIQUE (book_id, register_invoice_id)`, a hard one-to-one cap. That is defensible for a **full** cancellation and wrong for a **partial** credit. Confirm which the record is meant to be and record the answer in the domain document.
+The separate `invoice_cancellations` owner reverses the full original amount;
+its one-to-one constraint is not the partial supplier-credit model and is unchanged.
 
 ---
 

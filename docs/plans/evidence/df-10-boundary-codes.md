@@ -31,9 +31,10 @@ failures. `test-results/e2e/df-10-boundary-failures.json` retains the responses.
 The timeout code follows the existing 15-second timeout branch; a timed-stream
 runtime test is not claimed here.
 
-The changed-file gate passed types for the implementation and test; the overall
-full gate initially failed on spacing in a separately owned concurrent DF-08
-test. That work was not altered to obtain a green result.
+The full changed-file gate subsequently passed against base `88b49d0`, including
+the committed implementation and test. Its first attempt was blocked by spacing
+in a separately owned concurrent DF-08 test; that work was not altered to obtain
+a green result.
 
 ```sh
 bun run check:changed:full
