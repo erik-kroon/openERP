@@ -8,6 +8,11 @@ The [Document Intelligence first journey](plans/document-intelligence-delivery.m
 
 ## Current checkout
 
+[DF-07 server business date](plans/evidence/df-07-server-business-date.md) adds
+Stockholm `today` to the existing setup owner and wires the shared frontend query
+and current-date defaults to it. Nine focused E2E cases cover REST/MCP, injected
+server-clock boundaries, browser clock skew, bank filters and company admission.
+
 [DF-08 locked-period integrity](plans/evidence/df-08-period-lock-integrity.md)
 guards voucher writes and invoice recognition anchors while retaining approved
 close/reopen and committed receipt recovery. Twenty-six focused E2E cases pass;

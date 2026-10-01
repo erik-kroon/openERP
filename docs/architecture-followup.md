@@ -39,7 +39,7 @@ the existing owners:
 | F02: extraction executor authority | Service-intent requests survive requester-session expiry. Current executor API credential, identity and entity/book membership are required at capture, publication and terminal settlement. Cancellation and supersession remain independent fences. Dispatch filters the executor's books. |
 | F03: duplicate cursors | Named context/kind/id/revision fields, validated kind/revision combinations and retained scoped anchor checks. Both draft and registered continuations are exercised by the E2E journey. |
 | F04: retained-history ceiling | Creation has no lifetime draft quota. HTTP/MCP/UI use live 200-head keyset pages, with bounded search input. The list's count is page-local, next continues it, and complete is true only when the initial page contains the whole matching collection. History is preserved. |
-| F05: Swedish business date | One Europe/Stockholm instant conversion feeds backend admission and frontend dates. Overview and status queries change across midnight; focus and visibility changes refresh suspended pages. |
+| F05: Swedish business date | One Europe/Stockholm instant conversion feeds backend admission and the Effect-clock `BookSetup.today` read. Frontend defaults use that server basis; the shared setup query refreshes every minute while active and on focus. Explicit business dates and UTC plain-date arithmetic remain distinct. [DF-07 evidence](plans/evidence/df-07-server-business-date.md) qualifies clock-skew, server boundary and UI behavior. |
 
 Draft summaries take decoded revision contracts. Unknown calculated tax/gross
 amounts stay null, while zero stays the exact string `"0"`. The full supplier

@@ -171,20 +171,33 @@ establish actual-company or external-recipient acceptance.
 
 ---
 
-## DF-07 — There is no Swedish business date anywhere
+## DF-07 — Server Stockholm business date drives current-date defaults — fixed
 
 **Severity: high.** Class A.
 
-**Evidence.** `grep "Europe/Stockholm"` across `apps`, `packages`, `jurisdictions` and `infra` returns **one** hit, which is not a business-date computation. `apps/web/src/lib/company-work.ts:12` computes the current period as:
+**Implemented and observed 2026-10-01.** The current checkout already had a shared
+Stockholm conversion and some frontend consumers. The remaining defect was clock
+ownership: a browser with a January clock requested January overview data while
+the server's date was October. Bank defaults and company admission also retained
+UTC or last-period defaults, and setup supplied no authoritative business date.
 
-```ts
-const today = new Date().toISOString().slice(0, 10);
-const period = setup.periods.find((p) => p.startsOn <= today && p.endsOn >= today) ?? setup.periods.at(-1);
-```
+**Repair.** The existing Effect setup owner resolves `DateTime.now` through its
+injectable clock, converts with the shared platform Stockholm formatter and serves
+required `BookSetup.today` through REST and MCP. The shared TanStack setup query
+refreshes every minute while active and on focus. Overview/readiness, bank defaults,
+company admission and cancellation defaults consume that server basis instead of
+deriving another day from the browser. Explicit date filters remain authoritative.
 
-**Consequence.** A Swedish company whose fiscal year contains the 31st, viewed at 00:30 CET on the 1st, is placed in the **previous year** on the company overview, and the default bank-workspace query window is a day out. More seriously, that value anchors the exchange rate for a foreign invoice, so it silently selects **the wrong day's rate** on a deadline.
+**Observed acceptance.** [The repair record](evidence/df-07-server-business-date.md)
+records the failing skewed-clock browser vector, live REST/MCP parity, injected
+server midnight/year, winter/summer and DST vectors with real PostgreSQL, and
+real overview/bank/admission/browser observations. Nine focused E2E cases pass.
 
-**Fix.** Arithmetic on dates stays UTC — adding days and measuring day distance must not move across a daylight-saving boundary. **Today** is the Stockholm calendar day, resolved server-side through an injectable clock so it is testable, and **sent to the client in the setup payload** so a browser in any timezone renders the same day the server scoped the period to. Never ship a timezone library for this: it is one zone and one platform call.
+**Boundary.** Plain-date arithmetic remains UTC; financial operations keep their
+explicit business dates and the database keeps its own authority/expiry clock.
+The setup date is read metadata, not a rewrite of a retained financial record.
+No timezone dependency, public clock-control endpoint, guessed FX rate date or
+company qualification was introduced.
 
 ---
 

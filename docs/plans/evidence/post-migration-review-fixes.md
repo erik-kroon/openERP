@@ -50,6 +50,9 @@ repeatable verification artifacts, not a production retention archive.
 
 The backend uses the same tested instant conversion for book-status admission;
 PostgreSQL's live wall clock was not replaced with the browser's controlled clock.
+The browser-derived current-date basis described above belongs to this historical
+revision. [DF-07](df-07-server-business-date.md) later replaces it with the served
+setup date and verifies that browser clock skew cannot select another business day.
 The extraction race seam uses the real Bun queue handler and a retained-file
 object adapter. It does not certify remote object-store or effect-mq failure modes.
 
