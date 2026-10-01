@@ -4,13 +4,21 @@ Implemented owner: `apps/api/src/application/purchases/supplier-settlements.ts`.
 
 ## Observed proof — 2026-10-01
 
-Latest bounded supplier verification is **16/16, zero failed/skipped** at
+Earlier bounded supplier verification is **16/16, zero failed/skipped** at
 `test-results/supplier-qualified-accrual-20261001`, after the discovery,
 cancellation impact/revocation/history, qualification and authority changes below.
 Full changed-file gate passed. This is the supplier suite only, not a repetition
 or extension of the older selected-regression or whole-workspace claims.
 Unsupported retained provider observations now return `UnsupportedProfile`,
 separately from malformed journals and oversized payable capacity.
+
+After the native cancellation preflight and forward maker-exclusion additions,
+the consolidated supplier suite passed **17/17, zero failed/skipped** at
+`test-results/supplier-accrual-preflight-complete-20261001`. Full changed-file
+gate passed; source/migration inventory is retained by that run. This consolidates
+the focused observations below on one unchanged source, without rerunning the
+workspace baseline or unrelated regression suites. It remains bounded accrual
+proof, not whole packet completion.
 
 From `/Users/admin/.codex/worktrees/cash-period-admission/openERP`:
 
