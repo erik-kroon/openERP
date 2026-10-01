@@ -24,9 +24,9 @@ their older informational field was named ownerClaimMinor.
 
 ## Repeatable proof
 
-`test-results/owner-funding-loan-multirow-acceptance-20261001`:12/12 real PostgreSQL/workerd
+`test-results/owner-funding-posted-history-final-20261001`:12/12 real PostgreSQL/workerd
 E2E cases, no failures/skips, stable source inventory
-`26d23023b62175c3861e59dda2a8b6d4bf8334c0d28860b99430aa63a67f9bc9`.
+`138ec770794e179bd88954f8c0bd7dbc984c488033b8683f3228f63f970c6ff6`.
 Three funding cases cover shareholder loan, conditional contribution and
 unconditional contribution, each with independently retained100000 incoming cash.
 Both contribution cases have0 repayable claim and use reviewed2093 equity; the loan
@@ -51,6 +51,16 @@ bank row ordinals within evidence, not operation-mode labels; bank matches fence
 reused row capacity atomically. The whole-evidence duplicate-recognition fence
 continues unchanged for noncash document owners. Final owner/ledger controls have
 0 unexplained differences,90000 remaining loan or130000 contribution equity.
+
+The follow-up posted-source probe exposed a missing fence at the earlier multi-row
+revision. Current admission also inspects all voucher history referencing the
+original: only prior native funding/repayment receipts with source-linked bank
+matches permit further unused rows. An independently posted50000 cash source
+without that native lineage refuses AlreadyPosted, not a second funding debit.
+This negative fixture intentionally leaves a generic unregistered owner posting;
+the earlier0-difference control is not claimed to cover that later unsupported
+posting. Adoption remains separate work. The failing probe and its forward repair
+are retained; the earlier source inventory does not prove this newer boundary.
 
 ## Remaining packet7 acceptance
 
