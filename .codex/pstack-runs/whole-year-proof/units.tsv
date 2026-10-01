@@ -1,0 +1,23 @@
+id	track	state	branch	pr	sha	brief
+packet-01	baseline	repairing	codex/whole-year-baseline		b72a463beb5246f9cc805fce62106af10d294456	
+packet-02	qualification	pending				
+packet-03	custody	design-ready				
+packet-04	qualification	pending				
+packet-05	workflows	pending				
+packet-06	workflows	pending				
+packet-07	workflows	pending				
+packet-08	workflows	pending				
+packet-09	workflows	pending				
+packet-10	workflows	pending				
+packet-11	workflows	pending				
+packet-12	workflows	pending				
+packet-13	workflows	pending				
+packet-14	workflows	pending				
+packet-15	workflows	pending				
+packet-16	workflows	pending				
+packet-17	year-proof	pending				
+packet-18	year-proof	pending				
+packet-19	year-proof	pending				
+packet-20	year-proof	pending				
+baseline-cash-repair	baseline	verified-local	codex/cash-period-admission		85898f4c2cfbd710826caeed7e96bbe3b7fe0407	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/cash-period-design-review.md
+baseline-runtime-repair	baseline	investigating	codex/effect-runtime-repair			/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/effect-runtime-diagnosis.md

@@ -1,0 +1,7 @@
+{
+  "command": "bun run --filter web build",
+  "exitCode": 0,
+  "revision": "72db7fb",
+  "shellExists": true,
+  "shellSha256": "5ddc46cd78bd2b74c812801910b7a5fe04a432748533d474d6a13c7482387c46"
+}
