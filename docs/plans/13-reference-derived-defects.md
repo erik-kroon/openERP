@@ -18,23 +18,25 @@ Two rows are not defects but **contradictions between our own files**. Those are
 
 ---
 
-## DF-01 — The voucher balance guarantee can be bypassed after commit
+## DF-01 — Voucher balance remains closed after commit — qualified
 
-**Severity: highest.** Class A.
+**Original severity: highest.** Class A. **Qualified 2026-10-01: the claimed
+post-commit hole is not reachable under the composed reviewed constraints.**
 
-**Evidence.** `apps/api/migrations/0002-integrity.sql:660` attaches the balance guarantee to exactly one table:
+**Composition.** The deferred voucher check admits exactly N balanced lines;
+positive bounded ordinals and per-voucher ordinal uniqueness then exhaust every
+permitted slot. Immutable voucher count/identity and journal lines prevent reopening
+that set. The missing second trigger and unused function branch are not, by
+themselves, a missing guarantee. No redundant integrity trigger was added.
 
-```sql
-CREATE CONSTRAINT TRIGGER voucher_expected_line_count_voucher
-  AFTER INSERT ON openerp.vouchers DEFERRABLE INITIALLY DEFERRED
-  FOR EACH ROW EXECUTE FUNCTION openerp.voucher_expected_line_count();
-```
+**Observed acceptance.** [The qualification record](evidence/df-01-voucher-completeness.md)
+contains real late-insert and mutation refusals, deferred missing-line/unbalanced
+commit faults, complete rollback and same-key recovery. The full local suite passes
+195 tests across 51 files.
 
-The function itself is written for two tables — `0002-integrity.sql:406-416` branches on `TG_TABLE_NAME = 'vouchers'` and an `ELSE` that reads `NEW.voucher_id` and looks the expected count up on the parent. **No trigger is ever attached to `openerp.journal_lines`.** That `ELSE` branch is unreachable. `journal_lines` carries only `immutable_line` (`BEFORE DELETE OR UPDATE`) and `journal_ordinal_bound` (`BEFORE INSERT`).
-
-**Consequence.** The commit-time check that ADR 0010 names as the centrepiece of the SQL allowlist runs **once, when the voucher row is inserted**. A voucher whose lines are added in a later committed transaction is never re-checked for line count or for `debit = credit`. The `ordinal` bound is a real mitigation and must be checked against the intended fix rather than assumed sufficient; the point that is certain is that the balance invariant is not re-established, so `immutable_row` on lines turns a *soft* guarantee into a *permanent* one.
-
-**Fix.** Attach the same function to `journal_lines` as a deferred constraint trigger. The `ELSE` branch is already written and is correct. Confirm against `guard_journal_ordinal` whether a gap in the ordinal sequence is reachable, because that determines whether this is defence-in-depth or a live hole, and record which.
+**Actual repair.** Direct commit-time Effect SQL errors now use the same PostgreSQL
+classification as wrapped Drizzle failures, preserving authentic `InvalidJournal`
+instead of misreporting it as `Unavailable`. The reviewed baseline is unchanged.
 
 ---
 

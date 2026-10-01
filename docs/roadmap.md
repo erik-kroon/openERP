@@ -8,6 +8,12 @@ The [Document Intelligence first journey](plans/document-intelligence-delivery.m
 
 ## Current checkout
 
+[DF-01 voucher completeness qualification](plans/evidence/df-01-voucher-completeness.md)
+proves that committed vouchers have no available late-insert slot under the composed
+constraints. A genuine commit-error mapping defect was repaired without adding a
+redundant trigger. The integrated local synthetic suite passes 195 tests across
+51 files; this is revision-scoped engineering proof, not company readiness.
+
 [DF-03 P&L transfer bridge](plans/evidence/df-03-profit-transfer-bridge.md) fixes
 the served report-family catalogue and excludes frozen owned result transfers
 from ordinary mapped amounts while preserving raw ledger drill-down. Real
