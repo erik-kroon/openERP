@@ -87,6 +87,14 @@ After this ordering change, two selected cases passed at
 existing same-period journey and the later-open-period journey. This verifies
 behavior after the ordering change, not a concurrent deadlock proof.
 
+Report creation uses the same update book lock as cancellation. A concurrent
+ordinary REST probe passed one selected case (18 unselected) at
+`test-results/supplier-report-concurrent-20261001`. Its independent allowed
+outcomes are: report first retains two vouchers and cancellation refuses without
+effects; cancellation first retains three vouchers and a report including the
+inverse. The artifact `supplier-report-cancellation-order.json` records the
+observed ordering. This single race does not claim both orderings were exercised.
+
 ### Retained report cancellation fence
 
 Cancellation execution now rechecks actual native approval actors and plan IDs
