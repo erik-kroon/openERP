@@ -22,9 +22,9 @@ supplier/credit/owner/invoice dispatch ports, never posting batch totals itself.
 
 ## Observed proof
 
-`test-results/period-batch-consolidated-20261001` passes5/5 real
+`test-results/period-batch-six-owners-20261001` passes6/6 real
 PostgreSQL/workerd E2E cases, zero skips/failures, stable source inventory
-`8b85f73f8b3f10e13f00f220e0591d6388baf64d1b19094e0498d65f62eb64c5`.
+`cd59f1b0a4eec391943bd7fb0745cc2a0240476b477d2bdac739360ed1a81531`.
 
 Independent sources each assert10000 minor units. The mixed journey invalidates
 one member account after exact approval: one voucher/10000 debit/10000 credit
@@ -41,7 +41,10 @@ replaying the first chunk preserves its original committed count1 even when the
 run has reached count2. A separate real fault refuses child checkpoint publication
 after native posting; original-key retry recovers the owner receipt without another
 voucher. Supplier-credit dispatch applies6000 against a10000 payable, retains one
-credit and leaves4000 outstanding after replay. Wrong approval digest, ordinary-agent approval,
+credit and leaves4000 outstanding after replay. Owner-paid purchase dispatch uses
+an independently authorized reviewer:10000 expense debit and10000 owner-liability
+credit, with no company-cash line. Same-author owner approval correctly refused
+before supplying that independent reviewer. Wrong approval digest, ordinary-agent approval,
 foreign-book result read and incompatible execution replay all refuse.
 
 Artifacts include exact batch/owner/receipt identities, literal expected controls,
@@ -54,6 +57,9 @@ duplicate-source recognition before its independent source bytes were corrected.
 
 This is real qualification of the retained supplier-recognition batch path and its
 shared result lifecycle, not all dispatch families or whole-year acceptance.
-Owner/invoice adapter journeys still need their own acceptance. No financial owner guards were
+The invoice dispatch port has no admitted domain route (`ownerForTarget` does not
+return `commerce.invoice`); adding that route is not established by this batch proof.
+Owner reimbursement/funding and general correction journeys remain separate work.
+No financial owner guards were
 relaxed, no source receipt was rewritten, and no real company/provider operation
 was performed. Five whole packets are not established by this evidence.
