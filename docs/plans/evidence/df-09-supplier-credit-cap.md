@@ -50,3 +50,11 @@ bun run test:e2e apps/api/tests/supplier-credit-cap.e2e.test.ts apps/api/tests/s
 
 Artifacts: `test-results/e2e/df-09-supplier-credit-cap.json`,
 `df-09-credit-race.json`, results, manifest and source-integrity records.
+
+## Broader run limitation
+
+A later full E2E run observed 207 passing assertions across 57 files, but exited
+with failure because nine source inputs changed during execution. That run is
+**not fixed-revision evidence** and is not a passing integration gate. The
+focused observations above remain the delivered proof; the broader run cannot
+replace a stable-source rerun.
