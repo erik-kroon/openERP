@@ -22,9 +22,9 @@ supplier/credit/owner/invoice dispatch ports, never posting batch totals itself.
 
 ## Observed proof
 
-`test-results/period-batch-eight-acceptance-20261001` passes8/8 real
+`test-results/period-batch-nine-acceptance-20261001` passes9/9 real
 PostgreSQL/workerd E2E cases, zero skips/failures, stable source inventory
-`7b9f4d9b8de1ea69c3a70706768318f5db9a65368c04ec83f78beb4c807081cd`.
+`44fa95be5c9e074227ad2e360c39f3a8ae4f9a3b613a7aa0c65ded835f8385ec`.
 
 Independent sources each assert10000 minor units. The mixed journey invalidates
 one member account after exact approval: one voucher/10000 debit/10000 credit
@@ -51,6 +51,17 @@ Two additional journeys revise a retained supplier draft or cancel its manifest
 after exact human approval. Revision refuses the affected member while the other
 independent member commits; cancellation refuses both members with zero vouchers.
 Neither stale selection is silently rewritten or widened.
+
+Concurrent identical execution commands converge to one immutable aggregate result
+and two vouchers for two independent members. Ordinary owner reads link each
+result receipt to its owning review, exact draft identity/digest and review digest.
+The batch's posting-plan identity is not mistaken for its owner-review identity.
+
+Packet15's supplied completion condition is accepted for the released batch path:
+exact human-approved revisions/selections, owned mixed results, stale-authority and
+changed-dependency refusal, and lost-response recovery without duplicated effects.
+This does not imply invoice issuance is admitted to period work or that every
+other packet's correction/funding workflows are qualified.
 
 Artifacts include exact batch/owner/receipt identities, literal expected controls,
 bounded chunk results, reviewer refusal, migration/runtime manifest and unchanged
