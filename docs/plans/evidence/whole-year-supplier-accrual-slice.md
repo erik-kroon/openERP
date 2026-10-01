@@ -37,6 +37,23 @@ The takeover fixed native reversal defects uncovered on this real path: missing 
 
 ## Remaining obligations and blocker
 
+### Follow-up owned-source fence
+
+After the first integration at `517d597`, an additional failure-first probe found
+that generic bank-allocation preparation could still seal a plan over a cancelled,
+permanently claimed observation (HTTP 200). The final writer already refused its
+execution, but preparation must not advertise that capacity. Preparation now
+checks retained claims under the admitted book lock and refuses `ApprovalRequired`.
+The same real journey also verifies generic posting correction, allocation reversal,
+match reversal and cancelled-source direct matching fences.
+
+Red artifact: writer `test-results/takeover-supplier-fences-red-20261001` (one failed,
+six intentionally unselected). Green artifact: writer
+`test-results/takeover-supplier-fences-green-20261001` (**7/7**, none skipped).
+Full changed-file gate passed. This follow-up does not repeat or extend the earlier
+21-test regression claim. The subsequent API README edit only corrects the stale
+missing-owner description; it changes no executable source.
+
 The bounded synthetic transaction works. The blocker to **whole packet acceptance** is incomplete qualification and coverage, not credentials or an outside reviewer: wider transaction populations and correction paths remain unsupported. Real-company activation still requires evidenced accrual/VAT methods and dated applicable rules (D-04/D-08). Cash, FX/fees, provider payment instructions, replacement/reassignment and cross-period/later-consumed correction are not released by this slice.
 
 The larger first-unit design also retains obligations beyond these seven tests: exhaustive changed-rule/account/source and child-approval refusal vectors; explicit lock-order/revocation races; full cross-book relational constraint vectors; generic mutation probes on executed/cancelled children and bank-allocation preparation; complete retained fiscal-impact refusal coverage; paginated owner plan/receipt discovery and cancellation reads. No UI, whole-year journey, complete backup/restore or first-pass freeze/comparison proof is claimed. Packet 1 remains verified only at its recorded `375bea6` source.
