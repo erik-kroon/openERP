@@ -39,6 +39,35 @@ The takeover fixed native reversal defects uncovered on this real path: missing 
 
 ### Retained report cancellation fence
 
+Sealed settlement currentness now treats lost accounting-profile qualification
+as a stale dependency, rather than presenting an already approved plan as a new
+unsupported request. New preparation retains `UnsupportedProfile`; locked-period
+and other error semantics remain unchanged. Cancellation revalidation applies the
+same stale mapping. Focused ordinary company-fact/review verification passed one
+selected case at `test-results/supplier-qualification-change-20261001`: supersede
+confirmed accrual with independently confirmed cash, refuse the old approved plan
+with `StaleDependency`, refuse fresh preparation with `UnsupportedProfile`, retain
+identical independent financial snapshots. This does not release cash settlement.
+
+`test-results/supplier-stale-and-revocation-20261001` passed two selected cases:
+one four-vector matrix observes account version, writer epoch, source revision and
+locked-period refusal after independent synthetic database changes; the pending
+journey now also exercises fresh execution after approval revocation and invoice
+revision. Each refusal retains its independent pre/post financial fingerprint.
+The matrix artifact is `supplier-stale-bases.json`; this is not a broad-suite rerun.
+
+Reviewer admission now requires an actual enabled row for both forward and
+cancellation execution. A missing row no longer passes the old `enabled === false`
+check. Focused verification passed at `test-results/supplier-missing-authority-20261001`
+after independently deleting only the synthetic reviewer's admission: execution
+refuses `ApprovalRequired`, with unchanged financial snapshots.
+
+`test-results/supplier-source-qualification-20261001` passed two selected cases
+covering scoped foreign-book preparation refusal, positive observations, and a
+retained debit 11000 against payable capacity 10000. The owner refuses instead of
+clipping or posting another cash movement. `supplier-source-refusals.json` retains
+literal input amounts, expected codes, and independent pre/post snapshots.
+
 Cancellation basis validation now refuses `StaleDependency` when a retained
 report snapshot in the admitted book covers the settlement date. The shared
 basis check runs during preparation and later cancellation revalidation; this
