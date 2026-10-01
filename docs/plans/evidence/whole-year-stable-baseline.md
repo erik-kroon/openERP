@@ -8,7 +8,7 @@ The clean isolated checkout combines the captured stable-Effect changes, the cas
 
 Frozen dependency installation, changed-file fast/full gates against `b72a463`, web build, and the domain integration gate passed before the full runtime run. Integration reported 33 wired and 17 explicitly deferred domain leaves. Deferral is not delivery.
 
-The built-in source-integrity gate passed. A supplemental manifest selected 1,994 tracked source files, including the dependency patch, and excluded `apps/api/.dev.vars.five`. Before/after inventories are identical, SHA-256 `70e3f765998b9bae1cc1d9b306b188451a53b70e62a095c58e5c8cc688c87969`; manifest SHA-256 is `718789c2908eff968c4f938eb4ea414fe5aebc3d8e7384d8106c27d7e01abd36`. Installed effect-mq source/module/declaration, unchanged schema source, lockfile and built web shell hashes remained identical. The built-in inventory has its own scope; the supplemental exclusion does not claim that every earlier inventory excluded configuration.
+The built-in source-integrity gate passed. A supplemental manifest selected 1,994 tracked source files, including the dependency patch, and excluded `apps/api/.dev.vars.five`. Before/after inventories are identical, SHA-256 `70e3f765998b9bae1cc1d9b306b188451a53b70e62a095c58e5c8cc688c87969`; manifest SHA-256 is `718789c2908eff968c4f938eb4ea414fe5aebc3d8e7384d8106c27d7e01abd36`. Installed effect-mq source/module/declaration, unchanged schema source, lockfile and built web shell hashes remained identical from the early-runtime observation, approximately 18 seconds after launch, through completion. Despite its filename, `installed-before.json` is not a strict prelaunch observation. The raw built-in inventory hashes `apps/api/.dev.vars.five` and omits patches; the supplemental scope supplies patch coverage and does not retroactively change configuration hashing.
 
 Repeat from this revision in an isolated checkout with the repository's disposable local prerequisites:
 
@@ -27,7 +27,7 @@ The JUnit reporter's actual file was observed under `test-results/e2e-history/20
 
 ## Review and remaining scope
 
-The runtime repair received independent source/artifact acceptance at its exact worker commit `854ae4deefafbd8141918466062e93333ed8c9c0`. Ordinary listener cancellation is supported by the scoped implementation but lacks a direct post-scope backend assertion. The final integrated run directly names its committed revision and includes patch identity, resolving the worker run's composite revision binding.
+The runtime repair received independent source/artifact acceptance at its exact worker commit `854ae4deefafbd8141918466062e93333ed8c9c0`. Ordinary listener cancellation is supported by the scoped implementation but lacks a direct post-scope backend assertion. The final integrated run directly names its committed revision and includes patch identity, resolving the worker run's composite revision binding. A separate independent receipt/transcript audit accepted packet 1's local engineering-baseline predicate at the tested source and documentation-only evidence commit `6711199c384d8d27832877ee4ff2e95ca5619442`, with the observation-scope limits above retained.
 
 The proof tools received independent v4 acceptance after real CLI admission/refusal and provenance exercises. Historical failed evidence remains preserved. The earlier `b72a463` run still records 222 passes and 45 failures, and its capture still discloses historical configuration hashing. New results do not rewrite that history.
 
