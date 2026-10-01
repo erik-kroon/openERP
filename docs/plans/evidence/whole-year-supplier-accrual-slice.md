@@ -4,6 +4,14 @@ Implemented owner: `apps/api/src/application/purchases/supplier-settlements.ts`.
 
 ## Observed proof — 2026-10-01
 
+Latest bounded supplier verification is **16/16, zero failed/skipped** at
+`test-results/supplier-qualified-accrual-20261001`, after the discovery,
+cancellation impact/revocation/history, qualification and authority changes below.
+Full changed-file gate passed. This is the supplier suite only, not a repetition
+or extension of the older selected-regression or whole-workspace claims.
+Unsupported retained provider observations now return `UnsupportedProfile`,
+separately from malformed journals and oversized payable capacity.
+
 From `/Users/admin/.codex/worktrees/cash-period-admission/openERP`:
 
 ```sh
@@ -159,4 +167,4 @@ missing-owner description; it changes no executable source.
 
 The bounded synthetic transaction works. The blocker to **whole packet acceptance** is incomplete qualification and coverage, not credentials or an outside reviewer: wider transaction populations and correction paths remain unsupported. Real-company activation still requires evidenced accrual/VAT methods and dated applicable rules (D-04/D-08). Cash, FX/fees, provider payment instructions, replacement/reassignment and cross-period/later-consumed correction are not released by this slice.
 
-The larger first-unit design also retains obligations beyond these seven tests: exhaustive changed-rule/account/source and child-approval refusal vectors; explicit lock-order/revocation races; full cross-book relational constraint vectors; generic mutation probes on executed/cancelled children and bank-allocation preparation; complete retained fiscal-impact refusal coverage; paginated owner plan/receipt discovery and cancellation reads. No UI, whole-year journey, complete backup/restore or first-pass freeze/comparison proof is claimed. Packet 1 remains verified only at its recorded `375bea6` source.
+Remaining first-unit qualification includes exhaustive child-expiry/native-approval relation and cross-book relational constraint vectors, cancellation/revocation commit-order races beyond the observed reviewer-disable ordering, and wider retained assessment/close consumption. The implemented and verified discovery, cancellation reads, generic source fences, account/source/writer changes, method supersession and reviewer prebook ordering are no longer missing. No UI, whole-year journey, complete backup/restore or first-pass freeze/comparison proof is claimed. Packet 1 remains verified only at its recorded `375bea6` source.
