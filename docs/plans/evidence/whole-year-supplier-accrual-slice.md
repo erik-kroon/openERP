@@ -37,6 +37,26 @@ The takeover fixed native reversal defects uncovered on this real path: missing 
 
 ## Remaining obligations and blocker
 
+### Scoped discovery and cancellation recovery
+
+The owner now exposes `GET /purchases/supplier-settlements?after=ID` and
+`GET /purchases/supplier-settlement-cancellation-plans/:id`, with read-only MCP
+tools `purchases_list_supplier_settlements` and
+`purchases_get_supplier_settlement_cancellation`. Discovery scopes both union
+arms and receipt joins to the admitted book, sorts stable IDs and returns at
+most 25 entries with a continuation cursor. It is a live identifier page, not
+a frozen source inventory. Cancellation reads return the retained plan and
+its exact committed receipt; they make no current approval/execution claim.
+
+Failure-first ordinary REST observations returned 404 for both absent reads
+(`test-results/supplier-discovery-red-20261001`). Full supplier verification
+then passed **8/8, zero failed/skipped** at
+`test-results/supplier-discovery-green-20261001`, including a 26-plan two-page
+journey, foreign-book empty page, REST/MCP continuation parity, cancellation
+receipt recovery and unchanged financial state. The discovery artifact retains
+both pages and independent pre/post financial snapshots. Full changed gate
+passed; no schema migration or dependency change was needed.
+
 ### Follow-up owned-source fence
 
 After the first integration at `517d597`, an additional failure-first probe found
