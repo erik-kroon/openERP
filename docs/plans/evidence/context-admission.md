@@ -18,3 +18,19 @@ bun run test:e2e apps/api/tests/agent-context.e2e.test.ts \
 ```
 
 Artifacts preserve actual request keys/status/body, retained owner responses, financial-state witnesses, effective privileges and source/migration manifest/integrity. No unit tests, schema exceptions, live provider/company data, deployment or production action are part of this evidence.
+
+The context repair now projects the invoice ordinal from its exact current revision row and the expense ordinal/body from one row-preserving latest-source selection. Context checks the supported owner ordinal and digest before decoding the response. Missing or unsupported facts use a fixed nonprivate422 completeness refusal; a missing expense revision is retained and refused, rather than silently removed. Ordinary attention continues exposing the same digest-valued revision JSON.
+
+A non-null selected period is read once with its actual book predicate inside the admitted transaction. Missing/foreign period returns404. Exact retained inclusive bounds filter attention; only null input selects all dates. Journal selection/version/severity and review affectedPeriodnull remain unchanged. No ranking, vocabulary, global date signature, paging, public schema, grants or migration changed.
+
+`test-results/context-admission-red-after-prerequisite-20261001` preserves authentic5 failed/7 passed at committed prerequisite4c104a7, including complete actual owner ordinals1/2 and same-row digests, before context implementation. The first green `test-results/context-admission-green-20261001` passes12/12 with stable source inventory `03fc981ef71764cc31c4d46151bdda2fc733922f4086cee3c90188e21eec81a2` and no changed paths. Literal two-period/ordinal/journal controls, inclusive endpoints/adjacent dates/undated, missing/foreign periods, empty selection,51outside+smallselected,50selectedincludingcompleted/51refusal, missingfacts422, current revocation, and zero financial changes all pass. The dedicated immutable expense concurrency/replay/review/withdraw journey remains in the suite.
+
+Repeat the complete bounded proof:
+
+```sh
+umask 077
+OPENERP_E2E_ARTIFACTS=test-results/context-admission-unique \
+bun run test:e2e apps/api/tests/agent-context.e2e.test.ts
+```
+
+New evidence is private: directories0700/files0600. The first attempted red's duplicate component locator and overlapping foreign-period fixture errors are retained and explicitly superseded; neither is claimed as the admission defect. Test-first history retains both authentic committed red boundaries. The existing bounded refusal still admits no continuation, and observed-kind module summaries still do not establish a complete supported-empty/unknown registry. This repair does not deliver packet6.
