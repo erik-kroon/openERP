@@ -8,6 +8,13 @@ The [Document Intelligence first journey](plans/document-intelligence-delivery.m
 
 ## Current checkout
 
+[DF-06 calendar-date consolidation](plans/evidence/df-06-calendar-date.md) gives
+interpreted dates one shared real-calendar owner and leaves original source/storage
+shape loose. Nine focused E2E cases prove invalid-query admission, inclusive year
+boundaries, retained source bytes and the native duplication ratchet. A stable
+32-case regression run covers SIE, extraction and banking. Both changed-file
+gates pass; document-worker and integration limitations remain explicit in the repair record.
+
 [DF-07 server business date](plans/evidence/df-07-server-business-date.md) adds
 Stockholm `today` to the existing setup owner and wires the shared frontend query
 and current-date defaults to it. Nine focused E2E cases cover REST/MCP, injected

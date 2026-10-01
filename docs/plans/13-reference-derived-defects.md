@@ -153,9 +153,25 @@ establish actual-company or external-recipient acceptance.
 
 ---
 
-## DF-06 — Thirty-three hand-rolled copies of the calendar-date rule, in three disagreeing versions
+## DF-06 — Shared calendar-date refinement and duplication ratchet — fixed
 
 **Severity: high.** Class A.
+
+**Implemented and observed 2026-10-01.** `packages/domain/src/values.ts` now owns
+`CalendarDate` and `isCalendarDate`, accepting real dates from `0001-01-01` through
+`9999-12-31`. Contracts, application interpretation, document extraction, SEB
+parsing and SIE encoding consume that owner. `AccountingDate` retains its loose
+transport/storage shape; original source bytes are not forced through admission.
+Bank-workspace query dates now fail as `InvalidJournal` before date-valued SQL.
+
+**Observed acceptance.** [The repair record](evidence/df-06-calendar-date.md)
+records nine passing focused E2E cases, including exact retained originals,
+leap/year/month boundaries and native Oxlint rejection of new copies. The error-level
+ratchet permits one central validation comparison and the two genuine month-end
+arithmetic comparisons, and refuses a second comparison even inside those owners.
+
+**Historical defect evidence.** The following inventory describes the pre-repair
+implementation, not the current source.
 
 **Evidence.** `grep` for the `T00:00:00Z` round-trip idiom across `apps/*/src`, `packages/*/src` and `jurisdictions/se/src` (excluding build output) returns **33 occurrences across 27 files**. They implement three different accepted ranges:
 
