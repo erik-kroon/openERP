@@ -85,3 +85,11 @@ Coordinate token rotation and quotas across the actual provider/account scope. T
 Persist external intent and artifact identity before sending. Distinguish unconfigured/test/production capability and pending/rejected/accepted/unknown outcomes. Look up an uncertain result before resubmission. An exported payment file or upload acknowledgement does not prove settlement or fulfilled filing.
 
 Outbox delivery uses a bounded dispatcher and the selected effect-mq PostgreSQL store. effect-mq owns queue claims, heartbeats, retries and attempt history; application records own domain progress, cancellation versions and financial receipts. A stale handler cannot commit a business effect after its application version/fence changes, and duplicate delivery cannot repost the originating voucher. Detailed recovery belongs to the [operations plan](plans/07-restore-operations-cutover.md).
+
+### Prospective supplier settlement review
+
+The synthetic accrual supplier-settlement owner prepares from an admitted whole negative bank observation and a retained live supplier invoice. It retains the exact source, payable capacity, period/account and reviewed company-profile witnesses, a native payment proposal and a prospective concrete allocation. An independent operator can approve or revoke the review through REST. Agents can prepare and read it through MCP.
+
+This bounded slice cannot execute a supplier payment. Its read view always reports `paymentPosted=false` and `executionAvailable=false`; the ordinary allocation view has no posted payment capacity. Generic payment-child approval/execution and allocation preparation/approval/application refuse owned reservations. Generic native approval revocation remains safe invalidation and makes the parent approval unusable. No voucher, bank match, applied allocation, posting counter or financial receipt is produced by this owner.
+
+Atomic payment/match/allocation execution, permanent economic source claim, latest full same-open-period cancellation and its unresolved original bank-movement view remain required before settlement delivery. The retained full E2E journey still specifies these obligations. Cash compensation, VAT inverses and later/year-end/crossperiod profiles remain separate packet8 obligations. No real-company policy or payment-instruction/provider outcome is admitted by the synthetic review.
