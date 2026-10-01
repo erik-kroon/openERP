@@ -1,5 +1,31 @@
 # Bounded context admission
 
+## Durable continuation implementation — 2026-10-01
+
+`apps/api/src/application/agent/continuation.ts` composes the existing context
+owner inside the admitted transaction. Migration `0056` retains immutable,
+principal-scoped captures and append-only discovery progress. REST and MCP expose
+capture, page and advance operations. Pages contain at most50 work references;
+the exact page digest and expected progress revision bind acknowledgement.
+Acknowledgement is not execution, approval or resolution. Historical pages remain
+readable while `current=false`; stale progress refuses and a fresh capture recovers.
+Original financial owners still revalidate execution.
+
+`test-results/context-durable-restart-20261001` records two passing real
+PostgreSQL/workerd E2E cases with no skips. Independently generated103 journal
+identities are recovered over50/50/3 pages, replay preserves capture/progress,
+another book cannot read the capture, execution invalidates progress, and fresh
+capture contains102 unresolved records. A separate MCP journey closes its serving
+Worker, starts a replacement against retained PostgreSQL, and resumes at50 with
+the final record. JSON journey artifacts, runtime/migration manifest and stable
+source inventory are retained. The full changed-file gate passes.
+
+Packet6 remains open: current adapter coverage does not establish all unresolved
+application owners; supported-empty/unsupported/unknown registry and owner-backed
+delta delivery still need acceptance. Capture construction and fresh checks retain
+the existing full internal traversal; only continuation responses are item-bounded.
+This proof does not claim bounded capture memory or whole-company completeness.
+
 ## Packet 6 continuation update — 2026-10-01
 
 The context owner now follows the existing workspace cursors until both selected
