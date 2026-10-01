@@ -37,3 +37,5 @@ bunx vp test run --config verification/assurance/excellence/recovery.config.ts
 ```
 
 These proofs qualify the combined schema and bounded synthetic recovery journey. They do not complete packets2/3, independent-infrastructure recovery, production writer retirement, evaluation candidate authority/custody/barriers or actual company readiness. The prior capture review's same-key concurrency and unavailable historical red-test-byte qualifications remain unchanged.
+
+Coordinator repeat at `64d6558` passed both scoped E2Es1/1, fast and type-aware changed checks. The integrated schema and ordinary artifacts are `test-results/integrated-combined-schema-20261001` and `test-results/integrated-combined-ordinary-20261001`. Both retained identical before/after source inventory `6fd92796a1801ead6522d8d16703b5cc3a40e4ef240a2110785e3d791a7b60f9`, with no changed paths. The schema repeat independently matched the contract digest,55 migrations,398 tables and empty catalog differences. The fixture and packet limitations above still apply.
