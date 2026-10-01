@@ -8,6 +8,11 @@ The [Document Intelligence first journey](plans/document-intelligence-delivery.m
 
 ## Current checkout
 
+[DF-12 bank-match integrity](plans/evidence/df-12-bank-match-integrity.md) prevents
+final writes from redirecting matches to a wrong settlement account or direction.
+Existing exact-match admission and reviewed partial allocations remain intact;
+focused rollback/recovery and banking regressions pass.
+
 [DF-11 voucher-period dates](plans/evidence/df-11-voucher-period-date.md) now
 refuses out-of-period voucher writes and period edits that would strand retained
 dates. Real HTTP rollback and original-key recovery plus inclusive endpoint checks

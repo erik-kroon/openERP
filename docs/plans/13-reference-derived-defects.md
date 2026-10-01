@@ -253,15 +253,31 @@ local integrity proof, not company readiness or a period-reopening policy.
 
 ---
 
-## DF-12 — A bank match need not point at the settlement account, and its sign is unchecked
+## DF-12 — Bank matches retain the settlement account and observed direction — fixed
 
-**Severity: medium-high.** Class A.
+**Severity: medium-high.** Class A. **Implemented and observed 2026-10-01.**
 
-**Evidence.** `bank_matches` is `PRIMARY KEY (book_id, statement_id, row_ordinal)` plus `UNIQUE (book_id, voucher_id, line_id)` — one observation to one line, which is structurally excellent. But nothing requires the matched line to sit on the cash settlement account, and nothing requires its sign to agree with the observation amount, which is a **signed** minor-unit value.
+**Corrected scope.** The current application already admits only whole-row exact
+matches on the statement account, with the exact signed amount and statement
+interval. The genuine missing layer was retained relational integrity: synthetic
+final-write faults could redirect an admitted match to the wrong account or sign
+while the public command still returned success.
 
-**Consequence.** A match can point at a revenue line. Under the cash method, where no receivable is booked and the settlement side is the only cash anchor, that is the difference between a reconciled account and a wrong one.
+**Repair.** Forward `0045-bank-match-integrity.sql` checks the final match against
+the retained statement account and observation direction. It refuses inconsistent
+existing matches during migration preflight rather than rewriting them. The
+immutable source, journal and match records preserve this relationship afterward.
 
-**Fix.** Require the matched line to be on the settlement account with the matching sign. Check the **direction**, not the whole amount: one payment can consume part of a transaction, and an invoice-currency amount is not the bank-currency amount.
+**Observed acceptance.** [The repair record](evidence/df-12-bank-match-integrity.md)
+records separate same-sign/wrong-account and correct-account/opposite-sign HTTP
+refusals, source-revision and receipt rollback, exact-key recovery and retained
+target verification. Existing reference ranking, partial capacity and migration
+rerun/checksum coverage passes with the repair.
+
+**Boundary.** The SQL guard compares direction, not magnitude. Exact-match
+application admission remains exact; partial consumption remains owned by reviewed
+allocation plans. No foreign-currency equivalence, payment authority, new match
+workflow or company readiness is claimed.
 
 ---
 
