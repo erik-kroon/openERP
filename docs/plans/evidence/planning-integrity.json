@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-01T09:11:16.363275+00:00",
-  "headObservedAtValidation": "aeefde81fb8f4c46cdba0e2ef7c9dacbb6d87a53",
+  "checkedAt": "2026-10-01T10:11:13.696645+00:00",
+  "headObservedAtValidation": "a626b01ff3704cf1ac385b834ef44f5907294024",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,7 +9,7 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 930,
+    "localLinksAndAnchorsChecked": 931,
     "documentsChecked": 46,
     "coverage": {
       "R": [
@@ -122,11 +122,11 @@
     },
     {
       "path": "docs/operations.md",
-      "sha256": "a2927719e38852e02cda3fd26348812b9f189361764d975d70656f90fa048ea6"
+      "sha256": "657d88dd104b2614a0425b69c9b756e9dcb382821990e01a9728cf69f7c8240f"
     },
     {
       "path": "docs/plans/00-shared-contracts.md",
-      "sha256": "6c645a92dd2a487f7c9efd6eb7422ad882fa163186dfdd3d99449fec526a1a7a"
+      "sha256": "4d6a1c208320b5264aeae5e046543f133ca656ddffbe5e95be9a7a9587e8850e"
     },
     {
       "path": "docs/plans/01-posting-approval-receipts.md",
@@ -178,7 +178,7 @@
     },
     {
       "path": "docs/plans/13-reference-derived-defects.md",
-      "sha256": "fc837d37a9e3128d4e74c3f3e0cdb3f2d890d22f34eef2413939e8c58809ad72"
+      "sha256": "33e7fa3ed4ee5f0f9e81cc039383aa641ea53e44fe8b221456180fd7ac12f0d6"
     },
     {
       "path": "docs/plans/14-parity-ledger.md",
@@ -246,7 +246,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "a680a3ec5e0be5c74466dacb2a938584b3c12611db34558e9ecdf2382c335986"
+      "sha256": "6cb310f120091abdb149a86d66b876d7de559ed3e304f40682e9b4ffcdd56eff"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",

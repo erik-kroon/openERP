@@ -30,6 +30,20 @@ Derive identity at the trusted server boundary. Agents may request review and ex
 
 Errors name affected resources, missing/changed facts, retryability and a supported remedy. Business refusals are not transient failures. A timeout during commit leaves an unknown outcome; recover by the original identity. A missing receipt at one observation time does not prove cancellation.
 
+The shared failure recovery contract distinguishes `permanent` (repair the stated
+problem before repeating unchanged input), `transient` (a confirmed rollback or
+pre-routing refusal permits an unchanged same-key retry), and `outcome-unknown`
+(read durable status/receipts before retrying the original command). Unknown codes
+default to outcome-unknown. HTTP status and prose do not determine this class.
+Configuration faults are not credential revocation or transient contention.
+
+These classes govern automatic retry safety, not saved-request absorption. The
+saved-request owner can permit an explicit same-identity retry after referenced
+state is repaired even when the earlier refusal is permanent for unchanged
+automatic retry. It proves content-invalid commands terminal separately. Older
+sealed refusal bodies remain unchanged; read-view/client classification uses their
+stable code without adding fields to retained data.
+
 ## Human workbench
 
 The [customer frontend plan](frontend.md) owns the workspace layouts, scoped routes, audience starting views and migration from the current all-sections page. Its [acceptance scenarios](frontend.md#acceptance-and-verification) apply the review and recovery requirements below to customer journeys.
