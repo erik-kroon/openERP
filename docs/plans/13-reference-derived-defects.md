@@ -40,9 +40,10 @@ instead of misreporting it as `Unavailable`. The reviewed baseline is unchanged.
 
 ---
 
-## DF-02 — Two legitimate identical documents cannot both be retained
+## DF-02 — Identical supplier acquisitions retain distinct occurrences — qualified
 
-**Severity: highest.** The schema directly contradicts our own written requirement.
+**Original severity: highest. Qualified 2026-10-01 for the served source-retention
+and supplier-inbox owners.**
 
 **Evidence.** `apps/api/migrations/0001-schema.sql:288`:
 
@@ -52,9 +53,21 @@ CONSTRAINT evidence_book_id_sha256_key UNIQUE (book_id, sha256)
 
 Our requirement in [capability-backlog](capability-backlog.md#supplier-inbox-and-extraction) says the opposite: *"Deduplicate retries by source identity without collapsing distinct documents merely because their bytes match."*
 
-**Consequence.** Two genuinely distinct occurrences of a byte-identical document in one book — the same receipt filed twice, the same invoice PDF attached to two payments — cannot both exist. The second is either rejected or silently merged. This is exactly the BFL retention case the requirement was written for, and it is worse for documents than for vouchers because a document is the *evidence*, not the assertion: losing one occurrence loses the audit trail that the transaction happened twice, or that two payments shared one invoice.
+**Corrected scope.** Legacy evidence is content-addressed, not an acquisition
+register. The served source-retention owner already separates `intake_contents`
+from `intake_occurrences`; supplier inbox entries reference occurrences rather
+than merging acquisitions by hash. Evidence uniqueness alone does not prove
+that this acquisition path loses provenance.
 
-**Fix.** Separate **content** from **occurrence**, which the domain already does elsewhere (`intake_occurrences` exists and is a distinct table). Deduplicate on a source identity that names the occurrence, and let identical content be referenced by more than one occurrence. The content-addressed artifact tables (`accountant_review_artifacts` and friends) are the right model and already bind an exact `octet_length` — copy that shape.
+**Observed acceptance.** [The qualification record](evidence/df-02-occurrence-multiplicity.md)
+proves two identical inline originals, distinct source identities and inbox entries,
+one shared content object, exact original-byte retrieval, retry convergence,
+changed-byte conflict and REST/MCP discovery parity without financial effects.
+No duplicate retention owner or schema change was needed.
+
+**Limits.** This proof covers synthetic inline CSV acquisitions. It does not
+claim external object-storage/PDF qualification, two payment bindings, or that
+the legacy evidence endpoint itself records distinct acquisition events.
 
 ---
 

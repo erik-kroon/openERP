@@ -8,6 +8,11 @@ The [Document Intelligence first journey](plans/document-intelligence-delivery.m
 
 ## Current checkout
 
+[DF-02 acquisition qualification](plans/evidence/df-02-occurrence-multiplicity.md)
+verifies that identical inline originals retain distinct supplier occurrences,
+with retry convergence and REST/MCP discovery parity. Existing content sharing
+does not collapse this provenance; external-storage/PDF proof is not claimed.
+
 [DF-01 voucher completeness qualification](plans/evidence/df-01-voucher-completeness.md)
 proves that committed vouchers have no available late-insert slot under the composed
 constraints. A genuine commit-error mapping defect was repaired without adding a
