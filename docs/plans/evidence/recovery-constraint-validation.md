@@ -19,3 +19,21 @@ OPENERP_E2E_ARTIFACTS=test-results/recovery-constraint-unique bun run test:e2e a
 ```
 
 Artifacts retain actual catalogs, refusals, source/migration hashes, data fingerprints and the restore difference. The final diagnostic run has stable source identity and no changed paths. Evaluation0049 is absent from this isolated branch; combined qualification requires a new coordinator run. This proves the0050 and0051 schema prerequisites, not complete application-recovery admission, production migration safety or actual-company readiness.
+
+Combined qualification now includes evaluation0049,0050 and0051. The historical prerequisite in the scoped schema fixture is explicitly0049, so the0050-only preservation assertion continues to isolate its FK validation. Before this fixture correction, unchanged8be70be reproduced the extra11 evaluation constraints (2737→2748) and the ordinary recovery fixture's stale expectation of one unvalidated VAT FK versus the actual empty list. Those failures remain retained.
+
+The combined extension-free source/restore E2E captures a genuine evaluation through operator HTTP using the existing provisioning/session fixture boundaries. It independently hashes the literal synthetic original and canonical contract body, then restores through actual pg_dump/pg_restore. Full strict inventories match exactly across55 migration receipts, including0049. Schema hash is `06e8b184cf2cf5419672c5d2d2b4553be6fc99a9b687f9b51b6ec3391324c19c`, all398 table fingerprints match, and catalog differences are empty. The nonempty evaluation and the inline CSV original are read back through the actual restored HTTP owners. The original bytes contain no accounting amounts or reference postings. This fixture deliberately uses existing inline retention; external object recovery is proved separately by the ordinary recovery journey.
+
+The ordinary recovery E2E retains one operator-captured evaluation alongside its real posting receipt and external original. Exact restored GET, original receipt replay and original bytes pass, as do missing/corrupt-object refusals and existing JSON/object closure. After target-only removal of the disposable diagnostic extension, the unchanged strict probe succeeds with one evaluation and the actual55-migration release. All398 table fingerprints are identical before/after target qualification. The original source retains bothplpgsql andpg_stat_statements. This instrumented source is not claimed schema-equal to its normalized target; exact full schema equality belongs to the separate extension-free fixture above.
+
+Combined green artifacts are `test-results/combined-recovery-schema3-20261001` and `test-results/combined-recovery-ordinary-20261001`, each1/1 with stable source inventory `6fd92796a1801ead6522d8d16703b5cc3a40e4ef240a2110785e3d791a7b60f9` and no changed paths. New artifact directories are0700 and files0600. The schema fixture's earlier provisioning-bound refusal and isolated R2-store missing-object attempt remain retained separately; neither is claimed as a product regression. Repeat the schema command above and the ordinary journey with:
+
+```sh
+umask 077
+OPENERP_E2E_ARTIFACTS=test-results/combined-recovery-ordinary-unique \
+EXCELLENCE_JSON_REPORT=test-results/combined-recovery-ordinary-unique/results.json \
+EXCELLENCE_JUNIT_REPORT=test-results/combined-recovery-ordinary-unique/junit.xml \
+bunx vp test run --config verification/assurance/excellence/recovery.config.ts
+```
+
+These proofs qualify the combined schema and bounded synthetic recovery journey. They do not complete packets2/3, independent-infrastructure recovery, production writer retirement, evaluation candidate authority/custody/barriers or actual company readiness. The prior capture review's same-key concurrency and unavailable historical red-test-byte qualifications remain unchanged.
