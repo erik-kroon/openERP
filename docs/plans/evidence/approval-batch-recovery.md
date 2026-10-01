@@ -22,9 +22,9 @@ supplier/credit/owner/invoice dispatch ports, never posting batch totals itself.
 
 ## Observed proof
 
-`test-results/period-batch-six-owners-20261001` passes6/6 real
+`test-results/period-batch-eight-acceptance-20261001` passes8/8 real
 PostgreSQL/workerd E2E cases, zero skips/failures, stable source inventory
-`cd59f1b0a4eec391943bd7fb0745cc2a0240476b477d2bdac739360ed1a81531`.
+`7b9f4d9b8de1ea69c3a70706768318f5db9a65368c04ec83f78beb4c807081cd`.
 
 Independent sources each assert10000 minor units. The mixed journey invalidates
 one member account after exact approval: one voucher/10000 debit/10000 credit
@@ -46,6 +46,11 @@ an independently authorized reviewer:10000 expense debit and10000 owner-liabilit
 credit, with no company-cash line. Same-author owner approval correctly refused
 before supplying that independent reviewer. Wrong approval digest, ordinary-agent approval,
 foreign-book result read and incompatible execution replay all refuse.
+
+Two additional journeys revise a retained supplier draft or cancel its manifest
+after exact human approval. Revision refuses the affected member while the other
+independent member commits; cancellation refuses both members with zero vouchers.
+Neither stale selection is silently rewritten or widened.
 
 Artifacts include exact batch/owner/receipt identities, literal expected controls,
 bounded chunk results, reviewer refusal, migration/runtime manifest and unchanged
