@@ -1,6 +1,37 @@
 # Bounded context admission
 
-This unit preserves the released context/ordinary attention contracts, current book authority and the selected status=all50-row admission bound. Packet6 remains incomplete: immutable capture, continuation, durable progress, complete adapter registry and delta delivery are separate work.
+## Packet 6 continuation update — 2026-10-01
+
+The context owner now follows the existing workspace cursors until both selected
+inventories are exhausted. Each database query remains bounded to51 rows; attention
+advances by its retained key, journals by retained creation timestamp/identity.
+Both traversals run in the original admitted book SHARE transaction. Repeated
+cursors fail closed. The public response remains a freshly ranked complete
+inventory of the currently supported adapters, not a frozen cross-request page.
+No new financial facts, approvals, grants, tables or dependencies were added.
+
+Failure-first `test-results/context-continuation-red-20261001` reproduces the old
+selected51-row refusal. Focused proof `context-continuation-recovery-20261001`
+passes3 selected cases,10 unselected: selected51 mixed rows,51 journals with current
+membership revocation, and103 journals traversing three database pages. A fresh
+authenticated session rediscovers all103 exact retained identities; executing one
+through the posting owner removes only that item on fresh capture, retaining
+fullCount103/openCount102. Context reads change no financial state. Artifacts
+retain exact expected IDs and exchanges; this is new-session recovery, not a
+worker-process restart claim. Full changed-file lint/type gate passes.
+
+Consolidated context/expense-owner suite `context-traversal-combined-20261001`
+passes13/13 with zero failed/skipped on unchanged source. This includes the
+retained selected-period, missing-fact, same-row revision and expense-authority
+regressions; it is not a workspace-wide baseline claim.
+
+Packet6 remains incomplete: immutable capture, externally resumable continuation,
+explicit durable progress, complete adapter registry and delta delivery remain.
+The historical50/51 refusal evidence below describes its recorded source only.
+
+## Historical bounded admission
+
+This unit originally preserved the released context/ordinary attention contracts, current book authority and the selected status=all50-row admission bound. Packet6 remains incomplete: immutable capture, continuation, durable progress, complete adapter registry and delta delivery are separate work.
 
 Failure-first context test source is committed at `f71fc67b4b50b36179db76fffbebb028d3e3f692`. Its exact committed-head run `test-results/context-admission-red-committed-20261001` retains5 failed/6 passed with stable source. Invoice/expense review digests were supplied to numeric context revision, selected-period attention used null date bounds, missing source facts returned500, and51 out-of-period rows incorrectly consumed the selected inventory bound. Supported51-selected refusal and current membership revocation controls passed.
 
