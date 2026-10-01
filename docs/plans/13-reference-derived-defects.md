@@ -56,17 +56,31 @@ Our requirement in [capability-backlog](capability-backlog.md#supplier-inbox-and
 
 ---
 
-## DF-03 — The legacy trial-balance reader will zero the income statement once a result transfer is posted
+## DF-03 — Derived P&L excludes captured result transfers — fixed
 
-**Severity: high, and narrowing.** Class A. **Corrected 2026-09-26** — see the revision note; the original finding overstated the scope.
+**Severity: high.** Class A. **Implemented and observed 2026-10-01.**
 
-**Evidence.** `apps/api/src/db/reports.ts:208-232` (`readReportTotals`) and `:262-295` (`insertTrialBalanceLines`) still sum **every** voucher in `[startsOn, endsOn]` against a `sequence` cutoff, with no posting-purpose filter and no basis parameter. A search of that file for a basis parameter returns nothing.
+**Corrected scope.** Raw trial balance must include the whole ledger. The actual
+current close posts a mechanical result-account transfer rather than clearing
+every nominal account. The served family reader incorrectly treated that transfer
+as ordinary cost, and its role catalogue also failed SQL projection before the
+financial mismatch could be observed.
 
-**What already fixed the real problem.** The semantic statement path added since the first version of this register does **not** need a basis parameter, and this is a better answer than the one originally proposed here. `packages/domain/src/statements.ts` derives a virtual untransferred result from *owned transfer receipts* — a mechanical transfer is excluded from ordinary profit and loss only when a receipt that owns it retains it — and reports the balance identity residual explicitly. So on that path the income statement is correct whether or not a transfer has been posted, the balance sheet closes on the whole fiscal year to date, and a first year does not imply a zero opening.
+**Repair.** New P&L families consume the statement owner's admitted transfer
+classification at their saved source cutoff, retain exact transfer membership,
+and expose a signed bridge. Ordinary cost on the same account is retained. Raw
+trial balance, ledger drill-down and older family interpretation remain intact;
+legacy families receive a truthful read-view limitation instead of rewritten data.
 
-**Consequence that remains.** The legacy trial-balance snapshot reader is a separate surface with the original defect. A result transfer mirrors every profit-and-loss account into the result account inside the same fiscal period, so on that reader the income statement reads zero across the board while the balance sheet still ties — a failure no total reveals. Whether it is reachable depends on whether anything still calls it once the semantic path is the served one.
+**Observed acceptance.** [The delivery record](evidence/df-03-profit-transfer-bridge.md)
+records the served failure and real close/report/MCP/browser journey. Expense
+`61000` is explained as ordinary cost `5000` plus mechanical transfer `56000`;
+income `75000` and tax `14000` remain exact. Frozen and legacy snapshots retain
+their own bases. Seventeen focused E2E tests pass.
 
-**Fix.** Do **not** add a basis enum to the legacy reader. First establish whether the legacy trial-balance snapshot is still a served surface; if it is, the correct fix is to route statement consumers to the semantic path and retire the duplicate reader rather than to maintain two report conventions. If it must stay, its exclusion rule must reuse the semantic path's owned-receipt test instead of introducing a second, divergent notion of what a transfer is.
+**Boundary.** The retained family surface reuses the released statement
+classification; it does not introduce another financial transfer owner, rewrite
+the raw trial-balance basis or claim statutory/company qualification.
 
 ---
 

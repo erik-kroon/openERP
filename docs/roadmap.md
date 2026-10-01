@@ -8,6 +8,11 @@ The [Document Intelligence first journey](plans/document-intelligence-delivery.m
 
 ## Current checkout
 
+[DF-03 P&L transfer bridge](plans/evidence/df-03-profit-transfer-bridge.md) fixes
+the served report-family catalogue and excludes frozen owned result transfers
+from ordinary mapped amounts while preserving raw ledger drill-down. Real
+close/report/MCP/browser evidence passes with seventeen focused E2E cases.
+
 [PRY-17 clearing/account hints](plans/evidence/pry-17-bank-account-hints.md) now
 uses an explicit retained reference profile through the supplier workspace and
 shared REST/MCP. Valid, invalid and no-opinion outcomes are observed; checksum
