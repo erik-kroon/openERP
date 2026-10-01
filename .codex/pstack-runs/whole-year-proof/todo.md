@@ -37,3 +37,7 @@ The three partitions are baseline checks, packets 2 through 10, and packets 11 t
 5. Scrap
 
 Ground the existing recovery refusal before choosing two candidate designs. The required outcome is application-level restricted read recovery with writer/provider activation still separately controlled.
+
+## Superseding throughput checkpoint
+
+Packet1 verified269/269 unchanged-source runtime, independent acceptance retained. Company-profile prerequisite accepted and integrated at818f790, fast/full and seven focused E2E passed; docs qualification addedbfb8a0b. Evaluation capture prerequisitec999c78 awaits independent review and strict recovery qualification. Separate0050 forward FK validation underway after two independent authentic NOT VALID refusals. Restricted recovery prototype supports selected limited read mechanism; combined confinement prototype underway. Root runs no current checks. Original checkout product edits preserved. Shared0049/0050 identities are disjoint; final combined qualification is sequential. No packet2/3 completeness or PR merge claim.

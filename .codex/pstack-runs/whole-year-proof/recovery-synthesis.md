@@ -26,3 +26,15 @@ Reject globally weakened authority locking, an ordinary runtime inspection role,
 ## Next verifiable unit
 
 After stable baseline repair, write independent E2E failure expectations and the exact read/grant/policy dependency matrix. Prototype native read-only transactions, direct-SQL book confinement, installed overlay/removal equality, denied egress and final quarantine on disposable synthetic infrastructure. Only then extract the selected owned read projections and compose complete recovery inspection. Production custody and writer/provider activation remain separate gates.
+
+## Empirical checkpoint 2026-10-01
+
+The throwaway native prototype in recovery-read-prototype.md observed the limited evidence projection working under READ ONLY REPEATABLE READ and a fixed-book SELECT role. Direct SQL foreign-book rows were absent. Ordinary lock-bearing admission refused25006; unrestricted transaction UPDATE still refused42501. Removing owned overlay/grants/role restored the recorded catalog and all table fingerprints, then destination capacity/sessions closed. This supports the dedicated owner mechanism, not full dependency inventory or complete application recovery.
+
+The unchanged policy-free inventory refused historical0031 NOT VALID FK before/after overlay. Forward0050 validation is a separate prerequisite. A separate child-network-denial observation succeeded, but combined native database access with denied provider egress is still unverified and has its own prototype. Evidence corpus location clarification remains pending. These are required before production-code extraction; do not substitute read-only flags or absent credentials for the combined proof.
+
+## Superseding prerequisites at integrated64d6558
+
+The combined native PostgreSQL plus child/descendant egress denial prototype is now retained in combined-recovery-confinement-prototype.md. It supports the tested macOS sandbox and owned endpoint only. Artifact-path clarification is retained; prior bytes are unchanged. The full30-table core dependency matrix is retained in recovery-inspection-dependency-matrix.md, including statement reopen reads and conditional correction approval semantics.0050/0051 and populated0049 now pass strict combined source/restore qualification,55 migrations398 tables and zero catalog differences. Historical blocker statements above describe the earlier state.
+
+The next production unit may therefore ground a dedicated inspector extraction against that matrix. It must not claim whole-book coverage from the core receipt subset. Unsupported retained receipt families require a fixed profile refusal until an owning application decoder is included. No ordinary session revival, live admission weakening, global inventory exemptions or write activation is allowed. Selected read traversal, separate maintenance-authenticated inspection grant, target-only overlay witnesses, same-process confinement, full removal and quarantine remain unimplemented obligations. The prototype and schema qualification do not deliver packet3.

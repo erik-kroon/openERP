@@ -1,12 +1,12 @@
 id	track	state	branch	pr	sha	brief
-packet-01	baseline	repairing	codex/whole-year-baseline		b72a463beb5246f9cc805fce62106af10d294456	
-packet-02	qualification	pending				
+packet-01	baseline	verified	codex/whole-year-baseline		375bea6def60db083e3642f3cc13dee9e0699be9	/Users/admin/.codex/worktrees/whole-year-baseline/openERP/docs/plans/evidence/whole-year-stable-baseline.md
+packet-02	qualification	implementing-prerequisites				/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/evaluation-synthesis.md
 packet-03	custody	design-ready				
 packet-04	qualification	pending				
 packet-05	workflows	pending				
 packet-06	workflows	pending				
 packet-07	workflows	pending				
-packet-08	workflows	pending				
+packet-08	workflows	grounded-missing-owner				/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/supplier-settlement-grounding.md
 packet-09	workflows	pending				
 packet-10	workflows	pending				
 packet-11	workflows	pending				
@@ -20,4 +20,19 @@ packet-18	year-proof	pending
 packet-19	year-proof	pending				
 packet-20	year-proof	pending				
 baseline-cash-repair	baseline	verified-local	codex/cash-period-admission		85898f4c2cfbd710826caeed7e96bbe3b7fe0407	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/cash-period-design-review.md
-baseline-runtime-repair	baseline	investigating	codex/effect-runtime-repair			/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/effect-runtime-diagnosis.md
+baseline-runtime-repair	baseline	verified-local	codex/effect-runtime-repair		854ae4deefafbd8141918466062e93333ed8c9c0	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/effect-runtime-repair-report.md
+company-profile-admission	qualification	verified-integrated	codex/company-profile-admission		abd4911261ed119fc9a743a1cd6b52e20ec431ab	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/evaluation-grounding.md
+evaluation-contract-capture	qualification	verified-bounded-integrated	codex/evaluation-contracts		c999c7854a3268f037d9d30ce37d6af601d71114	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/evaluation-synthesis.md
+recovery-constraint-validation	custody	accepted-integrated-bounded	codex/recovery-constraint-validation		58a994485f20d7259d66a67540482d103b2ab5c3	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/recovery-constraint-validation-report.md
+recovery-selector-check-stability	custody	accepted-integrated-bounded	codex/recovery-constraint-validation		46c918e499dfb3cd2ee906d268503811acbbb5e3	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/recovery-constraint-validation-report.md
+combined-recovery-qualification	custody	verified-bounded-integrated	codex/combined-recovery-qualification		aae3bbb8349c1a4e06e60a5e192e6e55f601279c	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/combined-recovery-qualification-report.md
+context-admission	workflows	verified-bounded-integrated	codex/context-admission		6cde93d8a4727bfd24a5cde5ab2024ca58e3d03a	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/context-admission-rubric.md
+expense-tax-immutable-revision	workflows	verified-bounded-integrated	codex/context-admission		4c104a728a08a68b4a031526f8b8c4253c7fba5f	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/context-admission-report.md
+supplier-settlement-accrual	workflows	verified-integrated-pending-owner-partial	codex/supplier-settlement-accrual			/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/supplier-settlement-synthesis.md
+recovery-acl-qualification	custody	stopped-unverified				/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/recovery-acl-prototype-contract.md
+supplier-settlement-execution-slice	workflows	verified-bounded-integrated	codex/whole-year-baseline		517d59783542409af598a9fddd116d5b80b30365	/Users/admin/.codex/worktrees/whole-year-baseline/openERP/docs/plans/evidence/whole-year-supplier-accrual-slice.md
+supplier-claimed-source-preparation-fence	workflows	verified-bounded-integrated	codex/whole-year-baseline		080cded6ae17acd3154afd69b24c5c593d83bc64	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/takeover-final-source-equivalence-20261001.json
+supplier-scoped-discovery	workflows	verified-bounded-integrated	codex/whole-year-baseline		04a4fc3b4b544ded0f8ab15c4b2975f176a6df54	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/supplier-discovery-verifier-20261001.json
+supplier-cancellation-recovery-qualification	workflows	verified-bounded-integrated	codex/whole-year-baseline		6682a83327fc49c511e2f74ed2deb4b7baa26c4e	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/supplier-qualified-accrual-verifier-20261001.json
+supplier-native-cancellation-preflight	workflows	verified-bounded-integrated	codex/whole-year-baseline		c6e6ac34184cdb507400181186e84d265bb9493c	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/supplier-native-approval-preflight-verifier-20261001.json
+supplier-accrual-preflight-consolidated	workflows	verified-bounded-integrated	codex/whole-year-baseline		5ee91b43b10e50f978bdba3565b9f51505e17c07	/Users/admin/openERP/.codex/pstack-runs/whole-year-proof/supplier-accrual-preflight-consolidated-verifier-20261001.json
