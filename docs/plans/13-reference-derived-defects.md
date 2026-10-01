@@ -188,15 +188,34 @@ const period = setup.periods.find((p) => p.startsOn <= today && p.endsOn >= toda
 
 ---
 
-## DF-08 — A locked period has no database-level guard, and the runtime role can set the flag
+## DF-08 — Locked periods refuse new financial writes and invoice anchors — fixed
 
 **Severity: high.** Class A.
 
-**Evidence.** `apps/api/migrations/0001-schema.sql:319` — `locked boolean DEFAULT FALSE NOT NULL`. `apps/api/migrations/0003-roles.sql:214` grants `UPDATE (locked)` on `openerp.periods`. No trigger and no check constraint reads the column; `0002-integrity.sql` has 210 triggers and none of them is a period lock. Enforcement is application-only, e.g. `apps/api/src/application/commerce/cancellations.ts:69`.
+**Implemented and observed 2026-10-01.** Existing application owners already refuse
+locked-period posting and recognition anchors. Before repair, synthetic final-write
+faults could lock the period after application admission and still commit a voucher
+or a new `commerce_invoices` recognition anchor.
 
-**Consequence.** A closed Swedish accounting year that can still receive vouchers is a restatement with no annual meeting behind it. The integrity layer is described as preventing "malformed or damaged history", and a voucher in a locked period is exactly that — so this sits inside the existing allowlist rather than extending it. Separately, the runtime role can both set and clear the flag with no constraint on either, in a schema that is otherwise scrupulous about column-scoped grants.
+**Repair.** Forward `0046-period-lock-integrity.sql` checks the current referenced
+period under the book and period locks after both final inserts. Locked periods
+refuse `PeriodLocked`; missing periods refuse rather than passing a null check.
+There is no trigger bypass flag. Retained vouchers in a later-locked period remain
+valid, and committed receipt replay stays available without new writes.
 
-**Fix.** A period-lock guard on the voucher and document-anchor paths, reading the flag and refusing. The shape already exists in our own `check_calendar` and it already takes the book lock first, which matches the ADR lock order. The guard must have **no bypass**: locking is a voluntary internal control with no legal deadline, while the business events it would strand do have one. And a guard whose own query fails must leave the period **open** — never treat a failed check as a pass.
+**Observed acceptance.** [The repair record](evidence/df-08-period-lock-integrity.md)
+contains both real HTTP failure vectors, complete transaction rollback, original-key
+recovery and receipt replay after locking. Twenty-six focused E2E tests pass across
+admission, close/reopen, accrual/cash-method refusal, persistence and outer-boundary
+integration.
+
+**Corrected authority scope.** The trusted application intentionally retains
+`UPDATE (locked)` for its reviewed closing and reopening workflows under ADR 0010.
+Removing that grant would break the adopted owner, not improve end-user authority.
+This guard protects a currently locked period; it does not turn SQL into a second
+approval engine or defend against a compromised backend clearing the flag. Source
+retention is not a financial anchor and remains outside the guard. Actual-company
+reopening and statutory readiness remain separate qualification gates.
 
 ---
 

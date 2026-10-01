@@ -8,6 +8,11 @@ The [Document Intelligence first journey](plans/document-intelligence-delivery.m
 
 ## Current checkout
 
+[DF-08 locked-period integrity](plans/evidence/df-08-period-lock-integrity.md)
+guards voucher writes and invoice recognition anchors while retaining approved
+close/reopen and committed receipt recovery. Twenty-six focused E2E cases pass;
+runtime grants and financial workflow ownership remain application-owned.
+
 [DF-12 bank-match integrity](plans/evidence/df-12-bank-match-integrity.md) prevents
 final writes from redirecting matches to a wrong settlement account or direction.
 Existing exact-match admission and reviewed partial allocations remain intact;
