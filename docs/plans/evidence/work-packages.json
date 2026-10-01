@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-01T10:06:37.213222+00:00",
-  "headObservedAtValidation": "50c745dfc268c51b6fa4075683d71018f0adf125",
+  "generatedAt": "2026-10-01T11:03:54.619363+00:00",
+  "headObservedAtValidation": "4620000ffc70c0e115e2f8852c16d8bdb20cd11b",
   "authority": "Derived from domain packet tables and the conditional-gate table; not an implementation/proof status report.",
   "packetCount": 53,
   "packets": [
@@ -8,7 +8,7 @@
       "id": "FND-01",
       "owner": "Shared contracts/runtime integrator",
       "source": "docs/plans/00-shared-contracts.md",
-      "sourceLine": 90,
+      "sourceLine": 106,
       "deliverable": "Reconcile existing contracts/migrations with ADR 0004; inventory real callers; preserve old digests/routes.",
       "dependsOn": [],
       "acceptance": "No contradictory money/digest/transaction ownership contract; populated migration plan documented.",
@@ -19,7 +19,7 @@
       "id": "FND-02",
       "owner": "Shared contracts/runtime integrator",
       "source": "docs/plans/00-shared-contracts.md",
-      "sourceLine": 91,
+      "sourceLine": 107,
       "deliverable": "Trusted human/agent admission, permission catalogue and effective restricted-role grants.",
       "dependsOn": [
         "FND-01"
@@ -35,7 +35,7 @@
       "id": "FND-03",
       "owner": "Shared contracts/runtime integrator",
       "source": "docs/plans/00-shared-contracts.md",
-      "sourceLine": 92,
+      "sourceLine": 108,
       "deliverable": "Versioned company/rule/source inventory and mandatory-check coverage contract.",
       "dependsOn": [
         "FND-01"
@@ -48,7 +48,7 @@
       "id": "FND-04",
       "owner": "Shared contracts/runtime integrator",
       "source": "docs/plans/00-shared-contracts.md",
-      "sourceLine": 93,
+      "sourceLine": 109,
       "deliverable": "Fixed-revision runtime/E2E evidence harness and release manifest using existing suite.",
       "dependsOn": [
         "FND-01"

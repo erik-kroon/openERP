@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-01T10:06:37.213222+00:00",
-  "headObservedAtValidation": "50c745dfc268c51b6fa4075683d71018f0adf125",
+  "checkedAt": "2026-10-01T11:03:54.619363+00:00",
+  "headObservedAtValidation": "4620000ffc70c0e115e2f8852c16d8bdb20cd11b",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,7 +9,7 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 935,
+    "localLinksAndAnchorsChecked": 936,
     "documentsChecked": 48,
     "coverage": {
       "R": [
@@ -122,11 +122,11 @@
     },
     {
       "path": "docs/operations.md",
-      "sha256": "a2927719e38852e02cda3fd26348812b9f189361764d975d70656f90fa048ea6"
+      "sha256": "657d88dd104b2614a0425b69c9b756e9dcb382821990e01a9728cf69f7c8240f"
     },
     {
       "path": "docs/plans/00-shared-contracts.md",
-      "sha256": "6c645a92dd2a487f7c9efd6eb7422ad882fa163186dfdd3d99449fec526a1a7a"
+      "sha256": "4d6a1c208320b5264aeae5e046543f133ca656ddffbe5e95be9a7a9587e8850e"
     },
     {
       "path": "docs/plans/01-posting-approval-receipts.md",
@@ -178,7 +178,7 @@
     },
     {
       "path": "docs/plans/13-reference-derived-defects.md",
-      "sha256": "ddba3511ddeba826ff41969d23b477324821d6dbe075e3a19de5e6b03dcb538e"
+      "sha256": "94e2906521c09e602ac78c55cf4f73d16343aea768ea57712689d84a65321bee"
     },
     {
       "path": "docs/plans/14-parity-ledger.md",
@@ -246,7 +246,7 @@
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "0851f2255aa7e35f4ff0ec3fbbe7cde5cee0d85a76ed4e1ff83336f30654df1b"
+      "sha256": "8d519ed6e5b55ec934f3623be742ff3ddd35e551d2ed3f64b05e3cb254433d33"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -254,7 +254,7 @@
     },
     {
       "path": "docs/plans/next-packet-progress.md",
-      "sha256": "4cf8df27add41715e89dbcafb006f1a18d98ac43afdbaca4a3ed85a719e60318"
+      "sha256": "d2111a0ad62394c49a9a154b592363fb2f0c806403fe884f23f8c279df021e81"
     },
     {
       "path": "docs/plans/next38-credit-coordination.md",
@@ -262,7 +262,7 @@
     },
     {
       "path": "docs/plans/next38-working-contract.md",
-      "sha256": "c1240453512c4b1f305f77ddf93f0df5123063cee0ccb2442f12ec437bb6bc4a"
+      "sha256": "44fbbfa5a0911dbe2783ba9ba02e6e418843235df0504d601bf48d4a24051c2b"
     },
     {
       "path": "docs/plans/overnight-review-ledger.md",

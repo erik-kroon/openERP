@@ -280,8 +280,12 @@ its one-to-one constraint is not the partial supplier-credit model and is unchan
 **DF-10A delivered 2026-10-01.** [Outer boundary codes](evidence/df-10-boundary-codes.md)
 now preserve tagged accounting errors and expose stable body-refusal codes with
 pre-routing recovery semantics. Five real Worker boundary/diagnostics E2E cases
-pass. The domain-wide recovery taxonomy and remedy-code split below remain open;
-this row is not marked fully repaired.
+pass. **DF-10 completed 2026-10-01.** [Shared recovery and remedy codes](evidence/df-10-failure-recovery.md)
+now reach HTTP, MCP and the active browser posting surfaces, preserve old sealed
+refusals, distinguish configuration repair from known transaction rollback, and
+default unknown codes to outcome uncertainty. The final stable-source focused
+regression run passed 52 tests across seven files. The attempted full-workspace
+E2E run timed out and is not claimed as a passing gate.
 
 **Severity: high.** Class A.
 
