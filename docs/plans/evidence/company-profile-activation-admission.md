@@ -21,3 +21,7 @@ OPENERP_E2E_ARTIFACTS=test-results/company-profile-repeat bun run test:e2e apps/
 ```
 
 Frozen installation, fast and type-aware changed-source checks passed. No migration, grant, fact kind, company data, provider, deployment or evaluation workflow changed. Independent integration review and broader application qualification remain separate.
+
+Independent source review accepted the bounded owner at `cf684fd`; final worker revision `abd4911` adds only this evidence document. The coordinator integrated it at `818f790` and repeated all seven cases with stable source in `test-results/integrated-company-profile-20261001`. Fast and type-aware checks against `6711199` passed.
+
+Evidence has three limits. The independent activation-digest assertion and digest repair share one commit, although the preceding execution failure is retained. The rollback JSON omits the immediate post-fault counts; the passing in-test equality establishes that observation, while the JSON retains before and post-recovery counts. Raw manifests hash local configuration and raw artifacts are not a sanitized publication package. These qualifications do not establish Swedish applicability, actual-company admission or complete evaluation coverage.
