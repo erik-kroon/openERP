@@ -70,6 +70,29 @@ or whole-packet completion.
 
 ### Scoped discovery and cancellation recovery
 
+Cancellation approval history is additionally recoverable through
+`GET /purchases/supplier-settlement-cancellation-plans/:id/approvals?after=ID`
+and read-only MCP `purchases_list_supplier_settlement_cancellation_approvals`.
+Pages join scoped immutable approvals to their revocations, at most 25 per page.
+They do not imply current permission. Completed cancellation under a fresh
+command key now refuses `AlreadyPosted`, while exact committed replay retains
+the original receipt. Consumption refusals identify the retained report/closing
+record and its ordinary read path.
+
+`test-results/supplier-authority-order-20261001` proves a blocked execution is
+waiting for reviewer admission, while a second transaction can still lock the
+book NOWAIT. Committing reviewer disable then produces `ApprovalRequired` and
+unchanged independent financial snapshots. This uses observed blockers rather
+than sleep timing and retains `supplier-authority-lock-order.json`.
+
+Combined supplier run `supplier-cancellation-recovery-combined-20261001` passed
+11 and failed one: the old MCP-name assertion mistook a read-only approval-history
+tool for an approval write. The assertion now checks the actual approve/revoke
+verbs; the affected pending case alone passed in
+`supplier-cancellation-recovery-pending-20261001`. No whole-suite green claim is
+made for that failed run. Subsequent focused history/fresh-key/report refusal
+verification passed two selected cases at `supplier-history-idempotency-20261001`.
+
 The owner now exposes `GET /purchases/supplier-settlements?after=ID` and
 `GET /purchases/supplier-settlement-cancellation-plans/:id`, with read-only MCP
 tools `purchases_list_supplier_settlements` and
