@@ -47,6 +47,17 @@ The takeover fixed native reversal defects uncovered on this real path: missing 
 
 ### Retained report cancellation fence
 
+Cancellation execution now rechecks actual native approval actors and plan IDs
+against the sealed parent before any reversal, excludes the maker, and checks
+parent plus all three native expiries in one database-time snapshot. Invalid
+timestamp text fails closed; forward approval usability also rejects invalid
+expiry text. Focused verification passed two selected cases at
+`test-results/supplier-cancellation-expiry-binding-20261001`: the normal financial
+journey and independently inserted wrong-parent-actor/past-expiry/malformed-expiry
+records. All refusals retained the prior independent financial fingerprint.
+This is later source than the 16/16 claim above and does not extend that whole-run
+claim; its full changed-file gate passed.
+
 Sealed settlement currentness now treats lost accounting-profile qualification
 as a stale dependency, rather than presenting an already approved plan as a new
 unsupported request. New preparation retains `UnsupportedProfile`; locked-period
