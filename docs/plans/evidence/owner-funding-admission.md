@@ -68,6 +68,8 @@ are retained; the earlier source inventory does not prove this newer boundary.
   owner. Loans/contributions do not substitute for paid or registered capital.
 - Funding from already-posted cash needs reviewed unused-capacity adoption; this
   slice refuses rather than debiting cash twice.
-- Complete opening-transfer lineage and correction/recovery still need
-  end-to-end qualification. No whole-packet or five-packet completion is claimed.
+- Opening transfer, proposal refresh and its reviewed correction now have
+  [retained REST proof](opening-capital-transfer.md). Historical loan-to-owner
+  capacity adoption and native funding/repayment correction remain open.
+  No whole-packet or five-packet completion is claimed.
 - No live bank/provider, real company fact, registration submission or deployment.
