@@ -31,25 +31,41 @@ Same-key replay preserves one correction receipt and3 total vouchers. The origin
 basis remains historical evidence, not a rewritten assertion of current balances.
 Correction reads expose the retained receipt and original voucher relationship.
 
+## Corrected opening loan to owner capacity
+
+The ordinary owner-record review and posted-line attachment now admit the exact
+corrected9500000 loan without creating another voucher. The shared owner-line
+validator still requires the source evidence/hash/locator, exact account/side/amount
+and a current voucher. When correction owns a new event, a book-scoped recursive
+read follows only committed correction bundles back to the original source event.
+An unrelated event or an uncommitted correction cannot establish that relationship.
+The reversed original refuses StaleDependency; exact attachment replay preserves
+the effect. Opening-loan register capacity is9500000 with0 unexplained ledger gap.
+
+A separate retained500000 bank debit then goes through the native loan-repayment
+owner with independent approval. It consumes that adopted effect, leaving9000000
+open loan, bank12000000 and capital-3000000, with0 register-to-ledger difference.
+This composes existing owners rather than posting a second opening cash debit.
+
 ## Repeatable artifact
 
 Run:
 
 ```sh
-OPENERP_E2E_ARTIFACTS=test-results/opening-funding-batch-acceptance-20261002 bun run test:e2e apps/api/tests/opening-capital.e2e.test.ts apps/api/tests/owner-funding-admission.e2e.test.ts apps/api/tests/period-work-batch.e2e.test.ts
+OPENERP_E2E_ARTIFACTS=test-results/opening-loan-composed-current-20261002 bun run test:e2e apps/api/tests/opening-capital.e2e.test.ts apps/api/tests/owner-funding-admission.e2e.test.ts apps/api/tests/period-work-batch.e2e.test.ts
 ```
 
 13/13 cases pass without skips; source inventory is stable:
-`fe53f4798c9430fe26ed6366ca32b08d18510bf9e0e8d9016e287123980fa6f1`.
+`5b2a812cd95f030dab6ceefcbba1a802644f32f8c6fcd9c42a3219565a2596b1`.
 JSON/JUnit reports and before/after opening-lineage artifacts live in that directory.
 `bun run check:changed:full` passes for the added journey.
 
 ## Remaining acceptance
 
 Native funding/repayment correction and already-posted-cash adoption remain open
-under [owner funding admission](owner-funding-admission.md). This opening does not
-adopt the historical loan into repayable owner-register capacity or create legal
-share rights. Those missing relationships cannot be hidden by a generic journal.
+under [owner funding admission](owner-funding-admission.md). The selected corrected
+opening loan is adopted into repayable owner-register capacity; broader historical
+open-item populations remain unqualified. No legal share rights are created.
 The original packet asks for opening transfer and composed funding owners, not
 NEXT-119's separately designed new share-issue product. This proof does not assert
 NEXT-119 delivery, real company qualification or five completed packets.

@@ -69,7 +69,8 @@ are retained; the earlier source inventory does not prove this newer boundary.
 - Funding from already-posted cash needs reviewed unused-capacity adoption; this
   slice refuses rather than debiting cash twice.
 - Opening transfer, proposal refresh and its reviewed correction now have
-  [retained REST proof](opening-capital-transfer.md). Historical loan-to-owner
-  capacity adoption and native funding/repayment correction remain open.
+  [retained REST proof](opening-capital-transfer.md), including corrected opening
+  loan adoption and subsequent native partial repayment. Native funding/repayment
+  correction remains open.
   No whole-packet or five-packet completion is claimed.
 - No live bank/provider, real company fact, registration submission or deployment.
