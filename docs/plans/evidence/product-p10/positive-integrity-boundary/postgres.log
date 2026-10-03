@@ -1,0 +1,19 @@
+2026-10-03 21:23:24.686 CEST [91462] LOG:  starting PostgreSQL 17.11 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit
+2026-10-03 21:23:24.687 CEST [91462] LOG:  listening on IPv4 address "127.0.0.1", port 59083
+2026-10-03 21:23:24.687 CEST [91462] LOG:  listening on Unix socket "/var/folders/50/zdx6l4px2wg7wh8q7_78g2qr0000gn/T/openerp-e2e-wiOZmg/.s.PGSQL.59083"
+2026-10-03 21:23:24.690 CEST [91465] LOG:  database system was shut down at 2026-10-03 21:23:24 CEST
+2026-10-03 21:23:24.692 CEST [91462] LOG:  database system is ready to accept connections
+2026-10-03 21:23:33.103 CEST [91671] ERROR:  Accounting history is append-only. Create a linked correction.
+2026-10-03 21:23:33.103 CEST [91671] DETAIL:  Forbidden
+2026-10-03 21:23:33.103 CEST [91671] CONTEXT:  PL/pgSQL function fail(text,text) line 3 at RAISE
+	SQL statement "SELECT openerp.fail('Forbidden', 'Accounting history is append-only. Create a linked correction.')"
+	PL/pgSQL function immutable_row() line 3 at PERFORM
+2026-10-03 21:23:33.103 CEST [91671] STATEMENT:  update openerp.cash_bases set id=id where book_id=$1 and id=$2
+2026-10-03 21:23:33.104 CEST [91671] ERROR:  Accounting history is append-only. Create a linked correction.
+2026-10-03 21:23:33.104 CEST [91671] DETAIL:  Forbidden
+2026-10-03 21:23:33.104 CEST [91671] CONTEXT:  PL/pgSQL function fail(text,text) line 3 at RAISE
+	SQL statement "SELECT openerp.fail('Forbidden', 'Accounting history is append-only. Create a linked correction.')"
+	PL/pgSQL function immutable_row() line 3 at PERFORM
+2026-10-03 21:23:33.104 CEST [91671] STATEMENT:  delete from openerp.cash_bases where book_id=$1 and id=$2
+2026-10-03 21:23:33.435 CEST [91462] LOG:  received immediate shutdown request
+2026-10-03 21:23:33.451 CEST [91462] LOG:  database system is shut down

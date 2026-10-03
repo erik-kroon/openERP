@@ -1,0 +1,23 @@
+Current primary strict config; exact changed sources:
+apps/api/src/application/banking/reconciliations.ts
+apps/api/src/application/capabilities/agent-policy.ts
+apps/api/src/application/capabilities/cash-forecast.ts
+apps/api/src/application/capabilities/index.ts
+apps/api/src/application/cash/basis.ts
+apps/api/src/application/commerce/cash-payments.ts
+apps/api/src/application/commerce/register.ts
+apps/api/src/application/purchases/supplier-settlements.ts
+apps/api/src/db/cash/basis.ts
+apps/api/src/db/commerce/allocations.ts
+apps/api/src/db/commerce/fx.ts
+apps/api/src/db/schema.ts
+apps/api/src/index.ts
+apps/api/src/transport/http/routes/cash-forecast.ts
+apps/api/tests/cash-basis.e2e.test.ts
+apps/api/tests/support/cash-basis-supplier.ts
+packages/contracts/src/api.ts
+packages/contracts/src/capabilities.ts
+packages/contracts/src/cash-forecast.ts
+apps/api/src/index.ts:232:9: error anti-slop-effect(no-manual-tagged-construction): Use the existing Schema tagged `.make`, tagged class/error constructor, or Data.taggedEnum variant constructor instead of writing a literal `_tag` object.
+apps/api/src/index.ts:275:5: error anti-slop-effect(prefer-effect-match): Use Match from Effect instead of a chained literal ternary.
+apps/api/src/index.ts:289:17: error anti-slop-effect(no-manual-tag-comparison): Use Match.tag/Match.tags for tagged-value branching, or Predicate.isTagged for a simple reusable predicate.

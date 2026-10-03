@@ -1,0 +1,47 @@
+$ vp test run "apps/api/tests/cash-basis.e2e.test.ts" -t "P10 captures exact selected current openings"
+
+ RUN  v4.1.10 /Users/admin/.codex/worktrees/midday-product-p10/openERP
+
+ ❯ apps/api/tests/cash-basis.e2e.test.ts (8 tests | 1 failed | 7 skipped) 804ms
+   × P10 captures exact selected current openings and immutable known-items bytes through HTTP and MCP 803ms
+   ↓ P10 retains dated observations without inventing a current opening {"old":true}
+   ↓ P10 retains dated observations without inventing a current opening {"incomplete":true}
+   ↓ P10 rejects historical knowledge, supplied amounts and cross-book references and rechecks revoked authority
+   ↓ P10 reads all canonical invoice amounts and retains immutable captures when revisions change
+   ↓ P10 preserves unsupported foreign obligations without converting them or hiding coverage gaps
+   ↓ P10 keeps a same-day allocated residual blocked when the selected closing lacks its payment witness
+   ↓ P10 never treats a restricted account review or unavailable balance as selected opening cash
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/api/tests/cash-basis.e2e.test.ts > P10 captures exact selected current openings and immutable known-items bytes through HTTP and MCP
+AssertionError: POST http://127.0.0.1:49940/api/v1/entities/entity_0c76875f13888a23/books/book_0c76875f13888a23/cash-bases: 404
+{"_tag":"AccountingError","code":"NotFound","message":"The requested record was not found.","recovery":"permanent"}
+requestId=6b206287-4afa-42b6-80e5-5aff63d92f0a; Worker logs: /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-initial-red/worker.json: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ decoded apps/api/tests/support/fixtures.ts:167:63
+    165| ): Promise<S["Type"]> {
+    166|   const body = await response.text();
+    167|   expect(response.status, responseDiagnostic(response, body)).toBe(200…
+       |                                                               ^
+    168|
+    169|   return Schema.decodeSync(Schema.fromJsonString(schema))(body);
+ ❯ apps/api/tests/cash-basis.e2e.test.ts:165:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 skipped (8)
+   Start at  19:54:39
+   Duration  6.66s (transform 124ms, setup 0ms, import 346ms, tests 804ms, environment 0ms)
+
+JSON report written to /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-initial-red/results.json
+JUNIT report written to /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-initial-red/junit.xml
+error: script "test:e2e" exited with code 1
