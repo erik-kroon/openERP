@@ -1,0 +1,12 @@
+{
+  "canonicalEquality": [
+    {
+      "app": "sha256:3fa0c796b56886d393d4ccd584ad815250bca2d16663f1794d4f5f71bf7aebee",
+      "database": "sha256:3fa0c796b56886d393d4ccd584ad815250bca2d16663f1794d4f5f71bf7aebee",
+      "equal": true
+    }
+  ],
+  "immutableUpdateAndDelete": true,
+  "tampered": null,
+  "candidate": "body.digest = openerp.digest(body - digest)"
+}
