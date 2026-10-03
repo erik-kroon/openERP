@@ -1,0 +1,28 @@
+{
+  "scope": {
+    "entityId": "entity_505b31d3d5766dbf",
+    "bookId": "book_505b31d3d5766dbf"
+  },
+  "retainedCount": 22,
+  "firstPageCount": 20,
+  "selectedOutsideFirstPage": "source_f66070e865d449289020b1636df9c65a",
+  "uploadedOccurrence": "source_449a58ef77fe4852827ea45f67f85202",
+  "missing": {
+    "id": "source_missing_inbox_selection",
+    "status": 404,
+    "code": "NotFound",
+    "closeAvailable": true
+  },
+  "networkError": {
+    "retained": true,
+    "closeAvailable": true
+  },
+  "forbidden": {
+    "status": 403,
+    "code": "Forbidden",
+    "retained": true,
+    "closeAvailable": true
+  },
+  "automaticRegistrationWrites": 0,
+  "finalUrl": "http://127.0.0.1:58500/entities/entity_505b31d3d5766dbf/books/book_505b31d3d5766dbf/purchases?view=supplier-drafts"
+}
