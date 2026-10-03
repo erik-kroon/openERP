@@ -6,6 +6,14 @@ Status: working design and implementation record, 2026-09-23. The implementation
 
 Build one application around the work people need to finish. Founders start with decisions and business position. In-house finance starts with the work queue. Accountants working across clients start with a portfolio and enter the same company workspace. Every view opens the same evidence, revisions, approvals and receipts.
 
+## Product priority — 2026-10-03
+
+[ADR 0017](adr/0017-bureau-first-product-focus.md) governs the intended experience. Prioritize bureau portfolio and scoped assignment, canonical Att göra tasks, incoming evidence and bank matching, invoicing and VAT. Accountants review and post within granted book powers; owners answer questions and approve payments. Preserve the owner-operated path.
+
+Questions, review, missing bank evidence, email and VAT/closing checklists filter or link the same task identities. An answered question may unblock a review; it does not approve its effects. Historical action logs remain separate from pending work. Use bounded batch approval, exception review and exact external-action approval with unchanged financial integrity. Keep automatic posting outside the adopted scope.
+
+The target onboarding reaches bank connection, document intake and matched explainable proposals before detailed assistant policy. Show account rationale, source basis, uncertainty and authorized rule changes with undo. Adopt the clearly synthetic demo/tour. Live feeds, Peppol, VAT filing and BankID are intended connections subject to D-01/D-08/D-10; the dated implementation inventory below does not claim them. Advanced personal-assistant/API setup and Cash move later.
+
 ## Implementation status — 23 September 2026
 
 The desktop application has scoped customer workspaces, source-led preparation and persisted coordination using the existing interface tokens and accounting contracts. Implementation, observed behavior and production readiness remain separate. Earlier observations are in [desktop workspace evidence](../.agents/work/customer-frontend-proof/desktop-workspaces.md); the continued journeys, checks and limitations are in [the continuation record](../.agents/work/customer-frontend-proof/continuation.md).

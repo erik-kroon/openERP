@@ -1,5 +1,7 @@
 # Complete delivery design for the seven accounting areas
 
+**Commercial sequence, adopted 2026-10-03:** [ADR 0017](../adr/0017-bureau-first-product-focus.md) prioritizes the bureau-led documents/bank/invoicing/VAT loop, canonical human tasks, bounded bulk review and qualified connected execution. Native payroll is deferred for specialist integration evaluation; Cash and peripheral commerce/ERP surfaces follow the core loop. The ready order below gives the implementation sequence; the retained packets and dependencies describe technical obligations, not a mandate to deliver the full suite before the wedge. Applicable company accounting, corrections, reconciliation, handoff and recovery gates remain; unsupported actual cases cannot be silently omitted. No automatic posting is adopted.
+
 Status: working design for seven accounting areas. The packets define ownership, behavior, dependencies and acceptance. Implementation, company qualification and external acceptance remain separate.
 
 Start with [Book Zero](15-book-zero-workflow-cash.md) for the customer outcome and [the comparison reconciliation](16-comparison-reconciliation.md) for the current work order. Use the domain packets below to implement each step.

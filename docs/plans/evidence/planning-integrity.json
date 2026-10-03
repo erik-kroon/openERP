@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-01T11:03:54.619363+00:00",
-  "headObservedAtValidation": "4620000ffc70c0e115e2f8852c16d8bdb20cd11b",
+  "checkedAt": "2026-10-03T21:07:44.831447+00:00",
+  "headObservedAtValidation": "4c591511a5df48454ac392a06dc8eb976b843ee8",
   "result": "passed_document_integrity_only",
   "reproduce": "python3 docs/plans/check-plan.py",
   "checks": {
@@ -9,8 +9,8 @@
     "mandatoryDependencyEdges": 101,
     "mandatoryDependencyCycles": 0,
     "conditionalGateRows": 7,
-    "localLinksAndAnchorsChecked": 936,
-    "documentsChecked": 48,
+    "localLinksAndAnchorsChecked": 968,
+    "documentsChecked": 54,
     "coverage": {
       "R": [
         "R-01",
@@ -90,7 +90,7 @@
   "files": [
     {
       "path": "docs/README.md",
-      "sha256": "f9183b796b8862fa37c1e5bb2ac662ef22a158d390e9b3b867b2a24d52e18caa"
+      "sha256": "d0c4ef1bcb93c4ad0ece83c476b64e42b6cedd2fe74216e82fc9db21c3d9c057"
     },
     {
       "path": "docs/adr/0002-exact-posting-and-approval.md",
@@ -102,11 +102,11 @@
     },
     {
       "path": "docs/adr/README.md",
-      "sha256": "caaa449a79e1b9a61ff986943167d14e2c721fdf6ef8db920a4bf454a056db5d"
+      "sha256": "0c44fe29f853390c0a0e99ba0b17312868e6a4a3a2dac67b21180a05737a7f66"
     },
     {
       "path": "docs/architecture.md",
-      "sha256": "313eebf05297a2ca5b60a2320ac3954002922e4224a716a5efc19c17a0a0feb8"
+      "sha256": "b5e7444c21f5c4bbb8e067528d91987919f9aaaab8b314721ab9597f13ac8e73"
     },
     {
       "path": "docs/compliance.md",
@@ -118,11 +118,11 @@
     },
     {
       "path": "docs/open-decisions.md",
-      "sha256": "9f5999c03a93d3472bd65c3070d7d8ddc6ca302ab8e498113b0b48bf79338af8"
+      "sha256": "2b2d2a04cd4b91ba424b18a596d5420ff683c017ddf1a508310bc6325ef2140f"
     },
     {
       "path": "docs/operations.md",
-      "sha256": "657d88dd104b2614a0425b69c9b756e9dcb382821990e01a9728cf69f7c8240f"
+      "sha256": "35bcdf9141781ebc96b836dd422ef0b61401cc8b43db25c89a59527318254d84"
     },
     {
       "path": "docs/plans/00-shared-contracts.md",
@@ -158,7 +158,7 @@
     },
     {
       "path": "docs/plans/08-delivery.md",
-      "sha256": "eb7753d46feee44b91ca584d448ce2a3b49f7e46902be2ade93dbfb05f5c2618"
+      "sha256": "8f24f3a22ebcf1d48620926588a1f997a261e9c03432718a10e4b3d5c8034a05"
     },
     {
       "path": "docs/plans/09-acceptance.md",
@@ -174,7 +174,7 @@
     },
     {
       "path": "docs/plans/12-next-implementation-dossier.md",
-      "sha256": "ab2e2b8da9937be329cdb7e8687e81f2d3afeb7955b74f95c4c3a35ce76ff98a"
+      "sha256": "2ac38ebd16644cb089c7fbf528ee29028adf8f38346527544279624996631bdf"
     },
     {
       "path": "docs/plans/13-reference-derived-defects.md",
@@ -190,7 +190,7 @@
     },
     {
       "path": "docs/plans/15-book-zero-workflow-cash.md",
-      "sha256": "ac4395d5e9167469f647b62600d152d83eb9ea86aa576a9f6d7b1b2b4249d966"
+      "sha256": "e16d23bd2bfc00f3cd5a82f6c32d66d26ea23aa2dae0edbbf520091565513f85"
     },
     {
       "path": "docs/plans/16-comparison-reconciliation.md",
@@ -202,7 +202,7 @@
     },
     {
       "path": "docs/plans/README.md",
-      "sha256": "f77bb13627cad428b011a6a7f72ee66912122707254ae45d8d2b216075e5caee"
+      "sha256": "769ee44f7ed09776b697e3fcfd79d3e454afc91cd1d29f71db0dc378ccd88e19"
     },
     {
       "path": "docs/plans/accounting-completion-wave.md",
@@ -226,11 +226,15 @@
     },
     {
       "path": "docs/plans/capability-backlog.md",
-      "sha256": "9e1e68d92ae55f7766549f7a3db7b0c3855a2f07c453ef9635832cddcfaca8ce"
+      "sha256": "993440667c9f1c8ec7d5e1350dcb7a47c7f26a13c9132ef190513a506da408ec"
     },
     {
       "path": "docs/plans/check-plan.py",
       "sha256": "4d39b0193545588516b130cf0842b658465d06c6bfa08357e52af5af64f765ea"
+    },
+    {
+      "path": "docs/plans/current-foundation-reconciliation.md",
+      "sha256": "69a12f0cd7438c1ac9e09f35421a330dee339b3b4812c27e01dc614e07ff26fd"
     },
     {
       "path": "docs/plans/document-classifier-proposal.md",
@@ -241,12 +245,16 @@
       "sha256": "7296fd7e8a8ada3bf0d44fafa8694993ff3a5ed0400752b05a80d5d2d5f0d3fe"
     },
     {
+      "path": "docs/plans/document-work-failure-contract.md",
+      "sha256": "98810b6bd2b244ea3fdd73b3e9d6cb1775a900bb20e4fe91b4ec04bc5d62352f"
+    },
+    {
       "path": "docs/plans/evidence/planning-baseline.json",
       "sha256": "04ef034be1d41a5672cef0b7aa3edf5fb15b8ec92a9a5bf1808c24e0762afe1f"
     },
     {
       "path": "docs/plans/evidence/work-packages.json",
-      "sha256": "8d519ed6e5b55ec934f3623be742ff3ddd35e551d2ed3f64b05e3cb254433d33"
+      "sha256": "537dac017f264bd6cb0bb7d4a1348b5ce0bca215d808966729ed811c0748af5d"
     },
     {
       "path": "docs/plans/fnd01-reconciliation.md",
@@ -269,8 +277,24 @@
       "sha256": "6684840b19b476d7b342756ea918fac80bd39a477a067bbd960c2a5eb0393cd9"
     },
     {
+      "path": "docs/plans/p02-commercial-draft-failures.md",
+      "sha256": "e2cce70717ec1bd0540f7424f3f202aafe206e0ddca56f413f8b9b30ff60f826"
+    },
+    {
+      "path": "docs/plans/p06-invoice-defaults-failures.md",
+      "sha256": "e002a673776ef5cf74260aecec50e8c4201c0fcf4460c794dd22af8bae7fa336"
+    },
+    {
+      "path": "docs/plans/p07-invoice-template-failures.md",
+      "sha256": "85e0849a0c9ca9c7781916234080a6fc6fa567228fc5df2818dc3b4132f0be77"
+    },
+    {
       "path": "docs/plans/pdfcn-adoption.md",
       "sha256": "e233615949ba7430ddb5ef202938bb460e44b5abfd34a8e3b394fbffcfd4e036"
+    },
+    {
+      "path": "docs/plans/product-focus-review.md",
+      "sha256": "f9190662d8eee36589f73f625e61622f1c24e141ddebde91f502d2660a50296d"
     },
     {
       "path": "docs/plans/seb-statement-preview.md",
@@ -286,11 +310,11 @@
     },
     {
       "path": "docs/roadmap.md",
-      "sha256": "c554f7f22305e65e0bc3d6a60bdc1b65afb79a176fee7e25071711aba5e5b624"
+      "sha256": "ed98b2c57f0e728dc6f4f5290c9f3555207cf515be118c9026ea0a76a93d50bc"
     },
     {
       "path": "docs/verification.md",
-      "sha256": "cace84d4a6908b75fc51b8c917074f10483456c8f4ccb5a2deb6976d76dbcc1e"
+      "sha256": "69d6b2d1f622a09452df1932b24478ab429de49c539860b8a9c1b1c8ecc9a3aa"
     }
   ]
 }

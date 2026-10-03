@@ -44,6 +44,12 @@ automatic retry. It proves content-invalid commands terminal separately. Older
 sealed refusal bodies remain unchanged; read-view/client classification uses their
 stable code without adding fields to retained data.
 
+## Adopted human-task and review model — 2026-10-03
+
+[ADR 0017](adr/0017-bureau-first-product-focus.md) makes Att göra the canonical pending-human-work model. Questions, review, bank evidence, email and VAT/closing views reference the same scoped task identity, responsible role, dependencies and completion. Actions logs preserve history. Resolving a question unblocks work without granting approval; financial completion requires the owning receipt. This target still needs implementation proof across views.
+
+Accountants exercise assigned bookkeeping powers; owners answer questions and approve payments. Support bounded batch approval for familiar eligible treatments and individual review for exceptions. Every selected group retains exact immutable effects, current authority, dependency validation and its own receipt; changed groups cannot inherit batch approval. Materiality and eligibility policy must be specified before activation. External actions keep explicit exact-content approval and unknown-outcome recovery. Rules still propose; automatic posting is not adopted. Connected execution is the target under D-10, not authorization for live actions.
+
 ## Human workbench
 
 The [customer frontend plan](frontend.md) owns the workspace layouts, scoped routes, audience starting views and migration from the current all-sections page. Its [acceptance scenarios](frontend.md#acceptance-and-verification) apply the review and recovery requirements below to customer journeys.

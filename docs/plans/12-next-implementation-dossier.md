@@ -1,5 +1,8 @@
 # NEXT implementation dossiers: packets, prerequisites and mapping
 
+**Commercial sequence, adopted 2026-10-03:** [ADR 0017](../adr/0017-bureau-first-product-focus.md) prioritizes the bureau-led documents/bank/invoicing/VAT loop, canonical human tasks, bounded bulk review and qualified connected execution. Native payroll is deferred for specialist integration evaluation; Cash and peripheral commerce/ERP surfaces follow the core loop. The retained packets, priorities and dependencies below describe technical obligations, not a mandate to deliver the full suite before the wedge. Applicable company accounting, corrections, reconciliation, handoff and recovery gates remain; unsupported actual cases cannot be silently omitted. No automatic posting is adopted.
+
+
 Status: **planning scope, implementation-level design; no implementation or verification status**. Added 2026-09-26; the third, fourth and fifth waves added 2026-09-28. Owner: cross-area integrator, with the per-packet owner lane named in each packet. Phase: supplemental to the seven-area [delivery plan](README.md); the packets are **not** added to the 53-packet accounting index or its dependency DAG.
 
 The decision to vendor these dossiers, keep them outside the maintained plan namespace and treat `NEXT-nn` as a work namespace rather than a delivery index is [ADR 0012](../adr/0012-next-implementation-dossier.md). The vendored files themselves are listed in [the specifications index](../specs/README.md).

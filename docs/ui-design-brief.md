@@ -6,6 +6,14 @@ Owner direction, 2026-10-01: design how OpenERP should look, function and flow. 
 
 Later owner steering, 2026-10-01: keep Accounted's sensible approaches without changing them for novelty. Narrow/mobile design is deferred for now. This iteration reviews desktop design and records the deferred scope explicitly; eventual narrow usability and runtime accessibility requirements remain.
 
+## Adopted focus — 2026-10-03
+
+[ADR 0017](adr/0017-bureau-first-product-focus.md) governs the commercial sequence and role split. The bureau is the primary customer: accountants own routine bookkeeping within granted authority; owners approve payments and answer questions. First design the incoming-document, bank-match, invoice and VAT loop, with bureau assignment and exceptions as core work. Keep the owner-operated route.
+
+Att göra is the single source of pending human work. Questions, review, bank missing-evidence, VAT/closing checklists and email are filtered views of the same tasks. Use bounded bulk approval for familiar supported bookkeeping, individual review for exceptions and explicit exact-action approval for payments, messages and filings. Keep technical seals secondary without weakening immutable effects or recovery. No automatic posting is adopted.
+
+Design connected execution after approval: bank feeds, Peppol, VAT filing and BankID, with clear consent and separate submitted/accepted/paid/unknown states. Show assistant rationale and source basis; show learning only for actual authorized rule changes with undo. Onboarding and the adopted synthetic demo/tour reach bank → document → matched proposal before detailed policy. Native payroll is deferred for specialist integration evaluation; Cash and peripheral commercial surfaces follow the core loop. The wider page map below is retained inventory, not first-release navigation or delivery order. Use the new checklist adoption backlog.
+
 ## Product in one sentence
 
 OpenERP helps an owner or finance professional turn retained source documents and financial activity into reviewed accounting decisions, reconciled books, and outputs they can trace and trust.
@@ -46,7 +54,7 @@ OpenERP
     ├── Sales                  customers, invoices, settlement
     ├── Purchases              documents, supplier invoices, expenses
     ├── Bookkeeping            vouchers, corrections, schedules, readiness
-    ├── Tax                    supported review and preparation only
+    ├── Tax                    VAT review, approval and qualified filing
     ├── Reports                saved reports, drilldown, review outputs
     ├── Year-end               period assessment and handoff
     └── Settings               book configuration and access
@@ -103,7 +111,7 @@ Use Accounted to ground design in the actual product: inspect the corresponding 
 
 The source inventory contains 129 Accounted route templates and 21 OpenERP URLs. Use it to avoid losing secondary workflows, not to produce 150 interchangeable frames. The [screen checklist](ui-design-checklist.md) maps every source route to a target screen or explicit disposition and includes intended flows beyond current routes.
 
-For the next unchecked screen, inspect its actual Accounted working state and relevant interactions with safe synthetic/demo data. Inspect source only to resolve ambiguity. If a record or token is unavailable, record that reference limitation and design the intended flow using labelled synthetic content. An unavailable capture is not automatically a design blocker.
+For the next screen in the adoption backlog, then the applicable unchecked inventory item, inspect its actual Accounted working state and relevant interactions with safe synthetic/demo data. Inspect source only to resolve ambiguity. If a record or token is unavailable, record that reference limitation and design the intended flow using labelled synthetic content. An unavailable capture is not automatically a design blocker.
 
 Explain the job and hierarchy before drawing. Build one desktop screen carefully, inspect its Paper screenshot, critique and refine it, then complete the narrow layout, meaningful states and control destinations. Record design decisions before moving on. Do not batch whole product areas or count a frame as finished just because it exists.
 

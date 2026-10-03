@@ -1,0 +1,312 @@
+{
+  "observedAt": "2026-10-03",
+  "revision": "4c591511a5df48454ac392a06dc8eb976b843ee8",
+  "sourceInventorySha256": "a25e336f8654aff87dc1a499b7967c7f3f8debf97aa4cc6e749aa663d235afe9",
+  "sourceIntegrity": {
+    "status": "stable",
+    "changedPaths": [],
+    "sourceInventorySha256": "a25e336f8654aff87dc1a499b7967c7f3f8debf97aa4cc6e749aa663d235afe9",
+    "finalSourceInventorySha256": "a25e336f8654aff87dc1a499b7967c7f3f8debf97aa4cc6e749aa663d235afe9",
+    "checkedAt": "2026-10-03T21:00:25.262Z"
+  },
+  "runtime": "local workerd; real PostgreSQL; restricted runtime role",
+  "postgres": "postgres (PostgreSQL) 17.11 (Homebrew)",
+  "node": "v26.4.0",
+  "migrations": [
+    {
+      "name": "0001-schema.sql",
+      "sha256": "5dcc8f6673f11a14046c9694a8d60a24cf7b2f895ca856501cb3b5793c0c1bd2"
+    },
+    {
+      "name": "0002-integrity.sql",
+      "sha256": "420a345ae723cc66e24e8d771778e13508debf1338c14f164dbf81cf64c32e79"
+    },
+    {
+      "name": "0003-roles.sql",
+      "sha256": "8a89d39f6baad6862143c7c13de1199f3cc8900ab7ec68375c7e0c175d45cef7"
+    },
+    {
+      "name": "0004-next-02.sql",
+      "sha256": "d01a698b55ecd054c0285b9fbcdd4e31479c422dd7d6e93bf6bc3a1fdd87eca7"
+    },
+    {
+      "name": "0005-next-13.sql",
+      "sha256": "eb52687994bb9c2a2c25ef4ce40f0871881e7de3b24bd2cbfdea4a905beb86d6"
+    },
+    {
+      "name": "0006-next-03.sql",
+      "sha256": "1ee09458a915fb5ed1cd5dad5c1492a7893fb615d9de766bfe07c588d8def4bd"
+    },
+    {
+      "name": "0007-next-11.sql",
+      "sha256": "f78ee53cf90022cc24fec1f366d7d3be0395203106809ef17769a70e888c43a3"
+    },
+    {
+      "name": "0008-next-20.sql",
+      "sha256": "63933cd39a60e70494e67388dc72f86481453ffd75178f72b1937650997b94ec"
+    },
+    {
+      "name": "0009-next-26.sql",
+      "sha256": "633f3c6b99f112be70131b9d50fd3842959b50eaa53533b4a24d5a8cc1f7af92"
+    },
+    {
+      "name": "0010-next-49.sql",
+      "sha256": "230e096994513912fd97bd58489827a5f766d23e2485cccd02fc78ca867ba468"
+    },
+    {
+      "name": "0011-next-15.sql",
+      "sha256": "0a66cb23b675206b37c836ed045064c4ec8387ca733aeab225b1a723f1b59ce8"
+    },
+    {
+      "name": "0012-next-17.sql",
+      "sha256": "a9a0212b7fd8466cd283222f18cca4c644e6f497a2b7d8c346f7c75803168afa"
+    },
+    {
+      "name": "0013-next-22.sql",
+      "sha256": "10a34fb932eeb070e54cd171a11aa38253579d950d2af53fc30247ab4c6d240b"
+    },
+    {
+      "name": "0014-next-14.sql",
+      "sha256": "39f1357383efb044c0dcc9111fc1d6d8f26a293623cdc7a5f74d69277d7ad8e5"
+    },
+    {
+      "name": "0015-next-04.sql",
+      "sha256": "46a44ef61e6712f7b42338849282a81e53aed6518ac82f644f676cb30e8806f0"
+    },
+    {
+      "name": "0016-next-06.sql",
+      "sha256": "0ce1653c4206320848eba8cbe89789c52d525f033a157b39c34cea393fececd0"
+    },
+    {
+      "name": "0017-next-16.sql",
+      "sha256": "204cdbdb2679b8bc3cf95c9fa3b17016dcbe9a0d8222d1fc877dbdddce5bcd9b"
+    },
+    {
+      "name": "0018-next-29.sql",
+      "sha256": "c1c6e8500c90e60196b8ac991eb8ae81d9756bcaeb83cd1eda40d8b9dc09cce7"
+    },
+    {
+      "name": "0019-owner-approval-digests.sql",
+      "sha256": "3f195f2ca9afec8a62bd8197b4d2229e30790fe11524e53ab2813d0d03a529d3"
+    },
+    {
+      "name": "0020-zero-tax-credit-lines.sql",
+      "sha256": "f6601a3bd6c9225ce69cfaa187855e91368a7ee60e4824b01707ac7b4b9ea042"
+    },
+    {
+      "name": "0021-fulfillment-reverification.sql",
+      "sha256": "0294a51e331a06446acafe8de63c9aa030f55491f01270323933ec63707cb4fd"
+    },
+    {
+      "name": "0022-credit-document-artifacts.sql",
+      "sha256": "b6827371d05510044dd120057d7f2c7c8130a346e8f2ed9c8f0a5449577c6e53"
+    },
+    {
+      "name": "0023-vat-owned-producers.sql",
+      "sha256": "dd42a6bd67d0b8ba9b7370cb70b1dee29ef1603f9dfcd9b092da7e4198b87abf"
+    },
+    {
+      "name": "0024-document-reading.sql",
+      "sha256": "3387fe5ab8f490db911f5cbc85c39ac4e542218d5b828c436fd3f948a624c98a"
+    },
+    {
+      "name": "0024-sie-object-openings.sql",
+      "sha256": "9eb9f099cb8f66f39203485184130004dd42439e0b4fc66fb64078fd5c07a887"
+    },
+    {
+      "name": "0025-next-05.sql",
+      "sha256": "dfad9d1996184499c4d135965de767a4652ccabbc4a52e54bcdb9504ab5d1c93"
+    },
+    {
+      "name": "0026-next-23.sql",
+      "sha256": "c64ad97220cde097e3df555f96f64757938a335b8ab2c55b31b2bb13f0907831"
+    },
+    {
+      "name": "0027-next-24.sql",
+      "sha256": "4ee7c9aeabd94deb36c28b6f938f99f60447560d0172927ca8694c0276b98e75"
+    },
+    {
+      "name": "0028-next-37.sql",
+      "sha256": "edda383a96ae8f518c5c829d5ba57c57f11da303a6992ec61463a0bf1a35c770"
+    },
+    {
+      "name": "0029-next-07.sql",
+      "sha256": "fb97f51d61e8c7b6bbd2014838162ee269b2cbf1237e71c6d702fb8e799ef19b"
+    },
+    {
+      "name": "0030-next-23-review.sql",
+      "sha256": "c6a1403ea9b5020fe29fa365b959883e5ab7f78608cf9f1e67b30ad6f7cb28d6"
+    },
+    {
+      "name": "0031-next-37-review.sql",
+      "sha256": "8ab22ab890a009507033a9b7ddfa27b646cde9ea0ca4720881d7d70370412829"
+    },
+    {
+      "name": "0032-next-43-dimension-restatement.sql",
+      "sha256": "42d65767a4b878cec75be48b2751044dd63cba35ff0677bb5f48bbde6f38b827"
+    },
+    {
+      "name": "0033-next-18-fx-remeasurement.sql",
+      "sha256": "75528eaea71d39cce1ad4a318451cd2c986f8e89a0282c828a79d973046d5a53"
+    },
+    {
+      "name": "0034-next-30-customer-credits.sql",
+      "sha256": "30ea0b461a1dea13d155909c66ea9a9f87d97ff17b4778b715dd966b65da39dd"
+    },
+    {
+      "name": "0035-next-41-fx-chain-repair.sql",
+      "sha256": "2934d6fd99f6639051fab29dc66a7dd50378c2b1fef40a1c5363287126b6cec3"
+    },
+    {
+      "name": "0036-next-09-sync-windows.sql",
+      "sha256": "ef0f036f35ba5fa0befb1afdc4d05848c3e89e9e851456c5e1a587bc9d9761c8"
+    },
+    {
+      "name": "0037-next-10-source-revisions.sql",
+      "sha256": "bacb3ab0e36b0bb0f2ff2cb44c1c920cefca9bbd359824d660a2818bdf7a2132"
+    },
+    {
+      "name": "0038-bank-capacity-reconciliation-insert.sql",
+      "sha256": "8c9eda00e56e6ad4f5c363dbbe6b9b810d55185cd1f2f9d2c26f2ded0d8fd508"
+    },
+    {
+      "name": "0039-next-31-prepayments.sql",
+      "sha256": "95f1c3ee6839c3e7fd6c5839db44299b8cc8e66e6b805c84e36c41f5c61fd933"
+    },
+    {
+      "name": "0040-next-38-cash-method.sql",
+      "sha256": "5367e73a7632121eaab02623f410f65118fe05c394c3ae59b8cad24edb985cfe"
+    },
+    {
+      "name": "0042-pdfcn-renderer.sql",
+      "sha256": "5cbba7159aa8f66b4743443653062d28e34092a47c7101226347470dec63e110"
+    },
+    {
+      "name": "0043-cash-method-commercial-invoices.sql",
+      "sha256": "ba7c755dd488072f18b4d5f74e949703e6ddac31fe36ead26afd49d4f4fd7d11"
+    },
+    {
+      "name": "0043-posting-request-attempts.sql",
+      "sha256": "4284f02df0827aa6d99b625b3866cf304067b136e1f362b23e2785707681386a"
+    },
+    {
+      "name": "0044-cash-method-allocation-recognition.sql",
+      "sha256": "c62a5b67973d9dae7110250bfb4e419e51bf8e9e58e646d34fbbd88e63d0e008"
+    },
+    {
+      "name": "0044-voucher-period-date.sql",
+      "sha256": "5ffeed20d6d7cc7f5486bb69ef9de168106b6e33939da89d25fe85158334f4b8"
+    },
+    {
+      "name": "0045-bank-match-integrity.sql",
+      "sha256": "84c767a6ca8ae12647768df4de4f054c3703aef6df86355ca9177cc5683e4534"
+    },
+    {
+      "name": "0045-cash-method-complete-year-end.sql",
+      "sha256": "ba495d9a8b03994bbcbcfc5c21c4becb4f9445a7552bf0488481d9a0501c3421"
+    },
+    {
+      "name": "0046-cash-method-unpaid-credits.sql",
+      "sha256": "a59a3c6bc9a9e9c9a281acb02396221cff06d26d4e143ae3d19e0c6c6c797b5c"
+    },
+    {
+      "name": "0046-period-lock-integrity.sql",
+      "sha256": "3a9c31b6e7ee19de2aadb03a03ddc42e1ee5329e7b1316e9661e11610f02892d"
+    },
+    {
+      "name": "0047-supplier-credit-cap.sql",
+      "sha256": "2369a145f64e66c622b9bae6632dfd9a87e28259b8e8f2836c1381043caf0e31"
+    },
+    {
+      "name": "0048-cash-invoice-recognition-period.sql",
+      "sha256": "9997994f777c091bfb668c24af3283d4b7cc49a147a71e236983f1d93034fee2"
+    },
+    {
+      "name": "0048-next38-commercial-period-admission.sql",
+      "sha256": "df64ec3a157899181b183745799d0364e27ab3e79f38aafc078739b277d873e1"
+    },
+    {
+      "name": "0049-evaluation-contracts.sql",
+      "sha256": "1c4651219b725b2cd1e587e67d7a018985a202ab06daf47d139a546717822014"
+    },
+    {
+      "name": "0050-validate-vat-receipt-match.sql",
+      "sha256": "c415ab510a661e51d17ab31ba4e3e055fc3c5eaadd2b86a9383311db54cc7382"
+    },
+    {
+      "name": "0051-rule-selector-check-stability.sql",
+      "sha256": "7deb0a5d37b5ab4103d282c801d064551daeea9d1f9414a494b7fc18824b633d"
+    },
+    {
+      "name": "0052-supplier-settlement-pending.sql",
+      "sha256": "a670ebe86563855c4867443aab25f2fb19401527a15105381d0104df8b2a69c5"
+    },
+    {
+      "name": "0053-supplier-settlement-execution.sql",
+      "sha256": "a99d0060db576fd4b24e71d9fc974fd13b6792fb3138ebbe9c3489a88fe3c7a2"
+    },
+    {
+      "name": "0054-supplier-cancellation-revocations.sql",
+      "sha256": "f04787c7148f6f6f5c1ccdffc1c02a2d0855341ac929d39919951a9212e664cd"
+    },
+    {
+      "name": "0055-supplier-settlement-receipt-bindings.sql",
+      "sha256": "f0dd040f5e1d5f4b91172b7915a91e5ce613c65a509e00b61c29a5c51cce79bf"
+    },
+    {
+      "name": "0056-agent-context-continuation.sql",
+      "sha256": "20f76a3349c40ed219e7a8e974387478432bfa91686fc0c25212b9ef1ed9d5aa"
+    },
+    {
+      "name": "0057-period-work-execution-results.sql",
+      "sha256": "c59c34aa7c2c567f62bf9ac04352f599ae19ea6c82f9233e85cd859fc0e626bf"
+    },
+    {
+      "name": "0058-owner-funding-receipt-amounts.sql",
+      "sha256": "0417f1fca3b3debf70e6e65672bcabaa3bbc6b9a8c8678d46a1976ef101f833f"
+    },
+    {
+      "name": "0059-owner-loan-repayment.sql",
+      "sha256": "88592f2501d816993b7c88533af4b04465aea95a2ba127c2d178a7f817f63f07"
+    },
+    {
+      "name": "0060-document-work-assignments.sql",
+      "sha256": "0f7159af64186975652b17caaabbbe19075ea51a46d497a1600529413914c3bb"
+    },
+    {
+      "name": "0061-commercial-draft-purpose.sql",
+      "sha256": "9d9427263eae99d84dc0214d82c527bd733a42031529fdd7f10d857530eee1b4"
+    },
+    {
+      "name": "0062-customer-invoice-defaults.sql",
+      "sha256": "136598efb2a9cf80b1911159bc8d13899a482f22d12145a7e1a206168e4163d5"
+    },
+    {
+      "name": "0063-invoice-content-templates.sql",
+      "sha256": "780aa4a3d8379b4da00342a4aa33bd61df3de70e86c31a6098357c05985244bf"
+    },
+    {
+      "name": "0064-document-library-source-evidence.sql",
+      "sha256": "9b01bb9340cdf315010007f7dbd66a290ae95f9a87f88c82ab19389fad58ba46"
+    }
+  ],
+  "results": {
+    "numTotalTests": 31,
+    "numPassedTests": 31,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "command": "OPENERP_E2E_ARTIFACTS=test-results/foundation-core-repeat bun run test:e2e apps/api/tests/evidence-manifest.e2e.test.ts apps/api/tests/admission.e2e.test.ts apps/api/tests/posting.e2e.test.ts apps/api/tests/persistence.e2e.test.ts apps/api/tests/mcp.e2e.test.ts apps/api/tests/assurance/atomicity.e2e.test.ts apps/api/tests/assurance/response-loss.e2e.test.ts apps/api/tests/assurance/concurrency.e2e.test.ts",
+  "artifacts": {
+    "manifest.json": "e5e5f5f6d7c92c6a9e4b1fedab17ea7c7abb36082bfda98abf5a0d797cb7b1f4",
+    "results.json": "77c5c96d37b5ecac780e8e999197d119719c71a24eb4dbf0e438b77d6e2e6ffa",
+    "source-integrity.json": "91b55f0fafde4a31999cbe405e7f1f01e949f68004a2af9efd68229c9ac77464"
+  },
+  "limitations": [
+    "Synthetic core only; no company admission or external outcome.",
+    "No browser or Bun self-host journey in this focused run.",
+    "No full correction-bundle fault or revocation-race coverage in this focused run.",
+    "The runtime role is trusted application infrastructure; scoped DML is intentional."
+  ]
+}

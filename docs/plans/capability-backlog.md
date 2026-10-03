@@ -1,5 +1,8 @@
 # Product capability backlog and coverage
 
+**Commercial sequence, adopted 2026-10-03:** [ADR 0017](../adr/0017-bureau-first-product-focus.md) prioritizes the bureau-led documents/bank/invoicing/VAT loop, canonical human tasks, bounded bulk review and qualified connected execution. Native payroll is deferred for specialist integration evaluation; Cash and peripheral commerce/ERP surfaces follow the core loop. The retained packets, priorities and dependencies below describe technical obligations, not a mandate to deliver the full suite before the wedge. Applicable company accounting, corrections, reconciliation, handoff and recovery gates remain; unsupported actual cases cannot be silently omitted. No automatic posting is adopted.
+
+
 Status: planned requirements, reconciled with the supplied capability list on 2026-09-24. This is a coverage index plus a supplemental backlog for requirements not explicit in the seven accounting-area plans. It makes no new implementation or verification claim. Consult the [roadmap](../roadmap.md), [frontend progress](../frontend.md) and linked evidence for observed behavior.
 
 The supplied IDs use one digit (`COM-1`); existing delivery packets use two (`COM-01`). They are separate namespaces, not aliases. The existing 53-packet dependency index covers the accounting baseline only; the supplemental work below is not included in that count. Requirements mapped to an existing owner must be completed there, not recreated as duplicate systems.
