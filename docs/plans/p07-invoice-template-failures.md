@@ -18,3 +18,9 @@ Before production code, public E2E expectations cover:
 - Existing composer save/start/apply controls call the same scoped owner; applying over entered fields requires explicit replacement.
 
 Migration0063 is reserved for the immutable template owner. Run `OPENERP_E2E_ARTIFACTS=test-results/product-P07 bun run test:e2e apps/api/tests/invoice-templates.e2e.test.ts`; retain public responses, source integrity and measured operation timings. No live provider, production migration or delivery.
+
+Independent source review added two admission vectors before their correction: the ordinary agent's MCP catalog must expose the classified new-draft preparation operation, and that same agent must receive `Forbidden` when targeting an operator's existing draft. Existing replacement retains the normal draft owner's operator boundary. Template revisions containing stale or archived article selections must obey P06's new-selection checks; an existing template is not authority to fabricate a previous draft snapshot.
+
+Performance uses five warmups and thirty measured trials through public HTTP. The portable probe compares the existing draft read on parent/head separately from new template application. It retains raw timings and literal expected totals; missing feature responses on the parent remain explicit.
+
+P06 integration E2E requires a current scoped article for first application, refuses a fresh draft after article revision and archive, recovers an earlier committed apply receipt, and allows replacing the actual existing target while preserving its canonical historical selection and note. The original draft revision remains unchanged. These are public-boundary expectations authored before integration.
