@@ -1,0 +1,17 @@
+$ vp test run "apps/api/tests/navigation-context.e2e.test.ts" -t "bank voucher links"
+
+ RUN  v4.1.10 /Users/admin/.codex/worktrees/midday-product-p05/openERP
+
+stderr | apps/api/tests/navigation-context.e2e.test.ts > bank voucher links preserve scoped owner state and reject unknown return owners
+500 http://127.0.0.1:50746/api/v1/entities/entity_4d3f5c009290197f/books/book_4d3f5c009290197f/bank-connector-feeds
+
+ ✓ apps/api/tests/navigation-context.e2e.test.ts (5 tests | 4 skipped) 20232ms
+   ✓ bank voucher links preserve scoped owner state and reject unknown return owners  20231ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 4 skipped (5)
+   Start at  20:02:19
+   Duration  26.11s (transform 96ms, setup 0ms, import 915ms, tests 20.23s, environment 0ms)
+
+JSON report written to /Users/admin/.codex/worktrees/midday-product-p05/openERP/test-results/product-P05-bank-owner-final/results.json
+JUNIT report written to /Users/admin/.codex/worktrees/midday-product-p05/openERP/test-results/product-P05-bank-owner-final/junit.xml

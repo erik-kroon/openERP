@@ -1,0 +1,40 @@
+$ bun scripts/check-changed.ts --type-aware "a1b33d3"
+Checking 17 changed file(s) against a1b33d3:
+  apps/api/src/application/source-retention.ts
+  apps/api/src/db/source-archive.ts
+  apps/api/src/db/source-retention.ts
+  apps/api/tests/archive-performance.e2e.test.ts
+  apps/api/tests/cash-invoice.e2e.test.ts
+  apps/api/tests/document-library-browser.e2e.test.ts
+  apps/api/tests/document-library.e2e.test.ts
+  apps/api/tests/navigation-context.e2e.test.ts
+  apps/api/tests/support/workspace-browser.ts
+  apps/web/src/components/commerce/supplier-invoice-drafts.tsx
+  apps/web/src/components/document-inbox.tsx
+  apps/web/src/components/expense-tax/panel.tsx
+  apps/web/src/components/finance-area.tsx
+  apps/web/src/lib/work-return.ts
+  apps/web/src/routes/entities.$entityId.books.$bookId.books.tsx
+  apps/web/src/routes/entities.$entityId.books.$bookId.tax.tsx
+  packages/contracts/src/source-intake.ts
+
+oxfmt --write
+Finished in 12ms on 17 files using 2 threads.
+oxfmt --write: 0.07s
+
+oxlint (type-aware)
+oxlint (type-aware): 2.43s
+
+tsc --noEmit (apps/api/tsconfig.json)
+tsc --noEmit (apps/api/tsconfig.json): 0.38s
+
+tsc --noEmit (apps/api/tests/tsconfig.json)
+tsc --noEmit (apps/api/tests/tsconfig.json): 0.22s
+
+tsc --noEmit (apps/web/tsconfig.json)
+tsc --noEmit (apps/web/tsconfig.json): 0.52s
+
+tsc --noEmit (packages/contracts/tsconfig.json)
+tsc --noEmit (packages/contracts/tsconfig.json): 0.23s
+
+check:changed passed.

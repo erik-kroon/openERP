@@ -1,0 +1,15 @@
+{
+  "scope": {
+    "entityId": "entity_230701deb5ca5269",
+    "bookId": "book_230701deb5ca5269"
+  },
+  "firstPageCount": 10,
+  "secondPageCount": 3,
+  "cursor": "arc1:eyJjb250ZXh0IjoiN2MzNGNlOWFlNWUyYmVmMTdmYzZiYTc4NWEzYmI3MjEzMDllZTQwYWNkZjUxNDc0OGYyMjgxYjBmZjA5NTM1MCIsImN1dG9mZiI6IjIwMjYtMTAtMDNUMTc6MTU6NDguMTk5WiIsImFmdGVyIjoic291cmNlX2Q3NDM0ZGQ2MDZhYjQ0NzA4YzMzOTM3ZTg5ZDg3YzNmIn0",
+  "selected": {
+    "id": "source_dc78daa11c9f4276bc2f27f85392ed0b",
+    "filename": "navigation-00.txt"
+  },
+  "finalUrl": "http://127.0.0.1:59028/entities/entity_230701deb5ca5269/books/book_230701deb5ca5269/purchases?view=documents&sourceSystem=navigation_fixture&cursor=arc1%3AeyJjb250ZXh0IjoiN2MzNGNlOWFlNWUyYmVmMTdmYzZiYTc4NWEzYmI3MjEzMDllZTQwYWNkZjUxNDc0OGYyMjgxYjBmZjA5NTM1MCIsImN1dG9mZiI6IjIwMjYtMTAtMDNUMTc6MTU6NDguMTk5WiIsImFmdGVyIjoic291cmNlX2Q3NDM0ZGQ2MDZhYjQ0NzA4YzMzOTM3ZTg5ZDg3YzNmIn0",
+  "nativeZoom": "not_observed"
+}

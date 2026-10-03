@@ -1,0 +1,85 @@
+bun run check:changed
+Exit: 0
+$ bun scripts/check-changed.ts
+Checking 6 changed file(s) against HEAD:
+  apps/api/src/application/source-retention.ts
+  apps/api/src/db/source-archive.ts
+  apps/api/src/db/source-retention.ts
+  apps/api/tests/cash-invoice.e2e.test.ts
+  apps/api/tests/document-library.e2e.test.ts
+  packages/contracts/src/source-intake.ts
+
+oxfmt --write
+Finished in 16ms on 6 files using 2 threads.
+oxfmt --write: 0.08s
+
+oxlint
+oxlint: 0.20s
+
+tsc --noEmit (apps/api/tsconfig.json)
+tsc --noEmit (apps/api/tsconfig.json): 0.67s
+
+tsc --noEmit (apps/api/tests/tsconfig.json)
+tsc --noEmit (apps/api/tests/tsconfig.json): 0.32s
+
+tsc --noEmit (packages/contracts/tsconfig.json)
+tsc --noEmit (packages/contracts/tsconfig.json): 0.17s
+
+check:changed passed.
+
+
+bun run check:changed:full
+Exit: 0
+$ bun scripts/check-changed.ts --type-aware
+Checking 6 changed file(s) against HEAD:
+  apps/api/src/application/source-retention.ts
+  apps/api/src/db/source-archive.ts
+  apps/api/src/db/source-retention.ts
+  apps/api/tests/cash-invoice.e2e.test.ts
+  apps/api/tests/document-library.e2e.test.ts
+  packages/contracts/src/source-intake.ts
+
+oxfmt --write
+Finished in 10ms on 6 files using 2 threads.
+oxfmt --write: 0.07s
+
+oxlint (type-aware)
+oxlint (type-aware): 1.62s
+
+tsc --noEmit (apps/api/tsconfig.json)
+tsc --noEmit (apps/api/tsconfig.json): 0.48s
+
+tsc --noEmit (apps/api/tests/tsconfig.json)
+tsc --noEmit (apps/api/tests/tsconfig.json): 0.20s
+
+tsc --noEmit (packages/contracts/tsconfig.json)
+tsc --noEmit (packages/contracts/tsconfig.json): 0.17s
+
+check:changed passed.
+
+
+bunx oxlint --config /Users/admin/openERP/.oxlintrc.changed.json --threads 2 --type-aware <six changed backend files>
+Exit: 0
+
+
+bun run check:integration
+Exit: 0
+$ bun scripts/check-integration.ts
+Integration declaration passed: 33 wired, 17 declared deferred, 50 leaves total.
+  deferred: asset-disposals — Packet keeps schedule retirement and disposition persistence with the reserved asset owner; no asset register owner exists yet.
+  deferred: collection-reminders — Packet keeps sealed-message delivery and dispute handling with the commerce/delivery owners.
+  deferred: document-signatures — Packet keeps the provider protocol and receipts with the signing adapter owners; no adapter is selected.
+  deferred: employee-claims — Packet keeps the payout-route handoff with the claim/payroll owners.
+  deferred: filing-lifecycle — Packet keeps provider state and receipts with the external-delivery owners; filing is outside current authority.
+  deferred: foreign-cash — Reviewed and repaired as a pure leaf. Packet keeps cash mutation and reconciliation with the banking owners, which are not built.
+  deferred: historical-adoptions — Packet keeps persistence with the sie/historical and commerce settlement owners.
+  deferred: impairment-reversal — Packet keeps valuation and persistence with the asset owners.
+  deferred: loan-lifecycle — Packet keeps the treasury handoff with the treasury owners; no loan owner exists.
+  deferred: mileage-reimbursement — Packet keeps payroll handoff with the claim/payroll owners.
+  deferred: paid-payroll-recovery — Packet keeps the payroll period handoff with the payroll owners.
+  deferred: payroll-runs — Packet keeps the payroll run posting and payslips with the payroll owners.
+  deferred: peppol-exchange — Packet keeps transport and persistence with the delivery owners; no access point is qualified.
+  deferred: processor-clearing — Reviewed and repaired as a pure leaf. Packet keeps fetching, profiles and persistence with the treasury/banking owners, which are not built.
+  deferred: rehearsal-verification — Packet requires checkpoint capture, backup and restore under separate operations authority, which is not held here.
+  deferred: sie-partitions — Packet keeps the declaration and migration journey with the SIE owners.
+  deferred: variable-pay — Packet keeps the payroll handoff with the payroll owners.

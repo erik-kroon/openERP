@@ -1,0 +1,82 @@
+{
+  "original": {
+    "id": "source_032f47f4f20a4cad9672914448c2b28a",
+    "scope": {
+      "entityId": "entity_41159eb7fffca4de",
+      "bookId": "book_41159eb7fffca4de"
+    },
+    "sourceSystem": "library",
+    "sourceAccountId": "synthetic_source",
+    "occurrenceKey": "suggestion",
+    "sourceRevision": "1",
+    "filename": "suggestion.csv",
+    "sha256": "sha256:d2966f68469c381a550fb0f0b4da41066a98f55d3a60f80d7314197fc2edc381",
+    "byteLength": 28,
+    "mediaType": "text/csv",
+    "retainedBy": "operator_41159eb7fffca4de",
+    "retainedAt": "2026-10-03T13:15:47.692Z",
+    "receipt": {
+      "key": "067420ba-d8c2-4f8b-9007-709263e7ef25",
+      "operation": "retain_source",
+      "actorId": "operator_41159eb7fffca4de"
+    }
+  },
+  "page": {
+    "items": [
+      {
+        "id": "source_032f47f4f20a4cad9672914448c2b28a",
+        "scope": {
+          "entityId": "entity_41159eb7fffca4de",
+          "bookId": "book_41159eb7fffca4de"
+        },
+        "sourceSystem": "library",
+        "sourceAccountId": "synthetic_source",
+        "occurrenceKey": "suggestion",
+        "sourceRevision": "1",
+        "filename": "suggestion.csv",
+        "sha256": "sha256:d2966f68469c381a550fb0f0b4da41066a98f55d3a60f80d7314197fc2edc381",
+        "byteLength": 28,
+        "mediaType": "text/csv",
+        "retainedBy": "operator_41159eb7fffca4de",
+        "retainedAt": "2026-10-03T13:15:47.692Z",
+        "receipt": {
+          "key": "067420ba-d8c2-4f8b-9007-709263e7ef25",
+          "operation": "retain_source",
+          "actorId": "operator_41159eb7fffca4de"
+        },
+        "facts": [],
+        "suggestions": [
+          {
+            "basis": "unreviewed_extraction",
+            "attemptId": "library_attempt",
+            "revision": "1",
+            "engineRelease": "native-text-v1",
+            "result": "succeeded",
+            "retainedOutputHash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+            "sourceHash": "sha256:d2966f68469c381a550fb0f0b4da41066a98f55d3a60f80d7314197fc2edc381",
+            "createdAt": "2026-09-22T00:00:00.000Z",
+            "fields": [
+              {
+                "fieldKey": "title",
+                "proposedValue": "Raw OCR only",
+                "lineOrdinal": 0
+              },
+              {
+                "fieldKey": "sourceTotalMinor",
+                "proposedValue": "9999",
+                "lineOrdinal": 0
+              }
+            ]
+          }
+        ],
+        "originalAvailability": "not_checked"
+      }
+    ],
+    "nextCursor": null,
+    "retainedCutoff": "2026-10-03T13:15:47.728Z",
+    "metadataConsistency": "live_owner_revisions"
+  },
+  "missingOriginal": "MissingEvidence",
+  "linkedFacts": 1001,
+  "oversizedResult": "UnsupportedProfile"
+}

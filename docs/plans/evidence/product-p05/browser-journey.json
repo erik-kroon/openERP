@@ -1,0 +1,11 @@
+{
+  "supplierId": "counterparty_dda693232da244ba8b0f4d0ec82ca0d1",
+  "selected": "source_f65d4eee7f7c4916a9f5a1f806b061e2",
+  "cursor": "arc1:eyJjb250ZXh0IjoiZDQzMDcyOGFiMzBjNjQzYzEwOGQ1NmU2YzlhNWUxY2RiYmYwMTdhZjIwMTE0MmJlOTAzYzNhMzMzMzEwNjk1MCIsImN1dG9mZiI6IjIwMjYtMTAtMDNUMTc6MTU6MDAuMjQzWiIsImFmdGVyIjoic291cmNlX2U2YmMzNDg2ZGFjZjQzOTdhZWZlN2UwZjM0ZGJhNjc1In0",
+  "displayMs": 155.30274999999892,
+  "expenseSource": "taxsource_91840ca0e92c40a59982600b75b80db3",
+  "expenseReview": "taxreview_37bc0085cd6f4777849180a15f6fd667",
+  "historical": "supplier_invoice_draft_9be0b60834384bd6b2ebaa65e4561402",
+  "exactRevision": "1",
+  "nativeZoom": "not_observed"
+}

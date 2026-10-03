@@ -1,0 +1,145 @@
+{
+  "browserTimezone": "America/Los_Angeles",
+  "dates": [
+    "2026-10-03",
+    "2026-10-03",
+    "2026-12-31",
+    "2026-12-31",
+    "2026-12-31",
+    "2026-03-31",
+    "2026-03-31",
+    "2026-03-31"
+  ],
+  "vectors": [
+    {
+      "instant": "2026-12-31T23:30:00Z",
+      "expected": "2027-01-01"
+    },
+    {
+      "instant": "2026-01-31T23:30:00Z",
+      "expected": "2026-02-01"
+    },
+    {
+      "instant": "2026-06-30T22:30:00Z",
+      "expected": "2026-07-01"
+    },
+    {
+      "instant": "2026-03-29T01:30:00Z",
+      "expected": "2026-03-29"
+    },
+    {
+      "instant": "2026-10-25T01:30:00Z",
+      "expected": "2026-10-25"
+    }
+  ],
+  "serverToday": "2026-10-03",
+  "setupReads": 14,
+  "browserClockIgnored": true,
+  "serverDatePolling": true,
+  "bankWindows": [
+    {
+      "from": "2026-01-01",
+      "to": "2026-10-03"
+    },
+    {
+      "from": "2026-01-01",
+      "to": "2026-10-03"
+    },
+    {
+      "from": "2026-01-01",
+      "to": "2026-12-31"
+    },
+    {
+      "from": "2026-01-01",
+      "to": "2026-12-31"
+    },
+    {
+      "from": "2026-01-01",
+      "to": "2026-12-31"
+    },
+    {
+      "from": "2026-03-01",
+      "to": "2026-03-31"
+    },
+    {
+      "from": "2026-03-01",
+      "to": "2026-03-31"
+    },
+    {
+      "from": "2026-03-01",
+      "to": "2026-03-31"
+    }
+  ],
+  "bankPeriodReceipts": [
+    {
+      "period": {
+        "query": "",
+        "from": "2026-01-01",
+        "to": "2026-12-31"
+      },
+      "status": 200,
+      "payload": {
+        "scope": {
+          "entityId": "entity_86a38f6d9b1ace1d",
+          "bookId": "book_86a38f6d9b1ace1d"
+        },
+        "currency": "SEK",
+        "currencyScale": 2,
+        "startsOn": "2026-01-01",
+        "endsOn": "2026-12-31",
+        "checkedAt": "2026-10-03T18:30:58.115422Z",
+        "accounts": [],
+        "total": 0,
+        "page": 1,
+        "pageSize": 50,
+        "counts": {
+          "all": 0,
+          "unmatched": 0,
+          "matched": 0,
+          "ledger": 0
+        },
+        "rows": [],
+        "reviews": []
+      }
+    },
+    {
+      "period": {
+        "query": "?from=2026-03-01&to=2026-03-31",
+        "from": "2026-03-01",
+        "to": "2026-03-31"
+      },
+      "status": 200,
+      "payload": {
+        "scope": {
+          "entityId": "entity_86a38f6d9b1ace1d",
+          "bookId": "book_86a38f6d9b1ace1d"
+        },
+        "currency": "SEK",
+        "currencyScale": 2,
+        "startsOn": "2026-03-01",
+        "endsOn": "2026-03-31",
+        "checkedAt": "2026-10-03T18:30:58.584695Z",
+        "accounts": [],
+        "total": 0,
+        "page": 1,
+        "pageSize": 50,
+        "counts": {
+          "all": 0,
+          "unmatched": 0,
+          "matched": 0,
+          "ledger": 0
+        },
+        "rows": [],
+        "reviews": []
+      }
+    }
+  ],
+  "admissionDates": [
+    "2026-10-03",
+    "2026-10-03"
+  ],
+  "retainedDrafts": 201,
+  "loadMore": true,
+  "search": "Browser supplier 200",
+  "errors": []
+}
