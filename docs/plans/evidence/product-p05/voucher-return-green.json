@@ -1,0 +1,29 @@
+{
+  "voucherHref": "/entities/entity_e5552609c3c74776/books/book_e5552609c3c74776/books?view=vouchers&returnTo=owner%3A%257B%2522owner%2522%253A%2522documents%2522%252C%2522search%2522%253A%257B%2522cursor%2522%253A%2522arc1%253AeyJjb250ZXh0IjoiZDQzMDcyOGFiMzBjNjQzYzEwOGQ1NmU2YzlhNWUxY2RiYmYwMTdhZjIwMTE0MmJlOTAzYzNhMzMzMzEwNjk1MCIsImN1dG9mZiI6IjIwMjYtMTAtMDNUMTc6MTU6MDAuMjQzWiIsImFmdGVyIjoic291cmNlX2U2YmMzNDg2ZGFjZjQzOTdhZWZlN2UwZjM0ZGJhNjc1In0%2522%252C%2522q%2522%253A%2522Architecture%2520review%2520supplier%2522%252C%2522currency%2522%253A%2522SEK%2522%252C%2522currencyScale%2522%253A%25222%2522%252C%2522amountMinor%2522%253A%252210000%2522%252C%2522view%2522%253A%2522documents%2522%252C%2522record%2522%253A%2522source_f65d4eee7f7c4916a9f5a1f806b061e2%2522%257D%257D&record=voucher_141fc89428b44dc482f86493b51d6c39",
+  "destination": "http://127.0.0.1:58379/entities/entity_e5552609c3c74776/books/book_e5552609c3c74776/purchases?cursor=arc1%3AeyJjb250ZXh0IjoiZDQzMDcyOGFiMzBjNjQzYzEwOGQ1NmU2YzlhNWUxY2RiYmYwMTdhZjIwMTE0MmJlOTAzYzNhMzMzMzEwNjk1MCIsImN1dG9mZiI6IjIwMjYtMTAtMDNUMTc6MTU6MDAuMjQzWiIsImFmdGVyIjoic291cmNlX2U2YmMzNDg2ZGFjZjQzOTdhZWZlN2UwZjM0ZGJhNjc1In0&q=Architecture+review+supplier&currency=SEK&currencyScale=%222%22&amountMinor=%2210000%22&view=documents&record=source_f65d4eee7f7c4916a9f5a1f806b061e2",
+  "pageErrors": [],
+  "failedResponses": [],
+  "links": [
+    "Skip to content",
+    "Overview",
+    "To do",
+    "Accounts",
+    "Invoicing",
+    "Purchases",
+    "Bookkeeping",
+    "Tax",
+    "Reports",
+    "Year-end",
+    "Invoice drafts",
+    "Registered",
+    "Payment files",
+    "Documents",
+    "Expenses",
+    "Customers & suppliers",
+    "Prepare supplier invoice",
+    "Supplier draft version 1",
+    "Invoice invoice_9fd7edc5540a469889b4339ed7d593a3",
+    "Voucher voucher_141fc89428b44dc482f86493b51d6c39"
+  ],
+  "body": "Skip to content\n\nOpenERP\n\nOverview\nTo do\n\nCOMPANY\n\nAccounts\nInvoicing\nPurchases\nBookkeeping\nTax\nReports\nYear-end\nSynthetic E2E book\nSEK · Synthetic workspace\nPurchases\nInvoice drafts\nRegistered\nPayment files\nDocuments\nExpenses\nCustomers & suppliers\nAll documents\n\nRequest in progress…\n\nbusiness-1.csv\n\nOriginal document\n\nDownload original\nDocument details\n\nUploaded: Oct 3, 2026\n\ntext/csv\n\n29 bytes\n\nThis is the original retention receipt. Uploading did not create a posting.\n\nPrepare supplier invoice\nSaved facts\n\nArchitecture review supplier · 100.00 SEK\n\nRegistered invoice · Current source · 2026-09-22\n\nSupplier draft version 1\nInvoice invoice_9fd7edc5540a469889b4339ed7d593a3\nVoucher voucher_141fc89428b44dc482f86493b51d6c39\n\nRetained revision 1 · 2026-10-03T17:14:50.898Z · sha256:d96518759a3fd753c449b708741af44fa92dca36630baffb0907464e466b702c"
+}

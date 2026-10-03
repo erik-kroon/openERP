@@ -1,0 +1,100 @@
+Final fast gate
+$ bun scripts/check-changed.ts "96247e3"
+Checking 18 changed file(s) against 96247e3:
+  apps/api/src/application/source-retention.ts
+  apps/api/src/db/source-archive.ts
+  apps/api/src/db/source-retention.ts
+  apps/api/tests/archive-performance.e2e.test.ts
+  apps/api/tests/cash-invoice.e2e.test.ts
+  apps/api/tests/document-library-browser.e2e.test.ts
+  apps/api/tests/document-library.e2e.test.ts
+  apps/api/tests/navigation-context.e2e.test.ts
+  apps/api/tests/support/extraction-host.ts
+  apps/api/tests/support/workspace-browser.ts
+  apps/web/src/components/commerce/supplier-invoice-drafts.tsx
+  apps/web/src/components/document-inbox.tsx
+  apps/web/src/components/expense-tax/panel.tsx
+  apps/web/src/components/finance-area.tsx
+  apps/web/src/lib/work-return.ts
+  apps/web/src/routes/entities.$entityId.books.$bookId.books.tsx
+  apps/web/src/routes/entities.$entityId.books.$bookId.tax.tsx
+  packages/contracts/src/source-intake.ts
+
+oxfmt --write
+Finished in 10ms on 18 files using 2 threads.
+oxfmt --write: 0.04s
+
+oxlint
+oxlint: 0.14s
+
+tsc --noEmit (apps/api/tsconfig.json)
+tsc --noEmit (apps/api/tsconfig.json): 0.43s
+
+tsc --noEmit (apps/api/tests/tsconfig.json)
+apps/api/src/application/commerce/invoice-lifecycle.ts(1431,7): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/credits.ts(165,11): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/extraction.ts(2002,7): suggestion TS377095: `Effect.orElseSucceed` expresses the same recovery more directly than `Effect.catch` followed by `Effect.succeed`. effect(catchToOrElseSucceed)
+apps/api/src/application/purchases/extraction.ts(2013,5): suggestion TS377095: `Effect.orElseSucceed` expresses the same recovery more directly than `Effect.catch` followed by `Effect.succeed`. effect(catchToOrElseSucceed)
+tsc --noEmit (apps/api/tests/tsconfig.json): 0.50s
+
+tsc --noEmit (apps/web/tsconfig.json)
+tsc --noEmit (apps/web/tsconfig.json): 0.80s
+
+tsc --noEmit (packages/contracts/tsconfig.json)
+tsc --noEmit (packages/contracts/tsconfig.json): 0.15s
+
+check:changed passed.
+
+
+Final full gate after test observation correction
+$ bun scripts/check-changed.ts --type-aware "96247e3"
+Checking 18 changed file(s) against 96247e3:
+  apps/api/src/application/source-retention.ts
+  apps/api/src/db/source-archive.ts
+  apps/api/src/db/source-retention.ts
+  apps/api/tests/archive-performance.e2e.test.ts
+  apps/api/tests/cash-invoice.e2e.test.ts
+  apps/api/tests/document-library-browser.e2e.test.ts
+  apps/api/tests/document-library.e2e.test.ts
+  apps/api/tests/navigation-context.e2e.test.ts
+  apps/api/tests/support/extraction-host.ts
+  apps/api/tests/support/workspace-browser.ts
+  apps/web/src/components/commerce/supplier-invoice-drafts.tsx
+  apps/web/src/components/document-inbox.tsx
+  apps/web/src/components/expense-tax/panel.tsx
+  apps/web/src/components/finance-area.tsx
+  apps/web/src/lib/work-return.ts
+  apps/web/src/routes/entities.$entityId.books.$bookId.books.tsx
+  apps/web/src/routes/entities.$entityId.books.$bookId.tax.tsx
+  packages/contracts/src/source-intake.ts
+
+oxfmt --write
+Finished in 12ms on 18 files using 2 threads.
+oxfmt --write: 0.07s
+
+oxlint (type-aware)
+oxlint (type-aware): 2.22s
+
+tsc --noEmit (apps/api/tsconfig.json)
+tsc --noEmit (apps/api/tsconfig.json): 0.36s
+
+tsc --noEmit (apps/api/tests/tsconfig.json)
+apps/api/src/application/commerce/invoice-lifecycle.ts(1431,7): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/credits.ts(165,11): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/extraction.ts(2002,7): suggestion TS377095: `Effect.orElseSucceed` expresses the same recovery more directly than `Effect.catch` followed by `Effect.succeed`. effect(catchToOrElseSucceed)
+apps/api/src/application/purchases/extraction.ts(2013,5): suggestion TS377095: `Effect.orElseSucceed` expresses the same recovery more directly than `Effect.catch` followed by `Effect.succeed`. effect(catchToOrElseSucceed)
+tsc --noEmit (apps/api/tests/tsconfig.json): 0.48s
+
+tsc --noEmit (apps/web/tsconfig.json)
+tsc --noEmit (apps/web/tsconfig.json): 0.52s
+
+tsc --noEmit (packages/contracts/tsconfig.json)
+tsc --noEmit (packages/contracts/tsconfig.json): 0.14s
+
+check:changed passed.
+
+
+Current primary strict lint over all source files
+
+
+Current primary strict lint after test observation correction

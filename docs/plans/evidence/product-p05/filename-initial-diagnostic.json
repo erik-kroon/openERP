@@ -1,0 +1,30 @@
+{
+  "fixtureOccurrences": 10000,
+  "fixtureSupplierRevisions": 10000,
+  "statistics": "explicit ANALYZE",
+  "warmups": 2,
+  "trials": [
+    575.8103750000009,
+    717.6581249999999,
+    800.3975840000003,
+    676.0477500000015,
+    715.5410830000001,
+    566.8307499999992,
+    667.3842079999995,
+    590.8286660000012,
+    551.0101670000004,
+    666.4914170000011
+  ],
+  "p50": 666.4914170000011,
+  "p95": 800.3975840000003,
+  "baselineP95": null,
+  "budget": null,
+  "machine": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "totalMemoryBytes": 8589934592,
+    "node": "v26.4.0"
+  },
+  "surface": "public HTTP exact filename archive",
+  "baselineStatus": "not_compared"
+}

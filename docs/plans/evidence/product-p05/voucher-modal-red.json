@@ -1,0 +1,16 @@
+{
+  "voucherHref": "/entities/entity_9300213d52fbe14b/books/book_9300213d52fbe14b/books?view=vouchers&returnTo=owner%3A%257B%2522owner%2522%253A%2522documents%2522%252C%2522search%2522%253A%257B%2522cursor%2522%253A%2522arc1%253AeyJjb250ZXh0IjoiM2U0Y2U3ZDI1M2FjODBmMjg2ODY4ZDgzN2I3NDMzNjVjMjJlOTliYjhjOTY1YzM3OTBkZWRhNjczY2IxODQ5ZSIsImN1dG9mZiI6IjIwMjYtMTAtMDNUMTc6MDM6MDAuNzk3WiIsImFmdGVyIjoic291cmNlX2JiZDQ5MDg3NzJjNzQyODFhNjg3YTQzNjkxNTNkOTQxIn0%2522%252C%2522q%2522%253A%2522Architecture%2520review%2520supplier%2522%252C%2522currency%2522%253A%2522SEK%2522%252C%2522currencyScale%2522%253A%25222%2522%252C%2522amountMinor%2522%253A%252210000%2522%252C%2522view%2522%253A%2522documents%2522%252C%2522record%2522%253A%2522source_bd955d83c8fb46428c4867aeddfca493%2522%257D%257D&record=voucher_75b34025efdb418ab8a16132a7547445",
+  "destination": "http://127.0.0.1:56186/entities/entity_9300213d52fbe14b/books/book_9300213d52fbe14b/books?view=vouchers&returnTo=owner%3A%257B%2522owner%2522%253A%2522documents%2522%252C%2522search%2522%253A%257B%2522cursor%2522%253A%2522arc1%253AeyJjb250ZXh0IjoiM2U0Y2U3ZDI1M2FjODBmMjg2ODY4ZDgzN2I3NDMzNjVjMjJlOTliYjhjOTY1YzM3OTBkZWRhNjczY2IxODQ5ZSIsImN1dG9mZiI6IjIwMjYtMTAtMDNUMTc6MDM6MDAuNzk3WiIsImFmdGVyIjoic291cmNlX2JiZDQ5MDg3NzJjNzQyODFhNjg3YTQzNjkxNTNkOTQxIn0%2522%252C%2522q%2522%253A%2522Architecture%2520review%2520supplier%2522%252C%2522currency%2522%253A%2522SEK%2522%252C%2522currencyScale%2522%253A%25222%2522%252C%2522amountMinor%2522%253A%252210000%2522%252C%2522view%2522%253A%2522documents%2522%252C%2522record%2522%253A%2522source_bd955d83c8fb46428c4867aeddfca493%2522%257D%257D&record=voucher_75b34025efdb418ab8a16132a7547445",
+  "pageErrors": [],
+  "links": [],
+  "buttons": [
+    {
+      "label": "Back to vouchers",
+      "text": ""
+    }
+  ],
+  "backToWorkHidden": [
+    true
+  ],
+  "body": "Skip to content\n\nOpenERP\n\nOverview\nTo do\n\nCOMPANY\n\nAccounts\nInvoicing\nPurchases\nBookkeeping\nTax\nReports\nYear-end\nSynthetic E2E book\nSEK · Synthetic workspace\nBookkeeping\nBack to work\nNew journal entry\nVouchers\nChart of accounts\nAll periods\n\nRequest in progress…\n\nVoucher\n\nRequest in progress…"
+}
