@@ -1,0 +1,368 @@
+{
+  "first": {
+    "id": "source_5032c11a5e63449db1dc880b76a72f11",
+    "scope": {
+      "entityId": "entity_0d854ce01db46407",
+      "bookId": "book_0d854ce01db46407"
+    },
+    "sourceSystem": "library",
+    "sourceAccountId": "synthetic_source",
+    "occurrenceKey": "b72266b3-0a05-4dd1-a72e-c391df25a86a",
+    "sourceRevision": "1",
+    "filename": "library.csv",
+    "sha256": "sha256:d2966f68469c381a550fb0f0b4da41066a98f55d3a60f80d7314197fc2edc381",
+    "byteLength": 28,
+    "mediaType": "text/csv",
+    "retainedBy": "operator_0d854ce01db46407",
+    "retainedAt": "2026-10-03T13:15:23.634Z",
+    "receipt": {
+      "key": "f1405c85-3337-44d5-9c89-8b0224e3fc62",
+      "operation": "retain_source",
+      "actorId": "operator_0d854ce01db46407"
+    }
+  },
+  "sameBytes": {
+    "id": "source_136a116773bc4681b63bf37e987553d7",
+    "scope": {
+      "entityId": "entity_0d854ce01db46407",
+      "bookId": "book_0d854ce01db46407"
+    },
+    "sourceSystem": "library",
+    "sourceAccountId": "synthetic_source",
+    "occurrenceKey": "917873aa-575d-4769-994a-80fd9e484962",
+    "sourceRevision": "1",
+    "filename": "library.csv",
+    "sha256": "sha256:d2966f68469c381a550fb0f0b4da41066a98f55d3a60f80d7314197fc2edc381",
+    "byteLength": 28,
+    "mediaType": "text/csv",
+    "retainedBy": "operator_0d854ce01db46407",
+    "retainedAt": "2026-10-03T13:15:23.671Z",
+    "receipt": {
+      "key": "9dd6d6f6-e89f-4197-b36f-8e0a5a582f00",
+      "operation": "retain_source",
+      "actorId": "operator_0d854ce01db46407"
+    }
+  },
+  "page": {
+    "items": [
+      {
+        "id": "source_5032c11a5e63449db1dc880b76a72f11",
+        "scope": {
+          "entityId": "entity_0d854ce01db46407",
+          "bookId": "book_0d854ce01db46407"
+        },
+        "sourceSystem": "library",
+        "sourceAccountId": "synthetic_source",
+        "occurrenceKey": "b72266b3-0a05-4dd1-a72e-c391df25a86a",
+        "sourceRevision": "1",
+        "filename": "library.csv",
+        "sha256": "sha256:d2966f68469c381a550fb0f0b4da41066a98f55d3a60f80d7314197fc2edc381",
+        "byteLength": 28,
+        "mediaType": "text/csv",
+        "retainedBy": "operator_0d854ce01db46407",
+        "retainedAt": "2026-10-03T13:15:23.634Z",
+        "receipt": {
+          "key": "f1405c85-3337-44d5-9c89-8b0224e3fc62",
+          "operation": "retain_source",
+          "actorId": "operator_0d854ce01db46407"
+        },
+        "facts": [
+          {
+            "ownerKind": "expense_source",
+            "ownerId": "taxsource_7179e4f6895f431e92b3a23c24738b96",
+            "revision": "1",
+            "digest": "sha256:f86996404379c2caf8a5ddf66c8a008ce575f0f346813724f13646a9132e680f",
+            "currentSource": true,
+            "basis": "entered_expense",
+            "supplierId": null,
+            "supplierName": null,
+            "documentDate": null,
+            "currency": "EUR",
+            "currencyScale": 2,
+            "grossMinor": "9007199254740993",
+            "invoiceId": null,
+            "voucherId": null
+          },
+          {
+            "ownerKind": "supplier_draft",
+            "ownerId": "supplier_invoice_draft_55e0892fdd0f47febf76564078fc7a70",
+            "revision": "1",
+            "digest": "sha256:e1a6dc30575aafb96e6a83656cde1151d6b385c54eaeb3ed383f90a7f49ee476",
+            "currentSource": true,
+            "basis": "registered_invoice",
+            "supplierId": "counterparty_16ca3dd0751e44859566c10957b56f8b",
+            "supplierName": "Architecture review supplier",
+            "documentDate": "2026-08-01",
+            "currency": "SEK",
+            "currencyScale": 2,
+            "grossMinor": "10000",
+            "invoiceId": "invoice_017b92c1c1b94c44a86f8afc7166886c",
+            "voucherId": "voucher_a4e262d914b24148891ed30811dd4af2"
+          },
+          {
+            "ownerKind": "supplier_draft",
+            "ownerId": "supplier_invoice_draft_97b50f2afd0446afab40aedcf4094618",
+            "revision": "1",
+            "digest": "sha256:b35edc1090f339a6fe9bec183c6abc081b4eea6a1909313cf2921b436e747567",
+            "currentSource": true,
+            "basis": "entered_draft",
+            "supplierId": "counterparty_16ca3dd0751e44859566c10957b56f8b",
+            "supplierName": "Architecture review supplier",
+            "documentDate": "2026-09-22",
+            "currency": "SEK",
+            "currencyScale": 2,
+            "grossMinor": "9007199254740993",
+            "invoiceId": null,
+            "voucherId": null
+          }
+        ],
+        "suggestions": [],
+        "originalAvailability": "not_checked"
+      }
+    ],
+    "nextCursor": null,
+    "retainedCutoff": "2026-10-03T13:15:24.691Z",
+    "metadataConsistency": "live_owner_revisions"
+  },
+  "all": {
+    "items": [
+      {
+        "id": "source_136a116773bc4681b63bf37e987553d7",
+        "scope": {
+          "entityId": "entity_0d854ce01db46407",
+          "bookId": "book_0d854ce01db46407"
+        },
+        "sourceSystem": "library",
+        "sourceAccountId": "synthetic_source",
+        "occurrenceKey": "917873aa-575d-4769-994a-80fd9e484962",
+        "sourceRevision": "1",
+        "filename": "library.csv",
+        "sha256": "sha256:d2966f68469c381a550fb0f0b4da41066a98f55d3a60f80d7314197fc2edc381",
+        "byteLength": 28,
+        "mediaType": "text/csv",
+        "retainedBy": "operator_0d854ce01db46407",
+        "retainedAt": "2026-10-03T13:15:23.671Z",
+        "receipt": {
+          "key": "9dd6d6f6-e89f-4197-b36f-8e0a5a582f00",
+          "operation": "retain_source",
+          "actorId": "operator_0d854ce01db46407"
+        },
+        "facts": [
+          {
+            "ownerKind": "expense_source",
+            "ownerId": "taxsource_edd5aab7cc264028bd7d02459d04429f",
+            "revision": "1",
+            "digest": "sha256:0e219d4a59f035f5e8549a1a7debd9dec0d4dab82ce8447d821a721487883898",
+            "currentSource": true,
+            "basis": "entered_expense",
+            "supplierId": null,
+            "supplierName": null,
+            "documentDate": null,
+            "currency": null,
+            "currencyScale": null,
+            "grossMinor": null,
+            "invoiceId": null,
+            "voucherId": null
+          }
+        ],
+        "suggestions": [],
+        "originalAvailability": "not_checked"
+      },
+      {
+        "id": "source_5032c11a5e63449db1dc880b76a72f11",
+        "scope": {
+          "entityId": "entity_0d854ce01db46407",
+          "bookId": "book_0d854ce01db46407"
+        },
+        "sourceSystem": "library",
+        "sourceAccountId": "synthetic_source",
+        "occurrenceKey": "b72266b3-0a05-4dd1-a72e-c391df25a86a",
+        "sourceRevision": "1",
+        "filename": "library.csv",
+        "sha256": "sha256:d2966f68469c381a550fb0f0b4da41066a98f55d3a60f80d7314197fc2edc381",
+        "byteLength": 28,
+        "mediaType": "text/csv",
+        "retainedBy": "operator_0d854ce01db46407",
+        "retainedAt": "2026-10-03T13:15:23.634Z",
+        "receipt": {
+          "key": "f1405c85-3337-44d5-9c89-8b0224e3fc62",
+          "operation": "retain_source",
+          "actorId": "operator_0d854ce01db46407"
+        },
+        "facts": [
+          {
+            "ownerKind": "expense_source",
+            "ownerId": "taxsource_7179e4f6895f431e92b3a23c24738b96",
+            "revision": "1",
+            "digest": "sha256:f86996404379c2caf8a5ddf66c8a008ce575f0f346813724f13646a9132e680f",
+            "currentSource": true,
+            "basis": "entered_expense",
+            "supplierId": null,
+            "supplierName": null,
+            "documentDate": null,
+            "currency": "EUR",
+            "currencyScale": 2,
+            "grossMinor": "9007199254740993",
+            "invoiceId": null,
+            "voucherId": null
+          },
+          {
+            "ownerKind": "supplier_draft",
+            "ownerId": "supplier_invoice_draft_55e0892fdd0f47febf76564078fc7a70",
+            "revision": "1",
+            "digest": "sha256:e1a6dc30575aafb96e6a83656cde1151d6b385c54eaeb3ed383f90a7f49ee476",
+            "currentSource": true,
+            "basis": "registered_invoice",
+            "supplierId": "counterparty_16ca3dd0751e44859566c10957b56f8b",
+            "supplierName": "Architecture review supplier",
+            "documentDate": "2026-08-01",
+            "currency": "SEK",
+            "currencyScale": 2,
+            "grossMinor": "10000",
+            "invoiceId": "invoice_017b92c1c1b94c44a86f8afc7166886c",
+            "voucherId": "voucher_a4e262d914b24148891ed30811dd4af2"
+          },
+          {
+            "ownerKind": "supplier_draft",
+            "ownerId": "supplier_invoice_draft_97b50f2afd0446afab40aedcf4094618",
+            "revision": "1",
+            "digest": "sha256:b35edc1090f339a6fe9bec183c6abc081b4eea6a1909313cf2921b436e747567",
+            "currentSource": true,
+            "basis": "entered_draft",
+            "supplierId": "counterparty_16ca3dd0751e44859566c10957b56f8b",
+            "supplierName": "Architecture review supplier",
+            "documentDate": "2026-09-22",
+            "currency": "SEK",
+            "currencyScale": 2,
+            "grossMinor": "9007199254740993",
+            "invoiceId": null,
+            "voucherId": null
+          }
+        ],
+        "suggestions": [],
+        "originalAvailability": "not_checked"
+      }
+    ],
+    "nextCursor": null,
+    "retainedCutoff": "2026-10-03T13:15:24.833Z",
+    "metadataConsistency": "live_owner_revisions"
+  },
+  "replaced": {
+    "items": [
+      {
+        "id": "source_136a116773bc4681b63bf37e987553d7",
+        "scope": {
+          "entityId": "entity_0d854ce01db46407",
+          "bookId": "book_0d854ce01db46407"
+        },
+        "sourceSystem": "library",
+        "sourceAccountId": "synthetic_source",
+        "occurrenceKey": "917873aa-575d-4769-994a-80fd9e484962",
+        "sourceRevision": "1",
+        "filename": "library.csv",
+        "sha256": "sha256:d2966f68469c381a550fb0f0b4da41066a98f55d3a60f80d7314197fc2edc381",
+        "byteLength": 28,
+        "mediaType": "text/csv",
+        "retainedBy": "operator_0d854ce01db46407",
+        "retainedAt": "2026-10-03T13:15:23.671Z",
+        "receipt": {
+          "key": "9dd6d6f6-e89f-4197-b36f-8e0a5a582f00",
+          "operation": "retain_source",
+          "actorId": "operator_0d854ce01db46407"
+        },
+        "facts": [
+          {
+            "ownerKind": "expense_source",
+            "ownerId": "taxsource_edd5aab7cc264028bd7d02459d04429f",
+            "revision": "1",
+            "digest": "sha256:0e219d4a59f035f5e8549a1a7debd9dec0d4dab82ce8447d821a721487883898",
+            "currentSource": true,
+            "basis": "entered_expense",
+            "supplierId": null,
+            "supplierName": null,
+            "documentDate": null,
+            "currency": null,
+            "currencyScale": null,
+            "grossMinor": null,
+            "invoiceId": null,
+            "voucherId": null
+          },
+          {
+            "ownerKind": "expense_source",
+            "ownerId": "taxsource_edd5aab7cc264028bd7d02459d04429f",
+            "revision": "1",
+            "digest": "sha256:0e219d4a59f035f5e8549a1a7debd9dec0d4dab82ce8447d821a721487883898",
+            "currentSource": true,
+            "basis": "reviewed_expense",
+            "supplierId": null,
+            "supplierName": null,
+            "documentDate": null,
+            "currency": null,
+            "currencyScale": null,
+            "grossMinor": "7000",
+            "invoiceId": null,
+            "voucherId": null
+          },
+          {
+            "ownerKind": "supplier_draft",
+            "ownerId": "supplier_invoice_draft_97b50f2afd0446afab40aedcf4094618",
+            "revision": "2",
+            "digest": "sha256:4e8087d20515ff5cf6e4178091377f693f317857ae8080533b25d22cea7bbfc3",
+            "currentSource": true,
+            "basis": "entered_draft",
+            "supplierId": "counterparty_16ca3dd0751e44859566c10957b56f8b",
+            "supplierName": "Architecture review supplier",
+            "documentDate": "2026-09-22",
+            "currency": "SEK",
+            "currencyScale": 2,
+            "grossMinor": "9007199254740993",
+            "invoiceId": null,
+            "voucherId": null
+          }
+        ],
+        "suggestions": [],
+        "originalAvailability": "not_checked"
+      }
+    ],
+    "nextCursor": null,
+    "retainedCutoff": "2026-10-03T13:15:25.002Z",
+    "metadataConsistency": "live_owner_revisions"
+  },
+  "exported": {
+    "scope": {
+      "entityId": "entity_0d854ce01db46407",
+      "bookId": "book_0d854ce01db46407"
+    },
+    "items": [
+      {
+        "occurrence": {
+          "id": "source_136a116773bc4681b63bf37e987553d7",
+          "scope": {
+            "entityId": "entity_0d854ce01db46407",
+            "bookId": "book_0d854ce01db46407"
+          },
+          "sourceSystem": "library",
+          "sourceAccountId": "synthetic_source",
+          "occurrenceKey": "917873aa-575d-4769-994a-80fd9e484962",
+          "sourceRevision": "1",
+          "filename": "library.csv",
+          "sha256": "sha256:d2966f68469c381a550fb0f0b4da41066a98f55d3a60f80d7314197fc2edc381",
+          "byteLength": 28,
+          "mediaType": "text/csv",
+          "retainedBy": "operator_0d854ce01db46407",
+          "retainedAt": "2026-10-03T13:15:23.671Z",
+          "receipt": {
+            "key": "9dd6d6f6-e89f-4197-b36f-8e0a5a582f00",
+            "operation": "retain_source",
+            "actorId": "operator_0d854ce01db46407"
+          }
+        },
+        "contentBase64": "cmV0YWluZWQgc3ludGhldGljIG9yaWdpbmFsCg=="
+      }
+    ],
+    "nextCursor": null,
+    "retainedCutoff": "2026-10-03T13:15:25.078Z",
+    "metadataConsistency": "live_owner_revisions"
+  },
+  "noFinancialReadEffects": true
+}

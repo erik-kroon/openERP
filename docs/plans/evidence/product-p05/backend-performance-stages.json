@@ -1,0 +1,82 @@
+[
+  {
+    "name": "started",
+    "elapsedMs": 0.028249999999843567
+  },
+  {
+    "name": "public_owner_fixture_ready",
+    "elapsedMs": 808.8805000000002
+  },
+  {
+    "name": "occurrences_ready",
+    "elapsedMs": 1041.3157500000002
+  },
+  {
+    "name": "supplier_revisions_ready",
+    "elapsedMs": 8056.677458
+  },
+  {
+    "name": "fixture_statistics_ready",
+    "elapsedMs": 8113.560833
+  },
+  {
+    "name": "first_archive_page",
+    "elapsedMs": 8786.222667
+  },
+  {
+    "name": "100_source_traversal",
+    "elapsedMs": 13910.110499999999
+  },
+  {
+    "name": "scope_and_cursor_refusals",
+    "elapsedMs": 15435.876375
+  },
+  {
+    "name": "timing_sample_0",
+    "elapsedMs": 15994.182582999998
+  },
+  {
+    "name": "timing_sample_1",
+    "elapsedMs": 16541.152625
+  },
+  {
+    "name": "timing_sample_2",
+    "elapsedMs": 17182.58225
+  },
+  {
+    "name": "timing_sample_3",
+    "elapsedMs": 17700.359
+  },
+  {
+    "name": "timing_sample_4",
+    "elapsedMs": 18249.088958
+  },
+  {
+    "name": "timing_sample_5",
+    "elapsedMs": 18827.574916999998
+  },
+  {
+    "name": "timing_sample_6",
+    "elapsedMs": 19365.811625
+  },
+  {
+    "name": "timing_sample_7",
+    "elapsedMs": 19906.836708
+  },
+  {
+    "name": "timing_sample_8",
+    "elapsedMs": 20537.889124999998
+  },
+  {
+    "name": "timing_sample_9",
+    "elapsedMs": 21084.377916999998
+  },
+  {
+    "name": "timing_sample_10",
+    "elapsedMs": 21627.841916999998
+  },
+  {
+    "name": "timing_sample_11",
+    "elapsedMs": 22161.241332999998
+  }
+]
