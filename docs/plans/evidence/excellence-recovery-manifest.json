@@ -1,0 +1,373 @@
+{
+  "run": "excellence-recovery-manifest",
+  "exitCode": 0,
+  "wallSeconds": 15.78,
+  "vitestSeconds": 14.83,
+  "passedTests": 1,
+  "failedTests": 0,
+  "sourceIntegrity": {
+    "status": "stable",
+    "changedPaths": [],
+    "sourceInventorySha256": "3c703ee6439d96b4479b08be2698c9ae5b8651c69914775699facd70c6c1b5b1",
+    "finalSourceInventorySha256": "3c703ee6439d96b4479b08be2698c9ae5b8651c69914775699facd70c6c1b5b1",
+    "checkedAt": "2026-10-03T17:19:18.167Z"
+  },
+  "migrationFiles": [
+    {
+      "path": "apps/api/migrations/0001-schema.sql",
+      "bytes": "228561",
+      "sha256": "5dcc8f6673f11a14046c9694a8d60a24cf7b2f895ca856501cb3b5793c0c1bd2"
+    },
+    {
+      "path": "apps/api/migrations/0002-integrity.sql",
+      "bytes": "65952",
+      "sha256": "420a345ae723cc66e24e8d771778e13508debf1338c14f164dbf81cf64c32e79"
+    },
+    {
+      "path": "apps/api/migrations/0003-roles.sql",
+      "bytes": "20377",
+      "sha256": "8a89d39f6baad6862143c7c13de1199f3cc8900ab7ec68375c7e0c175d45cef7"
+    },
+    {
+      "path": "apps/api/migrations/0004-next-02.sql",
+      "bytes": "11275",
+      "sha256": "d01a698b55ecd054c0285b9fbcdd4e31479c422dd7d6e93bf6bc3a1fdd87eca7"
+    },
+    {
+      "path": "apps/api/migrations/0005-next-13.sql",
+      "bytes": "4722",
+      "sha256": "eb52687994bb9c2a2c25ef4ce40f0871881e7de3b24bd2cbfdea4a905beb86d6"
+    },
+    {
+      "path": "apps/api/migrations/0006-next-03.sql",
+      "bytes": "11692",
+      "sha256": "1ee09458a915fb5ed1cd5dad5c1492a7893fb615d9de766bfe07c588d8def4bd"
+    },
+    {
+      "path": "apps/api/migrations/0007-next-11.sql",
+      "bytes": "5881",
+      "sha256": "f78ee53cf90022cc24fec1f366d7d3be0395203106809ef17769a70e888c43a3"
+    },
+    {
+      "path": "apps/api/migrations/0008-next-20.sql",
+      "bytes": "8413",
+      "sha256": "63933cd39a60e70494e67388dc72f86481453ffd75178f72b1937650997b94ec"
+    },
+    {
+      "path": "apps/api/migrations/0009-next-26.sql",
+      "bytes": "9448",
+      "sha256": "633f3c6b99f112be70131b9d50fd3842959b50eaa53533b4a24d5a8cc1f7af92"
+    },
+    {
+      "path": "apps/api/migrations/0010-next-49.sql",
+      "bytes": "16093",
+      "sha256": "230e096994513912fd97bd58489827a5f766d23e2485cccd02fc78ca867ba468"
+    },
+    {
+      "path": "apps/api/migrations/0011-next-15.sql",
+      "bytes": "22416",
+      "sha256": "0a66cb23b675206b37c836ed045064c4ec8387ca733aeab225b1a723f1b59ce8"
+    },
+    {
+      "path": "apps/api/migrations/0012-next-17.sql",
+      "bytes": "12483",
+      "sha256": "a9a0212b7fd8466cd283222f18cca4c644e6f497a2b7d8c346f7c75803168afa"
+    },
+    {
+      "path": "apps/api/migrations/0013-next-22.sql",
+      "bytes": "18457",
+      "sha256": "10a34fb932eeb070e54cd171a11aa38253579d950d2af53fc30247ab4c6d240b"
+    },
+    {
+      "path": "apps/api/migrations/0014-next-14.sql",
+      "bytes": "5598",
+      "sha256": "39f1357383efb044c0dcc9111fc1d6d8f26a293623cdc7a5f74d69277d7ad8e5"
+    },
+    {
+      "path": "apps/api/migrations/0015-next-04.sql",
+      "bytes": "12568",
+      "sha256": "46a44ef61e6712f7b42338849282a81e53aed6518ac82f644f676cb30e8806f0"
+    },
+    {
+      "path": "apps/api/migrations/0016-next-06.sql",
+      "bytes": "17753",
+      "sha256": "0ce1653c4206320848eba8cbe89789c52d525f033a157b39c34cea393fececd0"
+    },
+    {
+      "path": "apps/api/migrations/0017-next-16.sql",
+      "bytes": "16178",
+      "sha256": "204cdbdb2679b8bc3cf95c9fa3b17016dcbe9a0d8222d1fc877dbdddce5bcd9b"
+    },
+    {
+      "path": "apps/api/migrations/0018-next-29.sql",
+      "bytes": "21018",
+      "sha256": "c1c6e8500c90e60196b8ac991eb8ae81d9756bcaeb83cd1eda40d8b9dc09cce7"
+    },
+    {
+      "path": "apps/api/migrations/0019-owner-approval-digests.sql",
+      "bytes": "763",
+      "sha256": "3f195f2ca9afec8a62bd8197b4d2229e30790fe11524e53ab2813d0d03a529d3"
+    },
+    {
+      "path": "apps/api/migrations/0020-zero-tax-credit-lines.sql",
+      "bytes": "557",
+      "sha256": "f6601a3bd6c9225ce69cfaa187855e91368a7ee60e4824b01707ac7b4b9ea042"
+    },
+    {
+      "path": "apps/api/migrations/0021-fulfillment-reverification.sql",
+      "bytes": "841",
+      "sha256": "0294a51e331a06446acafe8de63c9aa030f55491f01270323933ec63707cb4fd"
+    },
+    {
+      "path": "apps/api/migrations/0022-credit-document-artifacts.sql",
+      "bytes": "3043",
+      "sha256": "b6827371d05510044dd120057d7f2c7c8130a346e8f2ed9c8f0a5449577c6e53"
+    },
+    {
+      "path": "apps/api/migrations/0023-vat-owned-producers.sql",
+      "bytes": "629",
+      "sha256": "dd42a6bd67d0b8ba9b7370cb70b1dee29ef1603f9dfcd9b092da7e4198b87abf"
+    },
+    {
+      "path": "apps/api/migrations/0024-document-reading.sql",
+      "bytes": "788",
+      "sha256": "3387fe5ab8f490db911f5cbc85c39ac4e542218d5b828c436fd3f948a624c98a"
+    },
+    {
+      "path": "apps/api/migrations/0024-sie-object-openings.sql",
+      "bytes": "379",
+      "sha256": "9eb9f099cb8f66f39203485184130004dd42439e0b4fc66fb64078fd5c07a887"
+    },
+    {
+      "path": "apps/api/migrations/0025-next-05.sql",
+      "bytes": "14182",
+      "sha256": "dfad9d1996184499c4d135965de767a4652ccabbc4a52e54bcdb9504ab5d1c93"
+    },
+    {
+      "path": "apps/api/migrations/0026-next-23.sql",
+      "bytes": "11581",
+      "sha256": "c64ad97220cde097e3df555f96f64757938a335b8ab2c55b31b2bb13f0907831"
+    },
+    {
+      "path": "apps/api/migrations/0027-next-24.sql",
+      "bytes": "7189",
+      "sha256": "4ee7c9aeabd94deb36c28b6f938f99f60447560d0172927ca8694c0276b98e75"
+    },
+    {
+      "path": "apps/api/migrations/0028-next-37.sql",
+      "bytes": "9251",
+      "sha256": "edda383a96ae8f518c5c829d5ba57c57f11da303a6992ec61463a0bf1a35c770"
+    },
+    {
+      "path": "apps/api/migrations/0029-next-07.sql",
+      "bytes": "11362",
+      "sha256": "fb97f51d61e8c7b6bbd2014838162ee269b2cbf1237e71c6d702fb8e799ef19b"
+    },
+    {
+      "path": "apps/api/migrations/0030-next-23-review.sql",
+      "bytes": "4169",
+      "sha256": "c6a1403ea9b5020fe29fa365b959883e5ab7f78608cf9f1e67b30ad6f7cb28d6"
+    },
+    {
+      "path": "apps/api/migrations/0031-next-37-review.sql",
+      "bytes": "4128",
+      "sha256": "8ab22ab890a009507033a9b7ddfa27b646cde9ea0ca4720881d7d70370412829"
+    },
+    {
+      "path": "apps/api/migrations/0032-next-43-dimension-restatement.sql",
+      "bytes": "6608",
+      "sha256": "42d65767a4b878cec75be48b2751044dd63cba35ff0677bb5f48bbde6f38b827"
+    },
+    {
+      "path": "apps/api/migrations/0033-next-18-fx-remeasurement.sql",
+      "bytes": "2784",
+      "sha256": "75528eaea71d39cce1ad4a318451cd2c986f8e89a0282c828a79d973046d5a53"
+    },
+    {
+      "path": "apps/api/migrations/0034-next-30-customer-credits.sql",
+      "bytes": "2930",
+      "sha256": "30ea0b461a1dea13d155909c66ea9a9f87d97ff17b4778b715dd966b65da39dd"
+    },
+    {
+      "path": "apps/api/migrations/0035-next-41-fx-chain-repair.sql",
+      "bytes": "2413",
+      "sha256": "2934d6fd99f6639051fab29dc66a7dd50378c2b1fef40a1c5363287126b6cec3"
+    },
+    {
+      "path": "apps/api/migrations/0036-next-09-sync-windows.sql",
+      "bytes": "10335",
+      "sha256": "ef0f036f35ba5fa0befb1afdc4d05848c3e89e9e851456c5e1a587bc9d9761c8"
+    },
+    {
+      "path": "apps/api/migrations/0037-next-10-source-revisions.sql",
+      "bytes": "10938",
+      "sha256": "bacb3ab0e36b0bb0f2ff2cb44c1c920cefca9bbd359824d660a2818bdf7a2132"
+    },
+    {
+      "path": "apps/api/migrations/0038-bank-capacity-reconciliation-insert.sql",
+      "bytes": "1153",
+      "sha256": "8c9eda00e56e6ad4f5c363dbbe6b9b810d55185cd1f2f9d2c26f2ded0d8fd508"
+    },
+    {
+      "path": "apps/api/migrations/0039-next-31-prepayments.sql",
+      "bytes": "7383",
+      "sha256": "95f1c3ee6839c3e7fd6c5839db44299b8cc8e66e6b805c84e36c41f5c61fd933"
+    },
+    {
+      "path": "apps/api/migrations/0040-next-38-cash-method.sql",
+      "bytes": "12263",
+      "sha256": "5367e73a7632121eaab02623f410f65118fe05c394c3ae59b8cad24edb985cfe"
+    },
+    {
+      "path": "apps/api/migrations/0042-pdfcn-renderer.sql",
+      "bytes": "599",
+      "sha256": "5cbba7159aa8f66b4743443653062d28e34092a47c7101226347470dec63e110"
+    },
+    {
+      "path": "apps/api/migrations/0043-cash-method-commercial-invoices.sql",
+      "bytes": "1440",
+      "sha256": "ba7c755dd488072f18b4d5f74e949703e6ddac31fe36ead26afd49d4f4fd7d11"
+    },
+    {
+      "path": "apps/api/migrations/0043-posting-request-attempts.sql",
+      "bytes": "1174",
+      "sha256": "4284f02df0827aa6d99b625b3866cf304067b136e1f362b23e2785707681386a"
+    },
+    {
+      "path": "apps/api/migrations/0044-cash-method-allocation-recognition.sql",
+      "bytes": "3020",
+      "sha256": "c62a5b67973d9dae7110250bfb4e419e51bf8e9e58e646d34fbbd88e63d0e008"
+    },
+    {
+      "path": "apps/api/migrations/0044-voucher-period-date.sql",
+      "bytes": "1928",
+      "sha256": "5ffeed20d6d7cc7f5486bb69ef9de168106b6e33939da89d25fe85158334f4b8"
+    },
+    {
+      "path": "apps/api/migrations/0045-bank-match-integrity.sql",
+      "bytes": "1868",
+      "sha256": "84c767a6ca8ae12647768df4de4f054c3703aef6df86355ca9177cc5683e4534"
+    },
+    {
+      "path": "apps/api/migrations/0045-cash-method-complete-year-end.sql",
+      "bytes": "3218",
+      "sha256": "ba495d9a8b03994bbcbcfc5c21c4becb4f9445a7552bf0488481d9a0501c3421"
+    },
+    {
+      "path": "apps/api/migrations/0046-cash-method-unpaid-credits.sql",
+      "bytes": "9652",
+      "sha256": "a59a3c6bc9a9e9c9a281acb02396221cff06d26d4e143ae3d19e0c6c6c797b5c"
+    },
+    {
+      "path": "apps/api/migrations/0046-period-lock-integrity.sql",
+      "bytes": "1446",
+      "sha256": "3a9c31b6e7ee19de2aadb03a03ddc42e1ee5329e7b1316e9661e11610f02892d"
+    },
+    {
+      "path": "apps/api/migrations/0047-supplier-credit-cap.sql",
+      "bytes": "1519",
+      "sha256": "2369a145f64e66c622b9bae6632dfd9a87e28259b8e8f2836c1381043caf0e31"
+    },
+    {
+      "path": "apps/api/migrations/0048-cash-invoice-recognition-period.sql",
+      "bytes": "283",
+      "sha256": "9997994f777c091bfb668c24af3283d4b7cc49a147a71e236983f1d93034fee2"
+    },
+    {
+      "path": "apps/api/migrations/0048-next38-commercial-period-admission.sql",
+      "bytes": "1512",
+      "sha256": "df64ec3a157899181b183745799d0364e27ab3e79f38aafc078739b277d873e1"
+    },
+    {
+      "path": "apps/api/migrations/0049-evaluation-contracts.sql",
+      "bytes": "1380",
+      "sha256": "1c4651219b725b2cd1e587e67d7a018985a202ab06daf47d139a546717822014"
+    },
+    {
+      "path": "apps/api/migrations/0050-validate-vat-receipt-match.sql",
+      "bytes": "102",
+      "sha256": "c415ab510a661e51d17ab31ba4e3e055fc3c5eaadd2b86a9383311db54cc7382"
+    },
+    {
+      "path": "apps/api/migrations/0051-rule-selector-check-stability.sql",
+      "bytes": "302",
+      "sha256": "7deb0a5d37b5ab4103d282c801d064551daeea9d1f9414a494b7fc18824b633d"
+    },
+    {
+      "path": "apps/api/migrations/0052-supplier-settlement-pending.sql",
+      "bytes": "3497",
+      "sha256": "a670ebe86563855c4867443aab25f2fb19401527a15105381d0104df8b2a69c5"
+    },
+    {
+      "path": "apps/api/migrations/0053-supplier-settlement-execution.sql",
+      "bytes": "7271",
+      "sha256": "a99d0060db576fd4b24e71d9fc974fd13b6792fb3138ebbe9c3489a88fe3c7a2"
+    },
+    {
+      "path": "apps/api/migrations/0054-supplier-cancellation-revocations.sql",
+      "bytes": "701",
+      "sha256": "f04787c7148f6f6f5c1ccdffc1c02a2d0855341ac929d39919951a9212e664cd"
+    },
+    {
+      "path": "apps/api/migrations/0055-supplier-settlement-receipt-bindings.sql",
+      "bytes": "553",
+      "sha256": "f0dd040f5e1d5f4b91172b7915a91e5ce613c65a509e00b61c29a5c51cce79bf"
+    },
+    {
+      "path": "apps/api/migrations/0056-agent-context-continuation.sql",
+      "bytes": "1354",
+      "sha256": "20f76a3349c40ed219e7a8e974387478432bfa91686fc0c25212b9ef1ed9d5aa"
+    },
+    {
+      "path": "apps/api/migrations/0057-period-work-execution-results.sql",
+      "bytes": "727",
+      "sha256": "c59c34aa7c2c567f62bf9ac04352f599ae19ea6c82f9233e85cd859fc0e626bf"
+    },
+    {
+      "path": "apps/api/migrations/0058-owner-funding-receipt-amounts.sql",
+      "bytes": "699",
+      "sha256": "0417f1fca3b3debf70e6e65672bcabaa3bbc6b9a8c8678d46a1976ef101f833f"
+    },
+    {
+      "path": "apps/api/migrations/0059-owner-loan-repayment.sql",
+      "bytes": "853",
+      "sha256": "88592f2501d816993b7c88533af4b04465aea95a2ba127c2d178a7f817f63f07"
+    },
+    {
+      "path": "apps/api/migrations/0060-document-work-assignments.sql",
+      "bytes": "257",
+      "sha256": "0f7159af64186975652b17caaabbbe19075ea51a46d497a1600529413914c3bb"
+    },
+    {
+      "path": "apps/api/migrations/0061-commercial-draft-purpose.sql",
+      "bytes": "555",
+      "sha256": "9d9427263eae99d84dc0214d82c527bd733a42031529fdd7f10d857530eee1b4"
+    },
+    {
+      "path": "apps/api/migrations/0062-customer-invoice-defaults.sql",
+      "bytes": "3607",
+      "sha256": "136598efb2a9cf80b1911159bc8d13899a482f22d12145a7e1a206168e4163d5"
+    }
+  ],
+  "restore": {
+    "database": true,
+    "originalCommandRecovered": true,
+    "originalSourceRecovered": true,
+    "restoredTableFingerprintsAndJsonClosure": true,
+    "strictSchemaQualification": {
+      "evaluationRows": "1",
+      "schemaInventory": "matched",
+      "jsonClosure": "matched"
+    },
+    "restoredDiagnosticExtensionRemovedBeforeQualification": true,
+    "missingSourceRefused": true,
+    "corruptSourceRefused": true,
+    "oldSelectedDeploymentLoginRevoked": true
+  },
+  "limitations": [
+    "Same PG cluster, not independent infrastructure disaster recovery",
+    "Only the test-owned old deployment role is fenced; this is not proof that all production writers are retired",
+    "No live signing/provider secret restored",
+    "The instrumented source schema is not claimed equal to the restored target after diagnostic extension removal"
+  ]
+}
