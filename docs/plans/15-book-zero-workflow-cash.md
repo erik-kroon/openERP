@@ -151,3 +151,9 @@ The source's **49 requirements** and **45 AT cases** are specified, not executed
 For each accepted gate record requirements/cases, exact code and dirty-tree identity, migration state, environment, data period, input/source hashes, steps, independent expected and observed outcomes, receipts/artifacts, reviewer and remaining limitations. No synthetic test, static check, screenshot or imported PRD closes an actual-company or external acceptance gate.
 
 The [document verification record](evidence/book-zero-docs-verification.md) records provenance and checks for this documentation change only. Current technical and accounting ownership is preserved; no new financial computation owner, runtime, legal rule, provider or operational authority follows from the source document.
+
+## Daily-work backend integration — 2026-10-03
+
+The [daily-work implementation ledger](18-daily-work-product-implementation.md) tracks the selected synthetic known-items Cash backend. Cash basis captures retain selected bank witness identities, canonical invoice residuals, unsupported foreign obligations and incomplete company coverage. Saved reads/export preserve original bytes separately from current/changed/unavailable dependencies. Source SELECT admission occurs before source SQL, so lost source access does not abort an otherwise authorized historical artifact read.
+
+Forecast captures compose a retained current basis inside the owning book transaction. The application derives financial amounts; callers select the basis, horizon, nonnegative buffer and reviewed date evidence. Exact 30/90/91-day calculations retain opening, daily closing and outflows-first lows, earliest minima, headroom, and blocked/undated/outside-horizon contributions. No bank action, payroll/tax completeness, company activation, dashboard presentation or live financial outcome follows from this backend. Final integration receipts and remaining benchmark gates are linked from the implementation ledger.

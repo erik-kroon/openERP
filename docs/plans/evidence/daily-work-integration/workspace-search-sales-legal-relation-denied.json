@@ -1,0 +1,10 @@
+{
+  "scope": {
+    "entityId": "entity_2bc26f0294eb4863",
+    "bookId": "book_2bc26f0294eb4863"
+  },
+  "deniedRelation": "ar_legal_issues",
+  "expectedStatus": 422,
+  "expectedCode": "UnsupportedProfile",
+  "qualification": "existing sales owner refuses before its newly joined legal issue relation; no new search-family coverage claim"
+}

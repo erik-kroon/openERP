@@ -1,0 +1,45 @@
+$ vp test run "apps/api/tests/cash-basis.e2e.test.ts" "apps/api/tests/cash-forecast.e2e.test.ts" "apps/api/tests/sales-register-identity.e2e.test.ts" "apps/api/tests/collection-reminders.e2e.test.ts" "apps/api/tests/invoice-templates.e2e.test.ts" -t "P10|P11|existing sales register|collections caller|invoice templates copy exact|template replacement requires|unresolved template treatment|template article selections"
+
+ RUN  v4.1.10 /Users/admin/.codex/worktrees/midday-final-integration/openERP
+
+ ✓ apps/api/tests/cash-basis.e2e.test.ts (17 tests | 2 skipped) 40238ms
+   ✓ P10 captures exact selected current openings and immutable known-items bytes through HTTP and MCP  3368ms
+   ✓ P10 retains dated observations without inventing a current opening {"old":true}  1812ms
+   ✓ P10 retains dated observations without inventing a current opening {"incomplete":true}  1995ms
+   ✓ P10 rejects historical knowledge, supplied amounts and cross-book references and rechecks revoked authority  3549ms
+   ✓ P10 reads all canonical invoice amounts and retains immutable captures when revisions change  1714ms
+   ✓ P10 preserves unsupported foreign obligations without converting them or hiding coverage gaps  2721ms
+   ✓ P10 keeps a same-day allocated residual blocked when the selected closing lacks its payment witness  3861ms
+   ✓ P10 never treats a restricted account review or unavailable balance as selected opening cash  3630ms
+   ✓ P10 proves same-day cash settlement membership and reads partial payment plus credit once  3774ms
+   ✓ P10 retains reviewed expected dates separately from unchanged contractual due dates  1638ms
+   ✓ P10 qualifies an actual supplier settlement receipt and preserves cancellation knowledge  5708ms
+   ✓ P10 preserves canonical unknown from retained historical recognition and refuses generic correction  2325ms
+   ✓ P10 preserves saved bytes when native source SELECT is unavailable commerce_invoices  1214ms
+   ✓ P10 preserves saved bytes when native source SELECT is unavailable bank_observations  1365ms
+   ✓ P10 freezes body digest integrity independently of its artifact byte hash  1543ms
+ ✓ apps/api/tests/collection-reminders.e2e.test.ts (13 tests | 12 skipped) 36035ms
+   ✓ the collections caller reviews recipient and exact bytes before a browser approval and shows retained local acceptance  36033ms
+ ✓ apps/api/tests/invoice-templates.e2e.test.ts (8 tests | 4 skipped) 8736ms
+   ✓ invoice templates copy exact content and preserve applied drafts across revisions and archive  3330ms
+   ✓ template replacement requires explicit authority and leaves refused drafts unchanged  1734ms
+   ✓ unresolved template treatment stays explicit on the normal draft owner  1697ms
+   ✓ template article selections require current admission for new drafts and preserve existing copies  1968ms
+ ✓ apps/api/tests/cash-forecast.e2e.test.ts (6 tests) 8092ms
+   ✓ P11 saves literal exact balances and immutable known-items exports from native retained obligations  1869ms
+   ✓ P11 distinguishes same-day closing from the conservative outflows-first minimum  1496ms
+   ✓ P11 preserves overdue obligations outside the curve and includes opening in inflow-only minima  1221ms
+   ✓ P11 retains the last horizon day and preserves later and impossible source dates outside the curve  1546ms
+   ✓ P11 preserves an unavailable opening rather than inventing zero balances  699ms
+   ✓ P11 refuses supplied financial facts, invalid assumptions, scope substitution and revoked authority  1259ms
+ ✓ apps/api/tests/sales-register-identity.e2e.test.ts (2 tests) 1785ms
+   ✓ existing sales register represents a legally issued draft once under its registered identity  1000ms
+   ✓ existing sales register admits its legal issue relation before reading draft identities  785ms
+
+ Test Files  5 passed (5)
+      Tests  28 passed | 18 skipped (46)
+   Start at  23:01:37
+   Duration  123.81s (transform 2.57s, setup 0ms, import 11.64s, tests 94.89s, environment 1ms)
+
+JSON report written to /Users/admin/.codex/worktrees/midday-final-integration/openERP/test-results/final-cash-templates/results.json
+JUNIT report written to /Users/admin/.codex/worktrees/midday-final-integration/openERP/test-results/final-cash-templates/junit.xml

@@ -1,0 +1,396 @@
+{
+  "issue": {
+    "id": "ar_issue_330343bdca024cef80f99d2c28c4e548",
+    "scope": {
+      "entityId": "entity_91d9ef29893bc147",
+      "bookId": "book_91d9ef29893bc147"
+    },
+    "profile": "se-domestic-b2b-sek-25-accrual-v1",
+    "reviewId": "ar_review_ce2a9f99c5a748a2a9ee39528ffba8d4",
+    "reviewDigest": "sha256:888d1e8835ad54cdb22288a8c3a7f7bfdba5d2e099d3c2a60bbf08fa5a73bf0b",
+    "approvalId": "ar_approval_f1b2c5b88b4b4722912cc9bccad17c91",
+    "draftId": "invoice_draft_79cc58334b714471859e78ffdcd54482",
+    "draftRevision": "1",
+    "draftDigest": "sha256:d43136d98372fb94a154cebad2f716f49117460cac7cd1fa656322202eeb05eb",
+    "draftSnapshot": {
+      "id": "invoice_draft_79cc58334b714471859e78ffdcd54482",
+      "scope": {
+        "entityId": "entity_91d9ef29893bc147",
+        "bookId": "book_91d9ef29893bc147"
+      },
+      "draftKey": "credit_fixture_a724d6c2-f379-48ed-808e-edcf5823c03d",
+      "revision": "1",
+      "status": "draft",
+      "issued": false,
+      "recognized": false,
+      "delivered": false,
+      "calculationBasis": "explicit_line_amounts_v1",
+      "purpose": "source_transcription",
+      "content": {
+        "title": "Synthetic credit document journey",
+        "counterpartyId": "counterparty_326ffb708ce94e37961b048aa37130c6",
+        "counterpartyRevision": "1",
+        "seller": {
+          "legalName": "FWD-05 Synthetic Seller",
+          "registrationId": "556677-8899",
+          "taxId": "SE556677889901",
+          "address": "Synthetic address, not a real company",
+          "countryCode": "SE",
+          "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926"
+        },
+        "customer": {
+          "legalName": "FWD-05 Synthetic Customer",
+          "registrationId": "556677-8808",
+          "taxId": null,
+          "address": "Synthetic customer address",
+          "countryCode": "SE",
+          "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926"
+        },
+        "currency": "SEK",
+        "currencyScale": 2,
+        "plannedIssueDate": "2026-10-03",
+        "supplyDate": "2026-10-03",
+        "dueDate": "2026-10-03",
+        "paymentTerms": "Synthetic only; no payment requested",
+        "sourceTotalMinor": "12500",
+        "lines": [
+          {
+            "id": "line_1",
+            "description": "Synthetic service",
+            "quantity": "1",
+            "unitPriceMinor": "10000",
+            "baseMinor": "10000",
+            "discountMinor": "0",
+            "chargeMinor": "0",
+            "taxMinor": "2500",
+            "taxDescription": "se-domestic-standard-25-v1",
+            "taxEvidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+            "sourceGrossMinor": "12500"
+          }
+        ]
+      },
+      "counterparty": {
+        "kind": "synthetic_counterparty_v1",
+        "externalKey": "d5f316e6-f74d-4a3f-9b3d-66de5a00b509",
+        "role": "customer",
+        "displayName": "FWD-05 Synthetic Customer",
+        "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+        "reason": "Synthetic fixture",
+        "id": "counterparty_326ffb708ce94e37961b048aa37130c6",
+        "scope": {
+          "entityId": "entity_91d9ef29893bc147",
+          "bookId": "book_91d9ef29893bc147"
+        },
+        "revision": "1",
+        "evidence": {
+          "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+          "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+        },
+        "legalIdentityVerified": false,
+        "createdAt": "2026-10-03T21:03:40.131602Z",
+        "receipt": {
+          "key": "a10fa84b-2ef1-4d73-af1a-d6476151a91d",
+          "operation": "commerce_create_counterparty",
+          "actorId": "operator_91d9ef29893bc147"
+        }
+      },
+      "sellerEvidence": {
+        "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+        "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+      },
+      "customerEvidence": {
+        "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+        "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+      },
+      "totals": {
+        "baseMinor": "10000",
+        "discountMinor": "0",
+        "chargeMinor": "0",
+        "netMinor": "10000",
+        "taxMinor": "2500",
+        "grossMinor": "12500",
+        "sourceTotalMatches": true
+      },
+      "calculatedLines": [
+        {
+          "id": "line_1",
+          "calculatedBaseMinor": "10000",
+          "netMinor": "10000",
+          "grossMinor": "12500",
+          "sourceGrossMatches": true,
+          "taxEvidence": {
+            "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+            "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+          }
+        }
+      ],
+      "blockers": [
+        {
+          "code": "issuance_not_implemented",
+          "lineId": null
+        },
+        {
+          "code": "legal_identity_not_verified",
+          "lineId": null
+        },
+        {
+          "code": "tax_profile_not_activated",
+          "lineId": null
+        }
+      ],
+      "reason": "Initial commercial draft",
+      "createdAt": "2026-10-03T21:03:40.152946Z",
+      "receipt": {
+        "key": "5acf3b94-6091-4517-a1f8-79c21d7112ad",
+        "operation": "create_invoice_draft",
+        "actorId": "operator_91d9ef29893bc147"
+      },
+      "digest": "sha256:d43136d98372fb94a154cebad2f716f49117460cac7cd1fa656322202eeb05eb"
+    },
+    "policyId": "ar_policy_d45b8638b7a3450d83b95980e5c7ef0d",
+    "policyDigest": "sha256:27dec6b00a993e4e4cb00656d20563ef6021e96ca39296e4802d4afe423afd40",
+    "policySnapshot": {
+      "id": "ar_policy_d45b8638b7a3450d83b95980e5c7ef0d",
+      "scope": {
+        "entityId": "entity_91d9ef29893bc147",
+        "bookId": "book_91d9ef29893bc147"
+      },
+      "candidate": {
+        "id": "invoice_policy_c2e53a2e43b74bf089933b76175111cd",
+        "scope": {
+          "entityId": "entity_91d9ef29893bc147",
+          "bookId": "book_91d9ef29893bc147"
+        },
+        "input": {
+          "profileKey": "fwd05_synthetic",
+          "sellerIdentity": {
+            "legalName": "FWD-05 Synthetic Seller",
+            "registrationNumber": "556677-8899",
+            "vatRegistrationNumber": "SE556677889901",
+            "postalAddress": "Synthetic address, not a real company",
+            "countryCode": "SE"
+          },
+          "sellerEvidence": {
+            "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+            "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+          },
+          "legalNumbering": "sequential-per-series-v1",
+          "numberingEvidence": {
+            "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+            "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+          },
+          "vatTreatment": "se-domestic-standard-25-v1",
+          "vatEvidence": {
+            "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+            "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+          },
+          "roundingMethod": "line-tax-half-up-minor-v1",
+          "roundingEvidence": {
+            "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+            "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+          },
+          "creditNotePolicy": "Link the original and retain exact credit capacity; no refund.",
+          "correctionPolicy": "Preserve the original and issue a linked correction.",
+          "correctionEvidence": {
+            "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+            "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+          },
+          "effectiveFrom": "2026-10-03",
+          "reason": "Isolated synthetic qualification only",
+          "acknowledgeUnactivated": true
+        },
+        "status": "unactivated",
+        "createdBy": "operator_91d9ef29893bc147",
+        "createdAt": "2026-10-03T21:03:40.039Z",
+        "digest": "sha256:d69369413c126df230098b2b23a6d4acc9ce7e55c0e15a118ecd24796d049346"
+      },
+      "review": {
+        "id": "invoice_policy_review_b8e33a6993e24523b4926f93cfa0e18d",
+        "scope": {
+          "entityId": "entity_91d9ef29893bc147",
+          "bookId": "book_91d9ef29893bc147"
+        },
+        "candidateId": "invoice_policy_c2e53a2e43b74bf089933b76175111cd",
+        "input": {
+          "candidateDigest": "sha256:d69369413c126df230098b2b23a6d4acc9ce7e55c0e15a118ecd24796d049346",
+          "reviewEvidence": {
+            "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+            "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+          },
+          "findings": "Synthetic fixture for the existing bounded profile, not company qualification.",
+          "acknowledgeNoLegalActivation": true
+        },
+        "createdBy": "operator_ef833d83e6bbc5ac",
+        "createdAt": "2026-10-03T21:03:40.060Z",
+        "status": "reviewed_unactivated",
+        "legalInvoiceEnabled": false,
+        "digest": "sha256:e24563488260d9dc701228d8e5a8e886ad718a621ec9f28d389b623faa0b4551"
+      },
+      "input": {
+        "candidateId": "invoice_policy_c2e53a2e43b74bf089933b76175111cd",
+        "candidateDigest": "sha256:d69369413c126df230098b2b23a6d4acc9ce7e55c0e15a118ecd24796d049346",
+        "reviewId": "invoice_policy_review_b8e33a6993e24523b4926f93cfa0e18d",
+        "reviewDigest": "sha256:e24563488260d9dc701228d8e5a8e886ad718a621ec9f28d389b623faa0b4551",
+        "series": "TEST",
+        "ruleVersion": "se-domestic-standard-25-2023-200-v1",
+        "sourceEvidence": {
+          "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+          "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+        },
+        "activationEvidence": {
+          "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+          "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+        },
+        "reason": "Synthetic native workflow exercise",
+        "acceptReviewedPolicy": true,
+        "acknowledgeIssueBlocked": true
+      },
+      "activatedBy": "operator_600ec203a44d2c86",
+      "activatedAt": "2026-10-03T21:03:40.090478Z",
+      "status": "active",
+      "legalInvoiceEnabled": false,
+      "creditEnabled": false,
+      "deliveryEnabled": false,
+      "digest": "sha256:27dec6b00a993e4e4cb00656d20563ef6021e96ca39296e4802d4afe423afd40"
+    },
+    "accountingProfileId": "ar_accounting_profile_1859d47d3b87443ea0621d0add0b3c07",
+    "accountingProfileDigest": "sha256:f7c21c3646f5dc85c0db5b5ec05c716b208b6340a150df28e1ed1032a3acecfd",
+    "accountingProfileSnapshot": {
+      "id": "ar_accounting_profile_1859d47d3b87443ea0621d0add0b3c07",
+      "scope": {
+        "entityId": "entity_91d9ef29893bc147",
+        "bookId": "book_91d9ef29893bc147"
+      },
+      "policyId": "ar_policy_d45b8638b7a3450d83b95980e5c7ef0d",
+      "policyDigest": "sha256:27dec6b00a993e4e4cb00656d20563ef6021e96ca39296e4802d4afe423afd40",
+      "input": {
+        "policyId": "ar_policy_d45b8638b7a3450d83b95980e5c7ef0d",
+        "policyDigest": "sha256:27dec6b00a993e4e4cb00656d20563ef6021e96ca39296e4802d4afe423afd40",
+        "profile": "se-domestic-b2b-sek-25-accrual-v1",
+        "accountingMethod": "accrual",
+        "ruleVersion": "se-domestic-standard-25-2023-200-v1",
+        "effectiveFrom": "2026-10-03",
+        "controlAccountId": "account_ar",
+        "revenueAccountId": "account_revenue",
+        "outputVatAccountId": "account_vat",
+        "accountRoleEvidence": {
+          "evidenceId": "evidence_208be1447e4f41fcbf5265a7143eb926",
+          "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+        },
+        "reason": "Synthetic role mapping",
+        "acceptLegalAccounting": true
+      },
+      "status": "active",
+      "activatedBy": "operator_91d9ef29893bc147",
+      "activatedAt": "2026-10-03T21:03:40.113Z",
+      "digest": "sha256:f7c21c3646f5dc85c0db5b5ec05c716b208b6340a150df28e1ed1032a3acecfd"
+    },
+    "legalDocumentNumber": "TEST-1",
+    "issuedOn": "2026-10-03",
+    "issuedAt": "2026-10-03T21:03:40.258Z",
+    "issued": true,
+    "legalInvoice": true,
+    "recognized": true,
+    "delivered": false,
+    "totals": {
+      "netMinor": "10000",
+      "taxMinor": "2500",
+      "grossMinor": "12500"
+    },
+    "lines": [
+      {
+        "id": "line_1",
+        "description": "Synthetic service",
+        "quantity": "1",
+        "unitPriceMinor": "10000",
+        "baseMinor": "10000",
+        "discountMinor": "0",
+        "chargeMinor": "0",
+        "netMinor": "10000",
+        "taxMinor": "2500",
+        "grossMinor": "12500",
+        "vatTreatment": "se-domestic-standard-25-v1"
+      }
+    ],
+    "postingReceipt": {
+      "id": "receipt_ed19fb7fe4b84b8295d2276dcd5a25da",
+      "changeSetId": "change_5bceb8ee1f0c4b07ad78a2b2f19864eb",
+      "voucherId": "voucher_966c95e23dca49cf90453656b4575075",
+      "planDigest": "sha256:44bcd5f7dec3b5bedee5d986bcc6a0e23ef9074e54059b8dec1b3397b8b06aba",
+      "sequence": "1",
+      "voucherNumber": "1",
+      "committedAt": "2026-10-03 23:03:40.287719+02"
+    },
+    "registerInvoiceId": "invoice_59dc31eba63f4880a3bd0f1e72e1fe43",
+    "sourceEvidence": {
+      "evidenceId": "evidence_4e2bc29e4bc54f15b7b7f493da6735be",
+      "sha256": "175b20fb5e22b63a67925aa047161995d862f1cda157d86402597c2425bd0916"
+    },
+    "createdAt": "2026-10-03T21:03:40.258Z",
+    "receipt": {
+      "key": "21d6345b-fcb6-436a-b996-20070c6ff6d9",
+      "operation": "execute_ar_legal_issue",
+      "actorId": "operator_ef833d83e6bbc5ac"
+    },
+    "digest": "sha256:b3350bf768957b2fb035f1fc1b2d4ff985d9af3e76bc42f1112ca918a4eeabf3"
+  },
+  "page": {
+    "scope": {
+      "entityId": "entity_91d9ef29893bc147",
+      "bookId": "book_91d9ef29893bc147"
+    },
+    "checkedAt": "2026-10-03T21:03:40.330369Z",
+    "asOf": "2026-10-03",
+    "page": 1,
+    "pageSize": 50,
+    "total": 1,
+    "counts": {
+      "all": 1,
+      "draft": 0,
+      "open": 1,
+      "overdue": 0,
+      "settled": 0,
+      "cancelled": 0
+    },
+    "items": [
+      {
+        "id": "invoice_59dc31eba63f4880a3bd0f1e72e1fe43",
+        "kind": "invoice",
+        "title": "Synthetic credit document journey",
+        "number": "TEST-1",
+        "customer": "FWD-05 Synthetic Customer",
+        "date": "2026-10-03",
+        "dueOn": "2026-10-03",
+        "currency": "SEK",
+        "currencyScale": 2,
+        "amountMinor": "12500",
+        "outstandingMinor": "12500",
+        "status": "open",
+        "needsDetails": false,
+        "overdue": false,
+        "draftId": null,
+        "issueReviewId": null
+      }
+    ]
+  },
+  "representations": [
+    {
+      "id": "invoice_59dc31eba63f4880a3bd0f1e72e1fe43",
+      "kind": "invoice",
+      "title": "Synthetic credit document journey",
+      "number": "TEST-1",
+      "customer": "FWD-05 Synthetic Customer",
+      "date": "2026-10-03",
+      "dueOn": "2026-10-03",
+      "currency": "SEK",
+      "currencyScale": 2,
+      "amountMinor": "12500",
+      "outstandingMinor": "12500",
+      "status": "open",
+      "needsDetails": false,
+      "overdue": false,
+      "draftId": null,
+      "issueReviewId": null
+    }
+  ]
+}

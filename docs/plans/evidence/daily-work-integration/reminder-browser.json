@@ -1,0 +1,15 @@
+{
+  "wire": [
+    {
+      "externalIdentity": "book_e3ba4f5a6d1f5334/reminder_1af9c72ad98947e1870109032998238b/sha256:22ff126750a672d5bfe2969ca1a7b6c953828c7c4e8be57e49a24889168bb1c9",
+      "messageDigest": "sha256:22ff126750a672d5bfe2969ca1a7b6c953828c7c4e8be57e49a24889168bb1c9",
+      "destination": "billing@example.invalid",
+      "subject": "Payment reminder for invoice TEST-1",
+      "plainText": "Payment reminder\nInvoice: TEST-1\nDue date: 2026-10-03\nOutstanding as of 2026-10-03T21:03:12.068335Z: 125.00 SEK\nNo reminder fee or interest is included.\nIf you have already paid, please contact us so we can review the payment.",
+      "html": "<h1>Payment reminder</h1><p>Invoice: TEST-1</p><p>Due date: 2026-10-03</p><p>Outstanding as of 2026-10-03T21:03:12.068335Z: 125.00 SEK</p><p>No reminder fee or interest is included.</p><p>If you have already paid, please contact us so we can review the payment.</p>"
+    }
+  ],
+  "path": "http://127.0.0.1:49538/entities/entity_e3ba4f5a6d1f5334/books/book_e3ba4f5a6d1f5334/sales?view=collections",
+  "keyboardApproval": true,
+  "browserZoomVerified": false
+}
