@@ -1,0 +1,39 @@
+{
+  "template": {
+    "id": "invoice_template_6e051aea6498462e89b015032cd91b1e",
+    "scope": {
+      "entityId": "entity_aebead47d069b925",
+      "bookId": "book_aebead47d069b925"
+    },
+    "revision": "1",
+    "digest": "sha256:cb0044cab815d136f95f9b60ba4904f5cf13ac9802bd98dcff5cadbc62bcf40c",
+    "name": "Monthly consulting",
+    "currency": "SEK",
+    "currencyScale": 2,
+    "status": "active",
+    "content": {
+      "title": "Consulting services",
+      "paymentTerms": "Fourteen calendar days",
+      "note": "Thank you for your business.",
+      "lines": [
+        {
+          "id": "template_line",
+          "description": "Consulting hours",
+          "quantity": "2",
+          "unitPriceMinor": "100000",
+          "discountMinor": "0",
+          "chargeMinor": "0",
+          "treatment": {
+            "kind": "legal_sales_policy",
+            "id": "ar_policy_23f7b97f3d964d86b83f78151e9a2143",
+            "digest": "sha256:cbffa85594cfbd0fee13f98372d14d37ccd148132d939f7a09f60e52b21143f4"
+          }
+        }
+      ]
+    }
+  },
+  "draftId": "invoice_draft_e3c147ca224743de807960f6dbd085ea",
+  "issueId": "ar_issue_084d89d9f6474b418f96ae7c2f4ba8cc",
+  "artifactSha256": "6bf13139c35da594d1a94fbe48309294cd1e6e50c9ccff76814b70780694a277",
+  "renderedText": "Faktura FWD-05 Synthetic Seller TEST-2 2026-10-03 Från FWD-05 Synthetic Seller Synthetic address, not a real company SE Org.nr: 556677-8899 Momsnr: SE556677889901 Till FWD-05 Synthetic Customer Synthetic customer address SE Org.nr: 556677-8808 Consulting services Fakturadatum: 2026-10-03 · Leveransdatum: 2026-10-03 · Förfallodatum: 2026-10-03 Beskrivning Ant. À-pris exkl. moms Totalt inkl. moms Consulting hours Netto 2 000,00 kr · moms 25 % 500,00 kr Rabatt 0,00 kr · tillägg 0,00 kr 2 1 000,00 kr 2 500,00 kr Netto 2 000,00 kr Moms 25 % 500,00 kr Att betala 2 500,00 kr Betalningsvillkor Fourteen calendar days Thank you for your business. Ange fakturanummer TEST-2 vid betalning. Fakturan avser en svensk försäljning med 25 % moms. Valuta: SEK. FWD-05 Synthetic Seller · TEST-2 Sida 1 av 1"
+}

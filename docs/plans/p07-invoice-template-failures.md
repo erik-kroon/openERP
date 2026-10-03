@@ -30,3 +30,9 @@ The integrated ten-test cohort retained seven passes and three failures at sourc
 The same stable cohort measured existing draft reads at p95 11.228ms against parent09cb6b6 at11.662ms, with a61.662ms budget. New template application p95 was32.510ms against1000ms. Five warmups and thirty measured samples were retained for both operations. This timing receipt does not qualify the failed admission/PDF/body behaviors.
 
 The bounded body-only diagnostic passed unchanged admission code, including HTTP413, in4.68s at stable source `5007765147f00746d678d7f9e3e2e73aafc22f7700e02d3593509d0d814e82fd`. The original combined HTTP500 was not reproduced and remains unexplained. The assertion now retains the safe response body when status disagrees; no limit, timeout, or expectation was changed.
+
+The current article revision also owns its unit. A reference with the retained code/revision/digest and price but an altered unit must refuse fresh application. This public failure expectation was added before any unit-admission correction.
+
+The bounded article check confirmed that the existing snapshot guard already refuses an altered unit. It then exposed a fixture mismatch: the selected article description differed from the template line description, which the owning calculator correctly rejects. The positive fixture now uses the exact retained description. No unit guard was added or weakened. SQL text normalization still makes the declared catalog pointer type explicit.
+
+The source hypothesis that the catalog pointer native bigint needed text normalization was disproved by a bounded counterfactual. The full article lifecycle case passed with the original pointer query and corrected retained-description fixture in7.11s. The unnecessary SQL cast was removed. The observed positive failure was the fixture description mismatch, while the existing price/unit/reference safeguards remained intact.

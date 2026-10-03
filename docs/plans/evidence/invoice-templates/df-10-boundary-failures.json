@@ -1,0 +1,20 @@
+[
+  {
+    "status": 400,
+    "body": {
+      "_tag": "AccountingError",
+      "code": "InvalidRequest",
+      "message": "JSON object keys must be unique.",
+      "recovery": "permanent"
+    }
+  },
+  {
+    "status": 413,
+    "body": {
+      "_tag": "AccountingError",
+      "code": "RequestTooLarge",
+      "message": "Request body exceeds the byte limit.",
+      "recovery": "permanent"
+    }
+  }
+]
