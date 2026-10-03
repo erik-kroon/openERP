@@ -1,0 +1,7 @@
+{
+  "table": "bank_observations",
+  "basisId": "cash_basis_7e1aa186887d4f61bc8f7a202ad5ff63",
+  "status": 500,
+  "body": "{\"_tag\":\"AccountingError\",\"code\":\"InternalError\",\"message\":\"The accounting service could not complete this request.\",\"recovery\":\"outcome-unknown\"}",
+  "originalSha256": "5671de19b40bd6c862e3034647e95bfbad363845108e0ab2d147496545043e6b"
+}

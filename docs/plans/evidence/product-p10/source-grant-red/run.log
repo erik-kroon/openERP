@@ -1,0 +1,64 @@
+$ vp test run "apps/api/tests/cash-basis.e2e.test.ts" -t "P10 (preserves saved bytes when native source SELECT|qualifies an actual supplier settlement)"
+
+ RUN  v4.1.10 /Users/admin/.codex/worktrees/midday-product-p10/openERP
+
+stderr | apps/api/tests/cash-basis.e2e.test.ts > P10 preserves saved bytes when native source SELECT is unavailable commerce_invoices
+GET http://127.0.0.1:53445/api/v1/entities/entity_90afb35d2f425cb5/books/book_90afb35d2f425cb5/cash-bases/cash_basis_e2a440e69cc74b14af6ed638af7a0469: 500
+{"_tag":"AccountingError","code":"InternalError","message":"The accounting service could not complete this request.","recovery":"outcome-unknown"}
+requestId=0d263647-0ee3-43ca-ab50-a54973536e3d; Worker logs: /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-source-grant-red/worker.json
+
+stderr | apps/api/tests/cash-basis.e2e.test.ts > P10 preserves saved bytes when native source SELECT is unavailable bank_observations
+GET http://127.0.0.1:53445/api/v1/entities/entity_8ed6c99901a368fd/books/book_8ed6c99901a368fd/cash-bases/cash_basis_7e1aa186887d4f61bc8f7a202ad5ff63: 500
+{"_tag":"AccountingError","code":"InternalError","message":"The accounting service could not complete this request.","recovery":"outcome-unknown"}
+requestId=dab412b3-c87b-4e7d-8bf2-09d5ae9542fa; Worker logs: /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-source-grant-red/worker.json
+
+ ❯ apps/api/tests/cash-basis.e2e.test.ts (17 tests | 2 failed | 14 skipped) 5281ms
+   ↓ P10 captures exact selected current openings and immutable known-items bytes through HTTP and MCP
+   ↓ P10 retains dated observations without inventing a current opening {"old":true}
+   ↓ P10 retains dated observations without inventing a current opening {"incomplete":true}
+   ↓ P10 rejects historical knowledge, supplied amounts and cross-book references and rechecks revoked authority
+   ↓ P10 reads all canonical invoice amounts and retains immutable captures when revisions change
+   ↓ P10 preserves unsupported foreign obligations without converting them or hiding coverage gaps
+   ↓ P10 keeps a same-day allocated residual blocked when the selected closing lacks its payment witness
+   ↓ P10 never treats a restricted account review or unavailable balance as selected opening cash
+   ↓ P10 proves same-day cash settlement membership and reads partial payment plus credit once
+   ↓ P10 captures ten thousand unpaid canonical invoices within the ordinary budget
+   ↓ P10 measures the parent comparable canonical invoice page
+   ↓ P10 retains reviewed expected dates separately from unchanged contractual due dates
+   ✓ P10 qualifies an actual supplier settlement receipt and preserves cancellation knowledge  3090ms
+   ↓ P10 preserves canonical unknown from retained historical recognition and refuses generic correction
+   × P10 preserves saved bytes when native source SELECT is unavailable commerce_invoices 668ms
+   × P10 preserves saved bytes when native source SELECT is unavailable bank_observations 1521ms
+   ↓ P10 freezes body digest integrity independently of its artifact byte hash
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/api/tests/cash-basis.e2e.test.ts > P10 preserves saved bytes when native source SELECT is unavailable commerce_invoices
+ FAIL  apps/api/tests/cash-basis.e2e.test.ts > P10 preserves saved bytes when native source SELECT is unavailable bank_observations
+AssertionError: expected 500 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 500
+
+ ❯ apps/api/tests/cash-basis.e2e.test.ts:1819:31
+    1817|       );
+    1818|
+    1819|       expect(response.status).toBe(200);
+       |                               ^
+    1820|
+    1821|       const retained = Schema.decodeSync(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed | 14 skipped (17)
+   Start at  22:22:11
+   Duration  12.86s (transform 294ms, setup 0ms, import 643ms, tests 5.28s, environment 0ms)
+
+JSON report written to /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-source-grant-red/results.json
+JUNIT report written to /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-source-grant-red/junit.xml
+error: script "test:e2e" exited with code 1

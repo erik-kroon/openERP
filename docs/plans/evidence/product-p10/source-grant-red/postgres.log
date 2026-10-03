@@ -1,0 +1,113 @@
+2026-10-03 22:22:14.392 CEST [56630] LOG:  starting PostgreSQL 17.11 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit
+2026-10-03 22:22:14.393 CEST [56630] LOG:  listening on IPv4 address "127.0.0.1", port 53437
+2026-10-03 22:22:14.393 CEST [56630] LOG:  listening on Unix socket "/var/folders/50/zdx6l4px2wg7wh8q7_78g2qr0000gn/T/openerp-e2e-rXFlHm/.s.PGSQL.53437"
+2026-10-03 22:22:14.395 CEST [56633] LOG:  database system was shut down at 2026-10-03 22:22:14 CEST
+2026-10-03 22:22:14.397 CEST [56630] LOG:  database system is ready to accept connections
+2026-10-03 22:22:22.839 CEST [56851] ERROR:  permission denied for table commerce_invoices
+2026-10-03 22:22:22.839 CEST [56851] STATEMENT:  
+	      select page.id from (
+	        select i.id from openerp.commerce_invoices i
+	        where i.book_id = $1 and i.id collate "C" > $2 collate "C"
+	        order by i.id collate "C"
+	        limit $3
+	      ) page
+	      order by page.id collate "C"
+	    
+2026-10-03 22:22:24.348 CEST [56884] ERROR:  permission denied for table bank_observations
+2026-10-03 22:22:24.348 CEST [56884] STATEMENT:  
+	      with inventory as (
+	        select i.book_id, i.id, i.period_id, i.ordinal, i.body
+	        from openerp.closing_inventories i
+	        where i.book_id = $1 and i.id = $2
+	      ), period as (
+	        select p.id, p.version, p.starts_on, p.ends_on, p.locked
+	        from openerp.periods p
+	        join inventory i on i.book_id = p.book_id and i.period_id = p.id
+	      ), account_ids as (
+	        select coalesce(array_agg(selected.account_id order by selected.account_id collate "C"), '{}'::text[])
+	            as ids
+	        from (
+	          select jsonb_array_elements_text(inventory.body->'bankAccountIds') as account_id from inventory
+	          union
+	          select s.account_id from openerp.bank_sources s where s.book_id = $3 limit 101
+	        ) selected
+	      ), bounded as (
+	        select
+	          (select count(*) > 100 from account_ids) as too_many_accounts,
+	          exists (
+	            select 1 from unnest((select ids from account_ids)) wanted(account_id)
+	            where not exists (
+	              select 1 from openerp.accounts a
+	              where a.book_id = $4 and a.id = wanted.account_id
+	            )
+	          ) as unknown_account,
+	          (select count(*) > 200 from (
+	            select 1 from openerp.bank_statements s, account_ids c
+	            where s.book_id = $5 and s.account_id = any(c.ids)
+	              and s.starts_on <= (select ends_on from period)
+	              and s.ends_on >= (select starts_on from period)
+	            limit 201
+	          ) bounded_statements) as too_many_statements,
+	          coalesce((select sum(jsonb_array_length(s.source->'rows')) from openerp.bank_statements s, account_ids c
+	            where s.book_id = $6 and s.account_id = any(c.ids)
+	              and s.starts_on <= (select ends_on from period)
+	              and s.ends_on >= (select starts_on from period)), 0) > 10000 as too_many_rows,
+	          (select count(*) > 10000 from (
+	            select 1 from openerp.bank_observations o
+	            join openerp.bank_statements s on (s.book_id, s.id) = (o.book_id, o.statement_id), account_ids c
+	            where s.book_id = $7 and s.account_id = any(c.ids)
+	              and s.starts_on <= (select ends_on from period)
+	              and s.ends_on >= (select starts_on from period)
+	            limit 10001
+	          ) bounded_observations) as too_many_observations
+	      ), accounts as (
+	        select coalesce(jsonb_agg(jsonb_build_object(
+	            'accountId', a.id, 'code', a.code, 'name', a.name, 'active', a.active,
+	            'version', a.version::text, 'sourceBankAccountId', s.source_bank_account_id,
+	            'sourceRevision', s.revision::text) order by a.id collate "C"), '[]'::jsonb) as value
+	        from openerp.accounts a
+	        left join openerp.bank_sources s on (s.book_id, s.account_id) = (a.book_id, a.id)
+	        cross join account_ids c
+	        where a.book_id = $8 and a.id = any(c.ids)
+	      ), statements as (
+	        select coalesce(jsonb_agg(jsonb_build_object(
+	            'id', s.id, 'accountId', s.account_id, 'startsOn', s.starts_on::text,
+	            'endsOn', s.ends_on::text, 'evidenceId', s.evidence_id, 'evidenceSha256', e.sha256)
+	            order by s.id collate "C"), '[]'::jsonb) as value
+	        from openerp.bank_statements s
+	        join openerp.evidence e on (e.book_id, e.id) = (s.book_id, s.evidence_id)
+	        cross join account_ids c
+	        where s.book_id = $9 and s.account_id = any(c.ids)
+	          and s.starts_on <= (select ends_on from period)
+	          and s.ends_on >= (select starts_on from period)
+	      ), latest as (
+	        select i.body
+	        from openerp.closing_inventories i, inventory current_inventory
+	        where i.book_id = current_inventory.book_id and i.period_id = current_inventory.period_id
+	        order by i.ordinal desc
+	        limit 1
+	      )
+	      select case
+	        when not exists (select 1 from inventory)
+	          or not exists (select 1 from period)
+	          or (select too_many_accounts from bounded)
+	          or (select unknown_account from bounded)
+	          or (select too_many_statements from bounded)
+	          or (select too_many_rows from bounded)
+	          or (select too_many_observations from bounded)
+	          then null
+	        else openerp.digest(jsonb_build_object(
+	          'inventory', (select body from inventory),
+	          'latestInventory', (select body from latest),
+	          'period', (select jsonb_build_object('id', id, 'version', version::text,
+	            'startsOn', starts_on::text, 'endsOn', ends_on::text, 'locked', locked) from period),
+	          'book', (select jsonb_build_object('id', b.id, 'entityId', b.entity_id, 'profile', b.profile,
+	            'profileVersion', b.profile_version::text, 'writerEpoch', b.writer_epoch::text,
+	            'authority', b.authority, 'currency', b.currency, 'currencyScale', b.currency_scale,
+	            'committedSequence', b.committed_sequence::text) from openerp.books b where b.id = $10),
+	          'accounts', (select value from accounts),
+	          'statements', (select value from statements)))
+	      end as digest
+	    
+2026-10-03 22:22:24.990 CEST [56630] LOG:  received immediate shutdown request
+2026-10-03 22:22:24.997 CEST [56630] LOG:  database system is shut down

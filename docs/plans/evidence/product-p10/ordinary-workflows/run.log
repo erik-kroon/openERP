@@ -1,0 +1,104 @@
+$ vp test run "apps/api/tests/cash-basis.e2e.test.ts"
+
+ RUN  v4.1.10 /Users/admin/.codex/worktrees/midday-product-p10/openERP
+
+ ❯ apps/api/tests/cash-basis.e2e.test.ts (15 tests | 4 failed | 2 skipped) 12182ms
+   ✓ P10 captures exact selected current openings and immutable known-items bytes through HTTP and MCP  1103ms
+   ✓ P10 retains dated observations without inventing a current opening {"old":true}  547ms
+   ✓ P10 retains dated observations without inventing a current opening {"incomplete":true}  504ms
+   ✓ P10 rejects historical knowledge, supplied amounts and cross-book references and rechecks revoked authority  777ms
+   × P10 reads all canonical invoice amounts and retains immutable captures when revisions change 807ms
+   ✓ P10 preserves unsupported foreign obligations without converting them or hiding coverage gaps  935ms
+   × P10 keeps a same-day allocated residual blocked when the selected closing lacks its payment witness 1044ms
+   ✓ P10 never treats a restricted account review or unavailable balance as selected opening cash  668ms
+   ✓ P10 proves same-day cash settlement membership and reads partial payment plus credit once  1543ms
+   ↓ P10 captures ten thousand unpaid canonical invoices within the ordinary budget
+   ↓ P10 measures the parent comparable canonical invoice page
+   ✓ P10 retains reviewed expected dates separately from unchanged contractual due dates  1939ms
+   × P10 qualifies an actual supplier settlement receipt and preserves cancellation knowledge 1132ms
+   × P10 preserves a canonical unknown residual after its recognition is corrected 685ms
+   ✓ P10 freezes body digest integrity independently of its artifact byte hash  496ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/api/tests/cash-basis.e2e.test.ts > P10 reads all canonical invoice amounts and retains immutable captures when revisions change
+SchemaError: Missing key
+  at ["revision"]
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  apps/api/tests/cash-basis.e2e.test.ts > P10 keeps a same-day allocated residual blocked when the selected closing lacks its payment witness
+AssertionError: POST http://127.0.0.1:61518/api/v1/entities/entity_2912824ec98d3f5d/books/book_2912824ec98d3f5d/commerce/allocation-reversal-plans/unallocation_23fb1b3a633948539188f35a2ec764b3/approvals: 404
+{"_tag":"AccountingError","code":"NotFound","message":"The requested record was not found.","recovery":"permanent"}
+requestId=1dcb80de-6b94-473f-84b3-6cf62f62b78e; Worker logs: /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-ordinary-workflows/worker.json: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ decoded apps/api/tests/support/fixtures.ts:167:63
+    165| ): Promise<S["Type"]> {
+    166|   const body = await response.text();
+    167|   expect(response.status, responseDiagnostic(response, body)).toBe(200…
+       |                                                               ^
+    168|
+    169|   return Schema.decodeSync(Schema.fromJsonString(schema))(body);
+ ❯ apps/api/tests/cash-basis.e2e.test.ts:876:28
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  apps/api/tests/cash-basis.e2e.test.ts > P10 qualifies an actual supplier settlement receipt and preserves cancellation knowledge
+AssertionError: POST http://127.0.0.1:61518/api/v1/entities/entity_be7611e14f654581/books/book_be7611e14f654581/change-sets/change_3f47009e66204c78b7c465c90b792366/execute: 403
+{"_tag":"AccountingError","code":"ApprovalRequired","message":"A current operator approval is required.","recovery":"permanent"}
+requestId=76969b7d-5624-474b-848e-ce912ae4429a; Worker logs: /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-ordinary-workflows/worker.json: expected 403 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 403
+
+ ❯ decoded apps/api/tests/support/fixtures.ts:167:63
+    165| ): Promise<S["Type"]> {
+    166|   const body = await response.text();
+    167|   expect(response.status, responseDiagnostic(response, body)).toBe(200…
+       |                                                               ^
+    168|
+    169|   return Schema.decodeSync(Schema.fromJsonString(schema))(body);
+ ❯ supplierOpeningFixture apps/api/tests/support/cash-basis-supplier.ts:234:3
+ ❯ apps/api/tests/cash-basis.e2e.test.ts:1491:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  apps/api/tests/cash-basis.e2e.test.ts > P10 preserves a canonical unknown residual after its recognition is corrected
+AssertionError: POST http://127.0.0.1:61518/api/v1/entities/entity_8d228c521c641d6e/books/book_8d228c521c641d6e/change-sets/change_c4753f1268f04d579a3aefd23d1874b4/execute: 422
+{"_tag":"AccountingError","code":"UnsupportedProfile","message":"This accounting profile does not support this operation.","recovery":"permanent"}
+requestId=179ed0e9-7380-43c2-a557-c52076905511; Worker logs: /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-ordinary-workflows/worker.json: expected 422 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 422
+
+ ❯ decoded apps/api/tests/support/fixtures.ts:167:63
+    165| ): Promise<S["Type"]> {
+    166|   const body = await response.text();
+    167|   expect(response.status, responseDiagnostic(response, body)).toBe(200…
+       |                                                               ^
+    168|
+    169|   return Schema.decodeSync(Schema.fromJsonString(schema))(body);
+ ❯ apps/api/tests/cash-basis.e2e.test.ts:1632:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 9 passed | 2 skipped (15)
+   Start at  21:49:10
+   Duration  18.71s (transform 308ms, setup 0ms, import 622ms, tests 12.18s, environment 0ms)
+
+JSON report written to /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-ordinary-workflows/results.json
+JUNIT report written to /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-ordinary-workflows/junit.xml
+error: script "test:e2e" exited with code 1

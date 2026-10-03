@@ -1,0 +1,30 @@
+2026-10-03 22:06:10.569 CEST [43619] LOG:  starting PostgreSQL 17.11 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit
+2026-10-03 22:06:10.569 CEST [43619] LOG:  listening on IPv4 address "127.0.0.1", port 51438
+2026-10-03 22:06:10.570 CEST [43619] LOG:  listening on Unix socket "/var/folders/50/zdx6l4px2wg7wh8q7_78g2qr0000gn/T/openerp-e2e-Yrp0g5/.s.PGSQL.51438"
+2026-10-03 22:06:10.572 CEST [43622] LOG:  database system was shut down at 2026-10-03 22:06:10 CEST
+2026-10-03 22:06:10.574 CEST [43619] LOG:  database system is ready to accept connections
+2026-10-03 22:06:27.099 CEST [44409] ERROR:  Accounting history is append-only. Create a linked correction.
+2026-10-03 22:06:27.099 CEST [44409] DETAIL:  Forbidden
+2026-10-03 22:06:27.099 CEST [44409] CONTEXT:  PL/pgSQL function fail(text,text) line 3 at RAISE
+	SQL statement "SELECT openerp.fail('Forbidden', 'Accounting history is append-only. Create a linked correction.')"
+	PL/pgSQL function immutable_row() line 3 at PERFORM
+2026-10-03 22:06:27.099 CEST [44409] STATEMENT:  update openerp.cash_bases set id=id where book_id=$1 and id=$2
+2026-10-03 22:06:27.100 CEST [44409] ERROR:  Accounting history is append-only. Create a linked correction.
+2026-10-03 22:06:27.100 CEST [44409] DETAIL:  Forbidden
+2026-10-03 22:06:27.100 CEST [44409] CONTEXT:  PL/pgSQL function fail(text,text) line 3 at RAISE
+	SQL statement "SELECT openerp.fail('Forbidden', 'Accounting history is append-only. Create a linked correction.')"
+	PL/pgSQL function immutable_row() line 3 at PERFORM
+2026-10-03 22:06:27.100 CEST [44409] STATEMENT:  delete from openerp.cash_bases where book_id=$1 and id=$2
+2026-10-03 22:06:27.107 CEST [44409] ERROR:  new row for relation "cash_bases" violates check constraint "cash_bases_body_check"
+2026-10-03 22:06:27.107 CEST [44409] DETAIL:  Failing row contains (book_a182789102edcefd, cash_tampered_digest, {"id": "cash_tampered_digest", "asOf": "2026-10-03", "input": {"..., {"actorId":"operator_a182789102edcefd","asOf":"2026-10-03","capt..., 307d819f51d91e7a0091c957feee72f96f9ab7a57dea7043d0f58d38ef91c1ad, 21631).
+2026-10-03 22:06:27.107 CEST [44409] STATEMENT:  
+	      with changed as (
+	        select body || jsonb_build_object('id','cash_tampered_digest','digest','sha256:' || repeat('0',64)) as body
+	        from openerp.cash_bases where book_id=$1 and id=$2
+	      ), rendered as (select body, openerp.canonical(body) as content from changed)
+	      insert into openerp.cash_bases(book_id,id,body,content,sha256,byte_length)
+	      select $1,'cash_tampered_digest',body,content,encode(sha256(convert_to(content,'UTF8')),'hex'),octet_length(content)
+	      from rendered
+	    
+2026-10-03 22:06:27.450 CEST [43619] LOG:  received immediate shutdown request
+2026-10-03 22:06:27.456 CEST [43619] LOG:  database system is shut down

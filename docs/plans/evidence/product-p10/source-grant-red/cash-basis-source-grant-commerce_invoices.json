@@ -1,0 +1,7 @@
+{
+  "table": "commerce_invoices",
+  "basisId": "cash_basis_e2a440e69cc74b14af6ed638af7a0469",
+  "status": 500,
+  "body": "{\"_tag\":\"AccountingError\",\"code\":\"InternalError\",\"message\":\"The accounting service could not complete this request.\",\"recovery\":\"outcome-unknown\"}",
+  "originalSha256": "fdfad6292152f5e2700c642c4b20d8f704e645bd2fb10b32f5839d03750cd00a"
+}

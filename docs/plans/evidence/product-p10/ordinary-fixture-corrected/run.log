@@ -1,0 +1,55 @@
+$ vp test run "apps/api/tests/cash-basis.e2e.test.ts"
+
+ RUN  v4.1.10 /Users/admin/.codex/worktrees/midday-product-p10/openERP
+
+ ❯ apps/api/tests/cash-basis.e2e.test.ts (15 tests | 1 failed | 2 skipped) 12388ms
+   ✓ P10 captures exact selected current openings and immutable known-items bytes through HTTP and MCP  1083ms
+   ✓ P10 retains dated observations without inventing a current opening {"old":true}  542ms
+   ✓ P10 retains dated observations without inventing a current opening {"incomplete":true}  494ms
+   ✓ P10 rejects historical knowledge, supplied amounts and cross-book references and rechecks revoked authority  885ms
+   ✓ P10 reads all canonical invoice amounts and retains immutable captures when revisions change  1177ms
+   ✓ P10 preserves unsupported foreign obligations without converting them or hiding coverage gaps  1132ms
+   ✓ P10 keeps a same-day allocated residual blocked when the selected closing lacks its payment witness  1260ms
+   ✓ P10 never treats a restricted account review or unavailable balance as selected opening cash  693ms
+   ✓ P10 proves same-day cash settlement membership and reads partial payment plus credit once  1645ms
+   ↓ P10 captures ten thousand unpaid canonical invoices within the ordinary budget
+   ↓ P10 measures the parent comparable canonical invoice page
+   ✓ P10 retains reviewed expected dates separately from unchanged contractual due dates  986ms
+   × P10 qualifies an actual supplier settlement receipt and preserves cancellation knowledge 1113ms
+   ✓ P10 preserves canonical unknown from retained historical recognition and refuses generic correction  893ms
+   ✓ P10 freezes body digest integrity independently of its artifact byte hash  483ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/api/tests/cash-basis.e2e.test.ts > P10 qualifies an actual supplier settlement receipt and preserves cancellation knowledge
+AssertionError: POST http://127.0.0.1:51444/api/v1/entities/entity_a40e9317ce144aa5/books/book_a40e9317ce144aa5/change-sets/change_04fae2cf9a8f40559cb19e65e5cb5903/execute: 403
+{"_tag":"AccountingError","code":"ApprovalRequired","message":"A current operator approval is required.","recovery":"permanent"}
+requestId=30016745-d733-4bdb-8fd0-3588bbf3e6cd; Worker logs: /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-ordinary-fixture-corrected/worker.json: expected 403 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 403
+
+ ❯ decoded apps/api/tests/support/fixtures.ts:167:63
+    165| ): Promise<S["Type"]> {
+    166|   const body = await response.text();
+    167|   expect(response.status, responseDiagnostic(response, body)).toBe(200…
+       |                                                               ^
+    168|
+    169|   return Schema.decodeSync(Schema.fromJsonString(schema))(body);
+ ❯ supplierOpeningFixture apps/api/tests/support/cash-basis-supplier.ts:236:3
+ ❯ apps/api/tests/cash-basis.e2e.test.ts:1491:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 passed | 2 skipped (15)
+   Start at  22:06:09
+   Duration  17.97s (transform 287ms, setup 0ms, import 644ms, tests 12.39s, environment 0ms)
+
+JSON report written to /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-ordinary-fixture-corrected/results.json
+JUNIT report written to /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-ordinary-fixture-corrected/junit.xml
+error: script "test:e2e" exited with code 1
