@@ -1,0 +1,132 @@
+{
+  "uiHead": "a1b33d3",
+  "apiBootHead": "a1b33d3",
+  "runtime": "Disposable PostgreSQL, Worker and Vite on loopback port 3001",
+  "synthetic": true,
+  "browser": "T3 collaborative preview tab_j",
+  "locale": "en",
+  "theme": "light",
+  "posting": {
+    "reviewConfirmationRequiredForApproval": true,
+    "reviewConfirmationResetBeforeExecution": true,
+    "postedVoucherNumber": "1",
+    "postedItemRemovedFromOpenQueue": true,
+    "executionControlsRemoved": true,
+    "narrowScrollWidth": 390
+  },
+  "purchase": {
+    "actualOutstandingMinor": "185000",
+    "visibleAmount": "1,850.00",
+    "narrowScrollWidth": 390
+  },
+  "invoiceEditing": {
+    "nativeOpenTypeAndSave": true,
+    "desktopDialogWidth": 1440,
+    "desktopDialogScrollWidth": 1440,
+    "livePreviewTitle": "Fresh runtime · syntetiskt utkast",
+    "apiRevision": "2",
+    "apiGrossMinor": "1248000",
+    "apiLifecycle": "editable",
+    "screenshot": "/Users/admin/.t3/userdata/browser-artifacts/browser-screenshot-127-0-0-1-muspja1r-c42f621a.png",
+    "screenshotSha256": "dd8a84f3dbbd579be6a12251d54191a4165a2362355876051dea15e03be70151"
+  },
+  "bank": {
+    "actualStatementBalanceMinor": "100000",
+    "actualLedgerBalanceMinor": "185000",
+    "actualDifferenceMinor": "-85000",
+    "headerHeight": 48,
+    "matchedRowHeight": 40,
+    "unmatchedRowHeight": 44,
+    "desktopScrollWidth": 1440,
+    "narrowScrollWidth": 390,
+    "matchedFilterRetainedOneMatchedRow": true,
+    "ledgerFilterRetainedVoucherOwnerLink": true,
+    "unmatchedRowOpenedRealMatchingDialog": true,
+    "ineligiblePostedLineRefused": true,
+    "screenshot": "/Users/admin/.t3/userdata/browser-artifacts/browser-screenshot-127-0-0-1-muspibq9-036ef380.png",
+    "screenshotSha256": "bff54a330dbc71638d86ca0ed6818256d14662dbfaaab57d2a86445945dcf1aa"
+  },
+  "limitations": [
+    "Observations establish the exercised owners and layout dimensions, not whole-screen pixel parity.",
+    "Invoice defaults and templates were retained in source but the exercised retained draft is synthetic legacy content.",
+    "Not all 113 Paper states are implemented or verified."
+  ],
+  "sourceSha256": {
+    "apps/web/src/components/accounting-access.tsx": "63a550c6b439cffc0db8fd45ed170a8aa8dbbc2fdd20f14004a365953fcdf675",
+    "apps/web/src/components/bank-account-workspace.tsx": "8dd88785032f7fd4bd14f9bd4106824a83de09b716a43c85e9253244dc8d6b72",
+    "apps/web/src/components/book-navigation.tsx": "f8038f7b3f07f93774857e00fd9f44712da152643447c7574917963175d55ef8",
+    "apps/web/src/components/book-search.tsx": "5f25294c49212802711e2b279dedc11143eb625e8c7eb4ccdc7982f5cb190e1c",
+    "apps/web/src/components/book-workspace.tsx": "8d51ddb294cfa146a31e1150601c4549cfbe74033bf83b5b5a1f9207d7c767cd",
+    "apps/web/src/components/commerce/invoice-draft-session.tsx": "7b0dde7b40f57ebbc605e091f1e327beb6c108461615c00ce0fd89c381060d81",
+    "apps/web/src/components/commerce/invoice-drafts.tsx": "f698a1fc3b651ea7337aa6a27ef93a0635bd9c8cd20d4c079cf20260c2810abe",
+    "apps/web/src/components/commerce/invoice-editing-preview.tsx": "bf2dfa8d5890848fb7742dcb5f5a9f3fe437f2d206fdfa2bb595b3491545040f",
+    "apps/web/src/components/commerce/purchase-register.tsx": "7eba854277b78089ab73036308a09a50ff366f8b392e774e76497de6c5e3d783",
+    "apps/web/src/components/commerce/sales-workspace.tsx": "6bd5cdb0afd0c51f38b0e2ed169e55bb4a3c6ee8d9fe98b5782df14327d6771b",
+    "apps/web/src/components/company-directory.tsx": "a51c1f0d5681212de017a48b94806d4c099cb105c49e14c3e934354b5bcb01ed",
+    "apps/web/src/components/finance-area.tsx": "ffdd8bb60c423a3796d220b8a64a592974afa86a94a8830e30db756e06eeaf87",
+    "apps/web/src/components/posting-recovery/review-entry.tsx": "85afa2f9f60ac6221a2e28eb7e5b0d5421dcf1d8d953ade19d3013378ecb58bf",
+    "apps/web/src/components/posting-recovery/review.tsx": "3c5a037c68206b8f310f6b3837863cf7959a3bbf5bce5e3b61808f70284c7266",
+    "apps/web/src/components/work-home.tsx": "27eb0a2fd23c3d4f904ee2c2127b09d0d48d425d138d4d8ef05f614f760c31d0",
+    "packages/ui/src/components/access-page.tsx": "ad966aea23635a5c427d67b3460261e594a9ecb4780b284650430209eeb19375",
+    "packages/ui/src/components/accounting-page.tsx": "1805589fc178a06623c43311c3e08db3ad7c3e3ef75fc40d856accfcb12f1fda",
+    "packages/ui/src/components/bank-workspace.tsx": "f893143ea3906697c32219c929e2d0ed7a139a8804359bdeb099591506f84675",
+    "packages/ui/src/components/command-search.tsx": "e592ccfa990d9333637613593f56e9fa7637222546bd29543ea732768fcecb92",
+    "packages/ui/src/components/company-chooser.tsx": "fc031933c2c1f9f3dde391d10b0c0ed7e6f4da66e739f56bdbe80c0e19088e59",
+    "packages/ui/src/components/field.tsx": "35f525cc8b4a146de41a0d1cdef2d0690af3f534d978d6a3b238a58deae127aa",
+    "packages/ui/src/components/focused-review.tsx": "fab8f671ea70d921972c18407e2e16d57ead32541fdc27e3e6dc10e373ece235",
+    "packages/ui/src/components/form-dialog.tsx": "0cd270762bf36341b152701724c19315c9dc92ba147fa0e1a6695f7ee880debe",
+    "packages/ui/src/components/invoice-editor-layout.tsx": "64753f5ca612e7413a2084b119d3413d87feda6ce4b5353d37e229eef4dd9b30",
+    "packages/ui/src/components/invoice-preview.tsx": "5634f524ba6b4444f4a00344f6a5e917980e2edff438c3f1ccafdcffb9875ff9",
+    "packages/ui/src/components/record-layout.tsx": "786db9de8d48ac21007ee3f15666771a734e14aaa06557c69a6f85a97dab4e6d",
+    "packages/ui/src/components/register-workspace.tsx": "a8544b62a236a3cab7bef929dc44c968f21a8f53b08524909bc4acf446e3e17f",
+    "packages/ui/src/components/select.tsx": "097155d771868a513fe79ebb09e5579d7d5e952471a3e964cf7fc204582a8129",
+    "packages/ui/src/components/workflow.tsx": "7e5292b442f147ae069533539fb5e80febb28bb234e48233c1ff30f1f8060a4c",
+    "packages/ui/src/components/workspace.tsx": "33e92bf7e764ef5f4522383df8f4f8c68789f23397863882b8a0ffad027a60c1",
+    "packages/ui/src/styles/globals.css": "6bbb63c0df485eef81010f7d062c47ecb861d082ca54e598337169b64ea2c7c0",
+    "packages/ui/src/theme/tokens.stylex.ts": "25c8022bd64727ad600f01dfe49ddceb61b22a0a28581bb8cb57e38f406b1677",
+    "verification/paper/seed-bank.mjs": "8210a73969bc878f0a9bb06221f22f51b637b03f82b78318dc7efa83dba05d5c",
+    "verification/paper/seed-purchases.mjs": "f115ca2d1b69cc07f6742cc05cafdd1e8b9e83533f8f5aab35b0a0b6ab2a3768",
+    "verification/paper/seed.mjs": "10229507fafb3d96edf38dd2f6701ac664d6f65df103bbe684e060886a55cc8f",
+    "verification/paper/start.mjs": "501a3031f48cc236f784b9184cb4070fbed8709d380b3b5a2d84e869b83aa2a9",
+    "apps/api/src/application/commerce/register.ts": "1849ef989c84f543da81d5909bc91e53ce48d2dd39f049a04afe7fdeb78f4e54",
+    "apps/web/src/routes/entities.$entityId.books.$bookId.reviews.$planId.$revision.tsx": "aa3c67b278aac37a5ef00a0a660581b3546f36200510ca9e6c839d77545c1a81"
+  },
+  "fixtures": {
+    "test-results/paper/seed.json": {
+      "synthetic": true,
+      "evidenceId": "evidence_dd085abf015f470aaa19f9b69c43c393",
+      "drafts": [
+        {
+          "id": "invoice_draft_08f790be7ae5490eb989c2320b0ce6c0",
+          "customer": "Nordhamn Studio AB",
+          "amountMinor": "1248000",
+          "revision": "1"
+        },
+        {
+          "id": "invoice_draft_ff0aa00b9379418fa57520cbbfcf2713",
+          "customer": "Sjöstrand Design AB",
+          "amountMinor": "3250000",
+          "revision": "1"
+        }
+      ],
+      "journalId": "change_09adf36958e34ffb9d7eaf71a506c86e"
+    },
+    "test-results/paper/purchases-seed.json": {
+      "synthetic": true,
+      "invoiceId": "invoice_7877742b8ea442d9b5a154c0379bc52f",
+      "draftId": "supplier_invoice_draft_ed4711be0a1c4761a1aede8b6d2ff9fa",
+      "voucherId": "voucher_694980703a8e486a930a3cec9320d627",
+      "amountMinor": "185000",
+      "currencyScale": 2,
+      "supplier": "Nordhamn Leverans AB"
+    },
+    "test-results/paper/bank-seed.json": {
+      "synthetic": true,
+      "statementId": "statement_62e7fabc22354c5ba1bd2280297b3bbe",
+      "accountId": "account_bank",
+      "voucherId": "voucher_694980703a8e486a930a3cec9320d627",
+      "retainedMatchOrdinal": 1,
+      "unmatchedOrdinal": 2
+    }
+  }
+}

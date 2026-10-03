@@ -1,0 +1,34 @@
+{
+  "uiHead": "a1b33d3",
+  "apiBootHead": "ee971a3",
+  "desktop": {
+    "amount": "SYNTHETIC-a271d331Nordhamn Leverans ABUtestående1 850,00",
+    "detailWidth": 400,
+    "headerActionHeight": 28,
+    "headerHeight": 48,
+    "rowHeight": 40,
+    "rowTop": 118,
+    "scrollWidth": 1440,
+    "sidebarWidth": 224,
+    "viewport": 1440
+  },
+  "narrow": {
+    "amount": "SYNTHETIC-a271d331Nordhamn Leverans ABUtestående1 850,00",
+    "scrollWidth": 390,
+    "viewport": 390
+  },
+  "screenshot": "/Users/admin/.t3/userdata/browser-artifacts/browser-screenshot-127-0-0-1-musotedj-afedac22.png",
+  "invoiceEditing": {
+    "desktopFormWidth": 720,
+    "popupWidth": 1440,
+    "liveTitle": true,
+    "retainedOnClose": true,
+    "restoredOnReopen": true,
+    "narrowPopupWidth": 390,
+    "narrowPopupScrollWidth": 390,
+    "apiRevision": "2",
+    "apiGrossMinor": "1248000",
+    "apiLifecycle": "editable",
+    "limitation": "Opening the existing draft editor used a DOM click after native pointer actions failed to dispatch; native typing and Save succeeded."
+  }
+}

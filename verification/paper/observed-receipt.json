@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-03",
+  "head": "ee971a3185f2be1293eea00bc79cb46860675999",
+  "sourceSha256": {
+    "apps/api/src/application/commerce/register.ts": "1849ef989c84f543da81d5909bc91e53ce48d2dd39f049a04afe7fdeb78f4e54",
+    "apps/web/public/fonts/Inter-OFL.txt": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+    "apps/web/public/fonts/InterVariable.woff2": "693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3",
+    "apps/web/public/fonts/README.md": "d578da74a866c4e5e2663b1fcd2a31a799399b08717e1d828061be3c554bcd47",
+    "apps/web/src/components/accounting-access.tsx": "63a550c6b439cffc0db8fd45ed170a8aa8dbbc2fdd20f14004a365953fcdf675",
+    "apps/web/src/components/book-navigation.tsx": "f8038f7b3f07f93774857e00fd9f44712da152643447c7574917963175d55ef8",
+    "apps/web/src/components/book-search.tsx": "5f25294c49212802711e2b279dedc11143eb625e8c7eb4ccdc7982f5cb190e1c",
+    "apps/web/src/components/book-workspace.tsx": "8d51ddb294cfa146a31e1150601c4549cfbe74033bf83b5b5a1f9207d7c767cd",
+    "apps/web/src/components/commerce/sales-workspace.tsx": "6bd5cdb0afd0c51f38b0e2ed169e55bb4a3c6ee8d9fe98b5782df14327d6771b",
+    "apps/web/src/components/company-directory.tsx": "a51c1f0d5681212de017a48b94806d4c099cb105c49e14c3e934354b5bcb01ed",
+    "apps/web/src/components/posting-recovery/review-entry.tsx": "85afa2f9f60ac6221a2e28eb7e5b0d5421dcf1d8d953ade19d3013378ecb58bf",
+    "apps/web/src/components/posting-recovery/review.tsx": "3c5a037c68206b8f310f6b3837863cf7959a3bbf5bce5e3b61808f70284c7266",
+    "apps/web/src/components/work-home.tsx": "d6cec713891047bee78d46ad0f5baba616b600aea4a87828526a6d3d8c2db9cc",
+    "apps/web/src/routes/entities.$entityId.books.$bookId.reviews.$planId.$revision.tsx": "aa3c67b278aac37a5ef00a0a660581b3546f36200510ca9e6c839d77545c1a81",
+    "packages/ui/src/components/access-page.tsx": "ad966aea23635a5c427d67b3460261e594a9ecb4780b284650430209eeb19375",
+    "packages/ui/src/components/accounting-page.tsx": "b588fdaa5cfc2375a53f3c7b69c7b88fdd8046e02f2f96299379c20fcb30e914",
+    "packages/ui/src/components/command-search.tsx": "e592ccfa990d9333637613593f56e9fa7637222546bd29543ea732768fcecb92",
+    "packages/ui/src/components/company-chooser.tsx": "fc031933c2c1f9f3dde391d10b0c0ed7e6f4da66e739f56bdbe80c0e19088e59",
+    "packages/ui/src/components/field.tsx": "35f525cc8b4a146de41a0d1cdef2d0690af3f534d978d6a3b238a58deae127aa",
+    "packages/ui/src/components/focused-review.tsx": "fab8f671ea70d921972c18407e2e16d57ead32541fdc27e3e6dc10e373ece235",
+    "packages/ui/src/components/register-workspace.tsx": "a8544b62a236a3cab7bef929dc44c968f21a8f53b08524909bc4acf446e3e17f",
+    "packages/ui/src/components/select.tsx": "097155d771868a513fe79ebb09e5579d7d5e952471a3e964cf7fc204582a8129",
+    "packages/ui/src/components/workflow.tsx": "7e5292b442f147ae069533539fb5e80febb28bb234e48233c1ff30f1f8060a4c",
+    "packages/ui/src/components/workspace.tsx": "e154a907308c770ffcb1558bb7c15b7ef41cac7c5fed4cb2c64e2339df0f4161",
+    "packages/ui/src/styles/globals.css": "6bbb63c0df485eef81010f7d062c47ecb861d082ca54e598337169b64ea2c7c0",
+    "packages/ui/src/theme/tokens.stylex.ts": "6b6aa334cf4e4a9d6da48d6d404ee355571ba9bc5c042228d01f869f44039f09",
+    "verification/paper/README.md": "8d0cfc9be61a3cd0d2cf476bab206fcef4e6fd2a4d08c265a29963dd5b175ba9",
+    "verification/paper/seed.mjs": "10229507fafb3d96edf38dd2f6701ac664d6f65df103bbe684e060886a55cc8f",
+    "verification/paper/start.mjs": "feb2442cbac9e8a0364980b8f4948a0873de58f051d94675d2ab5759603e47dc"
+  },
+  "runtime": "Disposable PostgreSQL, real API Worker and Better Auth; synthetic fixtures only",
+  "locale": "sv",
+  "theme": "light",
+  "browser": "T3 collaborative preview",
+  "observations": [
+    {
+      "surface": "invoice register",
+      "expected": [
+        "3250000 minor units at scale 2 renders 32 500,00",
+        "1248000 minor units at scale 2 renders 12 480,00",
+        "selection opens retained draft",
+        "Escape restores selected row focus"
+      ],
+      "result": "observed"
+    },
+    {
+      "surface": "command search",
+      "expected": [
+        "Ctrl K focuses search field",
+        "Nordhamn resolves retained draft through API",
+        "390 CSS pixel viewport has no horizontal overflow"
+      ],
+      "result": "observed"
+    },
+    {
+      "surface": "focused journal review",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "expected": {
+        "queueWidth": 200,
+        "decisionWidth": 420,
+        "documentScrollWidth": 1440,
+        "approvalDisabledBeforeReview": true,
+        "executionDisabledAfterApprovalUntilReviewedAgain": true
+      },
+      "result": "observed"
+    },
+    {
+      "surface": "journal posting",
+      "expected": [
+        "Approve exact saved proposal",
+        "Review again before execution",
+        "Execute retained approval",
+        "UI shows Bokfört · Verifikation 1",
+        "Posting controls removed",
+        "Proposal removed from open queue"
+      ],
+      "result": "observed"
+    },
+    {
+      "surface": "focused journal review narrow",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "expected": {
+        "documentScrollWidth": 390
+      },
+      "result": "observed"
+    }
+  ],
+  "verification": {
+    "changedFull": "passed for 33 selected files",
+    "pixelParity": "unverified",
+    "screenshots": "T3 screenshot capture failed for focused review after successful semantic and DOM observations"
+  }
+}

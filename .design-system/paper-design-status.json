@@ -1,0 +1,512 @@
+{
+  "date": "2026-10-03",
+  "file_name": "Enthusiastic lantern",
+  "file_url": "https://app.paper.design/file/01M3M9A2DA2G08DSJA5K8ZE68S",
+  "status": "F001, P001, P009, P017, P020, P128, F008, P127, F006, F007, P126, P018, P019, P021, P022, F011 and P023 desktop static reviews complete; F009 partial; other screens remain pending/unapproved.",
+  "current_task": "Settings group P082, P084-P098 done (P083 overlay open; section lists in earlier settings frames lack Data och anslutningar). P036 quotes register and entry done. Quote detail drawn (P037-P040 unticked: sales-order decision open). Article detail P035 done. P058 and P059 done. Agreements P056/P057 done as an illustrated state. P064, P062, P077, P078, F031, F033 done (nothing booked; cash flow stated as partial). Next: F015 (article path), P031, payroll P069 (gated state drawn, not ticked) and P070-P075, firm portfolio. Tight direction confirmed by owner. No mobile, empty or failure-state studies.",
+  "foundation_frame": "11T-0",
+  "draft_frames": [
+    {
+      "id": "14C-0",
+      "page": "p-4-0",
+      "name": "shared company/book shell / To do / 1440 desktop / working",
+      "w": 1440,
+      "h": 960,
+      "x": 0,
+      "y": 0,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "19H-0",
+      "page": "p-4-0",
+      "name": "/ / Sign in / 1440 desktop / configured password",
+      "w": 1440,
+      "h": 960,
+      "x": 0,
+      "y": 1040,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "1AR-0",
+      "page": "p-4-0",
+      "name": "/ / Sign in / 390 narrow / configured password",
+      "w": 390,
+      "h": 844,
+      "x": 1520,
+      "y": 1040,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "1BL-0",
+      "page": "p-4-0",
+      "name": "/companies / Companies / 1440 desktop / working",
+      "w": 1440,
+      "h": 960,
+      "x": 0,
+      "y": 2080,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "1H5-0",
+      "page": "p-4-0",
+      "name": "/companies / Companies / 390 narrow / working",
+      "w": 390,
+      "h": 960,
+      "x": 1520,
+      "y": 2080,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "1JC-0",
+      "page": "p-5-0",
+      "name": "/entities/:entity/books/:book / To do / 1440 desktop / working",
+      "w": 1440,
+      "h": 960,
+      "x": 0,
+      "y": 0,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "1OP-0",
+      "page": "p-5-0",
+      "name": "/entities/:entity/books/:book / To do / 390 narrow / working",
+      "w": 390,
+      "h": 1200,
+      "x": 1520,
+      "y": 0,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "1QX-0",
+      "page": "p-5-0",
+      "name": "/entities/:entity/books/:book/work / To do / 1440 desktop / working",
+      "w": 1440,
+      "h": 960,
+      "x": 0,
+      "y": 1320,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "1WG-0",
+      "page": "p-5-0",
+      "name": "/entities/:entity/books/:book/overview / Overview / 1440 desktop / working",
+      "w": 1440,
+      "h": 1080,
+      "x": 0,
+      "y": 2360,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "221-0",
+      "page": "p-6-0",
+      "name": "/entities/:entity/books/:book/reviews/:plan/:revision / Review / 1440 desktop / working",
+      "w": 1440,
+      "h": 1160,
+      "x": 0,
+      "y": 0,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "27I-0",
+      "page": "p-6-0",
+      "name": "/entities/:entity/books/:book/reviews/:plan/:revision / Review / 390 narrow / source",
+      "w": 390,
+      "h": 1240,
+      "x": 1520,
+      "y": 0,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "297-0",
+      "page": "p-6-0",
+      "name": "/entities/:entity/books/:book/reviews/:plan/:revision / Review / 390 narrow / accounting",
+      "w": 390,
+      "h": 1240,
+      "x": 1990,
+      "y": 0,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "2AX-0",
+      "page": "p-6-0",
+      "name": "/entities/:entity/books/:book/reviews/:plan/:revision / Review / 1440 desktop / stale",
+      "w": 1440,
+      "h": 960,
+      "x": 0,
+      "y": 1320,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "2F8-0",
+      "page": "p-6-0",
+      "name": "/entities/:entity/books/:book/reviews/:plan/:revision / Review / 1440 desktop / approved",
+      "w": 1440,
+      "h": 960,
+      "x": 0,
+      "y": 2360,
+      "status": "draft; reconsider and refine before checklist completion"
+    },
+    {
+      "id": "2JJ-0",
+      "page": "p-6-0",
+      "name": "/entities/:entity/books/:book/reviews/:plan/:revision / Review / 1440 desktop / posted",
+      "w": 1440,
+      "h": 960,
+      "x": 0,
+      "y": 3400,
+      "status": "draft; reconsider and refine before checklist completion"
+    }
+  ],
+  "working_indicators_released": true,
+  "reviewed_frames": [
+    {
+      "id": "2O9-0",
+      "page": "p-3-0",
+      "name": "F001 / Shell · active book · desktop",
+      "inspection_export": "docs/design/evidence/2026-10-01-shell/desktop-shell.png"
+    },
+    {
+      "id": "2T7-0",
+      "page": "p-3-0",
+      "name": "F001 / Company & book switcher · desktop",
+      "inspection_export": "docs/design/evidence/2026-10-01-shell/company-switcher.png"
+    },
+    {
+      "id": "2YT-0",
+      "page": "p-3-0",
+      "name": "F001 / Period context · desktop",
+      "inspection_export": "docs/design/evidence/2026-10-01-shell/period-picker.png"
+    },
+    {
+      "id": "39X-0",
+      "page": "p-3-0",
+      "name": "F001 / Context switch · interruption states",
+      "inspection_export": "docs/design/evidence/2026-10-01-shell/switch-states.png"
+    },
+    {
+      "id": "3FS-0",
+      "page": "p-4-0",
+      "name": "P001 / Sign in · password · desktop",
+      "inspection_export": "docs/design/evidence/2026-10-01-entry/desktop-password.png"
+    },
+    {
+      "id": "3H2-0",
+      "page": "p-4-0",
+      "name": "P001 / Sign in · credentials rejected · desktop",
+      "inspection_export": "docs/design/evidence/2026-10-01-entry/credentials-rejected.png"
+    },
+    {
+      "id": "3JJ-0",
+      "page": "p-4-0",
+      "name": "P001 / Sign in · expired session · desktop",
+      "inspection_export": "docs/design/evidence/2026-10-01-entry/expired-session.png"
+    },
+    {
+      "id": "3I6-0",
+      "page": "p-4-0",
+      "name": "P001 / Sign in · organisation · desktop",
+      "inspection_export": "docs/design/evidence/2026-10-01-entry/organisation-sign-in.png"
+    },
+    {
+      "id": "3P2-0",
+      "page": "p-4-0",
+      "name": "P001 / Sign-in help · desktop overlay",
+      "inspection_export": "docs/design/evidence/2026-10-01-entry/sign-in-help.png"
+    },
+    {
+      "id": "3QN-0",
+      "page": "p-4-0",
+      "name": "P001 / Language menu · desktop overlay",
+      "inspection_export": "docs/design/evidence/2026-10-01-entry/language-menu.png"
+    },
+    {
+      "id": "3KJ-0",
+      "page": "p-4-0",
+      "name": "P001 / Sign-in feedback & return flow",
+      "inspection_export": "docs/design/evidence/2026-10-01-entry/feedback-states.png"
+    },
+    {
+      "id": "3RH-0",
+      "page": "p-4-0",
+      "name": "P009 / Companies · authorized books · desktop",
+      "inspection_export": "docs/design/evidence/2026-10-01-companies/desktop-companies.png"
+    },
+    {
+      "id": "3UE-0",
+      "page": "p-4-0",
+      "name": "P009 / Directory · feedback & selection states",
+      "inspection_export": "docs/design/evidence/2026-10-01-companies/selection-states.png"
+    },
+    {
+      "id": "3WT-0",
+      "page": "p-4-0",
+      "name": "P009 / Account menu · global context",
+      "inspection_export": "docs/design/evidence/2026-10-01-companies/account-menu.png"
+    },
+    {
+      "id": "3X7-0",
+      "page": "p-5-0",
+      "name": "P017 / To do · decisions & resumable work · desktop",
+      "review_date": "2026-10-02",
+      "inspection_export": "docs/design/evidence/2026-10-02-to-do/desktop-to-do.png"
+    },
+    {
+      "id": "43F-0",
+      "page": "p-5-0",
+      "name": "P017 / To do · no known work · coverage incomplete",
+      "review_date": "2026-10-02",
+      "inspection_export": "docs/design/evidence/2026-10-02-to-do/empty-incomplete-coverage.png"
+    },
+    {
+      "id": "49F-0",
+      "page": "p-5-0",
+      "name": "P017 / To do · recovery & return states",
+      "review_date": "2026-10-02",
+      "inspection_export": "docs/design/evidence/2026-10-02-to-do/recovery-return-states.png"
+    },
+    {
+      "id": "4C6-0",
+      "page": "p-5-0",
+      "name": "P020 / Overview · dated position & provisional result · desktop",
+      "review_date": "2026-10-02",
+      "inspection_export": "docs/design/evidence/2026-10-02-overview/desktop-overview.png"
+    },
+    {
+      "id": "4I5-0",
+      "page": "p-5-0",
+      "name": "P020 / Bank figure · retained source & reconciliation handoff",
+      "review_date": "2026-10-02",
+      "inspection_export": "docs/design/evidence/2026-10-02-overview/bank-source-drawer.png"
+    },
+    {
+      "id": "4P4-0",
+      "page": "p-5-0",
+      "name": "P020 / Overview · no sources yet · first useful step",
+      "review_date": "2026-10-02",
+      "inspection_export": "docs/design/evidence/2026-10-02-overview/empty-overview.png"
+    },
+    {
+      "id": "4UU-0",
+      "page": "p-6-0",
+      "name": "Full evidence review",
+      "review_date": "2026-10-02",
+      "inspection_export": "docs/design/evidence/2026-10-02-evidence-review/desktop-review.png"
+    },
+    {
+      "id": "51Z-0",
+      "page": "p-6-0",
+      "name": "Approved version / separate posting decision",
+      "review_date": "2026-10-02",
+      "inspection_export": "docs/design/evidence/2026-10-02-evidence-review/approved-posting-decision.png"
+    },
+    {
+      "id": "58K-0",
+      "page": "p-6-0",
+      "name": "Posted receipt / retained review",
+      "review_date": "2026-10-02",
+      "inspection_export": "docs/design/evidence/2026-10-02-evidence-review/posted-receipt.png"
+    },
+    {
+      "id": "5F5-0",
+      "page": "p-6-0",
+      "name": "Correction overlay (F006)",
+      "review_date": "2026-10-02",
+      "inspection_export": "docs/design/evidence/2026-10-02-evidence-review/correct-facts.png"
+    },
+    {
+      "id": "5GO-0",
+      "page": "p-6-0",
+      "name": "Change request overlay · category and reason",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-revision-handoff/request-change-with-category.png",
+      "superseded_export": "docs/design/evidence/2026-10-02-evidence-review/request-change.png"
+    },
+    {
+      "id": "5HC-0",
+      "page": "p-6-0",
+      "name": "F006 / Treatment editor · new version draft · desktop",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-revision-handoff/treatment-editor.png"
+    },
+    {
+      "id": "5NX-0",
+      "page": "p-6-0",
+      "name": "F006 / Saved version 5 · comparison with version 4 · desktop",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-revision-handoff/saved-version-comparison.png"
+    },
+    {
+      "id": "5UI-0",
+      "page": "p-6-0",
+      "name": "P127 / Older version opened · version 5 is current · desktop",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-revision-handoff/older-version-guard.png"
+    },
+    {
+      "id": "6B6-0",
+      "page": "p-6-0",
+      "name": "F007 / To do after change request · result and return · desktop",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-revision-handoff/todo-after-change-request.png"
+    },
+    {
+      "id": "613-0",
+      "page": "p-6-0",
+      "name": "F007 / Changes requested · review paused · desktop",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-revision-handoff/changes-requested-review.png"
+    },
+    {
+      "id": "6HJ-0",
+      "page": "p-5-0",
+      "name": "P126 / Work queue · open work with inspector · desktop",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-work-queue/open-work.png"
+    },
+    {
+      "id": "6N6-0",
+      "page": "p-5-0",
+      "name": "P126 / Work queue · completed work and results · desktop",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-work-queue/completed-work.png"
+    },
+    {
+      "id": "70E-0",
+      "page": "p-5-0",
+      "name": "P126 / Work queue · no match, refresh and completion states",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-work-queue/states.png"
+    },
+    {
+      "id": "72L-0",
+      "page": "p-5-0",
+      "name": "P019 / Deadlines and obligations · dated work with basis · desktop",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-deadlines/deadlines.png"
+    },
+    {
+      "id": "7E4-0",
+      "page": "p-5-0",
+      "name": "P019 / Edit own reminder · overlay",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-deadlines/edit-reminder.png"
+    },
+    {
+      "id": "7E5-0",
+      "page": "p-5-0",
+      "name": "P019 / Tax date detail · drawer",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-deadlines/tax-date-detail.png"
+    },
+    {
+      "id": "7G1-0",
+      "page": "p-7-0",
+      "name": "P021 / Bank accounts directory · desktop",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-accounts/directory.png"
+    },
+    {
+      "id": "7LR-0",
+      "page": "p-7-0",
+      "name": "P021 / Account workspace · Företagskonto · desktop",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-accounts/account-workspace.png"
+    },
+    {
+      "id": "7WG-0",
+      "page": "p-7-0",
+      "name": "P022 / Bank transactions register · desktop",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-transactions/register.png"
+    },
+    {
+      "id": "83D-0",
+      "page": "p-7-0",
+      "name": "F011 / Handle deposit · allocation drawer",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-transactions/handle-deposit.png"
+    },
+    {
+      "id": "83E-0",
+      "page": "p-7-0",
+      "name": "F011 / Matched event · correct the match",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-transactions/matched-event.png"
+    },
+    {
+      "id": "86O-0",
+      "page": "p-7-0",
+      "name": "P023 / Reconciliation · airy first composition",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-reconciliation/reconciliation-airy.png"
+    },
+    {
+      "id": "8CT-0",
+      "page": "p-7-0",
+      "name": "P023 / Reconciliation · tight direction",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-reconciliation/reconciliation-tight.png"
+    },
+    {
+      "id": "8IH-0",
+      "page": "p-7-0",
+      "name": "P023 / Completion dialog · tight",
+      "review_date": "2026-10-03",
+      "inspection_export": "docs/design/evidence/2026-10-03-reconciliation/complete-dialog.png"
+    }
+  ],
+  "design_ledger": "docs/design/2026-10-01-shell-company-context.md",
+  "narrow_scope": "Deferred by owner on 2026-10-01; preliminary F002 studies remain drafts.",
+  "runtime_verification": "Not performed. Paper inspection and contrast calculations are static design evidence only.",
+  "design_ledgers": [
+    "docs/design/2026-10-01-shell-company-context.md",
+    "docs/design/2026-10-01-entry-sign-in.md",
+    "docs/design/2026-10-01-company-directory.md",
+    "docs/design/2026-10-02-to-do.md",
+    "docs/design/2026-10-02-overview.md",
+    "docs/design/2026-10-02-evidence-review.md",
+    "docs/design/2026-10-03-revision-handoff.md",
+    "docs/design/2026-10-03-work-queue.md",
+    "docs/design/2026-10-03-deadlines.md",
+    "docs/design/2026-10-03-accounts.md",
+    "docs/design/2026-10-03-transactions.md",
+    "docs/design/2026-10-03-reconciliation.md",
+    "docs/design/2026-10-03-tight-direction.md",
+    "docs/design/2026-10-03-tight-retrofit.md",
+    "docs/design/2026-10-03-import.md",
+    "docs/design/2026-10-03-documents.md",
+    "docs/design/2026-10-03-vouchers.md",
+    "docs/design/2026-10-03-sales-invoices.md",
+    "docs/design/2026-10-03-purchases.md",
+    "docs/design/2026-10-03-tax-vat.md",
+    "docs/design/2026-10-03-reports.md",
+    "docs/design/2026-10-03-period-close.md",
+    "docs/design/2026-10-03-cash-forecast.md",
+    "docs/design/2026-10-03-settings-tax.md",
+    "docs/design/2026-10-03-settings-home.md",
+    "docs/design/2026-10-03-settings-bookkeeping.md",
+    "docs/design/2026-10-03-settings-team.md",
+    "docs/design/2026-10-03-settings-company.md",
+    "docs/design/2026-10-03-settings-profile.md",
+    "docs/design/2026-10-03-settings-bank.md",
+    "docs/design/2026-10-03-settings-invoicing.md",
+    "docs/design/2026-10-03-settings-branding.md",
+    "docs/design/2026-10-03-settings-templates.md",
+    "docs/design/2026-10-03-settings-payments.md",
+    "docs/design/2026-10-03-settings-assistants.md",
+    "docs/design/2026-10-03-settings-api-keys.md",
+    "docs/design/2026-10-03-settings-backups.md",
+    "docs/design/2026-10-03-settings-inbox.md",
+    "docs/design/2026-10-03-settings-payroll.md",
+    "docs/design/2026-10-03-suppliers.md"
+  ],
+  "historical_draft_inventory_note": "Historical records remain unapproved and are not assumed to be live. The entry page was empty at the start of the P001 pass.",
+  "last_review_date": "2026-10-03",
+  "design_direction": "2026-10-03 owner steer: tighter, more linear. Retrofit of reviewed working pages done as TIGHT / frames beside the airy originals; overlays and state boards not retrofitted. See docs/design/2026-10-03-tight-retrofit.md.",
+  "full_ui_pass": {
+    "date": "2026-10-03",
+    "ledger": "docs/design/2026-10-03-full-ui-completion.md",
+    "paper_pages": "01 to 12 current design, 13 to 14 system and history, Arkiv 01 to 16 earlier drafts, 11 empty pages prefixed ZZ pending manual deletion",
+    "scope": "design only, not implemented or runtime-verified"
+  }
+}

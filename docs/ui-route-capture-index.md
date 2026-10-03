@@ -1,5 +1,7 @@
 # UI route capture index
 
+Design direction updated 2026-10-01: **Accounted is the only application visual reference. Current OpenERP screenshots are excluded.** Local OpenERP cache screenshots have been removed; historical verification images are engineering evidence and must not be used for design. This index preserves past route-discovery/capture claims only. Use [the screen checklist](ui-design-checklist.md) and [the working prompt](ui-design-prompt.md) for current design work. Do not recapture OpenERP to reconstruct the excluded reference set.
+
 Capture date: 2026-10-01  
 Viewport: consistent desktop browser viewport  
 Data policy: Accounted's disposable sandbox and OpenERP's local synthetic book only
@@ -66,4 +68,4 @@ The local application was run against a provisioned synthetic company and book. 
 
 ## Remaining design step
 
-The desktop route inventory is complete at the route-template level subject to the blockers above. Narrow captures still need to be produced for each distinct responsive page pattern before Paper layout work is considered complete.
+Route discovery is complete at the recorded template level. The previous full capture image set is unavailable locally; this document does not prove that an agent has inspected it. Inspect the actual Accounted screen for each design iteration, then carefully design and review its desktop, narrow, state and flow variants. Missing source records are reference limitations, not limits on intended functionality. Existing Paper drafts are not completed checklist items.
