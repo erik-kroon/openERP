@@ -1,0 +1,15 @@
+$ bun scripts/check-changed.ts --type-aware "3a4b285"
+Checking 1 changed file(s) against 3a4b285:
+  apps/api/tests/business-date.e2e.test.ts
+
+oxfmt --write
+Finished in 2ms on 1 files using 2 threads.
+oxfmt --write: 0.03s
+
+oxlint (type-aware)
+oxlint (type-aware): 1.50s
+
+tsc --noEmit (apps/api/tests/tsconfig.json)
+tsc --noEmit (apps/api/tests/tsconfig.json): 0.24s
+
+check:changed passed.
