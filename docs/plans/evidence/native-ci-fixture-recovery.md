@@ -43,3 +43,7 @@ The retained summary is [native-ci-fixture-recovery.json](native-ci-fixture-reco
 ## Verification status
 
 The corrected cohort is verified on the isolated prerequisite worktree. Integration onto current main requires the root's final checks. These corrections change test fixtures and expectations about fixture setup, without changing application authority, migration integrity or financial behavior.
+
+## Main integration
+
+Root integrated the fixture checkpoints onto main e79f868, preserving the new customer defaults and externally merged owner-financing work. Full changed checks and current primary strict lint passed. The recovery E2E passed against the complete current migration set in 16.88 seconds, with stable source inventory 1f391fff0ecbca49467f70551c90350d53e3a2c2803e9dd08dc509aea4a24253. Artifacts are test-results/native-ci-integrated-recovery; logs are /tmp/native-ci-integrated-full.log, /tmp/native-ci-integrated-primary.log and /tmp/native-ci-integrated-recovery.log. The ordinary 47/47 cohort remains the combined fixture proof; this additional run qualifies the newly integrated migration inventory. Remote full CI remains a separate observation.
