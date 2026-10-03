@@ -1,0 +1,307 @@
+$ bun scripts/check-changed.ts
+Checking 19 changed file(s) against HEAD:
+  apps/api/src/application/banking/reconciliations.ts
+  apps/api/src/application/capabilities/agent-policy.ts
+  apps/api/src/application/capabilities/cash-forecast.ts
+  apps/api/src/application/capabilities/index.ts
+  apps/api/src/application/cash/basis.ts
+  apps/api/src/application/commerce/cash-payments.ts
+  apps/api/src/application/commerce/register.ts
+  apps/api/src/application/purchases/supplier-settlements.ts
+  apps/api/src/db/cash/basis.ts
+  apps/api/src/db/commerce/allocations.ts
+  apps/api/src/db/commerce/fx.ts
+  apps/api/src/db/schema.ts
+  apps/api/src/index.ts
+  apps/api/src/transport/http/routes/cash-forecast.ts
+  apps/api/tests/cash-basis.e2e.test.ts
+  apps/api/tests/support/cash-basis-supplier.ts
+  packages/contracts/src/api.ts
+  packages/contracts/src/capabilities.ts
+  packages/contracts/src/cash-forecast.ts
+
+oxfmt --write
+Finished in 15ms on 19 files using 2 threads.
+oxfmt --write: 0.49s
+
+oxlint
+apps/api/src/application/commerce/cash-payments.ts:88:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/commerce/cash-payments.ts:90:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/commerce/cash-payments.ts:97:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/commerce/cash-payments.ts:98:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:113:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:121:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:122:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:140:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:153:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:155:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:156:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:180:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:191:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:201:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:211:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:217:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:226:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:238:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:265:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:275:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:277:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:292:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:345:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:366:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:367:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:374:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:375:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:397:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:398:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:405:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:454:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:463:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:465:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:473:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:481:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:495:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:508:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:509:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:532:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:533:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:536:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:537:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:558:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:564:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:572:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:631:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:639:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:644:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:664:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:677:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:709:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:715:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:747:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:766:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:767:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:770:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:771:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:783:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:789:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:795:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:799:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:808:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:817:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:823:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:840:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:850:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:855:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:864:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:874:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:879:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:882:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:883:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:889:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:896:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:909:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:911:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:917:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:918:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:924:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:930:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:941:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:942:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:943:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:965:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:967:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:968:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:983:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:989:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:995:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1011:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1022:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1029:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1040:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1044:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1055:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1059:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1084:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1088:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1112:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1113:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1116:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1118:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1122:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1146:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1151:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1159:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1170:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1186:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1190:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1192:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1197:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1230:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1238:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1253:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1255:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1259:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1262:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1264:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1286:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1297:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1305:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1319:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1323:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1332:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1336:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1338:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1347:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1357:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1363:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1369:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1375:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1385:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1387:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1390:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1396:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1405:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1420:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1426:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1432:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1438:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1471:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1472:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1482:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1483:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/cash-basis.e2e.test.ts:1487:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/purchases/supplier-settlements.ts:1690:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/purchases/supplier-settlements.ts:1692:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/purchases/supplier-settlements.ts:1695:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/purchases/supplier-settlements.ts:1697:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/purchases/supplier-settlements.ts:1699:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+packages/contracts/src/cash-forecast.ts:170:1: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:27:21: error eslint(complexity): generator function has a complexity of 37. Maximum allowed is 30.
+apps/api/src/application/cash/basis.ts:19:1: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:29:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:34:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:35:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:39:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:46:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:49:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:50:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:55:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:58:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:67:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:76:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:81:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:99:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:102:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:104:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:107:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:108:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:113:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:146:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:147:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:149:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:160:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:163:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:170:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:175:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:179:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:188:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:239:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:240:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:249:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:252:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:258:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:265:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:271:9: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:273:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:275:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:277:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:315:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:319:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:335:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:348:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:350:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:364:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:386:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/cash/basis.ts:387:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:684:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:685:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:690:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:692:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:697:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:698:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:701:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:702:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:704:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:706:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:707:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:713:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:720:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:723:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:725:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:734:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:735:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/banking/reconciliations.ts:737:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/support/cash-basis-supplier.ts:233:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/tests/support/cash-basis-supplier.ts:234:3: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/commerce/register.ts:1446:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/commerce/register.ts:1448:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/commerce/register.ts:1450:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/commerce/register.ts:1455:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/commerce/register.ts:1456:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/commerce/register.ts:1459:7: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/commerce/register.ts:1461:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/commerce/register.ts:1462:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+apps/api/src/application/commerce/register.ts:1463:5: error anti-slop(require-readable-spacing): Expected blank line before this statement.
+oxlint: 0.50s
+
+tsc --noEmit (apps/api/tsconfig.json)
+apps/api/src/application/banking/source-revisions.ts(164,34): suggestion TS377112: This input is already assignable to the schema's Encoded type. Use `decodeEffect` to preserve compile-time type checking instead of discarding the input type through `decodeUnknownEffect`. effect(preferTypedSchemaDecoder)
+apps/api/src/application/banking/source-revisions.ts(271,25): suggestion TS377037: `Schema.decodeUnknownSync` is used inside an Effect generator. `Schema.decodeUnknownEffect` preserves the typed Effect error channel for this operation without throwing. effect(schemaSyncInEffect)
+apps/api/src/application/banking/source-revisions.ts(768,25): suggestion TS377037: `Schema.decodeUnknownSync` is used inside an Effect generator. `Schema.decodeUnknownEffect` preserves the typed Effect error channel for this operation without throwing. effect(schemaSyncInEffect)
+apps/api/src/application/banking/sync-windows.ts(983,7): suggestion TS377012: This Effect generator contains `try/catch`; in this context, error handling is expressed with Effect APIs such as Effect.try, Effect.tryPromise, Effect.catch, Effect.catchTag). effect(tryCatchInEffectGen)
+apps/api/src/application/cash/basis.ts(278,13): error TS2554: Expected 1 arguments, but got 0.
+apps/api/src/application/commerce/allocation-reversals.ts(1619,7): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/commerce/cash-payments.ts(140,24): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashJournalLine`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/cash-payments.ts(253,24): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashJournalLine`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/credit-notes.ts(1009,9): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/commerce/documents.ts(87,5): suggestion TS377120: `Effect.filterOrElse` expresses this conditional validation more directly than `Effect.flatMap` with an identity `Effect.succeed` branch. effect(flatMapConditionalToFilterOrFail)
+apps/api/src/application/commerce/fx-chain-repair.ts(646,14): suggestion TS377019: This `yield* Effect.fail(...)` passes a yieldable error value. `yield*` represents that value directly without wrapping it in `Effect.fail`. effect(unnecessaryFailYieldableError)
+apps/api/src/application/commerce/fx-remeasurement.ts(323,14): suggestion TS377019: This `yield* Effect.fail(...)` passes a yieldable error value. `yield*` represents that value directly without wrapping it in `Effect.fail`. effect(unnecessaryFailYieldableError)
+apps/api/src/application/commerce/fx-remeasurement.ts(334,14): suggestion TS377019: This `yield* Effect.fail(...)` passes a yieldable error value. `yield*` represents that value directly without wrapping it in `Effect.fail`. effect(unnecessaryFailYieldableError)
+apps/api/src/application/commerce/fx.ts(1299,5): suggestion TS377120: `Effect.filterOrFail` expresses this conditional validation more directly than `Effect.flatMap` with an identity `Effect.succeed` branch. effect(flatMapConditionalToFilterOrFail)
+apps/api/src/application/commerce/fx.ts(1307,5): suggestion TS377120: `Effect.filterOrFail` expresses this conditional validation more directly than `Effect.flatMap` with an identity `Effect.succeed` branch. effect(flatMapConditionalToFilterOrFail)
+apps/api/src/application/commerce/invoice-lifecycle.ts(1462,7): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/commerce/recurring-invoices.ts(28,18): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.RecurringAgreement`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(113,31): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.RecurringScheduleInput`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(222,14): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.ProposeRecurringAgreement`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(320,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.AmendRecurringSchedule`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(488,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.ProposeRecurringTemplateRevision`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(642,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.RecordRecurringAgreementEvent`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(813,14): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.MaterializeRecurringOccurrence`. effect(unnecessaryTypeofType)
+apps/api/src/application/dimensions/restatement.ts(76,41): suggestion TS377098: This Schema number API accepts `NaN`, `Infinity`, and `-Infinity`. Use `Schema.Finite` for finite domain numbers. If non-finite values are intentional, disable this diagnostic for that line. effect(schemaNumber)
+apps/api/src/application/dimensions/restatement.ts(355,36): suggestion TS377098: This Schema number API accepts `NaN`, `Infinity`, and `-Infinity`. Use `Schema.Finite` for finite domain numbers. If non-finite values are intentional, disable this diagnostic for that line. effect(schemaNumber)
+apps/api/src/application/purchases/credits.ts(165,11): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/extraction.ts(2002,7): suggestion TS377095: `Effect.orElseSucceed` expresses the same recovery more directly than `Effect.catch` followed by `Effect.succeed`. effect(catchToOrElseSucceed)
+apps/api/src/application/purchases/extraction.ts(2013,5): suggestion TS377095: `Effect.orElseSucceed` expresses the same recovery more directly than `Effect.catch` followed by `Effect.succeed`. effect(catchToOrElseSucceed)
+apps/api/src/application/purchases/payment-resolutions.ts(225,21): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Resolutions.PreparePaymentReplacement`. effect(unnecessaryTypeofType)
+apps/api/src/application/purchases/refunds.ts(360,11): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/refunds.ts(1490,11): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/supplier-settlements.ts(243,34): suggestion TS377112: This input is already assignable to the schema's Encoded type. Use `decodeEffect` to preserve compile-time type checking instead of discarding the input type through `decodeUnknownEffect`. effect(preferTypedSchemaDecoder)
+apps/api/src/application/reports/annual-report.ts(847,30): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Report.IxbrlFact`. effect(unnecessaryTypeofType)
+apps/api/src/application/reports/cash-flow-statement.ts(39,13): suggestion TS377090: This `typeof ... .Type` query can be replaced with `CashFlowContract.CashFlowLine`. effect(unnecessaryTypeofType)
+apps/api/src/application/reports/cash-flow-statement.ts(422,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `CashFlowContract.CashFlowMapping`. effect(unnecessaryTypeofType)
+apps/api/src/application/reports/cash-flow-statement.ts(435,35): suggestion TS377090: This `typeof ... .Type` query can be replaced with `CashFlowContract.PrepareCashFlowStatement`. effect(unnecessaryTypeofType)
+apps/api/src/db/commerce/cash-payments.ts(60,66): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashMethodLine`. effect(unnecessaryTypeofType)
+apps/api/src/db/commerce/cash-payments.ts(79,11): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashMethodLine`. effect(unnecessaryTypeofType)
+apps/api/src/db/commerce/cash-payments.ts(80,10): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashMethodLine`. effect(unnecessaryTypeofType)
+apps/api/src/db/commerce/cash-payments.ts(135,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashMethodLine`. effect(unnecessaryTypeofType)
+tsc --noEmit (apps/api/tsconfig.json): 23.72s
+
+tsc --noEmit (packages/contracts/tsconfig.json)
+tsc --noEmit (packages/contracts/tsconfig.json): 1.92s
+
+tsc --noEmit (apps/api/tests/tsconfig.json)
+tsc --noEmit (apps/api/tests/tsconfig.json): 0.80s
+
+check:changed failed: oxlint; tsc --noEmit (apps/api/tsconfig.json)
+error: script "check:changed" exited with code 1

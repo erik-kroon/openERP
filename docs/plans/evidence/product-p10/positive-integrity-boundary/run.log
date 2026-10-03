@@ -1,0 +1,70 @@
+$ vp test run "apps/api/tests/cash-basis.e2e.test.ts" -t "P10 (captures exact selected current openings|freezes body digest integrity|rejects historical knowledge)"
+
+ RUN  v4.1.10 /Users/admin/.codex/worktrees/midday-product-p10/openERP
+
+ ❯ apps/api/tests/cash-basis.e2e.test.ts (15 tests | 2 failed | 12 skipped) 2349ms
+   ✓ P10 captures exact selected current openings and immutable known-items bytes through HTTP and MCP  1185ms
+   ↓ P10 retains dated observations without inventing a current opening {"old":true}
+   ↓ P10 retains dated observations without inventing a current opening {"incomplete":true}
+   × P10 rejects historical knowledge, supplied amounts and cross-book references and rechecks revoked authority 614ms
+   ↓ P10 reads all canonical invoice amounts and retains immutable captures when revisions change
+   ↓ P10 preserves unsupported foreign obligations without converting them or hiding coverage gaps
+   ↓ P10 keeps a same-day allocated residual blocked when the selected closing lacks its payment witness
+   ↓ P10 never treats a restricted account review or unavailable balance as selected opening cash
+   ↓ P10 proves same-day cash settlement membership and reads partial payment plus credit once
+   ↓ P10 captures ten thousand unpaid canonical invoices within the ordinary budget
+   ↓ P10 measures the parent comparable canonical invoice page
+   ↓ P10 retains reviewed expected dates separately from unchanged contractual due dates
+   ↓ P10 qualifies an actual supplier settlement receipt and preserves cancellation knowledge
+   ↓ P10 preserves a canonical unknown residual after its recognition is corrected
+   × P10 freezes body digest integrity independently of its artifact byte hash 549ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/api/tests/cash-basis.e2e.test.ts > P10 rejects historical knowledge, supplied amounts and cross-book references and rechecks revoked authority
+AssertionError: expected 200 to be 400 // Object.is equality
+
+- Expected
++ Received
+
+- 400
++ 200
+
+ ❯ apps/api/tests/cash-basis.e2e.test.ts:491:29
+    489|     });
+    490|
+    491|     expect(response.status).toBe(400);
+       |                             ^
+    492|   }
+    493|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/api/tests/cash-basis.e2e.test.ts > P10 freezes body digest integrity independently of its artifact byte hash
+AssertionError: expected undefined to be '23514' // Object.is equality
+
+- Expected:
+"23514"
+
++ Received:
+undefined
+
+ ❯ apps/api/tests/cash-basis.e2e.test.ts:1728:28
+    1726|       ),
+    1727|     );
+    1728|     expect(tampered?.code).toBe("23514");
+       |                            ^
+    1729|   } finally {
+    1730|     await admin.end();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed | 12 skipped (15)
+   Start at  21:23:23
+   Duration  9.93s (transform 296ms, setup 0ms, import 663ms, tests 2.35s, environment 0ms)
+
+JSON report written to /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-positive-integrity-boundary/results.json
+JUNIT report written to /Users/admin/.codex/worktrees/midday-product-p10/openERP/test-results/product-P10-positive-integrity-boundary/junit.xml
+error: script "test:e2e" exited with code 1

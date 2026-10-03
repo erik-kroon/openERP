@@ -1,0 +1,141 @@
+{
+  "sourceFunctions": {
+    "commerce/invoices.ts#voucherCurrent": [
+      "vouchers"
+    ],
+    "commerce/invoices.ts#recognitionAccounted": [
+      "execution_receipts",
+      "invoice_cancellations",
+      "vouchers"
+    ],
+    "commerce/invoices.ts#activeLegs": [
+      "commerce_allocation_legs",
+      "commerce_allocation_reversals"
+    ],
+    "commerce/invoices.ts#activeLegTotal": [],
+    "commerce/invoices.ts#ownerDischargeSummary": [
+      "journal_lines",
+      "owner_operation_receipts",
+      "vouchers"
+    ],
+    "commerce/invoices.ts#cancellationBody": [
+      "invoice_cancellations"
+    ],
+    "commerce/invoices.ts#liveInvoice": [
+      "cash_method_credit_lines",
+      "cash_method_credits",
+      "cash_method_lines",
+      "cash_method_recognitions",
+      "commerce_allocation_legs",
+      "commerce_allocation_reversals",
+      "commerce_invoice_revisions",
+      "commerce_invoices",
+      "customer_credit_notes",
+      "journal_lines",
+      "supplier_credits",
+      "supplier_refund_principal_increases",
+      "vat_fact_components"
+    ],
+    "commerce/invoices.ts#readInvoiceIdentityPage": [
+      "commerce_invoices"
+    ],
+    "commerce/invoices.ts#readLiveInvoicePage": [],
+    "commerce/allocations.ts#readForecastPaymentLegs": [
+      "commerce_allocation_legs",
+      "commerce_allocation_reversals"
+    ],
+    "commerce/cash-payments.ts#readFinalCashSource": [
+      "bank_active_matches",
+      "bank_observations",
+      "bank_statements",
+      "events",
+      "evidence",
+      "execution_receipts",
+      "journal_lines",
+      "vouchers"
+    ],
+    "commerce/fx.ts#readForecastItemIdentities": [
+      "commerce_fx_items"
+    ],
+    "commerce/fx.ts#readItem": [
+      "commerce_fx_items"
+    ],
+    "commerce/fx.ts#readSettlements": [
+      "commerce_fx_settlements"
+    ],
+    "commerce/fx.ts#readCorrections": [
+      "commerce_fx_settlement_corrections"
+    ],
+    "purchases/supplier-settlements.ts#readReceiptByAllocation": [
+      "supplier_settlement_receipts"
+    ],
+    "purchases/supplier-settlements.ts#readCancellationReceipt": [
+      "supplier_settlement_cancellation_receipts"
+    ],
+    "purchases/supplier-settlements.ts#readPlan": [
+      "supplier_settlement_plans"
+    ],
+    "banking/shared.ts#readCheckpoint": [
+      "bank_sources",
+      "books"
+    ],
+    "banking/shared.ts#readCoverageDependencyDigest": [
+      "accounts",
+      "bank_observations",
+      "bank_sources",
+      "bank_statements",
+      "books",
+      "closing_inventories",
+      "evidence",
+      "periods"
+    ],
+    "banking/statements.ts#readAccountLedgerSequence": [
+      "journal_lines",
+      "vouchers"
+    ],
+    "banking/coverage.ts#readCoverageReport": [
+      "bank_source_coverage_reports"
+    ],
+    "banking/reports.ts#readCapacityReconciliation": [
+      "bank_capacity_reconciliations"
+    ]
+  },
+  "tables": [
+    "accounts",
+    "bank_active_matches",
+    "bank_capacity_reconciliations",
+    "bank_observations",
+    "bank_source_coverage_reports",
+    "bank_sources",
+    "bank_statements",
+    "books",
+    "cash_method_credit_lines",
+    "cash_method_credits",
+    "cash_method_lines",
+    "cash_method_recognitions",
+    "closing_inventories",
+    "commerce_allocation_legs",
+    "commerce_allocation_reversals",
+    "commerce_fx_items",
+    "commerce_fx_settlement_corrections",
+    "commerce_fx_settlements",
+    "commerce_invoice_revisions",
+    "commerce_invoices",
+    "customer_credit_notes",
+    "events",
+    "evidence",
+    "execution_receipts",
+    "invoice_cancellations",
+    "journal_lines",
+    "owner_operation_receipts",
+    "periods",
+    "supplier_credits",
+    "supplier_refund_principal_increases",
+    "supplier_settlement_cancellation_receipts",
+    "supplier_settlement_plans",
+    "supplier_settlement_receipts",
+    "vat_fact_components",
+    "vouchers"
+  ],
+  "status": "source_grounded_preflight_not_implemented"
+}

@@ -1,0 +1,17 @@
+{
+  "supplierReceiptId": "supplier_receipt_a0cce523cbbe46a7b9c6e02974fc5c04",
+  "expectedSourceOwner": "purchases/supplier-settlements",
+  "provenance": {
+    "contributions": [
+      {
+        "invoiceId": "invoice_f9162ceb040e4eeb86de1cedd0e82fdc",
+        "paymentMembership": [
+          {
+            "sourceOwner": "purchases/supplier-settlements",
+            "sourceId": "supplier_receipt_a0cce523cbbe46a7b9c6e02974fc5c04"
+          }
+        ]
+      }
+    ]
+  }
+}

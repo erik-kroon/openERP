@@ -1,0 +1,80 @@
+{
+  "sourceCoverage": "not_established",
+  "independentOpeningMinor": "150000",
+  "basis": {
+    "id": "cash_basis_1dac07aefe4045f29178359a0c1cf3e4",
+    "scope": {
+      "entityId": "entity_38dcd7b4b5ca91d5",
+      "bookId": "book_38dcd7b4b5ca91d5"
+    },
+    "asOf": "2026-10-03",
+    "recordedCutoff": "2026-10-03T19:23:31.761Z",
+    "captureMode": "current_knowledge",
+    "currency": "SEK",
+    "currencyScale": 2,
+    "opening": {
+      "status": "qualified",
+      "totalMinor": "150000",
+      "observations": [
+        {
+          "accountId": "account_bank",
+          "amountMinor": "100000",
+          "effectiveOn": "2026-10-03"
+        },
+        {
+          "accountId": "account_bank_two",
+          "amountMinor": "50000",
+          "effectiveOn": "2026-10-03"
+        }
+      ],
+      "blockers": []
+    },
+    "contributions": [],
+    "foreignObligations": [],
+    "coverage": [
+      {
+        "family": "bank",
+        "status": "selected_scope",
+        "reason": "Selected current statement closings only. Native full-period coverage remains not_established and observation time is unavailable."
+      },
+      {
+        "family": "commerce",
+        "status": "selected_scope",
+        "reason": "Current canonical registered invoices only. Unregistered obligations and foreign forecast conversions remain unqualified."
+      },
+      {
+        "family": "tax",
+        "status": "unknown",
+        "reason": "No qualified cash funding roll-forward with payment date is selected."
+      },
+      {
+        "family": "payroll",
+        "status": "unknown",
+        "reason": "No qualified aggregate payable funding schedule is selected. Payroll details are not exposed."
+      },
+      {
+        "family": "owners",
+        "status": "unknown",
+        "reason": "Owner balance receipts do not establish future payment dates or unrestricted funding."
+      },
+      {
+        "family": "assets",
+        "status": "unknown",
+        "reason": "Depreciation is not cash. No qualified purchase or disposal payment schedule is selected."
+      },
+      {
+        "family": "financing",
+        "status": "unknown",
+        "reason": "Retained loan movements do not establish a complete future financing schedule."
+      }
+    ],
+    "companyCoverage": "incomplete",
+    "label": "known_items",
+    "digest": "sha256:9381556ea5cdf95eb638173a632d509e8c374e0a28eecab258c1bdd49c079202"
+  },
+  "sha256": "d71cc795a5e7fa727dc0fc0c54a765b65c5c58a5e3180e1a9c3360cdfcdf7d1a",
+  "immutableExport": true,
+  "mcpRead": true,
+  "mcpCapture": true,
+  "financialStateUnchanged": true
+}

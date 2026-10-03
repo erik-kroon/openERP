@@ -1,0 +1,15 @@
+{
+  "canonicalEquality": [
+    {
+      "app": "sha256:954bdede42da336b39a8c224ac76857e9b77d58ef05ab7871a010a48f93c43b9",
+      "database": "sha256:954bdede42da336b39a8c224ac76857e9b77d58ef05ab7871a010a48f93c43b9",
+      "equal": true
+    }
+  ],
+  "immutableUpdateAndDelete": true,
+  "tampered": {
+    "code": "23514",
+    "constraint": "cash_bases_body_check"
+  },
+  "candidate": "body.digest = openerp.digest(body - digest)"
+}

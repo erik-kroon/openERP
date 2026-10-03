@@ -1,0 +1,435 @@
+{
+  "template": {
+    "id": "invoice_template_6bbeb1920cf94857af6667d478161f3e",
+    "scope": {
+      "entityId": "entity_8f6bcd4c8e800ac0",
+      "bookId": "book_8f6bcd4c8e800ac0"
+    },
+    "revision": "1",
+    "digest": "sha256:304ddcd015b555072e08fab9a7640e2640be24499644a47445518ca08ef1e530",
+    "name": "Monthly consulting",
+    "currency": "SEK",
+    "currencyScale": 2,
+    "status": "active",
+    "content": {
+      "title": "Consulting services",
+      "paymentTerms": "Fourteen calendar days",
+      "note": "Thank you for your business.",
+      "lines": [
+        {
+          "id": "template_line",
+          "description": "Consulting hours",
+          "quantity": "2",
+          "unitPriceMinor": "100000",
+          "discountMinor": "0",
+          "chargeMinor": "0",
+          "treatment": {
+            "kind": "legal_sales_policy",
+            "id": "ar_policy_2b69072b884148a297409bd32e16de52",
+            "digest": "sha256:940cef1a07b798c4f298783827ab434d7ef0c046c5d0260327a5cecc4b556fb0"
+          },
+          "catalogSelection": {
+            "scope": {
+              "entityId": "entity_8f6bcd4c8e800ac0",
+              "bookId": "book_8f6bcd4c8e800ac0"
+            },
+            "digest": "sha256:1c9306549b142213d05b5f5e1ae6d8064e8d48494b910d20edab3212566e65f7",
+            "code": "TEMPLATE_SERVICE",
+            "revision": 1,
+            "unit": "hour"
+          }
+        }
+      ]
+    }
+  },
+  "saved": {
+    "id": "invoice_draft_9cc76fef086d4d68a47210ff83e3f6ec",
+    "scope": {
+      "entityId": "entity_8f6bcd4c8e800ac0",
+      "bookId": "book_8f6bcd4c8e800ac0"
+    },
+    "draftKey": "template_6619d483-d49a-4a44-83fd-7b4081a0494e",
+    "revision": "1",
+    "status": "draft",
+    "issued": false,
+    "recognized": false,
+    "delivered": false,
+    "calculationBasis": "commercial_minor_v1",
+    "purpose": "commercial",
+    "content": {
+      "title": "Consulting services",
+      "counterpartyId": "counterparty_cbcbc287923b4252817189e32943a394",
+      "counterpartyRevision": "1",
+      "seller": {
+        "legalName": "FWD-05 Synthetic Seller",
+        "registrationId": "556677-8899",
+        "taxId": "SE556677889901",
+        "address": "Synthetic address, not a real company",
+        "countryCode": "SE",
+        "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b"
+      },
+      "customer": {
+        "legalName": "FWD-05 Synthetic Customer",
+        "registrationId": "556677-8808",
+        "taxId": null,
+        "address": "Synthetic customer address",
+        "countryCode": "SE",
+        "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b"
+      },
+      "currency": "SEK",
+      "currencyScale": 2,
+      "plannedIssueDate": "2026-10-03",
+      "supplyDate": "2026-10-03",
+      "dueDate": "2026-10-03",
+      "paymentTerms": "Fourteen calendar days",
+      "note": "Thank you for your business.",
+      "sourceTotalMinor": null,
+      "lines": [
+        {
+          "id": "template_line",
+          "description": "Consulting hours",
+          "quantity": "2",
+          "unitPriceMinor": "100000",
+          "baseMinor": "200000",
+          "discountMinor": "0",
+          "chargeMinor": "0",
+          "taxMinor": "50000",
+          "taxDescription": "se-domestic-standard-25-v1",
+          "taxEvidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b",
+          "sourceGrossMinor": null,
+          "catalogSelection": {
+            "scope": {
+              "entityId": "entity_8f6bcd4c8e800ac0",
+              "bookId": "book_8f6bcd4c8e800ac0"
+            },
+            "digest": "sha256:1c9306549b142213d05b5f5e1ae6d8064e8d48494b910d20edab3212566e65f7",
+            "code": "TEMPLATE_SERVICE",
+            "revision": 1,
+            "unit": "hour"
+          }
+        }
+      ]
+    },
+    "templateSelection": {
+      "id": "invoice_template_6bbeb1920cf94857af6667d478161f3e",
+      "revision": "1",
+      "digest": "sha256:304ddcd015b555072e08fab9a7640e2640be24499644a47445518ca08ef1e530"
+    },
+    "counterparty": {
+      "kind": "synthetic_counterparty_v1",
+      "externalKey": "b4daff13-8613-47a4-ae64-75ab7bef010c",
+      "role": "customer",
+      "displayName": "FWD-05 Synthetic Customer",
+      "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b",
+      "reason": "Synthetic fixture",
+      "id": "counterparty_cbcbc287923b4252817189e32943a394",
+      "scope": {
+        "entityId": "entity_8f6bcd4c8e800ac0",
+        "bookId": "book_8f6bcd4c8e800ac0"
+      },
+      "revision": "1",
+      "evidence": {
+        "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b",
+        "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+      },
+      "legalIdentityVerified": false,
+      "createdAt": "2026-10-03T21:03:29.222088Z",
+      "receipt": {
+        "key": "7530f64d-a805-43e9-a4f1-90d34d61c9f2",
+        "operation": "commerce_create_counterparty",
+        "actorId": "operator_8f6bcd4c8e800ac0"
+      }
+    },
+    "sellerEvidence": {
+      "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b",
+      "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+    },
+    "customerEvidence": {
+      "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b",
+      "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+    },
+    "totals": {
+      "baseMinor": "200000",
+      "discountMinor": "0",
+      "chargeMinor": "0",
+      "netMinor": "200000",
+      "taxMinor": "50000",
+      "grossMinor": "250000",
+      "sourceTotalMatches": null
+    },
+    "calculatedLines": [
+      {
+        "id": "template_line",
+        "calculatedBaseMinor": "200000",
+        "netMinor": "200000",
+        "grossMinor": "250000",
+        "sourceGrossMatches": null,
+        "taxEvidence": {
+          "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b",
+          "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+        }
+      }
+    ],
+    "blockers": [
+      {
+        "code": "legal_issue_review_required",
+        "lineId": null
+      }
+    ],
+    "reason": "Initial commercial draft",
+    "createdAt": "2026-10-03T21:03:29.817552Z",
+    "receipt": {
+      "key": "template_draft_08fe5e383d6a48b78386e34c17ae04c1",
+      "operation": "create_invoice_draft",
+      "actorId": "operator_8f6bcd4c8e800ac0"
+    },
+    "digest": "sha256:d55a0f9639218cf0c5006947f9271eef93e0fb33c090fc84ec08e26b7b23ba14",
+    "commercialInput": {
+      "title": "Consulting services",
+      "counterpartyId": "counterparty_cbcbc287923b4252817189e32943a394",
+      "counterpartyRevision": "1",
+      "seller": {
+        "legalName": "FWD-05 Synthetic Seller",
+        "registrationId": "556677-8899",
+        "taxId": "SE556677889901",
+        "address": "Synthetic address, not a real company",
+        "countryCode": "SE",
+        "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b"
+      },
+      "customer": {
+        "legalName": "FWD-05 Synthetic Customer",
+        "registrationId": "556677-8808",
+        "taxId": null,
+        "address": "Synthetic customer address",
+        "countryCode": "SE",
+        "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b"
+      },
+      "plannedIssueDate": "2026-10-03",
+      "supplyDate": "2026-10-03",
+      "dueDate": "2026-10-03",
+      "paymentTerms": "Fourteen calendar days",
+      "note": "Thank you for your business.",
+      "lines": [
+        {
+          "id": "template_line",
+          "description": "Consulting hours",
+          "quantity": "2",
+          "unitPriceMinor": "100000",
+          "discountMinor": "0",
+          "chargeMinor": "0",
+          "treatment": {
+            "kind": "legal_sales_policy",
+            "id": "ar_policy_2b69072b884148a297409bd32e16de52",
+            "digest": "sha256:940cef1a07b798c4f298783827ab434d7ef0c046c5d0260327a5cecc4b556fb0"
+          },
+          "catalogSelection": {
+            "scope": {
+              "entityId": "entity_8f6bcd4c8e800ac0",
+              "bookId": "book_8f6bcd4c8e800ac0"
+            },
+            "digest": "sha256:1c9306549b142213d05b5f5e1ae6d8064e8d48494b910d20edab3212566e65f7",
+            "code": "TEMPLATE_SERVICE",
+            "revision": 1,
+            "unit": "hour"
+          }
+        }
+      ]
+    }
+  },
+  "replaced": {
+    "id": "invoice_draft_9cc76fef086d4d68a47210ff83e3f6ec",
+    "scope": {
+      "entityId": "entity_8f6bcd4c8e800ac0",
+      "bookId": "book_8f6bcd4c8e800ac0"
+    },
+    "draftKey": "template_6619d483-d49a-4a44-83fd-7b4081a0494e",
+    "revision": "2",
+    "status": "draft",
+    "issued": false,
+    "recognized": false,
+    "delivered": false,
+    "calculationBasis": "commercial_minor_v1",
+    "purpose": "commercial",
+    "content": {
+      "title": "Consulting services",
+      "counterpartyId": "counterparty_cbcbc287923b4252817189e32943a394",
+      "counterpartyRevision": "1",
+      "seller": {
+        "legalName": "FWD-05 Synthetic Seller",
+        "registrationId": "556677-8899",
+        "taxId": "SE556677889901",
+        "address": "Synthetic address, not a real company",
+        "countryCode": "SE",
+        "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b"
+      },
+      "customer": {
+        "legalName": "FWD-05 Synthetic Customer",
+        "registrationId": "556677-8808",
+        "taxId": null,
+        "address": "Synthetic customer address",
+        "countryCode": "SE",
+        "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b"
+      },
+      "currency": "SEK",
+      "currencyScale": 2,
+      "plannedIssueDate": "2026-10-03",
+      "supplyDate": "2026-10-03",
+      "dueDate": "2026-10-03",
+      "paymentTerms": "Fourteen calendar days",
+      "note": "Thank you for your business.",
+      "sourceTotalMinor": null,
+      "lines": [
+        {
+          "id": "template_line",
+          "description": "Consulting hours",
+          "quantity": "2",
+          "unitPriceMinor": "100000",
+          "baseMinor": "200000",
+          "discountMinor": "0",
+          "chargeMinor": "0",
+          "taxMinor": "50000",
+          "taxDescription": "se-domestic-standard-25-v1",
+          "taxEvidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b",
+          "sourceGrossMinor": null,
+          "catalogSelection": {
+            "scope": {
+              "entityId": "entity_8f6bcd4c8e800ac0",
+              "bookId": "book_8f6bcd4c8e800ac0"
+            },
+            "digest": "sha256:1c9306549b142213d05b5f5e1ae6d8064e8d48494b910d20edab3212566e65f7",
+            "code": "TEMPLATE_SERVICE",
+            "revision": 1,
+            "unit": "hour"
+          }
+        }
+      ]
+    },
+    "templateSelection": {
+      "id": "invoice_template_6bbeb1920cf94857af6667d478161f3e",
+      "revision": "1",
+      "digest": "sha256:304ddcd015b555072e08fab9a7640e2640be24499644a47445518ca08ef1e530"
+    },
+    "counterparty": {
+      "kind": "synthetic_counterparty_v1",
+      "externalKey": "b4daff13-8613-47a4-ae64-75ab7bef010c",
+      "role": "customer",
+      "displayName": "FWD-05 Synthetic Customer",
+      "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b",
+      "reason": "Synthetic fixture",
+      "id": "counterparty_cbcbc287923b4252817189e32943a394",
+      "scope": {
+        "entityId": "entity_8f6bcd4c8e800ac0",
+        "bookId": "book_8f6bcd4c8e800ac0"
+      },
+      "revision": "1",
+      "evidence": {
+        "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b",
+        "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+      },
+      "legalIdentityVerified": false,
+      "createdAt": "2026-10-03T21:03:29.222088Z",
+      "receipt": {
+        "key": "7530f64d-a805-43e9-a4f1-90d34d61c9f2",
+        "operation": "commerce_create_counterparty",
+        "actorId": "operator_8f6bcd4c8e800ac0"
+      }
+    },
+    "sellerEvidence": {
+      "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b",
+      "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+    },
+    "customerEvidence": {
+      "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b",
+      "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+    },
+    "totals": {
+      "baseMinor": "200000",
+      "discountMinor": "0",
+      "chargeMinor": "0",
+      "netMinor": "200000",
+      "taxMinor": "50000",
+      "grossMinor": "250000",
+      "sourceTotalMatches": null
+    },
+    "calculatedLines": [
+      {
+        "id": "template_line",
+        "calculatedBaseMinor": "200000",
+        "netMinor": "200000",
+        "grossMinor": "250000",
+        "sourceGrossMatches": null,
+        "taxEvidence": {
+          "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b",
+          "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+        }
+      }
+    ],
+    "blockers": [
+      {
+        "code": "legal_issue_review_required",
+        "lineId": null
+      }
+    ],
+    "reason": "Preserve the actual target's retained article copy",
+    "createdAt": "2026-10-03T21:03:29.989697Z",
+    "receipt": {
+      "key": "template_draft_b07258aec9dd4788aaf85bb50f055de9",
+      "operation": "revise_invoice_draft",
+      "actorId": "operator_8f6bcd4c8e800ac0"
+    },
+    "digest": "sha256:11efe5728ecc045686ae70ade36721473e056d1e7586ec5901d5d8634acd7d99",
+    "commercialInput": {
+      "title": "Consulting services",
+      "counterpartyId": "counterparty_cbcbc287923b4252817189e32943a394",
+      "counterpartyRevision": "1",
+      "seller": {
+        "legalName": "FWD-05 Synthetic Seller",
+        "registrationId": "556677-8899",
+        "taxId": "SE556677889901",
+        "address": "Synthetic address, not a real company",
+        "countryCode": "SE",
+        "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b"
+      },
+      "customer": {
+        "legalName": "FWD-05 Synthetic Customer",
+        "registrationId": "556677-8808",
+        "taxId": null,
+        "address": "Synthetic customer address",
+        "countryCode": "SE",
+        "evidenceId": "evidence_3021301ab7c4462b87dd6f3f9854893b"
+      },
+      "plannedIssueDate": "2026-10-03",
+      "supplyDate": "2026-10-03",
+      "dueDate": "2026-10-03",
+      "paymentTerms": "Fourteen calendar days",
+      "note": "Thank you for your business.",
+      "lines": [
+        {
+          "id": "template_line",
+          "description": "Consulting hours",
+          "quantity": "2",
+          "unitPriceMinor": "100000",
+          "discountMinor": "0",
+          "chargeMinor": "0",
+          "treatment": {
+            "kind": "legal_sales_policy",
+            "id": "ar_policy_2b69072b884148a297409bd32e16de52",
+            "digest": "sha256:940cef1a07b798c4f298783827ab434d7ef0c046c5d0260327a5cecc4b556fb0"
+          },
+          "catalogSelection": {
+            "scope": {
+              "entityId": "entity_8f6bcd4c8e800ac0",
+              "bookId": "book_8f6bcd4c8e800ac0"
+            },
+            "digest": "sha256:1c9306549b142213d05b5f5e1ae6d8064e8d48494b910d20edab3212566e65f7",
+            "code": "TEMPLATE_SERVICE",
+            "revision": 1,
+            "unit": "hour"
+          }
+        }
+      ]
+    }
+  },
+  "staleNewDraftRefused": true,
+  "archivedNewDraftRefused": true
+}

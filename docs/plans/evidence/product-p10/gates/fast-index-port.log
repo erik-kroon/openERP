@@ -1,0 +1,78 @@
+$ bun scripts/check-changed.ts
+Checking 19 changed file(s) against HEAD:
+  apps/api/src/application/banking/reconciliations.ts
+  apps/api/src/application/capabilities/agent-policy.ts
+  apps/api/src/application/capabilities/cash-forecast.ts
+  apps/api/src/application/capabilities/index.ts
+  apps/api/src/application/cash/basis.ts
+  apps/api/src/application/commerce/cash-payments.ts
+  apps/api/src/application/commerce/register.ts
+  apps/api/src/application/purchases/supplier-settlements.ts
+  apps/api/src/db/cash/basis.ts
+  apps/api/src/db/commerce/allocations.ts
+  apps/api/src/db/commerce/fx.ts
+  apps/api/src/db/schema.ts
+  apps/api/src/index.ts
+  apps/api/src/transport/http/routes/cash-forecast.ts
+  apps/api/tests/cash-basis.e2e.test.ts
+  apps/api/tests/support/cash-basis-supplier.ts
+  packages/contracts/src/api.ts
+  packages/contracts/src/capabilities.ts
+  packages/contracts/src/cash-forecast.ts
+
+oxfmt --write
+Finished in 21ms on 19 files using 2 threads.
+oxfmt --write: 0.10s
+
+oxlint
+oxlint: 0.35s
+
+tsc --noEmit (apps/api/tsconfig.json)
+apps/api/src/application/banking/source-revisions.ts(164,34): suggestion TS377112: This input is already assignable to the schema's Encoded type. Use `decodeEffect` to preserve compile-time type checking instead of discarding the input type through `decodeUnknownEffect`. effect(preferTypedSchemaDecoder)
+apps/api/src/application/banking/source-revisions.ts(271,25): suggestion TS377037: `Schema.decodeUnknownSync` is used inside an Effect generator. `Schema.decodeUnknownEffect` preserves the typed Effect error channel for this operation without throwing. effect(schemaSyncInEffect)
+apps/api/src/application/banking/source-revisions.ts(768,25): suggestion TS377037: `Schema.decodeUnknownSync` is used inside an Effect generator. `Schema.decodeUnknownEffect` preserves the typed Effect error channel for this operation without throwing. effect(schemaSyncInEffect)
+apps/api/src/application/banking/sync-windows.ts(983,7): suggestion TS377012: This Effect generator contains `try/catch`; in this context, error handling is expressed with Effect APIs such as Effect.try, Effect.tryPromise, Effect.catch, Effect.catchTag). effect(tryCatchInEffectGen)
+apps/api/src/application/commerce/allocation-reversals.ts(1619,7): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/commerce/cash-payments.ts(144,24): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashJournalLine`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/cash-payments.ts(257,24): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashJournalLine`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/credit-notes.ts(1009,9): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/commerce/documents.ts(87,5): suggestion TS377120: `Effect.filterOrElse` expresses this conditional validation more directly than `Effect.flatMap` with an identity `Effect.succeed` branch. effect(flatMapConditionalToFilterOrFail)
+apps/api/src/application/commerce/fx-chain-repair.ts(646,14): suggestion TS377019: This `yield* Effect.fail(...)` passes a yieldable error value. `yield*` represents that value directly without wrapping it in `Effect.fail`. effect(unnecessaryFailYieldableError)
+apps/api/src/application/commerce/fx-remeasurement.ts(323,14): suggestion TS377019: This `yield* Effect.fail(...)` passes a yieldable error value. `yield*` represents that value directly without wrapping it in `Effect.fail`. effect(unnecessaryFailYieldableError)
+apps/api/src/application/commerce/fx-remeasurement.ts(334,14): suggestion TS377019: This `yield* Effect.fail(...)` passes a yieldable error value. `yield*` represents that value directly without wrapping it in `Effect.fail`. effect(unnecessaryFailYieldableError)
+apps/api/src/application/commerce/fx.ts(1299,5): suggestion TS377120: `Effect.filterOrFail` expresses this conditional validation more directly than `Effect.flatMap` with an identity `Effect.succeed` branch. effect(flatMapConditionalToFilterOrFail)
+apps/api/src/application/commerce/fx.ts(1307,5): suggestion TS377120: `Effect.filterOrFail` expresses this conditional validation more directly than `Effect.flatMap` with an identity `Effect.succeed` branch. effect(flatMapConditionalToFilterOrFail)
+apps/api/src/application/commerce/invoice-lifecycle.ts(1462,7): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/commerce/recurring-invoices.ts(28,18): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.RecurringAgreement`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(113,31): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.RecurringScheduleInput`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(222,14): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.ProposeRecurringAgreement`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(320,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.AmendRecurringSchedule`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(488,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.ProposeRecurringTemplateRevision`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(642,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.RecordRecurringAgreementEvent`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(813,14): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.MaterializeRecurringOccurrence`. effect(unnecessaryTypeofType)
+apps/api/src/application/dimensions/restatement.ts(76,41): suggestion TS377098: This Schema number API accepts `NaN`, `Infinity`, and `-Infinity`. Use `Schema.Finite` for finite domain numbers. If non-finite values are intentional, disable this diagnostic for that line. effect(schemaNumber)
+apps/api/src/application/dimensions/restatement.ts(355,36): suggestion TS377098: This Schema number API accepts `NaN`, `Infinity`, and `-Infinity`. Use `Schema.Finite` for finite domain numbers. If non-finite values are intentional, disable this diagnostic for that line. effect(schemaNumber)
+apps/api/src/application/purchases/credits.ts(165,11): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/extraction.ts(2002,7): suggestion TS377095: `Effect.orElseSucceed` expresses the same recovery more directly than `Effect.catch` followed by `Effect.succeed`. effect(catchToOrElseSucceed)
+apps/api/src/application/purchases/extraction.ts(2013,5): suggestion TS377095: `Effect.orElseSucceed` expresses the same recovery more directly than `Effect.catch` followed by `Effect.succeed`. effect(catchToOrElseSucceed)
+apps/api/src/application/purchases/payment-resolutions.ts(225,21): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Resolutions.PreparePaymentReplacement`. effect(unnecessaryTypeofType)
+apps/api/src/application/purchases/refunds.ts(360,11): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/refunds.ts(1490,11): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/supplier-settlements.ts(243,34): suggestion TS377112: This input is already assignable to the schema's Encoded type. Use `decodeEffect` to preserve compile-time type checking instead of discarding the input type through `decodeUnknownEffect`. effect(preferTypedSchemaDecoder)
+apps/api/src/application/reports/annual-report.ts(847,30): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Report.IxbrlFact`. effect(unnecessaryTypeofType)
+apps/api/src/application/reports/cash-flow-statement.ts(39,13): suggestion TS377090: This `typeof ... .Type` query can be replaced with `CashFlowContract.CashFlowLine`. effect(unnecessaryTypeofType)
+apps/api/src/application/reports/cash-flow-statement.ts(422,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `CashFlowContract.CashFlowMapping`. effect(unnecessaryTypeofType)
+apps/api/src/application/reports/cash-flow-statement.ts(435,35): suggestion TS377090: This `typeof ... .Type` query can be replaced with `CashFlowContract.PrepareCashFlowStatement`. effect(unnecessaryTypeofType)
+apps/api/src/db/commerce/cash-payments.ts(60,66): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashMethodLine`. effect(unnecessaryTypeofType)
+apps/api/src/db/commerce/cash-payments.ts(79,11): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashMethodLine`. effect(unnecessaryTypeofType)
+apps/api/src/db/commerce/cash-payments.ts(80,10): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashMethodLine`. effect(unnecessaryTypeofType)
+apps/api/src/db/commerce/cash-payments.ts(135,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashMethodLine`. effect(unnecessaryTypeofType)
+tsc --noEmit (apps/api/tsconfig.json): 9.85s
+
+tsc --noEmit (packages/contracts/tsconfig.json)
+tsc --noEmit (packages/contracts/tsconfig.json): 0.29s
+
+tsc --noEmit (apps/api/tests/tsconfig.json)
+tsc --noEmit (apps/api/tests/tsconfig.json): 0.35s
+
+check:changed passed.

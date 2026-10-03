@@ -1,0 +1,89 @@
+{
+  "independentOpeningMinor": "100000",
+  "originalMinor": "125000",
+  "paidMinor": "50000",
+  "creditMinor": "25000",
+  "expectedResidualMinor": "50000",
+  "paymentStatementId": "statement_a727e07856a849b387596a20961c99cf",
+  "result": {
+    "id": "cash_basis_234ad175c48e4a3997e2881854b69b0a",
+    "scope": {
+      "entityId": "entity_af8faee445bb0664",
+      "bookId": "book_af8faee445bb0664"
+    },
+    "asOf": "2026-10-03",
+    "recordedCutoff": "2026-10-03T20:06:23.530Z",
+    "captureMode": "current_knowledge",
+    "currency": "SEK",
+    "currencyScale": 2,
+    "opening": {
+      "status": "qualified",
+      "totalMinor": "100000",
+      "observations": [
+        {
+          "accountId": "account_bank",
+          "amountMinor": "50000",
+          "effectiveOn": "2026-10-03"
+        },
+        {
+          "accountId": "account_bank_two",
+          "amountMinor": "50000",
+          "effectiveOn": "2026-10-03"
+        }
+      ],
+      "blockers": []
+    },
+    "contributions": [
+      {
+        "invoiceId": "invoice_ce602ef35fe841938242ce25f2134cfd",
+        "amountMinor": "50000",
+        "inclusion": "included",
+        "reason": "canonical_remaining_obligation",
+        "dueOn": "2026-10-22",
+        "expectedOn": null
+      }
+    ],
+    "foreignObligations": [],
+    "coverage": [
+      {
+        "family": "bank",
+        "status": "selected_scope",
+        "reason": "Selected current statement closings only. Native full-period coverage remains not_established and observation time is unavailable."
+      },
+      {
+        "family": "commerce",
+        "status": "selected_scope",
+        "reason": "Current canonical registered invoices only. Unregistered obligations and foreign forecast conversions remain unqualified."
+      },
+      {
+        "family": "tax",
+        "status": "unknown",
+        "reason": "No qualified cash funding roll-forward with payment date is selected."
+      },
+      {
+        "family": "payroll",
+        "status": "unknown",
+        "reason": "No qualified aggregate payable funding schedule is selected. Payroll details are not exposed."
+      },
+      {
+        "family": "owners",
+        "status": "unknown",
+        "reason": "Owner balance receipts do not establish future payment dates or unrestricted funding."
+      },
+      {
+        "family": "assets",
+        "status": "unknown",
+        "reason": "Depreciation is not cash. No qualified purchase or disposal payment schedule is selected."
+      },
+      {
+        "family": "financing",
+        "status": "unknown",
+        "reason": "Retained loan movements do not establish a complete future financing schedule."
+      }
+    ],
+    "companyCoverage": "incomplete",
+    "label": "known_items",
+    "digest": "sha256:518368cde98036200bcfdc311352c95cedf15ea36e7a06faf7e506e7d12396e2"
+  },
+  "noRepeatedPayment": true
+}

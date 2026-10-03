@@ -1,0 +1,8 @@
+bun install v1.4.0 (34cbb9a40)
+Resolving dependencies
+Resolved, downloaded and extracted [1]
+
+$ effect-tsgo patch --typescript
+typescript skipped because its hash matches the replacement.
+
+Checked 549 installs across 803 packages (no changes) [577.00ms]

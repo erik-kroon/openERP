@@ -1,0 +1,178 @@
+{
+  "sourceBoundary": "Disposable retained historical SQL fixture; not current registration admission or correction workflow",
+  "originalMinor": "1000",
+  "originalReceipt": {
+    "id": "receipt_21fe7aad6b214d48b25aa1f24cb0f354",
+    "changeSetId": "change_07db44b1a65746d79f98460c16980d09",
+    "voucherId": "voucher_6eb4bdc3525a4700820b2d365f2caf80",
+    "planDigest": "sha256:77c5d3b053d74b32046e87ca40662f614864dbb5297c94b4651f45d0ee654e24",
+    "sequence": "4",
+    "voucherNumber": "4",
+    "committedAt": "2026-10-03 22:06:26.45521+02"
+  },
+  "correctionReceipt": {
+    "id": "receipt_ecf104e460af457f919310c385e3d5c4",
+    "changeSetId": "change_e8bdb01222944a96bd5ac79cea3ddd7c",
+    "voucherId": "voucher_9791fb87f29e4dd4b9f3579576bfa1be",
+    "planDigest": "sha256:c02966785ae102fd9028e6759d8ab56c483212a3e6b5f6164576483ecb0c9eef",
+    "sequence": "5",
+    "voucherNumber": "5",
+    "committedAt": "2026-10-03 22:06:26.526814+02"
+  },
+  "recognitionLineId": "line_72f6d482f7c947838f48a36ad97918af",
+  "historicalId": "historical_cc8242ae-7f65-4764-b6d5-283848088dbe",
+  "genericRegisteredCorrectionRefused": true,
+  "expectedResidual": "unknown",
+  "owner": {
+    "id": "historical_cc8242ae-7f65-4764-b6d5-283848088dbe",
+    "scope": {
+      "entityId": "entity_c4363760a636896e",
+      "bookId": "book_c4363760a636896e"
+    },
+    "kind": "synthetic_invoice_v1",
+    "direction": "customer",
+    "counterpartyId": "counterparty_1600c3303078471ab611a213f07eeaa1",
+    "counterpartyRevision": "1",
+    "counterpartyName": "Synthetic basis customer",
+    "documentNumber": "historical_cc8242ae-7f65-4764-b6d5-283848088dbe",
+    "issuedOn": "2026-10-03",
+    "currency": "SEK",
+    "currencyScale": 2,
+    "amountMinor": "1000",
+    "controlAccountId": "account_ar",
+    "evidence": {
+      "evidenceId": "evidence_55a4472ce7814196bc0181c6bea8e788",
+      "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+    },
+    "recognition": {
+      "voucherId": "voucher_6eb4bdc3525a4700820b2d365f2caf80",
+      "lineId": "line_72f6d482f7c947838f48a36ad97918af",
+      "eventId": "event_9926678a6f404692b9e156ec54883020",
+      "postingDate": "2026-10-03"
+    },
+    "currentRevision": {
+      "id": "historical_cc8242ae-7f65-4764-b6d5-283848088dbe",
+      "scope": {
+        "entityId": "entity_c4363760a636896e",
+        "bookId": "book_c4363760a636896e"
+      },
+      "revision": "1",
+      "dueOn": "2026-10-03",
+      "description": "Literal1000 recognized invoice",
+      "evidence": {
+        "evidenceId": "evidence_55a4472ce7814196bc0181c6bea8e788",
+        "sha256": "38cde3cfc1172b9b798efc93763f61363e1747d5b02ccee07e71be7c0d9edb0b"
+      },
+      "reason": "Initial evidence-backed registration",
+      "createdAt": "2026-10-03T20:06:26.277462Z",
+      "receipt": {
+        "key": "18851bcf-bf20-4f26-9004-f69cd646ffd1",
+        "operation": "commerce_create_invoice",
+        "actorId": "operator_c4363760a636896e"
+      }
+    },
+    "allocationVersion": "0",
+    "recordedAllocatedMinor": "0",
+    "outstandingMinor": null,
+    "status": "blocked",
+    "creditedMinor": "0",
+    "creditCount": "0",
+    "cancelledMinor": "0",
+    "effectiveAmountMinor": "1000",
+    "cancellation": null,
+    "blockers": [
+      "The retained recognition voucher was corrected."
+    ]
+  },
+  "basis": {
+    "id": "cash_basis_be62b7cdbbeb414db60a05504bcc4131",
+    "scope": {
+      "entityId": "entity_c4363760a636896e",
+      "bookId": "book_c4363760a636896e"
+    },
+    "asOf": "2026-10-03",
+    "recordedCutoff": "2026-10-03T20:06:26.586Z",
+    "captureMode": "current_knowledge",
+    "currency": "SEK",
+    "currencyScale": 2,
+    "opening": {
+      "status": "unavailable",
+      "totalMinor": null,
+      "observations": [
+        {
+          "accountId": "account_bank",
+          "amountMinor": "100000",
+          "effectiveOn": "2026-10-03"
+        },
+        {
+          "accountId": "account_bank_two",
+          "amountMinor": "50000",
+          "effectiveOn": "2026-10-03"
+        }
+      ],
+      "blockers": [
+        "account_bank:bank_witness_stale",
+        "account_bank_two:bank_witness_stale"
+      ]
+    },
+    "contributions": [
+      {
+        "invoiceId": "invoice_dc7fb49b95364547a7a3e13fbb35e436",
+        "amountMinor": "1000",
+        "inclusion": "included",
+        "reason": "canonical_remaining_obligation",
+        "dueOn": "2026-10-03",
+        "expectedOn": null
+      },
+      {
+        "invoiceId": "historical_cc8242ae-7f65-4764-b6d5-283848088dbe",
+        "amountMinor": null,
+        "inclusion": "blocked",
+        "reason": "canonical_residual_unknown",
+        "dueOn": "2026-10-03",
+        "expectedOn": null
+      }
+    ],
+    "foreignObligations": [],
+    "coverage": [
+      {
+        "family": "bank",
+        "status": "unavailable",
+        "reason": "Selected current statement closings only. Native full-period coverage remains not_established and observation time is unavailable."
+      },
+      {
+        "family": "commerce",
+        "status": "incomplete",
+        "reason": "Current canonical registered invoices only. Unregistered obligations and foreign forecast conversions remain unqualified."
+      },
+      {
+        "family": "tax",
+        "status": "unknown",
+        "reason": "No qualified cash funding roll-forward with payment date is selected."
+      },
+      {
+        "family": "payroll",
+        "status": "unknown",
+        "reason": "No qualified aggregate payable funding schedule is selected. Payroll details are not exposed."
+      },
+      {
+        "family": "owners",
+        "status": "unknown",
+        "reason": "Owner balance receipts do not establish future payment dates or unrestricted funding."
+      },
+      {
+        "family": "assets",
+        "status": "unknown",
+        "reason": "Depreciation is not cash. No qualified purchase or disposal payment schedule is selected."
+      },
+      {
+        "family": "financing",
+        "status": "unknown",
+        "reason": "Retained loan movements do not establish a complete future financing schedule."
+      }
+    ],
+    "companyCoverage": "incomplete",
+    "label": "known_items",
+    "digest": "sha256:543ffcb22378f57647b1f2a89835893e8931daa4cf23933b515ea2f92a62cc58"
+  }
+}

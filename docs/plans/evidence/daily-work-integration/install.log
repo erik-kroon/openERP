@@ -1,0 +1,24 @@
+bun install v1.4.0 (34cbb9a40)
+Resolving dependencies
+Resolved, downloaded and extracted [1]
+
+$ effect-tsgo patch --typescript
+Patched typescript at /Users/admin/.codex/worktrees/midday-final-integration/openERP/node_modules/.bun/@typescript+typescript-darwin-arm64@7.0.2/node_modules/@typescript/typescript-darwin-arm64/lib/tsc
+
++ @effect/platform-bun@4.0.0
++ @effect/platform-node-shared@4.0.0
++ @effect/tsgo@0.41.0
++ @oxlint/plugins@1.79.0
++ @stylexjs/eslint-plugin@0.19.0
++ @types/bun@1.4.2
++ @types/node@26.2.0
++ alchemy@2.0.0-beta.79
++ effect@4.0.0
++ oxfmt@0.64.0
++ oxlint@1.79.0
++ oxlint-tsgolint@7.0.2001
++ typescript@7.0.2
++ vite-plus@0.2.9
++ vitest@4.1.10
+
+532 packages installed [9.39s]

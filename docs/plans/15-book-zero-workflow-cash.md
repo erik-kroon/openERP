@@ -86,6 +86,18 @@ The proposed `CashEvent` contract carries the following semantics; these are not
 
 An invoice, instruction, bank observation, allocation and voucher may be evidence of one payment. Use owning relationships for deduplication; equal date and amount are only candidates. Preserve many-to-many allocations and remaining capacity. New identity or source revision must not repeat the economic contribution.
 
+### Current cash basis implementation under review
+
+P10 introduces an API preparation workflow in `application/cash/basis.ts`. Its public capture, read and JSON export use `/cash-bases`; MCP exposes `cash_capture_basis` and `cash_get_basis`. The bounded public capture, HTTP/MCP read and immutable export path passed with an independently specified opening150000. Two boundary defects were reproduced and corrected in source. Actual retained digest equality was proved before adding the database integrity constraint; excess historical cutoff acceptance was reproduced before applying HTTP payload parsing options. The corrected three-case public run passed capture, full amount/cutoff/cross-book/revocation refusal and retained digest tamper/immutability checks. Its exact receipts are retained in `docs/plans/evidence/product-p10/boundary-corrected/`. The remaining workflow cohort and performance are still unverified in this branch. This is a retained basis for a later forecast owner, not an implemented forecast curve or a company readiness decision.
+
+The first capture accepts the current Stockholm civil date and retained account, capacity reconciliation and coverage report references. Reviewed eligibility and balance-type assumptions cite retained evidence. Financial amounts and historical knowledge cutoffs are rejected. Authority is checked before the book write lock; the owning transaction derives the database capture time, bank witnesses and canonical invoice residuals.
+
+A selected current opening requires every selected account to qualify. Native full-period coverage remains `not_established`; gaps outside the selected current interval remain visible. Older closes have no accepted bridge in this profile and cannot be combined with current residuals into an invented opening. The source provides no bank observation timestamp, so each observation retains `observedAt=null`, its economic date and the reconciliation capture timestamp separately.
+
+Invoice contributions keep contractual due dates separate from reviewed expected dates. Exact cash-method and supplier-settlement owning relationships can establish payment membership in the selected opening. A generic control payment without that relationship blocks inclusion. Foreign monetary items retain their original units and an explicit unqualified conversion reason. Tax, payroll, owners, assets and financing remain named source gaps without invented zero values or individual payroll data. The basis is labelled `known_items` and company coverage remains incomplete.
+
+Saved JSON bytes are immutable. A new discovery or assumption creates a new capture. Reads and exports recheck current authority and preserve the original bytes. Dependency status distinguishes current, changed and unavailable. Later source population overflow prevents a new bounded capture and makes the old basis comparison unavailable; it does not erase the retained export. Conservative bank coverage freshness includes the book posting sequence, so callers may need a new actual coverage report after other financial postings.
+
 ## Cash contributions and no double counting
 
 | Contribution | Required treatment |
@@ -143,3 +155,9 @@ The source's **49 requirements** and **45 AT cases** are specified, not executed
 For each accepted gate record requirements/cases, exact code and dirty-tree identity, migration state, environment, data period, input/source hashes, steps, independent expected and observed outcomes, receipts/artifacts, reviewer and remaining limitations. No synthetic test, static check, screenshot or imported PRD closes an actual-company or external acceptance gate.
 
 The [document verification record](evidence/book-zero-docs-verification.md) records provenance and checks for this documentation change only. Current technical and accounting ownership is preserved; no new financial computation owner, runtime, legal rule, provider or operational authority follows from the source document.
+
+## Daily-work backend integration — 2026-10-03
+
+The [daily-work implementation ledger](18-daily-work-product-implementation.md) tracks the selected synthetic known-items Cash backend. Cash basis captures retain selected bank witness identities, canonical invoice residuals, unsupported foreign obligations and incomplete company coverage. Saved reads/export preserve original bytes separately from current/changed/unavailable dependencies. Source SELECT admission occurs before source SQL, so lost source access does not abort an otherwise authorized historical artifact read.
+
+Forecast captures compose a retained current basis inside the owning book transaction. The application derives financial amounts; callers select the basis, horizon, nonnegative buffer and reviewed date evidence. Exact 30/90/91-day calculations retain opening, daily closing and outflows-first lows, earliest minima, headroom, and blocked/undated/outside-horizon contributions. No bank action, payroll/tax completeness, company activation, dashboard presentation or live financial outcome follows from this backend. Final integration receipts and remaining benchmark gates are linked from the implementation ledger.

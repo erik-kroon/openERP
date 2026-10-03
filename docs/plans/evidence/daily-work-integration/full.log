@@ -1,0 +1,150 @@
+$ bun scripts/check-changed.ts --type-aware origin/main
+Checking 67 changed file(s) against origin/main:
+  apps/api/scripts/operations/durable-work.ts
+  apps/api/scripts/operations/workflows.ts
+  apps/api/scripts/preparation-runner.ts
+  apps/api/src/adapters/reminder-delivery/local-fixture.ts
+  apps/api/src/application/banking/reconciliations.ts
+  apps/api/src/application/capabilities/agent-policy.ts
+  apps/api/src/application/capabilities/cash-forecast.ts
+  apps/api/src/application/capabilities/collections.ts
+  apps/api/src/application/capabilities/commerce-invoices.ts
+  apps/api/src/application/capabilities/index.ts
+  apps/api/src/application/cash/basis.ts
+  apps/api/src/application/cash/forecast.ts
+  apps/api/src/application/commerce/cash-payments.ts
+  apps/api/src/application/commerce/draft-calculation.ts
+  apps/api/src/application/commerce/invoice-lifecycle.ts
+  apps/api/src/application/commerce/legal-issuance.ts
+  apps/api/src/application/commerce/recurring-coverage.ts
+  apps/api/src/application/commerce/recurring-draft-scheduling.ts
+  apps/api/src/application/commerce/recurring-invoices.ts
+  apps/api/src/application/commerce/register.ts
+  apps/api/src/application/commerce/reminders.ts
+  apps/api/src/application/purchases/supplier-settlements.ts
+  apps/api/src/application/workspace.ts
+  apps/api/src/db/cash/basis.ts
+  apps/api/src/db/cash/forecast.ts
+  apps/api/src/db/commerce/allocations.ts
+  apps/api/src/db/commerce/fx.ts
+  apps/api/src/db/commerce/invoice-lifecycle.ts
+  apps/api/src/db/commerce/recurring-draft-scheduling.ts
+  apps/api/src/db/commerce/recurring-invoices.ts
+  apps/api/src/db/commerce/reminders.ts
+  apps/api/src/db/schema.ts
+  apps/api/src/db/workspace.ts
+  apps/api/src/index.ts
+  apps/api/src/runtime/environment.ts
+  apps/api/src/runtime/recurring-draft-queue.ts
+  apps/api/src/runtime/reminder-queue.ts
+  apps/api/src/transport/http/routes/cash-forecast.ts
+  apps/api/src/transport/http/routes/collections.ts
+  apps/api/src/transport/http/routes/invoice-drafts.ts
+  apps/api/src/transport/http/routes/recurring-invoices.ts
+  apps/api/tests/cash-basis.e2e.test.ts
+  apps/api/tests/cash-forecast.e2e.test.ts
+  apps/api/tests/collection-reminders.e2e.test.ts
+  apps/api/tests/recurring-invoice-drafts.e2e.test.ts
+  apps/api/tests/sales-register-identity.e2e.test.ts
+  apps/api/tests/support/cash-basis-supplier.ts
+  apps/api/tests/support/cash-basis.ts
+  apps/web/src/components/commerce/collections.tsx
+  apps/web/src/components/commerce/invoice-drafts.tsx
+  apps/web/src/components/commerce/invoice-issuance.tsx
+  apps/web/src/components/commerce/recurring-draft-recovery.tsx
+  apps/web/src/components/commerce/reminder-review.tsx
+  apps/web/src/lib/attention.ts
+  apps/web/src/lib/work-return.ts
+  apps/web/src/routes/entities.$entityId.books.$bookId.sales.tsx
+  apps/web/src/routes/entities.$entityId.books.$bookId.work.tsx
+  packages/contracts/src/api.ts
+  packages/contracts/src/capabilities.ts
+  packages/contracts/src/cash-forecast.ts
+  packages/contracts/src/collections.ts
+  packages/contracts/src/invoice-drafts.ts
+  packages/contracts/src/operations.ts
+  packages/contracts/src/recurring-invoices.ts
+  packages/contracts/src/supplier-invoice-drafts.ts
+  packages/contracts/src/workspace.ts
+  packages/domain/src/cash-forecast.ts
+
+oxfmt --write
+Finished in 28ms on 67 files using 2 threads.
+oxfmt --write: 0.09s
+
+oxlint (type-aware)
+oxlint (type-aware): 20.02s
+
+tsc --noEmit (apps/api/scripts/operations/tsconfig.json)
+tsc --noEmit (apps/api/scripts/operations/tsconfig.json): 0.27s
+
+tsc --noEmit (apps/api/scripts/tsconfig.json)
+apps/api/src/application/commerce/invoice-lifecycle.ts(1546,7): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/commerce/recurring-invoices.ts(30,18): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.RecurringAgreement`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(115,31): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.RecurringScheduleInput`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(319,14): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.ProposeRecurringAgreement`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(424,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.AmendRecurringSchedule`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(657,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.ProposeRecurringTemplateRevision`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(852,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.RecordRecurringAgreementEvent`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(1031,19): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.MaterializeRecurringOccurrence`. effect(unnecessaryTypeofType)
+apps/api/src/application/purchases/credits.ts(165,11): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/extraction.ts(2002,7): suggestion TS377095: `Effect.orElseSucceed` expresses the same recovery more directly than `Effect.catch` followed by `Effect.succeed`. effect(catchToOrElseSucceed)
+apps/api/src/application/purchases/extraction.ts(2013,5): suggestion TS377095: `Effect.orElseSucceed` expresses the same recovery more directly than `Effect.catch` followed by `Effect.succeed`. effect(catchToOrElseSucceed)
+tsc --noEmit (apps/api/scripts/tsconfig.json): 0.43s
+
+tsc --noEmit (apps/api/tsconfig.json)
+apps/api/src/application/banking/source-revisions.ts(164,34): suggestion TS377112: This input is already assignable to the schema's Encoded type. Use `decodeEffect` to preserve compile-time type checking instead of discarding the input type through `decodeUnknownEffect`. effect(preferTypedSchemaDecoder)
+apps/api/src/application/banking/source-revisions.ts(271,25): suggestion TS377037: `Schema.decodeUnknownSync` is used inside an Effect generator. `Schema.decodeUnknownEffect` preserves the typed Effect error channel for this operation without throwing. effect(schemaSyncInEffect)
+apps/api/src/application/banking/source-revisions.ts(768,25): suggestion TS377037: `Schema.decodeUnknownSync` is used inside an Effect generator. `Schema.decodeUnknownEffect` preserves the typed Effect error channel for this operation without throwing. effect(schemaSyncInEffect)
+apps/api/src/application/banking/sync-windows.ts(983,7): suggestion TS377012: This Effect generator contains `try/catch`; in this context, error handling is expressed with Effect APIs such as Effect.try, Effect.tryPromise, Effect.catch, Effect.catchTag). effect(tryCatchInEffectGen)
+apps/api/src/application/commerce/allocation-reversals.ts(1619,7): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/commerce/cash-payments.ts(144,24): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashJournalLine`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/cash-payments.ts(257,24): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashJournalLine`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/credit-notes.ts(1009,9): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/commerce/documents.ts(87,5): suggestion TS377120: `Effect.filterOrElse` expresses this conditional validation more directly than `Effect.flatMap` with an identity `Effect.succeed` branch. effect(flatMapConditionalToFilterOrFail)
+apps/api/src/application/commerce/fx-chain-repair.ts(646,14): suggestion TS377019: This `yield* Effect.fail(...)` passes a yieldable error value. `yield*` represents that value directly without wrapping it in `Effect.fail`. effect(unnecessaryFailYieldableError)
+apps/api/src/application/commerce/fx-remeasurement.ts(323,14): suggestion TS377019: This `yield* Effect.fail(...)` passes a yieldable error value. `yield*` represents that value directly without wrapping it in `Effect.fail`. effect(unnecessaryFailYieldableError)
+apps/api/src/application/commerce/fx-remeasurement.ts(334,14): suggestion TS377019: This `yield* Effect.fail(...)` passes a yieldable error value. `yield*` represents that value directly without wrapping it in `Effect.fail`. effect(unnecessaryFailYieldableError)
+apps/api/src/application/commerce/fx.ts(1299,5): suggestion TS377120: `Effect.filterOrFail` expresses this conditional validation more directly than `Effect.flatMap` with an identity `Effect.succeed` branch. effect(flatMapConditionalToFilterOrFail)
+apps/api/src/application/commerce/fx.ts(1307,5): suggestion TS377120: `Effect.filterOrFail` expresses this conditional validation more directly than `Effect.flatMap` with an identity `Effect.succeed` branch. effect(flatMapConditionalToFilterOrFail)
+apps/api/src/application/commerce/invoice-lifecycle.ts(1546,7): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/commerce/recurring-invoices.ts(30,18): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.RecurringAgreement`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(115,31): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.RecurringScheduleInput`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(319,14): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.ProposeRecurringAgreement`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(424,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.AmendRecurringSchedule`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(657,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.ProposeRecurringTemplateRevision`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(852,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.RecordRecurringAgreementEvent`. effect(unnecessaryTypeofType)
+apps/api/src/application/commerce/recurring-invoices.ts(1031,19): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Recurring.MaterializeRecurringOccurrence`. effect(unnecessaryTypeofType)
+apps/api/src/application/dimensions/restatement.ts(76,41): suggestion TS377098: This Schema number API accepts `NaN`, `Infinity`, and `-Infinity`. Use `Schema.Finite` for finite domain numbers. If non-finite values are intentional, disable this diagnostic for that line. effect(schemaNumber)
+apps/api/src/application/dimensions/restatement.ts(355,36): suggestion TS377098: This Schema number API accepts `NaN`, `Infinity`, and `-Infinity`. Use `Schema.Finite` for finite domain numbers. If non-finite values are intentional, disable this diagnostic for that line. effect(schemaNumber)
+apps/api/src/application/purchases/credits.ts(165,11): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/extraction.ts(2002,7): suggestion TS377095: `Effect.orElseSucceed` expresses the same recovery more directly than `Effect.catch` followed by `Effect.succeed`. effect(catchToOrElseSucceed)
+apps/api/src/application/purchases/extraction.ts(2013,5): suggestion TS377095: `Effect.orElseSucceed` expresses the same recovery more directly than `Effect.catch` followed by `Effect.succeed`. effect(catchToOrElseSucceed)
+apps/api/src/application/purchases/payment-resolutions.ts(225,21): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Resolutions.PreparePaymentReplacement`. effect(unnecessaryTypeofType)
+apps/api/src/application/purchases/refunds.ts(360,11): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/refunds.ts(1490,11): suggestion TS377116: `Effect.catchIf` expresses selective recovery more directly than `Effect.catch` with a conditional `Effect.fail` passthrough. effect(catchConditionalRefailToCatchIf)
+apps/api/src/application/purchases/supplier-settlements.ts(243,34): suggestion TS377112: This input is already assignable to the schema's Encoded type. Use `decodeEffect` to preserve compile-time type checking instead of discarding the input type through `decodeUnknownEffect`. effect(preferTypedSchemaDecoder)
+apps/api/src/application/reports/annual-report.ts(847,30): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Report.IxbrlFact`. effect(unnecessaryTypeofType)
+apps/api/src/application/reports/cash-flow-statement.ts(39,13): suggestion TS377090: This `typeof ... .Type` query can be replaced with `CashFlowContract.CashFlowLine`. effect(unnecessaryTypeofType)
+apps/api/src/application/reports/cash-flow-statement.ts(422,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `CashFlowContract.CashFlowMapping`. effect(unnecessaryTypeofType)
+apps/api/src/application/reports/cash-flow-statement.ts(435,35): suggestion TS377090: This `typeof ... .Type` query can be replaced with `CashFlowContract.PrepareCashFlowStatement`. effect(unnecessaryTypeofType)
+apps/api/src/db/commerce/cash-payments.ts(60,66): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashMethodLine`. effect(unnecessaryTypeofType)
+apps/api/src/db/commerce/cash-payments.ts(79,11): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashMethodLine`. effect(unnecessaryTypeofType)
+apps/api/src/db/commerce/cash-payments.ts(80,10): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashMethodLine`. effect(unnecessaryTypeofType)
+apps/api/src/db/commerce/cash-payments.ts(135,12): suggestion TS377090: This `typeof ... .Type` query can be replaced with `Cash.CashMethodLine`. effect(unnecessaryTypeofType)
+tsc --noEmit (apps/api/tsconfig.json): 0.61s
+
+tsc --noEmit (apps/api/tests/tsconfig.json)
+apps/api/tests/recurring-invoice-drafts.e2e.test.ts(1139,25): suggestion TS377112: This input is already assignable to the schema's Encoded type. Use `decodeSync` to preserve compile-time type checking instead of discarding the input type through `decodeUnknownSync`. effect(preferTypedSchemaDecoder)
+tsc --noEmit (apps/api/tests/tsconfig.json): 0.29s
+
+tsc --noEmit (apps/web/tsconfig.json)
+tsc --noEmit (apps/web/tsconfig.json): 0.59s
+
+tsc --noEmit (packages/contracts/tsconfig.json)
+tsc --noEmit (packages/contracts/tsconfig.json): 0.20s
+
+tsc --noEmit (packages/domain/tsconfig.json)
+tsc --noEmit (packages/domain/tsconfig.json): 0.08s
+
+check:changed passed.

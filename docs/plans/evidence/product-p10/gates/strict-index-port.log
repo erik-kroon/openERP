@@ -1,0 +1,20 @@
+Exact current primary strict source inventory:
+apps/api/src/application/banking/reconciliations.ts
+apps/api/src/application/capabilities/agent-policy.ts
+apps/api/src/application/capabilities/cash-forecast.ts
+apps/api/src/application/capabilities/index.ts
+apps/api/src/application/cash/basis.ts
+apps/api/src/application/commerce/cash-payments.ts
+apps/api/src/application/commerce/register.ts
+apps/api/src/application/purchases/supplier-settlements.ts
+apps/api/src/db/cash/basis.ts
+apps/api/src/db/commerce/allocations.ts
+apps/api/src/db/commerce/fx.ts
+apps/api/src/db/schema.ts
+apps/api/src/index.ts
+apps/api/src/transport/http/routes/cash-forecast.ts
+apps/api/tests/cash-basis.e2e.test.ts
+apps/api/tests/support/cash-basis-supplier.ts
+packages/contracts/src/api.ts
+packages/contracts/src/capabilities.ts
+packages/contracts/src/cash-forecast.ts

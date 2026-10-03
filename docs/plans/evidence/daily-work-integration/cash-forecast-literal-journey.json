@@ -1,0 +1,270 @@
+{
+  "openingMinor": "100000",
+  "supplierId": "invoice_98a0741c72c440fc963c05d62cf24ea2",
+  "customerId": "invoice_b6cc5c2265ad40408d91e66da9f2e96b",
+  "saved": {
+    "id": "cash_forecast_b5541674d7f24121b70c1a6acde7d4ee",
+    "basisId": "cash_basis_c99c8a545e6e42a298c0bf0557864459",
+    "basisDigest": "sha256:6c37f8d24f5f37bf6f716916683fe56ea422493406d3a3698edb525649bf737c",
+    "calculatorVersion": "known_items_exact_v1",
+    "asOf": "2026-10-03",
+    "horizonDays": 30,
+    "endsOn": "2026-11-01",
+    "label": "known_items",
+    "companyCoverage": "incomplete",
+    "result": {
+      "status": "available",
+      "openingMinor": "100000",
+      "closingMinor": "90000",
+      "baseline": {
+        "minimum": {
+          "amountMinor": "70000",
+          "on": "2026-10-04"
+        },
+        "headroomMinor": "-20000"
+      },
+      "conservative": {
+        "minimum": {
+          "amountMinor": "70000",
+          "on": "2026-10-04"
+        },
+        "headroomMinor": "-20000"
+      },
+      "days": [
+        {
+          "on": "2026-10-03",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "100000",
+          "conservativeLowMinor": "100000"
+        },
+        {
+          "on": "2026-10-04",
+          "inflowMinor": "0",
+          "outflowMinor": "30000",
+          "closingMinor": "70000",
+          "conservativeLowMinor": "70000"
+        },
+        {
+          "on": "2026-10-05",
+          "inflowMinor": "20000",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "70000"
+        },
+        {
+          "on": "2026-10-06",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-07",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-08",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-09",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-10",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-11",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-12",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-13",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-14",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-15",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-16",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-17",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-18",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-19",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-20",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-21",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-22",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-23",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-24",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-25",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-26",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-27",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-28",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-29",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-30",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-10-31",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        },
+        {
+          "on": "2026-11-01",
+          "inflowMinor": "0",
+          "outflowMinor": "0",
+          "closingMinor": "90000",
+          "conservativeLowMinor": "90000"
+        }
+      ]
+    },
+    "contributions": [
+      {
+        "invoiceId": "invoice_98a0741c72c440fc963c05d62cf24ea2",
+        "amountMinor": "30000",
+        "dueOn": "2026-10-04",
+        "expectedOn": null,
+        "scheduledOn": "2026-10-04",
+        "disposition": "dated",
+        "reason": "canonical_remaining_obligation"
+      },
+      {
+        "invoiceId": "invoice_b6cc5c2265ad40408d91e66da9f2e96b",
+        "amountMinor": "20000",
+        "dueOn": "2026-10-05",
+        "expectedOn": null,
+        "scheduledOn": "2026-10-05",
+        "disposition": "dated",
+        "reason": "canonical_remaining_obligation"
+      }
+    ],
+    "digest": "sha256:b1e37f5822a6e15bd3cd534c6128b90f1e1c09e4bb6aea5c3055a773527bd2a2"
+  },
+  "exportSha256": "efeabf3e69b84998f0179b53750c56dda1889a26111e64dad5719d39e600a02e",
+  "byteLength": 5165
+}
