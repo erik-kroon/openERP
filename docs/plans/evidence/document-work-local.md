@@ -33,4 +33,10 @@ A 52-original fixture (one reviewed) measured 30 HTTP attention reads after 5 wa
 
 ## Remaining boundaries
 
-No live document provider, company data, production migration or deployment was used. These observations do not establish company readiness, visual acceptance, whole-program performance or external delivery. Searchable business metadata is a separate document-library slice. The forward migration and complete stack need integrated-head verification before landing.
+No live document provider, company data, production migration or deployment was used. These observations do not establish company readiness, visual acceptance, whole-program performance or external delivery. Searchable business metadata is a separate document-library slice. The forward migration was applied by the disposable integrated test harness; production migration and whole-program acceptance remain separate.
+
+## Integrated functional verification
+
+At commit `1f50b16` on main prerequisite `7651bde`, all 12 tests across the five focused files passed in 51.13s. Add `apps/api/tests/document-work-scale.e2e.test.ts` and `apps/api/tests/supplier-inbox-selection.e2e.test.ts` to the command above and set artifacts to `test-results/product-P04-integrated`. Source inventory remained stable at `6c5c0712f112b688a306b3ba3103aa0d05f504179ba432e3f48cb187f063dfa9`. The integrated browser journey opens an original beyond the loaded first twenty rows, opens a newly uploaded original immediately, and preserves scoped missing/forbidden/network errors with a close action and no implicit registration.
+
+The 10,000-original analyzed fixture measured p50 146.88ms and p95 204.89ms across thirty HTTP reads after five warmups, below the 1000ms added-operation budget. This measures the new document population; no pre-feature document-attention baseline exists. Full changed checks, the primary Effect lint configuration, and domain integration checks passed before the equivalent rebase onto main. Retained integrated receipts are in [product-p04](product-p04/). These observations supersede the earlier smoke-only coverage limits above.
