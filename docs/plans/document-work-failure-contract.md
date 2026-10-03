@@ -25,3 +25,7 @@ The following cases precede the recovery fix. Use the real Bun self-host filesys
 - Read and write storage failures retain Unavailable; reuse is permitted only after verifying expected length and SHA-256.
 
 Run the focused `apps/api/tests/source-retention-recovery.e2e.test.ts` and retain its orphan recovery and corrupt refusal JSON artifacts with the run manifest and source integrity result.
+
+## Direct inbox selection
+
+Failure vectors authored before the fix: an explicit scoped original must open even when absent from the loaded first twenty inbox rows; an atomic upload must immediately open its retained occurrence; missing, unauthorized and interrupted reads must keep their actual errors and a close action without automatically registering anything. `supplier-inbox-selection.e2e.test.ts` covers these public browser boundaries and retains a journey receipt.
