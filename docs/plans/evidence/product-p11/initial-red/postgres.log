@@ -1,0 +1,7 @@
+2026-10-03 21:46:35.131 CEST [19373] LOG:  starting PostgreSQL 17.11 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit
+2026-10-03 21:46:35.132 CEST [19373] LOG:  listening on IPv4 address "127.0.0.1", port 61214
+2026-10-03 21:46:35.132 CEST [19373] LOG:  listening on Unix socket "/var/folders/50/zdx6l4px2wg7wh8q7_78g2qr0000gn/T/openerp-e2e-oaJkiX/.s.PGSQL.61214"
+2026-10-03 21:46:35.135 CEST [19376] LOG:  database system was shut down at 2026-10-03 21:46:35 CEST
+2026-10-03 21:46:35.137 CEST [19373] LOG:  database system is ready to accept connections
+2026-10-03 21:46:43.290 CEST [19373] LOG:  received immediate shutdown request
+2026-10-03 21:46:43.297 CEST [19373] LOG:  database system is shut down

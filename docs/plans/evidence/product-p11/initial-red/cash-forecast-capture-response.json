@@ -1,0 +1,6 @@
+{
+  "status": 404,
+  "body": "{\"_tag\":\"AccountingError\",\"code\":\"NotFound\",\"message\":\"The requested record was not found.\",\"recovery\":\"permanent\"}",
+  "basisId": "cash_basis_ef43468ef268442a8c6c510ab0c04c84",
+  "basisDigest": "sha256:37ce8da0eb208099d64adc6cfeb5d022640ad19744b5b05785e91851a17d3c3f"
+}

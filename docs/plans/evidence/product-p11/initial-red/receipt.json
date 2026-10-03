@@ -1,0 +1,12 @@
+{
+  "source": "7596fdeb6f14f2f2ecf0ac39f41b4f243a269cc3",
+  "sourceInventorySha256": "8c5cd1d9e6ac54fc98cf14dd11f05b4e408694e8125ce8c05c4f81bb87a09251",
+  "durationSeconds": 9.45,
+  "passed": 1,
+  "failed": 1,
+  "skipped": 19,
+  "fixtureQualification": "actual native funding and supplier30000/customer20000 registration plus scoped current100000cashbasis passed before genuine cash-forecasts404NotFound",
+  "regression": "extracted P10 HTTP/MCP150000 immutable workflow passed",
+  "shutdown": "PostgreSQL19373 immediate shutdown logged; PIDs19373/19376 absent; no owned worktree descendants",
+  "productionForecast": "absent"
+}
