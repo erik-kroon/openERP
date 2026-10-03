@@ -1,0 +1,32 @@
+{
+  "stage": "failure-contract and real fixture, before forecast production",
+  "base": "fff815e5f3cef4be6573c6724a02a2e00c4196ca",
+  "provisionalCashSource": "08c6d6ad115821d6e28681f93685e38e830d2daf",
+  "frozenInstall": {
+    "exitCode": 0,
+    "seconds": 9.51,
+    "lockfileChanged": false
+  },
+  "initialFast": {
+    "exitCode": 1,
+    "findings": [
+      "unused extracted BookFixture import",
+      "readable spacing",
+      "environment is callable and exposes artifacts, not artifactRoot"
+    ],
+    "fullRawLogRetained": false
+  },
+  "correctedFast": {
+    "exitCode": 0,
+    "selectedSourceFiles": 21
+  },
+  "full": {
+    "exitCode": 0,
+    "selectedSourceFiles": 21
+  },
+  "currentPrimaryStrict": {
+    "exitCode": 0,
+    "selectedSourceFiles": 21
+  },
+  "runtime": "pending"
+}
