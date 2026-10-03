@@ -1,0 +1,10 @@
+{
+  "base": "3a4b285f415a14befe43bb10ae5b124c4d66ed89",
+  "fastExit": 0,
+  "fullExit": 0,
+  "primaryStrictExit": 0,
+  "runtimeExit": 0,
+  "selectedTestsPassed": 1,
+  "runtimeSeconds": 25.88,
+  "ownedProcessesAfterTeardown": []
+}
