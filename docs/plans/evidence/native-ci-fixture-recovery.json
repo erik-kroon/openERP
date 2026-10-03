@@ -1,0 +1,260 @@
+{
+  "run": "native-ci-fixture-ordinary5",
+  "checkedAt": "2026-10-03T16:37:52.437Z",
+  "exitCode": 0,
+  "wallSeconds": 103.98,
+  "vitestSeconds": 100.48,
+  "passedTests": 47,
+  "failedTests": 0,
+  "passedFiles": 8,
+  "failedFiles": 0,
+  "diagnosticPreload": false,
+  "sourceIntegrity": {
+    "status": "stable",
+    "changedPaths": [],
+    "sourceInventorySha256": "7fea2ab4ce02d1d2efac5e5264895271fc5b0ad581d59c24f61a14318e17b9d0",
+    "finalSourceInventorySha256": "7fea2ab4ce02d1d2efac5e5264895271fc5b0ad581d59c24f61a14318e17b9d0",
+    "checkedAt": "2026-10-03T16:37:52.437Z"
+  },
+  "files": [
+    {
+      "file": "business-date.e2e.test.ts",
+      "status": "passed",
+      "cases": [
+        {
+          "name": "real overview follows the server date despite browser clock skew and supplier UI retains history pages",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "cash-flow-statement.e2e.test.ts",
+      "status": "passed",
+      "cases": [
+        {
+          "name": "a direct cash-flow statement classifies retained cash and reconciles to actual closing cash",
+          "status": "passed"
+        },
+        {
+          "name": "an unclassifiable counterpart keeps its row, states the reason and refuses completeness",
+          "status": "passed"
+        },
+        {
+          "name": "a cash-to-cash movement is not a transfer without the owned transfer identity",
+          "status": "passed"
+        },
+        {
+          "name": "a mapping that names no retained account is refused rather than reported around",
+          "status": "passed"
+        },
+        {
+          "name": "an agent reads the derived statement over MCP and is told when it is not complete",
+          "status": "passed"
+        },
+        {
+          "name": "a split payment keeps one row per activity with stable scoped identities",
+          "status": "passed"
+        },
+        {
+          "name": "a settlement with a realised gain is not a pure valuation effect",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "company-profile-admission.e2e.test.ts",
+      "status": "passed",
+      "cases": [
+        {
+          "name": "company activation seals authenticated actor and database time, executes without journal and recovers unread response",
+          "status": "passed"
+        },
+        {
+          "name": "company activation refuses stale_account without partial admission",
+          "status": "passed"
+        },
+        {
+          "name": "company activation refuses revoked_approver without partial admission",
+          "status": "passed"
+        },
+        {
+          "name": "company activation refuses revoked_executor without partial admission",
+          "status": "passed"
+        },
+        {
+          "name": "late activation receipt failure rolls back and the original command key recovers",
+          "status": "passed"
+        },
+        {
+          "name": "confirmed superseding company facts remain ambiguous instead of choosing the newest",
+          "status": "passed"
+        },
+        {
+          "name": "concurrent activation approval and execution retain one winner and exact concurrent replay",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "mcp.e2e.test.ts",
+      "status": "passed",
+      "cases": [
+        {
+          "name": "MCP negotiates the protocol, exposes no approval write, and reads the same committed ledger",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "payment-resolutions.e2e.test.ts",
+      "status": "passed",
+      "cases": [
+        {
+          "name": "an instruction with no proof stays reserved, and a recorded rejection does not become proof",
+          "status": "passed"
+        },
+        {
+          "name": "a settled instruction cannot be released",
+          "status": "passed"
+        },
+        {
+          "name": "a replacement without an effective release is not compiled",
+          "status": "passed"
+        },
+        {
+          "name": "a resolution endpoint that names no retained export is refused, not invented",
+          "status": "passed"
+        },
+        {
+          "name": "an agent reads the honest state and cannot assert what the owner did not establish",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "recovery-constraint-validation.e2e.test.ts",
+      "status": "passed",
+      "cases": [
+        {
+          "name": "strict recovery qualifies the validated VAT match constraint without changing retained state",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "supplier-extraction.e2e.test.ts",
+      "status": "passed",
+      "cases": [
+        {
+          "name": "runtime-role extraction admits, reads, reviews, cancels and replays without immutable UPDATE grants",
+          "status": "passed"
+        },
+        {
+          "name": "extraction rechecks credential revocation before capture and after object reading",
+          "status": "passed"
+        },
+        {
+          "name": "extraction rechecks membership revocation before capture and after object reading",
+          "status": "passed"
+        },
+        {
+          "name": "extraction rechecks identity revocation before capture and after object reading",
+          "status": "passed"
+        },
+        {
+          "name": "service-intent extraction outlives requester session but cancellation and scope still fence it",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "supplier-settlement.e2e.test.ts",
+      "status": "passed",
+      "cases": [
+        {
+          "name": "supplier accrual owner posts4000 once, cancels exactly and retains unresolved original cash through REST and MCP",
+          "status": "passed"
+        },
+        {
+          "name": "supplier owner refuses authority, strict input, stale basis and independently mutated native children",
+          "status": "passed"
+        },
+        {
+          "name": "supplier missing reviewer admission fails closed without effects",
+          "status": "passed"
+        },
+        {
+          "name": "supplier preparation refuses invalid oversized and unsupported retained observations",
+          "status": "passed"
+        },
+        {
+          "name": "supplier sealed approval becomes stale when reviewed accounting qualification changes",
+          "status": "passed"
+        },
+        {
+          "name": "supplier execution refuses changed account writer source and locked period bases",
+          "status": "passed"
+        },
+        {
+          "name": "supplier execution locks reviewer authority before the book and observes committed disable",
+          "status": "passed"
+        },
+        {
+          "name": "supplier source and invoice capacity races have one financial winner and preserve distinct equal rows",
+          "status": "passed"
+        },
+        {
+          "name": "supplier owner rolls back native posting, matching, allocation and cancellation before retaining parent receipts",
+          "status": "passed"
+        },
+        {
+          "name": "supplier integrity retains immutable scoped claims and denies runtime history mutation",
+          "status": "passed"
+        },
+        {
+          "name": "supplier receipt integrity binds the exact approval plan source and payable",
+          "status": "passed"
+        },
+        {
+          "name": "supplier scoped discovery continues beyond one page without losing retained plans",
+          "status": "passed"
+        },
+        {
+          "name": "supplier cancellation refuses retained report consumption without financial effects",
+          "status": "passed"
+        },
+        {
+          "name": "supplier cancellation revalidates report consumption after approval",
+          "status": "passed"
+        },
+        {
+          "name": "supplier cancellation approval revocation refuses execution and permits fresh review",
+          "status": "passed"
+        },
+        {
+          "name": "supplier cancellation refuses a parent approval whose actor does not own the native approvals",
+          "status": "passed"
+        },
+        {
+          "name": "supplier cancellation posts its exact inverse in a selected later open period",
+          "status": "passed"
+        },
+        {
+          "name": "supplier report and cancellation serialize to a retained report before or after the exact inverse",
+          "status": "passed"
+        },
+        {
+          "name": "supplier cancellation refuses invoice changes after settlement without financial effects",
+          "status": "passed"
+        },
+        {
+          "name": "supplier pending owner retains prospective plans and independent approval without financial effects",
+          "status": "passed"
+        }
+      ]
+    }
+  ],
+  "originalRestartCause": "unknown",
+  "diagnosticObservation": "Four workerd SIGKILL exits occurred during harness teardown. No unexpected restart reproduced.",
+  "survivingOwnedProcesses": 0
+}
